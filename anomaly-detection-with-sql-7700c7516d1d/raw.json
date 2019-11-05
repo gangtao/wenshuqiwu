@@ -1,0 +1,150 @@
+[{
+  "tag": "H1",
+  "text": "Example",
+  "translation": "例"
+}, {
+  "tag": "P",
+  "text": "I’ll be using one of the public datasets available in BigQuery so you can recreate this yourself. It is the ‘Iowa Liquor Sales’ dataset (`bigquery-public-data.iowa_liquor_sales.sales`) which has the daily liquor sales in Iowa going back to 2012.",
+  "translation": "我将使用BigQuery中可用的公共数据集之一，以便您自己重新创建它。 这是“爱荷华州酒类销售”数据集（`bigquery-public-data.iowa_liquor_sales.sales`），其中包含爱荷华州的每日白酒销售量可以追溯到2012年。"
+}, {
+  "tag": "P",
+  "text": "The liquor sales are broken out a bunch of different ways including city, county, lat/long, category, bottles sold, volume sold etc. For this example I’m just going to be looking at total sales by day but you can detect anomalies in any of the breakouts in the table.",
+  "translation": "酒类的销售方式有很多，包括城市，县，经纬度，类别，已售出的瓶子，已售出的数量等。在本例中，我只是按天查看总销量，但您可以检测到异常情况 在表格中的任何突破中。"
+}, {
+  "tag": "P",
+  "text": "The full query with comments can be found on my GitHub page and here is a gist. Let’s break down what the query does.",
+  "translation": "带有注释的完整查询可以在我的GitHub页面上找到，这是要点。 让我们细分一下查询的功能。"
+}, {
+  "tag": "P",
+  "text": "The first thing I do is create a CTE (common table expression) to make a table with the 25th percentile, the 75th percentile and the IQR for the total liquor sales by day to use in the main part of the query.",
+  "translation": "我要做的第一件事是创建一个CTE（公用表表达式）以构成一个表，该表包含按天计的白酒总销量的25％，75％和IQR，以在查询的主要部分中使用。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*aDNWHabwiZS192-4vfT1Yw.png?q=20",
+  "type": "image",
+  "file": "1*aDNWHabwiZS192-4vfT1Yw.png"
+}, {
+  "tag": "P",
+  "text": "To get the quartiles I’m using BigQuery’s approximate quantile function. We’re saying we want 4 quantiles which creates an array, so we just select which quantile we want out of that array with the offset function.",
+  "translation": "为了获得四分位数，我正在使用BigQuery的近似分位数功能。 我们要说的是要有4个分位数来创建一个数组，所以我们只需要使用offset函数从数组中选择想要的分位数。"
+}, {
+  "tag": "P",
+  "text": "The array returned looks like this [min, 25, 50, 75, max]. As you can see it also returns the min and max values. Indexing starts at zero so it would be [0, 1, 2, 3, 4]. So for the 25th percentile we select the element at position 1 and so on using the offset function.",
+  "translation": "返回的数组看起来像这样[min，25，50，75，max]。 如您所见，它还返回最小值和最大值。 索引从零开始，因此它将是[0、1、2、3、4]。 因此，对于第25个百分位数，我们选择位置1处的元素，依此类推，使用offset函数。"
+}, {
+  "tag": "P",
+  "text": "Next we move on to the main part of the query:",
+  "translation": "接下来，我们进入查询的主要部分："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*rnbpzT9atiKt5-5taOjcOw.png?q=20",
+  "type": "image",
+  "file": "1*rnbpzT9atiKt5-5taOjcOw.png"
+}, {
+  "tag": "P",
+  "text": "Starting at the inner query, we’re going to grab the total liquor sales by day again, then cross join with the IQR CTE we created above (beware of cross joins on large datasets though). Then we’re going to create a case statement for if that day’s liquor sales are positive/negative outliers or not (inlier). For display purposes we also grab the day’s total sales and date and order by total daily sales descending. Which gives us:",
+  "translation": "从内部查询开始，我们将再次获取每天的白酒总销量，然后与上面创建的IQR CTE进行交叉联接（不过要注意大型数据集的交叉联接）。 然后，我们将创建一个案例说明，以说明当日的白酒销售额是否为正值/负值（异常值）。 出于展示目的，我们还按每日总销售额递减的方式获取当天的总销售额以及日期和订单。 这给了我们："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/16/1*0ntH6wEyY_NOFg2obrFxFw.png?q=20",
+  "type": "image",
+  "file": "1*0ntH6wEyY_NOFg2obrFxFw.png"
+}, {
+  "tag": "P",
+  "text": "We now have a column called ‘type’ which will tell us whether the day’s liquor sales are an inlier, a positive outlier or a negative outlier.",
+  "translation": "现在，我们有一个名为“类型”的列，该列将告诉我们当天的白酒销售是异常值，正异常值还是负异常值。"
+}, {
+  "tag": "P",
+  "text": "Let’s take a look at the distribution of the data to confirm the query worked. Here is a histogram which shows a bunch of day’s with almost no sales at all on the left and some days with really high sales on the right. Both of which should be investigated further.",
+  "translation": "让我们看一下数据分布，以确认查询是否有效。 这是一个直方图，左侧显示一整天几乎没有任何销售，右侧显示了几天的真正高销售。 两者都应进一步研究。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*KBt6KdycBdoULtnUJXr74w.jpeg?q=20",
+  "type": "image",
+  "file": "1*KBt6KdycBdoULtnUJXr74w.jpeg"
+}, {
+  "tag": "P",
+  "text": "Here is a boxplot showing the outliers. You can see that the boxplot mirrors the query with the positive outliers being identified around $2.1MM like we saw in the output above.",
+  "translation": "这是显示异常值的箱线图。 您可以看到该箱线图反映了查询，并在$ 2.1MM左右标识了正离群值，如上面的输出所示。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/23/1*vUzYh-k01jJ4cLFS8W4IjA.jpeg?q=20",
+  "type": "image",
+  "file": "1*vUzYh-k01jJ4cLFS8W4IjA.jpeg"
+}, {
+  "tag": "P",
+  "text": "Now you can schedule this query to run everyday (or as frequently as you need it) and output into a table. You then have a table, updated automatically that identifies outliers which you can connect to you’re visualization tool of choice.",
+  "translation": "现在，您可以安排此查询每天运行（或根据需要频繁运行）并输出到表中。 然后，您会得到一个表格，该表格会自动更新，以标识可以连接到您所选择的可视化工具的异常值。"
+}, {
+  "tag": "P",
+  "text": "You can also take this a step further and run this in a cloud function/lambda and automatically send slack alerts/emails through the api when anomalies are detected with some basic info about the anomaly. I automated slack alerts for anomalies at work this way and it has gone over really well. I’ll write a post about that in the future.",
+  "translation": "您还可以更进一步，并在云功能/ lambda中运行它，并在检测到异常并带有一些有关异常的基本信息时自动通过api发送松弛警报/电子邮件。 我以这种方式针对工作异常情况自动执行了松弛警报，并且效果非常好。 以后我会写一篇关于它的文章。"
+}, {
+  "tag": "P",
+  "text": "Something like this is really easy to get up and running in a short amount of time by anyone who can use SQL (analysts, data scientists, engineers etc.) and is also very effective. Now you can get back to you’re machine/deep learning 😃",
+  "translation": "像这样的事情对于任何可以使用SQL的人（分析师，数据科学家，工程师等）来说，都很容易在短时间内启动并运行，并且非常有效。 现在您可以回到机器/深度学习learning"
+}, {
+  "tag": "H1",
+  "text": "Anomaly Detection With SQL",
+  "translation": "使用SQL进行异常检测"
+}, {
+  "tag": "P",
+  "text": "There are many ways to detect anomalies in data and like most things in life, not really a clear and cut ‘right way’ it to do it. The approach you take will be dictated by your data but also the requirements of the project.",
+  "translation": "有很多方法可以检测数据异常，就像生活中的大多数事物一样，并不是真正清晰明了的“正确方法”。 您采用的方法将取决于您的数据以及项目的要求。"
+}, {
+  "tag": "P",
+  "text": "Is this something that needs to be as accurate as possible like credit fraud detection, do you just need to monitor some metrics for potential issues, does this need to be up and running fast or do you have 6 months to get it into production, what kind of resources do you have available to you etc.",
+  "translation": "这是否需要尽可能准确的信息（例如信用欺诈检测）？您是否只需要监视一些潜在问题的指标？是否需要快速启动并运行？或者您有6个月的时间才能投入生产？ 您有哪些可用资源等。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*5eAX2r7QvfE2qbr3b8xA7g.jpeg?q=20",
+  "caption": "Anomalies Detected!!",
+  "type": "image",
+  "file": "1*5eAX2r7QvfE2qbr3b8xA7g.jpeg"
+}, {
+  "tag": "P",
+  "text": "There’s two basic approaches to anomaly detection. You can go the rule based route or you can go the machine learning route. Machine learning models like Isolation forests, local outlier factor, autoencoders etc. can all be used to successfully detect anomalies. If you’re going that route, you should check out sklearn’s packages as well as the book Hands on Unsupervised Learning as good starting places.",
+  "translation": "有两种基本的异常检测方法。 您可以走基于规则的路线，也可以走机器学习路线。 诸如隔离林，局部离群因子，自动编码器等机器学习模型都可以用于成功检测异常。 如果您要沿着那条路走，则应该查看sklearn的软件包以及《动手无监督学习》一书作为良好的起点。"
+}, {
+  "tag": "P",
+  "text": "However, rule based methods work well, are easier to implement, easier to put into production and faster to get up and running. Based on your requirements, they may be the best solution.",
+  "translation": "但是，基于规则的方法可以很好地工作，易于实现，更易于投入生产并且可以更快地启动和运行。 根据您的要求，它们可能是最好的解决方案。"
+}, {
+  "tag": "P",
+  "text": "Look I get it, everyone wants to immediately go to machine/deep learning to solve problems because let’s face it, it’s fun and challenging. However, going the machine learning route isn’t always the best option, especially in a business environment.",
+  "translation": "我明白了，每个人都想立即进行机器/深度学习来解决问题，因为面对现实吧，这既有趣又充满挑战。 但是，走机器学习路线并不总是最好的选择，尤其是在商业环境中。"
+}, {
+  "tag": "P",
+  "text": "One rule based method that works well and is easy to implement in SQL is to use the interquartile range. The IQR is defined as the difference between the 75% percentile and the 25% percentile of your dataset.",
+  "translation": "一种有效且易于在SQL中实现的基于规则的方法是使用四分位间距。 IQR定义为数据集的75％和25％之间的差异。"
+}, {
+  "tag": "P",
+  "text": "If a data point is above the 75th percentile by 1.5x the IQR or more or below the 25th percentile by 1.5x the IQR or less, they can be considered outliers.",
+  "translation": "如果数据点高于75％百分率IQR的1.5倍或更多，或低于25％百分率IQR的1.5x或以下，则可以将它们视为离群值。"
+}, {
+  "tag": "UL",
+  "texts": ["Positive Outlier = 75th Percentile + 1.5 * (75th percentile - 25th percentile)", "Negative Outlier = 25th Percentile - 1.5 * (75th percentile - 25th percentile)"],
+  "translations": ["正离群值= 75％+ 1.5 *（75％-25％）", "负离群值= 25％-1.5 *（75％-25％）"]
+}, {
+  "tag": "P",
+  "text": "Why 1.5x and not 2x or 3x? 1.5x is pretty similar to 3 standard deviations above the mean (see the diagram below). You can certainly change it to 1.75x or 2.25x etc. depending on how ‘sensitive’ you want the outlier detection to be, which is another great thing about using the IQR.",
+  "translation": "为什么是1.5倍而不是2倍或3倍？ 1.5倍与平均值之上的3个标准差非常相似（请参见下图）。 当然，您可以将其更改为1.75x或2.25x等，具体取决于您希望异常检测的“敏感度”如何，这是使用IQR的另一件事。"
+}, {
+  "tag": "P",
+  "text": "Since the IQR uses the median instead of the average it’s considered a robust measure of scale and less likely to be influenced by a few outliers compared to measures that use the average such as standard deviation. This will make it easier to identify actual outliers.",
+  "translation": "由于IQR使用的是中位数而不是平均值，因此它被认为是衡量规模的可靠方法，并且与使用平均值（例如标准偏差）的度量值相比，它不太可能受到一些离群值的影响。 这将使识别实际异常值更加容易。"
+}, {
+  "tag": "P",
+  "text": "If you’ve ever seen a boxplot, that’s just the IQR method of outlier detection visualized. The ‘box’ is the IQR, the ‘whiskers’ are at the 25th and 75th percentile and any data points above those (called ‘fliers’) are the outliers as you can see from the below diagram:",
+  "translation": "如果您曾经看过箱形图，那只是可视化的IQR异常值检测方法。 您可以从下图中看到，“框”是IQR，“晶须”位于第25和第75个百分位，高于这些值的任何数据点（称为“传单”）都是离群值："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/28/1*VDPJfQLeXS4dtcw4xFxxXw.png?q=20",
+  "caption": "Source: Wikipedia",
+  "type": "image",
+  "file": "1*VDPJfQLeXS4dtcw4xFxxXw.png"
+}, {
+  "tag": "P",
+  "text": "A couple more notes about anomaly detection before we get to the example. Anomaly detection can be univariate or multivariate. Univariate is much simpler and easier to interpret since you can know easily which metric triggered the anomaly. If you have multiple metrics then you can just set up separate queries to detect anomalies for each metric which makes the end product much more interpretable. If you’re going the multivariate route, machine learning may be better suited for that. Anomaly detection can also be either supervised or unsupervised but the majority of the time it is unsupervised like we’re doing here.",
+  "translation": "在进入示例之前，还有一些关于异常检测的注意事项。 异常检测可以是单变量或多变量的。 单变量更容易理解，因为您可以轻松知道哪个指标触发了异常。 如果您有多个指标，则可以仅设置单独的查询以检测每个指标的异常情况，从而使最终产品的解释性更高。 如果您要使用多元路线，则机器学习可能更适合于此。 异常检测也可以是有监督的，也可以是无监督的，但是在大多数情况下，就像我们在这里所做的那样，是无监督的。"
+}]

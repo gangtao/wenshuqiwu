@@ -1,0 +1,621 @@
+[{
+  "tag": "H1",
+  "text": "An overview of time series forecasting models",
+  "translation": "时间序列预测模型概述"
+}, {
+  "tag": "H2",
+  "text": "We describe 10 forecasting models and we apply them to predict the evolution of an industrial production index",
+  "translation": "我们描述了10种预测模型，并将其应用于预测工业生产指数的演变"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*CIQbq-xmRUVxp1kNrO6tsg.jpeg?q=20",
+  "caption": "Photo by Drew Beamer on Unsplash",
+  "type": "image",
+  "file": "1*CIQbq-xmRUVxp1kNrO6tsg.jpeg"
+}, {
+  "tag": "P",
+  "text": "What is this article about?",
+  "translation": "这篇文章是关于什么的？"
+}, {
+  "tag": "P",
+  "text": "This article provides an overview of the main models available for modelling time series and forecasting their evolution. The models were developed in R and Python. The related code is available here.",
+  "translation": "本文概述了可用于对时间序列进行建模和预测其演变的主要模型。 这些模型是用R和Python开发的。 相关代码可在此处获得。"
+}, {
+  "tag": "P",
+  "text": "Time series forecasting is a hot topic which has many possible applications, such as stock prices forecasting, weather forecasting, business planning, resources allocation and many others. Even though forecasting can be considered as a subset of supervised regression problems, some specific tools are necessary due to the temporal nature of observations.",
+  "translation": "时间序列预测是一个热门话题，具有许多可能的应用，例如股票价格预测，天气预报，业务计划，资源分配等。 尽管可以将预测视为监督回归问题的子集，但由于观测的时间性质，某些特定的工具是必需的。"
+}, {
+  "tag": "P",
+  "text": "What is a time series?",
+  "translation": "什么是时间序列？"
+}, {
+  "tag": "P",
+  "text": "A time series is usually modelled through a stochastic process Y(t), i.e. a sequence of random variables. In a forecasting setting we find ourselves at time t and we are interested in estimating Y(t+h), using only information available at time t.",
+  "translation": "通常通过随机过程Y（t）来建模时间序列，即随机变量序列。 在预测设置中，我们在时间t处发现自己，并且我们仅使用时间t处可用的信息来估计Y（t + h）。"
+}, {
+  "tag": "P",
+  "text": "How to validate and test a time series model?",
+  "translation": "如何验证和测试时间序列模型？"
+}, {
+  "tag": "P",
+  "text": "Due to the temporal dependencies in time series data, we cannot rely on usual validation techniques. To avoid biased evaluations we must ensure that training sets contains observations that occurred prior to the ones in validation sets.",
+  "translation": "由于时间序列数据的时间依赖性，我们不能依赖常规的验证技术。 为了避免评估结果有偏差，我们必须确保训练集包含的观察值早于验证集中的观察值。"
+}, {
+  "tag": "P",
+  "text": "A possible way to overcome this problem is to use a sliding window, as described here. This procedure is called time series cross validation and it is summarised in the following picture, in which the blue points represents the training sets in each “fold” and the red points represent the corresponding validation sets.",
+  "translation": "解决此问题的一种可能方法是使用滑动窗，如此处所述。 此过程称为时间序列交叉验证，并在下图中概述，其中蓝点代表每个“折叠”中的训练集，红点代表相应的验证集。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*WhbBO3X-HHLWMiVWSjHWVA.png?q=20",
+  "caption": "Time series cross-validation. Credits to Rob J Hyndman",
+  "type": "image",
+  "file": "1*WhbBO3X-HHLWMiVWSjHWVA.png"
+}, {
+  "tag": "P",
+  "text": "If we are interested in forecasting the next n time steps, we can apply the cross validation procedure for 1,2,…,n steps ahead. In this way we can also compare the goodness of the forecasts for different time horizons.",
+  "translation": "如果我们有兴趣预测接下来的n个时间步长，则可以对交叉的1,2，…，n个步长应用交叉验证程序。 这样，我们还可以比较不同时间范围内的预测的优势。"
+}, {
+  "tag": "P",
+  "text": "Once we have chosen the best model, we can fit it on the entire training set and evaluate its performance on a separate test set subsequent in time. The performance estimate can be done by using the same sliding window technique used for cross validation, but without re-estimating the model parameters.",
+  "translation": "选择最佳模型后，我们就可以将其拟合到整个训练集中，并在随后的单独测试集中评估其性能。 可以通过使用与交叉验证相同的滑动窗口技术来完成性能估计，但无需重新估计模型参数。"
+}, {
+  "tag": "H1",
+  "text": "Short data exploration",
+  "translation": "简短的数据探索"
+}, {
+  "tag": "P",
+  "text": "In the next section we will apply different forecasting models to predict the evolution of the industrial production index which quantifies the electrical equipment manufactured in the Euro area.",
+  "translation": "在下一部分中，我们将应用不同的预测模型来预测工业生产指数的演变，该指数量化了在欧元区制造的电气设备。"
+}, {
+  "tag": "P",
+  "text": "The data can be easily downloaded through the fpp2 package in R. To make the data available outside R you can simply run the following code in a R environment.",
+  "translation": "可以通过R中的fpp2软件包轻松下载数据。要使数据在R之外可用，您只需在R环境中运行以下代码即可。"
+}, {
+  "tag": "PRE",
+  "text": "library(fpp2)write.csv(elecequip,file = “elecequip.csv”,row.names = FALSE)",
+  "translation": "library（fpp2）write.csv（elecequip，file =“ elecequip.csv”，row.names = FALSE）"
+}, {
+  "tag": "P",
+  "text": "The dataset corresponds to monthly manufacture of electrical equipment (computer, electronic and optical products) in the Euro area (17 countries) in the period January 1996-March 2012. We keep the last 2 years for testing purposes.",
+  "translation": "该数据集对应于1996年1月至2012年3月期间欧元区（17个国家）的电气设备（计算机，电子和光学产品）的月度制造。我们保留最近的两年用于测试。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*MKP6etHK8eOXoc4r-O0erw.png?q=20",
+  "type": "image",
+  "file": "1*MKP6etHK8eOXoc4r-O0erw.png"
+}, {
+  "tag": "P",
+  "text": "The time series has a peak at the end of 2000 and another one during 2007. The huge decrease that we observe at the end of 2008 is probably due to the global financial crisis which occurred during that year.",
+  "translation": "时间序列在2000年底达到峰值，在2007年达到另一个峰值。我们在2008年底观察到的大幅下降可能是由于该年发生的全球金融危机所致。"
+}, {
+  "tag": "P",
+  "text": "There seems to be a yearly seasonal pattern. To better visualise this, we show data for each year separately in both original and polar coordinates.",
+  "translation": "似乎每年都有季节性模式。 为了更好地可视化，我们分别以原始坐标和极坐标显示了每年的数据。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*q5uPp4OSalSYe4uSJy2nEA.png?q=20",
+  "type": "image",
+  "file": "1*q5uPp4OSalSYe4uSJy2nEA.png"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*Xy7C4mnm7ayytsDm9sbdyA.png?q=20",
+  "type": "image",
+  "file": "1*Xy7C4mnm7ayytsDm9sbdyA.png"
+}, {
+  "tag": "P",
+  "text": "We observe a strong seasonal pattern. In particular there is a huge decline in production in August due to the summer holidays.",
+  "translation": "我们观察到强烈的季节性模式。 特别是由于暑假，八月份的产量大幅下降。"
+}, {
+  "tag": "H1",
+  "text": "Time series forecasting models",
+  "translation": "时间序列预测模型"
+}, {
+  "tag": "P",
+  "text": "We will consider the following models:",
+  "translation": "我们将考虑以下模型："
+}, {
+  "tag": "P",
+  "text": "We are interested in forecasting 12 months of the industrial production index. Therefore, given data up to time t, we would like to predict the values taken by the index at times t+1,…,t+12.",
+  "translation": "我们有兴趣预测12个月的工业生产指数。 因此，给定时间t之前的数据，我们希望预测索引在时间t + 1，…，t + 12时所取的值。"
+}, {
+  "tag": "P",
+  "text": "We will use the Mean Absolute Error (MAE) to assess the performance of the models.",
+  "translation": "我们将使用平均绝对误差（MAE）来评估模型的性能。"
+}, {
+  "tag": "H2",
+  "text": "1) Naïve, SNaïve",
+  "translation": "1）天真，天真"
+}, {
+  "tag": "P",
+  "text": "In the Naïve model, the forecasts for every horizon correspond to the last observed value.",
+  "translation": "在朴素模型中，每个视野的预测都对应于最后一个观测值。"
+}, {
+  "tag": "P",
+  "text": "Ŷ(t+h|t) = Y(t)",
+  "translation": "Ŷ（t + h | t）= Y（t）"
+}, {
+  "tag": "P",
+  "text": "This kind of forecast assumes that the stochastic model generating the time series is a random walk.",
+  "translation": "这种预测假设生成时间序列的随机模型是随机游动。"
+}, {
+  "tag": "P",
+  "text": "An extension of the Naïve model is given by the SNaïve (Seasonal Naïve) model. Assuming that the time series has a seasonal component and that the period of the seasonality is T, the forecasts given by the SNaïve model are given by:",
+  "translation": "天真的模型的扩展由SNaïve（季节性天真）模型给出。 假设时间序列具有季节性成分，并且季节性周期为T，则SNaïve模型给出的预测如下："
+}, {
+  "tag": "P",
+  "text": "Ŷ(t+h|t) = Y(t+h-T)",
+  "translation": "Ŷ（t + h | t）= Y（t + h-T）"
+}, {
+  "tag": "P",
+  "text": "Therefore the forecasts for the following T time steps are equal to the previous T time steps. In our application, the SNaïve forecast for the next year is equal to the last year’s observations.",
+  "translation": "因此，接下来的T个时间步长的预测等于以前的T个时间步长。 在我们的应用中，对明年的SNaïve预测等于去年的观测值。"
+}, {
+  "tag": "P",
+  "text": "These models are often used as benchmark models. The following plots show the predictions obtained with the two models for the year 2007.",
+  "translation": "这些模型通常用作基准模型。 下图显示了使用这两种模型获得的2007年预测。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*aVBE9ixa9HEV4Zd3keZE4A.png?q=20",
+  "type": "image",
+  "file": "1*aVBE9ixa9HEV4Zd3keZE4A.png"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*Fnwnm1rESHQ98jWTzb8GTQ.png?q=20",
+  "type": "image",
+  "file": "1*Fnwnm1rESHQ98jWTzb8GTQ.png"
+}, {
+  "tag": "P",
+  "text": "The models were fitted by using the naive and snaive functions of the forecast R package.",
+  "translation": "通过使用预测R包的幼稚和自然功能对模型进行拟合。"
+}, {
+  "tag": "H2",
+  "text": "2) Seasonal decomposition (+ any model)",
+  "translation": "2）季节性分解（+任何模型）"
+}, {
+  "tag": "P",
+  "text": "If data shows some seasonality (e.g. daily, weekly, quarterly, yearly) it may be useful to decompose the original time series into the sum of three components:",
+  "translation": "如果数据显示某些季节性（例如每天，每周，每季度，每年），则将原始时间序列分解为三个部分的总和可能会很有用："
+}, {
+  "tag": "P",
+  "text": "Y(t) = S(t) + T(t) + R(t)",
+  "translation": "Y（t）= S（t）+ T（t）+ R（t）"
+}, {
+  "tag": "P",
+  "text": "where S(t) is the seasonal component, T(t) is the trend-cycle component, and R(t) is the remainder component.",
+  "translation": "其中S（t）是季节性成分，T（t）是趋势周期成分，R（t）是余量成分。"
+}, {
+  "tag": "P",
+  "text": "There exists several techniques to estimate such a decomposition. The most basic one is called classical decomposition and it consists in:",
+  "translation": "存在几种估计这种分解的技术。 最基本的一种称为经典分解，它包括："
+}, {
+  "tag": "P",
+  "text": "The classical decomposition has been extended in several ways. Its extensions allow to:",
+  "translation": "经典分解已通过多种方式扩展。 它的扩展允许："
+}, {
+  "tag": "UL",
+  "texts": ["have a non-constant seasonality", "compute initial and last values of the decomposition", "avoid over-smoothing"],
+  "translations": ["季节性不固定", "计算分解的初始值和最后值", "避免过度平滑"]
+}, {
+  "tag": "P",
+  "text": "To get an overview of time series decomposition methods you can click here. We will take advantage of the STL decomposition, which is known to be versatile and robust.",
+  "translation": "要获得时间序列分解方法的概述，请单击此处。 我们将利用STL分解的优势，该分解功能广泛且功能强大。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*CbtcVOwIbb6YCjy4vwM4ew.png?q=20",
+  "caption": "STL decomposition on industrial production index data",
+  "type": "image",
+  "file": "1*CbtcVOwIbb6YCjy4vwM4ew.png"
+}, {
+  "tag": "P",
+  "text": "One way to use the decomposition for forecasting purposes is the following:",
+  "translation": "将分解用于预测目的的一种方法如下："
+}, {
+  "tag": "P",
+  "text": "In the following picture we show the seasonally adjusted industrial production index time series.",
+  "translation": "在下图中，我们显示了经过季节性调整的工业生产指数时间序列。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*cHULmwPrix5qzqsj6Y8aKA.png?q=20",
+  "type": "image",
+  "file": "1*cHULmwPrix5qzqsj6Y8aKA.png"
+}, {
+  "tag": "P",
+  "text": "The following plot shows the predictions obtained for the year 2007 by using the STL decomposition and the naïve model to fit the seasonally adjusted time series.",
+  "translation": "下图显示了通过使用STL分解和朴素模型来拟合季节性调整后的时间序列而获得的2007年预测。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*FNEgns8FKPYi2ZqiSIHHcw.png?q=20",
+  "type": "image",
+  "file": "1*FNEgns8FKPYi2ZqiSIHHcw.png"
+}, {
+  "tag": "P",
+  "text": "The decomposition was fitted by using the stl function of the stats R package.",
+  "translation": "使用stats R包的stl函数拟合分解结果。"
+}, {
+  "tag": "H2",
+  "text": "3) Exponential smoothing",
+  "translation": "3）指数平滑"
+}, {
+  "tag": "P",
+  "text": "Exponential smoothing is one of the most successful classical forecasting methods. In its basic form it is called simple exponential smoothing and its forecasts are given by:",
+  "translation": "指数平滑是最成功的经典预测方法之一。 它的基本形式称为简单指数平滑，其预测如下："
+}, {
+  "tag": "P",
+  "text": "Ŷ(t+h|t) = ⍺y(t) + ⍺(1-⍺)y(t-1) + ⍺(1-⍺)²y(t-2) + …",
+  "translation": "Ŷ（t + h | t）=⍺y（t）+⍺（1-⍺）y（t-1）+⍺（1-⍺）²y（t-2）+…"
+}, {
+  "tag": "P",
+  "text": "with 0<⍺<1.",
+  "translation": "0 <⍺<1。"
+}, {
+  "tag": "P",
+  "text": "We can see that forecasts are equal to a weighted average of past observations and the corresponding weights decrease exponentially as we go back in time.",
+  "translation": "我们可以看到，预测等于过去观察的加权平均值，并且随着时间的推移，相应的权重呈指数下降。"
+}, {
+  "tag": "P",
+  "text": "Several extensions of the simple exponential smoothing have been proposed in order to include trend or damped trend and seasonality. The exponential smoothing family is composed of 9 models which are fully described here.",
+  "translation": "为了包括趋势或衰减趋势和季节性，已经提出了简单指数平滑的几个扩展。 指数平滑族由9个模型组成，此处将对其进行全面描述。"
+}, {
+  "tag": "P",
+  "text": "The following plots show the predictions obtained for the year 2007 by using exponential smoothing models (automatically selected) to fit both the original and the seasonally adjusted time series.",
+  "translation": "下图显示了通过使用指数平滑模型（自动选择）来拟合原始时间序列和季节性调整后的时间序列而获得的2007年预测。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*8aqqeP7QVXvQPCb0IdVrCA.png?q=20",
+  "type": "image",
+  "file": "1*8aqqeP7QVXvQPCb0IdVrCA.png"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*IHP-NmO4w75bhJDB6ezTUw.png?q=20",
+  "type": "image",
+  "file": "1*IHP-NmO4w75bhJDB6ezTUw.png"
+}, {
+  "tag": "P",
+  "text": "The models were fitted by using the ets function of the forecast R package.",
+  "translation": "通过使用预测R包的ets函数对模型进行拟合。"
+}, {
+  "tag": "H2",
+  "text": "4) ARIMA, SARIMA",
+  "translation": "4）ARIMA，SARIMA"
+}, {
+  "tag": "P",
+  "text": "As for exponential smoothing, also ARIMA models are among the most widely used approaches for time series forecasting. The name is an acronym for AutoRegressive Integrated Moving Average.",
+  "translation": "关于指数平滑，ARIMA模型也是时间序列预测中使用最广泛的方法之一。 该名称是AutoRegressive集成移动平均线的首字母缩写。"
+}, {
+  "tag": "P",
+  "text": "In an AutoRegressive model the forecasts correspond to a linear combination of past values of the variable. In a Moving Average model the forecasts correspond to a linear combination of past forecast errors.",
+  "translation": "在自回归模型中，预测对应于变量过去值的线性组合。 在移动平均模型中，预测对应于过去预测误差的线性组合。"
+}, {
+  "tag": "P",
+  "text": "Basically, the ARIMA models combine these two approaches. Since they require the time series to be stationary, differencing (Integrating) the time series may be a necessary step, i.e. considering the time series of the differences instead of the original one.",
+  "translation": "基本上，ARIMA模型将这两种方法结合在一起。 由于它们要求时间序列是固定的，因此对时间序列进行微分（积分）可能是必要的步骤，即考虑差异的时间序列而不是原始时间序列。"
+}, {
+  "tag": "P",
+  "text": "The SARIMA model (Seasonal ARIMA) extends the ARIMA by adding a linear combination of seasonal past values and/or forecast errors.",
+  "translation": "SARIMA模型（季节性ARIMA）通过添加季节性过去值和/或预测误差的线性组合来扩展ARIMA。"
+}, {
+  "tag": "P",
+  "text": "For a complete introduction to ARIMA and SARIMA models, click here.",
+  "translation": "有关ARIMA和SARIMA模型的完整介绍，请单击此处。"
+}, {
+  "tag": "P",
+  "text": "The following plots show the predictions obtained for the year 2007 by using a SARIMA model and an ARIMA model on the seasonally adjusted time series.",
+  "translation": "下图显示了通过季节性调整后的时间序列使用SARIMA模型和ARIMA模型获得的2007年预测。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*qR6hFOVSTu_-EJ9-sCo9mg.png?q=20",
+  "type": "image",
+  "file": "1*qR6hFOVSTu_-EJ9-sCo9mg.png"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*vvXEmRDjXz6TUGaxOGkhkQ.png?q=20",
+  "type": "image",
+  "file": "1*vvXEmRDjXz6TUGaxOGkhkQ.png"
+}, {
+  "tag": "P",
+  "text": "The models were fitted by using the auto.arima and Arima functions of the forecast R package.",
+  "translation": "通过使用预测R包的auto.arima和Arima函数对模型进行拟合。"
+}, {
+  "tag": "H2",
+  "text": "5) GARCH",
+  "translation": "5）GARCH"
+}, {
+  "tag": "P",
+  "text": "The previous models assumed that the error terms in the stochastic processes generating the time series were heteroskedastic, i.e. with constant variance.",
+  "translation": "先前的模型假设在生成时间序列的随机过程中的误差项是异方差的，即具有恒定的方差。"
+}, {
+  "tag": "P",
+  "text": "Instead, the GARCH model assumes that the variance of the error terms follows an AutoRegressive Moving Average (ARMA) process, therefore allowing it to change in time. It is particularly useful for modelling financial time series whose volatility changes across time. The name is an acronym for Generalised Autoregressive Conditional Heteroskedasticity.",
+  "translation": "取而代之的是，GARCH模型假定误差项的方差遵循自回归移动平均（ARMA）过程，因此允许其随时间变化。 这对于建模随时间变化的金融时间序列特别有用。 该名称是广义自回归条件异方差的首字母缩写。"
+}, {
+  "tag": "P",
+  "text": "Usually an ARMA process is assumed for the mean as well. For a complete introduction to GARCH models you can click here and here.",
+  "translation": "通常，均值也假定采用ARMA过程。 有关GARCH模型的完整介绍，请单击此处和此处。"
+}, {
+  "tag": "P",
+  "text": "The following plots show the predictions obtained for the year 2007 by using a GARCH model to fit the seasonally adjusted time series.",
+  "translation": "下图显示了使用GARCH模型拟合季节性调整后的时间序列得出的2007年预测。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*ZpFI_1zOmonJmmIW8uVjRg.png?q=20",
+  "type": "image",
+  "file": "1*ZpFI_1zOmonJmmIW8uVjRg.png"
+}, {
+  "tag": "P",
+  "text": "The model was fitted by using the ugarchfitfunction of the rugarch R package.",
+  "translation": "通过使用rugarch R包的ugarchfit函数拟合模型。"
+}, {
+  "tag": "H2",
+  "text": "6) Dynamic linear models",
+  "translation": "6）动态线性模型"
+}, {
+  "tag": "P",
+  "text": "Dynamic linear models represent another class of models for time series forecasting. The idea is that at each time t these models correspond to a linear model, but the regression coefficients change in time. An example of dynamic linear model is given below.",
+  "translation": "动态线性模型代表了用于时间序列预测的另一类模型。 想法是，这些模型每次都对应于一个线性模型，但是回归系数随时间变化。 动态线性模型的示例如下。"
+}, {
+  "tag": "P",
+  "text": "y(t) = ⍺(t) + tβ(t) + w(t)",
+  "translation": "y（t）=⍺（t）+tβ（t）+ w（t）"
+}, {
+  "tag": "P",
+  "text": "⍺(t) = ⍺(t-1) + m(t)",
+  "translation": "⍺（t）=⍺（t-1）+ m（t）"
+}, {
+  "tag": "P",
+  "text": "β(t) = β(t-1) + r(t)",
+  "translation": "β（t）=β（t-1）+ r（t）"
+}, {
+  "tag": "P",
+  "text": "w(t)~N(0,W) , m(t)~N(0,M) , r(t)~N(0,R)",
+  "translation": "w（t）〜N（0，W），m（t）〜N（0，M），r（t）〜N（0，R）"
+}, {
+  "tag": "P",
+  "text": "In the previous model the coefficients ⍺(t) and β(t) follow a random walk process.",
+  "translation": "在先前的模型中，系数⍺（t）和β（t）遵循随机游走过程。"
+}, {
+  "tag": "P",
+  "text": "Dynamic linear models can be naturally modelled in a Bayesian framework; however maximum likelihood estimation techniques are still available. For a complete overview of dynamic linear models, click here.",
+  "translation": "动态线性模型可以在贝叶斯框架中自然建模。 但是，最大似然估计技术仍然可用。 有关动态线性模型的完整概述，请单击此处。"
+}, {
+  "tag": "P",
+  "text": "The following plot shows the predictions obtained for the year 2007 by using a dynamic linear model to fit the seasonally adjusted time series. Due to heavy computational costs I had to keep the model extremely simple which resulted in poor forecasts.",
+  "translation": "下图显示了通过使用动态线性模型来拟合季节性调整后的时间序列获得的2007年预测。 由于沉重的计算成本，我不得不使模型保持极其简单，从而导致预测不佳。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*r3B7_-Qsf7YLa2cPI01vFA.png?q=20",
+  "type": "image",
+  "file": "1*r3B7_-Qsf7YLa2cPI01vFA.png"
+}, {
+  "tag": "P",
+  "text": "The model was fitted by using the dlmMLEfunction of the dlm R package.",
+  "translation": "通过使用dlm R软件包的dlmMLEfunction拟合模型。"
+}, {
+  "tag": "H2",
+  "text": "7) TBATS",
+  "translation": "7）TBATS"
+}, {
+  "tag": "P",
+  "text": "The TBATS model is a forecasting model based on exponential smoothing. The name is an acronym for Trigonometric, Box-Cox transform, ARMA errors, Trend and Seasonal components.",
+  "translation": "TBATS模型是基于指数平滑的预测模型。 该名称是“三角函数”，“ Box-Cox变换”，“ ARMA错误”，“趋势”和“季节性”组件的首字母缩写。"
+}, {
+  "tag": "P",
+  "text": "The main feature of TBATS model is its capability to deal with multiple seasonalities by modelling each seasonality with a trigonometric representation based on Fourier series. A classic example of complex seasonality is given by daily observations of sales volumes which often have both weekly and yearly seasonality.",
+  "translation": "TBATS模型的主要特征是它能够通过使用基于傅立叶级数的三角表示对每个季节建模来处理多个季节。 复杂的季节性的经典示例是对销售量的每日观察，该观察通常具有每周和每年的季节性。"
+}, {
+  "tag": "P",
+  "text": "For a complete introduction of TBATS model, click here.",
+  "translation": "有关TBATS模型的完整介绍，请单击此处。"
+}, {
+  "tag": "P",
+  "text": "The following plot shows the predictions obtained for the year 2007 by using a TBATS model to fit the time series.",
+  "translation": "下图显示了使用TBATS模型拟合时间序列获得的2007年预测。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*qVPxSsrASA1JydE005jddQ.png?q=20",
+  "type": "image",
+  "file": "1*qVPxSsrASA1JydE005jddQ.png"
+}, {
+  "tag": "P",
+  "text": "The model was fitted by using the tbats function of the forecast R package.",
+  "translation": "通过使用预测R包的tbats函数拟合模型。"
+}, {
+  "tag": "H2",
+  "text": "8) Prophet",
+  "translation": "8）先知"
+}, {
+  "tag": "P",
+  "text": "Prophet is another forecasting model which allows to deal with multiple seasonalities. It is an open source software released by Facebook’s Core Data Science team.",
+  "translation": "先知是另一个可以处理多个季节的预测模型。 这是Facebook核心数据科学团队发布的开源软件。"
+}, {
+  "tag": "P",
+  "text": "The prophet model assumes that the the time series can be decomposed as follows:",
+  "translation": "先知模型假定时间序列可以分解如下："
+}, {
+  "tag": "P",
+  "text": "y(t) = g(t) + s(t) + h(t) + ε(t)",
+  "translation": "y（t）= g（t）+ s（t）+ h（t）+ε（t）"
+}, {
+  "tag": "P",
+  "text": "The three terms g(t), s(t) and h(t) correspond respectively to trend, seasonality and holiday. The last term is the error term.",
+  "translation": "g（t），s（t）和h（t）这三个术语分别对应于趋势，季节性和假日。 最后一项是错误项。"
+}, {
+  "tag": "P",
+  "text": "The model fitting is framed as a curve-fitting exercise, therefore it does not explicitly take into account the temporal dependence structure in the data. This also allows to have irregularly spaced observations.",
+  "translation": "模型拟合被构造为曲线拟合练习，因此没有明确考虑数据中的时间依赖性结构。 这也允许具有不规则间隔的观察。"
+}, {
+  "tag": "P",
+  "text": "There are two options for trend time series: a saturating growth model, and a piecewise linear model. The multi-period seasonality model relies on Fourier series. The effect of known and custom holydays can be easily incorporated into the model.",
+  "translation": "趋势时间序列有两种选择：饱和增长模型和分段线性模型。 多期季节性模型依赖于傅立叶级数。 可以将已知和自定义的节假日的效果轻松纳入模型。"
+}, {
+  "tag": "P",
+  "text": "The prophet model is inserted in a Bayesian framework and it allows to make full posterior inference to include model parameter uncertainty in the forecast uncertainty.",
+  "translation": "先知模型被插入贝叶斯框架中，并允许进行完全后验推断，以将模型参数不确定性包括在预测不确定性中。"
+}, {
+  "tag": "P",
+  "text": "For a complete introduction to Prophet model, click here.",
+  "translation": "有关Prophet模型的完整介绍，请单击此处。"
+}, {
+  "tag": "P",
+  "text": "The following plot shows the predictions obtained for the year 2007 by using a Prophet model to fit the time series.",
+  "translation": "下图显示了通过使用Prophet模型拟合时间序列获得的2007年预测。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*pi7yf-9lkumhpr-TTsE6qw.png?q=20",
+  "type": "image",
+  "file": "1*pi7yf-9lkumhpr-TTsE6qw.png"
+}, {
+  "tag": "P",
+  "text": "The model was fitted by using the prophet function of the prophet R package.",
+  "translation": "通过使用先知R包的先知功能对模型进行拟合。"
+}, {
+  "tag": "H2",
+  "text": "9) NNETAR",
+  "translation": "9）NNETAR"
+}, {
+  "tag": "P",
+  "text": "The NNETAR model is a fully connected neural network. The acronym stands for Neural NETwork AutoRegression.",
+  "translation": "NNETAR模型是一个完全连接的神经网络。 首字母缩写词代表“神经网络自回归”。"
+}, {
+  "tag": "P",
+  "text": "The NNETAR model takes in input the last elements of the sequence up to time t and outputs the forecasted value at time t+1. To perform multi-steps forecasts the network is applied iteratively.",
+  "translation": "NNETAR模型输入直到时间t为止序列的最后一个元素，并在时间t + 1处输出预测值。 为了执行多步骤预测，需要迭代地应用网络。"
+}, {
+  "tag": "P",
+  "text": "In presence of seasonality, the input may include also the seasonally lagged time series. For a complete introduction to NNETAR models, click here.",
+  "translation": "在存在季节性的情况下，输入还可以包括季节性滞后的时间序列。 有关NNETAR模型的完整介绍，请单击此处。"
+}, {
+  "tag": "P",
+  "text": "The following plots show the predictions obtained for the year 2007 obtained by using a NNETAR model with seasonally lagged input and a NNETAR model on the seasonally adjusted time series.",
+  "translation": "下图显示了使用具有季节性滞后输入的NNETAR模型和经过季节性调整的时间序列的NNETAR模型获得的2007年的预测。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*Fmvixsq2kjzdfU_Hs1FcfA.png?q=20",
+  "type": "image",
+  "file": "1*Fmvixsq2kjzdfU_Hs1FcfA.png"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*6b5x-WXGz2DpkB8YxCUL3w.png?q=20",
+  "type": "image",
+  "file": "1*6b5x-WXGz2DpkB8YxCUL3w.png"
+}, {
+  "tag": "P",
+  "text": "The models were fitted by using the nnetar function of the forecast R package.",
+  "translation": "使用预测R包的nnetar函数拟合模型。"
+}, {
+  "tag": "H2",
+  "text": "10) LSTM",
+  "translation": "10）LSTM"
+}, {
+  "tag": "P",
+  "text": "LSTM models can be used to forecast time series (as well as other Recurrent Neural Networks). LSTM is an acronym that stands for Long-Short Term Memories.",
+  "translation": "LSTM模型可用于预测时间序列（以及其他递归神经网络）。 LSTM是首字母缩写词，代表长期记忆。"
+}, {
+  "tag": "P",
+  "text": "The state of a LSTM network is represented through a state space vector. This technique allows to keep tracks of dependencies of new observations with past ones (even very far ones).",
+  "translation": "LSTM网络的状态通过状态空间向量表示。 这种技术可以跟踪新观测值与过去观测值（甚至很远的观测值）之间的依存关系。"
+}, {
+  "tag": "P",
+  "text": "LSTMs may benefit from transfer learning techniques even when applied to standard time series, as shown here. However, they are mostly used with unstructured data (e.g. audio, text, video).",
+  "translation": "如此处所示，即使将LSTM应用于标准时间序列，也可以从迁移学习技术中受益。 但是，它们通常用于非结构化数据（例如音频，文本，视频）。"
+}, {
+  "tag": "P",
+  "text": "For a complete introduction on using LSTM to forecast time series, click here.",
+  "translation": "有关使用LSTM预测时间序列的完整介绍，请单击此处。"
+}, {
+  "tag": "P",
+  "text": "The following plot shows the predictions for the first year in the test set obtained by fitting a LSTM model on the seasonally adjusted time series.",
+  "translation": "下图显示了通过在季节性调整的时间序列上拟合LSTM模型获得的测试集中第一年的预测。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*44C3YTZnbh3CH9_JI_0qJQ.png?q=20",
+  "type": "image",
+  "file": "1*44C3YTZnbh3CH9_JI_0qJQ.png"
+}, {
+  "tag": "P",
+  "text": "The model was fitted by using the Keras framework in Python.",
+  "translation": "该模型通过使用Python中的Keras框架进行拟合。"
+}, {
+  "tag": "H1",
+  "text": "Evaluation",
+  "translation": "评估"
+}, {
+  "tag": "P",
+  "text": "We performed model selection through the cross-validation procedure described previously. We didn’t compute it for dynamic linear models and LSTM models due to their high computational cost and poor performance.",
+  "translation": "我们通过前面描述的交叉验证过程执行了模型选择。 由于动态线性模型和LSTM模型的计算成本较高且性能较差，因此我们并未对其进行计算。"
+}, {
+  "tag": "P",
+  "text": "In the following picture we show the cross-validated MAE for each model and for each time horizon.",
+  "translation": "在下图中，我们显示了每个模型和每个时间范围的交叉验证的MAE。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*hv3BbNSUU1R386x4XxBUkg.png?q=20",
+  "type": "image",
+  "file": "1*hv3BbNSUU1R386x4XxBUkg.png"
+}, {
+  "tag": "P",
+  "text": "We can see that, for time horizons greater than 4, the NNETAR model on the seasonally adjusted data performed better than the others. Let’s check the overall MAE computed by averaging over different time horizons.",
+  "translation": "我们可以看到，对于大于4的时间范围，经季节性调整的数据的NNETAR模型的效果要优于其他模型。 让我们检查通过对不同时间范围进行平均计算得出的总体MAE。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*hSk2tyt4Z4qIUxj2hrdsRg.png?q=20",
+  "caption": "Cross-validated MAE",
+  "type": "image",
+  "file": "1*hSk2tyt4Z4qIUxj2hrdsRg.png"
+}, {
+  "tag": "P",
+  "text": "The NNETAR model on the seasonally adjusted data was the best model for this application since it corresponded to the lowest cross-validated MAE.",
+  "translation": "经季节性调整的数据上的NNETAR模型是此应用程序的最佳模型，因为它对应于最低的交叉验证的MAE。"
+}, {
+  "tag": "P",
+  "text": "To get an unbiased estimation of the best model performance, we computed the MAE on the test set, obtaining an estimate equal to 5,24. In the following picture we can see the MAE estimated on the test set for each time horizon.",
+  "translation": "为了获得最佳模型性能的无偏估计，我们在测试集上计算了MAE，得出的估计值等于5,24。 在下图中，我们可以看到每个时间范围内测试集上估计的MAE。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*y4VVxgVL-S5x3NbOss1VnA.png?q=20",
+  "type": "image",
+  "file": "1*y4VVxgVL-S5x3NbOss1VnA.png"
+}, {
+  "tag": "H2",
+  "text": "How to further improve performance",
+  "translation": "如何进一步提高绩效"
+}, {
+  "tag": "P",
+  "text": "Other techniques to increase models performance could be:",
+  "translation": "其他提高模型性能的技术可能是："
+}, {
+  "tag": "UL",
+  "texts": ["Using different models for different time horizons", "Combining multiple forecasts (e.g. considering the average prediction)", "Bootstrap Aggregating"],
+  "translations": ["针对不同的时间范围使用不同的模型", "结合多个预测（例如考虑平均预测）", "自举聚合"]
+}, {
+  "tag": "P",
+  "text": "The last technique can be summarised as follows:",
+  "translation": "最后一种技术可以总结如下："
+}, {
+  "tag": "P",
+  "text": "For a complete introduction to Bootstrap Aggregating, click here.",
+  "translation": "有关Bootstrap聚合的完整介绍，请单击此处。"
+}, {
+  "tag": "H2",
+  "text": "Other models",
+  "translation": "其他型号"
+}, {
+  "tag": "P",
+  "text": "Other models not included in this list are for instance:",
+  "translation": "此列表中未包括的其他模型例如："
+}, {
+  "tag": "UL",
+  "texts": ["Any standard regression model, taking time as input (and/or other features)", "Encoder Decoder models, which are tipically used in NLP tasks (e.g. translation)", "Wavenet and other Attention Networks, which are tipically applied to unstructured data (e.g. Text-to-Speech)"],
+  "translations": ["以时间为输入的任何标准回归模型（和/或其他功能）", "编码器解码器模型，通常用于NLP任务（例如翻译）", "Wavenet和其他Attention网络，通常用于非结构化数据（例如，文本到语音）"]
+}, {
+  "tag": "H1",
+  "text": "Final remarks",
+  "translation": "结束语"
+}, {
+  "tag": "P",
+  "text": "The goal of this project wasn’t to fit the best possible forecasting model for industrial production index, but to give an overview of forecasting models. In a real world application a lot of time should be spent on preprocessing, feature engineering and feature selection.",
+  "translation": "该项目的目的不是要适合工业生产指数的最佳预测模型，而是要概述预测模型。 在实际应用中，应在预处理，特征工程和特征选择上花费大量时间。"
+}, {
+  "tag": "P",
+  "text": "Most of the previously described models allow to easily incorporate time varying predictors. These could be extracted from the same time series or could correspond to external predictors (e.g. the time series of another index). In the latter case we should pay attention to not use information from the future, which could be satisfied by forecasting the predictors or by using their lagged versions.",
+  "translation": "先前描述的大多数模型都可以轻松地合并时变预测变量。 这些可以从相同的时间序列中提取，也可以对应于外部预测变量（例如，另一个索引的时间序列）。 在后一种情况下，我们应注意不要使用将来的信息，这可以通过预测预测变量或使用其滞后版本来满足。"
+}]
