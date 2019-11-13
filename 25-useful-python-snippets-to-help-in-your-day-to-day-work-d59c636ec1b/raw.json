@@ -360,4 +360,8 @@
   "tag": "P",
   "text": "The advantages of using Python when compared to other programming languages are:",
   "translation": "与其他编程语言相比，使用Python的优势在于："
+}, {
+  "tag": "OL",
+  "texts": ["Compatible with major platforms and operating systems", "Many open-source frameworks and tools", "Readable and maintainable code", "Robust standard library", "Standard test-driven development"],
+  "translations": ["与主要平台和操作系统兼容", "许多开源框架和工具", "可读且可维护的代码", "强大的标准库", "标准测试驱动的开发"]
 }]
