@@ -228,7 +228,8 @@
   "translation": "下一个功能用于将角度从度转换为弧度。"
 }, {
   "tag": "PRE",
-  "text": "import mathdef degrees_to_radians(deg):  return (deg * math.pi) / 180.0degrees_to_radians(90) # 1.5707963267948966"
+  "text": "import mathdef degrees_to_radians(deg):  return (deg * math.pi) / 180.0degrees_to_radians(90) # 1.5707963267948966",
+  "translation": "导入mathdef degree_to_radians（deg）：返回（deg * math.pi）/ 180.0degrees_to_radians（90）＃1.5707963267948966"
 }, {
   "tag": "H2",
   "text": "17. Calculate time taken to execute a piece of code",
