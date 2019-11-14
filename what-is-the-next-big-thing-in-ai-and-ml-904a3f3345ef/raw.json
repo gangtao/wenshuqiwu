@@ -1,0 +1,391 @@
+[{
+  "tag": "H1",
+  "text": "Keeping up with AI in 2019",
+  "translation": "在2019年跟上AI"
+}, {
+  "tag": "H2",
+  "text": "What is the next big thing in AI and ML?",
+  "translation": "AI和ML的下一件大事是什么？"
+}, {
+  "tag": "P",
+  "text": "The past year has been rich in events, discoveries and developments in AI. It is hard to sort through the noise to see if the signal is there and, if it is, what is the signal saying. This post attempts to get you exactly that: I’ll try to extract some of the patterns in the AI landscape over the past year. And, if we are lucky, we’ll see how some of the trends extend into the near future.",
+  "translation": "过去的一年中，AI的事件，发现和发展非常丰富。 很难对噪声进行分类以查看信号是否存在以及信号的含义。 这篇文章试图为您提供确切的信息：在过去的一年中，我将尝试提取AI格局中的一些模式。 而且，如果幸运的话，我们将看到一些趋势如何延续到不久的将来。"
+}, {
+  "tag": "P",
+  "text": "Confucius is quoted saying: “The hardest thing of all is to find a black cat in a dark room, especially if there is no cat.” Wise man.",
+  "translation": "引用孔子的话说：“最困难的是在黑暗的房间里找到一只黑猫，尤其是在没有猫的情况下。”明智的人。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*NVLoi3vu-9kry4t2?q=20",
+  "caption": "See that cat?",
+  "type": "image",
+  "file": "0*NVLoi3vu-9kry4t2"
+}, {
+  "tag": "P",
+  "text": "Make no mistake: this is an opinion piece. I am not trying to establish some comprehensive record of accomplishments for the year. I am merely trying to outline some of these trends. Another caveat : this review is US-centric. A lot of interesting things are happening, say, in China, but I, unfortunately, am not familiar with that exciting ecosystem.",
+  "translation": "没错：这是一个观点。 我不是要建立年度的综合成绩记录。 我只是试图概述其中一些趋势。 另一个警告：此评论以美国为中心。 例如，中国正在发生很多有趣的事情，但是不幸的是，我对那个令人兴奋的生态系统并不熟悉。"
+}, {
+  "tag": "P",
+  "text": "Who is this post for? If you are still reading, it is probably for you: an engineer, who wants to widen their horizons; an entrepreneur, looking where to direct their energy next; a venture capitalist, looking for their next deal; or just a technology cheerleader, who can’t wait to see where this whirlwind is taking us next.",
+  "translation": "这个帖子是给谁的？ 如果您仍在阅读，那么它可能适合您：想拓宽视野的工程师； 一个企业家，寻找下一个方向去引导他们的精力； 一个风险资本家，寻找他们的下一笔交易； 或只是技术啦啦队长，谁都迫不及待地想看看这种旋风将我们带往何处。"
+}, {
+  "tag": "H1",
+  "text": "Algorithms",
+  "translation": "演算法"
+}, {
+  "tag": "P",
+  "text": "The algorithmic discourse was, undoubtedly, dominated by the Deep Neural Networks. Of course, you would hear about someone deploying a “classical” machine learning model (like Gradient Boosted trees or Multi-armed bandits) here and there. And claiming that it’s the only thing anyone ever needed. There are proclamations, that deep learning is at its death throes. Even top researchers are questioning the efficiency and robustness of some DNN architectures. But, like it or not, DNNs were everywhere: in self-driving cars, natural language systems, robots — you name it. None of the leaps in DNNs were as pronounced as in Natural Language Processing, Generative Adversarial Networks, and deep Reinforcement Learning.",
+  "translation": "毫无疑问，算法论述是由深度神经网络主导的。 当然，您会听说有人在各处部署“经典”机器学习模型（例如Gradient Boosted树或Multi-armed土匪）。 并声称这是任何人唯一需要的东西。 有人宣称，深度学习正处于死亡的困境。 甚至顶级研究人员都对某些DNN架构的效率和健壮性提出质疑。 但是，不管喜欢与否，DNN无处不在：在无人驾驶汽车，自然语言系统，机器人中，您都可以说出来。 DNN的飞跃没有像自然语言处理，生成对抗网络和深度强化学习那样明显。"
+}, {
+  "tag": "H2",
+  "text": "Deep NLP: BERT et al.",
+  "translation": "深度NLP：BERT等。"
+}, {
+  "tag": "P",
+  "text": "Though before 2018 there had been several breakthroughs in using DNNs for text (word2vec, GLOVE, LSTM-based models come to mind), one key conceptual element was missing: transfer learning. That is, training a model on a large amount of publicly available data, and then “fine-tuning” it on the specific dataset you are working with. In computer vision, using the patterns discovered on the famous ImageNet dataset to a specific problem was, usually, a part of a solution.",
+  "translation": "尽管在2018年之前使用DNN进行文本方面取得了一些突破（想到了word2vec，GLOVE，基于LSTM的模型），但缺少了一个关键的概念元素：转移学习。 也就是说，在大量公开可用数据上训练模型，然后在正在使用的特定数据集上对其进行“微调”。 在计算机视觉中，使用在著名的ImageNet数据集上发现的模式来解决特定问题通常是解决方案的一部分。"
+}, {
+  "tag": "P",
+  "text": "The problem was, the techniques used for transfer learning didn’t really apply well to NLP problems. In some sense, the pre-trained embeddings like word2vec were filling that role, but they work on a single word level and fail to capture the high level structure of language.",
+  "translation": "问题是，用于迁移学习的技术实际上不适用于NLP问题。 从某种意义上说，像word2vec这样的经过预训练的嵌入可以填补这一角色，但它们只能在单个单词级别上工作，而无法捕获语言的高级结构。"
+}, {
+  "tag": "P",
+  "text": "In 2018, however, this has changed. ELMo, contextualized embeddings became the first significant step to improved transfer learning in NLP. ULMFiT went even further: not satisfied with the semantic capturing capability of embeddings, the authors figured out a way to do a transfer learning for the entire model.",
+  "translation": "然而，在2018年，情况发生了变化。 ELMo，上下文化的嵌入成为改善NLP中的转移学习的重要的第一步。 ULMFiT甚至走得更远：作者对嵌入的语义捕获功能不满意，他们想出了一种对整个模型进行迁移学习的方法。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*S5L044q215w-mg6j?q=20",
+  "caption": "The important guy.",
+  "type": "image",
+  "file": "0*S5L044q215w-mg6j"
+}, {
+  "tag": "P",
+  "text": "But the most interesting development was, definitely, the introduction of BERT. By letting the language model learn from the entire collection of articles from English Wikipedia, the team was able to achieve state-of-the-art results on 11 NLP tasks — quite a feat! Even better, both the code and the pre-trained modes were published online — so you can apply this breakthrough to your own problem.",
+  "translation": "但是，最有趣的发展肯定是BERT的引入。 通过让语言模型从英语Wikipedia的全部文章中学习，该团队得以在11个NLP任务上取得了最新的成果-相当了不起！ 更好的是，代码和预训练模式都在线发布了-因此您可以将此突破应用于您自己的问题。"
+}, {
+  "tag": "H2",
+  "text": "Many Faces of GANs",
+  "translation": "GAN的许多面孔"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*4CIByVmyt17M-iQW?q=20",
+  "type": "image",
+  "file": "0*4CIByVmyt17M-iQW"
+}, {
+  "tag": "P",
+  "text": "CPU speeds are not growing exponentially any more, but the number of academic papers on Generative Adversarial Networks surely seems to be continuing to grow. GANs have been an academic darling for many years now. The real life applications seem to be few and far between though, and it changed very little in 2018. Still GANs have amazing potential waiting to be realized.",
+  "translation": "CPU速度不再呈指数级增长，但是有关生成对抗网络的学术论文的数量似乎肯定还在继续增长。 GAN多年来一直是学术界的宠儿。 现实生活中的应用似乎很少，而且相差甚远，并且在2018年变化不大。GAN仍有巨大的潜力有待实现。"
+}, {
+  "tag": "P",
+  "text": "A new approach, that emerged, was an idea of progressively growing GANs: getting the generator to increase the resolution of its output progressively throughout the training process. One of the more impressive papers that used this approach was employing style transfer techniques to generate realistic looking photos. How realistic? You tell me:",
+  "translation": "出现了一种新方法，即逐渐增加GAN的想法：让发生器在整个培训过程中逐渐提高其输出的分辨率。 使用此方法的最令人印象深刻的论文之一是采用样式转换技术来生成逼真的照片。 有多现实？ 你告诉我："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*Sn_Uz3dzQzkw0AJu?q=20",
+  "caption": "Which one of this photos is of a real person? Trick question: none of them are.",
+  "type": "image",
+  "file": "0*Sn_Uz3dzQzkw0AJu"
+}, {
+  "tag": "P",
+  "text": "How and why do the GANs really work though? We haven’t had deep insight into that yet, but there are important steps being made: a team at MIT has done a a high quality study of that problem.",
+  "translation": "GAN如何以及为什么真正起作用？ 我们尚未对此进行深入了解，但是正在采取重要步骤：麻省理工学院的团队已对该问题进行了高质量的研究。"
+}, {
+  "tag": "P",
+  "text": "Another interesting development, though not technically a GAN, was Adversarial Patch. The idea was to use both black-box (basically, not looking at the internal state of a neural network) and white-box methods to craft a “patch”, that would deceive a CNN-based classifier. This is an important result: it guided us towards better intuition about how DNNs work and how far we are still from a human-level conceptual perception.",
+  "translation": "尽管不是技术上的GAN，但另一个有趣的发展是Adversarial Patch。 这个想法是同时使用黑盒（基本上不看神经网络的内部状态）和白盒方法来制作“补丁”，这会欺骗基于CNN的分类器。 这是一个重要的结果：它引导我们更直观地了解DNN的工作方式以及与人类概念感知的距离还有多远。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*lJRt4MvyHBfVg2RR?q=20",
+  "caption": "Can you tell a the banana from a toaster? AI still can’t.",
+  "type": "image",
+  "file": "0*lJRt4MvyHBfVg2RR"
+}, {
+  "tag": "H2",
+  "text": "We need Reinforcement",
+  "translation": "我们需要加强"
+}, {
+  "tag": "P",
+  "text": "Reinforcement learning has been in the spotlight since AlphaGo defeated Lee Sedol in 2016. With AI dominating the last “classic” game though, what else there is to conquer? Well, the rest of the world! Specifically, computer games and robotics.",
+  "translation": "自从AlphaGo在2016年击败Lee Sedol以来，强化学习一直是人们关注的焦点。尽管AI统治了最后一部“经典”游戏，但还有什么要征服的呢？ 好吧，世界其他地区！ 特别是计算机游戏和机器人技术。"
+}, {
+  "tag": "P",
+  "text": "For it’s training, reinforcement learning relies on the “reward” signal, a scoring of how well it did in it’s last attempt. Computer games provide a natural environment, where such signal is readily available, as opposed to the real life. Hence all the attention RL researches are giving to teaching AI how to play Atari games.",
+  "translation": "在训练过程中，强化学习依赖于“奖励”信号，即在上一次尝试中的表现得分。 电脑游戏提供了一个自然的环境，在这种环境中，与现实生活相比，信号很容易获得。 因此，RL研究的所有注意力都集中在教授AI如何玩Atari游戏上。"
+}, {
+  "tag": "P",
+  "text": "Talking about DeepMind, their new creation, AlphaStar just made news again. This new model has defeated one of the top StarCraft II professional players. StarCraft is much more complex than chess or Go, with a huge action space and crucial information hidden from a player, unlike in most board games. This victory is a very significant leap for the field as a whole.",
+  "translation": "谈到他们的新创造DeepMind，AlphaStar再次成为新闻。 这个新模型击败了星际争霸II顶级职业玩家之一。 与大多数棋盘游戏不同，《星际争霸》比国际象棋或围棋复杂得多，具有巨大的动作空间和对玩家隐藏的重要信息。 对于整个领域来说，这一胜利是非常重要的飞跃。"
+}, {
+  "tag": "P",
+  "text": "OpenAI, another important player in the space or RL, did not sit idle either. Their claim to fame is OpenAI Five, a system that in August defeated a team of 99.95th percentile players in Dota 2, an extremely complex esports game.",
+  "translation": "OpenAI是该领域或RL中的另一个重要参与者，也没有闲着。 他们声名is起的是OpenAI Five，该系统在八月份击败了Dota 2（一款极为复杂的电竞游戏）中的99.95％的玩家。"
+}, {
+  "tag": "P",
+  "text": "Though OpenAI has been giving a lot of attention to computer games, they haven’t ignored a real potential application for RL: robots. In real world, the feedback one might give to a robot is rare and expensive to create: you basically need a human babysitting your R2D2, while it’s trying to take its first “steps”. And you need millions of these data points. To bridge that gap, the recent trend was to learn to simulate an environment and run a large number of those scenarios in parallel to teach a robot basic skills, before moving on to the real world. Both OpenAI and Google are working on that approach.",
+  "translation": "尽管OpenAI一直非常重视计算机游戏，但他们并没有忽略RL的真正潜在应用：机器人。 在现实世界中，可能会给机器人带来的反馈很少而且创建起来很昂贵：您基本上需要人工照看R2D2，同时它要迈出第一步。 您需要数百万个这些数据点。 为了弥合这种差距，最近的趋势是学习模拟环境并并行运行大量这些场景以教授机器人基本技能，然后再进入现实世界。 OpenAI和Google都在研究这种方法。"
+}, {
+  "tag": "H2",
+  "text": "Honorable mention: Deepfakes",
+  "translation": "荣誉提名：Deepfakes"
+}, {
+  "tag": "P",
+  "text": "Deepfakes are images or videos that show (usually) a public figure doing or saying something they never did or said. They are created by training a GAN on a large amount of footage of the “target” person, and then generating new media with desired actions performed in it. A desktop application called FakeApp released in January 2018 allows anyone with a computer and zero computer science knowledge to create deepfakes. And while the videos it produces can be easily spotted as non genuine, the technology has progressed very far. Just watch this video to see how much.",
+  "translation": "伪造品是（通常）显示公众人物在做或说自己从未做过或说过的话的图像或视频。 通过在“目标”人员的大量镜头上训练GAN，然后生成具有所需动作的新媒体来创建GAN。 2018年1月发布的名为FakeApp的桌面应用程序允许具有计算机知识和计算机科学零知识的任何人创建Deepfake。 尽管其制作的视频可以很容易地被发现是非正版的，但该技术已经取得了很大进步。 只需观看此视频即可了解多少。"
+}, {
+  "tag": "FIGURE",
+  "type": "code"
+}, {
+  "tag": "H1",
+  "text": "Infrastructure",
+  "translation": "基础设施"
+}, {
+  "tag": "H2",
+  "text": "TensorFlow vs PyTorch",
+  "translation": "TensorFlow与PyTorch"
+}, {
+  "tag": "P",
+  "text": "There are many deep learning frameworks out there. The field is vast, and this variety makes sense on the surface.But in practice, lately most people were using either Tensorflow or PyTorch. If you cared about reliability, ease of deployment, model re-loading, the things that SREs usually care about, you probably chose Tensorflow. If you were writing a research paper, and didn’t work for Google — you probably used PyTorch.",
+  "translation": "那里有许多深度学习框架。 这个领域很广阔，从表面上看这种变化是有意义的，但是实际上，最近大多数人都在使用Tensorflow或PyTorch。 如果您关心可靠性，易于部署，模型重新加载以及SRE通常关心的事情，则可能选择了Tensorflow。 如果您正在撰写研究论文，但不适用于Google，则可能使用了PyTorch。"
+}, {
+  "tag": "H2",
+  "text": "ML as a service everywhere",
+  "translation": "机器学习即服务"
+}, {
+  "tag": "P",
+  "text": "This year we saw even more AI solutions, packaged as an API for consumption by a software engineer not blessed with a machine learning PhD from Stanford. Both Google Cloud and Azure improved the old services and added new ones. AWS Machine Learning service list is starting to look seriously intimidating.",
+  "translation": "今年，我们看到了更多的AI解决方案，这些API解决方案被打包为API，供软件工程师使用，而该软件工程师没有斯坦福大学的机器学习博士学位。 Google Cloud和Azure都改进了旧服务并添加了新服务。 AWS Machine Learning服务列表开始显得令人生畏。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*NeMASS_FiI3NruBW?q=20",
+  "caption": "Man, AWS will soon need 2-level folder hierarchy for their services.",
+  "type": "image",
+  "file": "0*NeMASS_FiI3NruBW"
+}, {
+  "tag": "P",
+  "text": "Multiple startups threw their gauntlets down, though the frenzy has cooled down a little bit. Everyone is promising speed of model training, ease of use during inference and amazing model performance. Just type in your credit card, upload your dataset, give the model some time to train or finetune, call a REST (or, for more forward looking startups, GraphQL) API and become the master of AI without ever figuring out what dropout is.",
+  "translation": "尽管狂热有所缓解，但多家初创公司纷纷放弃了他们的手套。 每个人都对模型训练的速度，推断中的易用性和惊人的模型性能有希望。 只需输入您的信用卡，上传数据集，给模型一些时间进行训练或微调，调用REST（或者对于GraphQL对于更具前瞻性的初创公司来说）API并成为AI的主人，而无需弄清楚什么是辍学。"
+}, {
+  "tag": "P",
+  "text": "With that wealth of choice, why would anyone even bother building out a model and infrastructure themselves? In practice, it seems, off the shelf MLaaS products do very well with 80% of use cases. If you want the remaining 20% to work well too — you are out of luck: not only you can’t really choose the model, you can’t even control the hyperparameters. Or if you need to do inference somewhere outside the comfort of the cloud — you usually can’t. Definitely a tradeoff here.",
+  "translation": "有了这么多的选择，为什么还要有人亲自构建模型和基础架构呢？ 在实践中，现成的MLaaS产品在80％的用例中都表现良好。 如果您希望剩余的20％也能正常工作-真不走运：不仅您不能真正选择模型，甚至无法控制超参数。 或者，如果您需要在云的舒适性之外的地方进行推理，通常就不需要。 绝对是一个权衡。"
+}, {
+  "tag": "H2",
+  "text": "Honorable mention: AutoML and AI Hub",
+  "translation": "荣誉奖：AutoML和AI Hub"
+}, {
+  "tag": "P",
+  "text": "The two particularly interesting services, unveiled this year, were both launched by Google.",
+  "translation": "Google于今年推出了两项特别有趣的服务。"
+}, {
+  "tag": "P",
+  "text": "First, Google Cloud AutoML, is a set of custom NLP and computer vision model training products. What does that mean? AutoML designers solve model customization by automatically fine-tuning several pre-trained ones and choosing the one that performs best. This means that you, most likely, won’t need to bother with customizing the model yourself. Of course, if you want to do something really new or different, this service is not for you. But, as a side benefit, Google pre-trains their models on a large amount of proprietary data. Think of all those cat pictures; those must generalize way better than just Imagenet!",
+  "translation": "首先，Google Cloud AutoML是一组自定义的NLP和计算机视觉模型培训产品。 这意味着什么？ AutoML设计人员通过自动微调几个预训练的模型并选择性能最佳的模型来解决模型定制问题。 这意味着您很可能无需亲自定制模型。 当然，如果您想做一些新的或不同的事情，则此服务不适合您。 但是，作为附带的好处，Google在大量专有数据上对其模型进行了预训练。 想想所有那些猫的照片； 这些必须比Imagenet更好地推广！"
+}, {
+  "tag": "P",
+  "text": "Second, AI Hub and TensorFlow Hub. Before those two, re-using someone’s model was a real chore. Random code off GitHub rarely worked, was usually poorly documented and is, generally, not a joy to deal with. And the pre-trained weights for transfer learning… let’s say you don’t want to even try to get those to work. That’s exactly the problem TF Hub was built to solve: it’s a reliable, curated repository of models you can fine-tune or build upon. Just include a couple of lines of code — and the TF Hub client will fetch both the code and corresponding weights from Google’s servers — and voilá, it just works! AI Hub goes further: it allows you to share entire ML pipelines, not just models! It’s still in alpha, but it’s already better than a random repository with the newest file “modified 3 years ago”, if you know what I mean.",
+  "translation": "其次是AI Hub和TensorFlow Hub。 在那两个之前，重用某人的模型是一件很麻烦的事。 GitHub上的随机代码很少起作用，通常记录很少，而且通常也不是一件令人愉快的事情。 以及用于迁移学习的预先训练的权重...假设您甚至不想尝试使它们发挥作用。 这正是TF Hub旨在解决的问题：这是一个可靠的，经过精心挑选的模型存储库，您可以对其进行微调或构建。 只需添加几行代码-TF Hub客户端就会从Google的服务器中获取代码和相应的权重-而且，这确实行得通！ AI Hub更进一步：它允许您共享整个ML管道，而不仅仅是模型！ 它仍然处于Alpha状态，但如果您了解我的意思，它已经比拥有最新文件“ 3年前修改”的随机存储库更好。"
+}, {
+  "tag": "H1",
+  "text": "Hardware",
+  "translation": "硬件"
+}, {
+  "tag": "H2",
+  "text": "Nvidia",
+  "translation": "英伟达"
+}, {
+  "tag": "P",
+  "text": "If you were serious about ML in 2018, especially DNNs, you were using a GPU (or multiple). In its turn, the GPU leader had a very busy year. On the heels of the cooling of crypto frenzy and the subsequent stock price plunge, Nvidia has released an entire generation of new consumer grade cards based on Turing architecture. Just with the professional cards released in 2017 and based on the Volta chips, the new cards contain new high-speed matrix multiplication hardware, called Tensor Cores. Matrix multiplication lies at the core of how DNNs operate, so speeding up those operations will greatly increase the speed of neural network training on the new GPUs.",
+  "translation": "如果您认真对待2018年的ML，尤其是DNN，则使用的是GPU（或多个）。 反过来，GPU领导者度过了非常繁忙的一年。 在加密货币狂潮消退和随后的股价暴跌之后，Nvidia发布了基于Turing架构的新一代新一代消费级卡。 仅在2017年发布的专业卡基于Volta芯片的情况下，新卡就包含了新的高速矩阵乘法硬件，称为Tensor Cores。 矩阵乘法是DNN操作方式的核心，因此加快这些操作的速度将大大提高在新GPU上进行神经网络训练的速度。"
+}, {
+  "tag": "P",
+  "text": "For those, not satisfied with the “small” and “slow” gaming GPUs, Nvidia updated their enterprise “supercomputer”. DGX-2 is a monster box with 16 Tesla Vs for 480 TFLOPs of FP16 operations. The price got updated too, to an impressive $400,000.",
+  "translation": "对于那些对“小型”和“慢速”游戏GPU不满意的人，Nvidia更新了他们的企业“超级计算机”。 DGX-2是具有16个Tesla Vs的巨型盒子，可进行480个TFLOP的FP16操作。 价格也进行了更新，达到令人印象深刻的40万美元。"
+}, {
+  "tag": "P",
+  "text": "The autonomous hardware got updated too. Jetson AGX Xavier is a board that, Nvidia hopes, is going to power the next generation of self-driving cars. An eight-core CPU, a vision accelerator, deep learning accelerator — everything the growing autonomous driving industry needs.",
+  "translation": "自治硬件也进行了更新。 英伟达希望，Jetson AGX Xavier能够为下一代自动驾驶汽车提供动力。 八核CPU，视觉加速器，深度学习加速器-成长中的自动驾驶行业所需的一切。"
+}, {
+  "tag": "P",
+  "text": "In an interesting development, Nvidia launched a DNN-based feature for their gaming cards: Deep Learning Super Sampling. The idea is to replace anti-aliasing, that is currently mostly done by rendering a picture in higher resolution than required (say 4x) and then scaling it to the native monitor resolution. Now Nvidia allows developers to train an image transformation model on the game running at extremely high quality before releasing it. Afterwards, the game is shipped to the end users with that pre-trained model. During a game session, instead of incurring the cost of old-style anti-aliasing, the frames are run through that model to improve the picture quality.",
+  "translation": "在一项有趣的发展中，英伟达为其游戏卡推出了基于DNN的功能：深度学习超级采样。 这个想法是要替换抗锯齿，这通常是通过以比所需分辨率（例如4倍）更高的分辨率渲染图片，然后将其缩放到本机监视器分辨率来完成的。 现在，Nvidia允许开发人员在发布之前，以极高的质量在游戏上训练图像转换模型。 之后，将使用该预先训练的模型将游戏交付给最终用户。 在游戏过程中，无需花费旧式抗锯齿功能，而是通过该模型运行帧以提高画面质量。"
+}, {
+  "tag": "H2",
+  "text": "Intel",
+  "translation": "英特尔"
+}, {
+  "tag": "P",
+  "text": "Intel was definitely not a trailblazer in the world of AI hardware in 2018. But it seems they would like to change that.",
+  "translation": "英特尔在2018年绝对不是AI硬件领域的开拓者。但似乎他们希望改变这一状况。"
+}, {
+  "tag": "P",
+  "text": "Most activity happened, surprisingly, in the field of software. Intel is trying to make their existing and upcoming hardware to be more developer-friendly. With that in mind, they’ve released a pair of (surprisingly, competing) toolkits: OpenVINO and nGraph.",
+  "translation": "令人惊讶的是，大多数活动都发生在软件领域。 英特尔正在努力使现有和即将推出的硬件对开发人员更加友好。 考虑到这一点，他们发布了两个（令人惊讶的是，相互竞争的）工具包：OpenVINO和nGraph。"
+}, {
+  "tag": "P",
+  "text": "They’ve updated their Neural Compute Stick: a small USB device, that can accelerate DNNs running on anything with USB port, even a Raspberry Pi.",
+  "translation": "他们更新了神经计算棒：一种小型USB设备，可以加速在具有USB端口的任何设备上运行的DNN，甚至是Raspberry Pi。"
+}, {
+  "tag": "P",
+  "text": "And there was more and more intrigue around a rumored Intel discrete GPU. The gossip is becoming more and more persistent, but it remains to be seen how applicable the new device will be to the DNNs training. What will definitely be applicable to deep learning are the pair of rumored specialized deep learning cards, codenamed Spring Hill and Spring Crest, the latter being based on the technology of Nervana, a startup Intel acquired several years ago.",
+  "translation": "传闻中的英特尔离散GPU越来越引起人们的兴趣。 八卦变得越来越持久，但是还有待观察新设备对DNN培训的适用性。 无疑将适用于深度学习的是一对传闻的专业深度学习卡，它们分别代号为Spring Hill和Spring Crest，后者基于英特尔几年前收购的初创公司Nervana的技术。"
+}, {
+  "tag": "H2",
+  "text": "Custom hardware from the usual (and unusual) suspects",
+  "translation": "来自通常（和不寻常）嫌疑犯的定制硬件"
+}, {
+  "tag": "P",
+  "text": "Google unveiled their 3rd generation TPUs: an ASIC-based DNN-specific accelerator with an amazing 128Gb of HMB memory. 256 such devices are assembled into a pod with over a hundred petaflops of performance. This year, instead of just teasing the rest of the world with the power of these devices, Google made the TPUs available to general public on Google Cloud.",
+  "translation": "Google推出了他们的第三代TPU：基于ASIC的DNN专用加速器，具有惊人的128Gb HMB内存。 256个这样的设备被组装到具有100 petaflops性能的容器中。 今年，Google不仅使这些设备的功能取笑了世界其他地区，还使TPU在Google Cloud上向公众开放。"
+}, {
+  "tag": "P",
+  "text": "In a similar move, but mostly directed towards inference applications, Amazon has deployed AWS Inferentia: a cheaper, more efficient way to run the models in production.",
+  "translation": "以类似的方式（但主要针对推理应用程序），Amazon部署了AWS Inferentia：一种在生产环境中运行模型的更便宜，更有效的方法。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*nTqHAwzY8MINf5j-?q=20",
+  "type": "image",
+  "file": "0*nTqHAwzY8MINf5j-"
+}, {
+  "tag": "P",
+  "text": "Google also announced Edge TPU: a little brother of the big bad cards discussed above. The chip is tiny: 10 of them would fit on a surface of a 1 cent coin. At the same time, it’s good enough to run DNNs on real-time video and barely consumes any energy.",
+  "translation": "谷歌还宣布了Edge TPU：上面讨论过的大型不良卡的弟弟。 芯片很小：其中10个可以装在1美分硬币的表面上。 同时，足以在实时视频上运行DNN，几乎不消耗任何能量。"
+}, {
+  "tag": "P",
+  "text": "An interesting potential new entrant is Graphcore. The British company has raised an impressive $310M, and in 2018 has shipped their first product, the GC2 chip. According to benchmarks, GC2 obliterates the top Nvidia server GPU card while doing inference, while consuming significantly less power.",
+  "translation": "Graphcore是一个有趣的潜在新进入者。 这家英国公司筹集了惊人的3.1亿美元，并于2018年交付了他们的第一款产品GC2芯片。 根据基准测试，GC2在进行推理的同时消除了顶级Nvidia服务器GPU卡，而功耗却大大降低。"
+}, {
+  "tag": "H2",
+  "text": "Honorable mention: AWS Deep Racer",
+  "translation": "荣誉奖：AWS Deep Racer"
+}, {
+  "tag": "P",
+  "text": "In a completely unexpected move, but, somewhat mirroring their previous move with DeepLens, Amazon unveiled a small-scale self-driving car, DeepRacer and a racing league for it. The $400 car sports an Atom processor, 4MP camera, wifi, several USB ports and enough power to run for several hours. Self-driving models can be trained using a 3d simulation environment completely in the cloud and then deployed directly to the car. If you always dreamed of building your own self-driving car, this is your chance to do so without starting a VC-backed company.",
+  "translation": "亚马逊出乎意料地采取了一项举措，但在某种程度上反映了他们之前与DeepLens达成的举措，推出了一款小型自动驾驶汽车DeepRacer和一个竞速联盟。 这款售价400美元的汽车配备了Atom处理器，4MP摄像头，wifi，几个USB端口以及足够的动力，可运行数小时。 可以在云端完全使用3d模拟环境来训练自动驾驶模型，然后将其直接部署到汽车上。 如果您一直梦想着建造自己的无人驾驶汽车，那么这是您无需创办由风投支持的公司的机会。"
+}, {
+  "tag": "H1",
+  "text": "What’s next?",
+  "translation": "下一步是什么？"
+}, {
+  "tag": "H2",
+  "text": "Shifting focus to decision intelligence",
+  "translation": "将重点转移到决策智能"
+}, {
+  "tag": "P",
+  "text": "Now that the components — algorithms, infrastructure, and hardware — for making AI useful are better than ever, businesses are realizing that the biggest stumbling block to getting started with applying AI is on the practical side: how do you actually take an AI applied from an idea to an effective, safe, reliable system running in production? Applied AI, or applied Machine Learning (ML), also referred to as Decision Intelligence, is the science of creating AI solutions to real-world problems. While the past put much of the focus on the science behind the algorithms, the future is likely to see more equal attention paid to the end-to-end application side of the field.",
+  "translation": "现在，使AI有用的组件-算法，基础结构和硬件比以往任何时候都更好，企业意识到，开始应用AI的最大绊脚石是实践方面：您实际上如何从 在生产中运行有效，安全，可靠的系统的想法？ 应用AI或应用机器学习（ML），也称为决策智能，是为实际问题创建AI解决方案的科学。 尽管过去将大量精力放在算法背后的科学上，但未来很可能会更加关注该领域的端到端应用程序方面。"
+}, {
+  "tag": "H2",
+  "text": "AI seems to be creating more jobs than it destroys",
+  "translation": "人工智能似乎创造了比破坏更多的工作"
+}, {
+  "tag": "P",
+  "text": "“AI will take all our jobs” is the common refrain in the media and a common fear among blue collar and white collar workers alike. And, on the surface it seems like a reasonable prediction. But so far, the opposite seems to be the truth. For instance, a lot of people are getting paid to create labeled datasets.",
+  "translation": "“人工智能将接手我们的所有工作”是媒体普遍反对的话题，也是蓝领和白领工人共同的恐惧。 而且，从表面上看，这似乎是一个合理的预测。 但是到目前为止，事实似乎恰恰相反。 例如，创建标签数据集的酬劳很多。"
+}, {
+  "tag": "P",
+  "text": "It goes beyond the usual data farms in low income countries: several apps, like LevelApp allow refugees to make money by labeling their data just using their cellphones. Harmoni went further: they are even providing devices to the migrants in the refugee camps so that people can contribute and make a living.",
+  "translation": "它超越了低收入国家通常的数据农场：LevelApp之类的一些应用程序使难民可以通过仅使用手机标记数据来赚钱。 哈蒙尼走得更远：他们甚至向难民营中的移民提供设备，使人们能够贡献自己的生活。"
+}, {
+  "tag": "P",
+  "text": "On top of data labeling, entire industries are being created by the new AI technology. We are able to do things, that were unthinkable even several years ago, like self driving cars or drug discovery.",
+  "translation": "在数据标记之上，新的AI技术正在创建整个行业。 我们能够做一些甚至几年前都无法想象的事情，例如自动驾驶汽车或毒品发现。"
+}, {
+  "tag": "H2",
+  "text": "More ML-related compute is going to happen on the edge",
+  "translation": "更多与ML相关的计算将在边缘发生"
+}, {
+  "tag": "P",
+  "text": "The way data-oriented systems work, more data is usually available at the very edge of the system, on the ingestion side. Later stages of a pipeline usually down-sample or in other ways reduce the the fidelity of the signals. On the other hand, with increasingly complex AI models are performing better with more data. Would not it make sense to move the AI component closer to the data, to the edge?",
+  "translation": "面向数据的系统的工作方式通常是在系统的最边缘（摄取端）提供更多数据。 流水线的后期阶段通常会进行下采样或以其他方式降低信号的保真度。 另一方面，随着越来越复杂的AI模型，在处理更多数据时性能会更好。 将AI组件移到更靠近数据边缘的位置是否有意义？"
+}, {
+  "tag": "P",
+  "text": "A simple example: imagine a high resolution camera, that produces a high-quality video at 30fps. The computer vision model, that processes that video, runs on a server with. The camera streams the video to the server, but the uplink bandwidth is limited, so the video is shrunk and highly-compressed. Why not move the vision model to the camera and consume the pristine video stream?",
+  "translation": "一个简单的例子：想象一个高分辨率相机，它以30fps的速度产生高质量的视频。 处理该视频的计算机视觉模型在服务器上运行。 摄像机将视频流传输到服务器，但是上行链路带宽受到限制，因此视频被缩小并被高度压缩。 为什么不将视觉模型移至相机并消耗原始视频流？"
+}, {
+  "tag": "P",
+  "text": "There were always multiple hurdles with that, primarily: the amount of compute capability available on the edge devices and the complexity of management (such as pushing updated models to the edge). The compute limitation is being cancelled out by the advent of specialized hardware (such as Google’s Edge TPU, Apple’s Neural Engine etc.), more efficient models and optimized software. The management complexity is constantly addressed by improvements in ML frameworks and tooling.",
+  "translation": "总是存在多个障碍，主要是：边缘设备上可用的计算能力的数量和管理的复杂性（例如将更新的模型推送到边缘）。 专用硬件（例如Google的Edge TPU，苹果的神经引擎等），更高效的模型和优化的软件的出现消除了计算限制。 ML框架和工具的改进不断解决管理复杂性。"
+}, {
+  "tag": "H2",
+  "text": "Consolidation in the AI infrastructure space",
+  "translation": "整合AI基础设施领域"
+}, {
+  "tag": "P",
+  "text": "The preceding years were full of activity in AI infrastructure: grand announcements, hefty funding rounds and lofty promises. In 2018, it seems, the race in the space cooled down, and, while there were still significant new entrances, most of the contributions were done by large existing players.",
+  "translation": "前几年在AI基础设施中充满了活动：盛大的公告，大量的融资回合和崇高的承诺。 似乎在2018年，太空竞赛有所降温，尽管仍然有大量新的入口，但大部分贡献都是由大型现有玩家完成的。"
+}, {
+  "tag": "P",
+  "text": "One of the possible explanations maybe that our understanding of what the ideal infrastructure for an AI system looks like is not mature enough. As the problem is complex. It will require long term, persistent, focused, well-resourced effort to produce a viable solution — something startups and smaller companies are just not good at. It would be really surprising, if a startup “solved” AI infra out of the blue.",
+  "translation": "一种可能的解释可能是，我们对AI系统理想基础架构的了解还不够成熟。 由于问题很复杂。 这将需要长期，持久，专注，资源丰富的工作才能产生可行的解决方案-初创公司和小型公司并不擅长。 如果一家初创公司突然“解决”了人工智能，那将真的令人惊讶。"
+}, {
+  "tag": "P",
+  "text": "On the other hand, ML infrastructure engineers are rare and far between. A struggling startup with several of those on staff becomes an obvious and valuable acquisition target for a larger player. And there are at least several of those playing this game for the win, both building out internal and external tooling. For instance, for both AWS and Google Cloud, AI infrastructure services are a major selling points.",
+  "translation": "另一方面，机器学习基础设施工程师很少见，而且相距甚远。 一个苦苦挣扎的初创公司，其中有几名员工，这对于大型公司来说显然是有价值的收购目标。 而且至少有一些人为赢得胜利而玩这款游戏，同时建立了内部和外部工具。 例如，对于AWS和Google Cloud而言，人工智能基础设施服务是主要卖点。"
+}, {
+  "tag": "P",
+  "text": "Put it all together and a major consolidation of the space becomes a reasonable forecast.",
+  "translation": "放在一起，对空间的重大合并将成为合理的预测。"
+}, {
+  "tag": "H2",
+  "text": "Even more custom hardware",
+  "translation": "更多定制硬件"
+}, {
+  "tag": "P",
+  "text": "Moore’s law is dead, at least for CPUs, and has been for many years now. GPUs are soon going to encounter a similar fate. And while our models are becoming more efficient, to solve some more advanced problems we’ll need to get our hands on more computing power. This can be solved with distributed training, but it has its own limits and tradeoffs.",
+  "translation": "至少对于CPU而言，摩尔定律已经失效，并且已经有很多年了。 GPU即将遇到类似的命运。 而且，尽管我们的模型变得越来越高效，但要解决一些更高级的问题，我们需要动手使用更多的计算能力。 这可以通过分布式培训来解决，但是它有其自身的局限性和权衡。"
+}, {
+  "tag": "P",
+  "text": "Moreover, if you want to run some of the bigger models on a resource-constrained device, distributed training is not going to help. Enter custom AI accelerators. Depending on how custom you want or can go, you could save an order of magnitude of power, cost or latency.",
+  "translation": "此外，如果您想在资源受限的设备上运行某些更大的模型，则分布式培训将无济于事。 输入自定义AI加速器。 根据您想要或可以采用的自定义方式，可以节省一个数量级的电源，成本或延迟。"
+}, {
+  "tag": "P",
+  "text": "In some way, even Nvidia’s Tensor Cores are an example of this trend. With no general-purpose hardware, we will see even more of those.",
+  "translation": "从某种意义上说，甚至Nvidia的Tensor Core就是这种趋势的一个例子。 如果没有通用硬件，我们将看到更多。"
+}, {
+  "tag": "H2",
+  "text": "Less reliance on training data",
+  "translation": "减少对训练数据的依赖"
+}, {
+  "tag": "P",
+  "text": "Labeled data is, generally, either expensive, inaccessible or both. There are few exceptions to this rule. Open high quality datasets like MNIST, ImageNet, COCO, Netflix prize and IMDB reviews were a source of incredible innovation. But many problems don’t have a corresponding dataset to work with. While building a dataset is not a great career move for a researcher, big companies, who could sponsor or release one are not in a hurry: they are building the huge datasets alright, but keeping those close to their chest.",
+  "translation": "标记的数据通常是昂贵的，不可访问的或两者兼有。 此规则几乎没有例外。 MNIST，ImageNet，COCO，Netflix奖和IMDB评论等开放式高质量数据集是令人难以置信的创新之源。 但是许多问题都没有相应的数据集。 虽然对于研究者而言，建立数据集并不是一项伟大的职业生涯，但是能够赞助或发布一个数据集的大公司却并不着急：他们正在建立庞大的数据集，但要让它们靠近自己的胸口。"
+}, {
+  "tag": "P",
+  "text": "So how does a small independent entity, like startup or a university research group, produce interesting solutions to hard problems? By building systems that rely less and less on supervised signals and more and more on unlabeled and unstructured data — which is abundant thanks to the internet and proliferation in cheap sensors.",
+  "translation": "那么，一个小的独立实体，如初创企业或大学研究小组，如何为棘手的问题提供有趣的解决方案？ 通过构建越来越少依赖监督信号，越来越多依赖无标签和非结构化数据的系统，这要归功于互联网和廉价传感器的普及。"
+}, {
+  "tag": "P",
+  "text": "This somewhat explains the explosion of interest in GANs, transfer and reinforcement learning: all of these techniques require less (or no) investment in a training dataset.",
+  "translation": "这在某种程度上解释了对GAN，转移和强化学习的兴趣激增：所有这些技术都需要较少（或不需要）对训练数据集的投资。"
+}, {
+  "tag": "H1",
+  "text": "So, it’s all just a bubble, right?",
+  "translation": "所以，这只是一个泡沫，对吗？"
+}, {
+  "tag": "P",
+  "text": "So is there a cat in that dark room? I think there definitely is, and not just one, but multiple. And while some of cats have four legs, tails, and whiskers — you know, the usual deal — some are weird beasts that we are only starting to see the basic outlines of.",
+  "translation": "那么那个黑暗的房间里有只猫吗？ 我认为肯定存在，而不仅仅是一个，而是多个。 尽管有些猫的腿，尾巴和胡须有四根（通常是这样），但有些是怪异的野兽，我们才刚刚开始看到它们的基本轮廓。"
+}, {
+  "tag": "P",
+  "text": "The industry has entered year seven of the hot AI “summer”. An amazing amount of research effort, academic grants, venture capital, media attention and lines of code were poured into the space over that time. But one would be justified in pointing out, that the promises of AI are still mostly unfulfilled. That their last Uber ride still had a human driver behind the wheel. That they there is still no helpful robot making eggs in the morning. I even have to tie my shoelaces myself, for crying out loud!",
+  "translation": "整个行业已经进入了炙手可热的AI“夏季”第七年。 在那段时间里，大量的研究工作，学术资助，风险投资，媒体关注和代码行注入了空间。 但有理由指出，人工智能的承诺仍未兑现。 他们的最后一次Uber旅程仍然有一名驾驶员。 他们仍然没有帮助早上做鸡蛋的机器人。 我什至不得不大声喊叫自己绑鞋带！"
+}, {
+  "tag": "P",
+  "text": "And yet, the efforts of countless graduate students and software engineers are not in vain. It seems like every large company either already relies heavily on AI, or has plans to in the future. AI art sells. If the self driving cars are not yet here, they soon will be.",
+  "translation": "然而，无数研究生和软件工程师的努力并没有白费。 似乎每个大公司要么已经非常依赖AI，要么已经计划在将来。 AI艺术卖。 如果自动驾驶汽车还没有在这里，他们很快就会来。"
+}, {
+  "tag": "P",
+  "text": "Now, if only someone figured out those pesky shoelaces! Wait, what? They did?",
+  "translation": "现在，只要有人弄清楚那些讨厌的鞋带！ 等一下 他们做到了？"
+}, {
+  "tag": "FIGURE",
+  "type": "code"
+}, {
+  "tag": "P",
+  "text": "Huge thanks to Malika Cantor, Maya Grossman, Tom White, Cassie Kozyrkov and Peter Norvig for reading the draft versions of this post.",
+  "translation": "非常感谢Malika Cantor，Maya Grossman，Tom White，Cassie Kozyrkov和Peter Norvig阅读了这篇文章的草稿。"
+}, {
+  "tag": "P",
+  "text": "Max Grigorev has built ML systems at Google, Airbnb and multiple startups. He hopes to build many more. He is also a Google Developers Launchpad mentor.",
+  "translation": "Max Grigorev已在Google，Airbnb和多家初创公司建立了机器学习系统。 他希望建立更多。 他还是Google Developers Launchpad的导师。"
+}]
