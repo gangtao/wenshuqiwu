@@ -1,0 +1,101 @@
+[{
+  "tag": "H1",
+  "text": "The Race for Data Visualization: What is Tableau’s Magic?",
+  "translation": "数据可视化竞赛：Tableau的魔力是什么？"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*gdc2dPQWDAxIyy_7v67a1A.png?q=20",
+  "type": "image",
+  "file": "1*gdc2dPQWDAxIyy_7v67a1A.png"
+}, {
+  "tag": "P",
+  "text": "The race just heated up. On June 6th Google announced they will be acquiring Looker, the data querying and exploration tool. This is an interesting buy, considering Looker overlaps somewhat with Google’s Data Studio. (However, when I think back to the Google Next conference, I don’t recall one mention of Data Studio.) The purpose of the Looker acquisition of course is to close Google Cloud’s gap behind Amazon Web Services and Microsoft in the market for big data and business analytics solutions. According to IDC, it’s a market that could reach $260 billion by 2022.",
+  "translation": "比赛刚刚开始。 Google在6月6日宣布，他们将收购数据查询和探索工具Looker。 考虑到Looker与Google的Data Studio有一些重叠，这是一个有趣的购买。 （但是，当我回想起Google Next大会时，我不会回想起Data Studio。）当然，收购Looker的目的是缩小Google Cloud在大型市场上落后于Amazon Web Services和Microsoft的差距。 数据和业务分析解决方案。 根据IDC的数据，到2022年，这个市场可能达到2600亿美元。"
+}, {
+  "tag": "P",
+  "text": "Despite this being a big move for Google, even bigger news comes from Salesforce, which announced their plans to purchase Tableau for $15.7 billion! What does this mean for Salesforce? I have two thoughts.",
+  "translation": "尽管这对Google来说是一个重大举措，但更大的消息来自Salesforce，该公司宣布了他们计划以157亿美元收购Tableau的计划！ 这对Salesforce意味着什么？ 我有两个想法。"
+}, {
+  "tag": "P",
+  "text": "First, Tableau is going to greatly expand Salesforce’s customer base. Tableau fits nicely with the Salesforce platform and technologies such as Einstein to provide an enterprise standard visualization tool that’s easier to use. This is one reason why a lot of people and companies that weren’t Salesforce customers now will be, starting with existing Tableau users who will likely bring Salesforce into their technology arsenal. Small firms, independent contractors, or just data visualization enthusiasts will soon be part of Salesforce’s monthly reoccurring revenue. (Although, not all Tableau customers are happy. While Salesforce promises to maintain Tableau’s multi-platform approach and connectivity to multiple datasets, many existing Tableau users will need to be convinced. They’re an entirely different user group than those Salesforce currently aligns with, after all.)",
+  "translation": "首先，Tableau将大大扩展Salesforce的客户群。 Tableau非常适合Salesforce平台和诸如Einstein之类的技术，以提供易于使用的企业标准可视化工具。 这就是为什么现在不是Salesforce客户的许多人和公司会成为原因的原因之一，首先是现有的Tableau用户，他们很可能会将Salesforce纳入其技术库。 小型公司，独立承包商或只是数据可视化爱好者将很快成为Salesforce每月经常性收入的一部分。 （尽管并非所有Tableau客户都满意。Salesforce承诺维持Tableau的多平台方法和与多个数据集的连接性，但仍需要说服许多现有Tableau用户。他们是与Salesforce当前所使用的用户完全不同的用户组。 ， 毕竟。）"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*RFQdTPJEUtKruo4KnNrTeA.png?q=20",
+  "type": "image",
+  "file": "1*RFQdTPJEUtKruo4KnNrTeA.png"
+}, {
+  "tag": "P",
+  "text": "Second, this brings Salesforce a step closer to competing with Google and Microsoft. The two tech titans already offer data exploration tools, Data Studio (and Looker) and Power BI respectively. While these software solutions are good, I don’t think anyone would say they’re at the same level as Tableau. In fact, Tableau seems to have a certain magic to it. People not only enjoy using it, they genuinely get excited when they talk about it. Not many apps can claim that. So why is it the case with Tableau?",
+  "translation": "其次，这使Salesforce进一步与Google和Microsoft竞争。 两家技术巨头已经分别提供了数据探索工具Data Studio（和Looker）和Power BI。 这些软件解决方案虽然不错，但我认为没有人会说它们与Tableau处于同一水平。 实际上，Tableau似乎具有一定的魔力。 人们不仅喜欢使用它，而且当谈论它时，他们真的会感到兴奋。 没有多少应用程序可以声称这一点。 那么，Tableau为何会这样？"
+}, {
+  "tag": "H1",
+  "text": "A Perfect Balance",
+  "translation": "完美的平衡"
+}, {
+  "tag": "P",
+  "text": "And now for something completely different, Python. Python has seen a meteoric rise in the last decade. It’s gone from what some would have considered a toy language to the lingua franca of not just computer scientists, but scientists in general. Whether you’re an astronomer or a chemist, if you program at all, chances are it’s in Python. Many people attribute this success to Python’s balance of being simple yet powerful. Hello world in Python, is a simple one liner, print (“Hello World”). This requires three lines in Java or six in C (depending on how you format your code). Coupled with the ease of coding also comes decent processing speed. Yes, Python isn’t as fast as Fortran, but for someone who’s coming from Excel, it’s lightning.",
+  "translation": "现在，对于完全不同的东西，Python。 在过去的十年中，Python迅速崛起。 它已经从某些人认为是玩具语言的语言变成了不仅是计算机科学家，而且是一般科学家的通用语言。 无论您是天文学家还是化学家，如果您完全编程，都可能使用Python。 许多人将此成功归功于Python既简单又强大的平衡。 Python中的Hello world是一种简单的衬纸，印刷品（“ Hello World”）。 这需要Java中的三行或C语言中的六行（取决于您格式化代码的方式）。 加上易于编码，也带来了不错的处理速度。 是的，Python的速度不如Fortran快，但是对于来自Excel的人来说，这是闪电。"
+}, {
+  "tag": "P",
+  "text": "Tableau appears to have also found this Goldilocks zone of “just right”. It offers a high amount of fixability for exploring data, with a very gentle learning curve. Edward Tufte, the patron saint of data visualization, summed this up well. “Graphical excellence is that which gives to the viewer the greatest number of ideas in the shortest time…”.",
+  "translation": "Tableau似乎也找到了“恰好”的Goldilocks区。 它具有非常柔和的学习曲线，为探索数据提供了很高的可修复性。 数据可视化的赞助人爱德华·塔夫特总结得很好。 “图形上的卓越之处在于可以在最短的时间内为观众提供最多的创意……”。"
+}, {
+  "tag": "P",
+  "text": "This appears to be the core design philosophy of Tableau. Enable users to quickly explore the data with as little training as possible. Of course, tradeoffs come with this. Is Tableau as customizable as R’s ggplot2 package, no. Does it integrate into web pages as seamlessly as D3.js, no. But the learning curve for Tableau compared to those other two is immensely easier to climb. You can sit down with a someone who’s never used Tableau, and within minutes they will be off experimenting and exploring the data on their own. And Tableau has incorporated some of the best features of these other options. It leverages the grammar of graphics that ggplot uses, and it incorporates the interactive features of D3. Yes, you lose some flexibility, but the speed you gain is well worth the compromise in most cases.",
+  "translation": "这似乎是Tableau的核心设计理念。 使用户能够以最少的培训快速浏览数据。 当然，需要进行权衡。 Tableau是否可以像R的ggplot2包一样可自定义，否。 它是否可以像D3.js一样无缝地集成到网页中？ 但是，与其他两个表相比，Tableau的学习曲线要容易得多。 您可以与一个从未使用过Tableau的人坐在一起，然后在几分钟之内他们将自己尝试和探索数据。 Tableau并入了这些其他选项的一些最佳功能。 它利用了ggplot使用的图形语法，并结合了D3的交互功能。 是的，您失去了一些灵活性，但是您获得的速度在大多数情况下是值得的。"
+}, {
+  "tag": "H1",
+  "text": "Beauty is Hard to Obtain",
+  "translation": "美很难获得"
+}, {
+  "tag": "P",
+  "text": "Anyone who’s tried to design a chart or graphic from scratch is well-aware of the drowning number of factors that need to be selected. There’s color, background color, tick marks, line opacity, scale, font size, etc. It is a daunting task. Eventually you get to a point in the process where you make an edit and you are not even sure if it was a positive change or not. If you want to get an idea of how hard it can be just to select colors, watch this YouTube talk about the process matplotlib went through to redesign their default colormap.",
+  "translation": "任何试图从头开始设计图表或图形的人都充分意识到需要选择的大量因素。 颜色，背景色，刻度线，行不透明度，比例，字体大小等。这是一项艰巨的任务。 最终，您进入了进行编辑的过程，甚至不确定是否是一个积极的改变。 如果您想了解选择颜色的难度，请观看YouTube上有关matplotlib重新设计其默认颜色图的过程的讨论。"
+}, {
+  "tag": "P",
+  "text": "Fortunately, Tableau does the heavy lifting of design choices for you, and 9 times out of 10, it looks great. I asked a colleague why he likes Tableau, and he said, “It makes your data look pretty, and you don’t even have to try”. The value of pretty shouldn’t be underestimated.",
+  "translation": "幸运的是，Tableau可以为您提供大量的设计选择，十分之九的外观看起来很棒。 我问了一个同事他为什么喜欢Tableau，他说：“它使您的数据看起来很漂亮，您甚至不必尝试”。 pretty的价值不容小under。"
+}, {
+  "tag": "P",
+  "text": "In a chart, beauty is often the absence of distractions. If the colors are off, or there are too many tick marks, this distracts the audience from the message of the data. Florence Nightingale has a great example of this. She used a polar area diagram that is simple with minimal distraction, allowing the audience to instead focus on the story the data is telling (here’s a link to a Tableau workbook some make replicating Nightingale’s famous graph).",
+  "translation": "在图表中，美丽通常是没有干扰的。 如果颜色不亮或刻度线过多，则会分散观众对数据消息的注意力。 佛罗伦萨·南丁格尔就是一个很好的例子。 她使用了极地区域图，该极地图简单易行，分散了注意力，使听众可以专注于数据所讲述的故事（这是Tableau工作簿的链接，可以复制夜莺的著名图表）。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*cbH7lJlARD9WO4XLhHsjOw.png?q=20",
+  "type": "image",
+  "file": "1*cbH7lJlARD9WO4XLhHsjOw.png"
+}, {
+  "tag": "P",
+  "text": "Sadly, other visualization tools are still behind in this area.",
+  "translation": "可悲的是，其他可视化工具仍在该领域落后。"
+}, {
+  "tag": "P",
+  "text": "This out-of-the-box beauty from Tableau, combined with its balanced approach to user ease, has made it the de facto tool for data exploration and visualization. Tableau users are in every industry and across any job function. In fact, maybe the only data tool that is more ubiquitous than Tableau is Excel.",
+  "translation": "Tableau的这种开箱即用的美感，加上其平衡的方法来简化用户的操作，使其成为数据探索和可视化的事实上的工具。 Tableau用户遍及各个行业，涉及任何职务。 实际上，也许唯一比Tableau更普及的数据工具就是Excel。"
+}, {
+  "tag": "H1",
+  "text": "An Ode to Tableau",
+  "translation": "Tableau颂歌"
+}, {
+  "tag": "P",
+  "text": "I have always really enjoyed Tableau. It’s a wonderful product that provides a great service. When I heard the news that they were acquired, my first thought was that I was happy for them. Almost as if I was hearing an old friend had gotten a great job. I still remember my first Tableau workbook. I made it during the bootcamp for my master’s program. It looked at how movie reviews from IMDb differed from Rotten Tomatoes (a topic I’d revisit again). Since then I’ve probably made over a hundred Tableau workbooks. I’ve use it so much that it’s begun to rub off on my daughter. During a time when I worked from home, she came into my office and showed me a graph she had drawn by hand with colored markers. It was a bar chart showing how much she loved different animals, number one being cats. I took it and recreated it in Tableau to show her how good her work was.",
+  "translation": "我一直非常喜欢Tableau。 这是一款出色的产品，可提供出色的服务。 当我听到他们被收购的消息时，我首先想到的是我为他们感到高兴。 几乎就像我在听一个老朋友做得很好一样。 我仍然记得我的第一本Tableau工作簿。 我在训练营期间完成了我的硕士课程。 它着眼于IMDb的电影评论与烂番茄（我将再次讨论的话题）有何不同。 自那时以来，我大概制作了一百多本Tableau工作簿。 我已经用了太多了，以至于开始侵蚀我的女儿。 在我在家工作的时候，她走进我的办公室，向我展示了她用彩色标记手工绘制的图形。 这是一张条形图，显示了她有多爱各种动物，其中第一位是猫。 我接受了它，并在Tableau中对其进行了重新创建，以向她展示她的工作水平。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*UdQAATS-tyXRzafHT3a9wA.png?q=20",
+  "type": "image",
+  "file": "1*UdQAATS-tyXRzafHT3a9wA.png"
+}, {
+  "tag": "P",
+  "text": "Tableau has also been essential in helping me build my portfolio. Even my data visualization that end as static images are started with me exploring the data through a Tableau workbook. Whether it was showing how many lines of code I wrote in grad school, or how many times I’ve eaten at Taco Bell, Tableau was the tool helping me tell the story.",
+  "translation": "Tableau在帮助我建立投资组合方面也至关重要。 甚至我以静态图像结束的数据可视化，也都是通过Tableau工作簿探索数据而开始的。 无论是显示我在研究生院写了多少行代码，还是在Taco Bell上吃饭了几次，Tableau都是帮助我讲述故事的工具。"
+}, {
+  "tag": "P",
+  "text": "My profile states “I’m a data scientist, data illustrator, and writer”. I may have found inspiration through artist like Nicholas Felton, and Tiffany Farrant-Gonzalez, but it’s Tableau that helped me actualize this middle role. It’s given me an artistic outlet, as well as a way to apply beauty to my day-to-day work.",
+  "translation": "我的个人资料显示“我是数据科学家，数据插图画家和作家”。 我可能从尼古拉斯·费尔顿（Nicholas Felton）和蒂芙尼·法兰特（Tiffany Farrant-Gonzalez）等艺术家那里获得了灵感，但是Tableau协助我实现了这一中间角色。 它为我提供了艺术上的出路，也为我的日常工作赋予了美感。"
+}, {
+  "tag": "P",
+  "text": "Congrats to Salesforce for acquiring a great company. I hope this next phase for Tableau brings nothing but the best for the companies and people who use it — as well as for those who discover it for the first time.",
+  "translation": "祝贺Salesforce收购了一家出色的公司。 我希望Tableau的下一个阶段对公司和使用它的人以及首次发现它的人带来最大的好处。"
+}]
