@@ -1,0 +1,499 @@
+[{
+  "tag": "H2",
+  "text": "Dipanjan Sarkar - Data Scientist - Intel Corporation | LinkedIn",
+  "translation": "Dipanjan Sarkar-数据科学家-英特尔公司| 领英"
+}, {
+  "tag": "H3",
+  "text": "View Dipanjan Sarkar's profile on LinkedIn, the world's largest professional community. Dipanjan has 6 jobs listed on…",
+  "translation": "在全球最大的专业社区LinkedIn上查看Dipanjan Sarkar的个人资料。 Dipanjan在...上列出了6个职位"
+}, {
+  "tag": "H2",
+  "text": "The Art of Effective Visualization of Multi-dimensional Data - A hands-on Approach - ODSC India…",
+  "translation": "多维数据有效可视化的艺术-动手方法-ODSC印度…"
+}, {
+  "tag": "H3",
+  "text": "Descriptive Analytics is one of the core components of any analysis life-cycle pertaining to a data science project or…",
+  "translation": "描述性分析是与数据科学项目或…相关的任何分析生命周期的核心组成部分之一。"
+}, {
+  "tag": "H2",
+  "text": "The Art of Effective Visualization of Multi-dimensional Data",
+  "translation": "有效可视化多维数据的艺术"
+}, {
+  "tag": "H3",
+  "text": "Strategies for Effective Data Visualization",
+  "translation": "有效数据可视化的策略"
+}, {
+  "tag": "H2",
+  "text": "dipanjanS/art_of_data_visualization",
+  "translation": "dipanjanS / art_of_data_visualization"
+}, {
+  "tag": "H3",
+  "text": "The art of effective visualization of multi-dimensional data - dipanjanS/art_of_data_visualization",
+  "translation": "多维数据有效可视化的艺术-dipanjanS / art_of_data_visualization"
+}, {
+  "tag": "P",
+  "text": "All the code used in this article is available as a Jupyter notebook along with other content and slides in my GitHub repository.",
+  "translation": "本文中使用的所有代码都可以作为Jupyter笔记本以及我的GitHub存储库中的其他内容和幻灯片提供。"
+}, {
+  "tag": "H2",
+  "text": "dipanjanS/art_of_data_visualization",
+  "translation": "dipanjanS / art_of_data_visualization"
+}, {
+  "tag": "H3",
+  "text": "The art of effective visualization of multi-dimensional data - dipanjanS/art_of_data_visualization",
+  "translation": "多维数据有效可视化的艺术-dipanjanS / art_of_data_visualization"
+}, {
+  "tag": "P",
+  "text": "I do cover how to visualize multi-dimensional data using state-of-the-art data visualization frameworks in Python like seaborn and matplotlib on slightly more complex data. The following article should help you get started on the same if you are interested.",
+  "translation": "我确实介绍了如何使用Python中的最新数据可视化框架（如seaborn和matplotlib）对稍微复杂一些的数据进行多维数据可视化。 如果您有兴趣，下面的文章应该可以帮助您入门。"
+}, {
+  "tag": "H2",
+  "text": "The Art of Effective Visualization of Multi-dimensional Data",
+  "translation": "有效可视化多维数据的艺术"
+}, {
+  "tag": "H3",
+  "text": "Strategies for Effective Data Visualization",
+  "translation": "有效数据可视化的策略"
+}, {
+  "tag": "P",
+  "text": "A major portion of these articles was covered in one of my recent conference talks in ODSC, 2018. You can check out the full talk agenda and slides here. I will post the YouTube conference talk once it’s out!",
+  "translation": "这些文章的大部分内容都在我最近于ODSC于2018年举行的会议演讲中讨论过。您可以在此处查看完整的演讲议程和幻灯片。 结束后，我将发布YouTube会议演讲！"
+}, {
+  "tag": "H2",
+  "text": "The Art of Effective Visualization of Multi-dimensional Data - A hands-on Approach - ODSC India…",
+  "translation": "多维数据有效可视化的艺术-动手方法-ODSC印度…"
+}, {
+  "tag": "H3",
+  "text": "Descriptive Analytics is one of the core components of any analysis life-cycle pertaining to a data science project or…",
+  "translation": "描述性分析是与数据科学项目或…相关的任何分析生命周期的核心组成部分之一。"
+}, {
+  "tag": "P",
+  "text": "Have feedback for me? Or interested in working with me on research, data science, artificial intelligence or even publishing an article on TDS? You can reach out to me on LinkedIn.",
+  "translation": "有反馈给我吗？ 还是有兴趣与我合作进行研究，数据科学，人工智能，甚至发表有关TDS的文章？ 您可以在LinkedIn上与我联系。"
+}, {
+  "tag": "H2",
+  "text": "Dipanjan Sarkar - Data Scientist - Intel Corporation | LinkedIn",
+  "translation": "Dipanjan Sarkar-数据科学家-英特尔公司| 领英"
+}, {
+  "tag": "H3",
+  "text": "View Dipanjan Sarkar's profile on LinkedIn, the world's largest professional community. Dipanjan has 6 jobs listed on…",
+  "translation": "在全球最大的专业社区LinkedIn上查看Dipanjan Sarkar的个人资料。 Dipanjan在...上列出了6个职位"
+}, {
+  "tag": "P",
+  "text": "Thanks to Durba for editing this article.",
+  "translation": "感谢Durba编辑本文。"
+}, {
+  "tag": "H2",
+  "text": "A Grammar of Graphics for Python - plotnine 0.4.0 documentation",
+  "translation": "适用于Python的图形语法-plotnine 0.4.0文档"
+}, {
+  "tag": "H3",
+  "text": "plotnine is an implementation of a grammar of graphics in Python, it is based on ggplot2. The grammar allows users to…",
+  "translation": "plotnine是Python中图形语法的一种实现，它基于ggplot2。 语法允许用户..."
+}, {
+  "tag": "H2",
+  "text": "A layered grammar of graphics",
+  "translation": "图形的分层语法"
+}, {
+  "tag": "H3",
+  "text": "A grammar of graphics is a tool that enables us to concisely describe the components of a graphic. Such a grammar…",
+  "translation": "图形语法是一种工具，可以使我们简洁地描述图形的组成部分。 这样的语法"
+}, {
+  "tag": "H2",
+  "text": "The Grammar of Graphics | Leland Wilkinson | Springer",
+  "translation": "图形语法| 利兰·威尔金森| 施普林格"
+}, {
+  "tag": "H3",
+  "text": "Preface to First Edition Before writing the graphics for SYSTAT in the 1980's, I began by teaching a seminar in…",
+  "translation": "第一版前言在为1980年代的SYSTAT编写图形之前，我首先在..."
+}, {
+  "tag": "H1",
+  "text": "A Comprehensive Guide to the Grammar of Graphics for Effective Visualization of Multi-dimensional Data",
+  "translation": "图形语法的综合指南，可有效可视化多维数据"
+}, {
+  "tag": "H2",
+  "text": "Learn effective strategies for leveraging a layered Grammar of Graphics framework for effective data visualization",
+  "translation": "学习有效的策略，以利用分层的“图形语法”框架实现有效的数据可视化"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*i0YTY_jKWyxUxgXEl-thCg.jpeg?q=20",
+  "type": "image",
+  "file": "1*i0YTY_jKWyxUxgXEl-thCg.jpeg"
+}, {
+  "tag": "H1",
+  "text": "Introduction",
+  "translation": "介绍"
+}, {
+  "tag": "P",
+  "text": "Visualizing multi-dimensional data is an art as well as a science. Due to the limitations of our two-dimensional (2-D) rendering devices, building effective visualizations on more than two data dimensions (attributes or features) becomes challenging as the number of dimensions start increasing. We have extensively covered some strategies for effective multi-dimensional data visualization in one of my previous articles, “The Art of Effective Visualization of Multi-dimensional Data” with hands-on examples. In this article, we will cover the layered framework which we leveraged to build these visualizations, called ‘The Grammar of Graphics’. We will also explore essential concepts behind the layered Grammar of Graphics framework and discuss how we can use each specific layered component to build effective visualization on multi-dimensional data. Examples will be shown in Python, however, if you are interested you can replicate the same in R with ease.",
+  "translation": "可视化多维数据既是一门艺术，也是一门科学。 由于我们的二维（2-D）渲染设备的局限性，随着维度数量的增加，在两个以上的数据维度（属性或特征）上建立有效的可视化变得非常困难。 在我之前的文章“多维数据的有效可视化的艺术”中，我们通过动手实例广泛地介绍了一些有效的多维数据可视化的策略。 在本文中，我们将介绍用于构建这些可视化效果的分层框架，称为“图形语法”。 我们还将探讨分层图形语法框架背后的基本概念，并讨论如何使用每个特定的分层组件在多维数据上建立有效的可视化。 示例将在Python中显示，但是，如果您感兴趣，可以轻松地在R中复制相同的示例。"
+}, {
+  "tag": "H1",
+  "text": "Motivation",
+  "translation": "动机"
+}, {
+  "tag": "P",
+  "text": "Data visualization and storytelling has always been one of the most important phases of any data science pipeline involving extracting meaningful insights from data, regardless of the complexity of the data or the project. Take a simple example of ‘The Datasaurus Dozen’ — twelve different datasets depicted in the following figure.",
+  "translation": "数据可视化和讲故事一直是任何涉及从数据中提取有意义的见解的数据科学流程中最重要的阶段之一，而不管数据或项目的复杂性如何。 以“ Datasaurus Dozen”为例，下图描述了十二个不同的数据集。"
+}, {
+  "tag": "P",
+  "text": "Can you guess what is common among these very different looking sets of data?",
+  "translation": "您能猜出这些看起来完全不同的数据集之间的共同点是什么？"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/freeze/max/30/1*W--cGoA3_n2ZlU6Xs4o2iQ.gif?q=20",
+  "caption": "The Datasaurus Dozen — What is common among these diverse datasets?",
+  "type": "image",
+  "file": "1*W--cGoA3_n2ZlU6Xs4o2iQ.gif"
+}, {
+  "tag": "P",
+  "text": "Answer: Summary statistics for all the datasets are exactly the same!",
+  "translation": "答：所有数据集的摘要统计信息完全相同！"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*WGOjHSOJAuVfGfySmHzJSA.png?q=20",
+  "type": "image",
+  "file": "1*WGOjHSOJAuVfGfySmHzJSA.png"
+}, {
+  "tag": "P",
+  "text": "This is a fun variant of the well known Anscombe’s quartet, which many of you might be very familiar with, as depicted in the following figure.",
+  "translation": "下图所示，这是众所周知的Anscombe四重奏的有趣变体，您可能对此很熟悉。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*wPNVidT3st1CTqtdFME0iw.png?q=20",
+  "caption": "Anscombe’s quartet — Different datasets with same summary statistics",
+  "type": "image",
+  "file": "1*wPNVidT3st1CTqtdFME0iw.png"
+}, {
+  "tag": "P",
+  "text": "The key takeaway from these demonstrations would be, “Do not trust your data blindly, and start modeling on your data”. Summary statistics can always be deceptive. Always visualize and understand your data attributes before moving on to feature engineering and building statistical, machine learning and deep learning models.",
+  "translation": "这些演示的主要成果是：“不要盲目相信您的数据，而是开始对数据进行建模”。 摘要统计信息总是具有欺骗性。 在进行功能工程和构建统计，机器学习和深度学习模型之前，请始终可视化和理解您的数据属性。"
+}, {
+  "tag": "P",
+  "text": "Another very important source of motivation, particularly for effective data visualization, can be derived from some excellent case-studies dating several centuries back when we didn’t even have computers let alone Python or R! The first one is John Snow’s famous visualization depicting the Broad Street Cholera Outbreak in London, England in 1854!",
+  "translation": "另一个非常重要的动力来源，尤其是对于有效的数据可视化而言，可以从几个世纪前的出色案例研究中获得，而当我们甚至没有计算机时，更不用说Python或R了！ 第一个是约翰·斯诺（John Snow）著名的可视化作品，描绘了1854年英国伦敦的霍乱大爆发！"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*w-1TV0sEGCbXazbEuRS2iw.png?q=20",
+  "caption": "Visualizing the Broad Street Cholera outbreak which helped find the root cause of the disease outbreak!",
+  "type": "image",
+  "file": "1*w-1TV0sEGCbXazbEuRS2iw.png"
+}, {
+  "tag": "P",
+  "text": "You can see how a simple hand-drawn visualization helped find the root cause of the cholera outbreak in Broad Street way back in the 1850s. Another interesting visualization was built by Florence Nightingale, the mother of modern nursing practice, who had a deep-seated interest in nursing and statistics.",
+  "translation": "您可以看到简单的手绘可视化如何帮助找到1850年代宽街爆发霍乱的根本原因。 现代护理实践之母佛罗伦萨·南丁格尔（Florence Nightingale）建立了另一种有趣的可视化方法，他对护理和统计学深感兴趣。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*2_0n2Uw9qkPdq4mBoH6Z_g.png?q=20",
+  "caption": "Causes of Mortality in the Army of the East — Florence Nightingale",
+  "type": "image",
+  "file": "1*2_0n2Uw9qkPdq4mBoH6Z_g.png"
+}, {
+  "tag": "P",
+  "text": "The above figure depicts a polar area diagram depicting causes of mortality (death) in the army in the 1850s. We can see the visualization is definitely not simplistic, yet it conveys the right insights — clearly showing the proportion of soldiers who died due to diseases which were preventable, based on wounds or other causes. This should serve as enough motivation for effective data visualization!",
+  "translation": "上图描绘了极地区域图，描绘了1850年代军队中的死亡（死亡）原因。 我们可以看到，可视化绝对不是简单化，但是它传达了正确的见解-清楚地显示了由于伤口或其他原因而死于可预防疾病的士兵比例。 这应该成为有效数据可视化的足够动力！"
+}, {
+  "tag": "H1",
+  "text": "Understanding the Grammar of Graphics",
+  "translation": "了解图形语法"
+}, {
+  "tag": "P",
+  "text": "To understand the Grammar of Graphics, we would need to understand what do we mean by Grammar. The following figure summarizes both these aspects briefly.",
+  "translation": "要了解图形语法，我们需要了解“语法”的含义。 下图简要总结了这两个方面。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*Udmyla_fpxmEuve7JqEaog.png?q=20",
+  "type": "image",
+  "file": "1*Udmyla_fpxmEuve7JqEaog.png"
+}, {
+  "tag": "P",
+  "text": "Basically, a grammar of graphics is a framework which follows a layered approach to describe and construct visualizations or graphics in a structured manner. A visualization involving multi-dimensional data often has multiple components or aspects, and leveraging this layered grammar of graphics helps us describe and understand each component involved in visualization — in terms of data, aesthetics, scale, objects and so on.",
+  "translation": "基本上，图形语法是遵循分层方法以结构化方式描述和构造可视化或图形的框架。 涉及多维数据的可视化通常具有多个组成部分或方面，并且利用这种分层的图形语法，可以帮助我们描述和理解可视化中涉及的每个组成部分-包括数据，美观性，规模，对象等。"
+}, {
+  "tag": "P",
+  "text": "The original grammar of graphics framework was proposed by Leland Wilkinson, which covers all major aspects pertaining to effective data visualization in detail. I would definitely recommend interested readers to check out the book on it, whenever they get a chance!",
+  "translation": "图形框架的原始语法由Leland Wilkinson提出，涵盖了与有效数据可视化有关的所有主要方面。 我绝对会推荐有兴趣的读者，只要有机会，就可以阅读有关这本书的书！"
+}, {
+  "tag": "H2",
+  "text": "The Grammar of Graphics | Leland Wilkinson | Springer",
+  "translation": "图形语法| 利兰·威尔金森| 施普林格"
+}, {
+  "tag": "H3",
+  "text": "Preface to First Edition Before writing the graphics for SYSTAT in the 1980's, I began by teaching a seminar in…",
+  "translation": "第一版前言在为1980年代的SYSTAT编写图形之前，我首先在..."
+}, {
+  "tag": "P",
+  "text": "We will, however, be using a variant of this — known as the layered grammar of graphics framework, which was proposed by Hadley Wickham, reputed Data Scientist and the creator of the famous R visualization package ggplot2. Readers should check out his paper titled, ‘A layered grammar of graphics’ which covers his proposed layered grammar of graphics in detail and also talks about his open-source implementation framework ggplot2 which was built for the R programming language",
+  "translation": "但是，我们将使用它的一种变体-称为图形框架的分层语法，该框架由著名的数据科学家，著名的R可视化程序包ggplot2的创建者Hadley Wickham提出。 读者应该查看他的论文“图形的分层语法”，其中详细介绍了他提议的图形分层语法，还应该讨论针对R编程语言构建的开源实现框架ggplot2。"
+}, {
+  "tag": "H2",
+  "text": "A layered grammar of graphics",
+  "translation": "图形的分层语法"
+}, {
+  "tag": "H3",
+  "text": "A grammar of graphics is a tool that enables us to concisely describe the components of a graphic. Such a grammar…",
+  "translation": "图形语法是一种工具，可以使我们简洁地描述图形的组成部分。 这样的语法"
+}, {
+  "tag": "P",
+  "text": "Hadley’s layered grammar of graphics uses several layered components to describe any graphic or visualization. Most notably, it has some variations from the original grammar of graphics proposed by Wilkinson as depicted in the following figure.",
+  "translation": "哈德利（Hadley）的分层图形语法使用多个分层组件来描述任何图形或可视化。 最值得注意的是，它与Wilkinson提出的原始图形语法有一些变化，如下图所示。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/22/1*2X-8H_R2kKWBY1no1p8pYA.png?q=20",
+  "caption": "Mapping between components of Wilkinson’s grammar (left) and the layered grammar (right)",
+  "type": "image",
+  "file": "1*2X-8H_R2kKWBY1no1p8pYA.png"
+}, {
+  "tag": "P",
+  "text": "You can see there are various components in the grammar which can be used to build and describe a visualization. I have identified seven such major components which usually help me build effective visualizations on multi-dimensional data. The following figure illustrates it with some details about each specific component in the grammar.",
+  "translation": "您可以看到语法中有各种组件，可用于构建和描述可视化。 我已经确定了七个主要组成部分，它们通常可以帮助我在多维数据上建立有效的可视化效果。 下图详细说明了该语法中的每个特定组成部分。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*mcLnnVdHNg-ikDbHJfHDNA.png?q=20",
+  "caption": "Major components of the Grammar of Graphics",
+  "type": "image",
+  "file": "1*mcLnnVdHNg-ikDbHJfHDNA.png"
+}, {
+  "tag": "P",
+  "text": "We illustrate the same using a pyramid architecture to show an inherent layered hierarchy of components. Typically, to build or describe any visualization with one or more dimensions, we can use the components as follows.",
+  "translation": "我们使用金字塔体系结构说明了同样的内容，以显示组件的固有分层结构。 通常，要构建或描述具有一个或多个维度的任何可视化，我们可以使用以下组件。"
+}, {
+  "tag": "OL",
+  "texts": ["Data: Always start with the data, identify the dimensions you want to visualize.", "Aesthetics: Confirm the axes based on the data dimensions, positions of various data points in the plot. Also check if any form of encoding is needed including size, shape, color and so on which are useful for plotting multiple data dimensions.", "Scale: Do we need to scale the potential values, use a specific scale to represent multiple values or a range?", "Geometric objects: These are popularly known as ‘geoms’. This would cover the way we would depict the data points on the visualization. Should it be points, bars, lines and so on?", "Statistics: Do we need to show some statistical measures in the visualization like measures of central tendency, spread, confidence intervals?", "Facets: Do we need to create subplots based on specific data dimensions?", "Coordinate system: What kind of a coordinate system should the visualization be based on — should it be cartesian or polar?"],
+  "translations": ["数据：始终从数据开始，确定要可视化的尺寸。", "美学：根据数据尺寸，图中各个数据点的位置确认轴。 还要检查是否需要任何形式的编码，包括大小，形状，颜色等，这些形式对于绘制多个数据维度很有用。", "缩放：我们是否需要缩放潜在值，使用特定的比例来表示多个值或一个范围？", "几何对象：俗称“几何”。 这将涵盖我们在可视化工具上描绘数据点的方式。 应该是点，条，线等吗？", "统计：我们是否需要在可视化中显示一些统计量，例如集中趋势，价差，置信区间的量度？", "方面：我们是否需要根据特定数据维度创建子图？", "坐标系：可视化应基于哪种坐标系-是直角坐标系还是极坐标系？"]
+}, {
+  "tag": "P",
+  "text": "We will now be looking at how to leverage this layered framework to build effective data visualizations for multi-dimensional data with some hands-on examples.",
+  "translation": "现在，我们将通过一些动手示例，研究如何利用此分层框架为多维数据构建有效的数据可视化。"
+}, {
+  "tag": "H1",
+  "text": "Grammar of Graphics in Action",
+  "translation": "图形在实践中的语法"
+}, {
+  "tag": "P",
+  "text": "We will now apply the concept we learnt in the previous section on some actual data. We will be building all our visualizations in Python, but I would also recommend people to check out the ggplot2 package in R, which is one of the most inspiring frameworks till now for building nice and clean publication quality visualizations. We do have a ggplot framework in Python which has been built by Yhat, Inc. However, if you check the repository, no commits or updates have been pushed for the last two years, and unfortunately, this causes some errors especially due to backward incompatibility issues with newer versions of pandas. Hence, to emulate the true layered grammar of graphics syntax in Python, we will use another interesting framework called plotnine.",
+  "translation": "现在，我们将在上一节中学到的概念应用于一些实际数据。 我们将使用Python构建所有可视化，但是我也建议人们检查R中的ggplot2软件包，这是迄今为止最令人鼓舞的框架之一，用于构建美观，整洁的出版物质量的可视化。 我们确实有一个由Yhat，Inc.构建的Python ggplot框架。但是，如果您检查存储库，最近两年没有推送任何提交或更新，但是不幸的是，这会导致一些错误，尤其是由于向后不兼容 较新版本的熊猫的问题。 因此，为了在Python中模拟图形语法的真正分层语法，我们将使用另一个有趣的框架，称为plotnine。"
+}, {
+  "tag": "H2",
+  "text": "A Grammar of Graphics for Python - plotnine 0.4.0 documentation",
+  "translation": "适用于Python的图形语法-plotnine 0.4.0文档"
+}, {
+  "tag": "H3",
+  "text": "plotnine is an implementation of a grammar of graphics in Python, it is based on ggplot2. The grammar allows users to…",
+  "translation": "plotnine是Python中图形语法的一种实现，它基于ggplot2。 语法允许用户..."
+}, {
+  "tag": "P",
+  "text": "Plotnine is an open-source Python implementation for a layered grammar of graphics framework which is based on ggplot2. Thus, using the previously specified components in this layered grammar, we can build effective visualizations.",
+  "translation": "Plotnine是用于基于ggplot2的图形框架分层语法的开源Python实现。 因此，使用此分层语法中先前指定的组件，我们可以构建有效的可视化效果。"
+}, {
+  "tag": "H2",
+  "text": "Start with the data",
+  "translation": "从数据开始"
+}, {
+  "tag": "P",
+  "text": "We always start by loading up and looking at the dataset we want to analyze and visualize. We will use the famous mtcars dataset available as one of the pre-loaded datasets in plotnine.",
+  "translation": "我们总是从加载并查看要分析和可视化的数据集开始。 我们将使用著名的mtcars数据集作为plotenine中的预加载数据集之一。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/dipanjanS/59851cb61d0c701e267c390872f5cb1b/raw/5d78f55f7f708326105f2352ca67fce56c9a2b2b/gog_data_viz1.py",
+  "code": "from plotnine import *\nfrom plotnine.data import mtcars\n\nmtcars.head()"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*NlUoRbjceqDABLvC2x6oeQ.png?q=20",
+  "type": "image",
+  "file": "1*NlUoRbjceqDABLvC2x6oeQ.png"
+}, {
+  "tag": "P",
+  "text": "The mtcars dataset consists of data that was extracted from the 1974 Motor Trend US magazine, and depicts fuel consumption and 10 other attributes of automobile design and performance for 32 automobiles (1973–74 models). The details of each attribute are depicted in the figure above. Let’s build some visualizations now.",
+  "translation": "mtcars数据集包含从1974年《美国汽车趋势》杂志中提取的数据，该数据描述了32辆汽车（1973–74年型号）的油耗以及汽车设计和性能的10个其他属性。 上图中描述了每个属性的细节。 让我们现在构建一些可视化。"
+}, {
+  "tag": "H2",
+  "text": "Visualize two-dimensions (2-D)",
+  "translation": "可视化二维（2-D）"
+}, {
+  "tag": "P",
+  "text": "We can now visualize data up to two dimensions using some of the components from our layered grammar of graphics framework including data, scale, aesthetics and geoms. We choose a dot or scatter plot in this case for our geometric object to represent each data point.",
+  "translation": "现在，我们可以使用图形框架分层语法中的某些组件来可视化二维数据，包括数据，比例，美学和几何。 在这种情况下，我们为几何对象选择一个点或散点图，以表示每个数据点。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/dipanjanS/c418ac82379961fb952946948820f36a/raw/0ec6a86eb713fad3677fc29caee6ce582ddc97e6/gog_data_viz2.py",
+  "code": "(ggplot(mtcars, \n        aes('wt', 'mpg')) \n        + geom_point()\n        + theme_bw())"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*9A6TbqnLlvFOOzqnRh6wIA.png?q=20",
+  "type": "image",
+  "file": "1*9A6TbqnLlvFOOzqnRh6wIA.png"
+}, {
+  "tag": "P",
+  "text": "We can clearly see from the above visualization that mpg has a negative correlation with the cat wt.",
+  "translation": "从以上可视化中我们可以清楚地看到mpg与cat wt负相关。"
+}, {
+  "tag": "H2",
+  "text": "Visualize three-dimensions (3-D)",
+  "translation": "可视化三维（3-D）"
+}, {
+  "tag": "P",
+  "text": "To visualize three dimensions from our dataset, we can leverage color as one of our aesthetic components to visualize one additional dimension besides our other two dimensions as depicted in the following example.",
+  "translation": "为了可视化数据集中的三个维度，我们可以利用颜色作为我们的审美成分之一，以可视化我们其他两个维度之外的另一个维度，如以下示例所示。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/dipanjanS/966e79c11f684904a0b9b98422584aed/raw/96b2d8724ce70f6debc561c377e9cd1c0a91769e/gog_data_viz3.py",
+  "code": "(ggplot(mtcars, \n            aes('wt', 'mpg', color='factor(gear)'))\n            + geom_point()\n            + theme_bw())"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*7E8IUPyzvw3BfmjYt5Mf9A.png?q=20",
+  "type": "image",
+  "file": "1*7E8IUPyzvw3BfmjYt5Mf9A.png"
+}, {
+  "tag": "P",
+  "text": "In the above visualization, we depict the cars with different number of gears as separate categories using the color aesthetic along with our other two data dimensions (variables). It is quite clear that cars with a smaller number of gears on average tend to have higher wt and lower mpg.",
+  "translation": "在上面的可视化中，我们使用颜色美学以及其他两个数据维度（变量）将具有不同档数的汽车描绘为单独的类别。 很显然，平均而言，齿轮数较少的汽车往往具有较高的重量和较低的mpg。"
+}, {
+  "tag": "H2",
+  "text": "Visualize four-dimensions (4-D)",
+  "translation": "可视化四维（4-D）"
+}, {
+  "tag": "P",
+  "text": "To visualize four dimensions from our dataset, we can leverage color as well as size as two of our aesthetics besides other regular components including geoms, data and scale.",
+  "translation": "为了可视化数据集中的四个维度，除了包括几何体，数据和比例尺在内的其他常规组件外，我们还可以利用颜色和大小作为我们的两种美学。"
+}, {
+  "tag": "FIGURE",
+  "type": "code"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*6zvlFdvbMYzCZ_aLDVHixg.png?q=20",
+  "type": "image",
+  "file": "1*6zvlFdvbMYzCZ_aLDVHixg.png"
+}, {
+  "tag": "P",
+  "text": "The visualization shows us how powerful aesthetics can be in helping us visualize multiple data dimensions in a single plot. It is quite clear that cars with higher number of cyl (cylinders) have lower number of gears and in turn, their wt is higher and mpg lower.",
+  "translation": "可视化向我们展示了强大的美学能力，可以帮助我们在单个图中可视化多个数据维度。 显然，具有较高气缸数的汽车的齿轮数较少，因此，其重量较高，mpg较低。"
+}, {
+  "tag": "P",
+  "text": "Alternatively, we can also use color and facets to depict data in four dimensions instead of size as depicted in the following example.",
+  "translation": "或者，我们也可以使用颜色和构面来描述四个维度的数据，而不是如以下示例中所述的大小。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/dipanjanS/0c7bacbdd39c38e7a3ec19922c1abdf5/raw/f87d0e7f3034aa2985501920eb0102cd2fe5b145/gog_data_viz6.py",
+  "code": "(ggplot(mtcars, \n        aes('wt', 'mpg', \n            color='factor(gear)'))\n        + geom_point() \n        + facet_wrap('~cyl') \n        + theme_bw())"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*fuUvV6gV7sKMgapuHLTaSQ.png?q=20",
+  "type": "image",
+  "file": "1*fuUvV6gV7sKMgapuHLTaSQ.png"
+}, {
+  "tag": "P",
+  "text": "Facets are definitely one of the most powerful components towards building an effective data visualization as shown in the visualization above, where we can clearly see cars with higher cyl count have lower gear count and similar trends as the previous visualization with color and size.",
+  "translation": "方面绝对是构建有效数据可视化的最强大组件之一，如上面的可视化所示，在该图中，我们可以清楚地看到缸数更高的汽车具有更低的齿轮数，并且与以前的颜色和尺寸可视化类似。"
+}, {
+  "tag": "H2",
+  "text": "Visualize data dimensions and statistics",
+  "translation": "可视化数据维度和统计数据"
+}, {
+  "tag": "P",
+  "text": "To visualize data dimensions and some relevant statistics (like fitting a linear model), we can leverage statistics along with the other components in our layered grammar.",
+  "translation": "为了可视化数据维度和一些相关的统计信息（例如拟合线性模型），我们可以利用统计信息以及分层语法中的其他组件。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/dipanjanS/484c83429ecde71292087cf10a5ec159/raw/13fe2747806341540c17514e5c3ab7b4d407104b/gog_data_viz5.py",
+  "code": "(ggplot(mtcars, \n        aes('wt', 'mpg', \n            color='factor(gear)'))\n        + geom_point() \n        + stat_smooth(method='lm') \n        + theme_bw())"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*KwuUr91ya2_MTY8xSh5Sjg.png?q=20",
+  "type": "image",
+  "file": "1*KwuUr91ya2_MTY8xSh5Sjg.png"
+}, {
+  "tag": "P",
+  "text": "This enables us to see linear model trends for mpg based on wt due to the statistics component.",
+  "translation": "这使我们能够查看基于wt的mpg线性模型趋势（归因于统计信息组件）。"
+}, {
+  "tag": "H2",
+  "text": "Visualize five-dimensions (5-D)",
+  "translation": "可视化五维（5-D）"
+}, {
+  "tag": "P",
+  "text": "To visualize data in five dimensions, you know the drill by now! We will leverage the power of aesthetics including color, size and facets.",
+  "translation": "为了可视化五个维度的数据，您现在已经了解了演练！ 我们将利用美学的力量，包括颜色，大小和刻面。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/dipanjanS/ee46d0ef75d71171dcecb41eeb76c532/raw/af98404ee29d8a19236facb1478be068573f9596/gog_data_viz7.py",
+  "code": "(ggplot(mtcars, \n        aes('wt', 'mpg', \n            color='factor(gear)', \n            size='cyl'))\n        + geom_point() \n        + facet_wrap('~am') \n        + theme_bw())"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*1BawLI6YSAkfFASobpViaQ.png?q=20",
+  "type": "image",
+  "file": "1*1BawLI6YSAkfFASobpViaQ.png"
+}, {
+  "tag": "P",
+  "text": "Here we use am as the facet where 0 indicates cars with automatic transmission and 1 indicates cars with manual transmission. The plot shows that cars with manual transmission have higher number of gears as compared to cars with automatic transmission. Also, majority of cars with a higher number of cylinders (cyl) have automatic transmission. Other insights are similar to what we have observed in the previous plots.",
+  "translation": "在这里，我们将am用作方面，其中0表示自动变速箱，而1表示手动变速箱。 该图显示，与具有自动变速器的汽车相比，具有手动变速器的汽车具有更高的档数。 而且，大多数具有更多气缸（缸）的汽车都具有自动变速器。 其他见解与我们在前面的图中所观察到的相似。"
+}, {
+  "tag": "H2",
+  "text": "Visualize six-dimensions (6-D)",
+  "translation": "可视化六维（6-D）"
+}, {
+  "tag": "P",
+  "text": "To visualize data in six dimensions, we can add in an additional facet on the y-axis along with a facet on the x-axis, and color and size as aesthetics.",
+  "translation": "为了在六个维度上可视化数据，我们可以在y轴上添加一个附加的构面，在x轴上添加一个构面，并且颜色和大小作为美感。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/dipanjanS/05fce200bf3143c237e1e9fd24f5c89a/raw/c1dcb45cb41b9808b6eeafb87d6ce05c6f5cdf78/gog_data_viz8.py",
+  "code": "(ggplot(mtcars, \n        aes('wt', 'mpg', \n            color='factor(gear)', \n            size='cyl'))\n        + geom_point() \n        + facet_grid('am ~ carb') \n        + theme_bw())"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*OYaRTZeVPxtD1bt5waQ-EQ.png?q=20",
+  "type": "image",
+  "file": "1*OYaRTZeVPxtD1bt5waQ-EQ.png"
+}, {
+  "tag": "P",
+  "text": "We represent transmission (am) as 0 (automatic) and 1 (manual) as a facet on the y-axis and number of carburetors (carb) as a facet on the x-axis besides the other dimensions represented using other aesthetics similar to our previous plots. An interesting insight from the above visualization is that cars with higher number of gears have manual transmission (am) and higher number of carburetors (carb). Do you notice any other interesting insights?",
+  "translation": "我们将传输率（am）表示为0（自动），将1（手动）表示为y轴上的小平面，将化油器的数量（carb）表示为x轴上的小平面，除此之外，我们使用与我们类似的其他美学方法来表示其他尺寸 以前的地块。 从以上可视化中得出的一个有趣的见解是，具有更多齿轮的汽车具有手动变速器（am）和具有更多化油器（carb）。 您还有其他有趣的见解吗？"
+}, {
+  "tag": "H2",
+  "text": "Can we go higher?",
+  "translation": "我们可以更高吗？"
+}, {
+  "tag": "P",
+  "text": "The pressing question is, can we go higher than six dimensions? Well, it definitely becomes more and more difficult to hack our way around the limitations of a two-dimensional rendering device to visualize more data dimensions.",
+  "translation": "紧迫的问题是，我们可以超越六个维度吗？ 好吧，绕开二维渲染设备的局限性以可视化更多数据维度的方式无疑变得越来越困难。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/proxy/0*VMgpk0U6Q5vBK1vb.jpg",
+  "type": "image"
+}, {
+  "tag": "P",
+  "text": "One method is to use more facets and subplots. Besides this, you can also use the notion of time if your dataset has a temporal aspect as depicted in the following example.",
+  "translation": "一种方法是使用更多的构面和子图。 除此之外，如果您的数据集具有时间方面，也可以使用时间的概念，如以下示例所示。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/freeze/max/29/1*vh8gqCgeBFBlnwxYRZtY2Q.gif?q=20",
+  "caption": "Hans Rosling’s famous visualization of global population, health and economic indicators",
+  "type": "image",
+  "file": "1*vh8gqCgeBFBlnwxYRZtY2Q.gif"
+}, {
+  "tag": "P",
+  "text": "This depicts Hans Rosling’s famous visualization of depicting global population, health and various economic indicators across all countries. This was also presented in an official TED conference which I would recommend everyone to check out if they haven’t done it already!",
+  "translation": "这描绘了汉斯·罗斯林（Hans Rosling）著名的可视化效果，描绘了全球人口，健康状况和各个国家的各种经济指标。 TED官方会议上也介绍了这一点，我建议大家检查一下他们是否还没有这样做！"
+}, {
+  "tag": "FIGURE",
+  "type": "code"
+}, {
+  "tag": "P",
+  "text": "This should give you a good perspective on how to leverage the layered grammar of graphics to visualize multi-dimensional data.",
+  "translation": "这应该使您对如何利用图形的分层语法可视化多维数据有一个很好的了解。"
+}, {
+  "tag": "H1",
+  "text": "Conclusion",
+  "translation": "结论"
+}, {
+  "tag": "P",
+  "text": "Like I have mentioned time and again, data visualization is an art as well as a science. This article should give you enough motivation and examples to get started with understanding and leveraging a layered grammar of graphics framework towards building effective visualizations of your own on multi-dimensional data.",
+  "translation": "就像我一次又一次提到的那样，数据可视化既是一门艺术，也是一门科学。 本文应该为您提供足够的动力和示例，以开始理解和利用分层的图形框架语法，以在多维数据上构建自己的有效可视化效果。"
+}]
