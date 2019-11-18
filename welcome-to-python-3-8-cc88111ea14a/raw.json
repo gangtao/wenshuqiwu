@@ -1,0 +1,139 @@
+[{
+  "tag": "H1",
+  "text": "Summary",
+  "translation": "摘要"
+}, {
+  "tag": "P",
+  "text": "The upcoming release of Python adds some great new features to the language and significantly improves the performance with fundamental speed-up fixes. Let us welcome Python 3.8 and make the best use of it.",
+  "translation": "即将发布的Python版本为该语言增加了一些很棒的新功能，并通过基本的加速修复大大提高了性能。 让我们欢迎Python 3.8并充分利用它。"
+}, {
+  "tag": "H1",
+  "text": "Welcome to Python 3.8",
+  "translation": "欢迎使用Python 3.8"
+}, {
+  "tag": "P",
+  "text": "Python 3.8 is the latest major release of the Python programming language, and it contains many new features and optimizations.",
+  "translation": "Python 3.8是Python编程语言的最新主要版本，它包含许多新功能和优化。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*BjcKs4_BdpYCiybp.png?q=20",
+  "caption": "Python 3.8",
+  "type": "image",
+  "file": "0*BjcKs4_BdpYCiybp.png"
+}, {
+  "tag": "P",
+  "text": "Some of the new features of Python 3.8 are:",
+  "translation": "Python 3.8的一些新功能包括："
+}, {
+  "tag": "P",
+  "text": "1. The walrus operator",
+  "translation": "1.海象运算符"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*Qq9But9b08ndlNh4Bg1pHg.png?q=20",
+  "caption": "Walrus",
+  "type": "image",
+  "file": "1*Qq9But9b08ndlNh4Bg1pHg.png"
+}, {
+  "tag": "P",
+  "text": "We have a new kind of assignment operator in this new version called Walrus operator (:=). This operator has the advantage of setting and returning a variable in one line. For example:",
+  "translation": "在此新版本中，我们有一种新的赋值运算符，称为Walrus运算符（：=）。 该运算符的优点是可以在一行中设置和返回变量。 例如："
+}, {
+  "tag": "PRE",
+  "text": "Code:sample_data = [{“id”: 1, “name”: “Srijan”},{“id”: 2, “name”: “Abhishek”},{“id”: 3, “name”: “Dilip”},{“id”: 4, “name”: “Vishal”},{“id”: 4, “name”: None},]print(“With Python 3.8 Walrus Operator:”)for entry in sample_data:    if name := entry.get(“name”):        print(f’Found name = {name}’)print(“Without Walrus operator:”)for entry in sample_data:    name = entry.get(“name”)    if name:        print(f’Found name = {name}’)Output:With Python 3.8 Walrus Operator:Found name = “Srijan”Found name = “Abhishek”Found name = “Dilip”Found name = “Vishal”Without Walrus operator:Found name = “Srijan”Found name = “Abhishek”Found name = “Dilip”Found name = “Vishal”",
+  "translation": "代码：sample_data = [{“ id”：1，“ name”：“ Srijan”}，{“ id”：2，“ name”：“ Abhishek”}，{“ id”：3，“ name”：“ Dilip ”}，{“ id”：4，“名称”：“ Vishal”}，{“ id”：4，“名称”：无}，] print（“使用Python 3.8 Walrus运算符：”）用于在sample_data中输入： if name：= entry.get（“名称”）：print（f'发现名称= {name}'）print（“无Walrus运算符：”），用于在sample_data中输入：name = entry.get（“ name”）如果 名称：print（f'发现名称= {名称}'）输出：使用Python 3.8 Walrus运算符：发现名称=“ Srijan”发现名称=“ Abhishek”发现名称=“ Dilip”发现名称=“ Vishal”而没有Walrus运算符： 发现名称=“斯里兰卡”发现名称=“ Abhishek”发现名称=“ Dilip”发现名称=“ Vishal”"
+}, {
+  "tag": "P",
+  "text": "2. Positional-only arguments",
+  "translation": "2.仅位置参数"
+}, {
+  "tag": "P",
+  "text": "A special marker ‘/’ can now be used when defining a method’s arguments to specify that the function only accepts positional arguments on the left of the marker. The ‘/’ marker here means that passing values for x, y and z can only be done positional, and not using keyword arguments.",
+  "translation": "现在，在定义方法的参数时可以使用特殊的标记“ /”，以指定该函数仅接受标记左侧的位置参数。 此处的“ /”标记表示x，y和z的值只能在位置上传递，而不能使用关键字参数。"
+}, {
+  "tag": "PRE",
+  "text": "Code:def func1(x,y,z=None,/):    r = x + y    if z is not None:        r -= z        return rprint(func1(2, 5)) #7print(func1(2, 5, 3)) #4print(func1(x=2, y=10)) #TypeErrorprint(func1(2, 10, z=3)) #TypeError",
+  "translation": "代码：def func1（x，y，z = None，/）：r = x + y（如果z不为None）：r-= z return rprint（func1（2，5））＃7print（func1（2，5， 3））＃4print（func1（x = 2，y = 10））#TypeErrorprint（func1（2，10，z = 3））#TypeError"
+}, {
+  "tag": "P",
+  "text": "3. f-string also support ‘=’",
+  "translation": "3. f字符串还支持“ =”"
+}, {
+  "tag": "P",
+  "text": "Now you can use ‘=’ operator within f-string to get and print value.This mean that now we can perform our arithmetic operations within f-string.",
+  "translation": "现在，您可以在f-string中使用“ =”运算符来获取并打印值。这意味着现在我们可以在f-string中执行算术运算。"
+}, {
+  "tag": "PRE",
+  "text": "a=5b=6print(f'sum={a+b}') #11",
+  "translation": "a = 5b = 6print（f'sum = {a + b}'）＃11"
+}, {
+  "tag": "P",
+  "text": "4. New syntax warning",
+  "translation": "4.新的语法警告"
+}, {
+  "tag": "P",
+  "text": "Python have introduced new warning messages for missing comma along with the error messages in this new version. The interpreter will throw this helpful warning message which will help user to quickly find their error.",
+  "translation": "Python在此新版本中引入了针对缺少逗号的新警告消息以及错误消息。 解释器将抛出此有用的警告消息，这将帮助用户快速找到他们的错误。"
+}, {
+  "tag": "PRE",
+  "text": "list1=[[0,1] [2,3]] #this will give a SyntaxWarning of missing comma along with the TypeError.",
+  "translation": "list1 = [[0,1] [2,3]]＃这将给出缺少逗号的语法警告以及TypeError。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*pmFTEAwOWnkYSwxKS-hoVA.jpeg?q=20",
+  "caption": "SyntaxWarning",
+  "type": "image",
+  "file": "1*pmFTEAwOWnkYSwxKS-hoVA.jpeg"
+}, {
+  "tag": "P",
+  "text": "5. Reversible dictionary",
+  "translation": "5.可逆字典"
+}, {
+  "tag": "P",
+  "text": "reversed() now works with dictionary. Python has started preserving the order of key inserted in dictionary from 3.7 but now in 3.8 you can also reverse it.",
+  "translation": "reversed（）现在可用于字典。 Python已开始保留从3.7开始在字典中插入键的顺序，但是现在在3.8中您也可以将其反转。"
+}, {
+  "tag": "PRE",
+  "text": "dict1={'a':5,'b':6}print(dict1)    #{'a': 5, 'b': 6}print(list(reversed(dict1)))    ['b', 'a']",
+  "translation": "dict1 = {'a'：5，'b'：6} print（dict1）＃{'a'：5，'b'：6} print（list（reversed（dict1）））['b'，'a ']"
+}, {
+  "tag": "P",
+  "text": "6. Multiprocessing shared memory",
+  "translation": "6.多处理共享内存"
+}, {
+  "tag": "P",
+  "text": "Using multiprocessing, the data can be shared and accessed globally across all the instances of Python. This will speed up saving, storing, accessing, and transferring data with much ease.",
+  "translation": "使用多重处理，可以在所有Python实例之间全局共享和访问数据。 这将大大简化存储，存储，访问和传输数据的速度。"
+}, {
+  "tag": "P",
+  "text": "7. New protocol for creating pickle files",
+  "translation": "7.用于创建泡菜文件的新协议"
+}, {
+  "tag": "P",
+  "text": "Pickle in Python is primarily used in serializing and de-serializing data, and code that can be used somewhere else also. In this new version, Python will be using Protocol 4 by default and you can also use Protocol 5 with it. This will result APIs to take full advantage, hence improving the performance. For people working in field of data science, this is an exciting news as this will work well with Django and Flask even in the servers with low or limited space.",
+  "translation": "Python中的Pickle主要用于序列化和反序列化数据，以及可在其他地方使用的代码。 在此新版本中，Python默认情况下将使用协议4，您也可以将其与协议5一起使用。 这将使API充分利用，从而提高性能。 对于在数据科学领域工作的人来说，这是一个令人振奋的消息，因为即使在空间较小或有限的服务器中，它也可以与Django和Flask很好地配合使用。"
+}, {
+  "tag": "P",
+  "text": "8. Improved CPython",
+  "translation": "8.改进的CPython"
+}, {
+  "tag": "P",
+  "text": "Python has also said that they have improved Python’s C engine. This will make optimizations easy in Python. People from data science field had encountered many instance where the Python or Jupyter environment crashed because of huge amount of data. With improvement in its CPython module, user can expect better result in processing and querying data.",
+  "translation": "Python还表示，他们已经改进了Python的C引擎。 这将使使用Python进行优化变得容易。 数据科学领域的人们曾遇到许多实例，其中Python或Jupyter环境由于大量数据而崩溃。 随着其CPython模块的改进，用户可以期望在处理和查询数据方面获得更好的结果。"
+}, {
+  "tag": "P",
+  "text": "9. Performance improvement",
+  "translation": "9.绩效提升"
+}, {
+  "tag": "P",
+  "text": "This release have added number of performance that speeds-up the interpreter. Some of them are:",
+  "translation": "此版本增加了一些性能，可加快解释器的速度。 他们之中有一些是："
+}, {
+  "tag": "UL",
+  "texts": ["operator.itemgetter() is now 33% faster.", "Field lookups in collections.namedtuple() are now more than two times faster.", "list constructor now create list of 12% smaller on average.", "uuid.UUID now uses slots to reduce it’s memory footprint.", "Invocation of some simple built-ins and methods are now 20–50% faster."],
+  "translations": ["operator.itemgetter（）现在提高了33％。", "现在，collections.namedtuple（）中的字段查找速度提高了两倍以上。", "列表构造函数现在创建的列表平均减少12％。", "uuid.UUID现在使用插槽来减少内存占用。", "现在，一些简单的内置方法的调用速度提高了20％到50％。"]
+}, {
+  "tag": "P",
+  "text": "and many more…To know more, check https://www.python.org/downloads/release/python-380/",
+  "translation": "还有更多…要了解更多信息，请查看https://www.python.org/downloads/release/python-380/"
+}]
