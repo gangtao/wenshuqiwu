@@ -1,0 +1,215 @@
+[{
+  "tag": "H1",
+  "text": "GraphQL, Grafana and Dash",
+  "translation": "GraphQL，Grafana和Dash"
+}, {
+  "tag": "P",
+  "text": "If you’re a person who is interested in Data Science, Data Manipulation or Data Visualization this article is the right one for you. I’m sure you have heard of the names that I have used for my topic above. In this article I would be first going through each of these in some detail and later there will be the comparison.",
+  "translation": "如果您是对数据科学，数据处理或数据可视化感兴趣的人，那么本文就是您的合适之选。 我确定您已经听说过我在上述主题中使用的名称。 在本文中，我将首先详细介绍所有这些内容，然后再进行比较。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*BSzLkyk_stCoaHm8TgUinw.png?q=20",
+  "caption": "GraphQL, Grafana and Dash",
+  "type": "image",
+  "file": "1*BSzLkyk_stCoaHm8TgUinw.png"
+}, {
+  "tag": "P",
+  "text": "From the above three except for GraphQL other two are used for data visualization. Today’s data visualization tools go beyond the standard charts and graphs used in Microsoft Excel spreadsheets, displaying data in more sophisticated ways such as infographics, dials and gauges, geographic maps, sparklines, heat maps, and detailed bar, pie and scatter plots. The images may include interactive capabilities, enabling users to manipulate them or drill into the data for querying and analysis. Indicators designed to alert users when data has been updated or predefined conditions occur can also be included. Data visualization has become the de facto standard for modern business intelligence.",
+  "translation": "上面的三个中，除了GraphQL之外，其他两个都用于数据可视化。 当今的数据可视化工具已经超越了Microsoft Excel电子表格中使用的标准图表和图形，以更复杂的方式显示数据，例如信息图表，刻度盘和仪表，地理地图，迷你图，热图以及详细的条形图，饼图和散点图。 图像可以包括交互式功能，使用户能够操纵它们或钻取数据以进行查询和分析。 还可以包括旨在在数据已更新或发生预定义条件时向用户发出警报的指示器。 数据可视化已成为现代商业智能的事实上的标准。"
+}, {
+  "tag": "P",
+  "text": "In order to visualize the data in anyway first you have to extract data from some sort of source. It can be a system of sensors, API, database etc. It also involves understanding of the different features of data and to come up with meaningful, important, and interesting attributes of them. Data extraction is also used to perform exploratory analysis and to extract relevant information from the data. There are many ways and technologies used for data manipulation such as Pandas, R, SQL, GraphQL etc. So GraphQL, which is one of the topics that I have chosen is also a data extracting method, but quite different from the rest.",
+  "translation": "为了以任何方式可视化数据，您首先必须从某种来源中提取数据。 它可以是传感器，API，数据库等的系统。它还涉及对数据不同特征的理解，并为它们提供有意义，重要和有趣的属性。 数据提取还用于执行探索性分析并从数据中提取相关信息。 有许多用于数据处理的方法和技术，例如Pandas，R，SQL，GraphQL等。因此，GraphQL（这是我选择的主题之一）也是一种数据提取方法，但与其他方法截然不同。"
+}, {
+  "tag": "P",
+  "text": "So let’s start with the first one, GraphQL.",
+  "translation": "因此，让我们从第一个GraphQL开始。"
+}, {
+  "tag": "H1",
+  "text": "What is GraphQL?",
+  "translation": "什么是GraphQL？"
+}, {
+  "tag": "P",
+  "text": "Most applications today have the need to fetch data from a server where that data is stored in a database. It’s the responsibility of the API to provide an interface to the stored data that fits an application’s needs. Or else there should be some kind of filtration to the data that is taken through the API in order to match the needs of the application.",
+  "translation": "如今，大多数应用程序都需要从服务器上获取数据，而该服务器将数据存储在数据库中。 API的职责是为存储的数据提供适合应用程序需求的接口。 否则应该对通过API获取的数据进行某种过滤，以匹配应用程序的需求。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*h5o6ig1abzPbryKltVwy9g.png?q=20",
+  "type": "image",
+  "file": "1*h5o6ig1abzPbryKltVwy9g.png"
+}, {
+  "tag": "P",
+  "text": "Most people get confused GraphQL as a database technology. This is a not quite accurate as GraphQL is a query language for APIs and not for databases. In that sense it’s database agnostic and effectively can be used in any context where an API is used. It enables declarative data fetching and thus ties in perfectly with React/React Native as a declarative framework for building user interfaces. GraphQL can either complement or entirely replace the usage of REST APIs.",
+  "translation": "大多数人对GraphQL作为数据库技术感到困惑。 这不是很准确，因为GraphQL是API而不是数据库的查询语言。 从这个意义上讲，它与数据库无关，可以在使用API的任何情况下有效使用。 它支持声明式数据获取，因此可以与作为构建用户界面的声明性框架的React / React Native完美结合。 GraphQL可以补充或完全取代REST API的使用。"
+}, {
+  "tag": "P",
+  "text": "The main difference between REST and GraphQL is that RESTful APIs have multiple endpoints that return fixed data structures whereas a GraphQL server only exposes a single endpoint and returns flexible data structures.",
+  "translation": "REST和GraphQL之间的主要区别在于RESTful API具有多个返回固定数据结构的终结点，而GraphQL服务器仅公开一个终结点并返回灵活的数据结构。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*Blt1BR7BGy89aRlughrkaQ.png?q=20",
+  "type": "image",
+  "file": "1*Blt1BR7BGy89aRlughrkaQ.png"
+}, {
+  "tag": "P",
+  "text": "With a RESTful API, you will end up with data that you don’t need. For example, when calling the environment/build/<id> endpoint, you will get all the data pertaining to that particular build. You could get back data like, date_created, date_updated, status etc. But all we needed was the author’s name. This is a clear example of over-fetching in a RESTful API.",
+  "translation": "使用RESTful API，您最终将获得不需要的数据。 例如，当调用环境/构建/ <id>端点时，您将获得与该特定构建有关的所有数据。 您可以获取诸如date_created，date_updated，状态等数据。但是，我们所需要的只是作者的姓名。 这是RESTful API中过度获取的明显示例。"
+}, {
+  "tag": "P",
+  "text": "In the case of environment/build/<id> was not sufficient to retrieve what we are looking for. To get the code bases that build belongs to, we had to make a call to another endpoint environment/build/<id>/codebases. This situation is called under-fetching.",
+  "translation": "在环境/ build / <id>的情况下，不足以检索我们要查找的内容。 要获取构建所属的代码库，我们必须调用另一个端点环境/ build / <id> / codebases。 这种情况称为读取不足。"
+}, {
+  "tag": "P",
+  "text": "GraphQL uses its own type system to define the schema of an API, with its syntax called Schema Definition Language (SDL). The schema serves as a bridge between the server and the client to define how a client can access the data.",
+  "translation": "GraphQL使用其自己的类型系统来定义API的架构，其语法称为架构定义语言（SDL）。 该模式充当服务器和客户端之间的桥梁，以定义客户端如何访问数据。"
+}, {
+  "tag": "P",
+  "text": "Once the schema is defined, the front-end and back-end developers can work on their own, as the front-end can be easily tested with mock data. The front-end can also get useful information from the schema, such as its types, queries and mutations. The schema also provides type safety, which is a plus for the front-end and back-end development, as it catches type errors early.",
+  "translation": "一旦定义了模式，前端和后端开发人员就可以自己工作，因为可以轻松地使用模拟数据测试前端。 前端还可以从架构中获取有用的信息，例如其类型，查询和变异。 该模式还提供类型安全性，这对于前端和后端开发是一个加号，因为它可以尽早发现类型错误。"
+}, {
+  "tag": "P",
+  "text": "Example Query :",
+  "translation": "查询示例："
+}, {
+  "tag": "PRE",
+  "text": "query {  books {    id    title    author    isbn    price  } }",
+  "translation": "查询{图书{id标题作者isbn价格}}"
+}, {
+  "tag": "P",
+  "text": "Here we get a single endpoint in which we can get all the necessary data without any over or under fetching through GraphQL server.",
+  "translation": "在这里，我们得到一个端点，在其中可以获取所有必需的数据，而不会通过GraphQL服务器获取过多或不足的数据。"
+}, {
+  "tag": "P",
+  "text": "Number of popular programming languages support GraphQL.",
+  "translation": "许多流行的编程语言支持GraphQL。"
+}, {
+  "tag": "UL",
+  "texts": ["C# / .NET", "Go", "Groovy", "Java", "JavaScript", "Kotlin", "PHP", "Python", "Ruby", "Scala"],
+  "translations": ["C＃/。NET", "走", "Groovy", "爪哇", "的JavaScript", "科特林", "的PHP", "蟒蛇", "红宝石", "斯卡拉"]
+}, {
+  "tag": "P",
+  "text": "In addition to advancement in data fetching, performance optimization, versioning and easy to start are few of the reasons that you should try out GraphQL.",
+  "translation": "除了在数据获取方面取得进步之外，性能优化，版本控制和易于启动也是您尝试使用GraphQL的一些原因。"
+}, {
+  "tag": "H1",
+  "text": "What is Grafana?",
+  "translation": "什么是Grafana？"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*dvH22WhiH1k7bCdm?q=20",
+  "caption": "Climate Station Dashboard using Grafana ( https://developers.bigclown.com/integrations/grafana-for-visualization )",
+  "type": "image",
+  "file": "0*dvH22WhiH1k7bCdm"
+}, {
+  "tag": "P",
+  "text": "Grafana is an open-source, dashboarding, analytics, and monitoring platform that is tinkered for connection with a variety of sources like Elasticsearch, Influxdb, Graphite, Prometheus, AWS Cloud Watch etc. Most Importantly Grafana is the ability to bring several data sources together in one dashboard with adding rows that will host individual panels (in the UI).",
+  "translation": "Grafana是一个开放源代码，仪表板，分析和监视平台，可与Elasticsearch，Influxdb，Graphite，Prometheus，AWS Cloud Watch等各种源进行修补。最重要的是，Grafana具有将多个数据源整合在一起的能力 在一个仪表板中添加行将托管单个面板（在UI中）的行。"
+}, {
+  "tag": "P",
+  "text": "Grafana allows you to query, visualize, alert on and understand your metrics no matter where they are stored. You can create, explore, and share dashboards with Grafana and foster a data driven culture.",
+  "translation": "Grafana允许您查询，可视化，警报和了解指标，无论它们存储在哪里。 您可以与Grafana创建，浏览和共享仪表板，并促进数据驱动的文化。"
+}, {
+  "tag": "P",
+  "text": "If we talk about authentication, Grafana can be integrated with LDAP, Google Auth, Grafana.com, Github. However in the case of your company handles authentication using a technique like SSO (Single Sign-On), Grafana makes it work easily with your existing workflow.",
+  "translation": "如果我们谈论身份验证，则可以将Grafana与LDAP，Google Auth，Grafana.com和Github集成。 但是，如果您的公司使用SSO（单点登录）之类的技术来处理身份验证，Grafana使其可以轻松地与您现有的工作流程一起使用。"
+}, {
+  "tag": "P",
+  "text": "Grafana also has already created dashboards which are build by the community. We can select those by data source, panel type, category and collector. You can have a look at those dashboards here.",
+  "translation": "Grafana还已经创建了由社区构建的仪表板。 我们可以通过数据源，面板类型，类别和收集器来选择它们。 您可以在这里查看这些仪表板。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*7BAZVFiG9lSrDvTuiYEx7Q.png?q=20",
+  "type": "image",
+  "file": "1*7BAZVFiG9lSrDvTuiYEx7Q.png"
+}, {
+  "tag": "P",
+  "text": "If you have the data sources that are compatible with Grafana, all you have to do is set those data sources and then create the panels that you need in order to visualize the content that you want to display. Here you will start with an empty dashboard with one row. In that row you can put any kind and any number of panels you want each panel is responsible for one visual.",
+  "translation": "如果您具有与Grafana兼容的数据源，那么您要做的就是设置这些数据源，然后创建所需的面板以可视化要显示的内容。 在这里，您将从一排空的仪表板开始。 在该行中，您可以放置任何类型和任意数量的面板，每个面板负责一个视觉效果。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*DRSZZtUNRFlncXKoQVrw7g.png?q=20",
+  "type": "image",
+  "file": "1*DRSZZtUNRFlncXKoQVrw7g.png"
+}, {
+  "tag": "P",
+  "text": "You can select the panels you prefer and just add those to your dashboard. It’s simple as that. You can choose the type of panel and explore the ways to interact with it. You can easily create dynamic & reusable dashboards with variables that appear as dropdowns at the top of the dashboard in which you can change and interact. Further you can have drilled down views by making queries. In addition to that you get the facility of having split views to compare with one another.",
+  "translation": "您可以选择所需的面板，然后将其添加到仪表板中。 就这么简单。 您可以选择面板的类型，并探索与之交互的方式。 您可以轻松创建动态和可重用的仪表板，并使用变量显示在仪表板顶部的下拉列表中，您可以在其中进行更改和交互。 此外，您可以通过查询来深入查看视图。 除此之外，您还可以使用分割视图来相互比较。"
+}, {
+  "tag": "P",
+  "text": "You can create live dashboards with minimum effort and even explore the logs separately. Another useful feature is the space given to users to define alert rules for their important metrics. Grafana will continuously look for the latest data and send notifications to systems like Slack, PagerDuty, VictorOps etc.",
+  "translation": "您可以轻松创建实时仪表盘，甚至可以分别浏览日志。 另一个有用的功能是为用户提供了为其重要指标定义警报规则的空间。 Grafana会不断寻找最新数据，并将通知发送到Slack，PagerDuty，VictorOps等系统。"
+}, {
+  "tag": "P",
+  "text": "Grafana is a tool that is exceptionally user friendly and has plenty of attractive designs for the use to choose from.",
+  "translation": "Grafana是一种非常用户友好的工具，并且具有许多吸引人的设计可供选择。"
+}, {
+  "tag": "H1",
+  "text": "What is Dash?",
+  "translation": "什么是短跑？"
+}, {
+  "tag": "P",
+  "text": "Dash is an Open Source Python library for creating reactive, Web-based applications. Dash started as a public proof-of-concept on GitHub 2 years ago. We kept this prototype online, but subsequent work on Dash occurred behind closed doors. We used feedback from private trials at banks, labs, and data science teams to guide the product forward. Today, we’re excited to announce the first public release of Dash that is both enterprise-ready and a first-class member of Plotly’s open-source tools. Dash can be downloaded today from Python’s package manager with pip install dash — it’s entirely open-source and MIT licensed. You’ll find a getting started guide here and the Dash code on GitHub here.",
+  "translation": "Dash是一个开放源代码Python库，用于创建基于Web的反应式应用程序。 Dash于2年前在GitHub上开始公开概念验证。 我们将此原型保持在线状态，但随后在Dash上进行的工作却秘密进行。 我们使用了来自银行，实验室和数据科学团队的私人试用的反馈来指导产品前进。 今天，我们很高兴宣布Dash首次公开发布，该版本既可用于企业，又是Plotly开源工具的一流成员。 Dash可以通过pip install dash从Python的软件包管理器中下载，它是完全开源的，并获得MIT许可。 您可以在此处找到入门指南，在GitHub上可以找到Dash代码。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*10ani66J7-RwyEqztVGBpw.png?q=20",
+  "caption": "Sample dashboard from the Dash App Gallery",
+  "type": "image",
+  "file": "1*10ani66J7-RwyEqztVGBpw.png"
+}, {
+  "tag": "P",
+  "text": "Dash empowers data science teams to focus on the data and models, while still producing and deploying enterprise-ready apps. What would typically require a team of back-end developers, front-end developers can all be done with Dash.",
+  "translation": "Dash使数据科学团队能够专注于数据和模型，同时仍在生产和部署企业就绪型应用程序。 通常需要一组后端开发人员的团队，前端开发人员都可以使用Dash完成。"
+}, {
+  "tag": "P",
+  "text": "Dash is a Python-based framework which is predominantly used to create web applications that include intense data visualizations.As the name suggests, Dash is specialized for creating web-based dashboard applications. But this is achieved by using purely Python or R with the help of some Python libraries.",
+  "translation": "Dash是基于Python的框架，主要用于创建包含密集数据可视化的Web应用程序。顾名思义，Dash专用于创建基于Web的仪表板应用程序。 但这是通过在某些Python库的帮助下使用纯Python或R来实现的。"
+}, {
+  "tag": "P",
+  "text": "This is particularly suited to anyone who works with data in Python or R. And Dash abstracts away all of the technologies and protocols that are required to build an interactive web-based application, so it makes it much more convenient for the developers. They currently have a open source version as well as an enterprise version.",
+  "translation": "这特别适合使用Python或R进行数据处理的任何人。Dash提取了构建交互式的基于Web的应用程序所需的所有技术和协议，因此使开发人员更加方便。 他们目前具有开源版本和企业版本。"
+}, {
+  "tag": "P",
+  "text": "We can make awesome data visualizations applications with attractive themes and any kind of graphs. The beauty of this is all this is done in pure Python or R. Further you have more flexibility when we use Dash since we can start creating a dashboard from scratch using Python. So that you can create your own custom dashboard.",
+  "translation": "我们可以使用引人入胜的主题和任何类型的图表制作出色的数据可视化应用程序。 这样做的好处是，所有这些操作都是在纯Python或R中完成的。此外，当我们使用Dash时，您将具有更大的灵活性，因为我们可以开始使用Python从头开始创建仪表板。 这样您就可以创建自己的自定义仪表板。"
+}, {
+  "tag": "P",
+  "text": "Written on top of Flask, Plotly.js, and React.js, Dash is ideal for building data visualization apps with highly attractive Dashboards. It’s particularly suited for anyone who works with data in Python.",
+  "translation": "Dash写在Flask，Plotly.js和React.js之上，是构建具有高度吸引力的Dashboards的数据可视化应用程序的理想选择。 它特别适合使用Python处理数据的任何人。"
+}, {
+  "tag": "P",
+  "text": "Dash Apps are rendered in the web browser so that they are cross platform and mobile ready. Dash is a high level framework which abstracts the lower level implementation of UI components of the graphs, tables etc.",
+  "translation": "Dash应用程序在Web浏览器中呈现，因此它们可以跨平台和移动平台使用。 Dash是一个高级框架，它抽象了图形，表格等UI组件的较低层实现。"
+}, {
+  "tag": "P",
+  "text": "Here are some more pros of using Dash for your data visualization :",
+  "translation": "以下是使用Dash进行数据可视化的其他一些优点："
+}, {
+  "tag": "UL",
+  "texts": ["Ability to create reports in the form of printable PDFs or interactive, analytic web apps", "Automatable reporting and monitoring streaming data flows", "Historical archiving, versioning, and status tracking, facilitate auditing and compliance and create institutional memory"],
+  "translations": ["能够以可打印的PDF或交互式，分析性Web应用程序的形式创建报告", "自动报告和监视流数据流", "历史存档，版本控制和状态跟踪，有助于审核和合规并创建机构记忆"]
+}, {
+  "tag": "P",
+  "text": "Since Dash is relatively new framework compared to the two that we discussed earlier, you can get a overall descriptive knowledge about Dash and how to create a dashboard using Dash here.",
+  "translation": "与之前讨论的两个框架相比，Dash是一个相对较新的框架，因此您可以在此处获得有关Dash以及如何使用Dash创建仪表板的总体描述性知识。"
+}, {
+  "tag": "H1",
+  "text": "Comparison",
+  "translation": "比较方式"
+}, {
+  "tag": "P",
+  "text": "GraphQL is clearly in a different path than Dash and Grafana as it’s about querying the necessary data from wherever you have stored them. GraphQL helps us to get exactly what we need, nothing more- nothing less. When we consider an application like a dashboard this is really useful when it comes to efficiency. Another thing is despite what many of the pundits and startups would like to be able to convince everyone of, GraphQL will not replace REST. But it’s indeed an easy, efficient and effective way of querying and manipulating data.",
+  "translation": "GraphQL显然与Dash和Grafana的发展路径不同，因为它是关于从存储它们的位置查询必要数据的。 GraphQL帮助我们准确地获得所需的东西，仅此而已。 当我们考虑像仪表板这样的应用程序时，这在提高效率方面确实很有用。 另一件事是，尽管许多专家和初创公司希望能够说服所有人，但GraphQL不会取代REST。 但这确实是一种查询，处理数据的简便，有效和有效的方法。"
+}, {
+  "tag": "P",
+  "text": "Grafana and Dash can be considered as ways to visualize data that you collect from different sources. In Grafana you begin by creating a new and blank Grafana dashboard by clicking on the Dashboard link. Grafana is shipped with a variety of panels that can be added to your dashboard. Panels are not very useful unless some type of graph is associated with them. Graphs depend on data, so each panel that you add to the dashboard will be associated with a data source. So grafana will let you add predefined panels and graphs with a data source connected to it.",
+  "translation": "Grafana和Dash可被视为可视化从不同来源收集的数据的方法。 在Grafana中，您可以通过单击“仪表板”链接来创建一个新的空白Grafana仪表板。 Grafana附带了各种面板，可以将它们添加到仪表板中。 面板不是很有用，除非将某种图形与之关联。 图形取决于数据，因此添加到仪表板的每个面板都将与一个数据源关联。 因此，grafana将允许您添加连接了数据源的预定义面板和图形。"
+}, {
+  "tag": "P",
+  "text": "But in Dash we can build our own very much customized dashboards from the scratch. But it makes really easy when it comes to plotting graphs and visualizing data. We can use dataframes and then feed those to the graph elements in Dash. So Dash is more customizable and is based on Python. It’s based on React and Flask, while Grafana is written in Go programming language(created by Google) and Node.js. Even though you may think using Dash might take more time and effort, it not that difficult if you’re familiar with Python or R.",
+  "translation": "但是在Dash中，我们可以从头开始构建自己的非常定制的仪表板。 但是，在绘制图形和可视化数据时，它确实非常容易。 我们可以使用数据框，然后将其提供给Dash中的图形元素。 因此Dash更可定制，并且基于Python。 它基于React和Flask，而Grafana是用Go编程语言（由Google创建）和Node.js编写的。 即使您可能认为使用Dash可能会花费更多的时间和精力，但是如果您熟悉Python或R，也没那么困难。"
+}, {
+  "tag": "P",
+  "text": "All in all what I suggest is to try both Grafana and Dash if you have a requirement to create a Dashboard. What’s best depends on your requirements. But they both gives you amazing stylish visualizations which are informative as well as attractive at the same time.",
+  "translation": "总之，如果您需要创建仪表板，我建议您同时尝试使用Grafana和Dash。 最佳选择取决于您的要求。 但是它们都为您提供了惊人的时尚可视化效果，这些可视化效果既丰富又有吸引力。"
+}]
