@@ -1,0 +1,3015 @@
+[{
+  "tag": "P",
+  "text": "You made it! Congratulations!!!",
+  "translation": "你做到了！ 恭喜！！！"
+}, {
+  "tag": "P",
+  "text": "Thanks for reading! If there’s anything you feel should be included here, please let me know. Feel free to leave a comment below or reach out any time on LinkedIn or Twitter. If you want to read more of my tutorials, take a look through my profile here on Medium: Anne Bonner ❤️",
+  "translation": "谢谢阅读！ 如果您觉得需要包含任何内容，请告诉我。 随时在下方发表评论，或随时在LinkedIn或Twitter上与他人联系。 如果您想阅读更多我的教程，请在Medium：Anne Bonner❤️上浏览我的个人资料。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/20/1*brpuU0aIUlQt6hmJXZUeXQ.jpeg?q=20",
+  "caption": "Photo by Asya Cusima from Pexels",
+  "type": "image",
+  "file": "1*brpuU0aIUlQt6hmJXZUeXQ.jpeg"
+}, {
+  "tag": "P",
+  "text": "You will, at some point, want to save your arrays to disk and load them back without having to re-run the code. Fortunately, there are several ways to save and load objects with Numpy. The ndarray objects can be saved to and loaded from the disk files with loadtxt and savetxt functions that handle normal text files, load and save functions that handle NumPy binary files with a .npy file extension, and a savez function that handles NumPy files with a .npz file extension.",
+  "translation": "在某些时候，您将需要将阵列保存到磁盘并重新加载它们，而不必重新运行代码。 幸运的是，有几种使用Numpy保存和加载对象的方法。 可以使用处理普通文本文件的loadtxt和savetxt函数，使用.npy文件扩展名处理NumPy二进制文件的load和save函数以及使用以下命令处理NumPy文件的savez函数将ndarray对象保存到磁盘文件和从磁盘文件加载。 .npz文件扩展。"
+}, {
+  "tag": "P",
+  "text": "The .npy and .npz files store data, shape, dtype, and other information required to reconstruct the ndarray in a way that allows the array to be correctly retrieved, even when the file is on another machine with different architecture.",
+  "translation": ".npy和.npz文件存储数据，形状，dtype和其他信息，以使ndarray能够正确检索数组的方式重建ndarray，即使该文件位于另一台具有不同体系结构的计算机上也是如此。"
+}, {
+  "tag": "P",
+  "text": "If you want to store a single ndarray object, store it as a .npy file using np.save. If you want to store more than one ndarray object in a single file, save it as a .npz file using np.savez. You can also save several arrays into a single file in compressed npz format with np.savez_compressed.",
+  "translation": "如果要存储单个ndarray对象，请使用np.save将其存储为.npy文件。 如果要在一个文件中存储多个ndarray对象，请使用np.savez将其保存为.npz文件。 您还可以使用np.savez_compressed将多个数组以npz压缩格式保存到单个文件中。"
+}, {
+  "tag": "P",
+  "text": "It’s easy to save and load and array with np.save(). Just make sure to specify the array you want to save and a file name. For example, if you create this array:",
+  "translation": "使用np.save（）保存，加载和排列数组很容易。 只需确保指定要保存的阵列和文件名即可。 例如，如果创建此数组："
+}, {
+  "tag": "PRE",
+  "text": "a = np.array([1, 2, 3, 4, 5, 6])",
+  "translation": "a = np.array（[1、2、3、4、5、6]）"
+}, {
+  "tag": "P",
+  "text": "You can save it as “filename.npy” with",
+  "translation": "您可以将其另存为“ filename.npy”"
+}, {
+  "tag": "PRE",
+  "text": "np.save('filename',a)",
+  "translation": "np.save（'文件名'，a）"
+}, {
+  "tag": "P",
+  "text": "You can use np.load() to reconstruct your array.",
+  "translation": "您可以使用np.load（）重建数组。"
+}, {
+  "tag": "PRE",
+  "text": "b = np.load('filename.npy')",
+  "translation": "b = np.load（'filename.npy'）"
+}, {
+  "tag": "P",
+  "text": "If you want to check your array, you can run:",
+  "translation": "如果要检查阵列，可以运行："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "print(b)",
+  "translation": "打印（b）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "[1 2 3 4 5 6]",
+  "translation": "[1 2 3 4 5 6]"
+}, {
+  "tag": "P",
+  "text": "You can save a NumPy array as a plain text file like a .csv or .txt file with np.savetxt.",
+  "translation": "您可以使用Np.savetxt将NumPy数组另存为纯文本文件（如.csv或.txt文件）。"
+}, {
+  "tag": "P",
+  "text": "For example, if you create this array:",
+  "translation": "例如，如果创建此数组："
+}, {
+  "tag": "PRE",
+  "text": "csv_arr = np.array([1, 2, 3, 4, 5, 6, 7, 8])",
+  "translation": "csv_arr = np.array（[1、2、3、4、5、6、7、8]）"
+}, {
+  "tag": "P",
+  "text": "You can easily save it as a .csv file with the name “new_file.csv” like this:",
+  "translation": "您可以轻松地将其另存为.csv文件，名称为“ new_file.csv”，如下所示："
+}, {
+  "tag": "PRE",
+  "text": "np.savetxt('new_file.csv', csv_arr)",
+  "translation": "np.savetxt（'new_file.csv'，csv_arr）"
+}, {
+  "tag": "P",
+  "text": "You can quickly and easily load your saved text file using loadtxt():",
+  "translation": "您可以使用loadtxt（）快速轻松地加载保存的文本文件："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "np.loadtxt('new_file.csv')",
+  "translation": "np.loadtxt（'new_file.csv'）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "array([1., 2., 3., 4., 5., 6., 7., 8.])",
+  "translation": "array（[1。，2.，3.，4.，5.，6.，7.，8.]）"
+}, {
+  "tag": "P",
+  "text": "The savetxt() and loadtxt() functions accept additional optional parameters such as header, footer, and delimiter. While text files can be easier for sharing, .npy and .npz files are faster to retrieve. If you need more sophisticated handling of your text file (for example, if you need to work with lines that contain missing values), you will want to use the genfromtxt function.",
+  "translation": "savetxt（）和loadtxt（）函数接受其他可选参数，例如页眉，页脚和定界符。 尽管文本文件更易于共享，但.npy和.npz文件的检索速度更快。 如果需要对文本文件进行更复杂的处理（例如，如果需要处理包含缺少值的行），则需要使用genfromtxt函数。"
+}, {
+  "tag": "P",
+  "text": "With savetxt, you can specify headers, footers, comments, and more. Read more about savetxt here.",
+  "translation": "使用savetxt，您可以指定页眉，页脚，注释等。 在这里阅读更多关于savetxt的信息。"
+}, {
+  "tag": "P",
+  "text": "You can read more about save here, savez here, and load here. You can read more about savetxt here, and loadtxt here.",
+  "translation": "您可以在这里阅读更多关于保存的信息，在这里阅读savez，并在这里加载。 您可以在此处阅读更多有关savetxt的信息，并在此处阅读有关loadtxt的信息。"
+}, {
+  "tag": "P",
+  "text": "Learn more about input and output routines here.",
+  "translation": "在此处了解有关输入和输出例程的更多信息。"
+}, {
+  "tag": "P",
+  "text": "Be aware that loading files that contain object arrays with np.load() uses the pickle module which is not secure against erroneous or maliciously constructed data. Consider passing allow_pickle=False to load data that is known not to contain object arrays for the safer handling of untrusted sources.",
+  "translation": "请注意，使用np.load（）加载包含对象数组的文件时，会使用pickle模块，该模块对于错误或恶意构建的数据并不安全。 考虑传递allow_pickle = False来加载已知不包含对象数组的数据，以便更安全地处理不受信任的源。"
+}, {
+  "tag": "H1",
+  "text": "Importing and exporting a CSV",
+  "translation": "导入和导出CSV"
+}, {
+  "tag": "P",
+  "text": "It’s simple to read in a CSV that contains existing information. The best and easiest way to do this is to use Pandas.",
+  "translation": "读取包含现有信息的CSV很简单。 最好，最简单的方法就是使用熊猫。"
+}, {
+  "tag": "PRE",
+  "text": "import pandas as pd# If all of your columns are the same type:x = pd.read_csv('music.csv').values# You can also simply select the columns you need:x = pd.read_csv('music.csv', columns=['float_colname_1', ...]).values",
+  "translation": "将pandas导入为pd＃如果所有列都属于同一类型：x = pd.read_csv（'music.csv'）。values＃您也可以简单地选择所需的列：x = pd.read_csv（'music.csv '，columns = ['float_colname_1'，...]）。值"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*hRnD89O_Kl6B9vDz.png?q=20",
+  "type": "image",
+  "file": "0*hRnD89O_Kl6B9vDz.png"
+}, {
+  "tag": "P",
+  "text": "It’s simple to use Pandas in order to export your array as well. If you are new to NumPy, you may want to create a Pandas dataframe from the values in your array and then write the data frame to a CSV file with Pandas.",
+  "translation": "使用Pandas导出数组也很简单。 如果您不熟悉NumPy，则可能要根据数组中的值创建Pandas数据框，然后使用Pandas将数据框写入CSV文件。"
+}, {
+  "tag": "P",
+  "text": "If you created this array “a”",
+  "translation": "如果您创建此数组“ a”"
+}, {
+  "tag": "PRE",
+  "text": "[[-2.58289208,  0.43014843, -1.24082018,  1.59572603],[ 0.99027828,  1.17150989,  0.94125714, -0.14692469],[ 0.76989341,  0.81299683, -0.95068423,  0.11769564],[ 0.20484034,  0.34784527,  1.96979195,  0.51992837]]",
+  "translation": "[[-2.58289208，0.43014843，-1.24082018，1.59572603]，[0.99027828，1.17150989，0.94125714，-0.14692469]，[0.76989341，0.81299683，-0.95068423，0.11769564]，[0.20484034，0.34784527，1.96979195，0.51992837]]"
+}, {
+  "tag": "P",
+  "text": "You could create a Pandas dataframe",
+  "translation": "您可以创建一个熊猫数据框"
+}, {
+  "tag": "PRE",
+  "text": "df = pd.DataFrame(a)print(df)",
+  "translation": "df = pd.DataFrame（a）print（df）"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*YS-L8tJ78QWO30l0.png?q=20",
+  "type": "image",
+  "file": "0*YS-L8tJ78QWO30l0.png"
+}, {
+  "tag": "P",
+  "text": "You can easily save your dataframe with",
+  "translation": "您可以轻松地保存您的数据框"
+}, {
+  "tag": "PRE",
+  "text": "df.to_csv('pd.csv')",
+  "translation": "df.to_csv（'pd.csv'）"
+}, {
+  "tag": "P",
+  "text": "And read your CSV with",
+  "translation": "并阅读您的CSV"
+}, {
+  "tag": "PRE",
+  "text": "pd.read_csv('pd.csv')",
+  "translation": "pd.read_csv（'pd.csv'）"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*SnBvl-QrkC2bh4-K.png?q=20",
+  "type": "image",
+  "file": "0*SnBvl-QrkC2bh4-K.png"
+}, {
+  "tag": "P",
+  "text": "You can also save your array with the NumPy “savetxt” method.",
+  "translation": "您也可以使用NumPy的“ savetxt”方法保存数组。"
+}, {
+  "tag": "PRE",
+  "text": "np.savetxt('np.csv', a, fmt='%.2f', delimiter=',', header=\" 1,  2,  3,  4\")",
+  "translation": "np.savetxt（'np.csv'，a，fmt ='％。2f'，delimiter ='，'，header =“ 1、2、3、4”）"
+}, {
+  "tag": "P",
+  "text": "Read your saved CSV any time with a command such as",
+  "translation": "随时使用以下命令读取保存的CSV"
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "cat np.csv",
+  "translation": "猫np.csv"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "#  1,  2,  3,  4-2.58,0.43,-1.24,1.600.99,1.17,0.94,-0.150.77,0.81,-0.95,0.120.20,0.35,1.97,0.52",
+  "translation": "＃1，2，3，4-2.58,0.43，-1.24,1.600.99,1.17,0.94，-0.150.77,0.81，-0.95,0.120.20,0.35,1.97,0.52"
+}, {
+  "tag": "P",
+  "text": "If you’re interested in learning more about Pandas, take a look at the official Pandas website. Learn how to install Pandas with the official Pandas installation information.",
+  "translation": "如果您想了解有关熊猫的更多信息，请访问熊猫官方网站。 通过官方的Pandas安装信息了解如何安装Pandas。"
+}, {
+  "tag": "H1",
+  "text": "Plotting arrays with Matplotlib",
+  "translation": "用Matplotlib绘制数组"
+}, {
+  "tag": "P",
+  "text": "If you need to generate a plot for your values, it’s very simple with Matplotlib.",
+  "translation": "如果您需要为自己的值生成图表，则使用Matplotlib非常简单。"
+}, {
+  "tag": "P",
+  "text": "For example, you may have an array like this one:",
+  "translation": "例如，您可能有一个像这样的数组："
+}, {
+  "tag": "PRE",
+  "text": "A = np.array([2, 1, 5, 7, 4, 6, 8, 14, 10, 9, 18, 20, 22])",
+  "translation": "A = np.array（[2，1，5，7，4，4，6，8，14，10，9，18，20，22]）"
+}, {
+  "tag": "P",
+  "text": "If you already have Matplotlib installed, you can import it with",
+  "translation": "如果您已经安装了Matplotlib，则可以使用"
+}, {
+  "tag": "PRE",
+  "text": "import matplotlib.pyplot as plt# If you're using Jupyter Notebook, you may also want to run the following line of code to display your code in the notebook%matplotlib inline",
+  "translation": "导入matplotlib.pyplot作为plt＃如果您使用的是Jupyter Notebook，则可能还需要运行以下代码行以在notebook％matplotlib内联中显示代码"
+}, {
+  "tag": "P",
+  "text": "All you need to do to plot your values is run",
+  "translation": "您要做的所有绘制值的工作都在运行"
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "plt.plot(A)plt.show()",
+  "translation": "plt.plot（A）plt.show（）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*N7_0-92nIxbvkP6J.png?q=20",
+  "type": "image",
+  "file": "0*N7_0-92nIxbvkP6J.png"
+}, {
+  "tag": "P",
+  "text": "For example, you can plot a 1D array like this:",
+  "translation": "例如，您可以绘制一维数组，如下所示："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "x = np.linspace(0, 5, 20)y = np.linspace(0, 10, 20)plt.plot(x, y, 'purple') # lineplt.plot(x, y, 'o')      # dots",
+  "translation": "x = np.linspace（0，5，20）y = np.linspace（0，10，20）plt.plot（x，y，'purple'）＃lineplt.plot（x，y，'o'）＃ 点"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*nHspuITVugshCJhF.png?q=20",
+  "type": "image",
+  "file": "0*nHspuITVugshCJhF.png"
+}, {
+  "tag": "P",
+  "text": "With Matplotlib, you have access to an enormous number of visualization options.",
+  "translation": "使用Matplotlib，您可以访问大量的可视化选项。"
+}, {
+  "tag": "PRE",
+  "text": "from mpl_toolkits.mplot3d import Axes3Dfig = plt.figure()ax = Axes3D(fig)X = np.arange(-5, 5, 0.15)Y = np.arange(-5, 5, 0.15)X, Y = np.meshgrid(X, Y)R = np.sqrt(X**2 + Y**2)Z = np.sin(R)ax.plot_surface(X, Y, Z, rstride=1, cstride=1, cmap='viridis')plt.colorbar()",
+  "translation": "从mpl_toolkits.mplot3d导入Axes3Dfig = plt.figure（）ax = Axes3D（fig）X = np.arange（-5，5，0.15）Y = np.arange（-5，5，0.15）X，Y = np。 meshgrid（X，Y）R = np.sqrt（X ** 2 + Y ** 2）Z = np.sin（R）ax.plot_surface（X，Y，Z，rstride = 1，cstride = 1，cmap = 'viridis'）plt.colorbar（）"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*B8NsLvdICU00Mf2n.png?q=20",
+  "type": "image",
+  "file": "0*B8NsLvdICU00Mf2n.png"
+}, {
+  "tag": "P",
+  "text": "To read more about Matplotlib and what it can do, take a look at the official documentation. For directions regarding installing Matplotlib, see the official installation section.",
+  "translation": "要阅读有关Matplotlib及其功能的更多信息，请查看官方文档。 有关安装Matplotlib的说明，请参见官方安装部分。"
+}, {
+  "tag": "P",
+  "text": "When it comes to the data science ecosystem, Python and NumPy are built with the user in mind. One of the best examples of this is the built-in access to documentation. Every object contains the reference to a string, which is known as the docstring. In most cases, this docstring contains a quick and concise summary of the object and how to use it. Python has a built-in help() function that can help you access this information. This means that nearly any time you need more information, you can use help() to quickly find the information that you need.",
+  "translation": "当涉及到数据科学生态系统时，Python和NumPy是在考虑用户的基础上构建的。 最好的例子之一是对文档的内置访问。 每个对象都包含对字符串的引用，该字符串称为docstring。 在大多数情况下，此文档字符串包含该对象及其使用方式的简要概述。 Python具有内置的help（）函数，可以帮助您访问此信息。 这意味着几乎在任何时候您需要更多信息，都可以使用help（）快速找到所需的信息。"
+}, {
+  "tag": "P",
+  "text": "For example,",
+  "translation": "例如，"
+}, {
+  "tag": "PRE",
+  "text": "help(max)",
+  "translation": "最大帮助"
+}, {
+  "tag": "P",
+  "text": "Will return",
+  "translation": "将返回"
+}, {
+  "tag": "PRE",
+  "text": "Help on built-in function max in module builtins:max(...)    max(iterable, *[, default=obj, key=func]) -> value    max(arg1, arg2, *args, *[, key=func]) -> value    With a single iterable argument, return its biggest item. The    default keyword-only argument specifies an object to return if    the provided iterable is empty.    With two or more arguments, return the largest argument.",
+  "translation": "内置模块中内置函数max的帮助：max（...）max（可迭代，* [，default = obj，key = func]）->值max（arg1，arg2，* args，* [，key = func]）-> value使用单个可迭代参数返回其最大项目。 默认的仅关键字参数指定了在提供的iterable为空时要返回的对象。 具有两个或更多参数，返回最大参数。"
+}, {
+  "tag": "P",
+  "text": "Because access to additional information is so useful, IPython uses the ? character as a shorthand for accessing this documentation along with other relevant information.",
+  "translation": "由于获取其他信息非常有用，因此IPython使用？。 字符作为访问此文档以及其他相关信息的简写。"
+}, {
+  "tag": "P",
+  "text": "For example,",
+  "translation": "例如，"
+}, {
+  "tag": "PRE",
+  "text": "max?",
+  "translation": "最大？"
+}, {
+  "tag": "P",
+  "text": "Will return",
+  "translation": "将返回"
+}, {
+  "tag": "PRE",
+  "text": "Docstring:max(iterable, *[, default=obj, key=func]) -> valuemax(arg1, arg2, *args, *[, key=func]) -> valueWith a single iterable argument, return its biggest item. Thedefault keyword-only argument specifies an object to return ifthe provided iterable is empty.With two or more arguments, return the largest argument.Type:      builtin_function_or_method",
+  "translation": "Docstring：max（iterable，* [，default = obj，key = func]）-> valuemax（arg1，arg2，* args，* [，key = func]）-> value使用单个可迭代参数返回其最大项目。 默认的仅关键字自变量指定一个对象，如果提供的iterable为空，则返回该对象。如果有两个或多个自变量，则返回最大的自变量类型：builtin_function_or_method"
+}, {
+  "tag": "P",
+  "text": "You can even use this notation for object methods and objects themselves.",
+  "translation": "您甚至可以将此表示法用于对象方法和对象本身。"
+}, {
+  "tag": "P",
+  "text": "Let’s say you create this array:",
+  "translation": "假设您创建了以下数组："
+}, {
+  "tag": "PRE",
+  "text": "a = np.array([1, 2, 3, 4, 5, 6])",
+  "translation": "a = np.array（[1、2、3、4、5、6]）"
+}, {
+  "tag": "P",
+  "text": "Running",
+  "translation": "跑步"
+}, {
+  "tag": "PRE",
+  "text": "a?",
+  "translation": "一种？"
+}, {
+  "tag": "P",
+  "text": "Will return a lot of useful information.",
+  "translation": "将返回很多有用的信息。"
+}, {
+  "tag": "PRE",
+  "text": "Type:            ndarrayString form:     [1 2 3 4 5 6]Length:          6File:            ~/anaconda3/lib/python3.7/site-packages/numpy/__init__.pyDocstring:       <no docstring>Class docstring:ndarray(shape, dtype=float, buffer=None, offset=0,        strides=None, order=None)An array object represents a multidimensional, homogeneous arrayof fixed-size items.  An associated data-type object describes theformat of each element in the array (its byte-order, how many bytes itoccupies in memory, whether it is an integer, a floating point number,or something else, etc.)Arrays should be constructed using `array`, `zeros` or `empty` (referto the See Also section below).  The parameters given here refer toa low-level method (`ndarray(...)`) for instantiating an array.For more information, refer to the `numpy` module and examine themethods and attributes of an array.Parameters----------(for the __new__ method; see Notes below)shape : tuple of ints    Shape of created array.dtype : data-type, optional    Any object that can be interpreted as a numpy data type.buffer : object exposing buffer interface, optional    Used to fill the array with data.offset : int, optional    Offset of array data in buffer.strides : tuple of ints, optional    Strides of data in memory.order : {'C', 'F'}, optional    Row-major (C-style) or column-major (Fortran-style) order.Attributes----------T : ndarray    Transpose of the array.data : buffer    The array's elements, in memory.dtype : dtype object    Describes the format of the elements in the array.flags : dict    Dictionary containing information related to memory use, e.g.,    'C_CONTIGUOUS', 'OWNDATA', 'WRITEABLE', etc.flat : numpy.flatiter object    Flattened version of the array as an iterator.  The iterator    allows assignments, e.g., ``x.flat = 3`` (See `ndarray.flat` for    assignment examples; TODO).imag : ndarray    Imaginary part of the array.real : ndarray    Real part of the array.size : int    Number of elements in the array.itemsize : int    The memory use of each array element in bytes.nbytes : int    The total number of bytes required to store the array data,    i.e., ``itemsize * size``.ndim : int    The array's number of dimensions.shape : tuple of ints    Shape of the array.strides : tuple of ints    The step-size required to move from one element to the next in    memory. For example, a contiguous ``(3, 4)`` array of type    ``int16`` in C-order has strides ``(8, 2)``.  This implies that    to move from element to element in memory requires jumps of 2 bytes.    To move from row-to-row, one needs to jump 8 bytes at a time    (``2 * 4``).ctypes : ctypes object    Class containing properties of the array needed for interaction    with ctypes.base : ndarray    If the array is a view into another array, that array is its `base`    (unless that array is also a view).  The `base` array is where the    array data is actually stored.See Also--------array : Construct an array.zeros : Create an array, each element of which is zero.empty : Create an array, but leave its allocated memory unchanged (i.e.,        it contains \"garbage\").dtype : Create a data-type.Notes-----There are two modes of creating an array using ``__new__``:1. If `buffer` is None, then only `shape`, `dtype`, and `order`   are used.2. If `buffer` is an object exposing the buffer interface, then   all keywords are interpreted.No ``__init__`` method is needed because the array is fully initializedafter the ``__new__`` method.Examples--------These examples illustrate the low-level `ndarray` constructor.  Referto the `See Also` section above for easier ways of constructing anndarray.First mode, `buffer` is None:>>> np.ndarray(shape=(2,2), dtype=float, order='F')array([[ -1.13698227e+002,   4.25087011e-303],       [  2.88528414e-306,   3.27025015e-309]])         #randomSecond mode:>>> np.ndarray((2,), buffer=np.array([1,2,3]),...            offset=np.int_().itemsize,...            dtype=int) # offset = 1*itemsize, i.e. skip first elementarray([2, 3])",
+  "translation": "类型：ndarray字符串形式：[1 2 3 4 5 6]长度：6文件：〜/ anaconda3 / lib / python3.7 / site-packages / numpy / __ init __。pyDocstring：<no docstring> Class docstring：ndarray（shape，dtype = float，buffer = None，offset = 0，stride = None，order = None）数组对象代表固定大小的多维多维同类数组。关联的数据类型对象描述了数组中每个元素的格式（其字节顺序，它在内存中占用了多少字节，是否为整数，浮点数或其他等等）。数组，零或空（请参阅下面的另请参见部分）。此处给出的参数是用于实例化数组的低级方法（ndarray（...）`）。有关更多信息，请参考``numpy''模块并检查数组的方法和属性。 ------（用于__new__方法;请参见下面的注释）shape：int的元组创建的数组的形状。dtype：数据类型，可选可以解释为numpy数据类型的任何对象.buffer：对象暴露缓冲区接口，可选用于使用data填充数组.offset：int，可选buffer中数组数据的偏移量。strides：int的元组，可选内存中数据的跨度。order：{'C'，'F'}，可选Row -major（C风格）或column-major（Fortran风格）顺序属性---------- T：ndarray array的转置data。buffer数组的元素在内存中。dtype：dtype object描述数组中元素的格式。flags：dict包含与内存使用有关的信息的字典，例如'C_CONTIGUOUS'，'OWNDATA'，'WRITEABLE'等at：numpy.flatiter对象作为迭代器的数组的展平版本。迭代器允许赋值，例如``x.flat = 3``（赋值示例请参见`ndarray.flat`； TODO）。imag：ndarray array的虚部。real：ndarray array的实部。 int数组中元素的数量.itemsize：int每个数组元素的内存使用量以字节为单位。nbytes：int存储数组数据所需的总字节数，即``itemsize * size''。ndim：int数组的维数。shape：int的元组array.strides：int的元组从内存中的一个元素移至下一个元素所需的步长。例如，C顺序的类型为int16的连续数组（3，4）的步幅为（8，2）。这意味着在内存中的一个元素之间移动需要2个字节的跳转。要从一行移到另一行，一次需要跳转8个字节（``2 * 4''）。ctypes：ctypes对象包含与ctypes交互所需的数组属性的类。base：ndarray如果数组是另一个数组的视图，该数组是其“基础”（除非该数组也是视图）。基本数组是实际存储数组数据的地方，另请参阅-------- array：构造一个数组zeros：创建一个数组，每个元素为零.empty：创建一个数组，但是保留分配的内存不变（即，其中包含“垃圾”）。dtype：创建数据类型。注意-----有两种使用__new __ :: 1创建数组的模式。如果`buffer`为None，则仅使用`shape`，`dtype`和`order` 2。如果`buffer`是暴露缓冲区接口的对象，则所有关键字都将被解释。不需要__init__方法，因为数组是在__new__方法之后完全初始化的。这些示例说明了低级的ndarray构造函数。请参阅上面的``另请参阅''部分以获取构建anndarray的更简便方法。第一种模式，`buffer`为None：>>> np.ndarray（shape =（2,2），dtype = float，order ='F'）array （[[-1.13698227e + 002，4.25087011e-303]，[2.88528414e-306，3.27025015e-309]]）#randomSecond mode：>>> np.ndarray（（2，），buffer = np.array（ [1,2,3]），... offset = np.int _（）。itemsize，... dtype = int）＃offset = 1 * itemsize，即跳过第一个elementarray（[2，3]）"
+}, {
+  "tag": "P",
+  "text": "This also works for functions and other objects that you create. Just remember to include a docstring with your function using a string literal (“““ “”” or ‘’’ ‘’’ around your documentation).",
+  "translation": "这也适用于您创建的函数和其他对象。 只需记住在函数中使用字符串文字即可包含文档字符串（文档周围为““””或“”）。"
+}, {
+  "tag": "P",
+  "text": "For example, if you create this function:",
+  "translation": "例如，如果您创建此功能："
+}, {
+  "tag": "PRE",
+  "text": "def double(a):  '''Return a * 2'''  return a * 2",
+  "translation": "def double（a）：'''返回a * 2'''返回a * 2"
+}, {
+  "tag": "P",
+  "text": "You can run:",
+  "translation": "您可以运行："
+}, {
+  "tag": "PRE",
+  "text": "double?",
+  "translation": "双？"
+}, {
+  "tag": "P",
+  "text": "Which will return:",
+  "translation": "哪个会返回："
+}, {
+  "tag": "PRE",
+  "text": "Signature: double(a)Docstring: Return a * 2File:      ~/Desktop/<ipython-input-23-b5adf20be596>Type:      function",
+  "translation": "签名：double（a）文档字符串：返回* 2文件：〜/ Desktop / <ipython-input-23-b5adf20be596>类型：函数"
+}, {
+  "tag": "P",
+  "text": "You can reach another level of information by reading the source code of the object you’re interested in. Using a double question mark (??) allows you to access the source code.",
+  "translation": "您可以通过阅读感兴趣的对象的源代码来获得更高级别的信息。使用双问号（??）可以访问源代码。"
+}, {
+  "tag": "P",
+  "text": "For example, running:",
+  "translation": "例如，运行："
+}, {
+  "tag": "PRE",
+  "text": "double??",
+  "translation": "双？？"
+}, {
+  "tag": "P",
+  "text": "Will return:",
+  "translation": "将返回："
+}, {
+  "tag": "PRE",
+  "text": "Signature: double(a)Source:def double(a):    '''Return a * 2'''    return a * 2File:      ~/Desktop/<ipython-input-23-b5adf20be596>Type:      function",
+  "translation": "签名：double（a）来源：def double（a）：'''Return a * 2'''return a * 2文件：〜/ Desktop / <ipython-input-23-b5adf20be596>类型：function"
+}, {
+  "tag": "P",
+  "text": "If the object in question is compiled in a language other than Python, using ?? will return the same information as ?. You’ll find this with a lot of built-in objects and types, for example:",
+  "translation": "如果有问题的对象是用Python以外的语言编译的，请使用??。 将返回与？相同的信息。 您会发现许多内置对象和类型，例如："
+}, {
+  "tag": "PRE",
+  "text": "len?",
+  "translation": "len？"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "Signature: len(obj, /)Docstring: Return the number of items in a container.Type:      builtin_function_or_method",
+  "translation": "签名：len（obj，/）文档字符串：返回容器中的项目数。类型：Builtin_function_or_method"
+}, {
+  "tag": "P",
+  "text": "and",
+  "translation": "和"
+}, {
+  "tag": "PRE",
+  "text": "len??",
+  "translation": "伦？"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "​Signature: len(obj, /)Docstring: Return the number of items in a container.Type:      builtin_function_or_method",
+  "translation": "签名：len（obj，/）文档字符串：返回容器中的项目数类型：Builtin_function_or_method"
+}, {
+  "tag": "P",
+  "text": "Have the same output because they were compiled in a programming language other than Python.",
+  "translation": "具有相同的输出，因为它们是用Python以外的其他编程语言编译的。"
+}, {
+  "tag": "H1",
+  "text": "Working with mathematical formulas",
+  "translation": "使用数学公式"
+}, {
+  "tag": "P",
+  "text": "Implementing mathematical formulas that work on arrays is one of the things that make NumPy so highly regarded in the scientific Python community.",
+  "translation": "实现对数组起作用的数学公式是使NumPy在科学Python社区中受到如此高度重视的事情之一。"
+}, {
+  "tag": "P",
+  "text": "For example, this is the mean square error formula (a central formula used in supervised machine learning models that deal with regression):",
+  "translation": "例如，这是均方误差公式（在处理回归的监督式机器学习模型中使用的中央公式）："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*_NPrCaZTJrspscM4.png?q=20",
+  "type": "image",
+  "file": "0*_NPrCaZTJrspscM4.png"
+}, {
+  "tag": "P",
+  "text": "Implementing this formula is simple and straightforward in NumPy:",
+  "translation": "在NumPy中，实现此公式非常简单："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*w0ki6w-jtIdopYGG.png?q=20",
+  "type": "image",
+  "file": "0*w0ki6w-jtIdopYGG.png"
+}, {
+  "tag": "P",
+  "text": "What makes this work so well is that predictions and labels can contain one or a thousand values. They only need to be the same size.",
+  "translation": "使这项工作如此出色的原因是预测和标签可以包含一个或一千个值。 它们只需要大小相同即可。"
+}, {
+  "tag": "P",
+  "text": "You can visualize it this way:",
+  "translation": "您可以通过以下方式对其进行可视化："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*BhjMKLaBPpUrnJxv.png?q=20",
+  "type": "image",
+  "file": "0*BhjMKLaBPpUrnJxv.png"
+}, {
+  "tag": "P",
+  "text": "In this example, both the predictions and labels vectors contain three values, meaning n has a value of three. After we carry out subtractions the values in the vector are squared. Then NumPy sums the values, and your result is the error value for that prediction and a score for the quality of the model.",
+  "translation": "在此示例中，预测向量和标签向量都包含三个值，这意味着n的值为三个。 在执行减法后，向量中的值将平方。 然后NumPy将这些值相加，结果就是该预测的误差值和模型质量的分数。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*bow-FD2h9UVsCQWq.png?q=20",
+  "type": "image",
+  "file": "0*bow-FD2h9UVsCQWq.png"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*a5OKSDigreevpgE5.png?q=20",
+  "type": "image",
+  "file": "0*a5OKSDigreevpgE5.png"
+}, {
+  "tag": "H1",
+  "text": "How to save and load NumPy objects",
+  "translation": "如何保存和加载NumPy对象"
+}, {
+  "tag": "PRE",
+  "text": "np.save()np.savez()np.savetxt()np.load()np.loadtxt()",
+  "translation": "np.save（）np.savez（）np.savetxt（）np.load（）np.loadtxt（）"
+}, {
+  "tag": "P",
+  "text": "NumPy’s np.flip() function allows you to flip, or reverse, the contents of an array along an axis. When using np.flip, specify the array you would like to reverse and the axis. If you don’t specify the axis, NumPy will reverse the contents along all of the axes of your input array.",
+  "translation": "NumPy的np.flip（）函数使您可以沿轴翻转或反转数组的内容。 使用np.flip时，指定要反转的数组和轴。 如果未指定轴，则NumPy会沿输入数组的所有轴反转内容。"
+}, {
+  "tag": "P",
+  "text": "Reversing a 1D array",
+  "translation": "反转一维数组"
+}, {
+  "tag": "P",
+  "text": "If you begin with a 1D array like this one:",
+  "translation": "如果从这样的一维数组开始："
+}, {
+  "tag": "PRE",
+  "text": "arr = np.array([1, 2, 3, 4, 5, 6, 7, 8])",
+  "translation": "arr = np.array（[1、2、3、4、5、6、7、8]）"
+}, {
+  "tag": "P",
+  "text": "You can reverse it with:",
+  "translation": "您可以使用以下方法将其反转："
+}, {
+  "tag": "PRE",
+  "text": "reversed_arr = np.flip(arr)",
+  "translation": "reversed_arr = np.flip（arr）"
+}, {
+  "tag": "P",
+  "text": "If you want to print your reversed array, you can run:",
+  "translation": "如果要打印反向阵列，可以运行："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "print('Reversed Array: ', reversed_arr)",
+  "translation": "print（'Reversed Array：'，reversed_arr）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "Reversed Array:  [8 7 6 5 4 3 2 1]",
+  "translation": "反向数组：[8 7 6 5 4 3 2 1]"
+}, {
+  "tag": "P",
+  "text": "Reversing a 2D array",
+  "translation": "反转2D阵列"
+}, {
+  "tag": "P",
+  "text": "A 2D array works much the same way.",
+  "translation": "2D阵列的工作方式大致相同。"
+}, {
+  "tag": "P",
+  "text": "If you start with this array:",
+  "translation": "如果从此数组开始："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "arr2D = np.array([[1 , 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])",
+  "translation": "arr2D = np.array（[[1、2、3、4]，[5、6、7、8]，[9、10、11、12]]）"
+}, {
+  "tag": "P",
+  "text": "You can reverse the content in all of the rows and all of the columns with:",
+  "translation": "您可以使用以下方法反转所有行和所有列中的内容："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "reversed_arr = np.flip(arr2D)print('Reversed Array: ')print(reversed_arr)",
+  "translation": "reversed_arr = np.flip（arr2D）print（'Reversed Array：'）print（reversed_arr）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "Reversed Array:[[12 11 10  9] [ 8  7  6  5] [ 4  3  2  1]]",
+  "translation": "反向数组：[[12 11 10 9] [8 7 6 5] [4 3 2 1]]"
+}, {
+  "tag": "P",
+  "text": "You can easily reverse only the rows with:",
+  "translation": "您可以使用以下方法轻松地仅反转行："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "reversed_arr_rows = np.flip(arr2D, axis=0)print('Reversed Array: ')print(reversed_arr_rows)",
+  "translation": "reversed_arr_rows = np.flip（arr2D，axis = 0）print（'反向数组：'）print（reversed_arr_rows）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "Reversed Array:[[ 9 10 11 12] [ 5  6  7  8] [ 1  2  3  4]]",
+  "translation": "反向数组：[[9 10 11 12] [5 6 7 8] [1 2 3 4]]"
+}, {
+  "tag": "P",
+  "text": "Or reverse only the columns with:",
+  "translation": "或仅反转具有以下内容的列："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "reversed_arr_columns = np.flip(arr2D, axis=1)print('Reversed Array columns: ')print(reversed_arr_columns)",
+  "translation": "reversed_arr_columns = np.flip（arr2D，axis = 1）print（'反向阵列列：'）print（reversed_arr_columns）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "Reversed Array columns:[[ 4  3  2  1] [ 8  7  6  5] [12 11 10  9]]",
+  "translation": "反向数组列：[[4 3 2 1] [8 7 6 5] [12 11 10 9]]"
+}, {
+  "tag": "P",
+  "text": "You can also reverse the contents of only one column or row. For example, you can reverse the contents of the row at index position 1 (the second row):",
+  "translation": "您也可以只反转一列或一行的内容。 例如，您可以反转索引位置1（第二行）的行的内容："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "arr2D[1] = np.flip(arr2D[1])print('Reversed Array: ')print(arr2D)",
+  "translation": "arr2D [1] = np.flip（arr2D [1]）print（'Reversed Array：'）print（arr2D）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "Reversed Array:[[ 1  2  3  4] [ 5  6  7  8] [ 9 10 11 12]]",
+  "translation": "反向数组：[[1 2 3 4] [5 6 7 8] [9 10 11 12]]"
+}, {
+  "tag": "P",
+  "text": "You can also reverse the column at index position 1 (the second column):",
+  "translation": "您还可以在索引位置1（第二列）处反转该列："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "arr2D[:,1] = np.flip(arr2D[:,1])print('Reversed Array: ')print(arr2D)",
+  "translation": "arr2D [：，1] = np.flip（arr2D [：，1]）print（'Reversed Array：'）print（arr2D）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "Reversed Array:[[ 1 10  3  4] [ 5  6  7  8] [ 9  2 11 12]]",
+  "translation": "反向数组：[[1 10 3 4] [5 6 7 8] [9 2 11 12]]"
+}, {
+  "tag": "P",
+  "text": "Read more about reversing arrays here.",
+  "translation": "在此处阅读更多有关反转阵列的信息。"
+}, {
+  "tag": "H1",
+  "text": "Reshaping and flattening multidimensional arrays",
+  "translation": "重塑和展平多维数组"
+}, {
+  "tag": "PRE",
+  "text": ".flatten().ravel()",
+  "translation": ".flatten（）。ravel（）"
+}, {
+  "tag": "P",
+  "text": "There are two popular ways to flatten an array: .flatten() and .ravel(). The primary difference between the two is that the new array created using ravel() is actually a reference to the parent array. This means that any changes to the new array will affect the parent array as well. Since ravel does not create a copy, it’s memory efficient.",
+  "translation": "扁平化数组有两种流行的方法：.flatten（）和.ravel（）。 两者之间的主要区别在于，使用ravel（）创建的新数组实际上是对父数组的引用。 这意味着对新数组的任何更改也会影响父数组。 由于ravel不会创建副本，因此可以提高存储效率。"
+}, {
+  "tag": "P",
+  "text": "If you start with this array:",
+  "translation": "如果从此数组开始："
+}, {
+  "tag": "PRE",
+  "text": "array = np.array([[1 , 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])",
+  "translation": "数组= np.array（[[1、2、3、4]，[5、6、7、8]，[9、10、11、12]]）"
+}, {
+  "tag": "P",
+  "text": "You can use flatten to flatten your array into a 1D array.",
+  "translation": "您可以使用flatten将数组展平为一维数组。"
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "array.flatten()",
+  "translation": "array.flatten（）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12])",
+  "translation": "数组（[1，2，3，4，5，5，7，7，8，9，10，11，12]）"
+}, {
+  "tag": "P",
+  "text": "When you use flatten, changes to your new array won’t change the parent array.",
+  "translation": "使用展平时，对新阵列的更改不会更改父阵列。"
+}, {
+  "tag": "P",
+  "text": "For example:",
+  "translation": "例如："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "a1 = array.flatten()a1[0] = 100print('Original array: ')print(array)print('New array: ')print(a1)",
+  "translation": "a1 = array.flatten（）a1 [0] = 100print（'原始数组：'）print（array）print（'新数组：'）print（a1）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "Original array:[[ 1  2  3  4] [ 5  6  7  8] [ 9 10 11 12]]New array:[100   2   3   4   5   6   7   8   9  10  11  12]",
+  "translation": "原始数组：[[1 2 3 4] [5 6 7 8] [9 10 11 12]]新数组：[100 2 3 4 5 6 7 8 9 10 11 12]"
+}, {
+  "tag": "P",
+  "text": "But when you use rank, the changes you make to the new array will affect the parent array.",
+  "translation": "但是，当您使用等级时，对新数组所做的更改将影响父数组。"
+}, {
+  "tag": "P",
+  "text": "For example:",
+  "translation": "例如："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "a2 = array.ravel()a2[0] = 101print('Original array: ')print(array)print('New array: ')print(a2)",
+  "translation": "a2 = array.ravel（）a2 [0] = 101print（'原始数组：'）print（array）print（'新数组：'）print（a2）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "Original array:[[101   2   3   4] [  5   6   7   8] [  9  10  11  12]]New array:[101   2   3   4   5   6   7   8   9  10  11  12]",
+  "translation": "原始数组：[[101 2 3 4] [5 6 7 8] [9 10 11 12]]新数组：[101 2 3 4 5 6 7 8 9 10 11 12]"
+}, {
+  "tag": "P",
+  "text": "Read more about flatten here and ravel here.",
+  "translation": "在此处阅读更多有关扁平化和浏览的信息。"
+}, {
+  "tag": "H1",
+  "text": "How to access the docstring for more information",
+  "translation": "如何访问文档字符串以获取更多信息"
+}, {
+  "tag": "PRE",
+  "text": "help()???",
+  "translation": "救命（）？？？"
+}, {
+  "tag": "P",
+  "text": "It’s common to need to rotate your matrices. NumPy arrays have the property T that allows you to transpose a matrix.",
+  "translation": "通常需要旋转矩阵。 NumPy数组具有属性T，可让您转置矩阵。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*B7iHUt5iozdAUTMU.png?q=20",
+  "type": "image",
+  "file": "0*B7iHUt5iozdAUTMU.png"
+}, {
+  "tag": "P",
+  "text": "You may also need to switch the dimensions of a matrix. This can happen when, for example, you have a model that expects a certain input shape that is different from your dataset. This is where the reshape method can be useful. You simply need to pass in the new dimensions that you want for the matrix.",
+  "translation": "您可能还需要切换矩阵的尺寸。 例如，当您有一个模型期望某个输入形状与数据集不同时，就会发生这种情况。 这是整形方法可能有用的地方。 您只需要传入矩阵所需的新尺寸即可。"
+}, {
+  "tag": "PRE",
+  "text": "data.reshape(2,3)data.reshape(3,2)",
+  "translation": "data.reshape（2,3）data.reshape（3,2）"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*TouotSs26S5qUHSx.png?q=20",
+  "type": "image",
+  "file": "0*TouotSs26S5qUHSx.png"
+}, {
+  "tag": "P",
+  "text": "You can also use np.transpose to reverse or change the axes of an array according to the values you specify.",
+  "translation": "您还可以使用np.transpose根据指定的值反转或更改数组的轴。"
+}, {
+  "tag": "P",
+  "text": "If you start with this array:",
+  "translation": "如果从此数组开始："
+}, {
+  "tag": "PRE",
+  "text": "arr = np.arange(6).reshape((2,3))arr",
+  "translation": "arr = np.arange（6）.reshape（（2,3））arr"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "array([[0, 1, 2],      [3, 4, 5]])",
+  "translation": "数组（[[0，1，2]，[3，4，5]]）"
+}, {
+  "tag": "P",
+  "text": "You can transpose your array with np.transpose().",
+  "translation": "您可以使用np.transpose（）转置数组。"
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "np.transpose(arr)",
+  "translation": "np.transpose（arr）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "array([[0, 3],     [1, 4],     [2, 5]])",
+  "translation": "数组（[[0，3]，[1，4]，[2，5]]）"
+}, {
+  "tag": "P",
+  "text": "Learn more about transposing a matrix here and reshaping a matrix here.",
+  "translation": "在此处了解有关转置矩阵和在此处重塑矩阵的更多信息。"
+}, {
+  "tag": "H1",
+  "text": "How to reverse an array",
+  "translation": "如何反转数组"
+}, {
+  "tag": "PRE",
+  "text": "np.flip",
+  "translation": "np.flip"
+}, {
+  "tag": "P",
+  "text": "You can find the unique elements in an array easily with np.unique.",
+  "translation": "您可以使用np.unique轻松找到数组中的唯一元素。"
+}, {
+  "tag": "P",
+  "text": "For example, if you start with this array:",
+  "translation": "例如，如果您从以下数组开始："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "a = np.array([11, 11, 12, 13, 14, 15, 16, 17, 12, 13, 11, 14, 18, 19, 20])",
+  "translation": "a = np.array（[11，11，12，13，14，15，15，16，17，12，13，11，14，14，18，19，20]）"
+}, {
+  "tag": "P",
+  "text": "you can use np.unique",
+  "translation": "你可以使用np.unique"
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "unique_values = np.unique(a)print(unique_values)",
+  "translation": "unique_values = np.unique（a）print（unique_values）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "[11 12 13 14 15 16 17 18 19 20]",
+  "translation": "[11 12 13 14 15 16 17 18 19 20]"
+}, {
+  "tag": "P",
+  "text": "To get the indices of unique values in a NumPy array (an array of first index positions of unique values in the array), just pass the return_index argument in np.unique() as well as your array.",
+  "translation": "要获取NumPy数组（数组中唯一值的第一个索引位置的数组）中唯一值的索引，只需在np.unique（）中以及数组中传递return_index参数。"
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "indices_list = np.unique(a, return_index=True)print(indices_list)",
+  "translation": "index_list = np.unique（a，return_index = True）打印（indices_list）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "[ 0  2  3  4  5  6  7 12 13 14]",
+  "translation": "[0 2 3 4 5 6 7 12 13 14]"
+}, {
+  "tag": "P",
+  "text": "You can pass the return_counts argument in np.unique() along with your array to get the frequency count of unique values in a NumPy array.",
+  "translation": "您可以在数组np.unique（）中传递return_counts参数，以获取NumPy数组中唯一值的频率计数。"
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "unique_values, occurrence_count = np.unique(a, return_counts=True)print(occurrence_count)",
+  "translation": "唯一值，出现次数= np.unique（a，return_counts = True）print（出现次数）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "[3 2 2 2 1 1 1 1 1 1]",
+  "translation": "[3 2 2 2 1 1 1 1 1 1 1]"
+}, {
+  "tag": "P",
+  "text": "This also works with 2D arrays. If you start with this array:",
+  "translation": "这也适用于2D阵列。 如果从此数组开始："
+}, {
+  "tag": "PRE",
+  "text": "a2D = np.array([[1, 2, 3, 4] ,[5, 6, 7, 8] , [9, 10, 11, 12],  [1, 2, 3, 4]])",
+  "translation": "a2D = np.array（[[1、2、3、4]，[5、6、7、8]，[9、10、11、12]，[1、2、3、4]]）"
+}, {
+  "tag": "P",
+  "text": "You can find unique values with:",
+  "translation": "您可以通过以下方式找到唯一值："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "unique_values = np.unique(a2D)print(unique_values)",
+  "translation": "unique_values = np.unique（a2D）print（unique_values）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "[ 1  2  3  4  5  6  7  8  9 10 11 12]",
+  "translation": "[1 2 3 4 5 6 7 8 9 10 11 12]"
+}, {
+  "tag": "P",
+  "text": "If the axis argument isn’t passed, your 2D array will be flattened.",
+  "translation": "如果未传递axis参数，则2D数组将被展平。"
+}, {
+  "tag": "P",
+  "text": "To get the unique rows or columns, make sure to pass the axis argument. To find the unique rows, specify axis=0 and for columns, specify axis=1.",
+  "translation": "要获取唯一的行或列，请确保传递axis参数。 要查找唯一行，请指定axis = 0，对于列，请指定axis = 1。"
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "unique_rows = np.unique(a2D, axis=0)print(unique_rows)",
+  "translation": "unique_rows = np.unique（a2D，axis = 0）打印（unique_rows）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "[[ 1  2  3  4] [ 5  6  7  8] [ 9 10 11 12]]",
+  "translation": "[[1 2 3 4] [5 6 7 8] [9 10 11 12]]"
+}, {
+  "tag": "P",
+  "text": "To get the unique rows, occurrence count, and index position, you can use:",
+  "translation": "要获得唯一的行，出现次数和索引位置，可以使用："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "unique_rows, occurence_count, indices = np.unique(a2D, axis=0, return_counts=True, return_index=True)print('Unique Rows: ', '\\n', unique_rows)print('Occurrence Count:', '\\n', occurence_count)print('Indices: ', '\\n', indices)",
+  "translation": "唯一行，出现次数，索引= np.unique（a2D，轴= 0，return_counts = True，return_index = True）print（'唯一行：'，'\\ n'，unique_rows）print（'发生次数：'，'\\ n '，enceence_count）打印（'索引：'，'\\ n'，索引）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "Unique Rows: [[ 1  2  3  4] [ 5  6  7  8] [ 9 10 11 12]]Occurrence Count: [0 1 2]Indices: [2 1 1]",
+  "translation": "唯一行：[[1 2 3 4] [5 6 7 8] [9 10 11 12]]出现次数：[0 1 2]指标：[2 1 1]"
+}, {
+  "tag": "P",
+  "text": "Learn more about finding the unique elements in an array here.",
+  "translation": "在此处了解有关在数组中查找唯一元素的更多信息。"
+}, {
+  "tag": "H1",
+  "text": "Transposing and reshaping a matrix",
+  "translation": "转置和重塑矩阵"
+}, {
+  "tag": "PRE",
+  "text": "np.reshape()np.transpose()np.T()",
+  "translation": "np.reshape（）np.transpose（）np.T（）"
+}, {
+  "tag": "P",
+  "text": "You can get the dimensions of a NumPy array any time using ndarray.shape. NumPy will return the dimensions of the array as a tuple.",
+  "translation": "您可以随时使用ndarray.shape获取NumPy数组的尺寸。 NumPy将以数组的形式返回数组的尺寸。"
+}, {
+  "tag": "P",
+  "text": "For example, if you create this array:",
+  "translation": "例如，如果创建此数组："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "np_arr = np.array([[1 , 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])",
+  "translation": "np_arr = np.array（[[1、2、3、4]，[5、6、7、8]，[9、10、11、12]]）"
+}, {
+  "tag": "P",
+  "text": "You can use np.shape to find the shape of your array.",
+  "translation": "您可以使用np.shape查找数组的形状。"
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "np_arr.shape",
+  "translation": "np_arr.shape"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "(3, 4)",
+  "translation": "（3，4）"
+}, {
+  "tag": "P",
+  "text": "This output tells you that your array has three rows and four columns.",
+  "translation": "此输出告诉您数组具有三行四列。"
+}, {
+  "tag": "P",
+  "text": "You can find just the number of rows by specifying [0]:",
+  "translation": "您可以通过指定[0]仅找到行数："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "num_of_rows = np_arr.shape[0]print('Number of Rows : ', num_of_rows)",
+  "translation": "num_of_rows = np_arr.shape [0] print（'行数：'，num_of_rows）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "Number of Rows :  3",
+  "translation": "行数：3"
+}, {
+  "tag": "P",
+  "text": "Or just the number of columns by specifying [1]:",
+  "translation": "或者通过指定[1]仅显示列数："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "num_of_columns = np_arr.shape[1]print('Number of Columns : ', num_of_columns)",
+  "translation": "num_of_columns = np_arr.shape [1] print（'列数：'，num_of_columns）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "Number of Columns :  4",
+  "translation": "列数：4"
+}, {
+  "tag": "P",
+  "text": "It’s also easy to find the total number of elements in your array:",
+  "translation": "查找数组中的元素总数也很容易："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "print(np_arr.shape[0] * np_arr.shape[1])",
+  "translation": "打印（np_arr.shape [0] * np_arr.shape [1]）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "12",
+  "translation": "12"
+}, {
+  "tag": "P",
+  "text": "You can use np.shape() with a 1D array as well. If you create this array:",
+  "translation": "您也可以将np.shape（）与一维数组一起使用。 如果创建此数组："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "arr = np.array([1, 2, 3, 4, 5, 6, 7, 8])",
+  "translation": "arr = np.array（[1、2、3、4、5、6、7、8]）"
+}, {
+  "tag": "P",
+  "text": "You can print the shape and the length of the array.",
+  "translation": "您可以打印阵列的形状和长度。"
+}, {
+  "tag": "PRE",
+  "text": "print('Shape of 1D array: ', arr.shape)print('Length of 1D array: ', arr.shape[0])",
+  "translation": "print（'一维数组的形状：'，arr.shape）print（'一维数组的长度：'，arr.shape [0]）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "Shape of 1D array:  (8,)Length of 1D array:  8",
+  "translation": "一维数组的形状：（8，）一维数组的长度：8"
+}, {
+  "tag": "P",
+  "text": "You can get the dimensions of an array using np.size().",
+  "translation": "您可以使用np.size（）获得数组的尺寸。"
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "# get number of rows in arraynum_of_rows2 = np.size(np_arr, 0)# get number of columns in 2D numpy arraynum_of_columns2 = np.size(np_arr, 1)print('Number of Rows : ', num_of_rows2)print('Number of Columns : ', num_of_columns2)",
+  "translation": "＃获取arraynum_of_rows2中的行数= np.size（np_arr，0）＃获取2D numpy array中的列数num_of_columns2 = np.size（np_arr，1）print（'行数：'，num_of_rows2）print（' 列：'，num_of_columns2）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "Number of Rows :  3Number of Columns: 4",
+  "translation": "行数：3列数：4"
+}, {
+  "tag": "P",
+  "text": "You can print the total number of elements as well:",
+  "translation": "您还可以打印元素总数："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "print('Total number of elements in  array : ', np.size(np_arr))",
+  "translation": "print（'数组中元素总数：'，np.size（np_arr））"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "Total number of elements in  array :  12",
+  "translation": "数组中元素总数：12"
+}, {
+  "tag": "P",
+  "text": "This also works for 3D arrays:",
+  "translation": "这也适用于3D阵列："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "arr3D = np.array([ [[1, 1, 1, 1], [2, 2, 2, 2], [3, 3, 3, 3]],               [[4, 4, 4, 4], [5, 5, 5, 5], [6, 6, 6, 6]] ])",
+  "translation": "arr3D = np.array（[[[1，1，1，1]，[2，2，2，2]，[3，3，3，3]]，[[4，4，4，4]， [5、5、5、5]，[6、6、6、6]]]"
+}, {
+  "tag": "P",
+  "text": "You can easily print the size of the axis:",
+  "translation": "您可以轻松打印轴的大小："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "print('Axis 0 size : ', np.size(arr3D, 0))print('Axis 1 size : ', np.size(arr3D, 1))print('Axis 2 size : ', np.size(arr3D, 2))",
+  "translation": "print（'Axis 1 size：'，np.size（arr3D，0））print（'Axis 1 size：'，np.size（arr3D，1））print（'Axis 2 size：'，np.size（arr3D，1）） ，2））"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "Axis 0 size :  2Axis 1 size :  3Axis 2 size :  4",
+  "translation": "轴0尺寸：2轴1尺寸：3轴2尺寸：4"
+}, {
+  "tag": "P",
+  "text": "You can print the total number of elements:",
+  "translation": "您可以打印元素总数："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "print(np.size(arr3D))",
+  "translation": "打印（np.size（arr3D））"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "24",
+  "translation": "24"
+}, {
+  "tag": "P",
+  "text": "You can also use np.size() with 1D arrays:",
+  "translation": "您还可以将np.size（）与一维数组一起使用："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "# Create a 1D arrayarr = np.array([1, 2, 3, 4, 5, 6, 7, 8])# Determine the lengthprint('Length of 1D numpy array : ', np.size(arr))",
+  "translation": "＃创建一维数组arr = np.array（[1、2、3、4、5、6、7、8]）＃确定lengthprint（'一维numpy数组的长度：'，np.size（arr））"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "Length of 1D numpy array :  8",
+  "translation": "一维numpy数组的长度：8"
+}, {
+  "tag": "P",
+  "text": "Remember that if you check the size of your array and it equals 0, your array is empty.",
+  "translation": "请记住，如果检查数组的大小并且等于0，则数组为空。"
+}, {
+  "tag": "P",
+  "text": "Learn more about finding the size of an array here and the shape of an array here.",
+  "translation": "在此处了解有关查找数组大小和数组形状的更多信息。"
+}, {
+  "tag": "H1",
+  "text": "Creating matrices",
+  "translation": "创建矩阵"
+}, {
+  "tag": "P",
+  "text": "You can pass Python lists of lists to create a matrix to represent them in NumPy.",
+  "translation": "您可以传递列表的Python列表以创建一个矩阵，以NumPy表示它们。"
+}, {
+  "tag": "PRE",
+  "text": "np.array([[1,2],[3,4]])",
+  "translation": "np.array（[[1,2 ,, [3,4]]）"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*1C9lFu87rU59bqZ1.png?q=20",
+  "type": "image",
+  "file": "0*1C9lFu87rU59bqZ1.png"
+}, {
+  "tag": "P",
+  "text": "Indexing and slicing operations are useful when you’re manipulating matrices:",
+  "translation": "在处理矩阵时，索引和切片操作非常有用："
+}, {
+  "tag": "PRE",
+  "text": "data[0,1]data[1:3]data[0:2,0]",
+  "translation": "数据[0,1]数据[1：3]数据[0：2,0]"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*MSXVdYbcoJkrH6m-.png?q=20",
+  "type": "image",
+  "file": "0*MSXVdYbcoJkrH6m-.png"
+}, {
+  "tag": "P",
+  "text": "You can aggregate matrices the same way you aggregated vectors:",
+  "translation": "您可以使用与汇总向量相同的方式来汇总矩阵："
+}, {
+  "tag": "PRE",
+  "text": "data.max()data.min()data.sum()",
+  "translation": "data.max（）data.min（）data.sum（）"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*LeO8VM1tnYEpAMP0.png?q=20",
+  "type": "image",
+  "file": "0*LeO8VM1tnYEpAMP0.png"
+}, {
+  "tag": "P",
+  "text": "You can aggregate all the values in a matrix and you can aggregate them across columns or rows using the axis parameter:",
+  "translation": "您可以汇总矩阵中的所有值，也可以使用axis参数跨列或行汇总它们："
+}, {
+  "tag": "PRE",
+  "text": "data.max(axis=0)data.max(axis=1)",
+  "translation": "data.max（轴= 0）data.max（轴= 1）"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*EHs4fgAT4BhfGHtg.png?q=20",
+  "type": "image",
+  "file": "0*EHs4fgAT4BhfGHtg.png"
+}, {
+  "tag": "P",
+  "text": "Once you’ve created your matrices, you can add and multiply them using arithmetic operators if you have two matrices that are the same size.",
+  "translation": "创建矩阵后，如果您拥有两个大小相同的矩阵，则可以使用算术运算符对其进行加法和乘法运算。"
+}, {
+  "tag": "PRE",
+  "text": "data + ones",
+  "translation": "数据+个"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*qCK1gA1VV0J9Igad.png?q=20",
+  "type": "image",
+  "file": "0*qCK1gA1VV0J9Igad.png"
+}, {
+  "tag": "P",
+  "text": "You can do these arithmetic operations on matrices of different sizes, but only if one matrix has only one column or one row. In this case, NumPy will use its broadcast rules for the operation.",
+  "translation": "您可以对不同大小的矩阵执行这些算术运算，但前提是一个矩阵只有一列或一行。 在这种情况下，NumPy将使用其广播规则进行操作。"
+}, {
+  "tag": "PRE",
+  "text": "data + ones_row",
+  "translation": "数据+ one_row"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*CiwS3M0zwkwVjWkb.png?q=20",
+  "type": "image",
+  "file": "0*CiwS3M0zwkwVjWkb.png"
+}, {
+  "tag": "P",
+  "text": "Be aware that when NumPy prints N-Dimensional arrays, the last axis is looped over the fastest while the first axis is the slowest. That means that:",
+  "translation": "请注意，当NumPy打印N维数组时，最后一个轴的循环最快，而第一个轴的循环最慢。 这意味着："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "np.ones((4,3,2))",
+  "translation": "np.ones（（4,3,2））"
+}, {
+  "tag": "P",
+  "text": "Will print out like this:",
+  "translation": "将像这样打印出来："
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "array([[[1., 1.],      [1., 1.],      [1., 1.]],     [[1., 1.],      [1., 1.],      [1., 1.]],     [[1., 1.],      [1., 1.],      [1., 1.]],     [[1., 1.],      [1., 1.],      [1., 1.]]])",
+  "translation": "array（[[[[1。，1.]，[1.，1.]，[1.，1.]]，[[1.，1.]，[1.，1.]，[1.， 1。]]，[[1.，1。]，[1.，1。]，[1.，1。]]，[[1.，1。]，[1.，1。]，[1 。，1.]]]）"
+}, {
+  "tag": "P",
+  "text": "There are often instances where we want NumPy to initialize the values of an array. NumPy offers methods like ones(), zeros(), and random.random() for these instances. All you need to do is pass in the number of elements you want it to generate.",
+  "translation": "在很多情况下，我们希望NumPy初始化数组的值。 NumPy为这些实例提供了诸如ones（），zeros（）和random.random（）之类的方法。 您需要做的就是传递要生成的元素数量。"
+}, {
+  "tag": "PRE",
+  "text": "np.ones(3)mp.zeros(3)np.random.random((3)",
+  "translation": "np.ones（3）mp.zeros（3）np.random.random（（3）"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*L1KvcRbsscSnVII6.png?q=20",
+  "type": "image",
+  "file": "0*L1KvcRbsscSnVII6.png"
+}, {
+  "tag": "P",
+  "text": "Read more about initializing the values of an array with ones here, zeros here, and initializing empty arrays here.",
+  "translation": "在这里阅读更多有关初始化数组的值的信息，此处初始化为零，此处初始化为零，此处初始化为空数组。"
+}, {
+  "tag": "H1",
+  "text": "Generating random numbers",
+  "translation": "产生随机数"
+}, {
+  "tag": "P",
+  "text": "The use of random number generation is an important part of the configuration and evaluation of machine learning algorithms. Whether you need to randomly initialize weights in an artificial neural network, split data into random sets, or randomly shuffle your dataset, being able to generate random numbers (actually, repeatable pseudo-random numbers) is essential.",
+  "translation": "随机数生成的使用是机器学习算法的配置和评估的重要组成部分。 无论您是需要在人工神经网络中随机初始化权重，将数据拆分为随机集还是随机地对数据集进行随机整理，能够生成随机数（实际上是可重复的伪随机数）都是至关重要的。"
+}, {
+  "tag": "P",
+  "text": "You have a number of options when using NumPy for random number generation. Random Generator is NumPy’s replacement for RandomState. The main difference between them is that Generator relies on an additional BitGenerator to manage state and generate the random bits, which are transformed into random values.",
+  "translation": "使用NumPy生成随机数时，您有很多选择。 NumPy取代了Random Generator，成为RandomState的替代品。 它们之间的主要区别在于Generator依赖于附加的BitGenerator来管理状态并生成随机位，这些随机位被转换为随机值。"
+}, {
+  "tag": "P",
+  "text": "With Generator.integers, you can generate random integers from low (remember that this is inclusive with NumPy) to high (exclusive). You can set endopoint=True to make the high number inclusive.",
+  "translation": "使用Generator.integers，您可以生成从低（请记住，NumPy包含）到高（不包括）的随机整数。 您可以设置endpoint = True来使高数包含在内。"
+}, {
+  "tag": "P",
+  "text": "You can generate a 2 x 4 array of random integers between 0 and 4 with",
+  "translation": "您可以使用以下命令生成2到4个0到4之间的随机整数数组"
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "rng.integers(5, size=(2, 4))",
+  "translation": "rng.integers（5，大小=（2，4））"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "array([[4, 0, 2, 1],     [3, 2, 2, 0]])",
+  "translation": "数组（[[4，0，2，1]，[3，2，2，0]]）"
+}, {
+  "tag": "P",
+  "text": "You can also use the ones(), zeros(), and random() methods to create an array if you give them a tuple describing the dimensions of the matrix.",
+  "translation": "如果给它们一个描述矩阵尺寸的元组，则还可以使用ones（），zeros（）和random（）方法来创建数组。"
+}, {
+  "tag": "PRE",
+  "text": "np.ones(3,2)mp.zeros(3,2)np.random.random((3,2)",
+  "translation": "np.ones（3,2）mp.zeros（3,2）np.random.random（（3,2）"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*AH-EvJmT8cwC2JPH.png?q=20",
+  "type": "image",
+  "file": "0*AH-EvJmT8cwC2JPH.png"
+}, {
+  "tag": "P",
+  "text": "Read more about Random Generator here.",
+  "translation": "在这里阅读更多关于随机发生器的信息。"
+}, {
+  "tag": "H1",
+  "text": "How to get unique items and counts",
+  "translation": "如何获得独特的物品和数量"
+}, {
+  "tag": "PRE",
+  "text": "np.unique()",
+  "translation": "np.unique（）"
+}, {
+  "tag": "P",
+  "text": "Once you’ve created your arrays, you can start to work with them. Let’s say, for example, that you’ve created two arrays, one called “data” and one called “ones”",
+  "translation": "创建阵列后，就可以开始使用它们了。 举例来说，假设您创建了两个数组，一个数组称为“数据”，另一个数组称为“一个”"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*MJQHbOKHoGHOxTkh.png?q=20",
+  "type": "image",
+  "file": "0*MJQHbOKHoGHOxTkh.png"
+}, {
+  "tag": "P",
+  "text": "You can add the arrays together with the plus sign.",
+  "translation": "您可以将数组与加号一起添加。"
+}, {
+  "tag": "PRE",
+  "text": "data + ones",
+  "translation": "数据+个"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*mhB3M8sguYSD3-He.png?q=20",
+  "type": "image",
+  "file": "0*mhB3M8sguYSD3-He.png"
+}, {
+  "tag": "P",
+  "text": "You can, of course, do more than just addition!",
+  "translation": "当然，您可以做的不仅仅是添加！"
+}, {
+  "tag": "PRE",
+  "text": "data - onesdata * datadata / data",
+  "translation": "数据-一个数据*数据数据/数据"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*4lIFKM8lXAmP9vo9.png?q=20",
+  "type": "image",
+  "file": "0*4lIFKM8lXAmP9vo9.png"
+}, {
+  "tag": "P",
+  "text": "Basic operations are simple with NumPy. If you want to find the sum of the elements in an array, you’d use sum(). This works for 1D arrays, 2D arrays, and arrays in higher dimensions.",
+  "translation": "使用NumPy，基本操作很简单。 如果要查找数组中元素的总和，请使用sum（）。 这适用于1D阵列，2D阵列和较大尺寸的阵列。"
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "a = np.array([1, 2, 3, 4])# Add all of the elements in the arraya.sum()",
+  "translation": "a = np.array（[1、2、3、4]）＃添加array.sum（）中的所有元素"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "10",
+  "translation": "10"
+}, {
+  "tag": "P",
+  "text": "To add the rows or the columns in a 2D array, you would specify the axis.",
+  "translation": "要在2D数组中添加行或列，您需要指定轴。"
+}, {
+  "tag": "P",
+  "text": "If you start with this array:",
+  "translation": "如果从此数组开始："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "b = np.array([[1, 1], [2, 2]])",
+  "translation": "b = np.array（[[1，1]，[2，2]]）"
+}, {
+  "tag": "P",
+  "text": "You can sum the rows with:",
+  "translation": "您可以使用以下方法对行求和："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "b.sum(axis=0)",
+  "translation": "b.sum（轴= 0）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "array([3, 3])",
+  "translation": "数组（[3，3]）"
+}, {
+  "tag": "P",
+  "text": "You can sum the columns with:",
+  "translation": "您可以对列进行求和："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "b.sum(axis=1)",
+  "translation": "b.sum（轴= 1）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "array([2, 4])",
+  "translation": "数组（[2，4]）"
+}, {
+  "tag": "P",
+  "text": "Learn more about basic operations here.",
+  "translation": "在此处了解有关基本操作的更多信息。"
+}, {
+  "tag": "H1",
+  "text": "Broadcasting",
+  "translation": "广播"
+}, {
+  "tag": "P",
+  "text": "There are times when you might want to carry out an operation between an array and a single number (also called an operation between a vector and a scalar) or between arrays of two different sizes. For example, your array (we’ll call it “data”) might contain information about distance in miles but you want to convert the information to kilometers. You can perform this operation with:",
+  "translation": "有时您可能想在数组和单个数字之间进行运算（也称为向量和标量之间的运算），或者在两种不同大小的数组之间进行运算。 例如，您的数组（我们称其为“数据”）可能包含有关距离的信息（以英里为单位），但您希望将其转换为公里。 您可以执行以下操作："
+}, {
+  "tag": "PRE",
+  "text": "data * 1.6",
+  "translation": "数据* 1.6"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*XnWhUUqTKsbRooBh.png?q=20",
+  "type": "image",
+  "file": "0*XnWhUUqTKsbRooBh.png"
+}, {
+  "tag": "P",
+  "text": "NumPy understands that the multiplication should happen with each cell. That concept is called broadcasting. Broadcasting is a mechanism that allows NumPy to perform operations on arrays of different shapes. The dimensions of your array must be compatible, for example, when the dimensions of both arrays are equal or when one of them is 1. If the dimensions are not compatible, you will get a value error.",
+  "translation": "NumPy知道乘法应该发生在每个单元格上。 这个概念称为广播。 广播是一种机制，它允许NumPy对不同形状的数组执行操作。 数组的尺寸必须兼容，例如，当两个数组的尺寸相等或其中一个等于1时。如果尺寸不兼容，则会出现值错误。"
+}, {
+  "tag": "P",
+  "text": "Learn more about broadcasting here.",
+  "translation": "在此处了解有关广播的更多信息。"
+}, {
+  "tag": "H1",
+  "text": "More useful array operations",
+  "translation": "更有用的阵列操作"
+}, {
+  "tag": "PRE",
+  "text": "Maximum, minimum, sum, mean, product, standard deviation, and more",
+  "translation": "最大值，最小值，总和，平均值，乘积，标准偏差等"
+}, {
+  "tag": "P",
+  "text": "NumPy also performs aggregation functions. In addition to min, max, and sum, you can easily run mean to get the average, prod to get the result of multiplying the elements together, std to get the standard deviation, and more.",
+  "translation": "NumPy还执行聚合功能。 除了min，max和sum，您还可以轻松地运行mean以获得平均值，prod获得将元素相乘的结果，std获得标准偏差，等等。"
+}, {
+  "tag": "PRE",
+  "text": "data.max()data.min()data.sum()",
+  "translation": "data.max（）data.min（）data.sum（）"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*v_XJbg243IJo3QoJ.png?q=20",
+  "type": "image",
+  "file": "0*v_XJbg243IJo3QoJ.png"
+}, {
+  "tag": "P",
+  "text": "Let’s start with this array, called “A”",
+  "translation": "让我们从称为“ A”的数组开始"
+}, {
+  "tag": "PRE",
+  "text": "[[0.45053314 0.17296777 0.34376245 0.5510652][0.54627315 0.05093587 0.40067661 0.55645993][0.12697628 0.82485143 0.26590556 0.56917101]]",
+  "translation": "[[0.45053314 0.17296777 0.34376245 0.5510652] [0.54627315 0.05093587 0.40067661 0.55645993] [0.12697628 0.82485143 0.26590556 0.56917101]]"
+}, {
+  "tag": "P",
+  "text": "It’s very common to want to aggregate along a row or column. By default, every NumPy aggregation function will return the aggregate of the entire array. To find the sum or the minimum of the elements in your array, run:",
+  "translation": "沿行或列进行聚合是很常见的。 默认情况下，每个NumPy聚合函数都会返回整个数组的聚合。 要查找数组中元素的总和或最小值，请运行："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "A.sum()",
+  "translation": "A.sum（）"
+}, {
+  "tag": "P",
+  "text": "Or",
+  "translation": "要么"
+}, {
+  "tag": "PRE",
+  "text": "A.min()",
+  "translation": "A.min（）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "# Sum4.8595783866706# Minimum0.050935870838424435",
+  "translation": "＃Sum4.8595783866706＃最小值0.050935870838424435"
+}, {
+  "tag": "P",
+  "text": "You can specify on which axis you want the aggregation function to be computed. For example, you can find the minimum value within each column by specifying axis=0.",
+  "translation": "您可以指定要在哪个轴上计算聚合函数。 例如，您可以通过指定axis = 0在每一列中找到最小值。"
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "A.min(axis=0)",
+  "translation": "A.min（轴= 0）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "array([0.12697628, 0.05093587, 0.26590556, 0.5510652 ])",
+  "translation": "数组（[0.12697628，0.05093587，0.26590556，0.5510652]）"
+}, {
+  "tag": "P",
+  "text": "The four values listed above correspond to the number of columns in your array. With a four-column array, you will get four values as your result.",
+  "translation": "上面列出的四个值对应于数组中的列数。 使用四列数组，您将得到四个值作为结果。"
+}, {
+  "tag": "P",
+  "text": "Read more about functions here and calculations here.",
+  "translation": "在此处阅读有关功能和计算的更多信息。"
+}, {
+  "tag": "H1",
+  "text": "How to inspect the size and shape of a NumPy array",
+  "translation": "如何检查NumPy数组的大小和形状"
+}, {
+  "tag": "PRE",
+  "text": "np.shape()np.size()",
+  "translation": "np.shape（）np.size（）"
+}, {
+  "tag": "P",
+  "text": "You can easily use create a new array from a section of an existing array. Let’s say you have this array:",
+  "translation": "您可以轻松地使用现有阵列的一部分创建新阵列。 假设您有以下数组："
+}, {
+  "tag": "PRE",
+  "text": "array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10])",
+  "translation": "数组（[1，2，3，4，5，6，7，8，9，10]）"
+}, {
+  "tag": "P",
+  "text": "You can create a new array from a section of your array any time by specifying where you want to slice your array.",
+  "translation": "您可以随时通过指定要在何处切片的阵列来从阵列的某个部分创建新阵列。"
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "arr1 = array[3:8]arr1",
+  "translation": "arr1 =数组[3：8] arr1"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "array([4, 5, 6, 7, 8])",
+  "translation": "数组（[4，5，6，7，8]）"
+}, {
+  "tag": "P",
+  "text": "Here, you grabbed a section of your array from index position 3 through index position 8.",
+  "translation": "在这里，您从索引位置3到索引位置8抓取了数组的一部分。"
+}, {
+  "tag": "P",
+  "text": "You can also stack two existing arrays, both vertically and horizontally. Let’s say you have two arrays:",
+  "translation": "您还可以堆叠两个现有的垂直和水平阵列。 假设您有两个数组："
+}, {
+  "tag": "P",
+  "text": "a_1:",
+  "translation": "a_1："
+}, {
+  "tag": "PRE",
+  "text": "array([[1, 1],     [2, 2]])",
+  "translation": "数组（[[1，1]，[2，2]]）"
+}, {
+  "tag": "P",
+  "text": "and a_2:",
+  "translation": "和a_2："
+}, {
+  "tag": "PRE",
+  "text": "array([[3, 3],     [4, 4]])",
+  "translation": "数组（[[3，3]，[4，4]]）"
+}, {
+  "tag": "P",
+  "text": "You can stack them vertically with vstack:",
+  "translation": "您可以使用vstack垂直堆叠它们："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "np.vstack((a_1, a_2))",
+  "translation": "np.vstack（（a_1，a_2））"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "array([[1, 1],     [2, 2],     [3, 3],     [4, 4]])",
+  "translation": "数组（[[1，1]，[2，2]，[3，3]，[4，4]]）"
+}, {
+  "tag": "P",
+  "text": "Or stack them horizontally with hstack:",
+  "translation": "或者使用hstack将它们水平堆叠："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "np.hstack((a_1, a_2))",
+  "translation": "np.hstack（（a_1，a_2））"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "array([[1, 1, 3, 3],     [2, 2, 4, 4]])",
+  "translation": "数组（[[1，1，3，3]，[2，2，4，4]]）"
+}, {
+  "tag": "P",
+  "text": "You can split an array into several smaller arrays using hsplit. You can specify either the number of equally shaped arrays to return or the columns after which the division should occur.",
+  "translation": "您可以使用hsplit将数组拆分为几个较小的数组。 您可以指定要返回的均等形状的数组数，也可以指定应在其后进行划分的列。"
+}, {
+  "tag": "P",
+  "text": "Let’s say you have this array:",
+  "translation": "假设您有以下数组："
+}, {
+  "tag": "PRE",
+  "text": "array([[ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12],     [13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24]])",
+  "translation": "数组（[[1，2，3，4，5，5，7，7，8，9，10，11，12]，[13，14，15，16，17，17，18，19，20，21，22， 23，24]]）"
+}, {
+  "tag": "P",
+  "text": "If you wanted to split this array into three equally shaped arrays, you would run:",
+  "translation": "如果要将这个数组分成三个形状相同的数组，则可以运行："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "np.hsplit(array,3)",
+  "translation": "np.hsplit（array，3）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "[array([[ 1,  2,  3,  4],      [13, 14, 15, 16]]), array([[ 5,  6,  7,  8],      [17, 18, 19, 20]]), array([[ 9, 10, 11, 12],      [21, 22, 23, 24]])]",
+  "translation": "[array（[[1，2，3，4]，[13，14，15，16]]），array（[[5，6，7，8]，[17，18，19，20]]） ，array（[[[9，10，11，12]，[21，22，23，24]]）]"
+}, {
+  "tag": "P",
+  "text": "If you wanted to split your array after the third and fourth column, you’d run:",
+  "translation": "如果要在第三列和第四列之后拆分数组，请运行："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "np.hsplit(array,(3,4))",
+  "translation": "np.hsplit（array，（3,4））"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "[array([[ 1,  2,  3],      [13, 14, 15]]), array([[ 4],      [16]]), array([[ 5,  6,  7,  8,  9, 10, 11, 12],      [17, 18, 19, 20, 21, 22, 23, 24]])]",
+  "translation": "[array（[[1，2，3]，[13，14，15]]），array（[[4]，[16]]），array（[[5，6，7，8，9，10 ，11、12]，[17、18、19、20、21、22、23、24]]）]"
+}, {
+  "tag": "P",
+  "text": "Learn more about stacking and splitting arrays here.",
+  "translation": "在此处了解有关堆栈和拆分数组的更多信息。"
+}, {
+  "tag": "P",
+  "text": "You can use the view method to create a new array object that looks at the same data as the original array (a shallow copy)",
+  "translation": "您可以使用view方法创建一个新的数组对象，该对象看起来与原始数组的数据相同（浅表副本）"
+}, {
+  "tag": "P",
+  "text": "Let’s say you create this array:",
+  "translation": "假设您创建了以下数组："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "a = np.array([[1 , 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])",
+  "translation": "a = np.array（[[1、2、3、4]，[5、6、7、8]，[9、10、11、12]]）"
+}, {
+  "tag": "P",
+  "text": "You can create a new array object that looks at the same data using:",
+  "translation": "您可以使用以下方法创建一个查看相同数据的新数组对象："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "b = a.view()",
+  "translation": "b = a.view（）"
+}, {
+  "tag": "P",
+  "text": "Using the copy method will make a complete copy of the array and its data (a deep copy). To use this on your array, you could run:",
+  "translation": "使用copy方法将对数组及其数据进行完整复制（深层复制）。 要在您的阵列上使用它，可以运行："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "c = a.copy()",
+  "translation": "c = a.copy（）"
+}, {
+  "tag": "P",
+  "text": "Learn more about copies and views here.",
+  "translation": "在此处了解有关副本和视图的更多信息。"
+}, {
+  "tag": "H1",
+  "text": "Basic array operations",
+  "translation": "基本阵列操作"
+}, {
+  "tag": "PRE",
+  "text": "Addition, subtraction, multiplication, division, and more!",
+  "translation": "加法，减法，乘法，除法等等！"
+}, {
+  "tag": "P",
+  "text": "You can use np.newaxis and np.expand_dims to increase the dimensions of your existing array.",
+  "translation": "您可以使用np.newaxis和np.expand_dims来增加现有数组的尺寸。"
+}, {
+  "tag": "P",
+  "text": "Using np.newaxis will increase the dimensions of your array by one dimension when used once. This means that a 1D array will become a 2D array, a 2D array will become a 3D array, and so on.",
+  "translation": "使用np.newaxis一次使用将使数组的尺寸增加一维。 这意味着1D阵列将变为2D阵列，2D阵列将变为3D阵列，依此类推。"
+}, {
+  "tag": "P",
+  "text": "For example, if you start with this array:",
+  "translation": "例如，如果您从以下数组开始："
+}, {
+  "tag": "PRE",
+  "text": "a = np.array([1, 2, 3, 4, 5, 6])a.shape",
+  "translation": "a = np.array（[1、2、3、4、5、6]）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "(6,)",
+  "translation": "（6，）"
+}, {
+  "tag": "P",
+  "text": "You can use np.newaxis to add a new axis:",
+  "translation": "您可以使用np.newaxis添加新轴："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "a2 = a[np.newaxis]a2.shape",
+  "translation": "a2 = a [np.newaxis] a2.shape"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "(1, 6)",
+  "translation": "（1，6）"
+}, {
+  "tag": "P",
+  "text": "You can explicitly convert a 1D array with either a row vector or a column vector using np.newaxis. For example, you can convert a 1D array to a row vector by inserting an axis along the first dimension:",
+  "translation": "您可以使用np.newaxis使用行向量或列向量显式转换1D数组。 例如，您可以通过沿第一维插入轴来将一维数组转换为行向量："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "row_vector = a[np.newaxis, :]row_vector.shape",
+  "translation": "row_vector = a [np.newaxis，：] row_vector.shape"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "(1, 6)",
+  "translation": "（1，6）"
+}, {
+  "tag": "P",
+  "text": "Or, for a column vector, you can insert an axis along the second dimension:",
+  "translation": "或者，对于列向量，可以沿第二维插入轴："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "col_vector = a[:, np.newaxis]col_vector.shape",
+  "translation": "col_vector = a [:, np.newaxis] col_vector.shape"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "(6, 1)",
+  "translation": "（6，1）"
+}, {
+  "tag": "P",
+  "text": "You can also expand an array by inserting a new axis at a specified position with np.expand_dims.",
+  "translation": "您还可以通过使用np.expand_dims在指定位置插入新轴来扩展数组。"
+}, {
+  "tag": "P",
+  "text": "For example, if you start with this array:",
+  "translation": "例如，如果您从以下数组开始："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "a = np.array([1, 2, 3, 4, 5, 6])a.shape",
+  "translation": "a = np.array（[1、2、3、4、5、6]）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "(6,)",
+  "translation": "（6，）"
+}, {
+  "tag": "P",
+  "text": "You can use np.expand_dims to add an axis at index position 1 with:",
+  "translation": "您可以使用np.expand_dims在索引位置1添加轴，方法是："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "b = np.expand_dims(a, axis=1)b.shape",
+  "translation": "b = np.expand_dims（a，轴= 1）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "(6, 1)",
+  "translation": "（6，1）"
+}, {
+  "tag": "P",
+  "text": "You can add an axis at index position 0 with:",
+  "translation": "您可以使用以下方法在索引位置0处添加轴："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "c = np.expand_dims(a, axis=0)c.shape",
+  "translation": "c = np.expand_dims（a，轴= 0）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "(1, 6)",
+  "translation": "（1，6）"
+}, {
+  "tag": "P",
+  "text": "Find more information about newaxis here and expand_dims here.",
+  "translation": "在此处找到有关newaxis的更多信息，并在此处找到expand_dims。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/20/1*wxB-Vhf3YHGQ3bC8u2Ikog.jpeg?q=20",
+  "caption": "Photo by mentatdgt from Pexels",
+  "type": "image",
+  "file": "1*wxB-Vhf3YHGQ3bC8u2Ikog.jpeg"
+}, {
+  "tag": "H1",
+  "text": "Indexing and slicing",
+  "translation": "索引和切片"
+}, {
+  "tag": "P",
+  "text": "You can index and slice NumPy arrays in the same ways you can slice Python lists.",
+  "translation": "您可以采用与切片Python列表相同的方式对NumPy数组进行索引和切片。"
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "data = np.array([1,2,3])print(data[0])print(data[1])print(data[0:2])print(data[1:])print(data[-2:])",
+  "translation": "数据= np.array（[1,2,3]）print（data [0]）print（data [1]）print（data [0：2]）print（data [1：]）print（data [- 2：]）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "12[1 2][2 3]",
+  "translation": "12 [1 2] [2 3]"
+}, {
+  "tag": "P",
+  "text": "You can visualize it this way:",
+  "translation": "您可以通过以下方式对其进行可视化："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*vBl_rMygi5ylOpK5.png?q=20",
+  "type": "image",
+  "file": "0*vBl_rMygi5ylOpK5.png"
+}, {
+  "tag": "P",
+  "text": "You may want to take a section of your array or specific array elements to use in further analysis or additional operations. To do that, you’ll need to subset, slice, and/or index your arrays.",
+  "translation": "您可能需要将阵列或特定阵列元素的一部分用于进一步的分析或其他操作。 为此，您需要对数组进行子集化，切片化和/或索引化。"
+}, {
+  "tag": "P",
+  "text": "If you want to select values from your array that fulfill certain conditions, it’s straightforward with NumPy.",
+  "translation": "如果要从数组中选择满足特定条件的值，使用NumPy可以很简单。"
+}, {
+  "tag": "P",
+  "text": "For example, if you start with this array:",
+  "translation": "例如，如果您从以下数组开始："
+}, {
+  "tag": "PRE",
+  "text": "a = np.array([[1 , 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])",
+  "translation": "a = np.array（[[1、2、3、4]，[5、6、7、8]，[9、10、11、12]]）"
+}, {
+  "tag": "P",
+  "text": "You can easily print all of the values in the array that are less than 5.",
+  "translation": "您可以轻松打印数组中所有小于5的值。"
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "print(a[a<5])",
+  "translation": "打印（a [a <5]）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "[1 2 3 4]",
+  "translation": "[1 2 3 4]"
+}, {
+  "tag": "P",
+  "text": "You can also select, for example, numbers that are equal to or greater than 5, and use that condition to index an array.",
+  "translation": "例如，您还可以选择等于或大于5的数字，并使用该条件为数组建立索引。"
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "five_up = (a >= 5)print(a[five_up])",
+  "translation": "Five_up =（a> = 5）print（a [five_up]）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "[ 5  6  7  8  9 10 11 12]",
+  "translation": "[5 6 7 8 9 10 11 12]"
+}, {
+  "tag": "P",
+  "text": "You can select elements that are divisible by 2:",
+  "translation": "您可以选择可被2整除的元素："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "divisible_by_2 = a[a%2==0]print(divisible_by_2)",
+  "translation": "divisible_by_2 = a [a％2 == 0] print（divisible_by_2）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "[ 2  4  6  8 10 12]",
+  "translation": "[2 4 6 8 10 12]"
+}, {
+  "tag": "P",
+  "text": "Or you can select elements that satisfy two conditions using the & and | operators:",
+  "translation": "或者，您可以使用＆和|选择满足两个条件的元素。 运营商："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "c = a[(a > 2) & (a < 11)]print(c)",
+  "translation": "c = a [（a> 2）＆（a <11）] print（c）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "[ 3  4  5  6  7  8  9 10]",
+  "translation": "[3 4 5 6 7 8 9 10]"
+}, {
+  "tag": "P",
+  "text": "While it would be incredibly inefficient for this array, you can also make use of the logical operators & and | in order to return boolean values that specify whether or not the values in an array fulfill a certain condition. This can be useful with arrays that contain names or other categorical values.",
+  "translation": "尽管此数组的效率非常低，但您也可以使用逻辑运算符＆和| |。 为了返回布尔值，这些布尔值指定数组中的值是否满足特定条件。 这对于包含名称或其他类别值的数组很有用。"
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "five_up = (array > 5) | (array == 5)print(five_up)",
+  "translation": "Five_up =（数组> 5）| （数组== 5）print（five_up）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "[[False False False False] [ True  True  True  True] [ True  True  True  True]]",
+  "translation": "[[False False False False] [True True True True] [True True True True]]"
+}, {
+  "tag": "P",
+  "text": "You can also use np.where() to select elements or indices from an array.",
+  "translation": "您也可以使用np.where（）从数组中选择元素或索引。"
+}, {
+  "tag": "P",
+  "text": "Starting with this array:",
+  "translation": "从此数组开始："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "a = np.array([[1 , 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])",
+  "translation": "a = np.array（[[1、2、3、4]，[5、6、7、8]，[9、10、11、12]]）"
+}, {
+  "tag": "P",
+  "text": "You can use np.where() to print the indices of elements that are, for example, less than 5:",
+  "translation": "您可以使用np.where（）来打印例如小于5的元素的索引："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "b = np.where(a<5)print(b)",
+  "translation": "b = np.where（a <5）print（b）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "(array([0, 0, 0, 0]), array([0, 1, 2, 3]))",
+  "translation": "（数组（[0，0，0，0]），数组（[0，1，2，3]））"
+}, {
+  "tag": "P",
+  "text": "In this example, a tuple of arrays was returned: one for each dimension. The first array represents the row indices where these values are found, and the second array represents the column indices where the values are found.",
+  "translation": "在此示例中，返回了一个数组元组：每个维一个。 第一个数组代表找到这些值的行索引，第二个数组代表找到这些值的行索引。"
+}, {
+  "tag": "P",
+  "text": "If you want to generate a list of coordinates where the elements exist, you can zip the arrays, iterate over the list of coordinates, and print them. For example:",
+  "translation": "如果要生成元素所在位置的坐标列表，可以压缩数组，遍历坐标列表，然后打印它们。 例如："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "list_of_coordinates= list(zip(b[0], b[1]))for cord in list_of_coordinates:    print(cord)",
+  "translation": "list_of_coordinates = list（zip（b [0]，b [1]））用于list_of_coordinates中的绳索：print（cord）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "(0, 0)(0, 1)(0, 2)(0, 3)",
+  "translation": "（0，0）（0，1）（0，2）（0，3）"
+}, {
+  "tag": "P",
+  "text": "You can also use np.where() to print the elements in an array that are less than 5 with:",
+  "translation": "您还可以使用np.where（）来打印小于5的数组中的元素，方法是："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "print(a[b])",
+  "translation": "打印（a [b]）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "[1 2 3 4]",
+  "translation": "[1 2 3 4]"
+}, {
+  "tag": "P",
+  "text": "If the element you’re looking for doesn’t exist in the array, then the returned array of indices will be empty. For example:",
+  "translation": "如果您要查找的元素不存在于数组中，则返回的索引数组将为空。 例如："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "not_there = np.where(a == 42)print(not_there)",
+  "translation": "not_there = np.where（a == 42）print（not_there）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "(array([], dtype=int64), array([], dtype=int64))",
+  "translation": "（array（[]，dtype = int64），array（[]，dtype = int64））"
+}, {
+  "tag": "P",
+  "text": "Learn more about indexing and slicing here and here.",
+  "translation": "在此处和此处了解有关建立索引和切片的更多信息。"
+}, {
+  "tag": "P",
+  "text": "Read more about using the where function here.",
+  "translation": "在此处阅读有关使用where函数的更多信息。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/20/1*KvsrkPZ1zGgk5I8G0xv4mg.jpeg?q=20",
+  "caption": "Photo by Dazzle Jam from Pexels",
+  "type": "image",
+  "file": "1*KvsrkPZ1zGgk5I8G0xv4mg.jpeg"
+}, {
+  "tag": "H1",
+  "text": "How to create an array from existing data",
+  "translation": "如何从现有数据创建数组"
+}, {
+  "tag": "PRE",
+  "text": "slicing and indexingnp.vstack()np.hstack()np.hsplit().view().copy()",
+  "translation": "切片和索引np.vstack（）np.hstack（）np.hsplit（）。view（）。copy（）"
+}, {
+  "tag": "P",
+  "text": "Yes!",
+  "translation": "是!"
+}, {
+  "tag": "FIGURE",
+  "type": "code"
+}, {
+  "tag": "P",
+  "text": "Using np.reshape() will give a new shape to an array without changing the data. Just remember that when you use the reshape method, the array you want to produce needs to have the same number of elements as the original array. If you start with an array with 12 elements, you’ll need to make sure that your new array also has a total of 12 elements.",
+  "translation": "使用np.reshape（）将在不更改数据的情况下为数组赋予新的形状。 只需记住，当您使用reshape方法时，要生成的数组需要具有与原始数组相同数量的元素。 如果您从一个包含12个元素的数组开始，则需要确保新数组也总共包含12个元素。"
+}, {
+  "tag": "P",
+  "text": "If you start with this array:",
+  "translation": "如果从此数组开始："
+}, {
+  "tag": "PRE",
+  "text": "a = np.arange(6)print(a)",
+  "translation": "a = np.arange（6）print（a）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "[0 1 2 3 4 5]",
+  "translation": "[0 1 2 3 4 5]"
+}, {
+  "tag": "P",
+  "text": "You can use reshape() to reshape your array. For example, you can reshape this array to an array with three rows and two columns:",
+  "translation": "您可以使用reshape（）重塑数组。 例如，您可以将此数组重塑为具有三行两列的数组："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "b = a.reshape(3,2)print(b)",
+  "translation": "b = a.reshape（3,2）print（b）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "[[0 1] [2 3] [4 5]]",
+  "translation": "[[0 1] [2 3] [4 5]]"
+}, {
+  "tag": "P",
+  "text": "With np.reshape, you can specify a few optional parameters:",
+  "translation": "使用np.reshape，可以指定一些可选参数："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "numpy.reshape(a, newshape, order)",
+  "translation": "numpy.reshape（a，newshape，order）"
+}, {
+  "tag": "P",
+  "text": "a is the array to be reshaped.",
+  "translation": "a是要重塑的数组。"
+}, {
+  "tag": "P",
+  "text": "newshape is the new shape you want. You can specify an integer or a tuple of integers. If you specify an integer, the result will be an array of that length. The shape should be compatible with the original shape.",
+  "translation": "newshape是您想要的新形状。 您可以指定一个整数或整数元组。 如果指定整数，则结果将是该长度的数组。 形状应与原始形状兼容。"
+}, {
+  "tag": "P",
+  "text": "order: ‘C’ means to read/write the elements using C-like index order, ‘F’ means to read/write the elements using Fortran-like index order, ‘A’ means to read/write the elements in Fortran-like index order if a is Fortran contiguous in memory, C-like order otherwise. (This is an optional parameter and doesn’t need to be specified.)",
+  "translation": "order：'C'表示使用类似C的索引顺序读取/写入元素，'F'表示使用类似于Fortran的索引顺序读取/写入元素，'A'表示以类似于Fortran的方式读取/写入元素 如果a在内存中是连续的，则索引顺序为，否则为C顺序。 （这是一个可选参数，不需要指定。）"
+}, {
+  "tag": "P",
+  "text": "Learn more about shape manipulation here.",
+  "translation": "在此处了解有关形状处理的更多信息。"
+}, {
+  "tag": "H1",
+  "text": "How to convert a 1D array into a 2D array (how to add a new axis to an array)",
+  "translation": "如何将一维数组转换为二维数组（如何向数组添加新轴）"
+}, {
+  "tag": "PRE",
+  "text": "np.newaxisnp.expand_dims",
+  "translation": "np.newaxisnp.expand_dims"
+}, {
+  "tag": "P",
+  "text": "ndarray.ndim will tell you the number of axes, or dimensions, of the array.",
+  "translation": "ndarray.ndim将告诉您数组的轴数或维数。"
+}, {
+  "tag": "P",
+  "text": "ndarray.size will tell you the total number of elements of the array. This is the product of the elements of the array’s shape.",
+  "translation": "ndarray.size将告诉您数组元素的总数。 这是阵列形状元素的乘积。"
+}, {
+  "tag": "P",
+  "text": "ndarray.shape will display a tuple of integers that indicate the number of elements stored along each dimension of the array. If, for example, you have a 2D array with 2 rows and 3 columns, the shape of your array is (2,3).",
+  "translation": "ndarray.shape将显示一个整数元组，该整数元组指示沿数组每个维度存储的元素数。 例如，如果您有一个2行3列的2D数组，则数组的形状为（2,3）。"
+}, {
+  "tag": "P",
+  "text": "For example, if you create this array:",
+  "translation": "例如，如果创建此数组："
+}, {
+  "tag": "PRE",
+  "text": "array_example = np.array([[[0, 1, 2, 3]                           [4, 5, 6, 7]],                           [[0, 1, 2, 3]                            [4, 5, 6, 7]],                            [0 ,1 ,2, 3]                            [4, 5, 6, 7]]])",
+  "translation": "array_example = np.array（[[[[0，1，2，3] [4，5，6，7]]，[[0，1，2，3] [4，5，6，7]]，[ 0，1，2，3] [4，5，6，7]]]）"
+}, {
+  "tag": "P",
+  "text": "To find the number of dimensions of the array, run:",
+  "translation": "要查找数组的维数，请运行："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "array_example.ndim",
+  "translation": "array_example.ndim"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "3",
+  "translation": "3"
+}, {
+  "tag": "P",
+  "text": "To find the total number of elements in the array, run:",
+  "translation": "要查找数组中元素的总数，请运行："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "array_example.size",
+  "translation": "array_example.size"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "24",
+  "translation": "24"
+}, {
+  "tag": "P",
+  "text": "And to find the shape of your array, run:",
+  "translation": "并找到数组的形状，运行："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "array_example.shape",
+  "translation": "array_example.shape"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "(3,2,4)",
+  "translation": "（3,2,4）"
+}, {
+  "tag": "P",
+  "text": "Read more about dimensions here, size here, and shape here.",
+  "translation": "在此处详细了解尺寸，此处尺寸和形状。"
+}, {
+  "tag": "H1",
+  "text": "Can you reshape an array?",
+  "translation": "您可以重塑数组吗？"
+}, {
+  "tag": "PRE",
+  "text": "np.reshape()",
+  "translation": "np.reshape（）"
+}, {
+  "tag": "P",
+  "text": "If you start with this array:",
+  "translation": "如果从此数组开始："
+}, {
+  "tag": "PRE",
+  "text": "arr = np.array([1, 2, 3, 4, 5, 6, 7, 8])",
+  "translation": "arr = np.array（[1、2、3、4、5、6、7、8]）"
+}, {
+  "tag": "P",
+  "text": "You can add elements to your array any time with np.append(). Make sure to specify the array and the elements you want to include.",
+  "translation": "您可以随时使用np.append（）将元素添加到数组中。 确保指定数组和要包括的元素。"
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "np.append(arr, [1,2])",
+  "translation": "np.append（arr，[1,2]）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "array([1, 2, 3, 4, 5, 6, 7, 8, 1, 2])",
+  "translation": "数组（[1、2、3、4、5、6、7、8、1、2]）"
+}, {
+  "tag": "P",
+  "text": "You can delete an element with np.delete(). If you want to delete the element in position 1 of your array, you can run:",
+  "translation": "您可以使用np.delete（）删除元素。 如果要删除数组位置1的元素，可以运行："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "np.delete(arr, 1)",
+  "translation": "np.delete（arr，1）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "array([1, 3, 4, 5, 6, 7, 8])",
+  "translation": "数组（[1、3、4、5、6、7、8]）"
+}, {
+  "tag": "P",
+  "text": "Read more about appending an array here and deleting elements here.",
+  "translation": "在此处阅读有关添加数组和在此处删除元素的更多信息。"
+}, {
+  "tag": "P",
+  "text": "Sorting an element is simple with np.sort(). You can specify the axis, kind, and order when you call the function. Read more about sorting an array here.",
+  "translation": "使用np.sort（）对元素进行排序很简单。 您可以在调用函数时指定轴，种类和顺序。 在此处阅读有关对数组进行排序的更多信息。"
+}, {
+  "tag": "P",
+  "text": "If you start with this array:",
+  "translation": "如果从此数组开始："
+}, {
+  "tag": "PRE",
+  "text": "arr = np.array([2, 1, 5, 3, 7, 4, 6, 8])",
+  "translation": "arr = np.array（[2，1，5，3，7，4，4，6，8]）"
+}, {
+  "tag": "P",
+  "text": "You can quickly sort the numbers in ascending order with:",
+  "translation": "您可以使用以下命令快速按升序对数字进行排序："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "np.sort(arr)",
+  "translation": "np.sort（arr）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "array([1, 2, 3, 4, 5, 6, 7, 8])",
+  "translation": "数组（[1、2、3、4、5、6、7、8]）"
+}, {
+  "tag": "P",
+  "text": "In addition to sort, which returns a sorted copy of an array, you can use: argsort, which is an indirect sort along a specified axis, lexsort, which is an indirect stable sort on multiple keys, searchsorted, which will find elements in a sorted array, and partition, which is a partial sort.",
+  "translation": "除了可以返回数组的排序副本的sort之外，还可以使用：argsort，它是沿指定轴的间接排序，lexsort，它是对多个键的间接稳定排序，searchsorted可以在数组中找到元素。 排序数组和分区，这是部分排序。"
+}, {
+  "tag": "H1",
+  "text": "How do you know the shape and size of an array?",
+  "translation": "您如何知道数组的形状和大小？"
+}, {
+  "tag": "PRE",
+  "text": "ndarray.ndim()ndarray.size()ndarray.shape()",
+  "translation": "ndarray.ndim（）ndarray.size（）ndarray.shape（）"
+}, {
+  "tag": "P",
+  "text": "To create a NumPy array, you can use the function np.array().",
+  "translation": "若要创建NumPy数组，可以使用函数np.array（）。"
+}, {
+  "tag": "P",
+  "text": "All you need to do to create a simple array is pass a list to it. If you choose to, you can also specify the type of data in your list. You can find more information about data types here.",
+  "translation": "创建一个简单数组所需要做的就是将一个列表传递给它。 如果选择，还可以在列表中指定数据类型。 您可以在此处找到有关数据类型的更多信息。"
+}, {
+  "tag": "PRE",
+  "text": "import numpy as npa = np.array([1, 2, 3])",
+  "translation": "将numpy导入为npa = np.array（[1、2、3]）"
+}, {
+  "tag": "P",
+  "text": "You can visualize your array this way:",
+  "translation": "您可以通过以下方式可视化数组："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*Q_wCrQ29wTBHb_7Q.png?q=20",
+  "type": "image",
+  "file": "0*Q_wCrQ29wTBHb_7Q.png"
+}, {
+  "tag": "P",
+  "text": "Besides creating an array from a sequence of elements, you can easily create an array filled with 0s:",
+  "translation": "除了根据一系列元素创建数组之外，您还可以轻松创建一个填充0的数组："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "np.zeros(2)",
+  "translation": "np.zeros（2）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "array([0., 0.])",
+  "translation": "数组（[0.，0.]）"
+}, {
+  "tag": "P",
+  "text": "Or an array filled with 1s:",
+  "translation": "或填充1的数组："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "np.ones(2)",
+  "translation": "np.ones（2）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "array([1., 1.])",
+  "translation": "数组（[1.，1.]）"
+}, {
+  "tag": "P",
+  "text": "Or even an empty array! The function empty creates an array whose initial content is random and depends on the state of the memory.",
+  "translation": "甚至是一个空数组！ 函数empty创建一个数组，其初始内容是随机的，并取决于内存的状态。"
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "# Create an empty array with 2 elementsnp.empty(2)",
+  "translation": "＃创建一个包含2个元素的空数组np.empty（2）"
+}, {
+  "tag": "P",
+  "text": "You can create an array with a range of elements:",
+  "translation": "您可以创建一个包含一系列元素的数组："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "np.arange(4)",
+  "translation": "np.arange（4）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "array([0, 1, 2, 3])",
+  "translation": "数组（[0，1，2，3]）"
+}, {
+  "tag": "P",
+  "text": "And even an array that contains a range of evenly spaced intervals. To do this, you will specify the first number, last number, and the step size.",
+  "translation": "甚至是包含一定范围的均匀间隔的数组。 为此，您将指定第一个数字，最后一个数字和步长。"
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "np.arange(2,9,2)",
+  "translation": "np.arange（2,9,2）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "array([2, 4, 6, 8])",
+  "translation": "数组（[2，4，6，8]）"
+}, {
+  "tag": "P",
+  "text": "You can also use np.linspace() to create an array with values that are spaced linearly in a specified interval:",
+  "translation": "您还可以使用np.linspace（）创建一个数组，该数组的值以指定的间隔线性间隔："
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "np.linspace(0,10,5)",
+  "translation": "np.linspace（0,10,5）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "array([ 0. ,  2.5,  5. ,  7.5, 10. ])",
+  "translation": "array（[0.，2.5，5.，7.5，10.]）"
+}, {
+  "tag": "P",
+  "text": "Specifying your data type",
+  "translation": "指定数据类型"
+}, {
+  "tag": "P",
+  "text": "While the default data type is floating point (float64), you can explicitly specify which data type you want using dtype.",
+  "translation": "当默认数据类型为浮点（float64）时，您可以使用dtype显式指定要使用的数据类型。"
+}, {
+  "tag": "P",
+  "text": "Input:",
+  "translation": "输入："
+}, {
+  "tag": "PRE",
+  "text": "array = np.ones(2, dtype=int)array",
+  "translation": "数组= np.ones（2，dtype = int）数组"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "array([1, 1])",
+  "translation": "数组（[1，1]）"
+}, {
+  "tag": "P",
+  "text": "Learn more about creating arrays here.",
+  "translation": "在此处了解有关创建数组的更多信息。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*de-cGrMVTWRQ0wNu-Gw7Og.png?q=20",
+  "caption": "Photo by Godisable Jacob from Pexels",
+  "type": "image",
+  "file": "1*de-cGrMVTWRQ0wNu-Gw7Og.png"
+}, {
+  "tag": "H1",
+  "text": "Adding, removing, and sorting elements",
+  "translation": "添加，删除和排序元素"
+}, {
+  "tag": "PRE",
+  "text": "np.append()np.delete()np.sort()",
+  "translation": "np.append（）np.delete（）np.sort（）"
+}, {
+  "tag": "P",
+  "text": "You might occasionally hear an array referred to as a “ndarray,” which is shorthand for “N-dimensional array.” An N-dimensional array is simply an array with any number of dimensions. You might also hear 1-D, or one-dimensional array, 2-D, or two-dimensional array, and so on. The NumPy ndarray class is used to represent both matrices and vectors. A vector is an array with a single column, while a matrix refers to an array with multiple columns.",
+  "translation": "您可能偶尔会听到一个称为“ ndarray”的数组，它是“ N维数组”的简写。N维数组只是具有任意数量维的数组。 您可能还会听到一维或一维数组，二维或二维数组等。 NumPy ndarray类用于表示矩阵和向量。 向量是具有单列的数组，而矩阵是指具有多列的数组。"
+}, {
+  "tag": "P",
+  "text": "What are the attributes of an array?",
+  "translation": "数组的属性是什么？"
+}, {
+  "tag": "P",
+  "text": "An array is usually a fixed-size container of items of the same type and size. The number of dimensions and items in an array is defined by its shape. The shape of an array is a tuple of non-negative integers that specify the sizes of each dimension.",
+  "translation": "数组通常是具有相同类型和大小的项目的固定大小的容器。 数组中的维数和项目数由其形状定义。 数组的形状是一个非负整数的元组，用于指定每个维度的大小。"
+}, {
+  "tag": "P",
+  "text": "In NumPy, dimensions are called axes. This means that if you have a 2D array that looks like this:",
+  "translation": "在NumPy中，尺寸称为轴。 这意味着，如果您有一个二维数组，如下所示："
+}, {
+  "tag": "PRE",
+  "text": "[[0., 0., 0.], [1., 1., 1.]]",
+  "translation": "[[0.，0.，0.]，[1.，1.，1.]]"
+}, {
+  "tag": "P",
+  "text": "Your array has 2 axes. The first axis has a length of 2 and the second axis has a length of 3.",
+  "translation": "您的数组有2个轴。 第一轴的长度为2，第二轴的长度为3。"
+}, {
+  "tag": "P",
+  "text": "Just like in other Python container objects, the contents of an array can be accessed and modified by indexing or slicing the array. Different arrays can share the same data, so changes made on one array might be visible in another.",
+  "translation": "就像在其他Python容器对象中一样，可以通过对数组进行索引或切片来访问和修改数组的内容。 不同的阵列可以共享相同的数据，因此在一个阵列上所做的更改可能在另一个阵列中可见。"
+}, {
+  "tag": "P",
+  "text": "Array attributes reflect information intrinsic to the array itself. If you need to get, or even set, properties of an array without creating a new array, you can often access an array through its attributes.",
+  "translation": "数组属性反映了数组本身固有的信息。 如果您需要获取甚至设置数组的属性而不创建新数组，则通常可以通过其属性访问数组。"
+}, {
+  "tag": "P",
+  "text": "Read more about array attributes here and learn about array objects here.",
+  "translation": "在此处阅读有关数组属性的更多信息，并在此处了解数组对象。"
+}, {
+  "tag": "FIGURE",
+  "type": "code"
+}, {
+  "tag": "H1",
+  "text": "How to create a basic array",
+  "translation": "如何创建基本数组"
+}, {
+  "tag": "PRE",
+  "text": "np.array()np.zeros()np.ones()np.empty()np.arange()np.linspace()dtype",
+  "translation": "np.array（）np.zeros（）np.ones（）np.empty（）np.arange（）np.linspace（）dtype"
+}, {
+  "tag": "H2",
+  "text": "How to Successfully Install Anaconda on a Mac (and Actually Get it to Work)",
+  "translation": "如何在Mac上成功安装Anaconda（并使其实际工作）"
+}, {
+  "tag": "H3",
+  "text": "A quick and painless guide for installing Anaconda correctly and fixing the dreaded “conda command not found” error",
+  "translation": "快速，轻松的指南，用于正确安装Anaconda并修复可怕的“找不到conda命令”错误"
+}, {
+  "tag": "H1",
+  "text": "The Absolute Beginner’s Guide to NumPy",
+  "translation": "绝对入门的NumPy指南"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/28/1*77kb1s09XosupOF4vGPzzg.png?q=20",
+  "type": "image",
+  "file": "1*77kb1s09XosupOF4vGPzzg.png"
+}, {
+  "tag": "H2",
+  "text": "Welcome to NumPy!",
+  "translation": "欢迎来到NumPy！"
+}, {
+  "tag": "P",
+  "text": "NumPy (Numerical Python) is an open-source Python library that’s used in almost every field of science and engineering. It’s the universal standard for working with numerical data in Python, and it’s at the core of the scientific Python and PyData ecosystems. NumPy users include everyone from beginning coders to experienced researchers doing state-of-the-art scientific and industrial research and development. The NumPy API is used extensively in Pandas, SciPy, Matplotlib, scikit-learn, scikit-image and most other data science and scientific Python packages.",
+  "translation": "NumPy（Numerical Python）是一个开放源代码的Python库，几乎在科学和工程学的每个领域中都使用。 这是在Python中处理数字数据的通用标准，并且是科学的Python和PyData生态系统的核心。 NumPy的用户包括从初级编码人员到经验丰富的研究人员，他们都在从事最新的科学和工业研究与开发。 NumPy API已在Pandas，SciPy，Matplotlib，scikit-learn，scikit-image和大多数其他数据科学和科学Python软件包中广泛使用。"
+}, {
+  "tag": "P",
+  "text": "The NumPy library contains multidimensional array and matrix data structures (you’ll find more information about this in later sections). It provides ndarray, a homogeneous n-dimensional array object, with methods to efficiently operate on it. NumPy can be used to perform a wide variety of mathematical operations on arrays. It adds powerful data structures to Python that guarantee efficient calculations with arrays and matrices and it supplies an enormous library of high-level mathematical functions that operate on these arrays and matrices.",
+  "translation": "NumPy库包含多维数组和矩阵数据结构（您将在后面的部分中找到有关此信息的更多信息）。 它为ndarray（一个均匀的n维数组对象）提供了对其进行有效操作的方法。 NumPy可用于对数组执行各种数学运算。 它向Python添加了强大的数据结构，以确保使用数组和矩阵进行高效的计算，并且提供了可在这些数组和矩阵上运行的庞大的高级数学函数库。"
+}, {
+  "tag": "P",
+  "text": "Learn more about NumPy here!",
+  "translation": "在这里了解更多有关NumPy的信息！"
+}, {
+  "tag": "FIGURE",
+  "type": "code"
+}, {
+  "tag": "H1",
+  "text": "Installing NumPy",
+  "translation": "安装NumPy"
+}, {
+  "tag": "P",
+  "text": "To install NumPy, I strongly recommend using a scientific Python distribution. If you’re looking for the full instructions for installing NumPy on your operating system, you can find all of the details here.",
+  "translation": "要安装NumPy，我强烈建议您使用科学的Python发行版。 如果您正在寻找有关在操作系统上安装NumPy的完整说明，则可以在此处找到所有详细信息。"
+}, {
+  "tag": "P",
+  "text": "If you already have Python, you can install NumPy with",
+  "translation": "如果您已经拥有Python，则可以使用以下命令安装NumPy："
+}, {
+  "tag": "PRE",
+  "text": "conda install numpy",
+  "translation": "康达安装numpy的"
+}, {
+  "tag": "P",
+  "text": "or",
+  "translation": "要么"
+}, {
+  "tag": "PRE",
+  "text": "pip install numpy",
+  "translation": "pip安装numpy"
+}, {
+  "tag": "P",
+  "text": "If you don’t have Python yet, you might want to consider using Anaconda. It’s the easiest way to get started. The good thing about getting this distribution is the fact that you don’t need to worry too much about separately installing NumPy or any of the major packages that you’ll be using for your data analyses, like pandas, Scikit-Learn, etc.",
+  "translation": "如果您还没有Python，则可以考虑使用Anaconda。 这是最简单的入门方法。 获得这种分布的好处是，您不必担心单独安装NumPy或将用于数据分析的任何主要软件包，如熊猫，Scikit-Learn等。"
+}, {
+  "tag": "P",
+  "text": "If you need more details about installation, you can find all of the installation information at scipy.org.",
+  "translation": "如果需要有关安装的更多详细信息，可以在scipy.org中找到所有安装信息。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*fW5LqhzUM93YDduJNb943A.jpeg?q=20",
+  "caption": "Photo by Adrienn from Pexels",
+  "type": "image",
+  "file": "1*fW5LqhzUM93YDduJNb943A.jpeg"
+}, {
+  "tag": "P",
+  "text": "If you’re having trouble installing Anaconda, you might want to take a look at this article:",
+  "translation": "如果您在安装Anaconda时遇到问题，不妨看一下这篇文章："
+}, {
+  "tag": "H2",
+  "text": "How to Successfully Install Anaconda on a Mac (and Actually Get it to Work)",
+  "translation": "如何在Mac上成功安装Anaconda（并使其实际工作）"
+}, {
+  "tag": "H3",
+  "text": "A quick and painless guide for installing Anaconda correctly and fixing the dreaded “conda command not found” error",
+  "translation": "快速，轻松的指南，用于正确安装Anaconda并修复可怕的“找不到conda命令”错误"
+}, {
+  "tag": "H1",
+  "text": "How to import NumPy",
+  "translation": "如何导入NumPy"
+}, {
+  "tag": "P",
+  "text": "Any time you want to use a package or library in your code, you first need to make it accessible.",
+  "translation": "每当您想在代码中使用包或库时，首先需要使其可访问。"
+}, {
+  "tag": "P",
+  "text": "In order to start using NumPy and all of the functions available in NumPy, you’ll need to import it. This can be easily done with this import statement:",
+  "translation": "为了开始使用NumPy和NumPy中的所有可用功能，您需要将其导入。 使用以下导入语句可以轻松完成此操作："
+}, {
+  "tag": "PRE",
+  "text": "import numpy as np",
+  "translation": "将numpy导入为np"
+}, {
+  "tag": "P",
+  "text": "(We shorten “numpy” to “np” in order to save time and also to keep code standardized so that anyone working with your code can easily understand and run it.)",
+  "translation": "（为了节省时间并保持代码标准化，我们将“ numpy”缩短为“ np”，以便使用您的代码的任何人都可以轻松理解和运行它。）"
+}, {
+  "tag": "H1",
+  "text": "What’s the difference between a Python list and a NumPy array?",
+  "translation": "Python列表和NumPy数组有什么区别？"
+}, {
+  "tag": "P",
+  "text": "NumPy gives you an enormous range of fast and efficient numerically-related options. While a Python list can contain different data types within a single list, all of the elements in a NumPy array should be homogenous. The mathematical operations that are meant to be performed on arrays wouldn’t be possible if the arrays weren’t homogenous.",
+  "translation": "NumPy为您提供了众多快速，有效的数字相关选项。 虽然Python列表可以在一个列表中包含不同的数据类型，但是NumPy数组中的所有元素都应该是同质的。 如果阵列不是同质的，则不可能对阵列执行数学运算。"
+}, {
+  "tag": "P",
+  "text": "Why use NumPy?",
+  "translation": "为什么要使用NumPy？"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*77SD0DkjZBoSw5Wj9n4iyQ.jpeg?q=20",
+  "caption": "Photo by Pixabay from Pexels",
+  "type": "image",
+  "file": "1*77SD0DkjZBoSw5Wj9n4iyQ.jpeg"
+}, {
+  "tag": "P",
+  "text": "NumPy arrays are faster and more compact than Python lists. An array consumes less memory and is far more convenient to use. NumPy uses much less memory to store data and it provides a mechanism of specifying the data types, which allows the code to be optimized even further.",
+  "translation": "NumPy数组比Python列表更快，更紧凑。 阵列消耗更少的内存，使用起来更加方便。 NumPy使用更少的内存来存储数据，并且提供了一种指定数据类型的机制，从而可以进一步优化代码。"
+}, {
+  "tag": "H1",
+  "text": "What is an array?",
+  "translation": "什么是数组？"
+}, {
+  "tag": "P",
+  "text": "An array is a central data structure of the NumPy library. It’s a grid of values and it contains information about the raw data, how to locate an element, and how to interpret an element. It has a grid of elements that can be indexed in various ways. The elements are all of the same type, referred to as the array dtype (data type).",
+  "translation": "数组是NumPy库的中央数据结构。 它是一个值网格，其中包含有关原始数据，如何定位元素以及如何解释元素的信息。 它具有可以以各种方式建立索引的元素网格。 元素都是相同的类型，称为数组dtype（数据类型）。"
+}, {
+  "tag": "P",
+  "text": "An array can be indexed by a tuple of nonnegative integers, by booleans, by another array, or by integers. The rank of the array is the number of dimensions. The shape of the array is a tuple of integers giving the size of the array along each dimension.",
+  "translation": "一个数组可以由非负整数的元组，布尔值，另一个数组或整数来索引。 数组的等级是维数。 数组的形状是一个整数元组，给出沿每个维度的数组大小。"
+}, {
+  "tag": "P",
+  "text": "One way we can initialize NumPy arrays is from nested Python lists.",
+  "translation": "初始化NumPy数组的一种方法是来自嵌套的Python列表。"
+}, {
+  "tag": "PRE",
+  "text": "a = np.array([[1 , 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])",
+  "translation": "a = np.array（[[1、2、3、4]，[5、6、7、8]，[9、10、11、12]]）"
+}, {
+  "tag": "P",
+  "text": "We can access the elements in the array using square brackets. When you’re accessing elements, remember that indexing in NumPy starts at 0. That means that if you want to access the first element in your array, you’ll be accessing element “0”.",
+  "translation": "我们可以使用方括号访问数组中的元素。 访问元素时，请记住，NumPy中的索引从0开始。这意味着，如果要访问数组中的第一个元素，则将访问元素“ 0”。"
+}, {
+  "tag": "PRE",
+  "text": "print(a[0])",
+  "translation": "打印（a [0]）"
+}, {
+  "tag": "P",
+  "text": "Output:",
+  "translation": "输出："
+}, {
+  "tag": "PRE",
+  "text": "[1 2 3 4]",
+  "translation": "[1 2 3 4]"
+}, {
+  "tag": "H1",
+  "text": "More information about arrays",
+  "translation": "有关数组的更多信息"
+}, {
+  "tag": "PRE",
+  "text": "1D array, 2D array, ndarray, vector, matrix",
+  "translation": "一维数组，二维数组，ndarray，向量，矩阵"
+}, {
+  "tag": "H1",
+  "text": "The Ultimate Beginner’s Guide to NumPy",
+  "translation": "NumPy终极入门指南"
+}, {
+  "tag": "H2",
+  "text": "Everything you need to know to get started with NumPy",
+  "translation": "NumPy入门所需的一切"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*U1IlMNe_foQjRs3B_nRDOA.jpeg?q=20",
+  "caption": "Photo by Skitterphoto from Pexels",
+  "type": "image",
+  "file": "1*U1IlMNe_foQjRs3B_nRDOA.jpeg"
+}, {
+  "tag": "P",
+  "text": "The world runs on data and everyone should know how to work with it.",
+  "translation": "世界以数据为基础，每个人都应该知道如何使用数据。"
+}, {
+  "tag": "P",
+  "text": "It’s hard to imagine a modern, tech-literate business that doesn’t use data analysis, data science, machine learning, or artificial intelligence in some form. NumPy is at the core of all of those fields.",
+  "translation": "很难想象没有以某种形式使用数据分析，数据科学，机器学习或人工智能的现代，技术娴熟的企业。 NumPy是所有这些领域的核心。"
+}, {
+  "tag": "P",
+  "text": "While it’s impossible to know exactly how many people are learning to analyze and work with data, it’s a pretty safe assumption that tens of thousands (if not millions) of people need to understand NumPy and how to use it. Because of that, I’ve spent the last three months putting together what I hope is the best introductory guide to NumPy yet! If there’s anything you want to see included in this tutorial, please leave a note in the comments or reach out any time!",
+  "translation": "虽然无法确切知道有多少人正在学习分析和使用数据，但可以肯定地说，成千上万（如果不是数百万）的人需要了解NumPy及其使用方法。 因此，我花了最后三个月的时间整理了我希望是NumPy最好的入门指南！ 如果您想在本教程中看到任何内容，请在评论中留下注释或随时联系！"
+}, {
+  "tag": "P",
+  "text": "If you’re new to data analysis, this one’s for you.",
+  "translation": "如果您是数据分析的新手，那么这个适合您。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*SvSCQfOSrArnaDQG3yh6TA.jpeg?q=20",
+  "caption": "Photo by Lucas Pezeta from Pexels",
+  "type": "image",
+  "file": "1*SvSCQfOSrArnaDQG3yh6TA.jpeg"
+}]
