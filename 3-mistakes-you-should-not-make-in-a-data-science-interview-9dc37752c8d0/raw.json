@@ -1,0 +1,200 @@
+[{
+  "tag": "H1",
+  "text": "Conclusion",
+  "translation": "结论"
+}, {
+  "tag": "P",
+  "text": "I thought a lot before writing this article as I might sound a little harsh in this one. But I guess it is necessary to let people know about their mistakes.",
+  "translation": "在写这篇文章之前，我想了很多，因为我可能在这篇文章中听起来有些刺耳。 但是我想有必要让人们知道他们的错误。"
+}, {
+  "tag": "P",
+  "text": "Some people will disagree with me here on how I can judge people from such small mistakes.",
+  "translation": "在这里，有些人会不同意我如何从如此小的错误中判断人们。"
+}, {
+  "tag": "P",
+  "text": "I would say that an interview is about judging someone in a limited time frame.",
+  "translation": "我想说，面试是关于在有限的时间内评判某人。"
+}, {
+  "tag": "P",
+  "text": "Furthermore, a lot of companies now take behavioural rounds apart from the regular data science rounds and being ingenious, or entitled or overconfident will obviously not help you.",
+  "translation": "此外，许多公司现在将行为回合与常规数据科学回合分开，并且独创，有资格或过度自信显然无济于事。"
+}, {
+  "tag": "P",
+  "text": "So, I would say that being respectful and nice goes a long way and you should aim for it in life and not just in the interview room.",
+  "translation": "因此，我想说，尊重和友善有很长的路要走，您应该在生活中而不是在面试室里实现目标。"
+}, {
+  "tag": "P",
+  "text": "That way, you also get a lot of practice, and you become a better person as well.",
+  "translation": "这样，您还可以练习很多，也可以成为更好的人。"
+}, {
+  "tag": "P",
+  "text": "PS: All the names used are just placeholders and these are my own personal views.",
+  "translation": "PS：使用的所有名称都只是占位符，这些都是我个人的观点。"
+}, {
+  "tag": "H1",
+  "text": "3. Keyword Stuffing",
+  "translation": "3.关键字填充"
+}, {
+  "tag": "P",
+  "text": "Keyword stuffing is the practice of overloading one’s resume with skills they may not know.",
+  "translation": "关键字填充是一种使他们的履历表超负荷的做法，他们可能不了解这些技能。"
+}, {
+  "tag": "P",
+  "text": "The typical excuses to do this are — A lot of people do this. HR might not select me. The system works like that only.",
+  "translation": "这样做的典型借口是-很多人这样做。 人力资源部可能不会选择我。 该系统只能那样工作。"
+}, {
+  "tag": "P",
+  "text": "You might call it a necessary evil. I will call it you setting up yourself up for a failure.",
+  "translation": "您可能将其称为必要的邪恶。 我称它为您为失败做好准备。"
+}, {
+  "tag": "P",
+  "text": "And you might get that occasional interview call when you do this; the odds are pretty much stacked against you as I will grill you on your resume. And I will expect you to know it well.",
+  "translation": "执行此操作时，您可能会偶尔接到面试电话。 因为我会在你的履历表上烤你，所以对你的可能性很大。 我希望您对此有所了解。"
+}, {
+  "tag": "P",
+  "text": "If Mark puts Decision Trees in his resume, Mark should expect a question around it.",
+  "translation": "如果Mark在自己的履历表中放入了决策树，则Mark应该会对此提出疑问。"
+}, {
+  "tag": "P",
+  "text": "Or if Mark says that he has implemented a Machine Learning algorithm from Scratch, I would not be wrong to expect Mark to explain the algorithm’s nitty-gritty details.",
+  "translation": "或者，如果Mark说他已经从Scratch实现了机器学习算法，那么期望Mark解释该算法的实质内容是没有错的。"
+}, {
+  "tag": "P",
+  "text": "The point is that it is alright if you don’t know everything. Nobody ever does. But lie on your resume, and you have made my job easier as these kind of lies are pretty easy to capture.",
+  "translation": "关键是，如果您一无所知，那没关系。 没有人做。 但是在您的履历表上撒谎，您就使我的工作变得容易了，因为这类谎言很容易捕获。"
+}, {
+  "tag": "H1",
+  "text": "2. The Overconfidence Effect",
+  "translation": "2.过度自信效应"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*zijYi1qcu4PRts2V8D9tOg.png?q=20",
+  "type": "image",
+  "file": "1*zijYi1qcu4PRts2V8D9tOg.png"
+}, {
+  "tag": "P",
+  "text": "So, I recently also interviewed Chris for a Data Science role.",
+  "translation": "因此，我最近还采访了克里斯，担任数据科学职位。"
+}, {
+  "tag": "P",
+  "text": "I started by asking about his projects and past work.",
+  "translation": "我首先询问他的项目和过去的工作。"
+}, {
+  "tag": "P",
+  "text": "He confidently explained his projects. We talked about his various projects for the first 30 minutes, and I was pretty much convinced that he has a place in the team.",
+  "translation": "他自信地解释了自己的项目。 在开始的30分钟内，我们谈到了他的各种项目，我非常确信他在团队中占有一席之地。"
+}, {
+  "tag": "P",
+  "text": "Till now I hadn’t asked much of technical questions and here is where I started getting sceptical. The thing was Chris would explain anything I asked pretty confidently, albeit wrongly. He would try to explain to me concepts he wouldn’t know.",
+  "translation": "到目前为止，我还没有问太多技术问题，这就是我开始对此表示怀疑的地方。 事情是克里斯会很自信地解释我的任何要求，尽管是错误的。 他会尝试向我解释他不知道的概念。"
+}, {
+  "tag": "P",
+  "text": "I felt as if he thought that maybe I didn’t know the answer to my own questions. And so he can luck out by saying anything.",
+  "translation": "我觉得他似乎以为我可能不知道自己的问题的答案。 这样他就可以通过说些什么来走运。"
+}, {
+  "tag": "P",
+  "text": "And this happened two or three times in the interview.",
+  "translation": "而这在采访中发生了两三遍。"
+}, {
+  "tag": "P",
+  "text": "Now don’t get me wrong — Confidence is good. And a healthy bit of it is necessary. But be Confident and wrong, and you spell disaster.",
+  "translation": "现在不要误会我的意思-信心很好。 健康的一点是必要的。 但是要自信和错误，这会带来灾难。"
+}, {
+  "tag": "P",
+  "text": "Can I trust Chris to handle business? What would happen if he committed something wrongly to the business or made lofty claims and didn’t realise them afterwards?",
+  "translation": "我可以信任克里斯处理业务吗？ 如果他对公司做出错误的举动或提出崇高的主张而事后却没有意识到，会发生什么？"
+}, {
+  "tag": "P",
+  "text": "Overconfidence has been called the most “pervasive and potentially catastrophic” of all the cognitive biases to which human beings fall victim.It has been blamed for lawsuits, strikes, wars, and stock market bubbles and crashes. — Wikipedia",
+  "translation": "在人们成为受害者的所有认知偏见中，过度自信被称为最“普遍和潜在的灾难性”。它被归咎于诉讼，罢工，战争以及股市泡沫和崩溃。 —维基百科"
+}, {
+  "tag": "P",
+  "text": "In fact, I would prefer a non-confident and wrong person. At least then I would know to check my facts.",
+  "translation": "实际上，我更喜欢一个没有信心和错误的人。 至少到那时我才想知道我的事实。"
+}, {
+  "tag": "H1",
+  "text": "1. Lose your Entitlement",
+  "translation": "1.失去您的权利"
+}, {
+  "tag": "P",
+  "text": "This is what I often call the Survivorship Bias in Data Science.",
+  "translation": "这就是我通常所说的数据科学中的生存偏差。"
+}, {
+  "tag": "P",
+  "text": "So, you want to be a Rockstar Data Scientist. Maybe get a job in the booming sector. HBR did say that there is going to be a shortage of data scientists and you feel like you are just the right person for the job.",
+  "translation": "因此，您想成为Rockstar数据科学家。 也许在蓬勃发展的行业找到一份工作。 HBR确实表示将缺少数据科学家，您会觉得自己是最合适的人选。"
+}, {
+  "tag": "P",
+  "text": "I do take interviews a lot right now, and I see a lot of people suffering from Survivorship Bias.",
+  "translation": "我现在确实接受了很多采访，而且我看到很多人遭受生存偏差的困扰。"
+}, {
+  "tag": "P",
+  "text": "Just a while back, I interviewed a guy already having some experience in the field. Let’s call him Andy. I asked Andy a simple Math based question. This is a data science interview, so I guess he should have expected it. Right?",
+  "translation": "不久前，我采访了一个在该领域已有经验的人。 我们叫他安迪。 我问安迪一个简单的基于数学的问题。 这是一次数据科学采访，所以我想他应该已经预料到了。 对？"
+}, {
+  "tag": "P",
+  "text": "No. His answer was —",
+  "translation": "不，他的回答是-"
+}, {
+  "tag": "P",
+  "text": "We have packages for doing all this.",
+  "translation": "我们有用于完成所有这些任务的软件包。"
+}, {
+  "tag": "P",
+  "text": "I ignored that. Letting it go as a one-off.",
+  "translation": "我忽略了这一点。 放任不管。"
+}, {
+  "tag": "P",
+  "text": "Asked a different question, he said why am I asking Math questions?",
+  "translation": "问了一个不同的问题，他说我为什么要问数学问题？"
+}, {
+  "tag": "P",
+  "text": "The thing this told me about Andy is that he feels entitled. Just because Andy sees a lot of people getting into Data Science, he thinks he should also get in.",
+  "translation": "这件事告诉我关于安迪的事情，他觉得自己有资格。 仅仅因为Andy看到很多人都进入了数据科学领域，他认为他也应该加入。"
+}, {
+  "tag": "P",
+  "text": "What Andy doesn’t understand is that for every successful Data Scientist, there are a lot of people who don’t make it.",
+  "translation": "安迪不明白的是，对于每一个成功的数据科学家来说，都有很多人没有做到。"
+}, {
+  "tag": "P",
+  "text": "All Andy sees are the survivors. And that is a mistake.",
+  "translation": "安迪所看到的只是幸存者。 那是一个错误。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*ruHDZOQXE6XSOikWLf74Tg.png?q=20",
+  "caption": "Pixabay",
+  "type": "image",
+  "file": "1*ruHDZOQXE6XSOikWLf74Tg.png"
+}, {
+  "tag": "H1",
+  "text": "3 Mistakes you should not make in a Data Science Interview",
+  "translation": "您不应在数据科学面试中犯的3个错误"
+}, {
+  "tag": "H2",
+  "text": "Lessons from my Experience as an Interviewer",
+  "translation": "我作为采访者的经验教训"
+}, {
+  "tag": "P",
+  "text": "People ask me a lot about how to land a data science job? Or how to switch careers or how to study for a job interview?",
+  "translation": "人们问我很多有关如何找到数据科学工作的问题？ 或如何转换职业或如何学习求职面试？"
+}, {
+  "tag": "P",
+  "text": "Mostly my answer is to do some MOOCs, create some projects, participate in Kaggle, try to get in a startup and don’t give up.",
+  "translation": "通常，我的答案是做一些MOOC，创建一些项目，参与Kaggle，尝试创办一家初创公司并且不放弃。"
+}, {
+  "tag": "P",
+  "text": "But yet there are some things everyone should understand about data science jobs.",
+  "translation": "但是，对于数据科学工作，每个人都应该了解一些事情。"
+}, {
+  "tag": "P",
+  "text": "Data science jobs involve a lot of to and fro communication and involve a lot of people handling skills. And as such, even if you don’t realise you will be inadvertently tested on these skills.",
+  "translation": "数据科学工作涉及大量来回通信，并且涉及许多人员处理技能。 因此，即使您没有意识到，您也会无意中测试这些技能。"
+}, {
+  "tag": "P",
+  "text": "Sometimes you may feel like — I am a coder and let me code in peace. Or how does my behaviour matter? The point is it does.",
+  "translation": "有时您可能会觉得-我是一名编码人员，让我安然地进行编码。 还是我的行为如何重要？ 关键是它确实在做。"
+}, {
+  "tag": "P",
+  "text": "This post is about explaining some of the worst mistakes people do in a data science interview so that you don’t end up repeating them.",
+  "translation": "这篇文章旨在说明人们在数据科学访谈中犯的一些最严重的错误，这样您就不必再重复这些错误了。"
+}]
