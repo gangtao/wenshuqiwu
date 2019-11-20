@@ -1,0 +1,240 @@
+[{
+  "tag": "H1",
+  "text": "Python code for data cleaning our example",
+  "translation": "用于清理数据的Python代码"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/erajabi/0e893f19b9cac7d51660d986718d2e72/raw/96e50336cd34c9d538e82ae8452ae9cb58a41f7f/datacleaning.ipynb",
+  "code": "{\n \"cells\": [\n  {\n   \"cell_type\": \"code\",\n   \"execution_count\": 1,\n   \"metadata\": {},\n   \"outputs\": [],\n   \"source\": [\n    \"# Import python libraries\\n\",\n    \"import numpy as np\\n\",\n    \"import pandas as pd\\n\",\n    \"%matplotlib notebook\"\n   ]\n  },\n  {\n   \"cell_type\": \"code\",\n   \"execution_count\": 2,\n   \"metadata\": {},\n   \"outputs\": [],\n   \"source\": [\n    \"# Import data\\n\",\n    \"dataset = pd.read_csv('movie_sample_dataset.csv', encoding='utf-8')\\n\",\n    \"\\n\",\n    \"# Drop useless attributes\\n\",\n    \"dataset.drop(['color','language'], axis=1, inplace=True)\\n\",\n    \"\\n\",\n    \"# Handle text attributes\\n\",\n    \"dataset['director_name'].fillna('', inplace=True)\\n\",\n    \"\\n\",\n    \"# Handle numeric attributes\\n\",\n    \"dataset['gross'].fillna(0, inplace=True)\\n\",\n    \"# dataset['gross']=pd.to_numeric(dataset['gross']).astype('float64')\\n\",\n    \"dataset['budget'].fillna(0, inplace=True)\\n\",\n    \"\\n\",\n    \"# Unify countries names\\n\",\n    \"dataset['country']=dataset['country'].str.upper()\\n\",\n    \"dataset['country'] = np.where(dataset['country']=='UNITED STATES','USA', dataset['country'])\\n\",\n    \"\\n\",\n    \"# Bad data entry\\n\",\n    \"dataset['director_name'] = np.where(dataset['director_name']=='N/A','', dataset['director_name'])\\n\",\n    \"dataset['director_name'] = np.where(dataset['director_name']=='Nan','', dataset['director_name'])\\n\",\n    \"dataset['director_name'] = np.where(dataset['director_name']=='Null','', dataset['director_name'])\\n\",\n    \"dataset['movie_title'] = dataset['movie_title'].str.replace('Â', '')\\n\",\n    \"\\n\",\n    \"# Handling outliers\\n\",\n    \"dataset[\\\"gross\\\"]=dataset[\\\"gross\\\"].astype(float)\\n\",\n    \"dataset[\\\"duration\\\"]=dataset[\\\"duration\\\"].astype(float)\\n\",\n    \"dataset[\\\"budget\\\"]=dataset[\\\"budget\\\"].astype(float)\\n\",\n    \"\\n\",\n    \"dataset['duration'] = np.where(dataset['duration']<=10,0, dataset['duration'])\\n\",\n    \"dataset['duration'] = np.where(dataset['duration']>300,0, dataset['duration'])\\n\",\n    \"dataset['imdb_score'] = np.where(dataset['imdb_score']<=0,0, dataset['imdb_score'])\\n\",\n    \"dataset['title_year'] = np.where(dataset['title_year']<2010,0, dataset['title_year'])\\n\",\n    \"\\n\",\n    \"# Normalize data\\n\",\n    \"\\n\",\n    \"# spliting actors\\n\",\n    \"actor_list = dataset[\\\"actors\\\"].str.split(\\\",\\\", n = 2, expand = True) \\n\",\n    \"dataset[\\\"actor1\\\"]= actor_list[0] \\n\",\n    \"dataset[\\\"actor2\\\"]= actor_list[1] \\n\",\n    \"dataset[\\\"actor3\\\"]= actor_list[2] \\n\",\n    \"dataset.drop(columns=['actors'], inplace=True)\\n\",\n    \"\\n\",\n    \"# Adding new feature\\n\",\n    \"\\n\",\n    \"# Add a new metric GOB(Gross over Budget)\\n\",\n    \"dataset['GOB'] = dataset.apply(lambda row: row['gross']/row['budget'] if row['budget']!=0 else 0, axis=1)\\n\",\n    \"top_GOB=dataset.sort_values('GOB',ascending=False).head(15)\\n\",\n    \"\\n\",\n    \"# dataset['title_year'] = dataset['title_year'].apply(np.int64)\\n\",\n    \"# dataset['duration'] = dataset['duration'].apply(np.int64)\\n\",\n    \"\\n\",\n    \"dataset.to_csv('output_IMDB.csv')\"\n   ]\n  }\n ],\n \"metadata\": {\n  \"kernelspec\": {\n   \"display_name\": \"Python 3\",\n   \"language\": \"python\",\n   \"name\": \"python3\"\n  },\n  \"language_info\": {\n   \"codemirror_mode\": {\n    \"name\": \"ipython\",\n    \"version\": 3\n   },\n   \"file_extension\": \".py\",\n   \"mimetype\": \"text/x-python\",\n   \"name\": \"python\",\n   \"nbconvert_exporter\": \"python\",\n   \"pygments_lexer\": \"ipython3\",\n   \"version\": \"3.6.3\"\n  }\n },\n \"nbformat\": 4,\n \"nbformat_minor\": 2\n}\n"
+}, {
+  "tag": "P",
+  "text": "Read CSV file in python",
+  "translation": "在python中读取CSV文件"
+}, {
+  "tag": "P",
+  "text": "In the following line, we read an IMDB sub-dataset using read_csv command.",
+  "translation": "在下一行中，我们使用read_csv命令读取IMDB子数据集。"
+}, {
+  "tag": "PRE",
+  "text": "dataset = pd.read_csv(‘movie_sample_dataset.csv’, encoding=’utf-8')",
+  "translation": "数据集= pd.read_csv（“ movie_sample_dataset.csv”，编码=“ utf-8”）"
+}, {
+  "tag": "P",
+  "text": "First of all, we drop the useless columns:",
+  "translation": "首先，我们删除无用的列："
+}, {
+  "tag": "PRE",
+  "text": "dataset.drop([‘color’,’language’], axis=1, inplace=True)",
+  "translation": "数据集.drop（[[颜色]，'语言']，轴= 1，就地= True）"
+}, {
+  "tag": "P",
+  "text": "In the next step, we fill up the empty values of two numeric columns: gross and budget with 0.",
+  "translation": "在下一步中，我们将两个数字列的空值填充为：总额和预算为0。"
+}, {
+  "tag": "PRE",
+  "text": "dataset[‘gross’].fillna(0, inplace=True)dataset[‘budget’].fillna(0, inplace=True)",
+  "translation": "数据集['gross']。fillna（0，inplace = True）数据集['budget']。fillna（0，inplace = True）"
+}, {
+  "tag": "P",
+  "text": "Then, we unify the values for other columns like country, director name, or movie title:",
+  "translation": "然后，我们统一其他列的值，例如国家/地区，导演姓名或电影名称："
+}, {
+  "tag": "PRE",
+  "text": "# Uppercase all the country valuesdataset['country']=dataset['country'].str.upper()dataset['country'] = np.where(dataset['country']=='UNITED STATES','USA', dataset['country'])# Bad data entrydataset['director_name'] = np.where(dataset['director_name']=='N/A','', dataset['director_name'])dataset['director_name'] = np.where(dataset['director_name']=='Nan','', dataset['director_name'])dataset['director_name'] = np.where(dataset['director_name']=='Null','', dataset['director_name'])dataset['movie_title'] = dataset['movie_title'].str.replace('Â', '')"
+}, {
+  "tag": "P",
+  "text": "As I mentioned above, one of the solutions to handle the outliers, is filling the correspondent rows with appropriate numbers. For example, movie duration in our dataset cannot be less than 10 or more than 300 minutes. For those cases, we fill up the cells with zero values.",
+  "translation": "如上所述，解决离群值的一种方法是用适当的数字填充对应的行。 例如，我们数据集中的电影时长不能少于10分钟或超过300分钟。 对于这些情况，我们用零值填充单元格。"
+}, {
+  "tag": "PRE",
+  "text": "dataset['duration'] = np.where(dataset['duration']<=10,0, dataset['duration'])dataset['duration'] = np.where(dataset['duration']>300,0, dataset['duration'])dataset['imdb_score'] = np.where(dataset['imdb_score']<=0,0, dataset['imdb_score'])dataset['title_year'] = np.where(dataset['title_year']<2010,0, dataset['title_year'])",
+  "translation": "dataset ['duration'] = np.where（dataset ['duration'] <= 10,0，dataset ['duration']）dataset ['duration'] = np.where（dataset ['duration']> 300， 0，数据集['duration']）数据集['imdb_score'] = np.where（数据集['imdb_score'] <= 0,0，数据集['imdb_score']）数据集['title_year'] = np.where（ 数据集['title_year'] <2010,0，数据集['title_year']）"
+}, {
+  "tag": "P",
+  "text": "To normalize data, we split up actors into three different attributes and drop the actual column as follows:",
+  "translation": "为了规范化数据，我们将参与者分成三个不同的属性，并按如下所示删除实际列："
+}, {
+  "tag": "PRE",
+  "text": "actor_list = dataset[\"actors\"].str.split(\",\", n = 2, expand = True) dataset[\"actor1\"]= actor_list[0] dataset[\"actor2\"]= actor_list[1] dataset[\"actor3\"]= actor_list[2] dataset.drop(columns=['actors'], inplace=True)",
+  "translation": "actor_list =数据集[“ actors”]。str.split（“，”，n = 2，expand = True）数据集[“ actor1”] = actor_list [0]数据集[“ actor2”] = actor_list [1]数据集[“ actor3“] = actor_list [2] dataset.drop（columns = ['actors']，inplace = True）"
+}, {
+  "tag": "P",
+  "text": "And finally, we define a new metric called GOB that shows gross over budget for each movie:",
+  "translation": "最后，我们定义一个称为GOB的新指标，该指标显示每部电影的预算超支："
+}, {
+  "tag": "PRE",
+  "text": "# Add a new metric GOB(Gross over Budget)dataset['GOB'] = dataset.apply(lambda row: row['gross']/row['budget'] if row['budget']!=0 else 0, axis=1)top_GOB=dataset.sort_values('GOB',ascending=False).head(15)",
+  "translation": "＃添加一个新的指标GOB（预算总额）数据集['GOB'] = dataset.apply（lambda行：row ['gross'] / row ['budget'] if row ['budget']！= 0否则0 ，axis = 1）top_GOB = dataset.sort_values（'GOB'，ascending = False）.head（15）"
+}, {
+  "tag": "P",
+  "text": "and save the result in another csv file to validate:",
+  "translation": "并将结果保存在另一个csv文件中以进行验证："
+}, {
+  "tag": "PRE",
+  "text": "dataset.to_csv('output_IMDB.csv')",
+  "translation": "dataset.to_csv（'output_IMDB.csv'）"
+}, {
+  "tag": "P",
+  "text": "Thank you for reading this article! I will probably write another article about the analyzing as well as visualizing this clean dataset.",
+  "translation": "感谢您阅读本文！ 我可能还会写另一篇有关分析以及可视化此干净数据集的文章。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*BXgwF70PXZyc6lhnUGIpdA.png?q=20",
+  "type": "image",
+  "file": "1*BXgwF70PXZyc6lhnUGIpdA.png"
+}, {
+  "tag": "H2",
+  "text": "Normalize values",
+  "translation": "标准化值"
+}, {
+  "tag": "P",
+  "text": "To minimize anomaly, avoid data modification issues, and simplify queries, we should normalize data in a dataset. An attribute should contain atomic values and NOT a combination of several values. In our example, there are three actors are stored in one column. To normalize this column, we should split them up into three attributes (e.g., Actor1, Actor2, and Actor3).",
+  "translation": "为了最大程度地减少异常，避免数据修改问题并简化查询，我们应该标准化数据集中的数据。 属性应包含原子值，而不应包含多个值的组合。 在我们的示例中，一列中存储了三个参与者。 为了规范化此列，我们应该将它们分为三个属性（例如Actor1，Actor2和Actor3）。"
+}, {
+  "tag": "P",
+  "text": "Another step towards data normalization can be adding new metric(s) to a dataset. For example, we might want to add a metric named gross over budget to the table to have a calculated metric for our final analysis.",
+  "translation": "数据标准化的另一个步骤可以是向数据集添加新指标。 例如，我们可能希望向表中添加一个名为“预算总额”的指标，以便为最终分析提供一个计算指标。"
+}, {
+  "tag": "H2",
+  "text": "Data validation",
+  "translation": "资料验证"
+}, {
+  "tag": "P",
+  "text": "After cleaning data, the final dataset should be compared to the original dataset to assure data accuracy. This step is essential, as we want to know that whether or not we lose data as the result of data cleaning.",
+  "translation": "清理数据后，应将最终数据集与原始数据集进行比较，以确保数据准确性。 此步骤至关重要，因为我们想知道我们是否由于数据清理而丢失数据。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*7AFfg9qlftM2zyrsZsg1Gg.png?q=20",
+  "type": "image",
+  "file": "1*7AFfg9qlftM2zyrsZsg1Gg.png"
+}, {
+  "tag": "H2",
+  "text": "Standardize values",
+  "translation": "标准化价值"
+}, {
+  "tag": "P",
+  "text": "Another data cleaning step is making data standard. First of all, data should be placed in the right column and values are in correct data type. Also, the values in columns should be unified. For example, if there is an attribute in datetime format, all the values in that column should be unified in same format ( e.g., YYYY-MM-dd ). Text values should be also unified, and bad character within a text should be identified and fixed. For example, if we have a country column, all canada, CANADA, and Canada should be converted to Canada or canada.",
+  "translation": "数据清理的另一个步骤是使数据标准化。 首先，数据应放置在右列中，并且值具有正确的数据类型。 另外，列中的值应统一。 例如，如果存在日期时间格式的属性，则该列中的所有值均应以相同的格式统一（例如YYYY-MM-dd）。 文本值也应统一，并且文本中的不良字符应得到识别和修复。 例如，如果我们有一个“国家/地区”列，则所有加拿大，加拿大和加拿大都应转换为加拿大或加拿大。"
+}, {
+  "tag": "H1",
+  "text": "Data cleaning",
+  "translation": "数据清理"
+}, {
+  "tag": "P",
+  "text": "Data cleaning is a scientific process to explore and analyze data, handle the errors, standardize data, normalize data, and finally validate it against the actual and original dataset.",
+  "translation": "数据清理是一个科学的过程，用于探索和分析数据，处理错误，标准化数据，标准化数据并最终针对实际数据集和原始数据集进行验证。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*6A5kcvlPEVNnnwLsC99zBg.png?q=20",
+  "caption": "Data cleaning tasks",
+  "type": "image",
+  "file": "1*6A5kcvlPEVNnnwLsC99zBg.png"
+}, {
+  "tag": "H2",
+  "text": "Sample dataset",
+  "translation": "样本数据集"
+}, {
+  "tag": "P",
+  "text": "To perform data cleaning, I selected a subset of 100 records from IMDB movie dataset. It included around 20 attributes, which was reduced to 12 for our analysis. The dataset is available at here. I used Python for the analysis, as a powerful, flexible, and open-source language. Python has a set of libraries for data manipulation, analysis and visualization. However, there are other data analytics tool that you can choose for data cleaning such as: Tableau, R, QlickView, SAP, Excel, Apache SPARK, etc.",
+  "translation": "为了执行数据清理，我从IMDB电影数据集中选择了100条记录的子集。 它包括大约20个属性，在我们的分析中减少为12个属性。 数据集可在此处获得。 我使用Python作为一种强大，灵活且开源的语言进行分析。 Python有一组用于数据处理，分析和可视化的库。 但是，您可以选择其他数据分析工具来进行数据清理，例如：Tableau，R，QlickView，SAP，Excel，Apache SPARK等。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*t3kOFe-bogoZ1tlqkxSAEQ.jpeg?q=20",
+  "caption": "Data cleaning process",
+  "type": "image",
+  "file": "1*t3kOFe-bogoZ1tlqkxSAEQ.jpeg"
+}, {
+  "tag": "H2",
+  "text": "Data exploration",
+  "translation": "数据探索"
+}, {
+  "tag": "P",
+  "text": "First step in data cleaning is understanding data by exploring the dataset and its attributes. The type of analysis might be different for each attribute type. The following table shows 12 attributes we consider for data cleaning with their data types. I categorized the attributes into different groups:",
+  "translation": "数据清理的第一步是通过探索数据集及其属性来理解数据。 每个属性类型的分析类型可能不同。 下表显示了我们考虑用于其数据类型的数据清理的12个属性。 我将属性分为不同的组："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*gQGBTCalrT1K3QBk0X8mTA.png?q=20",
+  "caption": "dataset’ attributes",
+  "type": "image",
+  "file": "1*gQGBTCalrT1K3QBk0X8mTA.png"
+}, {
+  "tag": "UL",
+  "texts": ["Nominal: an attribute can be categorical like color that can contain a set of restricted values (e.g., blue,red, brown, ... )", "Text: an attribute can be a free text or string.", "Numeric: an attribute can be numeric (e.g.,currency, scores)."],
+  "translations": ["标称：属性可以是类似于颜色的类别，可以包含一组受限值（例如，蓝色，红色，棕色，...）", "文本：属性可以是自由文本或字符串。", "数字：属性可以是数字（例如货币，分数）。"]
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/42/1*neao78z2BpAI7ajETxJUTg.png?q=20",
+  "caption": "Missing or repetitive values in columns",
+  "type": "image",
+  "file": "1*neao78z2BpAI7ajETxJUTg.png"
+}, {
+  "tag": "H2",
+  "text": "Handling errors",
+  "translation": "处理错误"
+}, {
+  "tag": "P",
+  "text": "Based on the type of error, we choose a specific strategy to handle it. If we have missing or repetitive values for one attribute we may decide to drop the column from our analysis. Based on experience, if more than 60% of a column contain null values, we can drop that column for our analysis. This is true for repetitive values of one column. If all the values of a column are the same, it is definitely useless. In our example, all the movies in our selected dataset is in English language, that can be dropped for our analysis.",
+  "translation": "根据错误的类型，我们选择一种特定的策略来处理它。 如果我们缺少一个属性的值或重复值，则可以决定从分析中删除该列。 根据经验，如果超过60％的列包含空值，我们可以删除该列以进行分析。 对于一列的重复值，这是正确的。 如果一列的所有值都相同，则绝对没有用。 在我们的示例中，所选数据集中的所有电影都是英语的，可以将其删除以进行分析。"
+}, {
+  "tag": "P",
+  "text": "Duplicate records also mislead us to perform a precise analysis. Let’s assume that we have the following numbers: 4,6,8,10 . The average of these numbers 7 . However, if we wrongly add another 8 to this set (4,6,8,8,10), the average will be 7.2 which is not equal to the previous average. Removing the duplicate records in a dataset is an essential step in an analysis.",
+  "translation": "重复的记录也会误导我们进行精确的分析。 假设我们有以下数字：4,6,8,10。 这些数字的平均值7。 但是，如果我们将另外8个错误地添加到该集合（4,6,8,8,10），则平均值将为7.2，这不等于先前的平均值。 删除数据集中的重复记录是分析中必不可少的步骤。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*yH1LPjztJA0CIFwJXAVFMg.png?q=20",
+  "caption": "Duplicate records",
+  "type": "image",
+  "file": "1*yH1LPjztJA0CIFwJXAVFMg.png"
+}, {
+  "tag": "P",
+  "text": "Identifying invalid outliers in our dataset is also very important, as it impacts on the analysis’ result. There are different ways to identify the outliers in a dataset. One is simply finding minimum and maximum of the numbers. Another approach is visualizing the numeric data in a box-plot to see if there is an outlier in the data or not. Some outliers might be valid and should be precisely treated in the dataset (like health data that may include some numbers out of range and show a specific behavior of a medical test result). Filtering out invalid outliers or filling them with a default or appropriate value are two other solutions to face this issue in data analytics.",
+  "translation": "识别数据集中的无效离群值也非常重要，因为它会影响分析结果。 有多种方法可以识别数据集中的异常值。 一种是简单地找到最小和最大数量。 另一种方法是在箱图中可视化数字数据，以查看数据中是否存在异常值。 一些离群值可能是有效的，应该在数据集中进行精确处理（例如健康数据，其中可能包括一些超出范围的数字，并显示出医学检验结果的特定行为）。 筛选无效的离群值或将其填充为默认值或适当的值是在数据分析中面临此问题的另外两个解决方案。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*eUBl4n3NstsnvTNeeorHtQ.png?q=20",
+  "caption": "Outliers can be depicted with box-plots",
+  "type": "image",
+  "file": "1*eUBl4n3NstsnvTNeeorHtQ.png"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*gKPsu_jnY8TRb74iZRzs-A.jpeg?q=20",
+  "type": "image",
+  "file": "1*gKPsu_jnY8TRb74iZRzs-A.jpeg"
+}, {
+  "tag": "H1",
+  "text": "Cleaning a messy dataset using Python",
+  "translation": "使用Python清理凌乱的数据集"
+}, {
+  "tag": "P",
+  "text": "According to a survey conducted by Figure Eight in 2016, almost 60% of Data Scientists’ time is spent on cleaning and organizing data. You can find the survey results at here.",
+  "translation": "根据图8在2016年进行的一项调查，数据科学家将近60％的时间都花在了清理和整理数据上。 您可以在这里找到调查结果。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/40/1*d3GTouqzjqQN3gYHBXvwyg.png?q=20",
+  "caption": "Spent time by data scientists in 2016 survey",
+  "type": "image",
+  "file": "1*d3GTouqzjqQN3gYHBXvwyg.png"
+}, {
+  "tag": "P",
+  "text": "Data in real world comes from different sources and can be incomplete, noisy, and inconsistent. Dirty data can be produced as a result of human errors, integration of separated systems, or changing requirements. Poor data quality can lead to inaccurate results in data analytics and drive misguided decision making. In this post, I intend to go through a data cleaning process to prepare a messy dataset for the final analysis.",
+  "translation": "现实世界中的数据来自不同的来源，并且可能是不完整的，嘈杂的和不一致的。 可能由于人为错误，集成的单独系统或不断变化的需求而产生脏数据。 不良的数据质量可能导致数据分析结果不准确，并导致错误的决策制定。 在这篇文章中，我打算经历一个数据清理过程，为最终分析准备一个凌乱的数据集。"
+}, {
+  "tag": "P",
+  "text": "The following figure depicts a set of IMDB records, that I downloaded from IMDB data source at here.",
+  "translation": "下图描绘了一组IMDB记录，这些记录是我在此处从IMDB数据源下载的。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*0BJpvWssNjhaQEAXl0nZHQ.jpeg?q=20",
+  "caption": "A sample messy dataset",
+  "type": "image",
+  "file": "1*0BJpvWssNjhaQEAXl0nZHQ.jpeg"
+}, {
+  "tag": "P",
+  "text": "As you can see, there might be different types of errors in a dataset:",
+  "translation": "如您所见，数据集中的错误类型可能不同："
+}, {
+  "tag": "UL",
+  "texts": ["Outliers: outliers are the numbers in a column that are out of range. In fact, an outlier lies outside of most of the other values in a dataset (red cells in the figure).", "Duplicates: A dataset can contain repetitive rows or records (purple rows in the figure).", "Missing values: We might lose data as the result of human error or missing information (orange cells in the figure).", "Bad character or NULL values: Some values may contain bad characters like ₮ or NULL values. Sometimes null data may be specified with different values like N/A or NA or NAN (light or dark cells in the figure)."],
+  "translations": ["离群值：离群值是列中超出范围的数字。 实际上，离群值位于数据集中其他大多数值的外部（图中的红色单元格）。", "重复项：数据集可以包含重复的行或记录（图中的紫色行）。", "值丢失：由于人为错误或信息丢失（图中的橙色单元格），我们可能会丢失数据。", "错误的字符或NULL值：某些值可能包含错误的字符，例如₮或NULL值。 有时，可以使用不同的值（例如N / A或NA或NAN）指定空数据（图中的亮或暗单元格）。"]
+}]
