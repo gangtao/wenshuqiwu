@@ -1,0 +1,635 @@
+[{
+  "tag": "H1",
+  "text": "How to handle large datasets in Python with Pandas and Dask",
+  "translation": "如何使用Pandas和Dask在Python中处理大型数据集"
+}, {
+  "tag": "H2",
+  "text": "How to deal with large datasets using Pandas together with Dask for parallel computing — and when to offset even larger problems to SQL.",
+  "translation": "如何使用Pandas和Dask一起处理大型数据集以进行并行计算-以及何时将更大的问题抵消给SQL。"
+}, {
+  "tag": "H1",
+  "text": "TL;DR",
+  "translation": "TL; DR"
+}, {
+  "tag": "P",
+  "text": "Python data scientists often use Pandas for working with tables. While Pandas is perfect for small to medium-sized datasets, larger ones are problematic. In this article, I show how to deal with large datasets using Pandas together with Dask for parallel computing — and when to offset even larger problems to SQL if all else fails.",
+  "translation": "Python数据科学家经常使用Pandas处理表。 虽然Pandas非常适合中小型数据集，但较大的数据集存在问题。 在本文中，我将展示如何使用Pandas和Dask来处理大型数据集以进行并行计算-以及在所有其他方法均失败的情况下何时将更大的问题抵消给SQL。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*K4zeQ2Og_IPhAI3-?q=20",
+  "caption": "Photo by Debbie Molle on Unsplash",
+  "type": "image",
+  "file": "0*K4zeQ2Og_IPhAI3-"
+}, {
+  "tag": "H1",
+  "text": "Working with Pandas on large datasets",
+  "translation": "在大型数据集上使用熊猫"
+}, {
+  "tag": "P",
+  "text": "Pandas is a wonderful library for working with data tables. Its dataframe construct provides a very powerful workflow for data analysis similar to the R ecosystem. It’s fairly quick, rich in features and well-documented. In fact, it has earned its place as a fundamental tool used by data scientists who follow the Python way.",
+  "translation": "Pandas是使用数据表的绝佳库。 与R生态系统类似，它的数据框构造为数据分析提供了非常强大的工作流。 它的速度相当快，功能丰富且有据可查。 实际上，它已经成为遵循Python方式的数据科学家使用的基本工具。"
+}, {
+  "tag": "P",
+  "text": "However, in the life of a data-scientist-who-uses-Python-instead-of-R there always comes a time where the laptop throws a tantrum, refuses to do any more work, and freezes spectacularly.",
+  "translation": "但是，在使用Python而不是R的数据科学家的生活中，总是会出现笔记本电脑发脾气，拒绝进行更多工作并冻结的现象。"
+}, {
+  "tag": "P",
+  "text": "As great as it is, Pandas achieves its speed by holding the dataset in RAM when performing calculations. That’s why it comes with a certain limitation (which also depends on the machine specs, of course).",
+  "translation": "尽管如此，Pandas在执行计算时通过将数据集保存在RAM中来实现其速度。 这就是为什么它有一定的限制（当然，这也取决于机器规格）。"
+}, {
+  "tag": "H1",
+  "text": "Why does that happen?",
+  "translation": "为什么会这样呢？"
+}, {
+  "tag": "P",
+  "text": "The issue often originates in an unforeseen expansion of a dataframe during an overly-complex transformation or a blind import of a table from a file. That can be very frustrating.",
+  "translation": "该问题通常源于在过于复杂的转换过程中数据帧的意外扩展，或者从文件中盲目导入表。 那可能非常令人沮丧。"
+}, {
+  "tag": "H1",
+  "text": "So how can we fix it?",
+  "translation": "那么我们该如何解决呢？"
+}, {
+  "tag": "P",
+  "text": "One solution would be to limit the data to a smaller subset — for example, by probing every-nth value in a source. But often that’s not enough.",
+  "translation": "一种解决方案是将数据限制为较小的子集，例如，通过探测源中的第n个值。 但是通常这还不够。"
+}, {
+  "tag": "P",
+  "text": "But what if limiting data isn’t an option?",
+  "translation": "但是，如果不能选择限制数据怎么办？"
+}, {
+  "tag": "H1",
+  "text": "Does it mean we just can’t use Pandas with large datasets?",
+  "translation": "这是否意味着我们不能对大型数据集使用熊猫？"
+}, {
+  "tag": "P",
+  "text": "Luckily, there’s a way to address this issue.",
+  "translation": "幸运的是，有一种方法可以解决这个问题。"
+}, {
+  "tag": "P",
+  "text": "The most common fix is using Pandas alongside another solution — like a relational SQL database, MongoDB, ElasticSearch, or something similar. At Sunscrapers, we definitely agree with that approach.",
+  "translation": "最常见的解决方案是将Pandas与其他解决方案一起使用-例如关系SQL数据库，MongoDB，ElasticSearch或类似的东西。 在Sunscrapers，我们绝对同意这种方法。"
+}, {
+  "tag": "P",
+  "text": "But you can sometimes deal with larger-than-memory datasets in Python using Pandas and another handy open-source Python library, Dask.",
+  "translation": "但是您有时可以使用Pandas和另一个方便的开源Python库Dask处理Python中大于内存的数据集。"
+}, {
+  "tag": "P",
+  "text": "Dask is a robust Python library for performing distributed and parallel computations. It also provides tooling for dynamic scheduling of Python-defined tasks (something like Apache Airflow). It’s tightly integrated with NumPy and provides Pandas with dataframe-equivalent structures — the dask.dataframes — that are based on lazy loading and can be used to perform dataframe operations in chunks and in parallel. It also automatically supports grouping by performing data shuffling under the hood.",
+  "translation": "Dask是一个健壮的Python库，用于执行分布式和并行计算。 它还提供了用于动态调度Python定义的任务的工具（类似于Apache Airflow）。 它与NumPy紧密集成，并为Pandas提供了等效于数据帧的结构（dask.dataframes），该结构基于延迟加载，可用于按块并行执行数据帧操作。 它还通过在后台执行数据混洗自动支持分组。"
+}, {
+  "tag": "P",
+  "text": "This article outlines a few handy tips and tricks to help developers mitigate some of the showstoppers when working with large datasets in Python.",
+  "translation": "本文概述了一些方便的提示和技巧，以帮助开发人员在使用Python处理大型数据集时减轻一些麻烦。"
+}, {
+  "tag": "H1",
+  "text": "Here’s the dataset",
+  "translation": "这是数据集"
+}, {
+  "tag": "P",
+  "text": "To demonstrate the power of Pandas/Dask, I chose chose an open-source dataset from Wikipedia about the source of the site’s visitors. You can get the ‘clickstream’ tables (in .tsv) here.",
+  "translation": "为了展示Pandas / Dask的功能，我选择从Wikipedia中选择一个有关网站访问者来源的开源数据集。 您可以在此处获取“点击流”表（在.tsv中）。"
+}, {
+  "tag": "P",
+  "text": "The clickstream data contains 4 main columns:",
+  "translation": "点击流数据包含4个主要列："
+}, {
+  "tag": "OL",
+  "texts": ["‘Prev’ — the site from which the visitor came (I renamed it to ‘coming_from’)", "‘curr’ — the target article page (renamed to ‘article’)", "‘type’ — this column describes the type of referral, for example, an external link (I renamed it to ‘referral_type’)", "’n’ — the number of visits"],
+  "translations": ["“上一页”-访问者来自的网站（我将其重命名为“ coming_from”）", "“ curr”-目标文章页面（重命名为“ article”）", "“类型”-此列描述了引荐类型，例如，外部链接（我将其重命名为“ referral_type”）", "’n –访问次数"]
+}, {
+  "tag": "P",
+  "text": "Next, I came up with a few questions to play around with my dataset and check whether the combination of Pandas and Dask does its job:",
+  "translation": "接下来，我想出一些问题来处理我的数据集，并检查Pandas和Dask的组合是否能完成工作："
+}, {
+  "tag": "OL",
+  "texts": ["Which links do people click on most often in a given article?", "What are the most popular articles users access from all the external search engines?", "What percentage of visitors to a given article page have clicked on a link to get there?", "What is the most common source of visits for each article? (displayed in a single table)"],
+  "translations": ["人们在给定文章中最常点击哪些链接？", "用户从所有外部搜索引擎访问的最受欢迎的文章是什么？", "给定文章页面的访问者单击链接到那里的百分比？", "每篇文章最常访问的来源是什么？ （显示在单个表中）"]
+}, {
+  "tag": "P",
+  "text": "The dataset size is 1.4 Gb, so it carries significant risk of memory overload. That’s why I split the study into two parts.",
+  "translation": "数据集大小为1.4 Gb，因此存在很大的内存过载风险。 因此，我将研究分为两个部分。"
+}, {
+  "tag": "P",
+  "text": "First, I implemented the analysis on a limited data subset using just the Pandas library. Then I attempted to do exactly the same on the full set using Dask.",
+  "translation": "首先，我仅使用Pandas库对有限的数据子集进行了分析。 然后，我尝试使用Dask对全套游戏进行完全相同的操作。"
+}, {
+  "tag": "P",
+  "text": "Ok, let’s move on to the analysis.",
+  "translation": "好的，让我们继续分析。"
+}, {
+  "tag": "H1",
+  "text": "Preparing the dataset",
+  "translation": "准备数据集"
+}, {
+  "tag": "P",
+  "text": "Let’s grab our data for the analysis:",
+  "translation": "让我们获取数据进行分析："
+}, {
+  "tag": "PRE",
+  "text": "if [ ! -d “./data” ] then mkdir ./data echo ‘created folder ./data’fi# get the data if not present:if [ ! -f “./data/clickstream_data.tsv” ]; then if [ ! -f “./data/clickstream_data.tsv.gz” ] then wget https://dumps.wikimedia.org/other/clickstream/2018-12/clickstream-enwiki-2018-12.tsv.gz -O ./data/clickstream_data.tsv.gz fi gunzip ./data/clickstream_data.tsv.gzfi",
+  "translation": "如果[！ -d“ ./data”]然后mkdir ./data echo'创建的文件夹./data'fi#如果不存在则获取数据：if [！ -f“ ./data/clickstream_data.tsv”]; 则[ -f“ ./data/clickstream_data.tsv.gz”]，然后wget https://dumps.wikimedia.org/other/clickstream/2018-12/clickstream-enwiki-2018-12.tsv.gz -O ./data /clickstream_data.tsv.gz fi gunzip ./data/clickstream_data.tsv.gzfi"
+}, {
+  "tag": "P",
+  "text": "Now let’s have a look at what kind of data we have here and import it into the dataframe.",
+  "translation": "现在，让我们看一下这里拥有的数据类型，并将其导入数据框。"
+}, {
+  "tag": "P",
+  "text": "The very first memory optimization step we can perform already at this point (assuming we know our table structure by now) is specifying the columns data types during the import (via the dtype= input parameter).",
+  "translation": "此时我们已经可以执行的第一个内存优化步骤（假设我们现在已经知道我们的表结构）是在导入期间指定列数据类型（通过dtype = input参数）。"
+}, {
+  "tag": "P",
+  "text": "That way, we can force Pandas to convert some values into types with a significantly lower memory footprint.",
+  "translation": "这样，我们可以强制Pandas将某些值转换为具有显着更低的内存占用量的类型。"
+}, {
+  "tag": "P",
+  "text": "That may not make much sense if you’re dealing with a few thousand rows, but will make a noticeable difference in a few millions!",
+  "translation": "如果您要处理几千行，这可能没有多大意义，但几百万行将产生明显的变化！"
+}, {
+  "tag": "P",
+  "text": "For example, if you know that a column should only have positive integers, use unsigned integer type (uint32) instead of the regular int type (or worse — float, which may sometimes happen automatically).",
+  "translation": "例如，如果您知道一列应只包含正整数，请使用无符号整数类型（uint32）而不是常规的int类型（或更糟糕的是，float，有时可能会自动发生）。"
+}, {
+  "tag": "PRE",
+  "text": "df = pd.read_csv(‘data/clickstream_data.tsv’,     delimiter=’\\t’,    names=[‘coming_from’, ‘article’, ‘referrer_type’, ‘n’],    dtype={        ‘referrer_type’: ‘category’,         ’n’: ‘uint32’})"
+}, {
+  "tag": "P",
+  "text": "Finally, let’s limit the data frame size to the first 100k rows for the sake of speed.",
+  "translation": "最后，为了提高速度，我们将数据帧大小限制为前100k行。"
+}, {
+  "tag": "P",
+  "text": "Note that this is usually a bad idea; when sampling a subset, it’s far more appropriate to sample every nth row to get as much uniform sampling as possible. But since we’re only using it to demonstrate the analysis process, we’re not going to bother:",
+  "translation": "注意，这通常是一个坏主意； 在对子集进行采样时，更适合对第n行进行采样，以获取尽可能统一的采样。 但是，由于我们仅使用它来演示分析过程，因此我们不会打扰："
+}, {
+  "tag": "PRE",
+  "text": "df = df.iloc[:100000]",
+  "translation": "df = df.iloc [：100000]"
+}, {
+  "tag": "H1",
+  "text": "Q1: Which links do people click on most often in a given article?",
+  "translation": "问题1：人们在给定文章中最常点击哪些链接？"
+}, {
+  "tag": "P",
+  "text": "To answer this question, we need to create a table where we can see the aggregated sum of visitors per article and per source of origin (coming_from column).",
+  "translation": "为了回答这个问题，我们需要创建一个表，在这里我们可以看到每个文章和每个来源的访问者的总和（coming_from列）。"
+}, {
+  "tag": "P",
+  "text": "So, let’s aggregate the table over the article, the coming_from columns, sum up the ’n’ values, and then order the rows according to the ’n’ sums. Here’s how we approach it in Pandas:",
+  "translation": "因此，让我们汇总文章上的表格（coming_from列），汇总“ n”值，然后根据“ n”总和对行进行排序。 这是我们在Pandas中的处理方式："
+}, {
+  "tag": "PRE",
+  "text": "top_links = df.loc[    df['referrer_type'].isin(['link']),       ['coming_from','article', 'n']]\\.groupby([‘coming_from’, ‘article’])\\.sum()\\.sort_values(by=’n’, ascending=False)",
+  "translation": "top_links = df.loc [df ['referrer_type']。isin（['link']），['coming_from'，'article'，'n']]] .. groupby（['coming_from'，'article']） \\ .sum（）\\。sort_values（by ='n'，ascending = False）"
+}, {
+  "tag": "P",
+  "text": "And the resulting table:",
+  "translation": "和结果表："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*50b4120fV0ILfS-t?q=20",
+  "type": "image",
+  "file": "0*50b4120fV0ILfS-t"
+}, {
+  "tag": "H1",
+  "text": "Pandas + Dask",
+  "translation": "熊猫+达斯克"
+}, {
+  "tag": "P",
+  "text": "Now let’s recreate this data using the Dask library.",
+  "translation": "现在，我们使用Dask库重新创建此数据。"
+}, {
+  "tag": "PRE",
+  "text": "from dask import dataframe as dddfd = dd.read_csv(    ‘data/clickstream_data.tsv’,     delimiter=’\\t’,    names=[‘coming_from’, ‘article’, ‘referrer_type’, ‘n’],    dtype={        ‘referrer_type’: ‘category’,         ’n’: ‘uint32’},    blocksize=64000000 # = 64 Mb chunks)",
+  "translation": "从dask导入数据帧为dddfd = dd.read_csv（'data / clickstream_data.tsv'，delimiter ='\\ t'，names = ['coming_from'，'article'，'referrer_type'，'n']，dtype = {' Referrer_type'：“类别”，“ n”：“ uint32'}，blockize = 64000000＃= 64 Mb块）"
+}, {
+  "tag": "P",
+  "text": "Note that the read_csv function is pretty similar to the Pandas one, except here we specify the byte-size per chunks. We perform the aggregation logic which is also almost identical to Pandas:",
+  "translation": "请注意，read_csv函数与Pandas函数非常相似，不同之处在于，我们在此处指定每块的字节大小。 我们执行的聚合逻辑也几乎与熊猫相同："
+}, {
+  "tag": "PRE",
+  "text": "top_links_grouped_dask = dfd.loc[    dfd[‘referrer_type’].isin([‘link’]),     [‘coming_from’,’article’, ‘n’]]\\        .groupby([‘coming_from’, ‘article’])",
+  "translation": "top_links_grouped_dask = dfd.loc [dfd ['referrer_type']。isin（['link']），['coming_from'，'article'，'n']] \\ .groupby（['coming_from'，'article']）"
+}, {
+  "tag": "P",
+  "text": "That won’t do any calculations yet, the top_links_grouped_dask will be a Dask delayed dataframe object. We can then launch it to be computed via the .compute() method.",
+  "translation": "尚无法进行任何计算，top_links_grouped_dask将是Dask延迟的数据框对象。 然后，我们可以启动它以通过.compute（）方法进行计算。"
+}, {
+  "tag": "P",
+  "text": "But we don’t want to clog our memory, so let’s save it directly to hard drive. We will use the hdf5 file format to do that. Let’s declare the hdf5 store then:",
+  "translation": "但是我们不想阻塞我们的内存，因此我们直接将其保存到硬盘驱动器中。 我们将使用hdf5文件格式来做到这一点。 然后声明hdf5存储："
+}, {
+  "tag": "PRE",
+  "text": "store = pd.HDFStore(‘./data/clickstream_store.h5’)",
+  "translation": "store = pd.HDFStore（‘./ data / clickstream_store.h5’）"
+}, {
+  "tag": "P",
+  "text": "And compute the data frame into it.",
+  "translation": "并计算其中的数据帧。"
+}, {
+  "tag": "P",
+  "text": "Note that ordering column values with Dask isn’t that easy (after all, the data is read one chunk at a time), so we cannot use the sort_values() method like we did in the Pandas example.",
+  "translation": "请注意，使用Dask排序列值并不是那么容易（毕竟，一次读取一个数据块），因此我们不能像在Pandas示例中那样使用sort_values（）方法。"
+}, {
+  "tag": "P",
+  "text": "Instead, we need to use the nlargest() Dask method and specify the number of top values we’d like to determine:",
+  "translation": "相反，我们需要使用nlargest（）Dask方法并指定要确定的最高值的数量："
+}, {
+  "tag": "PRE",
+  "text": "top_links_dask = top_links_grouped_dask.sum().nlargest(20, ‘n’)",
+  "translation": "top_links_dask = top_links_grouped_dask.sum（）。nlargest（20，‘n’）"
+}, {
+  "tag": "P",
+  "text": "It too returns a delayed Dask object, so to finally compute it (and save it to the store) we run the following:",
+  "translation": "它也返回一个延迟的Dask对象，因此要最终对其进行计算（并将其保存到商店中），我们运行以下命令："
+}, {
+  "tag": "PRE",
+  "text": "store.put(‘top_links_dask’,           top_links_dask.compute(),           format=’table’,           data_columns=True)",
+  "translation": "store.put（“ top_links_dask”，top_links_dask.compute（），format =“ table”，data_columns = True）"
+}, {
+  "tag": "P",
+  "text": "In this case, the result is different from the values in the Pandas example since here we work on the entire dataset, not just the first 100k rows:",
+  "translation": "在这种情况下，结果与Pandas示例中的值不同，因为在这里我们处理整个数据集，而不仅仅是前十万行："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*40gGUWzLAYFcL-18?q=20",
+  "type": "image",
+  "file": "0*40gGUWzLAYFcL-18"
+}, {
+  "tag": "H1",
+  "text": "Q2: What are the most popular articles users access from all the external search engines?",
+  "translation": "问题2：用户从所有外部搜索引擎访问的最受欢迎的文章是什么？"
+}, {
+  "tag": "P",
+  "text": "That one is easy. All we need to do is to filter out the rows that contain the ‘external’ referrer_type and ‘other-search’ coming_from values:",
+  "translation": "那很容易。 我们需要做的就是过滤出包含“外部” referrer_type和“其他搜索” coming_from值的行："
+}, {
+  "tag": "PRE",
+  "text": "external_searches = df.loc[ (df[‘referrer_type’].isin([‘external’])) &    (df[‘coming_from’].isin([‘other-search’])), [‘article’, ‘n’]]",
+  "translation": "external_searches = df.loc [（df ['referrer_type']。isin（['external']）＆（df ['coming_from']。isin（['other-search']））），['article'，' n']]"
+}, {
+  "tag": "P",
+  "text": "We then only have to sort the values according to the number of visitors:",
+  "translation": "然后，我们只需要根据访问者的数量对值进行排序："
+}, {
+  "tag": "PRE",
+  "text": "most_popular_articles = external_searches.sort_values(    by=’n’, ascending=False).head(40)",
+  "translation": "most_popular_articles = external_searches.sort_values（by =’n’，ascending = False）.head（40）"
+}, {
+  "tag": "P",
+  "text": "and voila!",
+  "translation": "和瞧！"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*b6LPJkZz9OMFnZtl?q=20",
+  "type": "image",
+  "file": "0*b6LPJkZz9OMFnZtl"
+}, {
+  "tag": "H1",
+  "text": "Pandas + Dask",
+  "translation": "熊猫+达斯克"
+}, {
+  "tag": "P",
+  "text": "How about doing the same, but on the full dataset with Dask this time?",
+  "translation": "怎么做，但是这次用Dask在完整的数据集上呢？"
+}, {
+  "tag": "PRE",
+  "text": "external_searches_dask = dfd.loc[    (dfd[‘referrer_type’].isin([‘external’])) &          (dfd[‘coming_from’].isin([‘other-search’])),    [‘article’, ‘n’]]",
+  "translation": "external_searches_dask = dfd.loc [（dfd ['referrer_type']。isin（['external']））＆（dfd ['coming_from']。isin（['other-search']）），['article'，' n']]"
+}, {
+  "tag": "P",
+  "text": "Since we only need to store the top 40 results, we can simply store them directly in Pandas dataframe:",
+  "translation": "由于我们只需要存储前40个结果，因此我们可以直接将它们直接存储在Pandas数据框中："
+}, {
+  "tag": "PRE",
+  "text": "external_searches_dask = external_searches_dask.nlargest(    40, ‘n’).compute()",
+  "translation": "external_searches_dask = external_searches_dask.nlargest（40，‘n’）。compute（）"
+}, {
+  "tag": "P",
+  "text": "which returns this (showing only the first 5 rows here):",
+  "translation": "返回此内容（此处仅显示前5行）："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*zhLZiJI3YyvHGJaR?q=20",
+  "type": "image",
+  "file": "0*zhLZiJI3YyvHGJaR"
+}, {
+  "tag": "P",
+  "text": "This is a great question to be answered graphically, so lets plot the first 40 top values:",
+  "translation": "这是一个伟大的问题，需要图形化地回答，因此让我们绘制前40个最高值："
+}, {
+  "tag": "PRE",
+  "text": "sns.barplot(data=external_searches_dask, y=’article’, x=’n’)plt.gca().set_ylabel(‘’)",
+  "translation": "sns.barplot（data = external_searches_dask，y ='article'，x ='n'）plt.gca（）。set_ylabel（‘’）"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*wdN3-2pEWW0zwmOD?q=20",
+  "type": "image",
+  "file": "0*wdN3-2pEWW0zwmOD"
+}, {
+  "tag": "H1",
+  "text": "Q3: What percentage of visitors to a given article page have clicked on a link to get there?",
+  "translation": "问题3：到达指定文章页面的访问者中有多少点击了链接才能到达那里？"
+}, {
+  "tag": "P",
+  "text": "The framing of this question suggests that we need to be able to calculate the fraction for a specific article title. So let’s create a function that will take a dataframe and the desired article title, and then return the percentage value.",
+  "translation": "这个问题的框架表明我们需要能够计算特定文章标题的分数。 因此，让我们创建一个函数，该函数将使用数据框和所需的文章标题，然后返回百分比值。"
+}, {
+  "tag": "P",
+  "text": "The function will have to filter the rows for a given article, sum up all the visitors count, and then find a cumulative sum of n for a subset of visits with the ‘link’ value in the the referrer_type column:",
+  "translation": "该函数将必须过滤给定文章的行，汇总所有访问者计数，然后使用Referrer_type列中的“ link”值为访问子集找到n的累积总和："
+}, {
+  "tag": "PRE",
+  "text": "def visitors_clicked_link_pandas(dataframe, article):    df_article = dataframe.loc[dataframe[‘article’].isin([article])]    a = df_article[‘n’].sum()    l = df_article.loc[        df_article[‘referrer_type’].isin([‘link’]),         ‘n’].sum()    return round((l*100)/a, 2)",
+  "translation": "def Visitors_clicked_link_pandas（数据框，文章）：df_article = dataframe.loc [dataframe ['article']。isin（[article]）] a = df_article ['n']。sum（）l = df_article.loc [df_article ['referrer_type '] .isin（['link']），'n']。sum（）返回回合（（l * 100）/ a，2）"
+}, {
+  "tag": "P",
+  "text": "And let’s test in on one of the articles, say one with the title ”Jehangir_Wadia”:",
+  "translation": "让我们测试其中一篇文章，说一个标题为“ Jehangir_Wadia”的文章："
+}, {
+  "tag": "PRE",
+  "text": ">>> visitors_clicked_link_pandas(df, ‘Jehangir_Wadia’)81.1",
+  "translation": ">>> Visitor_clicked_link_pandas（df，'Jehangir_Wadia'）81.1"
+}, {
+  "tag": "P",
+  "text": "Which suggests that ~81% of the ”Jehangir_Wadia” article visitors arrive there by clicking on an external link.",
+  "translation": "这表明约有81％的“ Jehangir_Wadia”文章访问者通过单击外部链接到达那里。"
+}, {
+  "tag": "H1",
+  "text": "Pandas + Dask",
+  "translation": "熊猫+达斯克"
+}, {
+  "tag": "P",
+  "text": "How can we extend that to the entire dataset using Dask? Quite easily. All we have to do is using the dask-dataframe instead of the Pandas ones and adding the .compute() methods to two of the inner statements in the function, like that:",
+  "translation": "我们如何使用Dask将其扩展到整个数据集？ 很容易。 我们要做的就是使用dask-dataframe而不是Pandas数据框，并将.compute（）方法添加到函数中的两个内部语句中，如下所示："
+}, {
+  "tag": "PRE",
+  "text": "def visitors_clicked_link_dask(dataframe, article):    df_article = dataframe.loc[dataframe[‘article’].isin([article])]    a = df_article[‘n’].sum().compute()    l = df_article.loc[        df_article[‘referrer_type’].isin([‘link’]),        ‘n’].sum().compute()    return round((l*100)/a, 2)",
+  "translation": "def Visitor_clicked_link_dask（数据框架，文章）：df_article = dataframe.loc [dataframe ['article']。isin（[article]）] a = df_article ['n']。sum（）。compute（）l = df_article.loc [ df_article ['referrer_type']。isin（['link']），'n']。sum（）。compute（）返回回合（（l * 100）/ a，2）"
+}, {
+  "tag": "P",
+  "text": "Running the function will return the same result:",
+  "translation": "运行该函数将返回相同的结果："
+}, {
+  "tag": "PRE",
+  "text": ">>> visitors_clicked_link_dask(dfd, ‘Jehangir_Wadia’)81.1",
+  "translation": ">>> Visitor_clicked_link_dask（dfd，‘Jehangir_Wadia’）81.1"
+}, {
+  "tag": "H1",
+  "text": "Q4: What is the most common source of visits for each article?",
+  "translation": "问题4：每篇文章最常访问的来源是什么？"
+}, {
+  "tag": "P",
+  "text": "To answer this question, we require two columns: one for the destination article and the origin title, as well as the sum of the number of visits. Furthermore, we have to filter out the rows with the highest number of visitors per article.",
+  "translation": "要回答这个问题，我们需要两列：一列用于目的地文章和原始标题，以及访问次数的总和。 此外，我们必须过滤出每篇文章访问者数量最多的行。"
+}, {
+  "tag": "P",
+  "text": "First, let’s get rid of all the unnecessary extra columns by aggregating and summing up all the ’n’ counts over the referrer_type for every coming_from/article combination:",
+  "translation": "首先，通过汇总和汇总每种comering_from / article组合对Referrer_type的所有'n'计数来消除所有不必要的额外列："
+}, {
+  "tag": "PRE",
+  "text": "summed_articles = df.groupby([‘article’, ‘coming_from’]).sum()",
+  "translation": "summed_articles = df.groupby（['article'，'coming_from']）。sum（）"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*xeDpqlVDrmAKLBgI?q=20",
+  "type": "image",
+  "file": "0*xeDpqlVDrmAKLBgI"
+}, {
+  "tag": "P",
+  "text": "Next, let’s find the referrers (coming_from) that generated the highest number of visitors for each article page.",
+  "translation": "接下来，让我们找到为每个文章页面吸引最多访问者的引荐来源网址（coming_from）。"
+}, {
+  "tag": "P",
+  "text": "One way to do that is using a filter table with the desired rows indices via the df.iloc[] method. So let’s find those for the summed_articles table which correspond to the highest ’n’ per article.",
+  "translation": "一种方法是通过df.iloc []方法使用具有所需行索引的过滤器表。 因此，让我们在summed_articles表中找到与每篇文章的最高“ n”相对应的内容。"
+}, {
+  "tag": "P",
+  "text": "We’ll use a nifty Pandas method called idxmax which returns the indices of the grouped column with max values. Aggregating the summed_articles again, this time over the coming_from column, we can run it like this:",
+  "translation": "我们将使用一个名为idxmax的漂亮Pandas方法，该方法返回具有最大值的分组列的索引。 这次再次在suming_from列上聚合summed_articles，我们可以这样运行它："
+}, {
+  "tag": "PRE",
+  "text": "max_n_filter = summed_articles.reset_index()\\    .groupby(‘article’)\\    .idxmax()",
+  "translation": "max_n_filter = summed_articles.reset_index（）\\ .groupby（‘article’）\\ .idxmax（）"
+}, {
+  "tag": "P",
+  "text": "Let’s preview the filter first:",
+  "translation": "让我们先预览一下过滤器："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/28/0*WBOdq3HWTpMqsIUm?q=20",
+  "type": "image",
+  "file": "0*WBOdq3HWTpMqsIUm"
+}, {
+  "tag": "P",
+  "text": "Now we can filter out the summed_articles rows with this table:",
+  "translation": "现在，我们可以使用此表过滤出summed_articles行："
+}, {
+  "tag": "PRE",
+  "text": "summed_articles.iloc[max_n_filter[‘n’]].head(4)",
+  "translation": "summed_articles.iloc [max_n_filter [‘n’]]。head（4）"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*YNDVNKbWmAxkO_2E?q=20",
+  "type": "image",
+  "file": "0*YNDVNKbWmAxkO_2E"
+}, {
+  "tag": "P",
+  "text": "Finally, we need to sort the values by the highest number of visitors:",
+  "translation": "最后，我们需要按访问者的最高数量对值进行排序："
+}, {
+  "tag": "PRE",
+  "text": "summed_articles.iloc[max_n_filter[‘n’]]\\    .sort_values(by=’n’, ascending=False)\\    .head(10)",
+  "translation": "summed_articles.iloc [max_n_filter [‘n’]] \\ .sort_values（by =’n'，ascending = False）\\ .head（10）"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*rICTPtSY5raRseT0?q=20",
+  "type": "image",
+  "file": "0*rICTPtSY5raRseT0"
+}, {
+  "tag": "P",
+  "text": "Done!",
+  "translation": "做完了！"
+}, {
+  "tag": "H1",
+  "text": "Pandas + Dask",
+  "translation": "熊猫+达斯克"
+}, {
+  "tag": "P",
+  "text": "Now, let’s try recreating this moderately-complex task in Dask on the full data set. The first step is easy. We can create a table with summed_articles like this without any issues:",
+  "translation": "现在，让我们尝试在完整数据集的Dask中重新创建此中等复杂的任务。 第一步很容易。 我们可以这样创建带有summed_articles的表，而不会出现任何问题："
+}, {
+  "tag": "PRE",
+  "text": "summed_articles = dfd.groupby([‘article’, ‘coming_from’])\\    .sum()\\    .reset_index()\\    .compute()",
+  "translation": "summed_articles = dfd.groupby（['article'，'coming_from']）\\ .sum（）\\ .reset_index（）\\ .compute（）"
+}, {
+  "tag": "P",
+  "text": "But it’s best not to store it in memory — we’ll have to perform the aggregation later on and that will be memory-demanding. So let’s write it down (as its being calculated) directly to hard drive instead, for example hdf5 or a parquet file:",
+  "translation": "但是最好不要将其存储在内存中-我们稍后必须执行聚合，这将需要大量内存。 因此，让我们直接将其记录下来（作为其计算结果）到硬盘驱动器中，例如hdf5或实木复合地板文件："
+}, {
+  "tag": "PRE",
+  "text": "dfd.groupby([‘article’, ‘coming_from’])\\    .sum()\\    .reset_index()\\    .to_parquet(‘./summed_articles.parquet’, engine=’pyarrow’)",
+  "translation": "dfd.groupby（['article'，'coming_from']）\\ .sum（）\\ .reset_index（）\\ .to_parquet（'./ summed_articles.parquet'，engine ='pyarrow'）"
+}, {
+  "tag": "P",
+  "text": "So far so good.",
+  "translation": "到目前为止，一切都很好。"
+}, {
+  "tag": "P",
+  "text": "Step two is creating the filter table. That’s where the problems begin: at the time of writing this article, Dask dataframes have no idxmax() implementation available. We’d have to improvise somehow.",
+  "translation": "第二步是创建过滤器表。 问题就从这里开始：在撰写本文时，Dask数据框尚无idxmax（）实现。 我们必须以某种方式即兴创作。"
+}, {
+  "tag": "H1",
+  "text": "1st method",
+  "translation": "第一种方法"
+}, {
+  "tag": "P",
+  "text": "For example, we could copy the summed_articles index into a new column and output it via a custom apply function. However, there’s another problem — Dask partitioning of the data means that we can’t use iloc to filter specific rows (it requires the “:” value for all rows).",
+  "translation": "例如，我们可以将summed_articles索引复制到新列中，并通过自定义apply函数将其输出。 但是，还有另一个问题-数据的快速分区意味着我们无法使用iloc过滤特定的行（所有行都需要使用“：”值）。"
+}, {
+  "tag": "P",
+  "text": "We could try using a loc method and select rows by checking if their indices are present in the list of previously-determined filter table, but that would be a huge computational overhead. What a bummer.",
+  "translation": "我们可以尝试使用loc方法并通过检查行的索引是否存在于先前确定的过滤器表列表中来选择行，但这将是巨大的计算开销。 真可惜"
+}, {
+  "tag": "H1",
+  "text": "2nd method",
+  "translation": "第二种方法"
+}, {
+  "tag": "P",
+  "text": "Here’s another approach: we could write a custom function for processing aggregated data and use it with the groupby-apply combination. That way, we can overcome all the above issues quite easily.",
+  "translation": "这是另一种方法：我们可以编写一个自定义函数来处理汇总数据，并将其与groupby-apply组合一起使用。 这样，我们可以很轻松地克服上述所有问题。"
+}, {
+  "tag": "P",
+  "text": "But then… the apply method works by concatenating all of the data output from the individually processed subsets of rows into one final table, which means it will have to be transiently stored in one piece in memory, unfortunately…",
+  "translation": "但是然后…apply方法通过将来自行的单独处理的子集的所有数据输出串联到一个最终表中而起作用，这意味着必须将其临时存储在内存中的一个片段中……"
+}, {
+  "tag": "P",
+  "text": "Depending on our luck with the data, it can be small enough or not. I tried that a couple of times and found it clogs my (16BG RAM laptop) memory, forcing the notebook kernel to restart eventually.",
+  "translation": "根据数据的运气，它可能足够小，也可能不够小。 我尝试了几次，发现它阻塞了我的（16BG RAM笔记本电脑）内存，迫使笔记本电脑内核最终重新启动。"
+}, {
+  "tag": "H1",
+  "text": "3rd method",
+  "translation": "第三种方法"
+}, {
+  "tag": "P",
+  "text": "Not giving up, I resorted to the dark side of solutions by attempting to iterate over individual groups, find the right row, and append it to an hdf5/parquet storage on disk.",
+  "translation": "不遗余力，我尝试通过遍历各个组，找到正确的行并将其附加到磁盘上的hdf5 / parquet存储中来解决方案的阴暗面。"
+}, {
+  "tag": "P",
+  "text": "First problem: DaskGroupBy object has no implementation of iteritem method (at the time of writing), so we can’t use the for-in logic.",
+  "translation": "第一个问题：DaskGroupBy对象没有迭代方法的实现（在撰写本文时），因此我们无法使用for-in逻辑。"
+}, {
+  "tag": "P",
+  "text": "Finally, we can find all the article/coming_from unique combinations and iterate over these values to group the summed_articles rows ourselves with the get_group() method:",
+  "translation": "最后，我们可以从唯一的组合中找到所有article / coming_，并遍历这些值以使用get_group（）方法将我们自己的summed_articles行分组："
+}, {
+  "tag": "PRE",
+  "text": "dfd[[‘article’, ‘coming_from’]]\\    .drop_duplicates()\\    .to_parquet(‘./uniques.parquet’)for item in pd.read_parquet(‘./uniques.parquet’,                               engine=’pyarrow’).itertuples():        t = dfd.groupby([‘article’,‘coming_from’])\\        .get_group(item)\\        .compute()    ...",
+  "translation": "dfd [[''article'，'coming_from']] \\ .drop_duplicates（）\\ .to_parquet（'./ uniques.parquet'）用于pd.read_parquet（'./ uniques.parquet'，engine ='pyarrow'）中的项目 .itertuples（）：t = dfd.groupby（['article'，'coming_from']）\\ .get_group（item）\\ .compute（）..."
+}, {
+  "tag": "P",
+  "text": "That should work, but the process would be incredibly slow. That’s why I gave up on using Dask for this problem.",
+  "translation": "那应该可以，但是过程会非常慢。 这就是为什么我放弃使用Dask解决此问题的原因。"
+}, {
+  "tag": "P",
+  "text": "The point I’m trying to make here is that not all data-oriented problems can be solved (easily) with Pandas. Sure, one can invest in massive amounts of RAM, but most of the time, that’s just not the way to go — certainly not for a regular data-guy with a laptop.",
+  "translation": "我要在这里说明的重点是，熊猫并不能（轻松）解决所有面向数据的问题。 当然，一个人可以投资大量的RAM，但是在大多数情况下，这并不是路要走-当然，对于有笔记本电脑的常规数据专家来说，这也不行。"
+}, {
+  "tag": "P",
+  "text": "That type of problems are still best tackled with the good old SQL and a relational database where even a simple SQLite could perform better and in a very reasonable time.",
+  "translation": "使用良好的旧SQL和关系数据库仍然可以最好地解决这类问题，即使是简单的SQLite也可以在非常合理的时间内执行更好的性能。"
+}, {
+  "tag": "P",
+  "text": "We can solve this problem in several ways. Here’s one of them.",
+  "translation": "我们可以通过几种方式解决此问题。 这是其中之一。"
+}, {
+  "tag": "P",
+  "text": "My solution is based on storing data in a PostgreSQL database and performing a composite query with the help of PARTITION BY and ROW_NUMBER functions. I use the PostgreSQL database here, but it could just as well be the latest SQLite3 too (version 3.25 or later) as it now supports the partition by functionality — and that’s what we need for our solution.",
+  "translation": "我的解决方案基于将数据存储在PostgreSQL数据库中，并借助PARTITION BY和ROW_NUMBER函数执行复合查询。 我在这里使用PostgreSQL数据库，但是它也可以是最新的SQLite3（3.25版或更高版本），因为它现在按功能支持分区-这就是我们解决方案所需要的。"
+}, {
+  "tag": "P",
+  "text": "To enable saving results I created a new PostgreSQL database ‘clickstream’ running locally in a Docker container and connected to it from the Jupyter Notebook via an SQLAlchemy interface engine:",
+  "translation": "为了保存结果，我创建了一个新的PostgreSQL数据库“ clickstream”，该数据库在Docker容器中本地运行，并通过SQLAlchemy接口引擎从Jupyter Notebook连接到它："
+}, {
+  "tag": "PRE",
+  "text": "import psycopg2from sqlalchemy import create engineengine = create_engine(‘postgres://<db hostname>/clickstream’)conn = psycopg2.connect(    dbname=”clickstream”,    user=”postgres”,     password=”<secure-password>”,    host=”0.0.0.0\")cur = conn.cursor()",
+  "translation": "从sqlalchemy导入psycopg2导入create engineengine = create_engine（'postgres：// <db主机名> / clickstream'）conn = psycopg2.connect（dbname =“ clickstream”，user =“ postgres”，密码=“ <安全密码>”， host =” 0.0.0.0”）cur = conn.cursor（）"
+}, {
+  "tag": "P",
+  "text": "We then perform the summation of the Dask dataframe on the group by article and coming_from columns, and clean up the string data from tabs and return characters, that would interfere with the PostgreSQL upload:",
+  "translation": "然后，我们按文章和comeing_from列对Dask数据帧求和，并从制表符和返回字符中清除字符串数据，这会干扰PostgreSQL的上传："
+}, {
+  "tag": "PRE",
+  "text": "summed_articles = dfd.groupby([‘article’, ‘coming_from’])\\    .sum()\\    .reset_index()\\    .compute()for c in ['\\t', '\\n', '\\\\']:    summed_articles[‘article’] =  \\     summed_articles[‘article’].str.replace(c, ‘ ‘)summed_articles[‘coming_from’] = \\    summed_articles[‘coming_from’].str.replace(‘\\t’, ‘ ‘)",
+  "translation": "summed_articles = dfd.groupby（[['article'，'coming_from']）\\ .sum（）\\ .reset_index（）\\ .compute（）对于['\\ t'，'\\ n'，'\\\\']中的c ：summed_articles ['article'] = \\ summed_articles ['article']。str.replace（c，''）summed_articles ['coming_from'] = \\ summed_articles ['coming_from']。str.replace（'\\ t'，' '）"
+}, {
+  "tag": "P",
+  "text": "Again, at this point we still haven’t performed any editing and summed_articles is still a delayed Dask object.",
+  "translation": "同样，目前我们还没有进行任何编辑，summed_articles仍然是延迟的Dask对象。"
+}, {
+  "tag": "P",
+  "text": "One last thing to do before uploading the dataframe to the database is creating an empty table in an existing database, so sending an empty table with the right column names will do the trick quite well:",
+  "translation": "将数据帧上载到数据库之前，最后要做的一件事是在现有数据库中创建一个空表，因此发送具有正确列名的空表将可以很好地解决这一问题："
+}, {
+  "tag": "PRE",
+  "text": "pd.DataFrame(columns=summed_articles.columns).to_sql(    ‘summed_articles’,     con=engine,     if_exists=’replace’,     index=False)",
+  "translation": "pd.DataFrame（columns = summed_articles.columns）.to_sql（'summed_articles'，con = engine，if_exists ='replace'，index = False）"
+}, {
+  "tag": "P",
+  "text": "And finally, let’s upload data into it. Note, that at the time of writing the Dask dataframe offers no to_sql method, so we can use another trick to do it quickly chunk by chunk:",
+  "translation": "最后，让我们将数据上传到其中。 请注意，在编写Dask数据框时，没有提供to_sql方法，因此我们可以使用另一种技巧来快速地逐块执行："
+}, {
+  "tag": "PRE",
+  "text": "for n in range(summed_articles.npartitions):    table_chunk = summed_articles.get_partition(n).compute()    output = io.StringIO()    table_chunk.to_csv(output, sep=’\\t’, header=False, index=False)    output.seek(0)    try:        cur.copy_from(output, ‘summed_articles’, null=””)    except Exception:        err_tables.append(table_chunk)        conn.rollback()        continue    conn.commit()",
+  "translation": "对于范围（summed_articles.npartitions）中的n：table_chunk = summed_articles.get_partition（n）.compute（）output = io.StringIO（）table_chunk.to_csv（output，sep ='\\ t'，header = False，index = False） output.seek（0）尝试：cur.copy_from（output，'summed_articles'，null =””），但例外：err_tables.append（table_chunk）conn.rollback（）Continue conn.commit（）"
+}, {
+  "tag": "P",
+  "text": "Next, we create a SELECT statement that partitions the rows by article, orders them locally by the number of visits column ’n’ and indexes the ordered groups incrementally with integers (starting with 1 for every partitioned subset):",
+  "translation": "接下来，我们创建一个SELECT语句，该语句按文章对行进行划分，并按访问次数列“ n”在本地对其进行排序，并以整数（每个分区的子集均从1开始）对已排序的组进行递增索引："
+}, {
+  "tag": "PRE",
+  "text": "SELECT   row_number() OVER (    PARTITION BY article    ORDER BY n DESC  ) ArticleNR,   article,  coming_from,  nFROM article_sum"
+}, {
+  "tag": "P",
+  "text": "Then we aggregate the rows again by the article column and return only those with the index equal to 1, essentially filtering out the rows with the maximum ’n’ values for a given article. Here is the full SQL query:",
+  "translation": "然后，我们再次根据商品列汇总行，并仅返回索引等于1的行，从本质上过滤出给定文章中具有最大“ n”值的行。 这是完整的SQL查询："
+}, {
+  "tag": "PRE",
+  "text": "SELECT t.article, t.coming_from, t.n FROM (  SELECT row_number() OVER (      PARTITION BY article      ORDER BY n DESC    ) ArticleNR,     article,    coming_from,    n  FROM article_sum ) tWHERE t.ArticleNR = 1ORDER BY n DESC;",
+  "translation": "SELECT t.article，t.coming_from，t.n FROM（SELECT row_number（）OVER（Partition by article ORDER BY n DESC）ArticleNR，article，comeing_from，n FROM article_sum）tWHERE t.ArticleNR = 1ORDER BY n DESC;"
+}, {
+  "tag": "P",
+  "text": "The above SQL query was then executed against the database via the:",
+  "translation": "然后通过以下命令对数据库执行上述SQL查询："
+}, {
+  "tag": "PRE",
+  "text": "q = engine.execute(‘’’<SELECT statement here>’’’).fetchall()pd.DataFrame(q, columns=[‘article’, ‘coming_from’, ‘n’]).head(20)",
+  "translation": "q = engine.execute（‘’’<SELECT此处>’’’）。fetchall（）pd.DataFrame（q，columns = ['article'，'coming_from'，'n']）。head（20）"
+}, {
+  "tag": "P",
+  "text": "And voila, our table is ready.",
+  "translation": "瞧，我们的桌子已经准备好了。"
+}, {
+  "tag": "P",
+  "text": "Also, apparently the difference between a hyphen and minus kept a lot of people awake at night in 2018:",
+  "translation": "此外，显然连字符和减号之间的差异使许多人在2018年晚上醒来："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/22/0*tRJMbtnO6ovX57UU?q=20",
+  "type": "image",
+  "file": "0*tRJMbtnO6ovX57UU"
+}, {
+  "tag": "P",
+  "text": "I hope this guide helps you deal with larger datasets in Python using the Pandas + Dask combo. It’s clear that some complex analytical tasks are still best handled with other technologies like the good old relational database and SQL.",
+  "translation": "我希望本指南可以帮助您使用Pandas + Dask组合处理Python中的较大数据集。 很显然，某些复杂的分析任务仍可以通过其他技术（例如良好的旧关系数据库和SQL）来最好地处理。"
+}, {
+  "tag": "P",
+  "text": "Note 1: While using Dask, every dask-dataframe chunk, as well as the final output (converted into a Pandas dataframe), MUST be small enough to fit into the memory.",
+  "translation": "注意1：在使用Dask时，每个dask-dataframe块以及最终输出（转换为Pandas数据帧）必须足够小以适合内存。"
+}, {
+  "tag": "P",
+  "text": "Note 2: Here are some useful tools that help to keep an eye on data-size related issues:",
+  "translation": "注意2：以下是一些有用的工具，可帮助您密切关注与数据大小有关的问题："
+}, {
+  "tag": "OL",
+  "texts": ["%timeit magic function in the Jupyter Notebook", "df.memory_usage()", "ResourceProfiler from dask.diagnostics", "ProgressBar", "sys.getsizeof", "gc.collect()"],
+  "translations": ["Jupyter Notebook中的％timeit魔术功能", "df.memory_usage（）", "来自dask.diagnostics的ResourceProfiler", "进度条", "sys.getsizeof", "gc.collect（）"]
+}]
