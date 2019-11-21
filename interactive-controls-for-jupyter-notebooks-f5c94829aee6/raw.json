@@ -1,0 +1,309 @@
+[{
+  "tag": "P",
+  "text": "As always, I welcome feedback and constructive criticism. I can be reached on Twitter @koehrsen_will.",
+  "translation": "一如既往，我欢迎反馈和建设性的批评。 可以通过Twitter @koehrsen_will与我联系。"
+}, {
+  "tag": "P",
+  "text": "We haven’t gotten close to covering all the capabilities of IPywidgets. For instance, we can link values together, create custom widgets, make buttons, build animations, create a dashboard with tabs, and so on. Take a look at the documentation for further uses. Even with the small amount covered here, I hope you see how interactive controls can enhance a notebook workflow!",
+  "translation": "我们尚未接近涵盖IPywidget的所有功能。 例如，我们可以将值链接在一起，创建自定义窗口小部件，创建按钮，构建动画，创建带有选项卡的仪表板等等。 查看文档以备进一步使用。 即使这里只介绍了少量内容，我也希望您能看到交互式控件如何增强笔记本工作流程！"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/freeze/max/30/1*BCd8QFfDESKmHujXVTW3lA.gif?q=20",
+  "caption": "Simple widget to select theme for a plot.",
+  "type": "image",
+  "file": "1*BCd8QFfDESKmHujXVTW3lA.gif"
+}, {
+  "tag": "H1",
+  "text": "Conclusions",
+  "translation": "结论"
+}, {
+  "tag": "P",
+  "text": "The Jupyter Notebook is a great data exploration and analysis environment. However, by itself, it doesn’t offer the best functionality. Using tools like notebooks extensions and interactive widgets make the notebook come to life and make our jobs as data scientists more efficient. Furthermore, building widgets and using them in a notebook is simply fun! Writing lots of code to do the same task repeatedly is not enjoyable, but using interactive controls creates a more natural flow for our data explorations and analyses.",
+  "translation": "Jupyter Notebook是一个出色的数据探索和分析环境。 但是，它本身并不能提供最佳功能。 使用诸如笔记本扩展程序和交互式小部件之类的工具，可使笔记本栩栩如生，并使我们作为数据科学家的工作更加高效。 此外，构建小部件并在笔记本中使用它们非常有趣！ 编写大量代码以重复执行同一任务不是一件令人愉快的事情，但是使用交互式控件为我们的数据探索和分析创建了更自然的流程。"
+}, {
+  "tag": "H2",
+  "text": "Expanding the Capabilities of Interactive Controls",
+  "translation": "扩展交互式控件的功能"
+}, {
+  "tag": "P",
+  "text": "To get more from the IPywidgets library, we can make the widgets ourselves and use them int the interact function. One of my favorite widgets is the DatePicker. Say we have a function, stats_for_article_published_between, that takes a start and end date and prints stats for all the articles published between them. We can make this interactive using the following code",
+  "translation": "为了从IPywidgets库中获取更多信息，我们可以自己制作小部件并在交互功能中使用它们。 我最喜欢的小部件之一是DatePicker。 假设我们有一个stats_for_article_published_between函数，该函数采用开始日期和结束日期并为它们之间发布的所有文章打印统计信息。 我们可以使用以下代码进行交互"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/WillKoehrsen/5c683c7cf11a8f17b176f31da60fd9e7/raw/9d620050f9e26ff56fe5445049e172548f7e1ce3/datepicker_stats.py",
+  "code": "# Create interactive version of function with DatePickers\ninteract(stats_for_article_published_between,\n        start_date=widgets.DatePicker(value=pd.to_datetime('2018-01-01')),\n        end_date=widgets.DatePicker(value=pd.to_datetime('2019-01-01')))"
+}, {
+  "tag": "P",
+  "text": "Now we get two interactive date selection widgets and the values are passed into the function (see notebook for details):",
+  "translation": "现在，我们获得了两个交互式的日期选择小部件，并将值传递到函数中（有关详细信息，请参阅笔记本）："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/freeze/max/30/1*bba24bzeEstBsiqGZTN43w.gif?q=20",
+  "caption": "Interactive date selection controls.",
+  "type": "image",
+  "file": "1*bba24bzeEstBsiqGZTN43w.gif"
+}, {
+  "tag": "P",
+  "text": "Similarly, we can make a function that plots the cumulative total of a column up until a date using the same DataPicker interactive widget.",
+  "translation": "类似地，我们可以使用相同的DataPicker交互式小部件创建一个函数，以绘制直到某个日期为止一列的累计总数。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/freeze/max/30/1*HNsFYZBzWE6FkzFYLScWGw.gif?q=20",
+  "caption": "Cumulative plot of a column using interactive widgets.",
+  "type": "image",
+  "file": "1*HNsFYZBzWE6FkzFYLScWGw.gif"
+}, {
+  "tag": "P",
+  "text": "If we want to make the options for one widget dependent on the value of another, we use the observe function. Here, we alter the image browser function to choose both the directory and image. The list of images displayed is updated based on the directory we select.",
+  "translation": "如果要使一个窗口小部件的选项依赖于另一个窗口小部件的值，请使用观察功能。 在这里，我们更改图像浏览器功能以选择目录和图像。 显示的图像列表将根据我们选择的目录进行更新。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/WillKoehrsen/62b22c651565d85959523196444cf297/raw/f7d6f69465a4f4c948e47dc2740cb1b96fa1dc27/dependent_widgets.py",
+  "code": "# Create widgets\ndirectory = widgets.Dropdown(options=['images', 'nature', 'assorted'])\nimages = widgets.Dropdown(options=os.listdir(directory.value))\n\n# Updates the image options based on directory value\ndef update_images(*args):\n    images.options = os.listdir(directory.value)\n\n# Tie the image options to directory value\ndirectory.observe(update_images, 'value')\n\n# Show the images\ndef show_images(fdir, file):\n    display(Image(f'{fdir}/{file}'))\n\n_ = interact(show_images, fdir=directory, file=images)"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*Q9WIOEaOH6OGX_a3hnMeXA.png?q=20",
+  "type": "image",
+  "file": "1*Q9WIOEaOH6OGX_a3hnMeXA.png"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*VS74NDKRgjX0tqNU6SFTuw.png?q=20",
+  "caption": "Left show image options when the directory is “images” and right shows options when directory is “nature”.",
+  "type": "image",
+  "file": "1*VS74NDKRgjX0tqNU6SFTuw.png"
+}, {
+  "tag": "H2",
+  "text": "Reusable Widgets",
+  "translation": "可重用的小部件"
+}, {
+  "tag": "P",
+  "text": "When we want to reuse widgets across cells, we just need to assign them to the output of theinteract function.",
+  "translation": "当我们想在单元格之间重用窗口小部件时，只需将它们分配给interact函数的输出即可。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/WillKoehrsen/5c4ec64b32c2afb7c21fb6a53d3a57cf/raw/c0f5ab180d5f80dd9f279dcbdf5084f4e333989d/reusable.py",
+  "code": "def show_stats_by_tag(tag):\n    return(df.groupby(f'<tag>{tag}').describe()[['views', 'reads']])\n    \nstats = interact(show_stats_by_tag,\n                tag=widgets.Dropdown(options=['Towards Data Science', 'Education', \n                                              'Machine Learning', 'Python', 'Data Science']))"
+}, {
+  "tag": "P",
+  "text": "Now, to reuse the stats widget, we can just call stats.widget in a cell.",
+  "translation": "现在，要重用stats小部件，我们只需在单元格中调用stats.widget。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*QYziCr7jHUrrVB04Pw4YUg.png?q=20",
+  "caption": "The same widget used in another cell.",
+  "type": "image",
+  "file": "1*QYziCr7jHUrrVB04Pw4YUg.png"
+}, {
+  "tag": "P",
+  "text": "This lets us reuse our widgets across a notebook. As a note, the widgets are tied to one another meaning the value in one cell will be automatically updated to the value you select for the same widget in another cell.",
+  "translation": "这使我们可以在笔记本上重复使用我们的小部件。 请注意，小部件彼此绑定，这意味着一个单元格中的值将自动更新为您为另一单元格中的同一小部件选择的值。"
+}, {
+  "tag": "H2",
+  "text": "Widgets for Plots",
+  "translation": "绘图小部件"
+}, {
+  "tag": "P",
+  "text": "Interactive widgets are especially helpful for selecting data to plot. We can use the same @interact decorator with functions that visualize our data:",
+  "translation": "交互式小部件对于选择要绘制的数据特别有用。 我们可以将相同的@interact装饰器与用于可视化数据的函数一起使用："
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/WillKoehrsen/d01ccbe966d262a324e63329d9c57273/raw/3de723352c689cbb738b2c836e64910fe4d496df/scatterplot_interact.py",
+  "code": "import cufflinks as cf\n\n@interact\ndef scatter_plot(x=list(df.select_dtypes('number').columns), \n                 y=list(df.select_dtypes('number').columns)[1:],\n                 theme=list(cf.themes.THEMES.keys()), \n                 colorscale=list(cf.colors._scales_names.keys())):\n    \n    df.iplot(kind='scatter', x=x, y=y, mode='markers', \n             xTitle=x.title(), yTitle=y.title(), \n             text='title',\n             title=f'{y.title()} vs {x.title()}',\n            theme=theme, colorscale=colorscale)"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/freeze/max/30/1*8wbJtRWpS6NgH1Du8meLiA.gif?q=20",
+  "caption": "Interactive scatter plot made using cufflinks+plotly with IPywidgets controls",
+  "type": "image",
+  "file": "1*8wbJtRWpS6NgH1Du8meLiA.gif"
+}, {
+  "tag": "P",
+  "text": "Here we are using the amazing cufflinks+plotly combination to make an interactive plot with interactive IPython widget controls.",
+  "translation": "在这里，我们使用了令人惊叹的袖扣+绘图组合，以使用交互式IPython小部件控件进行交互式绘图。"
+}, {
+  "tag": "P",
+  "text": "You may have noticed the plot was a little slow to update. If that is the case, we can use @interact_manual which requires a button for updating.",
+  "translation": "您可能已经注意到该情节的更新速度有些慢。 如果是这种情况，我们可以使用@interact_manual，它需要一个用于更新的按钮。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*A_oq9mxIMsA3YMDz90QaZw.png?q=20",
+  "caption": "Button made with @interact_manual decorator.",
+  "type": "image",
+  "file": "1*A_oq9mxIMsA3YMDz90QaZw.png"
+}, {
+  "tag": "P",
+  "text": "Now the plot will only be updated when the button is pressed. This is useful for functions that take a while to return an output.",
+  "translation": "现在，仅在按下按钮时才会更新图。 这对于需要一段时间才能返回输出的函数很有用。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*VZpPyjPuhRTC8OVksfKS1g.jpeg?q=20",
+  "caption": "(Source)",
+  "type": "image",
+  "file": "1*VZpPyjPuhRTC8OVksfKS1g.jpeg"
+}, {
+  "tag": "H1",
+  "text": "Interactive Controls in Jupyter Notebooks",
+  "translation": "Jupyter笔记本中的交互式控件"
+}, {
+  "tag": "H2",
+  "text": "How to use interactive IPython widgets to enhance data exploration and analysis",
+  "translation": "如何使用交互式IPython小部件来增强数据探索和分析"
+}, {
+  "tag": "P",
+  "text": "There are few actions less efficient in data exploration than re-running the same cell over and over again, each time slightly changing the input parameters. Despite knowing this, I still find myself repeatedly executing cells just to make the slightest change, for example, choosing a different value for a function, selecting various date ranges for analysis, or even adjusting the theme of a plotly visualization. Not only is this inefficient, but it’s also frustrating, disrupting the flow of an exploratory data analysis.",
+  "translation": "在数据浏览中，几乎没有什么动作比一遍又一遍地重新运行同一单元（每次稍微更改输入参数）效率低。 尽管知道这一点，但我仍然发现自己重复执行单元只是为了进行最小的更改，例如，为函数选择一个不同的值，选择各种日期范围进行分析，甚至调整绘图可视化的主题。 这样不仅效率低下，而且令人沮丧，破坏了探索性数据分析的流程。"
+}, {
+  "tag": "P",
+  "text": "The ideal solution to this issue would be interactive controls to change inputs without needing to rewrite or rerun code. Fortunately, as is often the case in Python, someone has already run into this problem and developed a great tool to solve it. In this article, we’ll see how to get started with IPython widgets ( ipywidgets), interactive controls you can build with one line of code. This library allows us to turn Jupyter Notebooks from static documents into interactive dashboards, perfect for exploring and visualizing data.",
+  "translation": "解决此问题的理想方法是使用交互式控件来更改输入，而无需重写或重新运行代码。 幸运的是，就像Python中经常发生的那样，已经有人遇到了这个问题并开发了一个很好的工具来解决它。 在本文中，我们将介绍如何开始使用IPython小部件（ipywidgets）以及可以用一行代码构建的交互式控件。 该库使我们能够将Jupyter Notebook从静态文档转变为交互式仪表板，非常适合浏览和可视化数据。"
+}, {
+  "tag": "P",
+  "text": "You can view a completely interactive running notebook with the widgets in this article on mybinder by clicking the image below.",
+  "translation": "您可以通过单击下面的图片在mybinder上查看带有本文小部件的完全交互式正在运行的笔记本。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*tnz5_e5-ku2NAlwHB-gCfw.png?q=20",
+  "caption": "Widgets notebook on mybinder.org",
+  "type": "image",
+  "file": "1*tnz5_e5-ku2NAlwHB-gCfw.png"
+}, {
+  "tag": "P",
+  "text": "IPython widgets, unfortunately, do not render on GitHub or nbviewer but you can still access the notebook and run locally.",
+  "translation": "不幸的是，IPython小部件无法在GitHub或nbviewer上呈现，但是您仍然可以访问笔记本并在本地运行。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/freeze/max/30/1*AVw2xwbZls0MvCr5duz6IA.gif?q=20",
+  "caption": "Example of interactive widgets for data visualization",
+  "type": "image",
+  "file": "1*AVw2xwbZls0MvCr5duz6IA.gif"
+}, {
+  "tag": "H1",
+  "text": "Getting Started with IPywidgets",
+  "translation": "IPywidgets入门"
+}, {
+  "tag": "P",
+  "text": "The first step, as usual, is installing the library: pip install ipywidgets . Once that finishes, you can activate widgets for Jupyter Notebook with",
+  "translation": "与往常一样，第一步是安装库：pip install ipywidgets。 完成后，您可以使用以下命令激活Jupyter Notebook的小部件"
+}, {
+  "tag": "PRE",
+  "text": "jupyter nbextension enable --py widgetsnbextension",
+  "translation": "jupyter nbextension启用--py小部件"
+}, {
+  "tag": "P",
+  "text": "To use with JupyterLab, run:",
+  "translation": "要与JupyterLab一起使用，请运行："
+}, {
+  "tag": "PRE",
+  "text": "jupyter labextension install @jupyter-widgets/jupyterlab-manager",
+  "translation": "jupyter labextension安装@ jupyter-widgets / jupyterlab-manager"
+}, {
+  "tag": "P",
+  "text": "To import the ipywidgetslibrary in a notebook, run",
+  "translation": "要将ipywidgetslibrary导入笔记本中，请运行"
+}, {
+  "tag": "PRE",
+  "text": "import ipywidgets as widgetsfrom ipywidgets import interact, interact_manual",
+  "translation": "从ipywidgets作为小部件导入ipywidgets导入interact，interact_manual"
+}, {
+  "tag": "H2",
+  "text": "Single Line Interactive Controls",
+  "translation": "单行交互式控件"
+}, {
+  "tag": "P",
+  "text": "Let’s say we have the following dataframe with Medium article statistics (these are my actual stats, you can see how to get them in this article):",
+  "translation": "假设我们有以下具有中级文章统计信息的数据框（这些是我的实际统计信息，您可以在本文中了解如何获取它们）："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*RNeSqUM_HuDxr4h7mUHHfw.png?q=20",
+  "caption": "Dataframe of Medium stats",
+  "type": "image",
+  "file": "1*RNeSqUM_HuDxr4h7mUHHfw.png"
+}, {
+  "tag": "P",
+  "text": "How can we view all articles with more than 1000 reads? Here’s one way:",
+  "translation": "我们如何查看所有阅读次数超过1000的文章？ 这是一种方法："
+}, {
+  "tag": "PRE",
+  "text": "df.loc[df['reads'] > 1000]",
+  "translation": "df.loc [df ['reads']> 1000]"
+}, {
+  "tag": "P",
+  "text": "But if we want to show articles with more than 500 claps, we have to write another line of code:",
+  "translation": "但是，如果要显示拍手超过500个的文章，则必须编写另一行代码："
+}, {
+  "tag": "PRE",
+  "text": "df.loc[df['claps'] > 500]",
+  "translation": "df.loc [df ['claps']> 500]"
+}, {
+  "tag": "P",
+  "text": "Wouldn’t it be nice if we could just rapidly change these parameters — both the column and threshold — without writing more code? Try this:",
+  "translation": "如果我们不编写更多代码就可以快速更改这些参数（列和阈值）会不会很好？ 尝试这个："
+}, {
+  "tag": "PRE",
+  "text": "@interactdef show_articles_more_than(column='claps', x=5000):    return df.loc[df[column] > x]",
+  "translation": "@interactdef show_articles_more_than（column ='claps'，x = 5000）：返回df.loc [df [column]> x]"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/freeze/max/30/1*V9jZOgXY54vkPwhO6LHqiQ.gif?q=20",
+  "caption": "Interactive controls using @interact",
+  "type": "image",
+  "file": "1*V9jZOgXY54vkPwhO6LHqiQ.gif"
+}, {
+  "tag": "P",
+  "text": "With the @interact decorator, the IPywidgets library automatically gives us a text box and a slider for choosing a column and number! It looks at the inputs to our function and creates interactive controls based on the types. Now we can segment the data using the controls (widgets) without writing code.",
+  "translation": "使用@interact装饰器，IPywidgets库自动为我们提供了一个文本框和一个用于选择列和数字的滑块！ 它查看我们函数的输入，并根据类型创建交互式控件。 现在，我们可以使用控件（小部件）对数据进行分段，而无需编写代码。"
+}, {
+  "tag": "P",
+  "text": "You may have noticed some problems with the widgets — x can go negative and we had to type in the correct column name. We can fix these by providing specific arguments to the function parameters:",
+  "translation": "您可能已经注意到小部件的一些问题-x可能为负，我们必须输入正确的列名。 我们可以通过为函数参数提供特定的参数来解决这些问题："
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/WillKoehrsen/a4cb69e94f7ff064e428127f20030f34/raw/a895bec65c1acbaac0b671be8cb5eb53e5e62890/interact_with_specifications.py",
+  "code": "# Interact with specification of arguments\n@interact\ndef show_articles_more_than(column=['claps', 'views', 'fans', 'reads'], \n                            x=(10, 100000, 10)):\n    return df.loc[df[column] > x]"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*JOfa7_zaXLtaTXUk3KC1TQ.png?q=20",
+  "caption": "Improved widgets for subsetting data.",
+  "type": "image",
+  "file": "1*JOfa7_zaXLtaTXUk3KC1TQ.png"
+}, {
+  "tag": "P",
+  "text": "Now we get a dropdown for the column (with the options in the list) and an integer slider limited to a range (the format is (start, stop, step) ). Read through the documentation for the full details of how function parameters are mapped to widgets.",
+  "translation": "现在，我们获得了该列的下拉列表（列表中的选项）和一个限制在一定范围内的整数滑块（格式为（start，stop，step））。 通读文档以获取有关如何将函数参数映射到小部件的完整详细信息。"
+}, {
+  "tag": "P",
+  "text": "We can use this same @interact decorator to quickly turn any ordinary function into an interactive widget. For example, we may have a lot of images in a directory we want to quickly look through:",
+  "translation": "我们可以使用相同的@interact装饰器将任何普通函数快速转换为交互式小部件。 例如，我们可能想要快速浏览的目录中有很多图像："
+}, {
+  "tag": "PRE",
+  "text": "import osfrom IPython.display import Image@interactdef show_images(file=os.listdir('images/')):    display(Image(fdir+file))",
+  "translation": "从IPython.display导入os导入Image @ interactdef show_images（file = os.listdir（'images /'））：display（Image（fdir + file））"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/freeze/max/30/1*3TJ70_eD-Sw52msMGTLSFA.gif?q=20",
+  "caption": "Example of browsing images using IPython widgets",
+  "type": "image",
+  "file": "1*3TJ70_eD-Sw52msMGTLSFA.gif"
+}, {
+  "tag": "P",
+  "text": "Now we can quickly cycle through all the images without re-running the cell. This might actually be useful if you were building a convolutional neural network and wanted to examine the images your network had missclassified.",
+  "translation": "现在，我们可以快速循环浏览所有图像，而无需重新运行单元。 如果您正在构建卷积神经网络并想检查网络分类错误的图像，这实际上可能很有用。"
+}, {
+  "tag": "P",
+  "text": "The uses of widgets for data exploration are boundless. Another simple example is finding correlations between two columns:",
+  "translation": "小部件用于数据探索的用途是无限的。 另一个简单的示例是查找两列之间的相关性："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*-T7cEoKgZbqBwaJTCLVymA.png?q=20",
+  "caption": "Widget for correlation between two columns.",
+  "type": "image",
+  "file": "1*-T7cEoKgZbqBwaJTCLVymA.png"
+}, {
+  "tag": "P",
+  "text": "There are numerous helpful examples on the ipywidgets GitHub.",
+  "translation": "ipywidgets GitHub上有许多有用的示例。"
+}]
