@@ -1,0 +1,193 @@
+[{
+  "tag": "H1",
+  "text": "Three Niche Trends In Software Engineering For 2020",
+  "translation": "2020年软件工程的三个利基趋势"
+}, {
+  "tag": "H2",
+  "text": "Forget about the clichés: some real options to diversify your career in the short term",
+  "translation": "忘记陈词滥调：短期内实现职业多样化的一些实际选择"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*aC07WP7dVR0nKKPb?q=20",
+  "caption": "Photo by Austin Distel on Unsplash",
+  "type": "image",
+  "file": "0*aC07WP7dVR0nKKPb"
+}, {
+  "tag": "P",
+  "text": "You need to keep learning to survive and stay current in software engineering. In my previous article Stop Feeding the Ego, we looked at why this is the case and how to go about it. However, one question was left unanswered.",
+  "translation": "您需要继续学习以生存并保持最新的软件工程。 在上一篇文章“停止喂食自我”中，我们探讨了为什么会这样以及如何解决。 但是，有一个问题没有答案。"
+}, {
+  "tag": "P",
+  "text": "How do you choose what to focus on from the wide range of new frameworks and technologies that come out almost every day?",
+  "translation": "您如何选择几乎每天都会出现的各种新框架和新技术？"
+}, {
+  "tag": "P",
+  "text": "Software engineering is a wide and open field, there are hundreds of frameworks one can spend countless hours on learning, some relevant and in demand, others less so. Therefore, it’s no surprise that choosing what to focus on can be a daunting task, especially for somebody just starting out in the field or looking to change direction after several years spent in a specific sector.",
+  "translation": "软件工程是一个广阔而开放的领域，有成百上千个框架，一个框架可以花费无数的时间来学习，一些框架与需求相关，而其他框架则更少。 因此，毫不奇怪的是，选择专注于某项任务会是一项艰巨的任务，特别是对于刚开始涉足该领域或在特定行业工作了几年后寻求改变方向的人。"
+}, {
+  "tag": "P",
+  "text": "Today, we are going to look at three niches that I found worthy of exploration to expand one’s skill set. They are inspired by current industry trends, yet are specific enough to be immediately actionable. I purposely went specific here. I didn’t want to talk broadly about AI, AR / VR and Blockchain when there are plenty of articles online on these topics. I wanted to provide some useful information to help you start learning something new today.",
+  "translation": "今天，我们将研究三个我发现值得探索的领域，以扩展自己的技能。 它们受到当前行业趋势的启发，但又足够具体，可以立即采取行动。 我故意在这里具体说明。 当网上有很多关于这些主题的文章时，我不想广泛谈论AI，AR / VR和区块链。 我想提供一些有用的信息，以帮助您立即开始学习新知识。"
+}, {
+  "tag": "P",
+  "text": "Enough with the introduction, let’s jump right in!",
+  "translation": "足够了介绍，让我们直接进入吧！"
+}, {
+  "tag": "P",
+  "text": "Quick note before we start: I have added a references section at the end where you can find links to all the frameworks and technologies mentioned throughout the article.",
+  "translation": "开始之前的快速提示：我在结尾处添加了参考部分，您可以在其中找到指向本文中提到的所有框架和技术的链接。"
+}, {
+  "tag": "H1",
+  "text": "Voice assistants",
+  "translation": "语音助手"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*GMAYmnf9DvoZzzxD?q=20",
+  "caption": "Photo by Thomas Kolnowski on Unsplash",
+  "type": "image",
+  "file": "0*GMAYmnf9DvoZzzxD"
+}, {
+  "tag": "P",
+  "text": "Voice assistants are everywhere these days. Google Assistant, Siri and Alexa have become household names in the past five or so years, especially thanks to the rise of smart speakers and other home-bound devices, with or without screens. And they’re getting better and better every day.",
+  "translation": "这些天语音助手无处不在。 在过去的五年左右的时间里，Google Assistant，Siri和Alexa成为家喻户晓的名字，特别是由于智能扬声器和其他带有或不带有屏幕的家用设备的兴起。 而且他们每天都在变得越来越好。"
+}, {
+  "tag": "P",
+  "text": "Work in this far and wide field ranges from improving the actual assistant technology, to integration of existing services and development of new assistant skills, giving you a wide range of choices depending on your preference and ability.",
+  "translation": "从改进实际的助理技术到集成现有服务和开发新的助理技能，这一广泛领域的工作取决于您的喜好和能力，为您提供了广泛的选择。"
+}, {
+  "tag": "P",
+  "text": "Advancements in the technology behind these assistants are driven by Artificial Intelligence and Deep Learning, covering various aspects such as Text-To-Speech, Speech-To-Text and sentence analysis and recognition. If you decide to go down this route, you likely want to start getting familiar with Recurrent Neural Networks and the latest developments in the field before applying for a job at one of the big players in the space (Amazon, Google, Apple, Baidu, Microsoft, etc.). Alternatively, you can experiment with some open source implementations such as Mycroft.AI.",
+  "translation": "这些助手背后的技术进步是由人工智能和深度学习推动的，涵盖了文本到语音，语音到文本以及句子分析和识别等各个方面。 如果您决定走这条路，那么您可能想开始熟悉Recurrent Neural Networks和该领域的最新发展，然后再向该领域的一家大公司（亚马逊，谷歌，苹果，百度， Microsoft等）。 或者，您可以尝试使用一些开源实现，例如Mycroft.AI。"
+}, {
+  "tag": "P",
+  "text": "Aside from core assistant development, there is also much opportunity in integrating third party services into these assistants. SDKs for Google Assistant, Siri and Alexa are readily available and well documented. Their operation is technically not any different than using other SDKs / APIs, although familiarization with the specific concepts of voice interaction will no doubt give you an advantage when seeking work in this field.",
+  "translation": "除了核心助理开发之外，还将很多机会将第三方服务集成到这些助理中。 适用于Google助手，Siri和Alexa的SDK随时可用并且有据可查。 从技术上讲，它们的操作与使用其他SDK / API没什么不同，尽管熟悉语音交互的特定概念无疑会在此领域寻求工作时为您带来优势。"
+}, {
+  "tag": "H1",
+  "text": "Passwordless authentication",
+  "translation": "无密码认证"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*KbSCWW6REg3b_Sqv?q=20",
+  "caption": "Photo by NeONBRAND on Unsplash",
+  "type": "image",
+  "file": "0*KbSCWW6REg3b_Sqv"
+}, {
+  "tag": "P",
+  "text": "The password is obsolete. It’s the weakest link in any authentication strategy and the most frustrating aspect of the login workflow for an end user. Who wants to remember an extensive list of credentials for their various online identities? Password managers can help, but they can also introduce an extra layer of risk.",
+  "translation": "密码已过时。 对于最终用户来说，它是所有身份验证策略中最薄弱的环节，也是登录工作流程中最令人沮丧的方面。 谁想记住各种在线身份凭证的详尽清单？ 密码管理器可以提供帮助，但也会带来额外的风险。"
+}, {
+  "tag": "P",
+  "text": "The good news is that passwords can be replaced by alternative means of authentication which are harder to crack, such as biometrics validation performed directly on the end user’s smartphone of choice. These include fingerprint, facial and iris recognition, used alone or in conjunction with predetermined passphrases to further confirm the user’s identity.",
+  "translation": "好消息是，密码可以用其他难以破解的身份验证方式代替，例如直接在最终用户选择的智能手机上执行生物识别验证。 其中包括指纹，面部和虹膜识别，可单独使用或与预定密码结合使用，以进一步确认用户的身份。"
+}, {
+  "tag": "P",
+  "text": "As the world moves away from cryptic passwords, there’s an opportunity for engineers to specialize in either the validation aspect of biometrics, or the implementation / integration of this authentication method with third party services.",
+  "translation": "随着世界不再使用密码，工程师有机会专注于生物识别的验证方面，或者将这种身份验证方法与第三方服务实现/集成。"
+}, {
+  "tag": "P",
+  "text": "Again, your options vary depending on whether you want to be on the producer side or the consumer side of the authentication equation. For the former, as we have seen for voice assistants, most of the work involves AI / Deep Learning, this time covering both Recurrent and Convolutional Neural Networks. The latter is especially true for Facial and Fingerprint recognition as image classification is involved in both cases, and research is fervent in this area.",
+  "translation": "同样，您的选择会有所不同，这取决于您是希望位于身份验证方的生产方还是消费者方。 对于前者，正如我们在语音助手中看到的那样，大部分工作涉及AI /深度学习，这一次涵盖了递归和卷积神经网络。 后者对于面部和指纹识别尤为重要，因为这两种情况都涉及图像分类，并且在该领域的研究非常活跃。"
+}, {
+  "tag": "P",
+  "text": "In terms of potential employers in the biometrics field the choice is fairly wide, ranging from Google and Apple with their smartphone-based solutions, all the way to Crossmatch and Identity Automation for specific markets such as medical and law enforcement.",
+  "translation": "就生物识别领域的潜在雇主而言，选择范围相当广泛，从谷歌和苹果及其基于智能手机的解决方案到针对特定市场（例如医疗和执法）的Crossmatch和Identity Automation一直一应俱全。"
+}, {
+  "tag": "P",
+  "text": "On the consumer side, the obvious place to start is the SDK documentation from both Apple and Google on biometrics for iOS and Android, respectively.",
+  "translation": "在消费者方面，显而易见的起点是Apple和Google分别针对iOS和Android的生物识别技术提供的SDK文档。"
+}, {
+  "tag": "H1",
+  "text": "Static website generation",
+  "translation": "静态网站生成"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*sviPYMflToZ4Szaa?q=20",
+  "caption": "Photo by Pankaj Patel on Unsplash",
+  "type": "image",
+  "file": "0*sviPYMflToZ4Szaa"
+}, {
+  "tag": "P",
+  "text": "Perhaps less glamorous than the previous two, the creation and management of content-rich websites is nevertheless in high demand, as more and more companies use content to market themselves to their desired customer demographic.",
+  "translation": "内容丰富的网站的创建和管理可能不如前两个迷人，但是随着越来越多的公司使用内容向所需的客户群推销自己，对内容的网站的创建和管理需求很高。"
+}, {
+  "tag": "P",
+  "text": "Traditionally, Wordpress has been the platform of choice for creating this kind of sites, and it’s still going strong today. However, Wordpress is a complex CMS system powered by PHP, requiring ongoing maintenance and updates to manage potential security threats.",
+  "translation": "传统上，Wordpress一直是创建此类网站的首选平台，而今天它仍然很强大。 但是，Wordpress是由PHP驱动的复杂CMS系统，需要进行持续的维护和更新以管理潜在的安全威胁。"
+}, {
+  "tag": "P",
+  "text": "An alternative that is gaining traction recently is the programmatic generation of static websites. These have the advantage of being fast and highly scalable as they can be served through a CDN, and decrease the security risk as they do not require PHP or the execution of any other server-side code beyond the web server itself.",
+  "translation": "最近备受关注的一种替代方法是以编程方式生成静态网站。 由于它们可以通过CDN提供服务，因此它们具有快速且高度可扩展的优点，并且由于它们不需要PHP或执行Web服务器本身以外的任何其他服务器端代码，因此降低了安全风险。"
+}, {
+  "tag": "P",
+  "text": "Some popular tools to generate this kind of websites include NextJS, GatsbyJS and Hugo.",
+  "translation": "生成此类网站的一些流行工具包括NextJS，GatsbyJS和Hugo。"
+}, {
+  "tag": "P",
+  "text": "Whereas the first two are based on React, the popular web development framework by Facebook, Hugo is based on the Go language by Google.",
+  "translation": "前两个基于Facebook流行的Web开发框架React，而Hugo基于Google的Go语言。"
+}, {
+  "tag": "P",
+  "text": "The frameworks themselves are pretty straightforward to learn, especially if you have a background knowledge of the underlying technologies (Javascript / React or Go), and can be combined with pure frontend frameworks such as Bootstrap and Typography.JS to quickly turn around a professional-looking website.",
+  "translation": "框架本身非常容易学习，特别是如果您具有基础技术（Javascript / React或Go）的背景知识，并且可以与纯粹的前端框架（如Bootstrap和Typography.JS）结合使用，以快速解决专业人士- 寻找网站。"
+}, {
+  "tag": "P",
+  "text": "My favorite of this lot is GatsbyJS, thanks to its React foundation, GraphQL data querying and vast array of plugins available, including one that allows you to use Markdown documents as a source of data for your web pages.",
+  "translation": "我最喜欢的是GatsbyJS，这要归功于它的React基础，GraphQL数据查询和大量可用的插件，其中包括一个允许您将Markdown文档用作网页数据源的工具。"
+}, {
+  "tag": "P",
+  "text": "In fact, I think GatsbyJS is also a very good introduction to React and GraphQL for somebody coming from a traditional front-end web development background, making it a valid choice for an engineer looking to upgrade their skills, to maybe eventually move into complex web app development.",
+  "translation": "实际上，对于那些来自传统前端Web开发背景的人来说，我认为GatsbyJS还是React和GraphQL的很好的入门指南，对于寻求升级技能，最终进入复杂Web的工程师来说，它是一个有效的选择。 应用开发。"
+}, {
+  "tag": "H1",
+  "text": "A parting thought",
+  "translation": "离别的想法"
+}, {
+  "tag": "P",
+  "text": "I hope you found this quick read useful, and that you feel inspired to learn something new today.",
+  "translation": "我希望您对本快速阅读有所帮助，并希望自己受到启发学习当今的新知识。"
+}, {
+  "tag": "P",
+  "text": "Regardless of what you choose to learn, from this list or otherwise, the important thing is that you have fun while doing it. There’s nothing worse than to specialize in a field in which you have no interest, perhaps because of the allure of a good salary either now or further down the line.",
+  "translation": "无论您选择学习什么，无论是从此列表中学习还是以其他方式学习，重要的是您在学习时会很有趣。 没有什么比专精于您没有兴趣的领域更糟糕的了，也许是因为现在或以后的高薪诱人。"
+}, {
+  "tag": "P",
+  "text": "Eventually, you will get bored and your code quality will suffer, and maybe that’s why you are reading this article now. If that’s the case, I don’t blame you as I have been there myself before, but I have one provoking thought: what are you waiting for to turn your career around?",
+  "translation": "最终，您会感到无聊，代码质量也会受到影响，也许这就是您现在阅读本文的原因。 如果是这样的话，我不会像以前那样去怪你，但是我有一个令人发指的想法：您还等什么来扭转职业？"
+}, {
+  "tag": "P",
+  "text": "“Education is our passport to the future, for tomorrow belongs only to the people who prepare for it today.” — Malcolm X, 1964",
+  "translation": "“教育是我们通往未来的通行证，因为明天只属于为今天做好准备的人们。”-马尔科姆·X，1964年"
+}, {
+  "tag": "P",
+  "text": "Till the next article, keep on developing your passion!",
+  "translation": "直到下一篇文章，继续发展您的激情！"
+}, {
+  "tag": "H1",
+  "text": "References / Further Reading",
+  "translation": "参考书目/进一步阅读"
+}, {
+  "tag": "H2",
+  "text": "Voice Assistants",
+  "translation": "语音助手"
+}, {
+  "tag": "UL",
+  "texts": ["Recent Advances in Recurrent Neural Networks, Hojjat Salehinejad et al. [ PDF ]", "Mycroft.AI, An open source voice assistant [ Website ]", "Siri for Developers, Apple [ Website ]", "Alexa Voice SDK, Amazon [ Website ]", "Actions on Google, Google [ Website ]"],
+  "translations": ["递归神经网络的最新进展，Hojjat Salehinejad等。 [PDF]", "Mycroft.AI，开源语音助手[网站]", "适用于开发人员的Siri，Apple [网站]", "Alexa语音SDK，亚马逊[网站]", "Google，Google [网站]上的操作"]
+}, {
+  "tag": "H2",
+  "text": "Passwordless authentication",
+  "translation": "无密码认证"
+}, {
+  "tag": "UL",
+  "texts": ["PoreNet: CNN-based Pore Descriptor for High-Resolution Fingerprint Recognition, Vijay Anand and Vivek Kanhangad, IEEE [ PDF ]", "Android biometrics SDK, Google [ Website ]", "LocalAuthentication, Apple [ Website ]"],
+  "translations": ["PoreNet：Vinny Anand和Vivek Kanhangad，IEEE，用于高分辨率指纹识别的基于CNN的毛孔描述符[IEEE]", "Android生物识别SDK，Google [网站]", "Apple，LocalAuthentication，[网站]"]
+}, {
+  "tag": "H2",
+  "text": "Static website generation",
+  "translation": "静态网站生成"
+}, {
+  "tag": "UL",
+  "texts": ["NextJS — Production grade React applications that scale [ Website ]", "GatsbyJS — Blazing fast modern site generator for React [ Website ]", "Hugo — Hugo is one of the most popular open-source static site generators [ Website ]"],
+  "translations": ["NextJS —可扩展的生产级React应用程序[网站]", "GatsbyJS —为React提供创新的快速现代网站生成器[网站]", "雨果-雨果是最受欢迎的开源静态网站生成器之一[网站]"]
+}]
