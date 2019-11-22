@@ -1,0 +1,241 @@
+[{
+  "tag": "H2",
+  "text": "The Best Front-End Hacking Cheatsheets — All in One Place",
+  "translation": "最好的前端黑客秘籍-集中一处"
+}, {
+  "tag": "H3",
+  "text": "It’s rather impossible to know all the APIs by heart. This is where cheatsheets come in! Here are the best front end…",
+  "translation": "完全了解所有API几乎是不可能的。 这是备忘单进来的地方！ 这是最好的前端…"
+}, {
+  "tag": "H2",
+  "text": "The Secret to Being a Top Developer Is Building Things! Here’s a List of Fun Apps to Build!",
+  "translation": "成为顶级开发人员的秘诀在于构建事物！ 这是要构建的有趣应用的列表！"
+}, {
+  "tag": "H1",
+  "text": "Conclusion",
+  "translation": "结论"
+}, {
+  "tag": "P",
+  "text": "Thanks for reading — hope you found something interesting to code.",
+  "translation": "感谢您的阅读，希望您发现一些有趣的代码。"
+}, {
+  "tag": "P",
+  "text": "Remember, there are no shortcuts when it comes to getting good at coding. Start putting the work in, and boost your coding skills by building as much as you can. If you didn’t find anything interesting, check the post below for even more ideas.",
+  "translation": "请记住，要精通编码，没有捷径可走。 开始投入工作，并通过尽可能多的构建来提高您的编码技能。 如果您没有发现任何有趣的东西，请查看下面的文章以获取更多想法。"
+}, {
+  "tag": "H2",
+  "text": "The Secret to Being a Top Developer Is Building Things! Here’s a List of Fun Apps to Build!",
+  "translation": "成为顶级开发人员的秘诀在于构建事物！ 这是要构建的有趣应用的列表！"
+}, {
+  "tag": "H2",
+  "text": "The Best Front-End Hacking Cheatsheets — All in One Place",
+  "translation": "最好的前端黑客秘籍-集中一处"
+}, {
+  "tag": "H3",
+  "text": "It’s rather impossible to know all the APIs by heart. This is where cheatsheets come in! Here are the best front end…",
+  "translation": "完全了解所有API几乎是不可能的。 这是备忘单进来的地方！ 这是最好的前端…"
+}, {
+  "tag": "H1",
+  "text": "6. Stripe-Style Navigation",
+  "translation": "6.条纹样式导航"
+}, {
+  "tag": "P",
+  "text": "What’s unique about this navigation is the popover container morphs to fit the content. There’s an elegance to this transition versus the traditional behavior of opening and closing a new popover entirely.",
+  "translation": "此导航的独特之处在于弹出容器的变形以适合内容。 与完全打开和关闭新的弹出框的传统行为相比，此过渡具有优雅之处。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/freeze/max/60/1*SSCs0AjDiZbWcY9Fa6NDMQ.gif?q=20",
+  "caption": "Stripe navigation",
+  "type": "image",
+  "file": "1*SSCs0AjDiZbWcY9Fa6NDMQ.gif"
+}, {
+  "tag": "H2",
+  "text": "What you’ll learn by solving the challenge",
+  "translation": "解决挑战将学到什么"
+}, {
+  "tag": "UL",
+  "texts": ["How to combine CSS animations with transitions", "Cross-fading content and applying the active class for the element being hovered"],
+  "translations": ["如何结合CSS动画和过渡效果", "交叉淡入淡出的内容并将活动类应用于要悬停的元素"]
+}, {
+  "tag": "P",
+  "text": "Try doing it first yourself, but if you need help, check out this post for a step-by-step guide.",
+  "translation": "尝试先自己做，但是如果需要帮助，请查看此帖子以获取分步指南。"
+}, {
+  "tag": "H1",
+  "text": "5. Reddit-Style Chat Rooms",
+  "translation": "5. Reddit风格的聊天室"
+}, {
+  "tag": "P",
+  "text": "Chat rooms are a popular way of communicating thanks to being easy and fun to use. But what actually powers modern-day chat rooms? WebSockets!",
+  "translation": "聊天室易于使用和有趣，是一种流行的交流方式。 但是，实际上是什么为现代聊天室提供了动力？ WebSockets！"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*AdNcS-2KHOGCuiZmEcKtRA.png?q=20",
+  "type": "image",
+  "file": "1*AdNcS-2KHOGCuiZmEcKtRA.png"
+}, {
+  "tag": "H2",
+  "text": "What you’ll learn by solving the challenge",
+  "translation": "解决挑战将学到什么"
+}, {
+  "tag": "UL",
+  "texts": ["How to use WebSockets and real-time communication and data updates", "How user permissions levels work (e.g, the owner of a chat channel has the role of admin, while others in the room have the role of user)", "Form validation and handling — remember, the chat box for sending a message is an input element", "How to create and join different chat rooms", "Direct messages and how they work. Users can communicate with other users privately. Essentially, you’ll be establishing a WebSocket connection between two users."],
+  "translations": ["如何使用WebSockets和实时通讯以及数据更新", "用户权限级别的工作方式（例如，聊天频道的所有者具有管理员的角色，而会议室中的其他人则具有用户的角色）", "表单验证和处理-请记住，用于发送消息的聊天框是输入元素", "如何创建和加入不同的聊天室", "直接消息及其工作方式。 用户可以私下与其他用户通信。 本质上，您将在两个用户之间建立WebSocket连接。"]
+}, {
+  "tag": "H2",
+  "text": "How to set up a powerful API with GraphQL, Koa, and MongoDB",
+  "translation": "如何使用GraphQL，Koa和MongoDB设置功能强大的API"
+}, {
+  "tag": "H3",
+  "text": "Building an API is fun!",
+  "translation": "构建API很有趣！"
+}, {
+  "tag": "H1",
+  "text": "4. GitHub Repositories With Search Functionality",
+  "translation": "4.具有搜索功能的GitHub存储库"
+}, {
+  "tag": "P",
+  "text": "Nothing out of the world here — GitHub repositories are basically just a glorified list.",
+  "translation": "这里没有什么比GitHub仓库更重要的是。"
+}, {
+  "tag": "P",
+  "text": "The task is to display the repositories and allow the user to filter through the repositories. Use the official GitHub API to fetch repositories per user.",
+  "translation": "任务是显示存储库，并允许用户筛选存储库。 使用官方GitHub API提取每个用户的存储库。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*PAPNqs_dj7Jd9RkqSXYlbw.png?q=20",
+  "caption": "GitHub profile page — https://github.com/indreklasn",
+  "type": "image",
+  "file": "1*PAPNqs_dj7Jd9RkqSXYlbw.png"
+}, {
+  "tag": "H2",
+  "text": "What you’ll learn by solving the challenge",
+  "translation": "解决挑战将学到什么"
+}, {
+  "tag": "UL",
+  "texts": ["How to fetch data from an API", "How to display the data from the API", "How to filter and show the relevant data for each search", "Optional: If you’re up for the challenge, use the v4 API, which is built using GraphQL. If you want to learn GraphQL, head over to one of my previous articles."],
+  "translations": ["如何从API获取数据", "如何显示API中的数据", "如何过滤和显示每次搜索的相关数据", "可选：如果您准备好迎接挑战，请使用通过GraphQL构建的v4 API。 如果您想学习GraphQL，请阅读我以前的文章之一。"]
+}, {
+  "tag": "H2",
+  "text": "How to set up a powerful API with GraphQL, Koa, and MongoDB",
+  "translation": "如何使用GraphQL，Koa和MongoDB设置功能强大的API"
+}, {
+  "tag": "H3",
+  "text": "Building an API is fun!",
+  "translation": "构建API很有趣！"
+}, {
+  "tag": "H1",
+  "text": "3. Twitter Heart Animation",
+  "translation": "3. Twitter心脏动画"
+}, {
+  "tag": "P",
+  "text": "Back in 2016, Twitter introduced this awesome animation for their tweet likes. As of 2019, it still looks rad, so why not create one yourself?",
+  "translation": "早在2016年，Twitter就针对喜欢的推特推出了这个很棒的动画。 截至2019年，它看起来仍然很rad，那么为什么不自己创建一个人呢？"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/freeze/max/60/1*mdijyUaqeu48ORAw9QPBBA.gif?q=20",
+  "caption": "Twitter tweet like animation",
+  "type": "image",
+  "file": "1*mdijyUaqeu48ORAw9QPBBA.gif"
+}, {
+  "tag": "H2",
+  "text": "What you’ll learn by solving the challenge",
+  "translation": "解决挑战将学到什么"
+}, {
+  "tag": "UL",
+  "texts": ["How the keyframes CSS attribute works", "How to manipulate and animate HTML elements", "How to combine JavaScript, HTML, and CSS"],
+  "translations": ["关键帧CSS属性如何工作", "如何操作和动画HTML元素", "如何结合JavaScript，HTML和CSS"]
+}, {
+  "tag": "H2",
+  "text": "World Population by Year",
+  "translation": "每年世界人口"
+}, {
+  "tag": "H3",
+  "text": "Population growth through history from 5000 BC to the current year (2019) for the entire population of the world",
+  "translation": "从公元前5000年到当年（2019年）的历史人口增长"
+}, {
+  "tag": "H1",
+  "text": "2. Bar Chart From Scratch",
+  "translation": "2.从头开始的条形图"
+}, {
+  "tag": "P",
+  "text": "A bar chart or bar graph is a chart or graph that presents categorical data with rectangular bars with heights or lengths proportional to the values they represent.",
+  "translation": "条形图或条形图是用高度或长度与其所代表的值成比例的矩形条形显示分类数据的图表。"
+}, {
+  "tag": "P",
+  "text": "The bars can be plotted vertically or horizontally. A vertical bar chart is sometimes called a line graph.",
+  "translation": "条形图可以垂直或水平绘制。 垂直条形图有时称为折线图。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/freeze/max/60/1*37uCN6y1WyLukxwCadhWRw.gif?q=20",
+  "type": "image",
+  "file": "1*37uCN6y1WyLukxwCadhWRw.gif"
+}, {
+  "tag": "H2",
+  "text": "What you’ll learn by solving the challenge",
+  "translation": "解决挑战将学到什么"
+}, {
+  "tag": "UL",
+  "texts": ["Display data in a structured and easily understandable way", "Optional: Learn how to use the <canvas> element and how to draw elements with it"],
+  "translations": ["以结构化且易于理解的方式显示数据", "可选：了解如何使用<canvas>元素以及如何使用它绘制元素"]
+}, {
+  "tag": "P",
+  "text": "You can find the data for the world population by year here.",
+  "translation": "您可以在此处找到按年份列出的世界人口数据。"
+}, {
+  "tag": "H2",
+  "text": "World Population by Year",
+  "translation": "每年世界人口"
+}, {
+  "tag": "H3",
+  "text": "Population growth through history from 5000 BC to the current year (2019) for the entire population of the world",
+  "translation": "从公元前5000年到当年（2019年）的历史人口增长"
+}, {
+  "tag": "H1",
+  "text": "1. Credit Card Form",
+  "translation": "1.信用卡表格"
+}, {
+  "tag": "P",
+  "text": "A fantastic credit card form with smooth and sweet microinteractions. Includes number formatting, validation, and automatic card-type detection. It’s built with Vue.js and also fully responsive.",
+  "translation": "梦幻般的信用卡形式，具有流畅而甜美的微交互作用。 包括数字格式化，验证和自动卡类型检测。 它使用Vue.js构建，并且响应速度也很快。"
+}, {
+  "tag": "P",
+  "text": "See it live here.",
+  "translation": "在这里看到它。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/freeze/max/60/1*pwVhnOs4CohLUcmu3I4Z6A.gif?q=20",
+  "caption": "credit-card-form — https://github.com/muhammederdem/credit-card-form",
+  "type": "image",
+  "file": "1*pwVhnOs4CohLUcmu3I4Z6A.gif"
+}, {
+  "tag": "H2",
+  "text": "What you’ll learn by solving the challenge",
+  "translation": "解决挑战将学到什么"
+}, {
+  "tag": "UL",
+  "texts": ["Form handling and validation", "Handling event listeners (e.g., when the fields change, it’ll print the values on the credit card)", "Understanding how to display and position elements on the page, especially the credit card overlapping the form"],
+  "translations": ["表格处理和验证", "处理事件监听器（例如，当字段更改时，它将在信用卡上打印值）", "了解如何在页面上显示和定位元素，尤其是与表格重叠的信用卡"]
+}, {
+  "tag": "H1",
+  "text": "Here Are 6 Front-End Challenges to Code",
+  "translation": "这是代码的6个前端挑战"
+}, {
+  "tag": "H2",
+  "text": "Are you able to code these front-end challenges?",
+  "translation": "您是否可以编写这些前端挑战的代码？"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*Ki5tlWeeJf2BR0sG?q=20",
+  "caption": "Photo by Olav Ahrens Røtne on Unsplash",
+  "type": "image",
+  "file": "0*Ki5tlWeeJf2BR0sG"
+}, {
+  "tag": "P",
+  "text": "Front-end development is stressful and hard — but with practice, one can master the craft. If you’re willing to put the work and effort in, you’ll be able to become a proficient problem solver in the front-end development landscape. One effective way to become a great front-end developer is to simply build and solve as many challenges as one can.",
+  "translation": "前端开发非常艰巨且艰辛，但是通过实践，人们可以熟练掌握技术。 如果您愿意付出努力和努力，那么您将能够成为前端开发领域中熟练的问题解决者。 成为优秀的前端开发人员的一种有效方法是简单地构建和解决尽可能多的挑战。"
+}, {
+  "tag": "P",
+  "text": "Here are six challenges you can start solving today to become a master of front-end development. Without further ado, here are the six challenges you probably should code.",
+  "translation": "您必须立即解决以下六个挑战，才能成为前端开发大师。 事不宜迟，这里可能是您应该编写的六个挑战。"
+}]
