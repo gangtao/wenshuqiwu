@@ -1,0 +1,414 @@
+[{
+  "tag": "H1",
+  "text": "Conclusion",
+  "translation": "结论"
+}, {
+  "tag": "P",
+  "text": "Thanks for reading, I hope you learned something new. If you know a handy command-line trick, please let’s grow together and post it in the responses.",
+  "translation": "感谢您的阅读，希望您学到了一些新知识。 如果您知道方便的命令行技巧，请一起成长，并将其发布在回复中。"
+}, {
+  "tag": "P",
+  "text": "Stay curious and hungry!",
+  "translation": "保持好奇和饥饿！"
+}, {
+  "tag": "H1",
+  "text": "11. mv",
+  "translation": "11.MV"
+}, {
+  "tag": "PRE",
+  "text": "$ mv somefile /to/some/other/path",
+  "translation": "$ mv somefile / to / some / other / path"
+}, {
+  "tag": "P",
+  "text": "The mv command moves files or directories from one place to another. The mv command supports moving single files, multiple files, and directories.",
+  "translation": "mv命令将文件或目录从一个位置移动到另一个位置。 mv命令支持移动单个文件，多个文件和目录。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*TdqoyPUFrdBvI2Ws7cfyfQ.png?q=20",
+  "caption": "Moving the some-directory from components to utils directory",
+  "type": "image",
+  "file": "1*TdqoyPUFrdBvI2Ws7cfyfQ.png"
+}, {
+  "tag": "H1",
+  "text": "10. find",
+  "translation": "10.找到"
+}, {
+  "tag": "PRE",
+  "text": "$ find path -name filename",
+  "translation": "$查找路径-名称文件名"
+}, {
+  "tag": "P",
+  "text": "The find command lets you quickly lookup a file or directory. It’s useful when you’re working on a big project with hundreds of files and multiple directories.",
+  "translation": "使用find命令可以快速查找文件或目录。 当您正在处理包含数百个文件和多个目录的大型项目时，此功能非常有用。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/56/1*j291SZcYXSaPtdvqipX6sg.png?q=20",
+  "caption": "Finding all files with the name of index.js",
+  "type": "image",
+  "file": "1*j291SZcYXSaPtdvqipX6sg.png"
+}, {
+  "tag": "H2",
+  "text": "Search for files of a particular type",
+  "translation": "搜索特定类型的文件"
+}, {
+  "tag": "P",
+  "text": "The find command also lets you search for the same type of files in a directory (and its subdirectories). For example, the following command will search for all .js files in your current working directory.",
+  "translation": "使用find命令还可以在目录（及其子目录）中搜索相同类型的文件。 例如，以下命令将搜索当前工作目录中的所有.js文件。"
+}, {
+  "tag": "PRE",
+  "text": "$ find . -name \"*.js\"",
+  "translation": "$查找。 名称“ * .js”"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*_i8_TEIElXAAyXy-F1JQmA.png?q=20",
+  "caption": "Finding all .js files in the components directory",
+  "type": "image",
+  "file": "1*_i8_TEIElXAAyXy-F1JQmA.png"
+}, {
+  "tag": "H1",
+  "text": "9. wget",
+  "translation": "9. wget"
+}, {
+  "tag": "PRE",
+  "text": "$ wget someurl",
+  "translation": "$ wget someurl"
+}, {
+  "tag": "P",
+  "text": "GNU Wget is a free software package for retrieving files using HTTP, HTTPS, FTP, and FTPS — the most widely-used internet protocols. It’s a non-interactive command-line tool, so it may easily be called from scripts, CRON jobs, terminals without X-Windows support, etc.",
+  "translation": "GNU Wget是一个免费软件包，可使用HTTP，HTTPS，FTP和FTPS（使用最广泛的Internet协议）检索文件。 这是一种非交互式的命令行工具，因此可以轻松地从脚本，CRON作业，不支持X-Windows的终端等中调用。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*nbzEhCeVUxT2-Px0oQbszQ.png?q=20",
+  "caption": "wget to fetch information about a webpage",
+  "type": "image",
+  "file": "1*nbzEhCeVUxT2-Px0oQbszQ.png"
+}, {
+  "tag": "P",
+  "text": "GNU Wget has many features to make retrieving large files or mirroring entire web or FTP sites easy, including:",
+  "translation": "GNU Wget具有许多使检索大型文件或镜像整个Web或FTP站点变得容易的功能，包括："
+}, {
+  "tag": "UL",
+  "texts": ["Can resume aborted downloads using REST and RANGE", "Can use filename wild cards and recursively mirror directories", "NLS-based message files for many different languages", "Optionally converts absolute links in downloaded documents to relative so that downloaded documents may link to each other locally", "Runs on most UNIX-like operating systems as well as Microsoft Windows", "Supports HTTP proxies", "Supports HTTP cookies", "Supports persistent HTTP connections", "Unattended / background operation", "Uses local file timestamps to determine whether documents need to be re-downloaded when mirroring", "GNU Wget is distributed under the GNU General Public License."],
+  "translations": ["可以使用REST和RANGE恢复中止的下载", "可以使用文件名通配符并递归镜像目录", "基于NLS的消息文件，适用于多种语言", "（可选）将下载的文档中的绝对链接转换为相对链接，以便下载的文档可以在本地彼此链接", "在大多数类似UNIX的操作系统以及Microsoft Windows上运行", "支持HTTP代理", "支持HTTP cookie", "支持持久的HTTP连接", "无人值守/后台操作", "使用本地文件时间戳确定镜像时是否需要重新下载文档", "GNU Wget是根据GNU通用公共许可证发行的。"]
+}, {
+  "tag": "P",
+  "text": "Read the official GNU documentation for more information.",
+  "translation": "阅读官方GNU文档以获取更多信息。"
+}, {
+  "tag": "H1",
+  "text": "8. tail",
+  "translation": "8.尾巴"
+}, {
+  "tag": "PRE",
+  "text": "$ tail somefile",
+  "translation": "$ tail somefile"
+}, {
+  "tag": "P",
+  "text": "The tail command reads a file and outputs the last part of it (the “tail”).",
+  "translation": "tail命令读取文件并输出文件的最后部分（“ tail”）。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*Xvo2zdyDZqj4QhTHF0TLTg.png?q=20",
+  "caption": "Output the last num lines, instead of the default (10)",
+  "type": "image",
+  "file": "1*Xvo2zdyDZqj4QhTHF0TLTg.png"
+}, {
+  "tag": "P",
+  "text": "The tail command is useful when going through crash reports or previous history logs. Here’s an example of its usefulness when working with file logs.",
+  "translation": "在查看崩溃报告或以前的历史记录日志时，tail命令很有用。 这是处理文件日志时有用的示例。"
+}, {
+  "tag": "PRE",
+  "text": "# tail /var/log/messagesMar 20 12:42:22 hameda1d1c dhclient[4334]: DHCPREQUEST on eth0 to 255.255.255.255 port 67 (xid=0x280436dd)Mar 20 12:42:24 hameda1d1c avahi-daemon[2027]: Registering new address record for fe80::4639:c4ff:fe53:4908 on eth0.*.Mar 20 12:42:28 hameda1d1c dhclient[4334]: DHCPREQUEST on eth0 to 255.255.255.255 port 67 (xid=0x280436dd)Mar 20 12:42:28 hameda1d1c dhclient[4334]: DHCPACK from 10.76.198.1 (xid=0x280436dd)Mar 20 12:42:30 hameda1d1c avahi-daemon[2027]: Joining mDNS multicast group on interface eth0.IPv4 with address 10.76.199.87.Mar 20 12:42:30 hameda1d1c avahi-daemon[2027]: New relevant interface eth0.IPv4 for mDNS.Mar 20 12:42:30 hameda1d1c avahi-daemon[2027]: Registering new address record for 10.76.199.87 on eth0.IPv4.Mar 20 12:42:30 hameda1d1c NET[4385]: /sbin/dhclient-script : updated /etc/resolv.confMar 20 12:42:30 hameda1d1c dhclient[4334]: bound to 10.76.199.87 -- renewal in 74685 seconds.Mar 20 12:45:39 hameda1d1c kernel: usb 3-7: USB disconnect, device number 2",
+  "translation": "＃tail / var / log / messagesMar 20 12:42:22 hameda1d1c dhclient [4334]：eth0上的DHCPREQUEST到255.255.255.255端口67（xid = 0x280436dd）Mar 20 12:42:24 hameda1d1c avahi-daemon [2027]：注册3月20日12:42:28 hameda1d1c dhclient [4334]：eth0上的DHCPREQUEST到255.255.255.255端口67（xid = 0x280436dd）3月20日：eth0。*。fe80 :: 4639：c4ff：fe53：4908的新地址记录42:28 hameda1d1c dhclient [4334]：来自10.76.198.1（xid = 0x280436dd）的DHCPACK 3月20日12:42:30 hameda1d1c avahi-daemon [2027]：在接口eth0.IPv4上加入地址为10.76.199.87.Mar的mDNS组播组。 20 12:42:30 hameda1d1c avahi-daemon [2027]：用于mDNS的新的相关接口eth0.IPv4。3月20 12:42:30 hameda1d1c avahi-daemon [2027]：在eth0.IPv4上为10.76.199.87注册新的地址记录。 .Mar 20 12:42:30 hameda1d1c NET [4385]：/ sbin / dhclient-script：更新了/etc/resolv.conf 3月20日12:42:30 hameda1d1c dhclient [4334]：绑定到10.76.199.87-更新于74685 3月20日12:45:39 hameda1d1c内核：USB 3-7：USB断开连接，d服务编号2"
+}, {
+  "tag": "H1",
+  "text": "7. mkdir",
+  "translation": "7. mkdir"
+}, {
+  "tag": "PRE",
+  "text": "$ mkdir some-directory",
+  "translation": "$ mkdir某些目录"
+}, {
+  "tag": "P",
+  "text": "As you guessed it, mkdir creates a new empty directory in the current active path. Instead of clicking around in your text editor or GUI, use this command to create new folders.",
+  "translation": "如您所料，mkdir在当前活动路径中创建一个新的空目录。 而不是在文本编辑器或GUI中单击，而使用此命令来创建新文件夹。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*FsxDBW5HDWJn9kHsw0My7A.png?q=20",
+  "caption": "Creating a new directory with mkdir",
+  "type": "image",
+  "file": "1*FsxDBW5HDWJn9kHsw0My7A.png"
+}, {
+  "tag": "P",
+  "text": "Note: Notice how we can peek inside the directory with the previous ls command.",
+  "translation": "注意：请注意我们如何使用前面的ls命令窥视目录。"
+}, {
+  "tag": "H2",
+  "text": "7.1 rm",
+  "translation": "7.1 rm"
+}, {
+  "tag": "PRE",
+  "text": "$ rm someFile",
+  "translation": "$ rm someFile"
+}, {
+  "tag": "P",
+  "text": "Rm stands for remove, which does exactly what it says it does. Removes, or in other words, deletes a file.",
+  "translation": "Rm代表remove，它完全按照它说的去做。 删除，或换句话说，删除文件。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*damLEKdyWY7aBPILFELVNg.png?q=20",
+  "caption": "Removing a file with the rm command",
+  "type": "image",
+  "file": "1*damLEKdyWY7aBPILFELVNg.png"
+}, {
+  "tag": "P",
+  "text": "By default, the rm command doesn’t remove directories. You need to pass the -rf flag to remove directories.",
+  "translation": "默认情况下，rm命令不会删除目录。 您需要传递-rf标志以删除目录。"
+}, {
+  "tag": "PRE",
+  "text": "$ rm -rf some-directory",
+  "translation": "$ rm -rf某个目录"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*gXTLAllsEVTdWHCcDw83WQ.png?q=20",
+  "caption": "Removing a directory with the rm command (notice we’re passing the flag to remove a directory)",
+  "type": "image",
+  "file": "1*gXTLAllsEVTdWHCcDw83WQ.png"
+}, {
+  "tag": "P",
+  "text": "Note: This removes the directory unconditionally, whether the directory has content inside or not.",
+  "translation": "注意：无论目录内部是否包含内容，这都会无条件删除目录。"
+}, {
+  "tag": "H2",
+  "text": "7.2 rmdir",
+  "translation": "7.2均方根"
+}, {
+  "tag": "PRE",
+  "text": "$ rmdir some-directory",
+  "translation": "$ rmdir一些目录"
+}, {
+  "tag": "P",
+  "text": "The rmdir command removes the directory if there’s no content inside the directory.",
+  "translation": "如果目录中没有内容，则rmdir命令将删除目录。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*aUJ0VbrVb_cTUf0okMxmWA.png?q=20",
+  "caption": "Removing an empty directory with rmdir",
+  "type": "image",
+  "file": "1*aUJ0VbrVb_cTUf0okMxmWA.png"
+}, {
+  "tag": "H1",
+  "text": "6. touch",
+  "translation": "6.触摸"
+}, {
+  "tag": "PRE",
+  "text": "$ touch somefile",
+  "translation": "$触摸一些文件"
+}, {
+  "tag": "P",
+  "text": "The touch command is used to create a file without any content. The touch command can be used when the user doesn’t have data to store at the time of file creation.",
+  "translation": "touch命令用于创建不包含任何内容的文件。 当用户在创建文件时没有要存储的数据时，可以使用touch命令。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*RIrUCSW4TT_cJrnGy9ighQ.png?q=20",
+  "caption": "Creating a new file with touch",
+  "type": "image",
+  "file": "1*RIrUCSW4TT_cJrnGy9ighQ.png"
+}, {
+  "tag": "P",
+  "text": "Notice how we’re using touch to create the file and cat to look inside the file. Since the newly created index2.js file is empty, the cat returns nothing.",
+  "translation": "请注意，我们是如何通过触摸来创建文件的，如何使用cat来查看文件的内部。 由于新创建的index2.js文件为空，因此cat不返回任何内容。"
+}, {
+  "tag": "P",
+  "text": "Here are the main differences between cat andtouch:",
+  "translation": "以下是cat和touch之间的主要区别："
+}, {
+  "tag": "UL",
+  "texts": ["cat— Used to create the file with the content.", "touch— Creates a file without any content or empty files. Remember, the file created using touch command is empty. This command is useful when the user doesn’t have data to store at the time of file creation."],
+  "translations": ["cat-用于创建包含内容的文件。", "触摸—创建一个没有任何内容或空文件的文件。 请记住，使用touch命令创建的文件为空。 当用户在创建文件时没有要存储的数据时，此命令很有用。"]
+}, {
+  "tag": "H1",
+  "text": "5. echo",
+  "translation": "5.回声"
+}, {
+  "tag": "PRE",
+  "text": "$ echo \"some text\"",
+  "translation": "$ echo“一些文字”"
+}, {
+  "tag": "P",
+  "text": "The echo command in Linux is used to display a line of text/string that’s passed as an argument. The echo is a built-in command that’s mostly used in shell scripts and batch files to output status text to the screen or a file.",
+  "translation": "Linux中的echo命令用于显示作为参数传递的一行文本/字符串。 echo是一个内置命令，主要用于shell脚本和批处理文件中，以将状态文本输出到屏幕或文件中。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*1bMjVqwhueQP5hvyMMdDKA.png?q=20",
+  "type": "image",
+  "file": "1*1bMjVqwhueQP5hvyMMdDKA.png"
+}, {
+  "tag": "H1",
+  "text": "4. cat",
+  "translation": "4.猫"
+}, {
+  "tag": "PRE",
+  "text": "$ cat somefile.js",
+  "translation": "$猫somefile.js"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*SL7g1NHsb7dKgwmoYBySkQ.png?q=20",
+  "caption": "Displaying content of a file with cat",
+  "type": "image",
+  "file": "1*SL7g1NHsb7dKgwmoYBySkQ.png"
+}, {
+  "tag": "P",
+  "text": "The cat command has three related functions with regard to a text file:",
+  "translation": "cat命令具有与文本文件有关的三个相关功能："
+}, {
+  "tag": "UL",
+  "texts": ["Displaying them", "Combining copies", "Creating new ones"],
+  "translations": ["显示它们", "合并副本", "创造新的"]
+}, {
+  "tag": "P",
+  "text": "The most common use of cat is to read the contents of files, and cat is often the most convenient program for this purpose.",
+  "translation": "cat的最常见用法是读取文件的内容，而cat通常是用于此目的的最方便的程序。"
+}, {
+  "tag": "P",
+  "text": "In the following example, the standard output of cat is redirected using the output redirection operator (which is represented by a rightward pointing angular bracket) to file2:",
+  "translation": "在以下示例中，使用输出重定向运算符（由向右指向的尖括号表示）将cat的标准输出重定向到file2："
+}, {
+  "tag": "PRE",
+  "text": "$ cat somefile > somefile2",
+  "translation": "$ cat somefile> somefile2"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*NxLOMigqozU5EvxVdr1f7Q.png?q=20",
+  "caption": "Creating files with cat",
+  "type": "image",
+  "file": "1*NxLOMigqozU5EvxVdr1f7Q.png"
+}, {
+  "tag": "H1",
+  "text": "3. pwd",
+  "translation": "3. pwd"
+}, {
+  "tag": "PRE",
+  "text": "$ pwd",
+  "translation": "$ pwd"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*E1zXuIQ6X0aaTtVC0wZ_nw.png?q=20",
+  "caption": "Printing out the current working directory (pwd)",
+  "type": "image",
+  "file": "1*E1zXuIQ6X0aaTtVC0wZ_nw.png"
+}, {
+  "tag": "P",
+  "text": "The pwd command is a command-line utility for printing the current working directory. The output will print the full system path of the current working directory to standard output. By default, the pwd command ignores symlinks, although the full physical path of a current directory can be shown with an option.",
+  "translation": "pwd命令是用于打印当前工作目录的命令行实用程序。 输出会将当前工作目录的完整系统路径打印到标准输出。 默认情况下，pwd命令会忽略符号链接，尽管可以使用选项显示当前目录的完整物理路径。"
+}, {
+  "tag": "H1",
+  "text": "2. ls",
+  "translation": "2. ls"
+}, {
+  "tag": "PRE",
+  "text": "$ ls",
+  "translation": "$ ls"
+}, {
+  "tag": "P",
+  "text": "ls lists files and directories in the current active path. If the pathname is a file, ls displays information on the file according to the requested options. If the pathname is a directory, ls displays information on the files and subdirectories therein.",
+  "translation": "ls列出当前活动路径中的文件和目录。 如果路径名是文件，则ls根据请求的选项显示有关文件的信息。 如果路径名是目录，则ls显示有关文件和其中的子目录的信息。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*JthCA8XeIN22yScYBJlRIw.png?q=20",
+  "caption": "Using the ls command to show all files in the current directory",
+  "type": "image",
+  "file": "1*JthCA8XeIN22yScYBJlRIw.png"
+}, {
+  "tag": "P",
+  "text": "You might have noticed the files are being shown as a grey color, while the folders are blueish. This is to help us make a distinction between folders and files.",
+  "translation": "您可能已经注意到文件显示为灰色，而文件夹为蓝色。 这是为了帮助我们区分文件夹和文件。"
+}, {
+  "tag": "H1",
+  "text": "1. grep",
+  "translation": "1. grep"
+}, {
+  "tag": "PRE",
+  "text": "$ grep \"some string\" file",
+  "translation": "$ grep“一些字符串”文件"
+}, {
+  "tag": "P",
+  "text": "The grep command searches for patterns in each file. It also looks for patterns separated by newline characters, and grep prints each line that matches a pattern.",
+  "translation": "grep命令在每个文件中搜索模式。 它还会寻找由换行符分隔的模式，并且grep打印与模式匹配的每一行。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*ovG5it9EJTZ0JG3tdOgclA.png?q=20",
+  "caption": "Using the grep command to find all React keywords in a file",
+  "type": "image",
+  "file": "1*ovG5it9EJTZ0JG3tdOgclA.png"
+}, {
+  "tag": "P",
+  "text": "The -i option enables us to search for a string case-insensitively in the given file. It matches words like “REACT,” “REact,” and “react.”",
+  "translation": "-i选项使我们能够在给定文件中区分大小写地搜索字符串。 它匹配“ REACT”，“ REact”和“ react”之类的词。"
+}, {
+  "tag": "PRE",
+  "text": "$ grep -i \"REact\" file",
+  "translation": "$ grep -i“反应”文件"
+}, {
+  "tag": "P",
+  "text": "We can find the number of lines that matches the given string/pattern with the -c (count) flag.",
+  "translation": "我们可以使用-c（count）标志找到与给定字符串/模式匹配的行数。"
+}, {
+  "tag": "PRE",
+  "text": "$ grep -c \"react\" index.js",
+  "translation": "$ grep -c“反应” index.js"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*-KL9UvoB8RR4NKkUfHNBoQ.png?q=20",
+  "caption": "Counting the times the word “react” pops up in a life",
+  "type": "image",
+  "file": "1*-KL9UvoB8RR4NKkUfHNBoQ.png"
+}, {
+  "tag": "P",
+  "text": "Here’s a fun and an educational comic about the grep command I found on the internet.",
+  "translation": "这是我在互联网上找到的有关grep命令的有趣且具有教育意义的漫画。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*ZkpszLnLQFRFp_cVO_Ldmw.jpeg?q=20",
+  "caption": "Source: Wizard Zines",
+  "type": "image",
+  "file": "1*ZkpszLnLQFRFp_cVO_Ldmw.jpeg"
+}, {
+  "tag": "P",
+  "text": "In addition, the variant programs egrep and fgrep are the same as grep -E and grep -F, respectively. These variants are deprecated, but are provided for backward compatibility.",
+  "translation": "此外，变体程序egrep和fgrep分别与grep -E和grep -F相同。 不建议使用这些变体，但提供这些变体是为了向后兼容。"
+}, {
+  "tag": "P",
+  "text": "You can do a lot with grep— read the documentation for an in-depth dive here.",
+  "translation": "您可以使用grep做很多事情-在此处阅读文档以进行深入研究。"
+}, {
+  "tag": "H1",
+  "text": "Here Are 11 Console Commands Every Developer Should Know",
+  "translation": "这是每个开发人员都应该知道的11个控制台命令"
+}, {
+  "tag": "H2",
+  "text": "Boost your everyday productivity with these console commands",
+  "translation": "这些控制台命令可提高日常工作效率"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*ya4dNTm8Mvfui1fD?q=20",
+  "caption": "Photo by Sai Kiran Anagani on Unsplash",
+  "type": "image",
+  "file": "0*ya4dNTm8Mvfui1fD"
+}, {
+  "tag": "P",
+  "text": "The command line makes our life so much easier since we can automate several mundane tasks and make things run smoother. Instead of clicking around in the Graphical User Interface (GUI), we can fire off a couple of commands and call it job done.",
+  "translation": "命令行使我们的生活变得更加轻松，因为我们可以自动化一些平凡的任务并使事情运行更顺畅。 无需单击图形用户界面（GUI），我们可以触发一些命令并将其称为完成工作。"
+}, {
+  "tag": "P",
+  "text": "A Unix shell is a command-line interpreter or shell that provides a command-line user interface for Unix-like operating systems. The shell is both an interactive command language and a scripting language and is used by the operating system to control the execution of the system using shell scripts.",
+  "translation": "Unix shell是命令行解释器或shell，可为类似Unix的操作系统提供命令行用户界面。 外壳程序既是交互式命令语言又是脚本语言，并且操作系统使用它来使用外壳程序脚本控制系统的执行。"
+}, {
+  "tag": "P",
+  "text": "Every Linux or Mac-based operating system has a command-line installed by default, usually under the name “Terminal.” The command line (CLI) lets us easily move and rename files, sort through data, and navigate around the computer.",
+  "translation": "默认情况下，每个基于Linux或Mac的操作系统都安装了一个命令行，通常以“ Terminal”为名称。命令行（CLI）使我们可以轻松地移动和重命名文件，对数据进行排序以及在计算机中浏览。"
+}, {
+  "tag": "P",
+  "text": "Without further ado, here are 11 command line tricks that will make your life easier.",
+  "translation": "事不宜迟，这里有11个命令行技巧，可以使您的生活更轻松。"
+}]
