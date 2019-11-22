@@ -1,0 +1,263 @@
+[{
+  "tag": "H1",
+  "text": "Time Complexities Of Python Data Structures",
+  "translation": "Python数据结构的时间复杂性"
+}, {
+  "tag": "H2",
+  "text": "An Important Article For Everyone Using Python Programming Language In Data Science Projects",
+  "translation": "数据科学项目中使用Python编程语言的每个人的重要文章"
+}, {
+  "tag": "P",
+  "text": "This topic is not covered well here on Medium hence I have decided to outline the time complexities of Python data structures in an easy to understand manner.",
+  "translation": "在Medium上，这个主题没有很好地介绍，因此我决定以一种易于理解的方式概述Python数据结构的时间复杂性。"
+}, {
+  "tag": "H1",
+  "text": "Why Do We Need to Know Time Complexities?",
+  "translation": "为什么我们需要知道时间复杂性？"
+}, {
+  "tag": "P",
+  "text": "It is crucial for a data scientist programmer to choose the right data structures for the job. In particular, if the algorithms are computationally intensive such as the ones that train a machine learning model or algorithms that manipulate large volumes of data then it is wise to ensure that special care is taken in choosing the appropriate data structures.",
+  "translation": "对于数据科学家程序员而言，为工作选择正确的数据结构至关重要。 特别是，如果算法需要大量计算，例如训练机器学习模型的算法或处理大量数据的算法，那么确保选择合适的数据结构时要特别小心。"
+}, {
+  "tag": "P",
+  "text": "Choosing the right data type is often ignored and it ends up badly impacting the performance of the application.",
+  "translation": "选择正确的数据类型通常会被忽略，并且最终会严重影响应用程序的性能。"
+}, {
+  "tag": "H1",
+  "text": "Article Aim",
+  "translation": "文章目的"
+}, {
+  "tag": "P",
+  "text": "This article explains the Big-O notation of the key operations of data structures in CPython. The big-O notation is a way to measure the time complexity of an operation.",
+  "translation": "本文介绍了CPython中数据结构的关键操作的Big-O表示法。 big-O表示法是一种衡量操作时间复杂度的方法。"
+}, {
+  "tag": "P",
+  "text": "Please read the disclaimer.",
+  "translation": "请阅读免责声明。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*e6Nlo_J1jjjDP7Ju?q=20",
+  "type": "image",
+  "file": "0*e6Nlo_J1jjjDP7Ju"
+}, {
+  "tag": "H1",
+  "text": "1. Let’s Understand What Big O Notation Means?",
+  "translation": "1.让我们了解大O符号的含义是什么？"
+}, {
+  "tag": "P",
+  "text": "A number of operations are performed in an algorithm. These operations could include iterating over a collection, copying an item or the entire collection, appending an item into a collection, inserting an item at the start or end of a collection, deleting an item or updating an item in a collection.",
+  "translation": "在算法中执行许多操作。 这些操作可能包括遍历集合，复制项目或整个集合，将项目追加到集合中，在集合的开始或结尾处插入项目，删除项目或更新集合中的项目。"
+}, {
+  "tag": "P",
+  "text": "Big-O measures the time complexity of the operations of an algorithm. It measures how long it takes for the algorithm to compute the required operation. Although we could also measure the space complexity (how much space an algorithm takes) but this article will focus on time complexity.",
+  "translation": "Big-O衡量算法运算的时间复杂度。 它测量算法计算所需运算所需的时间。 尽管我们也可以测量空间复杂度（算法占用多少空间），但本文将重点介绍时间复杂度。"
+}, {
+  "tag": "P",
+  "text": "In simplest terms, Big O notation is a way to measure performance of an operation based on the input size, known as n.",
+  "translation": "用最简单的术语来说，Big O表示法是一种基于输入大小（称为n）来衡量操作性能的方法。"
+}, {
+  "tag": "H1",
+  "text": "2. What Are The Different Big O Notation Measures?",
+  "translation": "2. Big O表示法有何不同？"
+}, {
+  "tag": "P",
+  "text": "There are a number of common Big O notations which we need to be familiar with.",
+  "translation": "我们需要熟悉许多常见的Big O符号。"
+}, {
+  "tag": "P",
+  "text": "Let’s consider n to be the size of the input collection. In terms of time complexity:",
+  "translation": "让我们考虑n为输入集合的大小。 就时间复杂度而言："
+}, {
+  "tag": "UL",
+  "texts": ["O(1): No matter how big your collection is, the time it takes to perform an operation is constant. This is the constant time complexity notation. These operations are as fast as we can get. As an instance, operations that check whether a collection has any items inside it is an O(1) operation.", "O(log n): When the size of a collection increases, the time it takes to perform an operation increases logarithmically. This is the logarithmic time complexity notation. Potentially optimised searching algorithms are O(log n).", "O(n): The time it takes to perform an operation is directly and linearly proportional to the number of items in the collection. This is the linear time complexity notation. This is some-what in-between or medium in terms of performance. As an instance, if we want to sum all of the items in a collection then we would have to iterate over the collection. Hence the iteration of a collection is an O(n) operation.", "(n log n): Where the performance of performing an operation is a quasilinear function of the number of items in the collection. This is known as the quasilinear time complexity notation. Time complexity of optimised sorting algorithm is usually n(log n).", "O(n square): When the time it takes to perform an operation is proportional to the square of the items in the collection. This is known as the quadratic time complexity notation.", "(n!): When every single permutation of a collection is computed in an operation and hence the time it takes to perform an operation is factorial of the size of the items in the collection. This is known as factorial time complexity notation. It is very slow."],
+  "translations": ["O（1）：无论您的集合有多大，执行操作所花费的时间都是恒定的。 这是恒定的时间复杂度符号。 这些操作尽可能快。 例如，检查集合内部是否有任何项目的操作是O（1）操作。", "O（log n）：当集合的大小增加时，执行操作所花费的时间对数增加。 这是对数时间复杂度表示法。 潜在优化的搜索算法为O（log n）。", "O（n）：执行操作所需的时间与集合中的项目数成线性正比。 这是线性时间复杂度符号。 就性能而言，这介于两者之间或中等。 作为一个实例，如果我们想对一个集合中的所有项目求和，那么我们将不得不遍历该集合。 因此，集合的迭代是O（n）操作。", "（n log n）：执行某项操作的性能是集合中项目数量的拟线性函数。 这称为准线性时间复杂度表示法。 优化排序算法的时间复杂度通常为n（log n）。", "O（n平方）：执行操作所需的时间与集合中项目的平方成正比。 这称为二次时间复杂度表示法。", "（n！）：当在操作中计算集合的每个单个排列时，因此执行操作所需的时间取决于集合中项目的大小。 这称为阶乘时间复杂度表示法。 非常慢。"]
+}, {
+  "tag": "P",
+  "text": "This image provides an overview of the Big-O notations.",
+  "translation": "该图像概述了Big-O符号。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*YKanRKXFdrQOIM8BrL3Q7Q.png?q=20",
+  "type": "image",
+  "file": "1*YKanRKXFdrQOIM8BrL3Q7Q.png"
+}, {
+  "tag": "P",
+  "text": "O(1) is fast. O(n square) is slow. O(n!) is very slow.",
+  "translation": "O（1）很快。 O（n平方）很慢。 O（n！）非常慢。"
+}, {
+  "tag": "P",
+  "text": "Big O Notation is relative. Big O Notation is machine independent, ignores constants and is understood by wider audience including mathematicians, technologists, data scientists etc.",
+  "translation": "大O符号是相对的。 大O表示法与机器无关，忽略常量，并且被包括数学家，技术人员，数据科学家等在内的广泛读者所理解。"
+}, {
+  "tag": "H1",
+  "text": "Best, Average, Worst Cases",
+  "translation": "最佳，平均，最差情况"
+}, {
+  "tag": "P",
+  "text": "When we compute the time complexity of an operation, we could produce the complexity based on the best, average or worst-case scenario.",
+  "translation": "当我们计算操作的时间复杂度时，我们可以根据最佳，平均或最坏情况产生复杂度。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*dBUvk235wqezBPuM.png?q=20",
+  "type": "image",
+  "file": "0*dBUvk235wqezBPuM.png"
+}, {
+  "tag": "OL",
+  "texts": ["Best case scenario: As the name implies, these are the scenarios when the data structures and the items in the collection along with the parameters are at their optimum state. As an instance, imagine we want to find an item in a collection. If that item happens to be the first item of the collection then it is the best-case scenario for the operation.", "Average case scenario is when we define the complexity based on the distribution of the values of the input.", "Worst case scenario could be an operation that requires finding an item that is positioned as the last item in a large-sized collection such as a list and the algorithm iterates over the collection from the very first item."],
+  "translations": ["最佳情况方案：顾名思义，这是当数据结构和集合中的项目以及参数处于最佳状态时的方案。 例如，假设我们要在集合中找到一个项目。 如果该项目恰好是集合的第一项，那么这是该操作的最佳情况。", "平均情况是根据输入值的分布定义复杂度。", "最坏的情况是可能需要一种操作，该操作需要在大型集合（例如列表）中找到位于最后一个项目的项目，并且算法会从第一个项目开始对集合进行迭代。"]
+}, {
+  "tag": "H1",
+  "text": "Python Collections & Time Complexity",
+  "translation": "Python集合和时间复杂度"
+}, {
+  "tag": "P",
+  "text": "In this part of the article, I will document the common collections in CPython and then I will outline their time complexities.",
+  "translation": "在本文的这一部分中，我将记录CPython中的常见集合，然后概述它们的时间复杂性。"
+}, {
+  "tag": "P",
+  "text": "In particular, I will concentrate on the average case scenario.",
+  "translation": "我将特别关注平均情况。"
+}, {
+  "tag": "H1",
+  "text": "1. list",
+  "translation": "1.清单"
+}, {
+  "tag": "P",
+  "text": "List is by far one of the most important data structures in Python. We can use lists as stacks (the last item added is the first item out) or queues (the first item added is the first item out). Lists are ordered and mutable collections as we can update the items at will.",
+  "translation": "List是迄今为止Python中最重要的数据结构之一。 我们可以将列表用作堆栈（添加的最后一项是第一项）或队列（添加的第一项是第一项）。 列表是有序且可变的集合，因为我们可以随意更新项目。"
+}, {
+  "tag": "H1",
+  "text": "Let’s Review The Common List Operations And Their Big-O Notations",
+  "translation": "让我们回顾一下常见列表操作及其Big-O表示法"
+}, {
+  "tag": "P",
+  "text": "1. Insert: It’s Big-O Notation Is O(n)",
+  "translation": "1.插入：Big-O表示法是O（n）"
+}, {
+  "tag": "P",
+  "text": "2. Get Item: It’s Big-O Notation Is O(1)",
+  "translation": "2.获取项目：Big-O表示法为O（1）"
+}, {
+  "tag": "P",
+  "text": "3. Delete Item: It’s Big-O Notation Is O(n)",
+  "translation": "3.删除项目：Big-O表示法是O（n）"
+}, {
+  "tag": "P",
+  "text": "4. Iteration: It’s Big-O Notation Is O(n)",
+  "translation": "4.迭代：Big-O表示法是O（n）"
+}, {
+  "tag": "P",
+  "text": "5. Get Length: It’s Big-O Notation Is O(1)",
+  "translation": "5.获得长度：Big-O表示法为O（1）"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*4L1Yec2mXu3ekU6X?q=20",
+  "type": "image",
+  "file": "0*4L1Yec2mXu3ekU6X"
+}, {
+  "tag": "P",
+  "text": "Photo by Joshua Sortino on Unsplash",
+  "translation": "Joshua Sortino在Unsplash上拍摄的照片"
+}, {
+  "tag": "H1",
+  "text": "2. set",
+  "translation": "2.设置"
+}, {
+  "tag": "P",
+  "text": "Sets are also one of the most widely used data collections in Python. A set is essentially an unordered collection. Set does not permit duplicates and hence each item in a set is unique. Set supports many mathematical operations such as union, difference, the intersection of sets and so on.",
+  "translation": "集合也是Python中使用最广泛的数据集合之一。 集合本质上是无序集合。 集合不允许重复，因此集合中的每个项目都是唯一的。 集合支持许多数学运算，例如联合，差，集合的交集等。"
+}, {
+  "tag": "H1",
+  "text": "Let’s Review The Common Set Operations",
+  "translation": "让我们回顾一下通用集操作"
+}, {
+  "tag": "P",
+  "text": "1. Check for item in set: It’s Big-O Notation Is O(1)",
+  "translation": "1.检查集合中的项目：Big-O表示法是O（1）"
+}, {
+  "tag": "P",
+  "text": "2. Difference of set A from B: It’s Big-O Notation Is O(length of A)",
+  "translation": "2.集合A与集合B的区别：大O表示法是O（A的长度）"
+}, {
+  "tag": "P",
+  "text": "3. Intersection of set A and B: It’s Big-O Notation Is O(minimum of the length of either A or B)",
+  "translation": "3.集A和B的交集：大O表示法是O（A或B的长度的最小值）"
+}, {
+  "tag": "P",
+  "text": "4. Union of set A and B: It’s Big-O Notation Is O(N) with respect to length(A) + length(B)",
+  "translation": "4.集A和B的并集：相对于长度（A）+长度（B），它的Big-O表示法是O（N）"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*uFJ5SnReeBvNb7A-?q=20",
+  "type": "image",
+  "file": "0*uFJ5SnReeBvNb7A-"
+}, {
+  "tag": "P",
+  "text": "Photo by fabio on Unsplash",
+  "translation": "fabio在Unsplash上的照片"
+}, {
+  "tag": "H1",
+  "text": "3. dictionary",
+  "translation": "3.字典"
+}, {
+  "tag": "P",
+  "text": "Lastly, I wanted to provide an overview of the dictionary data collection. Dictionary is a key-value pair collection. Keys are unique in a dictionary to prevent item collision. It is an extremely useful data collection.",
+  "translation": "最后，我想提供字典数据收集的概述。 字典是键值对集合。 键在字典中是唯一的，以防止项目冲突。 这是非常有用的数据收集。"
+}, {
+  "tag": "P",
+  "text": "Dictionaries are indexed by keys, where the keys could be strings, numbers or even tuples with strings, numbers or tuples.",
+  "translation": "字典由键索引，其中键可以是字符串，数字甚至是带有字符串，数字或元组的元组。"
+}, {
+  "tag": "P",
+  "text": "We can perform a number of operations on a dictionary such as storing a value for a key, or retrieving an item based on a key, or iterating over the items and so on.",
+  "translation": "我们可以对字典执行许多操作，例如存储键的值，或基于键检索项目，或遍历项目等。"
+}, {
+  "tag": "H1",
+  "text": "Let’s review the common dictionary time complexities:",
+  "translation": "让我们回顾一下常见的词典时间复杂度："
+}, {
+  "tag": "P",
+  "text": "Here, we consider that the key is used to get, set or delete an item.",
+  "translation": "在这里，我们认为该密钥用于获取，设置或删除项目。"
+}, {
+  "tag": "P",
+  "text": "1. Get Item: It’s Big-O Notation Is O(1)",
+  "translation": "1.获取项目：Big-O表示法为O（1）"
+}, {
+  "tag": "P",
+  "text": "2. Set Item: It’s Big-O Notation Is O(1)",
+  "translation": "2.设定项目：Big-O表示法是O（1）"
+}, {
+  "tag": "P",
+  "text": "3. Delete Item: It’s Big-O Notation Is O(1)",
+  "translation": "3.删除项目：Big-O表示法是O（1）"
+}, {
+  "tag": "P",
+  "text": "4. Iterate Over Dictionary: It’s Big-O Notation Is O(n)",
+  "translation": "4.遍历字典：Big-O表示法是O（n）"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*USW4ubJczJojLE3Y?q=20",
+  "type": "image",
+  "file": "0*USW4ubJczJojLE3Y"
+}, {
+  "tag": "P",
+  "text": "Photo by NASA on Unsplash",
+  "translation": "NASA在Unsplash上拍摄的照片"
+}, {
+  "tag": "H1",
+  "text": "Summary",
+  "translation": "摘要"
+}, {
+  "tag": "P",
+  "text": "This article explained the Big-O notation of the key operations of data structures in CPython. The big-o notation is essentially a way to measure the time complexity of an operation. The article also illustrated a number of common operations for a list, set and a dictionary.",
+  "translation": "本文介绍了CPython中数据结构的关键操作的Big-O表示法。 big-o标记本质上是一种衡量操作时间复杂度的方法。 本文还说明了列表，集合和字典的许多常用操作。"
+}, {
+  "tag": "P",
+  "text": "It is crucial to design and choose the right data structures for your algorithm.",
+  "translation": "为算法设计和选择正确的数据结构至关重要。"
+}, {
+  "tag": "P",
+  "text": "Hope it helps.",
+  "translation": "希望能帮助到你。"
+}]
