@@ -1,0 +1,180 @@
+[{
+  "tag": "H1",
+  "text": "Kalman Filters: A step by step implementation guide in python",
+  "translation": "Kalman过滤器：Python逐步实施指南"
+}, {
+  "tag": "H2",
+  "text": "This article will simplify the Kalman Filter for you. Hopefully, you’ll learn and demystify all these cryptic things that you find in Wikipedia when you google Kalman filters.",
+  "translation": "本文将为您简化卡尔曼滤波器。 希望您会学到和解密Google卡尔曼过滤器中在Wikipedia中发现的所有这些神秘事物。"
+}, {
+  "tag": "P",
+  "text": "So let’s get started!",
+  "translation": "因此，让我们开始吧！"
+}, {
+  "tag": "P",
+  "text": "To know Kalman Filter we need to get to the basics. In Kalman Filters, the distribution is given by what’s called a Gaussian.",
+  "translation": "要了解卡尔曼滤波器，我们需要了解基础知识。 在卡尔曼滤波器中，分布由所谓的高斯给出。"
+}, {
+  "tag": "P",
+  "text": "What is a Gaussian though?",
+  "translation": "高斯是什么？"
+}, {
+  "tag": "P",
+  "text": "Gaussian is a continuous function over the space of locations and the area underneath sums up to 1.",
+  "translation": "高斯是位置空间上的连续函数，其下面的面积之和最多为1。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*0YOZyzQuXVy7YKje3Z9AXQ.jpeg?q=20",
+  "caption": "Gaussian in graph",
+  "type": "image",
+  "file": "1*0YOZyzQuXVy7YKje3Z9AXQ.jpeg"
+}, {
+  "tag": "P",
+  "text": "The Gaussian is defined by two parameters, the mean, often abbreviated with the Greek letter Mu, and the width of the Gaussian often called the variance(Sigma square). So, our job in common phases is to maintain a Mu and a Sigma square as our best estimate of the location of the object we are trying to find.",
+  "translation": "高斯由两个参数定义，平均值（通常用希腊字母Mu缩写）和高斯的宽度通常称为方差（西格玛平方）。 因此，我们在常见阶段的工作是维持Mu和Sigma正方形，作为对我们要查找的对象位置的最佳估计。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*F-XfvGk-eA-Ldm1QVmQYQA.jpeg?q=20",
+  "caption": "Graph showing mean & variance",
+  "type": "image",
+  "file": "1*F-XfvGk-eA-Ldm1QVmQYQA.jpeg"
+}, {
+  "tag": "P",
+  "text": "The exact formula is an exponential of a quadratic function where we take the exponent of the expression. Now in the equation below if x equals Mu, then the numerator becomes 0, and if x of 0, which is one. It turns out we have to normalize this by a constant, 1 over the square root of 2 Pi Sigma square.",
+  "translation": "确切的公式是二次函数的指数，此处我们取表达式的指数。 现在，在下面的方程式中，如果x等于Mu，则分子变为0，如果x为0，即1。 事实证明，我们必须通过2 Pi Sigma平方的平方根上的常数1对其进行归一化。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*draefTB6IsjXZNzwmmnMiQ.jpeg?q=20",
+  "caption": "Gaussian Equation",
+  "type": "image",
+  "file": "1*draefTB6IsjXZNzwmmnMiQ.jpeg"
+}, {
+  "tag": "P",
+  "text": "What is Variance?",
+  "translation": "什么是方差？"
+}, {
+  "tag": "P",
+  "text": "The variance is a measure of Gaussian spread (i.e. the spread of area under the curve). Larger variances correspond to shorter Gaussians. Variance is also a measure of certainty; if you are trying to find something like the location of a car with the most certainty, you’ll want a Gaussian whose mean is the location of the car and with the smallest uncertainty/spread.",
+  "translation": "方差是高斯分布（即曲线下面积的分布）的量度。 方差越大，高斯越短。 差异也是确定性的度量； 如果您想找到最确定的位置，例如汽车的位置，则需要一个高斯，其均值是汽车的位置，并且不确定性/传播范围最小。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*dzDi0QHwV1MYBYa645zCtQ.jpeg?q=20",
+  "caption": "Gaussian Function Implementation in Code",
+  "type": "image",
+  "file": "1*dzDi0QHwV1MYBYa645zCtQ.jpeg"
+}, {
+  "tag": "P",
+  "text": "How to shift the mean?",
+  "translation": "如何移动均值？"
+}, {
+  "tag": "P",
+  "text": "In Kalman filters, we iterate measurement(measurement update) and motion (prediction). And the update will use Bayes rule, which is nothing else but a product or a multiplication. In prediction, we use total probability which is a convolution or simply an addition.",
+  "translation": "在卡尔曼滤波器中，我们迭代测量（测量更新）和运动（预测）。 并且更新将使用贝叶斯规则，该规则仅是乘积或乘法。 在预测中，我们使用总概率，它是卷积或简单地是加法。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*48j7QXCeeWKPPlIMZFP2JQ.jpeg?q=20",
+  "caption": "Measurement update & Prediction cycle",
+  "type": "image",
+  "file": "1*48j7QXCeeWKPPlIMZFP2JQ.jpeg"
+}, {
+  "tag": "P",
+  "text": "Implementation of measurement cycle and then the prediction cycle is as follows according to Udacity’s Computer Vision course:",
+  "translation": "根据Udacity的计算机视觉课程，执行测量周期，然后执行预测周期如下："
+}, {
+  "tag": "OL",
+  "texts": ["Suppose you’re localizing another vehicle and you have a prior distribution that looks as follows; it is a very wide Gaussian with the mean. This is an example in our prior we were fairly uncertain about the location but the measurement told us quite a bit as to where the vehicle is.", "The final mean gets shifted which is in between the two old means, the mean of the prior, and the mean of the measurement. It’s slightly further on the measurement side because the measurement was more certain as to where the vehicle is than prior. The more certain we are, the more we pull the mean on the direction of the certain answer."],
+  "translations": ["假设您正在对另一辆车进行本地化，并且您具有一个如下所示的先前分布； 这是一个非常宽泛的高斯平均值。 这是我们之前的一个例子，我们对位置不确定，但是测量结果告诉我们有关车辆的位置。", "最终均值在两个旧均值，先验均值和测量均值之间移动。 在测量方面，它要稍远一些，因为与以前相比，测量可以更加确定车辆的位置。 我们越确定，就越会在确定答案的方向上拉均值。"]
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*tItYv192aYu8vw9uv88ngA.jpeg?q=20",
+  "caption": "Localization of the mean (in green)",
+  "type": "image",
+  "file": "1*tItYv192aYu8vw9uv88ngA.jpeg"
+}, {
+  "tag": "P",
+  "text": "How to update the parameter ?",
+  "translation": "如何更新参数？"
+}, {
+  "tag": "OL",
+  "texts": ["Suppose we multiply two Gaussians, as in Bayes rule, a prior and a measurement probability. The prior has a mean of Mu and a variance of Sigma square, and the measurement has a mean of Nu, and covariance of r-square.", "Then, the new mean, Mu prime, is the weighted sum of the old means. The Mu is weighted by r-square, Mu is weighted by Sigma square, normalized by the sum of the weighting factors. The new variance term would be Sigma square prime.", "Clearly, the prior Gaussian has a much higher uncertainty, therefore, Sigma square is larger and that means the nu is weighted much much larger than the Mu. So, the mean will be closer to the nu than the mu. Interestingly enough, the variance term is unaffected by the actual means, it just uses the previous variances."],
+  "translations": ["假设我们按照贝叶斯规则将两个高斯乘以一个先验概率和一个测量概率。 先验值具有Mu的平均值和Sigma平方的方差，而度量值具有Nu的平均值和r平方的协方差。", "那么，新均值Mu prime是旧均值的加权和。 Mu由r平方加权，Mu由Sigma平方加权，由加权因子之和标准化。 新的方差项将是Sigma平方素数。", "显然，先验的高斯不确定性要高得多，因此，Sigma平方更大，这意味着nu的权重比Mu大得多。 因此，均值将比mu更接近nu。 有趣的是，方差项不受实际方法的影响，它仅使用以前的方差。"]
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*JHNcgr0K1ImJ00OxYANI3A.jpeg?q=20",
+  "caption": "Update Function",
+  "type": "image",
+  "file": "1*JHNcgr0K1ImJ00OxYANI3A.jpeg"
+}, {
+  "tag": "P",
+  "text": "Its implementation in code is as follows:",
+  "translation": "其在代码中的实现如下："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*2jsqo7Vrksjh-AV6ZAxHKg.jpeg?q=20",
+  "type": "image",
+  "file": "1*2jsqo7Vrksjh-AV6ZAxHKg.jpeg"
+}, {
+  "tag": "P",
+  "text": "How to implement the Gaussian motion?",
+  "translation": "如何实现高斯运动？"
+}, {
+  "tag": "OL",
+  "texts": ["A new mean is your old mean plus the motion often called u. So, if you move over 10 meters in the x-direction, this will be 10 meters and you knew sigma square is your old sigma squared plus the variance of the motion Gaussian. This is all you need to know, it’s just an addition.", "The resulting Gaussian in the prediction step just adds these two things up, mu plus u and sigma squared plus r squared."],
+  "translations": ["新的均值是您的旧均值加上通常称为u的运动。 因此，如果您在x方向上移动了10米，那么它将是10米，并且您知道sigma square是您的旧sigma平方加上运动高斯的方差。 这就是您所需要知道的，仅仅是补充。", "预测步骤中得到的高斯仅将这两件事加起来，即mu加u和sigma平方加r平方。"]
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*RrqqctpNyQBFKfOladxYeA.jpeg?q=20",
+  "caption": "The motion update/ predict function",
+  "type": "image",
+  "file": "1*RrqqctpNyQBFKfOladxYeA.jpeg"
+}, {
+  "tag": "P",
+  "text": "It’s implementation in code is as follows:",
+  "translation": "它的代码实现如下："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*jbV3__lFGOMo9id2596tqA.jpeg?q=20",
+  "type": "image",
+  "file": "1*jbV3__lFGOMo9id2596tqA.jpeg"
+}, {
+  "tag": "P",
+  "text": "So now let’s put everything together. Let’s write a main program that takes these 2 functions, update and predict, and feeds into a sequence of measurements and motions. In the example I’ve chosen :measurements of 5., 6., 7., 9., and 10.motions are 1., 1., 2., 1., 1.",
+  "translation": "现在，让我们将所有内容放在一起。 让我们编写一个包含这两个功能的主程序，进行更新和预测，并馈入一系列测量和运动。 在示例中，我选择了：5、6、7、9和10的测量值分别为1.，1，，2、1、1、1。"
+}, {
+  "tag": "P",
+  "text": "This all would work out really well if the initial estimate was 5, but we’re setting it to 0 with a very large uncertainty of 10,000. Let’s assume:the measurement uncertainty is constant 4, and the motion uncertainty is constant 2.",
+  "translation": "如果初始估计值为5，那么所有这些都将非常有效，但是我们将其设置为0，不确定性为10,000。 假设：测量不确定度为常数4，运动不确定度为常数2。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*CCHs-1Nl5GWTOBZvkzqIBQ.jpeg?q=20",
+  "type": "image",
+  "file": "1*CCHs-1Nl5GWTOBZvkzqIBQ.jpeg"
+}, {
+  "tag": "P",
+  "text": "When you run this, your first estimate for the position should basically become 5–4.99, and the reason is your initial uncertainty is so large, the estimate is dominated by the first measurement. Your uncertainty shrinks to 3.99, which is slightly better than the measurement uncertainty. You then predict that you add 1, but the uncertainty increases to 5.99, which is the motion uncertainty of 2. You update again based on measurement 6, you get your estimate of 5.99, which is almost 6. You move 1 again. You measure 7. You move 2. You measure 9. You move 1. You measure 10, and you move a final 1. And out comes as the final result, a prediction of 10.99 for the position, which is your 10 position moved by 1, and the uncertainty — residual uncertainty of 4.",
+  "translation": "当您运行此命令时，该头寸的第一笔估算值基本上应该变为5–4.99，原因是您的初始不确定性太大，因此该估算值以第一笔测量为主。 您的不确定性减少到3.99，这比测量不确定性要好一些。 然后，您预测将增加1，但不确定性增加到5.99，这是运动不确定性2。根据测量6再次更新，您将获得5.99的估计值，几乎是6。再次移动1。 您测量了7。您移动了2.您测量了9.您移动了1.您测量了10，然后移动了最后一个1。最后得出的结果是，该位置的预测为10.99，即您移动的10个位置 1，不确定性-剩余不确定性4。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*pXCy-BhRWXnCtZiDQXYXlQ.jpeg?q=20",
+  "caption": "Output",
+  "type": "image",
+  "file": "1*pXCy-BhRWXnCtZiDQXYXlQ.jpeg"
+}, {
+  "tag": "P",
+  "text": "Plotting a Gaussian by looping through a range of x values and creating a resulting list of Gaussian values would result in:",
+  "translation": "通过循环遍历x值范围并创建结果高斯值列表来绘制高斯图将导致："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*j7-TTxVsBMxZSrBURAyH_w.jpeg?q=20",
+  "caption": "Graph",
+  "type": "image",
+  "file": "1*j7-TTxVsBMxZSrBURAyH_w.jpeg"
+}, {
+  "tag": "P",
+  "text": "Wanna check it out in code?",
+  "translation": "想在代码中查看吗？"
+}, {
+  "tag": "P",
+  "text": "Click here: Kalman Filter!",
+  "translation": "单击此处：卡尔曼滤波器！"
+}]
