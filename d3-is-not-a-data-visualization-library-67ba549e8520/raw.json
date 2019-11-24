@@ -1,0 +1,217 @@
+[{
+  "tag": "H1",
+  "text": "D3 is not a Data Visualization Library",
+  "translation": "D3不是数据可视化库"
+}, {
+  "tag": "H2",
+  "text": "Understanding that can help you learn it (and unlearn it)",
+  "translation": "了解这一点可以帮助您学习（和取消学习）"
+}, {
+  "tag": "P",
+  "text": "D3.js is an incredibly successful library yet there’s a disconnect between what people think D3 does and what it actually does. As a result, learning D3 is intimidating and confusing. By better understanding its structure and separating it into more manageable pieces, it can be easier to choose which parts of the library to learn and which parts to avoid — key lessons not only for D3 novices but for expert users like myself that might want to reexamine how they use D3.",
+  "translation": "D3.js是一个非常成功的库，但是人们认为D3所做的和实际的工作之间存在脱节。 结果，学习D3令人感到恐惧和困惑。 通过更好地了解其结构并将其分成更易于管理的部分，可以更容易地选择要学习的库部分以及应避免的部分—不仅对于D3新手，而且对于像我这样想要重新检查的专家用户来说，都是重要的课程 他们如何使用D3。"
+}, {
+  "tag": "P",
+  "text": "I wrote a book about D3 (twice), so I’m sure you’re thinking that this is some kind of clickbait title and that I’m going to make a subtle play on words or say something like D3 is not a Data Visualization Library it is THE Data Visualization Library. But no, along with key functionality that lets you do data visualization, D3 also consists of other functionality that is only tangentially related to data visualization. You might be surprised by that given what the D3 home page looks like.",
+  "translation": "我写了一本关于D3的书（两次），所以我确定您在想这是一种点击诱饵的标题，并且我将对文字进行微妙的播放，或者说类似D3的内容不是数据可视化 库是数据可视化库。 但是，不行，D3除了具有使您能够进行数据可视化的关键功能外，还包括其他仅与数据可视化相关的功能。 鉴于D3主页的外观，您可能会对此感到惊讶。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*Vjm76SQ2fAxafnkE?q=20",
+  "type": "image",
+  "file": "0*Vjm76SQ2fAxafnkE"
+}, {
+  "tag": "P",
+  "text": "But much of D3 has little to do with graphics and many of the parts that do aren’t necessary to learn to create effective data visualization. We can take the D3 API page and visualize it as a hierarchy by graphically nesting the functions into the sections and subsections described in the documentation. Here’s how d3-selection looks using this method:",
+  "translation": "但是D3的大部分内容与图形无关，而许多部分对于学习创建有效的数据可视化并不必要。 我们可以通过将函数图形化地嵌套到文档中描述的小节和小节中，来获取D3 API页面并将其可视化为层次结构。 使用此方法的d3选择的外观如下："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*5AdoEL6GqnkxO6H2YY_Ovg.png?q=20",
+  "type": "image",
+  "file": "1*5AdoEL6GqnkxO6H2YY_Ovg.png"
+}, {
+  "tag": "P",
+  "text": "Along with doing this for the entire docs, I grouped the functionality into a few broad semantic categories. Obviously, this method of visualizing the API doesn’t account for true complexity because some sections have many small nearly duplicate functions whereas others only have a few complex functions but it gives a reasonable graphical overview.",
+  "translation": "除了为整个文档执行此操作外，我还将功能分为几个广泛的语义类别。 显然，这种可视化API的方法并不能说明真正的复杂性，因为某些部分具有许多小的几乎重复的功能，而另一些部分仅具有一些复杂的功能，但是它提供了合理的图形概述。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*Jg78azZPohv5JrI3cyIvfw.png?q=20",
+  "caption": "A hierarchical diagram of the functions listed in the D3 API page, grouped into their category (such as d3-scale or d3-array) and subcategory (if applicable, such as continuous scales) and then further grouped and colored and labeled by the part of the API they represent. In this formulation, the geospatial data visualization functionality is a subsection of dataviz.",
+  "type": "image",
+  "file": "1*Jg78azZPohv5JrI3cyIvfw.png"
+}, {
+  "tag": "P",
+  "text": "The size and complexity of the library has always made it difficult to teach and almost every lesson and book (mine included) focuses first on establishing the JQuery part of the library, which is all about DOM manipulation to create and manipulate elements on a web page.",
+  "translation": "库的大小和复杂性总是使授课变得困难，几乎每节课和书（包括我的书）都首先关注建立库的JQuery部分，这全部是关于DOM操作的内容，以在网页上创建和操作元素 。"
+}, {
+  "tag": "P",
+  "text": "But take a look at that diagram above. If you want to learn how to use D3 for data visualization you don’t need to learn anything on the right hand side and you almost certainly don’t need to learn everything on the left. In fact, if you do, you might be setting yourself up for a worse chance at success in the long run. I’ll explain as I walk through the areas of the D3 API.",
+  "translation": "但是，请看一下上面的图。 如果您想学习如何使用D3进行数据可视化，则无需在右侧学习任何内容，并且几乎可以肯定，无需在左侧学习任何内容。 实际上，如果您这样做了，从长远来看，您可能会为成功做好准备。 我将在介绍D3 API的各个区域时进行解释。"
+}, {
+  "tag": "H1",
+  "text": "THE JQUERY PARTS",
+  "translation": "JQUERY零件"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*4Td1eEJm-1EeId_b?q=20",
+  "type": "image",
+  "file": "0*4Td1eEJm-1EeId_b"
+}, {
+  "tag": "P",
+  "text": "So much of what you read in D3 tutorials focuses on its DOM manipulation functionality. This includes the select/enter/exit/update pattern you’ve probably seen a thousand times but also convenience functions for dragging, zooming, dispatching events and even using Fetch (the D3 flavor of which is unsurprisingly called d3-fetch).",
+  "translation": "您在D3教程中阅读的大部分内容都集中在其DOM操作功能上。 这包括您可能已经看过上千次的选择/输入/退出/更新模式，还包括用于拖动，缩放，调度事件甚至使用Fetch（D3风格的d3-fetch也不奇怪）的便捷功能。"
+}, {
+  "tag": "P",
+  "text": "There are useful and interesting functions (like d3-zoom) along with particular D3 flavors of existing ES2015 functionality if you prefer the D3 way of writing code. But this whole section is unnecessary if you’re using something like Vue to create your DOM elements and actively conflicts with other forms of DOM management necessitating hacks or mixed systems. If you’re working in a team environment, it’s far more likely the rest of your team will be more familiar with other methods of DOM management than D3, so there are good reasons to avoid this aspect of D3 altogether.",
+  "translation": "如果您更喜欢D3编写代码的方式，则可以使用现有ES2015功能的特定D3风格以及有用且有趣的功能（例如d3-zoom）。 但是，如果您使用的是Vue之类的工具来创建DOM元素，并且与其他形式的DOM管理（需要黑客或混合系统）进行积极冲突，则不需要整个部分。 如果您在团队环境中工作，那么与D3相比，您团队中的其他人更有可能更熟悉DOM管理的其他方法，因此有充分的理由完全避免D3的这一方面。"
+}, {
+  "tag": "P",
+  "text": "It stands to reason why this is so tied up with data visualization: You can’t visualize things unless they actually exist (in the DOM) but because it is so prominent in the API it comes across to new audiences as if D3 can only be used if you use D3 to manipulate the DOM. It also makes sense given that when D3 was originally being developed (v3 was released in 2013). There’s another reason for selections and that’s tied to animation, which I’ll get into below.",
+  "translation": "这与数据可视化如此紧密地联系在一起是有原因的：您无法可视化事物，除非它们实际存在（在DOM中），但是由于它在API中如此突出，因此会像D3一样成为新的受众。 如果您使用D3操纵DOM，则使用此命令。 考虑到最初开发D3的时间（2013年发布了v3）也很有意义。 选择的另一个原因与动画有关，我将在下面介绍。"
+}, {
+  "tag": "H1",
+  "text": "THE LODASH PARTS",
+  "translation": "乐活散件"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/56/0*aI44gpmadNmxCcmb?q=20",
+  "type": "image",
+  "file": "0*aI44gpmadNmxCcmb"
+}, {
+  "tag": "P",
+  "text": "There’s another significant portion of the library that exposes a host of functions that are a part of the data transformation, cleaning and formatting process. Some of them, like the min and max functions in d3-array are syntactic sugar for operations that can be handled with vanilla JavaScript. Others, like set and map are D3 flavors that aren’t quite the same as ES2015 Set and Map.",
+  "translation": "该库的另一重要部分公开了许多功能，这些功能是数据转换，清理和格式化过程的一部分。 其中一些功能（例如d3数组中的min和max函数）是可以使用普通JavaScript处理的操作的语法糖。 其他设置（例如set和map）是D3风格，与ES2015 Set和Map不太一样。"
+}, {
+  "tag": "P",
+  "text": "The formatting utilities are there if you like python style numerical formatting, something I find less intuitive than numeral, as well as time formatting, which in all my experience with D3 I’ve never used preferring moment or (before Moment and now more recently) vanilla JavaScript time formatting options. There are, additionally, some interpolation functions that are used internally to power the scales and color functionality, as well as a host of random number generators.",
+  "translation": "如果您喜欢python风格的数字格式，那我会发现格式实用程序，我发现它不如数字直观，还有时间格式，根据我在D3方面的所有经验，我从未使用过偏好矩或（在Moment之前和现在） 原始JavaScript时间格式选项。 此外，还有一些插值函数可在内部使用，以为刻度和颜色功能供电，以及许多随机数生成器。"
+}, {
+  "tag": "P",
+  "text": "You need to know how to measure and format data to do data visualization but there are many ways to do that, often times in the process leading up to creating the dataset. There are also other libraries that might be more commonly used in industry or native ES2015 functions that larger teams will have a better chance of understanding than D3 particular functions.",
+  "translation": "您需要知道如何测量和格式化数据以进行数据可视化，但是通常有很多方法可以创建数据集。 还有一些其他库可能更常用于工业或本机ES2015功能中，与D3特定功能相比，较大的团队将有更好的理解机会。"
+}, {
+  "tag": "H1",
+  "text": "THE ANIMATION PARTS",
+  "translation": "动画部分"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*mAMasAKBt1yBqkY_?q=20",
+  "type": "image",
+  "file": "0*mAMasAKBt1yBqkY_"
+}, {
+  "tag": "P",
+  "text": "d3-transition is one of the most convenient ways to animate graphical elements on the web and is intimately tied to d3-selection. But I’ve found that animation in data visualization, while impressive and eye-catching, is a much lower priority than understanding how different chart types present data, how to properly design charts, understanding form in data visualization, and other aspects of data visualization practice. Given that you need to use D3 selections to get access to animation via d3-transition it’s a heavy investment that might be better spent on leveling up in other ways.",
+  "translation": "d3转换是对网络上的图形元素进行动画处理的最便捷方法之一，并且与d3选择紧密相关。 但是我发现，数据可视化中的动画虽然令人印象深刻且引人注目，但其优先级远低于了解不同图表类型如何呈现数据，如何正确设计图表，理解数据可视化中的形式以及数据可视化的其他方面 实践。 鉴于您需要使用D3选择来通过d3转换来访问动画，因此这是一笔沉重的投资，最好将其花费在以其他方式进行升级上。"
+}, {
+  "tag": "P",
+  "text": "Another aspect of animation that makes it optional as far as learning to do it with D3 is that there are other libraries that do good animation, like GSAP, as well as animation solutions that are native to the method you (or your team) are using for DOM management.",
+  "translation": "动画的另一个方面使它在学习使用D3时成为可选项，这是因为还有其他的库可以制作出色的动画，例如GSAP，以及您（或您的团队）使用的方法固有的动画解决方案 用于DOM管理。"
+}, {
+  "tag": "H1",
+  "text": "THE DATA ANALYSIS PARTS",
+  "translation": "数据分析部分"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*VwpSoPYOQWxjeC0H?q=20",
+  "type": "image",
+  "file": "0*VwpSoPYOQWxjeC0H"
+}, {
+  "tag": "P",
+  "text": "We’re getting closer to data visualization here. Parsing data like CSVs and its various flavors (tab-delimited, comma-delimited) is an important part of data visualization and I haven’t seen a library that does it so easily as d3-dsv. But much of my production data comes processed and available as JavaScript data structures and doesn’t require processing CSVs. d3-quadtree is an amazingly fun and useful library for spatial search but its direct application is pretty rare in the real world (under the hood quadtrees are used for things like the network diagrams built with d3-force). Binning and nesting functions from d3-collection and d3-array also fall into this category.",
+  "translation": "我们在这里越来越接近数据可视化。 解析CSV等数据及其各种样式（制表符分隔，逗号分隔）是数据可视化的重要组成部分，而且我还没有看到像d3-dsv这样容易实现的库。 但是，我的大部分生产数据都是经过处理的，可以作为JavaScript数据结构使用，不需要处理CSV。 d3-quadtree是一个非常有趣且有用的空间搜索库，但在现实世界中，它的直接应用非常罕见（在引擎盖下，四叉树用于使用d3-force构建的网络图之类的东西）。 d3集合和d3数组中的装箱和嵌套功能也属于此类。"
+}, {
+  "tag": "H1",
+  "text": "THE DATA VISUALIZATION PARTS",
+  "translation": "数据可视化部分"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*LRtj-YX29bDYCFLN?q=20",
+  "type": "image",
+  "file": "0*LRtj-YX29bDYCFLN"
+}, {
+  "tag": "P",
+  "text": "The real meat of D3 for data visualization is in its functions for decorating data with drawing instructions, creating new drawable data from source data, generating SVG paths and creating data visualization elements (like an axis) in the DOM from your data and methods. It’s useful to separate the graphical functionality of D3 into generators, components and layouts. Since layouts and generators don’t produce DOM elements but only raw material for creating DOM elements, you still need to pass the data they create to the DOM, a process I describe using React in an earlier article.",
+  "translation": "D3进行数据可视化的真正功能在于其功能，即使用绘图指令修饰数据，从源数据创建新的可绘制数据，生成SVG路径以及根据数据和方法在DOM中创建数据可视化元素（如轴）。 将D3的图形功能分为生成器，组件和布局很有用。 由于布局和生成器不生成DOM元素，而仅生成用于创建DOM元素的原材料，因此您仍然需要将它们创建的数据传递给DOM，这是我在之前的文章中使用React进行描述的过程。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*waMYon9_NpyLwpa8AwZC1g.png?q=20",
+  "caption": "A diagram from D3.js in Action describing the difference between generators, components and layouts.",
+  "type": "image",
+  "file": "1*waMYon9_NpyLwpa8AwZC1g.png"
+}, {
+  "tag": "P",
+  "text": "Understanding not only how to use layouts and generators but also how they work is key to understanding data visualization. Because most complex data visualization is combinatorial, understanding how these different functions can interact to produce a different kind of chart is key to understanding how to design data visualization well. It’s unfortunate that people learning D3 spend so much time learning its DOM management functionality and have only a superficial understanding of the actual data visualization functionality.",
+  "translation": "不仅了解如何使用布局和生成器，而且了解它们如何工作是理解数据可视化的关键。 由于大多数复杂的数据可视化是组合的，因此了解这些不同功能如何相互作用以生成不同种类的图表是了解如何很好地设计数据可视化的关键。 不幸的是，学习D3的人花了很多时间来学习其DOM管理功能，并且对实际的数据可视化功能只有一个肤浅的了解。"
+}, {
+  "tag": "H2",
+  "text": "D3’s Data Visualization Functions",
+  "translation": "D3的数据可视化功能"
+}, {
+  "tag": "P",
+  "text": "d3-shape has a bunch of really valuable functions that draw SVG paths from arrays of data that are useful in themselves and as models of how you can build your own generators. Its built-in canvas rendering functionality is nice but there’s an existing solution for that in vanilla JavaScript:Path2D.",
+  "translation": "d3shape具有许多真正有价值的功能，它们可以从本身有用的数据数组中绘制SVG路径，并作为构建自己的生成器的模型。 其内置的画布渲染功能非常出色，但是在普通的JavaScript：Path2D中已有一个解决方案。"
+}, {
+  "tag": "P",
+  "text": "Besides the graphical functions, scales and interpolators don’t create graphics but are key to projecting graphics into visual space (whether within the boundaries of a chart or with the color, stroke-width or other channels used to communicate visually). Scales don’t just interpolate numbers to numbers but transform from one mode to another (such as with quantizing scales) and expose convenience functions like calculating ticks suitable for axes.",
+  "translation": "除了图形功能外，比例尺和插值器不会创建图形，而是将图形投影到可视空间的关键（无论是在图表边界内还是在颜色，笔划宽度或其他用于可视化通信的通道上）。 比例尺不仅将数字内插到数字，还可以从一种模式转换为另一种模式（例如使用比例尺进行量化），并提供便利功能，例如计算适合于轴的刻度。"
+}, {
+  "tag": "P",
+  "text": "d3-hierarchy has hierarchical layouts (like dendrograms, treemaps and sunbursts) but also a hierarchical data structure that provides convenient ways to slice up and analyze hierarchical data.",
+  "translation": "d3-hierarchy具有分层布局（如树状图，树形图和旭日形），还具有分层数据结构，该结构提供了方便的方法来分割和分析分层数据。"
+}, {
+  "tag": "P",
+  "text": "d3-force has a simple constraint-based force-directed layout that is effective and generic enough to be used in most network visualization.",
+  "translation": "d3-force具有简单的基于约束的力导向布局，该布局有效且通用，足以在大多数网络可视化中使用。"
+}, {
+  "tag": "P",
+  "text": "d3-color and d3-color-schemes are not the only way to deal with color and if you’re just starting out, I’d suggest working with chroma.js rather than D3’s color utilities.",
+  "translation": "d3color和d3color方案不是处理颜色的唯一方法，如果您刚刚起步，我建议您使用chroma.js而不是D3的颜色实用程序。"
+}, {
+  "tag": "P",
+  "text": "The axis and brush functions in D3 suffer from the same problem that d3-selection does in that they reach into the DOM and create elements themselves. That means they’re harder to integrate into an application that’s using Vue or React to manage the DOM.",
+  "translation": "D3中的轴和笔刷功能遭受与d3选择相同的问题，因为它们会进入DOM并自己创建元素。 这意味着它们更难集成到使用Vue或React管理DOM的应用程序中。"
+}, {
+  "tag": "P",
+  "text": "Some functionality, like the canvas-to-SVG of d3-path, can be useful in some corner cases, but the real value of learning D3 comes from learning the different visualization methods, like hulls, contours, voronoi polygons and chord diagrams. Understanding how they take different forms of data and derive drawing instructions can help you to understand how data can be transformed for your applications and how those transformations interplay.",
+  "translation": "某些功能（例如d3路径的画布到SVG）在某些极端情况下可能会有用，但是学习D3的真正价值来自学习不同的可视化方法，例如船体，轮廓，voronoi多边形和和弦图。 了解它们如何采用不同形式的数据并得出绘图指令可以帮助您了解如何为应用程序转换数据以及这些转换如何相互作用。"
+}, {
+  "tag": "H2",
+  "text": "THE GEO PARTS",
+  "translation": "土方零件"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*GHDP4KSZsEkJUWgW?q=20",
+  "type": "image",
+  "file": "0*GHDP4KSZsEkJUWgW"
+}, {
+  "tag": "P",
+  "text": "While definitely a part of the data visualization area of D3, d3-geo is likely too specific and not as easily integrated across different design cases as the broader data visualization pieces. Its popularity is well justified as D3 has become something of a playground for neogeographers experimenting with cartograms, raster reprojection and other geographic geekery.",
+  "translation": "虽然d3-geo绝对是D3数据可视化领域的一部分，但它可能过于具体，无法像更广泛的数据可视化作品那样容易地在不同的设计案例中集成。 D3已经成为新地理学家尝试制图，栅格重投影和其他地理怪胎的游乐场，因此它的受欢迎程度是有道理的。"
+}, {
+  "tag": "P",
+  "text": "It consists of a million projections, an entire projection streaming system, functions for translating GeoJSON to paths, finding centroids and bounding boxes (use d3-polygon if you want this for generic geometries). A lot of spherical math and spherical shapes and steradians.",
+  "translation": "它包含一百万个投影，一个完整的投影流系统，用于将GeoJSON转换为路径，查找质心和边界框的功能（如果要对通用几何使用此功能，请使用d3-polygon）。 很多球面数学，球面形状和球度。"
+}, {
+  "tag": "P",
+  "text": "D3 lets you make simple choropleth maps easily but with a high learning curve if you’re not a GIS professional or a map nerd. Given the innovations happening in the WebGL mapping space, if you’re looking to make maps you might want to first explore kepler.gl or Mapbox.",
+  "translation": "如果您不是GIS专业人士或地图专家，则D3可让您轻松制作简单的十字形地图，但学习曲线却很高。 鉴于WebGL映射空间中正在发生的创新，如果您要制作地图，则可能需要首先浏览kepler.gl或Mapbox。"
+}, {
+  "tag": "H1",
+  "text": "Why this matters",
+  "translation": "为什么这很重要"
+}, {
+  "tag": "P",
+  "text": "People have a hard time learning D3. If you’re expected to learn the DOM manipulation part first it can be a barrier especially when you’re working on a project where that’s already being handled. The point of learning D3 is to learn how to create data visualization products, and that’s really just part of the library that you can focus on instead of the supplemental functionality.",
+  "translation": "人们很难学习D3。 如果希望您首先学习DOM操作部分，则可能会遇到障碍，尤其是当您正在处理已经处理过的项目时。 学习D3的目的是学习如何创建数据可视化产品，而这实际上只是库中您可以关注的一部分，而不是补充功能。"
+}, {
+  "tag": "P",
+  "text": "It limits the combinatorial quality of D3 if people think of it as a self-contained ecosystem. Data visualization and charts are about mapping data attributes to visual features. That should be the focus of anyone trying to learn a library that does data visualization, not DOM management. There are lots of tools for managing the DOM and all of them can integrate the data visualization functions in D3, which will only increase the amount of sophisticated data visualization being done.",
+  "translation": "如果人们将D3视为一个独立的生态系统，它将限制D3的组合质量。 数据可视化和图表是关于将数据属性映射到视觉特征的。 这应该是任何试图学习进行数据可视化而不是DOM管理的库的人的重点。 有很多用于管理DOM的工具，所有这些工具都可以在D3中集成数据可视化功能，这只会增加完成的复杂数据可视化的数量。"
+}, {
+  "tag": "P",
+  "text": "You might find using D3 for everything to be particularly suitable for your practice. That’s great! You should buy my book, since it explains how to use all those bits. But I’ve found that this is often not the case with people coming to learn D3 and as a result the data visualization community loses out on contributions from developers who really just wanted to do data visualization. For them, I hope I’ve done a decent job of defining where they should look and what they should focus on when it comes to learning D3.",
+  "translation": "您可能会发现，将D3用于所有内容都特别适合您的练习。 那很棒！ 您应该购买我的书，因为它解释了如何使用所有这些内容。 但是我发现，人们开始学习D3常常不是这种情况，因此，数据可视化社区会因为真正只想进行数据可视化的开发人员的贡献而失败。 对于他们来说，我希望我做得不错，可以确定他们在学习D3时应该看的地方以及应该关注的重点。"
+}, {
+  "tag": "P",
+  "text": "For those who have already mastered D3, I hope this has helped describe just how complex and eclectic and opinionated the library can appear to outsiders (And I didn’t even get into all the function chaining…). Let’s not assume that the way we learned or use D3 is the only way to do it, even if that means evolving our practice.",
+  "translation": "对于那些已经掌握了D3的人，我希望这可以帮助描述该库在外部人员看来多么复杂，折衷和自以为是（而且我什至没有涉足所有功能链……）。 我们不要以为学习或使用D3的方法是实现它的唯一方法，即使那意味着我们需要不断发展。"
+}]
