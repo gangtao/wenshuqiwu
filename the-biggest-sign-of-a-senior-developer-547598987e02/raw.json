@@ -1,0 +1,106 @@
+[{
+  "tag": "P",
+  "text": "After working with a diverse set of engineers, across multiple companies, in a wide age range, there’s one trait amongst the best that stood out to me:",
+  "translation": "在与不同公司，年龄范围广泛的公司中的各种工程师合作之后，有一个特质在我眼中脱颖而出："
+}, {
+  "tag": "P",
+  "text": "Patience",
+  "translation": "忍耐"
+}, {
+  "tag": "P",
+  "text": "It can be hard to push the urgency to start coding immediately back, but doing so will propel your progress and quality of work leaps and bounds ahead of other engineers.",
+  "translation": "迫切需要立即开始进行编码的紧迫性，但是这样做会推动您的进度和工作质量突飞猛进，领先于其他工程师。"
+}, {
+  "tag": "P",
+  "text": "You’ll produce cleaner code, easier code for others to work with, and code that requires less maintenance. You’ll not only become more responsible, but your external perception will be that of a more responsible and reasonable person.",
+  "translation": "您将生成更简洁的代码，更易于他人使用的代码，以及需要较少维护的代码。 您不仅会变得更加负责任，而且您的外部感知将是一个更负责任和更理性的人。"
+}, {
+  "tag": "P",
+  "text": "Think. Debate. Plan. Take your time, and create a map and direction of your project before taking a dead-end road.",
+  "translation": "认为。 辩论。 计划。 花点时间，在走完一条死路之前先创建项目的地图和方向。"
+}, {
+  "tag": "P",
+  "text": "Happy coding.",
+  "translation": "快乐的编码。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*a5NSYw7UmbUVXdvK?q=20",
+  "type": "image",
+  "file": "0*a5NSYw7UmbUVXdvK"
+}, {
+  "tag": "P",
+  "text": "At this point, you may have spent a few hours, or up to a few days, thinking about and designing the project you will be working on. While you can’t foresee every bump in the road, you’ve got a basic direction of how to execute the project, who will take which tasks, and pain points that could arise. You’ve taken these points in account for your deadline, and even added a few hours or days on top to give yourself padding for unforeseen incidents.",
+  "translation": "在这一点上，您可能已经花费了数小时甚至几天的时间来考虑和设计您将要从事的项目。 尽管您无法预见道路上的每一个坎bump，但您已掌握了如何执行项目的基本方向，由谁来负责哪些任务以及可能出现的痛点。 您已将这些要点考虑在内，并考虑到了截止日期，甚至还加了几个小时或几天，以备不时之需。"
+}, {
+  "tag": "P",
+  "text": "Now you can start writing some code. Since you’ve created a well thought out plan, the task at hand will become a lot easier, and you’ll be able to push out well-architected code at a quick pace.",
+  "translation": "现在您可以开始编写一些代码。 由于您已经制定了周到的计划，因此手头的任务将变得更加容易，并且可以快速推出结构良好的代码。"
+}, {
+  "tag": "P",
+  "text": "Meanwhile, the engineer who started coding after the project meeting is rewriting their implementation for the third time after running into some problems. Problems you thought about after the first half hour of planning. Don’t be that engineer.",
+  "translation": "同时，在项目会议后开始进行编码的工程师在遇到问题后将第三次重写其实现。 在计划的前半小时后您想到的问题。 不要成为那个工程师。"
+}, {
+  "tag": "P",
+  "text": "If the task at hand is simple, now might be a good time to start digging into existing code and seeing how your new project will fit in. Otherwise, it may be beneficial to create an RFC (Request for Comments) or an architectural plan on how to execute the project.",
+  "translation": "如果手头的任务很简单，那么现在可能是开始研究现有代码并了解新项目的适应方式的好时机。否则，在上面创建RFC（请求注释）或体系结构计划可能会有所帮助。 如何执行项目。"
+}, {
+  "tag": "P",
+  "text": "Have your colleagues look over and critique your RFC. Welcome the criticism, and use it to make your code cleaner, and life easier. Create a map of the project, using the questions you’ve asked yourself as directions along the road.",
+  "translation": "让您的同事查看并批评您的RFC。 欢迎提出批评，并使用它来使代码更整洁，并使生活更轻松。 使用您问自己的问题作为路线的方向，创建项目地图。"
+}, {
+  "tag": "P",
+  "text": "While you’re taking a short pause, take your time to think about the project. Approximately how long will each piece of the project take? How common are mistakes in the platform you’re going to be working on, and how long can those take?",
+  "translation": "稍作停顿时，请花点时间考虑一下该项目。 每个项目大约需要多长时间？ 您将要使用的平台中的错误有多普遍，这些错误需要多长时间？"
+}, {
+  "tag": "P",
+  "text": "Walk yourself through the flow of the design or spec. See if you can play devil’s advocate for edge cases or something the project manager and/or designer may have missed.",
+  "translation": "逐步了解设计或规格的流程。 看看您是否可以扮演恶魔般的拥护者，或者项目经理和/或设计师可能错过的东西。"
+}, {
+  "tag": "P",
+  "text": "Once you’ve spent some time asking yourself these questions, start writing out a rough plan for you or with your colleagues. How will the project be broken up? Who will complete each set of tasks? How can you minimize overstepping and potential merge conflicts?",
+  "translation": "在花了一些时间问自己这些问题之后，就开始为您或与您的同事制定一个粗略的计划。 该项目将如何分解？ 谁来完成每组任务？ 如何最大程度地减少跨步和潜在的合并冲突？"
+}, {
+  "tag": "P",
+  "text": "What is that virtue? It’s patience.",
+  "translation": "那是什么美德？ 耐心点"
+}, {
+  "tag": "P",
+  "text": "Your work may take twice as long, but it will cost those working with it ten times less in the future",
+  "translation": "您的工作可能要花两倍的时间，但将来会使工作的人减少十倍"
+}, {
+  "tag": "P",
+  "text": "I remember at my first internship, each project assigned to me would cause a sense of urgency. Always get your work done on time or early, right?"
+}, {
+  "tag": "P",
+  "text": "Sure, you should always aim to get your work done before the deadline, or push back if you think the deadline isn’t reasonable. I’m not advocating for late work.",
+  "translation": "当然，您应该始终以在截止日期之前完成工作为目标，如果您认为截止日期不合理，则应该推迟。 我不主张迟到。"
+}, {
+  "tag": "P",
+  "text": "What I am advocating for, however, is patience. Instead of hopping on your laptop and creating a new file/project, take a deep breath, a short walk, or a pause for a glass of water or snack.",
+  "translation": "但是，我提倡的是耐心。 深呼吸，短暂步行或停下一杯水或小吃，而不是跳上笔记本电脑并创建新的文件/项目。"
+}, {
+  "tag": "H1",
+  "text": "The Biggest Sign of a Senior Engineer",
+  "translation": "高级工程师的最大标志"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/48/0*hBZppbpMkUknISJM?q=20",
+  "type": "image",
+  "file": "0*hBZppbpMkUknISJM"
+}, {
+  "tag": "P",
+  "text": "I am always surprised when I overhear a conversation about what makes an engineer senior, and the most important virtue is completely left out.",
+  "translation": "当我听到关于工程师高级职位的谈话时，我总是感到惊讶，而最重要的优点却被完全忽略了。"
+}, {
+  "tag": "P",
+  "text": "It’s not that people forget, or that it’s an unknown trait.",
+  "translation": "并不是人们会忘记，或者这是一个未知的特征。"
+}, {
+  "tag": "P",
+  "text": "In fact, I think it’s the opposite: it’s something so well known, that we often take it for granted.",
+  "translation": "实际上，我认为这是相反的：众所周知，我们经常认为这是理所当然的。"
+}, {
+  "tag": "P",
+  "text": "It becomes an overlooked part of software engineering, and because it’s overlooked, it makes the truly great engineers stand out.",
+  "translation": "它成为软件工程中被忽视的一部分，并且因为它被忽略了，所以它使真正的杰出工程师脱颖而出。"
+}]
