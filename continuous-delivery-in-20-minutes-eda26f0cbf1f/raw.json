@@ -1,0 +1,492 @@
+[{
+  "tag": "H1",
+  "text": "Step 5 — Let’s Put This Bad Boy to Work! 💪",
+  "translation": "第5步-让这个坏男孩上班吧！ 💪"
+}, {
+  "tag": "P",
+  "text": "The delivery pipeline is up and running, well done! We didn’t build it for the sake of it, though; we want it to get our code deployed. Now we’ll put it to work and start doing some Continuous Integration/Continuous Delivery.",
+  "translation": "交付管道已启动并正在运行，做得很好！ 不过，我们并不是出于此目的而构建的； 我们希望它能够部署我们的代码。 现在，我们将其投入使用并开始进行一些持续集成/持续交付。"
+}, {
+  "tag": "P",
+  "text": "When we deployed the pipeline, our application was automatically deployed too. You can see that the pipeline stages are green with green ticks. Indicating that they have run successfully — if the pipeline is still running, be patient, it may take 4 or 5 minutes.",
+  "translation": "当我们部署管道时，我们的应用程序也被自动部署。 您可以看到管道阶段是绿色的，带有绿色的勾号。 表明它们已成功运行-如果管道仍在运行，请耐心等待，可能需要4到5分钟。"
+}, {
+  "tag": "P",
+  "text": "You can see our application in the CloudFormation console, called delivery-pipeline-tutorial-application-Dev.",
+  "translation": "您可以在CloudFormation控制台中看到我们的应用程序，称为delivery-pipeline-tutorial-application-Dev。"
+}, {
+  "tag": "H2",
+  "text": "Application Infrastructure",
+  "translation": "应用基础架构"
+}, {
+  "tag": "P",
+  "text": "We are using Serverless to help manage and deploy our application. Serverless takes care of lots of the things we need by default. Open up the serverless.yaml file at the root of your repo. It only contains these lines of code:",
+  "translation": "我们正在使用无服务器来帮助管理和部署我们的应用程序。 无服务器默认情况下会处理很多我们需要的东西。 在仓库的根目录打开serverless.yaml文件。 它仅包含以下代码行："
+}, {
+  "tag": "PRE",
+  "text": "service: delivery-pipeline-tutorial-applicationprovider:  name: aws  runtime: python3.7package:  exclude:    - tests/**    - delivery/**    - LICENSE    - README.mdfunctions:  helloWorld:    handler: hello_world/hello_world.entry_point    name: HelloWorld    description: A lambda function to help us demonstrate continuous delivery",
+  "translation": "服务：delivery-pipeline-tutorial-applicationprovider：名称：aws运行时：python3.7package：排除：-tests / **-delivery / **-LICENSE-README.md功能：helloWorld：处理程序：hello_world / hello_world.entry_point名称：HelloWorld 描述：一个lambda函数来帮助我们证明连续交付"
+}, {
+  "tag": "UL",
+  "texts": ["service: the human-readable name we want our application stack to have (this is the name we see in CloudFormation, with the addition of the environment name suffix).", "provider: this tells Serverless that we are deploying to AWS and that by default we want our runtime to be Python 3.7", "package: this section explains to Serverless which files and directories are not required for the application to function once it is deployed.", "functions: here, we describe which functions (Lambdas) we want to deploy. This includes the entry point (i.e. where the code execution should start from). It also includes some more human-readable information to help us understand what this function does after we’ve deployed it."],
+  "translations": ["服务：我们希望我们的应用程序堆栈具有的可读名称（这是我们在CloudFormation中看到的名称，并带有环境名称后缀）。", "提供程序：告诉Serverless我们正在部署到AWS，默认情况下，我们希望运行时为Python 3.7", "软件包：此部分向Serverless解释了应用程序一旦部署就不需要哪些文件和目录。", "功能：在这里，我们描述我们要部署的功能（Lambda）。 这包括入口点（即代码执行应从何处开始）。 它还包含一些更易理解的信息，以帮助我们了解在部署此功能后的功能。"]
+}, {
+  "tag": "P",
+  "text": "The serverless.yaml file is another example of IaC. This infrastructure is deployed in the Deploy step of our delivery pipeline.",
+  "translation": "serverless.yaml文件是IaC的另一个示例。 此基础结构已部署在我们交付管道的“部署”步骤中。"
+}, {
+  "tag": "H2",
+  "text": "Application Code",
+  "translation": "申请代码"
+}, {
+  "tag": "P",
+  "text": "The application code lives in services/hello_world/hello_world.py. It is as simple as its name suggests:",
+  "translation": "应用程序代码位于services / hello_world / hello_world.py中。 顾名思义，它很简单："
+}, {
+  "tag": "PRE",
+  "text": "def entry_point(event, context):    #   Lambda Entry Point    return \"Hello World\"",
+  "translation": "def entry_point（event，context）：＃Lambda入口点返回“ Hello World”"
+}, {
+  "tag": "P",
+  "text": "As soon as it is run it will return the string: Hello World.",
+  "translation": "一旦运行，它将返回字符串：Hello World。"
+}, {
+  "tag": "P",
+  "text": "You can see this code in AWS Lambda; its name is HelloWorld. You can run the code using the AWS Lambda Test functionality. Open your HelloWorld Lambda function, and at the top of the page, you will see a dropdown menu Select test event. Then choose Configure test events. You can leave the payload as the default and give your test a name; any will do. Click Create.",
+  "translation": "您可以在AWS Lambda中看到此代码； 它的名字叫HelloWorld。 您可以使用AWS Lambda Test功能运行代码。 打开HelloWorld Lambda函数，在页面顶部，您将看到一个下拉菜单，选择测试事件。 然后选择“配置测试事件”。 您可以将有效负载保留为默认值，并为测试命名。 任何都会做。 单击创建。"
+}, {
+  "tag": "P",
+  "text": "With your test configured, you can click the Test button. The Lambda will be executed, and a result will appear.",
+  "translation": "配置测试后，您可以单击“测试”按钮。 Lambda将被执行，并显示结果。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*hMzT3I7xcsvUZzClz33rIQ.png?q=20",
+  "caption": "Successfully executed Lambda code!",
+  "type": "image",
+  "file": "1*hMzT3I7xcsvUZzClz33rIQ.png"
+}, {
+  "tag": "H2",
+  "text": "Application Tests",
+  "translation": "应用测试"
+}, {
+  "tag": "P",
+  "text": "The application has its own unit tests in tests/test_hello_world.py. This test is just checking to see that the returned string is correct, “Hello World”:",
+  "translation": "该应用程序在tests / test_hello_world.py中具有自己的单元测试。 该测试只是检查返回的字符串是否正确，即“ Hello World”："
+}, {
+  "tag": "PRE",
+  "text": "import unittestfrom services.hello_world import hello_worldclass HelloWorldTest(unittest.TestCase):    def test_greeting(self):        \"\"\"        Test that I get the correct greeting        \"\"\"        greeting = hello_world.entry_point(\"\", \"\")        self.assertEqual(greeting, \"Hello World\")if __name__ == '__main__':    unittest.main()",
+  "translation": "从services.hello_world导入unittest导入hello_worldclass HelloWorldTest（unittest.TestCase）：def test_greeting（self）：“”“测试是否得到正确的问候”“” greeting = hello_world.entry_point（“”，“”）self.assertEqual（greeting） ，“ Hello World”）如果__name__ =='__main__'：unittest.main（）"
+}, {
+  "tag": "P",
+  "text": "This test is run in the Test step of the delivery pipeline.",
+  "translation": "该测试在交付管道的“测试”步骤中运行。"
+}, {
+  "tag": "H2",
+  "text": "Making Changes",
+  "translation": "做出改变"
+}, {
+  "tag": "P",
+  "text": "We are going to make two changes to demonstrate the pipeline in action.",
+  "translation": "我们将进行两项更改以演示实际的管道。"
+}, {
+  "tag": "P",
+  "text": "First of all, we will change our application code, the code which runs within our Lambda. Doing this will cause our unit tests to fail. Therefore the pipeline will fail during the Test step. Let’s try it.",
+  "translation": "首先，我们将更改我们的应用程序代码，该代码在Lambda中运行。 这样做会导致我们的单元测试失败。 因此，管道将在“测试”步骤中失败。 试试吧"
+}, {
+  "tag": "P",
+  "text": "Change the services/hello_world/hello_world.py file so that it no longer returns “Hello World”:",
+  "translation": "更改services / hello_world / hello_world.py文件，使其不再返回“ Hello World”："
+}, {
+  "tag": "PRE",
+  "text": "def entry_point(event, context):    #   Lambda Entry Point    return \"Hola Mundo\"",
+  "translation": "def entry_point（event，context）：＃Lambda入口点返回“ Hola Mundo”"
+}, {
+  "tag": "P",
+  "text": "Now you need to commit and push the changes:",
+  "translation": "现在，您需要提交并推送更改："
+}, {
+  "tag": "PRE",
+  "text": "git add .git commit -m \"Changed the returned string\"git push origin",
+  "translation": "git add .git commit -m“更改返回的字符串” git push origin"
+}, {
+  "tag": "P",
+  "text": "Go to your pipeline in AWS CodePipeline. The pipeline has automatically begun processing the latest revision. It will Validate, and this step will pass. It will then attempt the Test step, but this is going to fail.",
+  "translation": "转到AWS CodePipeline中的管道。 管道已自动开始处理最新修订。 它将验证，并且此步骤将通过。 然后它将尝试“测试”步骤，但这将失败。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*QcykyK-CyOxQZVtDU5C2Dg.png?q=20",
+  "caption": "The unit tests have failed",
+  "type": "image",
+  "file": "1*QcykyK-CyOxQZVtDU5C2Dg.png"
+}, {
+  "tag": "P",
+  "text": "Notice that the pipeline has stopped at this point. Until the unit tests are fixed, the pipeline is blocked. This is good; it prevents us from deploying broken code. We can confirm the reason for the failure by clicking on the Details link. Follow the execution details; you will see this output:",
+  "translation": "请注意，管道此时已停止。 在确定单元测试之前，管道将被阻塞。 很好 它阻止我们部署损坏的代码。 我们可以通过单击“详细信息”链接来确认失败的原因。 遵循执行细节； 您将看到以下输出："
+}, {
+  "tag": "PRE",
+  "text": "============================================FAIL: test_greeting (__main__.HelloWorldTest)--------------------------------------------Traceback (most recent call last):File \"/codebuild/output/src993431970/src/tests/test_hello_world.py\", line 12, in test_greetingself.assertEqual(greeting, \"Hello World\")AssertionError: 'Hola Mundo' != 'Hello World'--------------------------------------------Ran 1 test in 0.000sFAILED (failures=1)",
+  "translation": "============================================失败：test_greeting（__main__。 HelloWorldTest）-------------------------------------------- Traceback（最新 最后调用）：文件“ /codebuild/output/src993431970/src/tests/test_hello_world.py”，第12行，位于test_greetingself.assertEqual（greeting，“ Hello World”）AssertionError：'Hola Mundo'！='Hello World'- -------------------------------------------在0.000s内进行了1次测试失败（ 失败= 1）"
+}, {
+  "tag": "P",
+  "text": "To get the pipeline moving again, we will need to fix that test. Change the tests/test_hello_world.py file to look like this:",
+  "translation": "为了使管道重新运行，我们需要修复该测试。 更改tests / test_hello_world.py文件，使其看起来像这样："
+}, {
+  "tag": "PRE",
+  "text": "import unittestfrom services.hello_world import hello_worldclass HelloWorldTest(unittest.TestCase):    def test_greeting(self):        \"\"\"        Test that I get the correct greeting        \"\"\"        greeting = hello_world.entry_point(\"\", \"\")        self.assertEqual(greeting, \"Hola Mundo\")if __name__ == '__main__':    unittest.main()",
+  "translation": "从services.hello_world导入unittest ，“ Hola Mundo”）如果__name__ =='__main__'：unittest.main（）"
+}, {
+  "tag": "P",
+  "text": "We will need to commit this change and push it:",
+  "translation": "我们将需要进行更改并推动它："
+}, {
+  "tag": "PRE",
+  "text": "git add .git commit -m \"Updated failing unit test\"git push origin",
+  "translation": "git add .git commit -m“更新的失败的单元测试” git push origin"
+}, {
+  "tag": "P",
+  "text": "The pipeline will automatically restart as those changes are picked up.",
+  "translation": "拾取这些更改后，管道将自动重新启动。"
+}, {
+  "tag": "P",
+  "text": "Our Test step will now pass! Hurray! Not only that, the code will soon make it all the way through to deployment. When it has completed, you can go back to AWS Lambda and retry your configured test:",
+  "translation": "我们的测试步骤现在将通过！ 欢呼！ 不仅如此，该代码还将很快贯穿整个部署过程。 完成后，您可以返回AWS Lambda并重试配置的测试："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*hdWNN86vjyWdbk-eAIqofA.png?q=20",
+  "caption": "It works!",
+  "type": "image",
+  "file": "1*hdWNN86vjyWdbk-eAIqofA.png"
+}, {
+  "tag": "H1",
+  "text": "Final Thoughts",
+  "translation": "最后的想法"
+}, {
+  "tag": "P",
+  "text": "Congratulations, you’re now a Continuous Delivery pro! You have configured and built a new CI/CD Pipeline in about 20 minutes, from scratch. Better than that; you now have a baseline for any of your future projects.",
+  "translation": "恭喜，您现在是一名持续交付专家！ 从头开始，您已在大约20分钟内配置并构建了新的CI / CD管道。 比那更好 现在，您可以为将来的任何项目提供基准。"
+}, {
+  "tag": "P",
+  "text": "You can tweak and modify this baseline as much as you need for each project. Once you’ve done it a couple of times, you will be able to go from an empty repo to a running pipeline in less than 5 minutes! You can reap the benefits of CI/CD no matter how small your project is. You will save that 5 minutes by the time you’ve performed 2 or 3 code commits.",
+  "translation": "您可以根据每个项目的需要来调整和修改此基准。 完成几次后，您将可以在不到5分钟的时间内从空的存储库转到正在运行的管道！ 无论您的项目有多小，您都可以从CI / CD中受益。 在执行2或3次代码提交之前，您将节省5分钟。"
+}, {
+  "tag": "P",
+  "text": "If you have any problems, questions or suggestions about this tutorial, then please let me know in the response section below. I’d be delighted to help!",
+  "translation": "如果您对本教程有任何问题，疑问或建议，请在下面的回复部分中告诉我。 我很乐意提供帮助！"
+}, {
+  "tag": "H2",
+  "text": "Quick Start Guide | AWS CLI",
+  "translation": "快速入门指南| AWS CLI"
+}, {
+  "tag": "H3",
+  "text": "Use this quick start guide to install AWS CLI and create a user profile in minutes.",
+  "translation": "使用此快速入门指南可以在几分钟内安装AWS CLI并创建用户配置文件。"
+}, {
+  "tag": "H1",
+  "text": "Step 4 — Create the CI/CD Pipeline",
+  "translation": "步骤4 —创建CI / CD管道"
+}, {
+  "tag": "P",
+  "text": "With the configuration sorted out, we are ready to create the CI/CD Pipeline. Amazingly, it only takes those few lines of code.",
+  "translation": "整理好配置后，我们就可以创建CI / CD管道了。 令人惊讶的是，它只需要那几行代码。"
+}, {
+  "tag": "P",
+  "text": "Creating the pipeline is now very simple, look in the delivery/ directory for the bash script create_delivery_pipeline.sh. The file uses the AWS CLI tool if you haven’t already installed this, then follow this 4-minute guide:",
+  "translation": "现在，创建管道非常简单，请在delivery /目录中查找bash脚本create_delivery_pipeline.sh。 如果您尚未安装此文件，则使用AWS CLI工具，然后按照以下4分钟指南进行操作："
+}, {
+  "tag": "H2",
+  "text": "Quick Start Guide | AWS CLI",
+  "translation": "快速入门指南| AWS CLI"
+}, {
+  "tag": "H3",
+  "text": "Use this quick start guide to install AWS CLI and create a user profile in minutes.",
+  "translation": "使用此快速入门指南可以在几分钟内安装AWS CLI并创建用户配置文件。"
+}, {
+  "tag": "P",
+  "text": "This script will allow us to create the pipeline with one command. Before we do that, open the file as you may want to tweak it. It executes aws cloudformation create-stack which:",
+  "translation": "该脚本将使我们能够使用一个命令来创建管道。 在执行此操作之前，请根据需要打开文件。 它执行aws cloudformation创建堆栈："
+}, {
+  "tag": "P",
+  "text": "Creates a stack as specified in the template. After the call completes successfully, the stack creation starts.",
+  "translation": "创建模板中指定的堆栈。 调用成功完成后，将开始创建堆栈。"
+}, {
+  "tag": "P",
+  "text": "The command requires a few parameters:",
+  "translation": "该命令需要一些参数："
+}, {
+  "tag": "UL",
+  "texts": ["--stack-name This can be anything you wish; it is the name the stack will be known as once it is deployed to AWS.", "--template-body This indicates where the file is which contains our configuration, leave this as default.", "--profile This tells AWS CLI which profile you wish to use when communicating with AWS. Use the name you created when you set up your profile. If you are using the default profile, you can delete this parameter.", "--region This is the region code for which AWS Region you want to put your pipeline in.", "--capabilities When using this command to create a stack which contains IAM resources, AWS requires you to state that this is desired, using this parameter explicitly. The value CAPBILITY_IAM tells AWS that we are deliberately creating IAM resources."],
+  "translations": ["--stack-name可以是您想要的任何内容； 它是将堆栈部署到AWS后将被称为的名称。", "--template-body这指示包含配置的文件所在的位置，将其保留为默认值。", "--profile告诉AWS CLI与AWS通信时希望使用哪个配置文件。 使用设置个人资料时创建的名称。 如果使用默认配置文件，则可以删除此参数。", "--region这是您要在其中放置管道的AWS区域的区域代码。", "--capabilities当使用此命令创建包含IAM资源的堆栈时，AWS要求您显式使用此参数声明所需的状态。 值CAPBILITY_IAM告诉AWS我们正在故意创建IAM资源。"]
+}, {
+  "tag": "H2",
+  "text": "Run the Command",
+  "translation": "运行命令"
+}, {
+  "tag": "P",
+  "text": "From a terminal cd to the delivery/ directory. You can now execute the script and create the Pipeline using this command:",
+  "translation": "从终端cd到delivery /目录。 现在，您可以使用以下命令执行脚本并创建管道："
+}, {
+  "tag": "PRE",
+  "text": "./create_delivery_pipeline.sh",
+  "translation": "./create_delivery_pipeline.sh"
+}, {
+  "tag": "P",
+  "text": "After a short pause, you will get a response like this, telling you that the stack creation is underway in AWS:",
+  "translation": "短暂的停顿后，您将得到如下响应，告诉您AWS中正在进行堆栈创建："
+}, {
+  "tag": "PRE",
+  "text": "{    \"StackId\": \"arn:aws:cloudformation:eu-west-1:xxxxxxxxxxxx:stack/delivery-pipeline-tutorial/1234567890-abcde-1234-mnbvc-9876g5543d221\"}",
+  "translation": "{“ StackId”：“ arn：aws：cloudformation：eu-west-1：xxxxxxxxxxxx：stack / delivery-pipeline-tutorial / 1234567890-abcde-1234-mnbvc-9876g5543d221”}"
+}, {
+  "tag": "P",
+  "text": "Log into the AWS Console and navigate to AWS CloudFormation. You should see your brand new stack, looking something like this:",
+  "translation": "登录到AWS控制台并导航到AWS CloudFormation。 您应该看到全新的堆栈，看起来像这样："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*k6txxrzBWo9hBcGXQO8qsQ.png?q=20",
+  "caption": "1) Stack Name, 2) Resource, 3) Resource Names",
+  "type": "image",
+  "file": "1*k6txxrzBWo9hBcGXQO8qsQ.png"
+}, {
+  "tag": "P",
+  "text": "So far, so good. Your application will be automatically deployed at this point and called delivery-pipeline-tutorial-application-Dev. We’ll come back to that in a moment.",
+  "translation": "到目前为止，一切都很好。 此时，您的应用程序将自动部署，并称为Delivery-pipeline-tutorial-application-Dev。 我们稍后再讲。"
+}, {
+  "tag": "P",
+  "text": "Now that the pipeline stack has been created we should have a CodePipeline with all the steps we described above. To view the pipeline, choose CodePipeline from the Services menu.",
+  "translation": "现在已经创建了管道堆栈，我们应该拥有一个CodePipeline，其中包含我们上面描述的所有步骤。 若要查看管道，请从“服务”菜单中选择“代码管道”。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*s6EyBpFj5g6dlQLPmywQXQ.png?q=20",
+  "caption": "The pipeline has been created",
+  "type": "image",
+  "file": "1*s6EyBpFj5g6dlQLPmywQXQ.png"
+}, {
+  "tag": "P",
+  "text": "Click on the name of the pipeline to open it.",
+  "translation": "单击管道的名称将其打开。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/32/1*tciMm2BPS26II8bGeP4kZQ.png?q=20",
+  "caption": "AWS Console showing the four parts of the pipeline",
+  "type": "image",
+  "file": "1*tciMm2BPS26II8bGeP4kZQ.png"
+}, {
+  "tag": "P",
+  "text": "Now we can clearly see the composite parts of the delivery pipeline:",
+  "translation": "现在我们可以清楚地看到交付管道的组成部分："
+}, {
+  "tag": "UL",
+  "texts": ["Source: A step which listens to the code repository for any changes.", "Validate: AWS CodeBuild step which checks that our codebase is valid.", "Test: AWS CodeBuild step which runs automated unit tests.", "Deploy: AWS CodeBuild step which publishes the application, ready to be used."],
+  "translations": ["源：侦听代码存储库中所有更改的步骤。", "验证：AWS CodeBuild步骤，检查我们的代码库是否有效。", "测试：运行自动单元测试的AWS CodeBuild步骤。", "部署：发布应用程序的AWS CodeBuild步骤，准备使用。"]
+}, {
+  "tag": "P",
+  "text": "That is all there is to it. Really! This pipeline is now able to listen for any changes we make to the codebase and automatically validate, test and deploy them. Magic! 🤓",
+  "translation": "这就是全部。 真！ 现在，该管道可以侦听我们对代码库所做的任何更改，并自动验证，测试和部署它们。 魔法！ 🤓"
+}, {
+  "tag": "H1",
+  "text": "Step 3 — CI/CD Pipeline Configuration",
+  "translation": "步骤3 — CI / CD管道配置"
+}, {
+  "tag": "P",
+  "text": "There are three types of files within our repo:",
+  "translation": "我们的仓库中有三种文件类型："
+}, {
+  "tag": "UL",
+  "texts": ["Delivery: Files which help us to put our code into an environment", "Test: Files which help us to confirm that our code is functioning correctly.", "Code/Application: The files which make up the application we are building."],
+  "translations": ["交付：有助于我们将代码放入环境中的文件", "测试：可帮助我们确认代码是否正常运行的文件。", "代码/应用程序：构成我们正在构建的应用程序的文件。"]
+}, {
+  "tag": "P",
+  "text": "In this step, we are focussing on Delivery files. These files will instruct AWS about how to configure our CI/CD pipeline. The file which describes the pipeline, and what the pipeline should do, is delivery/Delivery-Cloudformation.yaml. This file is a type of Infrastructure as Code (IaC).",
+  "translation": "在这一步中，我们将重点放在交付文件上。 这些文件将指导AWS有关如何配置CI / CD管道的信息。 描述管道以及管道应执行的操作的文件是delivery / Delivery-Cloudformation.yaml。 此文件是基础结构即代码（IaC）类型。"
+}, {
+  "tag": "P",
+  "text": "IaC is the concept of using config files to inform an Infrastructure as a Service (IaaS) provider — such as AWS — how to provision infrastructure on your behalf. Using IaC means that you do not have to provide the infrastructure yourself.",
+  "translation": "IaC是使用配置文件通知基础架构即服务（IaaS）提供程序（例如AWS）如何代表您配置基础结构的概念。 使用IaC意味着您不必自己提供基础架构。"
+}, {
+  "tag": "H2",
+  "text": "Pipeline Configuration YAML",
+  "translation": "管道配置YAML"
+}, {
+  "tag": "P",
+  "text": "Before we deploy the pipeline, let’s take a look at the file and see what it is going to create. The file is a Cloudformation file and is in the YAML format.",
+  "translation": "在部署管道之前，让我们看一下文件，看看它将要创建什么。 该文件是Cloudformation文件，格式为YAML。"
+}, {
+  "tag": "PRE",
+  "text": "AWSTemplateFormatVersion: 2010-09-09Description: Infrastructure as Code deployment pipelineParameters:  StackName:    Type: String    Default: delivery-pipeline-tutorial    Description: Name of the Stack  RepositoryName:    Type: String    Default: delivery-pipeline-tutorial    Description: The name of the CodeCommit repository to collect the code from  RepositoryBranch:    Type: String    Default: master    Description: The name of the git branch which should be used for deployments",
+  "translation": "AWSTemplateFormat版本：2010-09-09描述：基础架构即代码部署管道参数：StackName：类型：字符串默认：delivery-pipeline-tutorial说明：堆栈名称RepositoryName：类型：字符串默认：delivery-pipeline-tutorial说明： CodeCommit存储库以从RepositoryBranch收集代码：类型：字符串默认值：master描述：部署应使用的git分支的名称"
+}, {
+  "tag": "P",
+  "text": "The first two rows are metadata. The first helps AWS Cloudformation to know how to parse the file. The second helps you to understand what this stack is for following its deployment.",
+  "translation": "前两行是元数据。 第一个帮助AWS Cloudformation知道如何解析文件。 第二个帮助您了解此堆栈在部署之后的含义。"
+}, {
+  "tag": "P",
+  "text": "Next, we have Parameters. These parameters are input fields, which allow us to pass in different values, should we wish. They also act as variables which can be reused throughout the rest of the file.",
+  "translation": "接下来，我们有参数。 这些参数是输入字段，我们可以根据需要输入不同的值。 它们还充当变量，可以在文件的其余部分中重复使用。"
+}, {
+  "tag": "UL",
+  "texts": ["StackName: This is the name which the pipeline will be given once it is created. You can change this to anything you like.", "RepositoryName: This is the name of your AWS CodeCommit repository, you must change this to the exact name you chose in Step 1.", "RepositoryBranch: If you were to use a branch other than master you would specify it here. However, we’ll use master, so leave it as it is."],
+  "translations": ["StackName：这是创建管道后将给定的名称。 您可以将其更改为您喜欢的任何内容。", "RepositoryName：这是您的AWS CodeCommit存储库的名称，您必须将其更改为在步骤1中选择的确切名称。", "RepositoryBranch：如果要使用master以外的其他分支，则可以在此处指定。 但是，我们将使用master，因此请保持原样。"]
+}, {
+  "tag": "P",
+  "text": "The third top-level section of the file is Resources. This section contains the description of the assets which we want to deploy. These assets come in pairs: a resource, and it’s IAM role (with one exception). Each of our resources is there to perform a task, for which the resource requires permissions. We define the permissions in the IAM role.",
+  "translation": "该文件的第三个顶级部分是资源。 本节包含我们要部署的资产的描述。 这些资产成对出现：一种资源，以及它的IAM角色（一个例外）。 我们的每个资源都可以执行一项任务，该资源需要权限。 我们在IAM角色中定义权限。"
+}, {
+  "tag": "P",
+  "text": "These are the resources:",
+  "translation": "这些是资源："
+}, {
+  "tag": "UL",
+  "texts": ["PipelineBucket: This is the place where our delivery pipeline will be able to store the bits and pieces it needs to do its job. This is the resource which doesn’t need an IAM role.", "Pipeline: This is a CodePipeline resource. It is the delivery pipeline itself and defines what stages and actions the pipeline should take. Its role is PipelineRole, and this gives the pipeline permission to put/read objects into the PipelineBucket and also kick-off CodeBuild actions.", "Validate: This is a CodeBuild resource. It describes the EC2 server which needs to be provisioned and the actions that server should perform — in this case to validate the serverless.yaml file in our repository.", "Test: This is the second CodeBuild resource we need. This one is configured to run the python unit tests.", "Deploy: The third CodeBuild resource will deploy our application."],
+  "translations": ["PipelineBucket：这是我们的交付管道将能够存储完成其工作所需的点点滴滴的地方。 这是不需要IAM角色的资源。", "管道：这是CodePipeline资源。 它是交付管道本身，并定义了管道应采取的阶段和动作。 它的角色是PipelineRole，它为管道提供了将对象放入/读取对象到PipelineBucket中的权限，并启动了CodeBuild操作。", "验证：这是一个CodeBuild资源。 它描述了需要配置的EC2服务器以及服务器应执行的操作—在这种情况下，是要验证我们存储库中的serverless.yaml文件。", "测试：这是我们需要的第二个CodeBuild资源。 这是配置为运行python单元测试。", "部署：第三个CodeBuild资源将部署我们的应用程序。"]
+}, {
+  "tag": "H1",
+  "text": "Step 2 — Copy The QuickStart Code",
+  "translation": "第2步-复制快速入门代码"
+}, {
+  "tag": "P",
+  "text": "Later in this guide, I will talk you through how all of the code works. For now, all you need to do is copy the basic codebase into your new repo.",
+  "translation": "在本指南的后面，我将向您介绍所有代码的工作方式。 现在，您需要做的就是将基本代码库复制到新的存储库中。"
+}, {
+  "tag": "P",
+  "text": "From this Github repo, copy out the following files and directories:",
+  "translation": "从这个Github仓库中，复制以下文件和目录："
+}, {
+  "tag": "UL",
+  "texts": ["delivery/ — This contains the resources we need to create and maintain our delivery pipeline.", "services/ — This contains the application code.", "tests/ — This contains our automation tests, a key element in CI/CD.", "serverless.yaml — We’ll be using the Serverless Framework to help us to deploy our application code. This file tells our delivery pipeline how to deploy and configure our application. It is an IaC file. (Don’t worry you don't need to install Serverless locally)."],
+  "translations": ["交付/ —包含我们创建和维护交付渠道所需的资源。", "services / —这包含应用程序代码。", "测试/ —它包含我们的自动化测试，这是CI / CD中的关键要素。", "serverless.yaml-我们将使用无服务器框架来帮助我们部署应用程序代码。 该文件告诉我们的交付管道如何部署和配置我们的应用程序。 这是一个IaC文件。 （不用担心，您不需要在本地安装Serverless）。"]
+}, {
+  "tag": "P",
+  "text": "The easiest way is to clone the Github repo. Use:",
+  "translation": "最简单的方法是克隆Github存储库。 使用："
+}, {
+  "tag": "UL",
+  "texts": ["git clone git@github.com:g-farrow/delivery-pipeline-tutorial.git or", "git clone https://github.com/g-farrow/delivery-pipeline-tutorial.git"],
+  "translations": ["git clone git@github.com：g-farrow / delivery-pipeline-tutorial.git或", "git clone https://github.com/g-farrow/delivery-pipeline-tutorial.git"]
+}, {
+  "tag": "P",
+  "text": "You can now copy the files from the Github repo to your new repo using these commands:",
+  "translation": "现在，您可以使用以下命令将文件从Github存储库复制到新存储库："
+}, {
+  "tag": "PRE",
+  "text": "cp -r <Github_repo_location>/delivery <your_repo_location>/cp -r <Github_repo_location>/services <your_repo_location>/cp -r <Github_repo_location>/tests <your_repo_location>/cp <Github_repo_location>/serverless.yaml <your_repo_location>/",
+  "translation": "cp -r <Github_repo_location> /交付<your_repo_location> / cp -r <Github_repo_location> /服务<your_repo_location> / cp -r <Github_repo_location> / tests <your_repo_location> / cp <Github_repo_location> / serverless。"
+}, {
+  "tag": "P",
+  "text": "Your repo should now look something like this:",
+  "translation": "您的仓库现在应该看起来像这样："
+}, {
+  "tag": "PRE",
+  "text": "<your repo name>  --> delivery/  --> services/  --> tests/  --> serverless.yaml",
+  "translation": "<您的回购名称>->交付/->服务/->测试/-> serverless.yaml"
+}, {
+  "tag": "P",
+  "text": "Now you are ready to push the changes to your AWS CodeComit repo. You can do this easily from the terminal using:",
+  "translation": "现在，您可以将更改推送到您的AWS CodeCommit存储库。 您可以使用以下命令从终端轻松完成此操作："
+}, {
+  "tag": "PRE",
+  "text": "git add .git commit -m \"Initial commit containing quickstart files\"git push origin",
+  "translation": "git add .git commit -m“包含快速入门文件的初始提交” git push origin"
+}, {
+  "tag": "H2",
+  "text": "Create a New Repo | AWS CodeCommit",
+  "translation": "创建一个新的仓库 AWS CodeCommit"
+}, {
+  "tag": "H3",
+  "text": "AWS CodeCommit is a Git-based, fully managed service perfect for hobby-projects or Enterprise project alike.",
+  "translation": "AWS CodeCommit是基于Git的，完全托管的服务，非常适合爱好项目或企业项目。"
+}, {
+  "tag": "H1",
+  "text": "Step 1 — Creating Your Code Repository",
+  "translation": "第1步-创建代码存储库"
+}, {
+  "tag": "P",
+  "text": "The foundation of any CI/CD pipeline is the repo. The code repo is where application code is stored and versioned. There are lots of options for version control systems; one of the most popular is Git. In this guide, we will use AWS CodeCommit to store our code. If you need help creating a CodeCommit repo, follow this 3-minute guide:",
+  "translation": "任何CI / CD管道的基础都是回购协议。 代码存储库是应用程序代码的存储和版本控制的地方。 版本控制系统有很多选项。 最受欢迎的之一是Git。 在本指南中，我们将使用AWS CodeCommit存储我们的代码。 如果您在创建CodeCommit存储库方面需要帮助，请按照以下3分钟的指南进行操作："
+}, {
+  "tag": "H2",
+  "text": "Create a New Repo | AWS CodeCommit",
+  "translation": "创建一个新的仓库 AWS CodeCommit"
+}, {
+  "tag": "H3",
+  "text": "AWS CodeCommit is a Git-based, fully managed service perfect for hobby-projects or Enterprise project alike.",
+  "translation": "AWS CodeCommit是基于Git的，完全托管的服务，非常适合爱好项目或企业项目。"
+}, {
+  "tag": "P",
+  "text": "Now that you have a repo, you will need to check it out to your local workstation. The guide above will explain how to do this.",
+  "translation": "现在您有了一个仓库，您将需要将其检出到本地工作站。 上面的指南将说明如何执行此操作。"
+}, {
+  "tag": "H1",
+  "text": "Continuous Delivery in 20 minutes 🏎",
+  "translation": "在20分钟内连续交付🏎"
+}, {
+  "tag": "H2",
+  "text": "A guide to setting up a CI/CD pipeline from scratch with almost no effort or prior knowledge.",
+  "translation": "几乎无需任何努力或先验知识即可从头开始建立CI / CD管道的指南。"
+}, {
+  "tag": "P",
+  "text": "If you’ve never used Continuous Delivery before, it can be an ominous prospect!",
+  "translation": "如果您以前从未使用过持续交付，那么前景不佳！"
+}, {
+  "tag": "P",
+  "text": "All those tools, all that tech, where do I even start!?",
+  "translation": "所有这些工具，所有技术，我什至从哪里开始！？"
+}, {
+  "tag": "P",
+  "text": "That is precisely how I felt when I first encountered Continuous Delivery. Like most things in Software Engineering (and life), the hardest step can be the first. That’s why I’ve written this guide to get you from rookie to continuous delivery in minutes! I’ve provided all the code and config that you’ll need.",
+  "translation": "这就是我第一次遇到持续交付时的感觉。 像软件工程（以及生活）中的大多数事情一样，最困难的步骤可能是第一步。 这就是为什么我写本指南的目的是让您在几分钟之内从菜鸟到连续交付！ 我已经提供了您需要的所有代码和配置。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*g6xmjMDSWE57HfWw9hcLiw.jpeg?q=20",
+  "caption": "Photo by Greg Farrow",
+  "type": "image",
+  "file": "1*g6xmjMDSWE57HfWw9hcLiw.jpeg"
+}, {
+  "tag": "H2",
+  "text": "What is Continuous Integration (CI) and Continuous Delivery (CD)?",
+  "translation": "什么是持续集成（CI）和持续交付（CD）？"
+}, {
+  "tag": "P",
+  "text": "Continuous Integration — The practice of having a repository for storing and versioning source code. When a change to the codebase is made, the code is built and validated.",
+  "translation": "持续集成—拥有用于存储和版本化源代码的存储库的做法。 更改代码库后，将构建并验证代码。"
+}, {
+  "tag": "P",
+  "text": "Continuous Delivery — The logical extension of CI, once code has been validated and tested, it is then automatically deployed. A manual gateway can be used to allow human control over deployments.",
+  "translation": "连续交付-CI的逻辑扩展，一旦验证和测试了代码，便会自动部署它。 手动网关可用于允许人为控制部署。"
+}, {
+  "tag": "P",
+  "text": "Adopting Continuous Delivery requires a change in mindset towards code changes. Every commit to a repository must be eligible for delivery.",
+  "translation": "采用持续交付要求改变思维方式，以适应代码变更。 对存储库的每次提交都必须符合交付条件。"
+}, {
+  "tag": "H2",
+  "text": "What does this guide cover?",
+  "translation": "本指南涵盖哪些内容？"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/freeze/max/60/1*pqj6ChV1SkbYwNtqeZL0lA.gif?q=20",
+  "type": "image",
+  "file": "1*pqj6ChV1SkbYwNtqeZL0lA.gif"
+}, {
+  "tag": "UL",
+  "texts": ["Create a Git repository to store and version our code.", "Deploy a Continuous Delivery pipeline to validate our code, run unit tests and deploy our application.", "Test how it works by updating our code!"],
+  "translations": ["创建一个Git存储库来存储和版本化我们的代码。", "部署持续交付管道以验证我们的代码，运行单元测试和部署我们的应用程序。", "通过更新我们的代码来测试其工作方式！"]
+}, {
+  "tag": "H1",
+  "text": "Tools and Technology",
+  "translation": "工具与技术"
+}, {
+  "tag": "P",
+  "text": "I’ll talk you through every step, so you should be able to follow this guide, even if you’re a noob. 😀",
+  "translation": "我会逐步指导您，因此即使您是菜鸟，也应该能够按照本指南进行操作。 😀"
+}, {
+  "tag": "P",
+  "text": "We’ll be using AWS to deploy a simple “hello world” serverless app. Everything we do will be in the free tier, so don’t worry about costs. If you don’t already have one, create your account here.",
+  "translation": "我们将使用AWS部署一个简单的“ hello world”无服务器应用程序。 我们所做的一切都是免费的，因此不必担心成本。 如果您还没有，请在这里创建您的帐户。"
+}, {
+  "tag": "P",
+  "text": "Let’s start with our toolkit (again, you don’t need to know anything about these tools, I’ll explain everything as we go):",
+  "translation": "让我们从我们的工具包开始（同样，您不需要了解这些工具的任何知识，我们将在接下来的工作中解释一切）："
+}, {
+  "tag": "UL",
+  "texts": ["AWS CodeCommit — This is where we will store our code and manage versions.", "AWS CodeBuild — This service helps us to validate, test and deploy our app.", "AWS CodePipeline — This is the thing that brings all the other elements together into our CI/CD pipeline.", "Serverless Framework — An abstraction around AWS services which helps us get a real application deployed with almost no code.", "AWS CLI — This helps us to interact with AWS on the command-line. We only need this for two commands."],
+  "translations": ["AWS CodeCommit-这是我们存储代码和管理版本的地方。", "AWS CodeBuild-此服务可帮助我们验证，测试和部署我们的应用程序。", "AWS CodePipeline-这是将所有其他元素整合到我们的CI / CD管道中的东西。", "无服务器框架—一种围绕AWS服务的抽象，可帮助我们以几乎没有代码的方式部署真正的应用程序。", "AWS CLI —这有助于我们在命令行上与AWS进行交互。 我们仅需要两个命令。"]
+}]
