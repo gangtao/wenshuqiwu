@@ -1,0 +1,434 @@
+[{
+  "tag": "P",
+  "text": "Thank you for taking the time to read. Please do not forget to give it a clap 👏 (you can also clap multiple times) and comment down below 👇. I would really appreciate it.",
+  "translation": "感谢您抽出宝贵的时间阅读。 请不要忘记给它鼓掌👏（您也可以鼓掌多次），并在below以下进行注释。 我真的很感激。"
+}, {
+  "tag": "P",
+  "text": "This was a short list of snippets that you may find useful in your everyday work. It was highly based on this GitHub repository in which you can find many other useful code snippets both in Python and other languages and technologies.",
+  "translation": "这是一小段摘要，您可能会发现它们对您的日常工作很有用。 它高度基于此GitHub存储库，您可以在其中找到许多其他有用的Python和其他语言与技术的代码段。"
+}, {
+  "tag": "H1",
+  "text": "30 Helpful Python Snippets That You Can Learn in 30 Seconds or Less",
+  "translation": "您可以在30秒或更短的时间内学习到的30个有用的Python代码段"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*a4SfQa9ogzbuspzy?q=20",
+  "caption": "Photo by Jantine Doornbos on Unsplash",
+  "type": "image",
+  "file": "0*a4SfQa9ogzbuspzy"
+}, {
+  "tag": "P",
+  "text": "Python represents one of the most popular languages that many people use it in data science and machine learning, web development, scripting, automation, etc.",
+  "translation": "Python代表了许多人在数据科学和机器学习，Web开发，脚本，自动化等中使用它的最受欢迎的语言之一。"
+}, {
+  "tag": "P",
+  "text": "Part of the reason for this popularity is its simplicity and easiness to learn it.",
+  "translation": "这种流行的部分原因是它的简单性和易学性。"
+}, {
+  "tag": "P",
+  "text": "If you are reading this, then it is highly likely that you already use Python or at least have an interest in it.",
+  "translation": "如果您正在阅读本文，那么很可能您已经在使用Python或至少对它感兴趣。"
+}, {
+  "tag": "P",
+  "text": "In this article, we will briefly see 30 short code snippets that you can understand and learn in 30 seconds or less.",
+  "translation": "在本文中，我们将简要介绍30个简短的代码片段，您可以在30秒或更短的时间内理解和学习这些代码片段。"
+}, {
+  "tag": "H1",
+  "text": "1. All unique",
+  "translation": "1.所有独特"
+}, {
+  "tag": "P",
+  "text": "The following method checks whether the given list has duplicate elements. It uses the property of set() which removes duplicate elements from the list.",
+  "translation": "以下方法检查给定列表是否具有重复的元素。 它使用set（）的属性，该属性从列表中删除重复的元素。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/fatosmorina/ad615b2f60c18f4ef20645800d32266e/raw/4952586e867be9efda7e860836a92e4078d03c5c/all_unique.py",
+  "code": "def all_unique(lst):\n    return len(lst) == len(set(lst))\n\n\nx = [1,1,2,2,3,2,3,4,5,6]\ny = [1,2,3,4,5]\nall_unique(x) # False\nall_unique(y) # True"
+}, {
+  "tag": "H1",
+  "text": "2. Anagrams",
+  "translation": "2.字谜"
+}, {
+  "tag": "P",
+  "text": "This method can be used to check if two strings are anagrams. An anagram is a word or phrase formed by rearranging the letters of a different word or phrase, typically using all the original letters exactly once.",
+  "translation": "此方法可用于检查两个字符串是否为字谜。 字谜是通过重新排列不同单词或短语的字母而形成的单词或短语，通常只使用所有原始字母一次。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/fatosmorina/37564c6bfd7e9199f9865bf4e3342ab7/raw/6cec9379a4729839cad7d9fb3399d83f9378ddcf/anagram.py",
+  "code": "from collections import Counter\n\ndef anagram(first, second):\n    return Counter(first) == Counter(second)\n\n\nanagram(\"abcd3\", \"3acdb\") # True"
+}, {
+  "tag": "H1",
+  "text": "3. Memory",
+  "translation": "3.记忆"
+}, {
+  "tag": "P",
+  "text": "This snippet can be used to check the memory usage of an object.",
+  "translation": "该代码段可用于检查对象的内存使用情况。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/fatosmorina/bafdc0955b466452cb1827b67d04b6a2/raw/8cfe8ed4232efd92283f048643c2d85a5843c3bc/memory.py",
+  "code": "import sys \n\nvariable = 30 \nprint(sys.getsizeof(variable)) # 24"
+}, {
+  "tag": "H1",
+  "text": "4. Byte size",
+  "translation": "4.字节大小"
+}, {
+  "tag": "P",
+  "text": "This method returns the length of a string in bytes.",
+  "translation": "此方法返回以字节为单位的字符串长度。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/fatosmorina/76b78dde974efac086703e9f8a496252/raw/62e1a0210e92d52b7ad7d4bfab7e9bc2d3511d24/byte_size.py",
+  "code": "def byte_size(string):\n    return(len(string.encode('utf-8')))\n    \n    \nbyte_size('😀') # 4\nbyte_size('Hello World') # 11    "
+}, {
+  "tag": "H1",
+  "text": "5. Print a string N times",
+  "translation": "5.打印一个字符串N次"
+}, {
+  "tag": "P",
+  "text": "This snippet can be used to print a string n times without having to use loops to do it.",
+  "translation": "此代码段可用于打印字符串n次，而不必使用循环来完成。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/fatosmorina/50b3b5ac0fb56b2490795455af0e4b10/raw/1275afaaa27105c843b45b2a71cf55d8beb7778e/print.py",
+  "code": "n = 2\ns =\"Programming\"\n\nprint(s * n) # ProgrammingProgramming"
+}, {
+  "tag": "H1",
+  "text": "6. Capitalize first letters",
+  "translation": "6.首字母大写"
+}, {
+  "tag": "P",
+  "text": "This snippet simply uses the method title() to capitalize first letters of every word in a string.",
+  "translation": "此代码段仅使用方法title（）将字符串中每个单词的首字母大写。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/fatosmorina/f07ddccb9009842d141ab8cf4bd93a9b/raw/9c59f4a3a7e6dbeaf9cc72eeee0b5913ad2da219/capitalize_words.py",
+  "code": "s = \"programming is awesome\"\n\nprint(s.title()) # Programming Is Awesome"
+}, {
+  "tag": "H1",
+  "text": "7. Chunk",
+  "translation": "7.块"
+}, {
+  "tag": "P",
+  "text": "This method chunks a list into smaller lists of a specified size.",
+  "translation": "此方法将一个列表分块为指定大小的较小列表。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/fatosmorina/1a47760bb9547bf887ee10c6d9a8cbef/raw/286b92d863ee213e8146274c2aec304f69a0733f/chunk.py",
+  "code": "def chunk(list, size):\n    return [list[i:i+size] for i in range(0,len(list), size)]"
+}, {
+  "tag": "H1",
+  "text": "8. Compact",
+  "translation": "8.紧凑"
+}, {
+  "tag": "P",
+  "text": "This method removes falsy values (False, None, 0 and “”) from a list by using filter().",
+  "translation": "此方法通过使用filter（）从列表中删除虚假值（False，None，0和“”）。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/fatosmorina/1f42a7836502d806e541430760a018b4/raw/bf7c57bf54aec3dfc8f0533feba3f634d81dd084/compact.py",
+  "code": "def compact(lst):\n    return list(filter(None, lst))\n  \n  \ncompact([0, 1, False, 2, '', 3, 'a', 's', 34]) # [ 1, 2, 3, 'a', 's', 34 ]"
+}, {
+  "tag": "H1",
+  "text": "9. Count by",
+  "translation": "9.计数"
+}, {
+  "tag": "P",
+  "text": "This snippet can be used to transpose a 2D array.",
+  "translation": "该代码段可用于转置2D数组。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/fatosmorina/fc3f6368312b081272c7333a3de134a9/raw/dac1a1ee0887ec4a435f03e982cf140a74624bd2/transpose.py",
+  "code": "array = [['a', 'b'], ['c', 'd'], ['e', 'f']]\ntransposed = zip(*array)\nprint(transposed) # [('a', 'c', 'e'), ('b', 'd', 'f')]"
+}, {
+  "tag": "H1",
+  "text": "10. Chained comparison",
+  "translation": "10.链式比较"
+}, {
+  "tag": "P",
+  "text": "You can do multiple comparisons with all kinds of operators in a single line.",
+  "translation": "您可以在一行中与各种运算符进行多次比较。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/fatosmorina/520b634de4dec00422a1704050a47bac/raw/d74218b19f4493c40b1250a167e902121fddb288/comparisons.py",
+  "code": "a = 3\nprint( 2 < a < 8) # True\nprint(1 == a < 2) # False\n"
+}, {
+  "tag": "H1",
+  "text": "11. Comma-separated",
+  "translation": "11.逗号分隔"
+}, {
+  "tag": "P",
+  "text": "This snippet can be used to turn a list of strings into a single string with each element from the list separated by commas.",
+  "translation": "该代码段可用于将字符串列表转换为单个字符串，列表中的每个元素均以逗号分隔。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/fatosmorina/cc099a28b551873d150c12effffa44f2/raw/52192a3f164b57bf1bc34deb95ad7fe5927148b5/comma_separated.py",
+  "code": "hobbies = [\"basketball\", \"football\", \"swimming\"]\n\nprint(\"My hobbies are:\") # My hobbies are:\nprint(\", \".join(hobbies)) # basketball, football, swimming"
+}, {
+  "tag": "H1",
+  "text": "12. Get vowels",
+  "translation": "12.获取元音"
+}, {
+  "tag": "P",
+  "text": "This method gets vowels (‘a’, ‘e’, ‘i’, ‘o’, ‘u’) found in a string.",
+  "translation": "此方法可在字符串中找到元音（“ a”，“ e”，“ i”，“ o”，“ u”）。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/fatosmorina/616c1b3d0f2c5d883a066d975cad282b/raw/f88b0cf9345848b28a4243fff0d8e0fec01ef27f/get_vowels.py",
+  "code": "def get_vowels(string):\n    return [each for each in string if each in 'aeiou'] \n\n\nget_vowels('foobar') # ['o', 'o', 'a']\nget_vowels('gym') # []"
+}, {
+  "tag": "H1",
+  "text": "13. Decapitalize",
+  "translation": "13.削减资本"
+}, {
+  "tag": "P",
+  "text": "This method can be used to turn the first letter of the given string into lowercase.",
+  "translation": "此方法可用于将给定字符串的首字母转换为小写。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/fatosmorina/068758686b266a79197d77c40a97b7c2/raw/f34a4af0ae34284a299d97b3bf6b0cde5a0c3c5b/decapitalize.py",
+  "code": "def decapitalize(str):\n    return str[:1].lower() + str[1:]\n  \n  \ndecapitalize('FooBar') # 'fooBar'\ndecapitalize('FooBar') # 'fooBar'"
+}, {
+  "tag": "H1",
+  "text": "14. Flatten",
+  "translation": "14.展平"
+}, {
+  "tag": "P",
+  "text": "The following methods flatten a potentially deep list using recursion.",
+  "translation": "下列方法使用递归展平潜在的深层列表。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/fatosmorina/765794c47970a5c4c5e4819cc57b91ee/raw/04fe34cb9544f56fc968dabd8613c2dd3c116d42/flatten.py",
+  "code": "def spread(arg):\n    ret = []\n    for i in arg:\n        if isinstance(i, list):\n            ret.extend(i)\n        else:\n            ret.append(i)\n    return ret\n\ndef deep_flatten(xs):\n    flat_list = []\n    [flat_list.extend(deep_flatten(x)) for x in xs] if isinstance(xs, list) else flat_list.append(xs)\n    return flat_list\n\n\ndeep_flatten([1, [2], [[3], 4], 5]) # [1,2,3,4,5]"
+}, {
+  "tag": "H1",
+  "text": "15. Difference",
+  "translation": "15.差异"
+}, {
+  "tag": "P",
+  "text": "This method finds the difference between two iterables by keeping only the values that are in the first one.",
+  "translation": "此方法通过仅保留第一个变量中的值来找到两个可迭代变量之间的差异。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/fatosmorina/ab151bdd7f2b57c1f6f72e6769514d1b/raw/e20e12b5473982044100b876e19da5e09b501916/differences.py",
+  "code": "def difference(a, b):\n    set_a = set(a)\n    set_b = set(b)\n    comparison = set_a.difference(set_b)\n    return list(comparison)\n\n\ndifference([1,2,3], [1,2,4]) # [3]"
+}, {
+  "tag": "H1",
+  "text": "16. Difference by",
+  "translation": "16.差异"
+}, {
+  "tag": "P",
+  "text": "The following method returns the difference between two lists after applying a given function to each element of both lists.",
+  "translation": "在将给定函数应用于两个列表的每个元素之后，以下方法返回两个列表之间的差。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/fatosmorina/e317eb82729c487f1b9b25cd604dd0ae/raw/7ae4129491ead5e1fcde6cb102de4b7260b8aa0c/difference_by.py",
+  "code": "def difference_by(a, b, fn):\n    b = set(map(fn, b))\n    return [item for item in a if fn(item) not in b]\n\n\nfrom math import floor\ndifference_by([2.1, 1.2], [2.3, 3.4], floor) # [1.2]\ndifference_by([{ 'x': 2 }, { 'x': 1 }], [{ 'x': 1 }], lambda v : v['x']) # [ { x: 2 } ]"
+}, {
+  "tag": "H1",
+  "text": "17. Chained function call",
+  "translation": "17.链接函数调用"
+}, {
+  "tag": "P",
+  "text": "You can call multiple functions inside a single line.",
+  "translation": "您可以在一行中调用多个函数。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/fatosmorina/3de142e5d6b51871598b1fbf963add21/raw/39ec1009deced945e77c7fb076f7c48b1c428b14/chained.py",
+  "code": "def add(a, b):\n    return a + b\n\ndef subtract(a, b):\n    return a - b\n\na, b = 4, 5\nprint((subtract if a > b else add)(a, b)) # 9   "
+}, {
+  "tag": "H1",
+  "text": "18. Has duplicates",
+  "translation": "18.有重复项"
+}, {
+  "tag": "P",
+  "text": "The following method checks whether a list has duplicate values by using the fact that set() contains only unique elements.",
+  "translation": "以下方法通过使用set（）仅包含唯一元素的事实来检查列表是否具有重复值。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/fatosmorina/dc5d7af9b8b1779c5e2aab2aea29dc63/raw/d81cc8c08cc22d463b44afcac7b74d6e797242eb/has_duplicates.py",
+  "code": "def has_duplicates(lst):\n    return len(lst) != len(set(lst))\n    \n    \nx = [1,2,3,4,5,5]\ny = [1,2,3,4,5]\nhas_duplicates(x) # True\nhas_duplicates(y) # False"
+}, {
+  "tag": "H1",
+  "text": "19. Merge two dictionaries",
+  "translation": "19.合并两个字典"
+}, {
+  "tag": "P",
+  "text": "The following method can be used to merge two dictionaries.",
+  "translation": "可以使用以下方法合并两个字典。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/fatosmorina/1a329ce851f52f470e86001e3327bc15/raw/469688f25976f6a5c2b121e8954bad18862b6298/merge.py",
+  "code": "def merge_two_dicts(a, b):\n    c = a.copy()   # make a copy of a \n    c.update(b)    # modify keys and values of a with the ones from b\n    return c\n\n\na = { 'x': 1, 'y': 2}\nb = { 'y': 3, 'z': 4}\nprint(merge_two_dicts(a, b)) # {'y': 3, 'x': 1, 'z': 4}"
+}, {
+  "tag": "P",
+  "text": "In Python 3.5 and above, you can also do it like the following:",
+  "translation": "在Python 3.5及更高版本中，您还可以像下面这样进行操作："
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/fatosmorina/4393557661381573485f854ad03fd360/raw/5bc115baddbca0b9f8bc51b21d0e17bfe9d2c1f6/merge_dictionaries.py",
+  "code": "def merge_dictionaries(a, b):\n   return {**a, **b}\n\n\na = { 'x': 1, 'y': 2}\nb = { 'y': 3, 'z': 4}\nprint(merge_dictionaries(a, b)) # {'y': 3, 'x': 1, 'z': 4}"
+}, {
+  "tag": "H1",
+  "text": "20. Convert two lists into a dictionary",
+  "translation": "20.将两个列表转换成字典"
+}, {
+  "tag": "P",
+  "text": "The following method can be used to convert two lists into a dictionary.",
+  "translation": "可以使用以下方法将两个列表转换为字典。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/fatosmorina/38caae77efc1d4843d4ff82a2d67eaf0/raw/bf53298f22f510a5a30f5ba7ea5192dfdc13deec/to_dictionary.py",
+  "code": "def to_dictionary(keys, values):\n    return dict(zip(keys, values))\n    \n\nkeys = [\"a\", \"b\", \"c\"]    \nvalues = [2, 3, 4]\nprint(to_dictionary(keys, values)) # {'a': 2, 'c': 4, 'b': 3}"
+}, {
+  "tag": "H1",
+  "text": "21. Use enumerate",
+  "translation": "21.使用枚举"
+}, {
+  "tag": "P",
+  "text": "This snippet shows that you can use enumerate to get both the values and the indexes of lists.",
+  "translation": "此代码段显示您可以使用枚举获取列表的值和索引。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/fatosmorina/5c8c6390738da5954914d761f2926293/raw/5f4d300c0844a27573c9e67f6321706f94058ada/enumerate.py",
+  "code": "list = [\"a\", \"b\", \"c\", \"d\"]\nfor index, element in enumerate(list): \n    print(\"Value\", element, \"Index \", index, )\n# ('Value', 'a', 'Index ', 0)\n# ('Value', 'b', 'Index ', 1)\n#('Value', 'c', 'Index ', 2)\n# ('Value', 'd', 'Index ', 3)    "
+}, {
+  "tag": "H1",
+  "text": "22. Time spent",
+  "translation": "22.花时间"
+}, {
+  "tag": "P",
+  "text": "This snippet can be used to calculate the time it takes to execute a particular code.",
+  "translation": "该代码段可用于计算执行特定代码所需的时间。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/fatosmorina/ca8f3abd710c6bd664a8aef3d498d838/raw/d45a07d9717a022998047efad523a64b41cb4155/time_taken.py",
+  "code": "import time\n\nstart_time = time.time()\n\na = 1\nb = 2\nc = a + b\nprint(c) #3\n\nend_time = time.time()\ntotal_time = end_time - start_time\nprint(\"Time: \", total_time)\n\n# ('Time: ', 1.1205673217773438e-05)"
+}, {
+  "tag": "H1",
+  "text": "23. Try else",
+  "translation": "23.尝试其他"
+}, {
+  "tag": "P",
+  "text": "You can have an else clause as part of a try/except block, which is executed if no exception is thrown.",
+  "translation": "您可以将else子句作为try / except块的一部分，如果未引发任何异常，则执行该子句。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/fatosmorina/7e53daccdf1d5e9b761684730433d6e5/raw/7310003de50622f36ccaea5fb2f5ba5a66992770/try_else.py",
+  "code": "try:\n    2*3\nexcept TypeError:\n    print(\"An exception was raised\")\nelse:\n    print(\"Thank God, no exceptions were raised.\")\n\n#Thank God, no exceptions were raised."
+}, {
+  "tag": "H1",
+  "text": "24. Most frequent",
+  "translation": "24.最常"
+}, {
+  "tag": "P",
+  "text": "This method returns the most frequent element that appears in a list.",
+  "translation": "此方法返回出现在列表中的最频繁的元素。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/fatosmorina/208d06f708c3f7ebf9a50e7fb74f83a9/raw/4d1ca7546e3f031a295fc839efa99a9c815d619f/most_frequent.py",
+  "code": "def most_frequent(list):\n    return max(set(list), key = list.count)\n  \n\nnumbers = [1,2,1,2,3,2,1,4,2]\nmost_frequent(numbers)  "
+}, {
+  "tag": "H1",
+  "text": "25. Palindrome",
+  "translation": "25.回文"
+}, {
+  "tag": "P",
+  "text": "This method checks whether a given string is a palindrome.",
+  "translation": "此方法检查给定的字符串是否是回文。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/fatosmorina/53516f9b165aef54b2cf0c8f1effa76f/raw/da69df39d46661e5c61cfb0838ef225bf5ce6363/palindrome.py",
+  "code": "def palindrome(a):\n    return a == a[::-1]\n\n\npalindrome('mom') # True"
+}, {
+  "tag": "H1",
+  "text": "26. Calculator without if-else",
+  "translation": "26.不带if-else的计算器"
+}, {
+  "tag": "P",
+  "text": "The following snippet shows how you can write a simple calculator without the need to use if-else conditions.",
+  "translation": "以下代码片段显示了如何编写简单的计算器而无需使用if-else条件。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/fatosmorina/45246702b319844ac752b84cc64e0df5/raw/6e36e54b091baf11fe8d2eec24b3abdaaba0b338/operator.py",
+  "code": "import operator\naction = {\n    \"+\": operator.add,\n    \"-\": operator.sub,\n    \"/\": operator.truediv,\n    \"*\": operator.mul,\n    \"**\": pow\n}\nprint(action['-'](50, 25)) # 25"
+}, {
+  "tag": "H1",
+  "text": "27. Shuffle",
+  "translation": "27.随机播放"
+}, {
+  "tag": "P",
+  "text": "This snippet can be used to randomize the order of the elements in a list. Note that shuffle works in place, and returns None.",
+  "translation": "该代码段可用于随机化列表中元素的顺序。 请注意，随机播放在适当的地方起作用，并返回None。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/fatosmorina/bfb59c6ac34cd274b781121bfac9b088/raw/6b4904de36534d0e0b30be0e6ebfad0852404944/shuffle.py",
+  "code": "from random import shuffle\n\nfoo = [1, 2, 3, 4]\nshuffle(foo) \nprint(foo) # [1, 4, 3, 2] , foo = [1, 2, 3, 4]"
+}, {
+  "tag": "H1",
+  "text": "28. Spread",
+  "translation": "28.传播"
+}, {
+  "tag": "P",
+  "text": "This method flattens a list similarly like [].concat(…arr) in JavaScript.",
+  "translation": "该方法将列表变平，类似于JavaScript中的[] .concat（…array）。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/fatosmorina/03e0892e1329ab6ff34b262b7021aa42/raw/09914a4f62076a7008790581dfee63b526bf151c/spread.py",
+  "code": "def spread(arg):\n    ret = []\n    for i in arg:\n        if isinstance(i, list):\n            ret.extend(i)\n        else:\n            ret.append(i)\n    return ret\n\n\nspread([1,2,3,[4,5,6],[7],8,9]) # [1,2,3,4,5,6,7,8,9]"
+}, {
+  "tag": "H1",
+  "text": "29. Swap values",
+  "translation": "29.交换价值"
+}, {
+  "tag": "P",
+  "text": "A really quick way for swapping two variables without having to use an additional one.",
+  "translation": "交换两个变量而无需使用其他变量的一种非常快捷的方法。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/fatosmorina/540042223a6d1598c340a60efb24a576/raw/f15fdaac6e93f772a2a2dcfac27ecec05b690df5/swap.py",
+  "code": "a, b = -1, 14\na, b = b, a\n\nprint(a) # 14\nprint(b) # -1"
+}, {
+  "tag": "H1",
+  "text": "30. Get default value for missing keys",
+  "translation": "30.获取缺少键的默认值"
+}, {
+  "tag": "P",
+  "text": "This snippet shows how you can get a default value in case a key you are looking for is not included in the dictionary.",
+  "translation": "此代码段显示了如何在字典中未包含要查找的键的情况下获取默认值。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/fatosmorina/3f4eafd2f3598f96ef5e6fe7b8fc5f59/raw/7d07b677017335b51466d4dedcdeddbf308a6e47/missing_key.py",
+  "code": "d = {'a': 1, 'b': 2}\n\nprint(d.get('c', 3)) # 3"
+}]
