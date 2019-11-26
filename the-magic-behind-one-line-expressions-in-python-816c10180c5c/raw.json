@@ -1,0 +1,112 @@
+[{
+  "tag": "H1",
+  "text": "The Magic Behind One-Line Expressions in Python",
+  "translation": "Python中单行表达式背后的魔力"
+}, {
+  "tag": "H2",
+  "text": "Introduction to how human-readable code executes as opcode.",
+  "translation": "关于人类可读代码如何作为操作码执行的介绍。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*XXI-kg18liPn4XcfZmoqQQ.jpeg?q=20",
+  "caption": "Photo by Chris Ried on Unsplash",
+  "type": "image",
+  "file": "1*XXI-kg18liPn4XcfZmoqQQ.jpeg"
+}, {
+  "tag": "P",
+  "text": "The other day I was solving a coding problem Check If It Is a Good Array. After an hour of work, I submitted my solution to check the result. Though correct, the performance of my code was in the bottom 20% compared to the rest of the solutions submitted. To improve my problem solving, I read through the forum to learn how peers had approached the problem. The simplicity of one of the solutions blew me away! In the solution(example code 1), in line number 7 the author has used a one-line expression to good use to make code concise and readable. Though I have been coding in Python for more than four years now, the power of language when put to use-cases like this has me in awe.",
+  "translation": "前几天，我正在解决编码问题，检查“这是否是一个好的数组”。 经过一个小时的工作，我提交了解决方案以检查结果。 尽管正确，但与提交的其他解决方案相比，我的代码的性能却排在最后20％。 为了提高解决问题的能力，我在论坛上通读了有关同行如何解决问题的信息。 解决方案之一的简单性让我震惊！ 在解决方案中（示例代码1），在第7行中，作者使用了单行表达式来很好地使代码简洁易读。 尽管我使用Python编写代码已有四年多了，但将这种语言放在这种用例中的能力令我敬畏。"
+}, {
+  "tag": "P",
+  "text": "The purpose of writing this article is to deep-dive and understand how one-line expressions work in python’s call-stack and introduce readers to how opcodes work underneath.",
+  "translation": "撰写本文的目的是深入了解并理解单行表达式在python的调用堆栈中的工作方式，并向读者介绍操作码在下面的工作方式。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/ishashankkumar/45a7bcc3d186c2acfb121cdfe63d069b/raw/8a0a8893d40941f105b9aff4a9675256856ba288/leetcode-check-if-it-is-a-good-array",
+  "code": "# This is not my solution, the snippet is copied from the link below.\n# https://leetcode.com/problems/check-if-it-is-a-good-array/discuss/419368/JavaC%2B%2BPython-Chinese-Remainder-Theorem\ndef isGoodArray(self, A):\n  gcd = A[0]\n  for a in A:\n    while a:\n      gcd, a = a, gcd % a\n  return gcd == 1"
+}, {
+  "tag": "H1",
+  "text": "One line Expression’s Interpretation in Python",
+  "translation": "Python中一行表达式的解释"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/ishashankkumar/9ee9d90efd313b2f86f8ca80d1fddafb/raw/bea6e2432ab833d1b455dff4919d94baafc09091/one-line-expression-call-stack",
+  "code": ">>> def test_one_line_expression(a,b):\n...   a,b = b+1, a+b\n...   return a,b\n\n>>> test_one_line_expression(5,6)\n(7, 11)\n\n"
+}, {
+  "tag": "P",
+  "text": "The snippet in the example code 2 uses one line expression in line 2. Assume we calculate the one-line expression in line 2 on paper; if we decide to calculate b+1 first, store the result and then calculate a+b, the output of line 3 would be 6, 12. If we choose to reverse the order, the output on line 5 would evaluate to 12, 11. Thankfully, python interpreter does not have this luxury.",
+  "translation": "示例代码2中的代码段在第2行中使用了一行表达式。假定我们在纸上的第2行中计算了一行表达式； 如果我们决定先计算b + 1，存储结果，然后计算a + b，则第3行的输出为6、12。如果选择反转顺序，则第5行的输出为12、11 幸运的是，python解释器没有这种奢侈。"
+}, {
+  "tag": "P",
+  "text": "In python, the right-hand expression is always evaluated first i.e. everything right of ‘=’ is evaluated first. When we use a comma(,) in an expression, we are asking python to create a tuple. Once calculated, the values evaluated on the right-hand side are unpacked into variables on the left-hand side.",
+  "translation": "在python中，总是首先评估右边的表达式，即，首先对'='的所有权利进行评估。 当我们在表达式中使用逗号（，）时，我们要求python创建一个元组。 计算完成后，将在右侧评估的值解包到左侧的变量中。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/ishashankkumar/70a4db8881478e4d8e14b8d1826afee3/raw/ac1313aaa601edc2626049fae39f547bf3e77edc/sample-one-line-expression-2",
+  "code": ">>> def test_one_line_expression(a,b):\n...   a,b = a+b, b+1\n...   return a,b\n... \n>>> print test_one_line_expression(5,6)\n(11, 7)\n"
+}, {
+  "tag": "P",
+  "text": "Here, a question may arise in what order two expressions on right hand side of ‘=’ evaluated? In example code 2 & example code 3, how does python calculate values a+b & b+1 with original values 5 & 6. Shouldn’t it use the updated values once it calculates a or b? Let’s look at the opcodes to understand.",
+  "translation": "在这里，可能会出现一个问题，即“ =”右侧的两个表达式按什么顺序排序？ 在示例代码2和示例代码3中，python如何计算具有原始值5和6的值a + b和b + 1。一旦计算出a或b，它就不应该使用更新后的值吗？ 让我们看一下要理解的操作码。"
+}, {
+  "tag": "H1",
+  "text": "Disassemble and analyze opcode",
+  "translation": "反汇编和分析操作码"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*jp_5fimm0yrIvIfHtBl5PQ.png?q=20",
+  "caption": "Call-stack diagram for example code 2",
+  "type": "image",
+  "file": "1*jp_5fimm0yrIvIfHtBl5PQ.png"
+}, {
+  "tag": "P",
+  "text": "On the left-hand side, I am using dis python module to disassemble code in example code 2 and analyze the python byte-code to understand how things work.",
+  "translation": "在左侧，我正在使用dis python模块来分解示例代码2中的代码，并分析python字节码以了解其工作方式。"
+}, {
+  "tag": "P",
+  "text": "First column — represents line number in the function. [Here code in example code 2.]",
+  "translation": "第一列-代表函数中的行号。 [这里是示例代码2中的代码。]"
+}, {
+  "tag": "P",
+  "text": "Second column — 0, 3, 6 .. are the address in the byte-code which corresponds to the byte index.",
+  "translation": "第二列_0、3、6 ..是字节码中与字节索引相对应的地址。"
+}, {
+  "tag": "P",
+  "text": "Third column — LOAD_FAST, LOAD_CONST .. represents the instruction name or op-name.",
+  "translation": "第三列— LOAD_FAST，LOAD_CONST ..表示指令名称或操作名称。"
+}, {
+  "tag": "P",
+  "text": "Fourth column — This is used internally by Python to manage the stack, jump to a specific instruction, fetch variables etc.",
+  "translation": "第四栏-Python在内部用于管理堆栈，跳转到特定指令，获取变量等。"
+}, {
+  "tag": "P",
+  "text": "Fifth Column — This is human readable form of arguments.",
+  "translation": "第五列—这是人类可读的参数形式。"
+}, {
+  "tag": "H1",
+  "text": "Understanding the Opcodes",
+  "translation": "了解操作码"
+}, {
+  "tag": "P",
+  "text": "In the call-stack diagram, the first three lines are more or less self-explanatory. LOAD_FAST pushes variable ‘b’ into the stack, LOAD_CONS pushes constant 1 into the stack in that order and then BINARY_ADD removes content on the top of stack(TOS) which is 1 and content second to the top(TOS1) which is b=6, does a binary addition and stores the result to top of the stack. So the stack content after this operation is [7].",
+  "translation": "在调用堆栈图中，前三行或多或少是不言自明的。 LOAD_FAST将变量'b'压入堆栈，LOAD_CONS按此顺序将常数1压入堆栈，然后BINARY_ADD删除堆栈顶部（TOS）的内容为1，其次于顶部（TOS1）的内容为b = 6 ，进行二进制加法并将结果存储到堆栈的顶部。 因此，此操作后的堆栈内容为[7]。"
+}, {
+  "tag": "P",
+  "text": "Then using LOAD_FAST ‘b’ & ‘a’ is pushed to the stack. Note, the stack content now is [7, 5, 6]. Another BINARY_ADD, adds contents of TOS & TOS1 and pushes the content to TOS, so stack looks like [7, 11]. ROT_TWO swaps the contents of TOS and TOS1, so stack looks like [11, 7]. The two STORE_FAST takes values in the stack and store them in the names on the left-hand side of the assignment in that order. So we end up storing a = 7 and b= 11. The opcodes for line number 3 just loads the values of a & b creates a tuple and returns the output.",
+  "translation": "然后使用LOAD_FAST将'b'和'a'压入堆栈。 注意，堆栈内容现在为[7，5，6]。 另一个BINARY_ADD，添加TOS和TOS1的内容并将其推入TOS，因此堆栈看起来像[7，11]。 ROT_TWO交换TOS和TOS1的内容，因此堆栈看起来像[11，7]。 这两个STORE_FAST将值存储在堆栈中，并按该顺序将它们存储在分配左侧的名称中。 因此，我们最终存储了a = 7和b =11。第3行的操作码只是加载a＆b的值，创建一个元组并返回输出。"
+}, {
+  "tag": "P",
+  "text": "I hope this helps introduce to how python opcode works to solve expressions. A similar approach can be used to disassemble and understand any piece of code written in python. A good follow-up could be to do a similar exercise on code in example code 3.",
+  "translation": "我希望这有助于介绍python操作码如何解决表达式。 可以使用类似的方法来反汇编和理解用python编写的任何代码。 一个很好的跟进可能是对示例代码3中的代码进行类似的练习。"
+}, {
+  "tag": "H1",
+  "text": "References",
+  "translation": "参考文献"
+}, {
+  "tag": "UL",
+  "texts": ["https://docs.python.org/3/library/dis.html", "https://stackoverflow.com/questions/21047524/how-does-swapping-of-members-in-the-python-tuples-a-b-b-a-work-internally"],
+  "translations": ["https://docs.python.org/3/library/dis.html", "https://stackoverflow.com/questions/21047524/how-does-swapping-of-members-in-the-python-tuples-a-b-b-a-work-internally"]
+}]
