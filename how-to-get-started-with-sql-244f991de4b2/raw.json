@@ -13,7 +13,8 @@
 }, {
   "tag": "FIGURE",
   "image": "https://miro.medium.com/max/60/0*-ameqjAK2tvpuIV3.jpg?q=20",
-  "type": "image"
+  "type": "image",
+  "file": "0*-ameqjAK2tvpuIV3.jpg"
 }, {
   "tag": "P",
   "text": "Just about every popular app and social media platform has an engine under the hood that powers the information and data we absorb. With hundreds of millions of data points to keep track of, there has to be a well-oiled machine to maintain that database. Every developer has their favorite program to use for database management, but most programs utilize the Structured Query Language, or SQL, for short.",
@@ -41,7 +42,8 @@
 }, {
   "tag": "FIGURE",
   "image": "https://miro.medium.com/max/60/0*Gj_F4pQgfqMm4csS.jpg?q=20",
-  "type": "image"
+  "type": "image",
+  "file": "0*Gj_F4pQgfqMm4csS.jpg"
 }, {
   "tag": "P",
   "text": "One of the benefits of using DB Browser is the ability to create tables from comma-separated value files, which happens to be the format our crime data is in.",
@@ -49,7 +51,8 @@
 }, {
   "tag": "FIGURE",
   "image": "https://miro.medium.com/max/60/0*XwhaPJNkGFpgc1pq.jpg?q=20",
-  "type": "image"
+  "type": "image",
+  "file": "0*XwhaPJNkGFpgc1pq.jpg"
 }, {
   "tag": "P",
   "text": "If you’re curious about the coding syntax involved here, or if you want to create a table from scratch, you can highlight the table and click “modify table” to view the script used to create our table, as shown here.",
@@ -57,7 +60,8 @@
 }, {
   "tag": "FIGURE",
   "image": "https://miro.medium.com/max/60/0*X-y10nQQku0_MYfv.jpg?q=20",
-  "type": "image"
+  "type": "image",
+  "file": "0*X-y10nQQku0_MYfv.jpg"
 }, {
   "tag": "P",
   "text": "As you can see, each category is associated with a different data type, which are important to note when creating queries. At this point, you might want to get familiar with the data using the “Browse Data” tab.",
@@ -69,7 +73,8 @@
 }, {
   "tag": "FIGURE",
   "image": "https://miro.medium.com/max/60/0*AABxqE2xOu52xOua.jpg?q=20",
-  "type": "image"
+  "type": "image",
+  "file": "0*AABxqE2xOu52xOua.jpg"
 }, {
   "tag": "P",
   "text": "We can see from our results that 5664 auto thefts have occurred over the last four years in Boston. What if we wanted to get counts of certain things, like which districts have the most reports? We can use the COUNT command to handle this — again, just a few lines of code and we’ll have a pretty nice dataset displaying the number of incidents per district. Note: it is important to use the GROUP BY command to display the count for each distinct district.",
@@ -77,7 +82,8 @@
 }, {
   "tag": "FIGURE",
   "image": "https://miro.medium.com/max/60/0*oidtSOLbVGzCDVWv.jpg?q=20",
-  "type": "image"
+  "type": "image",
+  "file": "0*oidtSOLbVGzCDVWv.jpg"
 }, {
   "tag": "P",
   "text": "According to the Boston Police Department’s district key, Roxbury, Dorchester, and the South End have the most incidents reported over the last four years. As practice, I’ve created a column called Neighborhood and used the UPDATE command to insert the names of neighborhoods as they pertain to their respective police districts.",
@@ -85,7 +91,8 @@
 }, {
   "tag": "FIGURE",
   "image": "https://miro.medium.com/max/60/0*G2PyqyCo9RMPrLc6.jpg?q=20",
-  "type": "image"
+  "type": "image",
+  "file": "0*G2PyqyCo9RMPrLc6.jpg"
 }, {
   "tag": "P",
   "text": "The last example I’ll demonstrate combines all the commands we’ve practiced so far. I want to get a list of the most common streets where crime scenes involving shootings occur. In addition, I want to create a new table from our query to export for later uses, like a visualization. Here’s the query and output I came up with:",
@@ -93,7 +100,8 @@
 }, {
   "tag": "FIGURE",
   "image": "https://miro.medium.com/max/60/0*y-wrxSHBZZD8HbDW.jpg?q=20",
-  "type": "image"
+  "type": "image",
+  "file": "0*y-wrxSHBZZD8HbDW.jpg"
 }, {
   "tag": "P",
   "text": "If all goes accordingly, you should have a new table in your database that you can view in the “Browse Data” tab, which we can treat as its own dataset.",
@@ -101,7 +109,8 @@
 }, {
   "tag": "FIGURE",
   "image": "https://miro.medium.com/max/56/0*a9z7U-g--TzxRBM0.jpg?q=20",
-  "type": "image"
+  "type": "image",
+  "file": "0*a9z7U-g--TzxRBM0.jpg"
 }, {
   "tag": "P",
   "text": "[Related Article: SQL Equivalents in R]",
