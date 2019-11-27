@@ -1,0 +1,694 @@
+[{
+  "tag": "P",
+  "text": "[1] For the sake of clarity, we should note here that this is a simplification. It is not possible to trade this morning at last night’s closing price. We could evaluate news articles as they are published, but this would require significantly more intraday price data than we had available for this project. In addition, it is worth noting that the focus here is on determining which news will move the market, not on determining which direction that move will be. (That said, given one, it may be relatively straightforward to determine the other — but given our historic focus on volatility, this is where our interest lay)",
+  "translation": "[1]为了清楚起见，在这里我们应该注意这是一种简化。 今天上午无法以昨晚的收盘价进行交易。 我们可以在新闻报道发布时对其进行评估，但这将需要比该项目更多的日内价格数据。 另外，值得注意的是，这里的重点是确定哪个新闻将推动市场发展，而不是确定该趋势将朝哪个方向发展。 （这就是说，给定一个，确定另一个可能相对简单-但是鉴于我们对波动率的历史关注，这就是我们的兴趣所在）"
+}, {
+  "tag": "P",
+  "text": "[2] Note that we are not inferring causality. There are multiple factors driving the movement in any one stock price at any one moment. In addition, we are focusing on changes in the stock’s price in excess of the movement of the S&P500 index over the same period — i.e. we are looking at excess return, commonly referred to as Alpha.",
+  "translation": "[2]请注意，我们并不是在推断因果关系。 在任何时刻，任何一种股价的变动都有多种因素驱动。 此外，我们关注的焦点是股价的变化超过同期S＆P500指数的波动，即，我们正在寻找超额收益（通常称为Alpha）。"
+}, {
+  "tag": "H1",
+  "text": "Reading The Markets — Machine Learning Versus The Financial News",
+  "translation": "阅读市场-机器学习与金融新闻"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*1BXkoIeKgu4EscTbGRtw8Q.png?q=20",
+  "type": "image",
+  "file": "1*1BXkoIeKgu4EscTbGRtw8Q.png"
+}, {
+  "tag": "P",
+  "text": "An enormous number of financial news articles get published. But only a small number of them will actually move the market. It might be helpful to know which ones. Can Machine Learning point the way?",
+  "translation": "大量的金融新闻文章被发表。 但是，只有少数人会真正推动市场。 知道哪些可能会有所帮助。 机器学习可以指出道路吗？"
+}, {
+  "tag": "P",
+  "text": "[This article covers work presented at this May’s QuantMinds International conference in Vienna, with updates at December’s Machine Learning & AI in Quantitative Finance conference in New York. It builds on work measuring news sentiment that we published in Towards Data Science: Machine Learning Versus The News.]",
+  "translation": "[本文涵盖了今年五月在维也纳举行的QuantMinds国际会议上发表的工作，以及十二月在纽约举行的Quantitative Finance机器学习与人工智能会议上的最新动态。 它建立在衡量新闻情感的工作基础上，我们在《迈向数据科学：机器学习与新闻》中发表了此文章。"
+}, {
+  "tag": "P",
+  "text": "Imagine, for a moment, that you’d like to beat the stock market. You’re a diligent investor. Each morning before the market opens, you read all the news that’s been published since the previous day’s close. After somehow divining which of those articles will move the market, you apply your tremendous powers of intuition and insight to place your bets for the day. Then you go to the beach.",
+  "translation": "想象一下，您想击败股票市场。 您是一个勤奋的投资者。 市场开盘前的每个早晨，您都阅读自前一天休市以来发布的所有新闻。 在以某种方式确定了哪些文章会打动市场之后，您将运用自己的直觉和洞察力来进行当天的下注。 然后您去海滩。"
+}, {
+  "tag": "P",
+  "text": "The problem with this dream scenario is that the amount of data is vast and the relationship between the data and the outcome has never been reliably formulated. But that, of course, is the very essence of the sort of problem to which we like to apply Machine Learning[1].",
+  "translation": "这种理想情况的问题在于，数据量巨大，并且数据与结果之间的关系从未得到可靠的表述。 但这当然是我们希望将机器学习应用于这类问题的本质[1]。"
+}, {
+  "tag": "P",
+  "text": "Dow Jones Newswires, one of the main real-time financial news providers, carries several million articles per year. These include everything from articles by major newspapers to press releases and commentary from brokers. Even if we restrict our view of the world to articles that are explicitly related to the companies comprising the S&P 500 index, we’re still left with thousands of articles per day. If we arrived at work an hour before the market opened, we’d have barely two seconds available to read and evaluate each article. We might be able to glance at a few articles at that pace and spot some interesting ones, but it’s unlikely our analysis would be very deep, and it’s a near certainty that we wouldn’t be able to maintain that pace for anything like an hour. It’s also long been clear that even given adequate time, investors aren’t that great at making predictions about the market.",
+  "translation": "道琼斯通讯社（Dow Jones Newswires）是主要的实时财经新闻提供商之一，每年载有几百万篇文章。 其中包括从主要报纸的文章到新闻稿和经纪人评论的所有内容。 即使我们对世界的看法仅限于与构成标准普尔500指数的公司明确相关的文章，我们每天仍然有数千篇文章。 如果我们在开市前一个小时到达工作地点，则只有两秒钟的时间来阅读和评估每篇文章。 我们也许可以按照这样的速度浏览几篇文章，并发现一些有趣的文章，但是我们的分析不太可能会很深入，而且几乎可以肯定的是，我们无法在一个小时的时间内保持这种速度 。 很久以来就很清楚，即使有足够的时间，投资者对市场的预测也不是那么出色。"
+}, {
+  "tag": "P",
+  "text": "The big question that comes to mind is:",
+  "translation": "想到的最大问题是："
+}, {
+  "tag": "P",
+  "text": "Is it possible to build an algorithm that can successfully find the articles that will move the market?",
+  "translation": "是否有可能构建一种算法来成功找到将推动市场发展的商品？"
+}, {
+  "tag": "P",
+  "text": "Read on and you will see that the answer is ultimately, yes. But the ability to achieve it is predicated on investing significant efforts in developing both an understanding of the nature of the available news articles and an intuition for the relevant tools and algorithms.",
+  "translation": "继续阅读，您会发现答案最终是肯定的。 但是要实现这一目标，需要投入大量的精力来发展对现有新闻文章的本质的理解以及对相关工具和算法的直觉。"
+}, {
+  "tag": "H1",
+  "text": "Understanding the news",
+  "translation": "了解新闻"
+}, {
+  "tag": "P",
+  "text": "For this project, we work with Natural Language Processing, and in particular with Sentiment Analysis. To refer to the Wikipedia definition:",
+  "translation": "对于这个项目，我们使用自然语言处理，尤其是情感分析。 要引用Wikipedia定义："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*7Sqd-3LvLY3rmXHOMzvZFg.png?q=20",
+  "caption": "Wikipedia’s definition of Sentiment Analysis",
+  "type": "image",
+  "file": "1*7Sqd-3LvLY3rmXHOMzvZFg.png"
+}, {
+  "tag": "P",
+  "text": "In our context, this means analyzing the text of a news article and deciding whether it ‘sounds’ positive or negative. There are several common libraries which can be used:",
+  "translation": "在我们的上下文中，这意味着分析新闻文章的文本并确定它是“正面”还是“负面”。 有几种常用的库可以使用："
+}, {
+  "tag": "P",
+  "text": "● Stanford CoreNLP",
+  "translation": "●斯坦福大学CoreNLP"
+}, {
+  "tag": "P",
+  "text": "● NLTK",
+  "translation": "●NLTK"
+}, {
+  "tag": "P",
+  "text": "● Google Cloud Platform",
+  "translation": "●Google Cloud Platform"
+}, {
+  "tag": "P",
+  "text": "Each of these libraries operates differently, but the general idea is that it will consume some text and return a score, where an article might be rated +1 if it’s particularly upbeat, -1 if it’s particularly negative, or some other value in between as appropriate. The results presented in this article are obtained using NLTK VADER. This choice is made mainly for computational reasons as it is considerably faster than the alternatives.",
+  "translation": "这些库中的每个库的操作方式都不相同，但是通常的想法是，它将消耗一些文本并返回分数，如果文章特别乐观，则文章的评分可能为+1，如果文章特别负面，则评分为-1，或者介于两者之间的其他值 适当。 本文介绍的结果是使用NLTK VADER获得的。 选择该选项主要是出于计算原因，因为它比替代方法要快得多。"
+}, {
+  "tag": "P",
+  "text": "To give an illustration, let’s look at a few sentences which have been passed to Stanford’s sentiment analyzer (which can be run here).",
+  "translation": "为了举例说明，我们来看看传递给斯坦福大学情感分析器（可以在此处运行）的一些句子。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*ZI2JLa916gR6bz9D0WraqA.png?q=20",
+  "caption": "Sentiment computed for a variety of sentences by Stanford’s CoreNLP",
+  "type": "image",
+  "file": "1*ZI2JLa916gR6bz9D0WraqA.png"
+}, {
+  "tag": "P",
+  "text": "We see that a few trivial sentences are being evaluated as more or less positive in line with what we might hope to expect. When working with either new data or a new library it is extremely useful to run such trivial tests in order to determine what weaknesses you might encounter. Poor results can be found with all libraries — and to avoid seeming to be mean-spirited such examples are not shared here.",
+  "translation": "我们看到，一些琐碎的句子被评估为或多或少是积极的，这符合我们可能希望的期望。 当使用新数据或新库时，运行此类琐碎的测试来确定您可能遇到的弱点非常有用。 在所有库中都可以找到差劲的结果，并且为避免看起来有些卑鄙，在此不共享此类示例。"
+}, {
+  "tag": "H1",
+  "text": "How to predict the future",
+  "translation": "如何预测未来"
+}, {
+  "tag": "P",
+  "text": "Once we know the sentiment of a news article, we want to be able to predict whether its publication will be followed by a significant move in the market[2].",
+  "translation": "一旦我们了解了新闻报道的情绪，我们就希望能够预测新闻发表是否会在市场上发生重大变化[2]。"
+}, {
+  "tag": "P",
+  "text": "In the jargon of Machine Learning, this is a Supervised Learning problem. We have historical news article data containing features (attributes of the article) and add some labels (basically 0 or 1) specifying whether the article in fact was followed by a significant move in the stock price of the company mentioned in the article.",
+  "translation": "用机器学习的术语来说，这是一个监督学习问题。 我们具有包含新闻功能（文章的属性）的历史新闻文章数据，并添加了一些标签（基本上为0或1），用于指定文章实际上是否跟着文章中提到的公司股价发生了重大变化。"
+}, {
+  "tag": "P",
+  "text": "We pass this data to a Classifier — some algorithm which, in our case, tries to infer whether a particular article is likely to be followed by a significant price change. In practice, we want to be able to determine whether we have learned anything useful from the available historical data. To do this, we split our historical data into training and testing sets. During the ‘learning’ phase, we show the algorithm the features and labels from the training data. Then, during the testing phase, we present the trained algorithm with previously unseen features, instruct it to predict the most likely label, then compare that prediction with the actual corresponding label.",
+  "translation": "我们将这些数据传递给分类器-一种分类算法，在我们的案例中，该算法试图推断某个特定商品是否有可能跟随价格的大幅变化。 在实践中，我们希望能够确定我们是否从可用的历史数据中学到了任何有用的信息。 为此，我们将历史数据分为训练和测试集。 在“学习”阶段，我们向算法显示训练数据中的功能和标签。 然后，在测试阶段，我们将提供训练有素的算法，该算法具有以前看不见的特征，指示它预测最可能的标签，然后将该预测与实际对应的标签进行比较。"
+}, {
+  "tag": "P",
+  "text": "Given this general framework, our work must proceed in two directions:",
+  "translation": "在这种总体框架下，我们的工作必须朝两个方向进行："
+}, {
+  "tag": "P",
+  "text": "● Identifying the best set of features to use for the available news articles.",
+  "translation": "●确定用于可用新闻文章的最佳功能集。"
+}, {
+  "tag": "P",
+  "text": "● Determining the Classifier (and its parameterization) which will most successfully learn the relationship between our features and labels.",
+  "translation": "●确定分类器（及其参数化），这将最成功地了解我们的特征和标签之间的关系。"
+}, {
+  "tag": "H1",
+  "text": "Classified information",
+  "translation": "分类信息"
+}, {
+  "tag": "P",
+  "text": "We will talk about the types of features we have in mind shortly, but first some comments on the Classifier. Many kinds of Classifier exist for Supervised Learning problems. At the most basic, there is Logistic Regression. Then there are algorithms such as Decision Trees and Random Forests. At the mathematically complex end of the spectrum, we find Neural Networks. For this project, we find our best results using Neural Networks, so the results we present here are obtained that way.",
+  "translation": "我们将在短期内讨论我们要考虑的功能类型，但首先要对分类器进行一些评论。 存在许多用于监督学习问题的分类器。 最基本的是Logistic回归。 然后是诸如决策树和随机森林之类的算法。 在频谱的数学复杂端，我们找到了神经网络。 对于这个项目，我们使用神经网络找到了最好的结果，因此我们在这里呈现的结果就是这样获得的。"
+}, {
+  "tag": "P",
+  "text": "We won’t attempt an introduction to neural networks here. Suffice it to say that they are a form of non-linear regression tool whose underlying design found inspiration in a simplification of the basic architecture of the human brain.",
+  "translation": "我们在这里不会尝试介绍神经网络。 可以说它们是一种非线性回归工具，其底层设计在简化人脑的基本结构中获得了启发。"
+}, {
+  "tag": "P",
+  "text": "Many of the great advances that we have experienced in Machine Learning over the last few years make use of neural networks. The basic algorithm has been around for decades — but it has come into its own as processing power and data availability have steadily increased.",
+  "translation": "过去几年中，我们在机器学习中经历的许多重大进步都利用了神经网络。 基本算法已经存在了数十年，但是随着处理能力和数据可用性的稳步提高，它已经成为一种独特的算法。"
+}, {
+  "tag": "P",
+  "text": "For this project we implemented our neural network in Python using the popular TensorFlow library from Google. The characteristics of our neural network, and in particular its complexity, were chosen to balance precision and generalization. This corresponds to:",
+  "translation": "对于这个项目，我们使用Google流行的TensorFlow库在Python中实现了神经网络。 选择神经网络的特性，尤其是其复杂性，以平衡精度和泛化。 这对应于："
+}, {
+  "tag": "P",
+  "text": "● Accurately predicting the labels of the in-sample training data",
+  "translation": "●准确预测样本中训练数据的标签"
+}, {
+  "tag": "P",
+  "text": "● Accurately predicting the labels of out-of-sample test data",
+  "translation": "●准确预测样本外测试数据的标签"
+}, {
+  "tag": "P",
+  "text": "This is less facile than it sounds. Clearly, if a model is very simple it is unlikely to perform well even on the data it ‘saw’ during training. As a model is made more complex it starts to perform better on the training data. And if it is working well, it will increasingly perform well on the previously unseen test data — i.e. it will learn to generalize. But from a certain level of complexity, it will continue to perform ever better on the training data, while performing increasingly worse on the test data. Thus the aim in choosing the architecture is to land at that sweet spot where the accuracy of the model on the test data is at its highest.",
+  "translation": "这听起来不那么容易。 显然，如果模型非常简单，即使在训练过程中“看到”的数据也不太可能表现良好。 随着模型变得更加复杂，它开始在训练数据上表现更好。 而且，如果运行良好，它将在以前看不见的测试数据上表现越来越好-即它将学会概括。 但是从某种程度的复杂性来看，它将继续在训练数据上表现更好，而在测试数据上表现越来越差。 因此，选择架构的目的是在测试数据上模型的准确性最高的那个最佳点落地。"
+}, {
+  "tag": "P",
+  "text": "One way of thinking about this phenomenon is that no relationship can be perfectly learned from the data. This is largely because the data themselves are not perfect examples of the relationships we are trying to learn — there is always noise. As the model gets more complex, it acquires the numerical freedom to learn the noise from the training data. But since noise is basically random (and hence unpredictable) from this perspective, then that knowledge can only distract from learning something useful about the unseen data.",
+  "translation": "思考这种现象的一种方法是，无法从数据中完美地了解任何关系。 这在很大程度上是因为数据本身并不是我们试图学习的关系的完美示例-总是有噪音。 随着模型变得越来越复杂，它获得了从训练数据中学习噪声的数值自由度。 但是，由于从这个角度来看，噪声基本上是随机的（因此是不可预测的），因此，这种知识只会分散学习未知数据有用的知识的注意力。"
+}, {
+  "tag": "P",
+  "text": "So the trick lies in finding a network which is complex enough to learn the essence of the non-linear relationships in the data, but is not sufficiently rich as to be able to effectively memorize the presented data (with each observation containing specific noise which will not be reproduced in future data).",
+  "translation": "因此，诀窍在于找到一个网络，该网络足够复杂，可以学习数据中非线性关系的本质，但又不够丰富，无法有效地记住显示的数据（每个观察都包含特定的噪声，这些噪声会 不会在将来的数据中复制）。"
+}, {
+  "tag": "P",
+  "text": "This is important as memorizing data turns out to be a very poor guarantee that knowledge can be generalized to previously unseen cases. In a sense, the constraints on memory are the origin of insight. But only up to a point — given a sufficiently limited model, we will neither memorize anything nor learn anything useful.",
+  "translation": "这一点很重要，因为事实证明，记忆数据很难保证知识可以推广到以前未曾见过的案例。 从某种意义上说，对记忆的约束是洞察力的起源。 但是只是到了一定程度-给定足够有限的模型，我们既不会记住任何东西，也不会学到任何有用的东西。"
+}, {
+  "tag": "P",
+  "text": "The best network architecture for our purpose is as follows:",
+  "translation": "达到我们目的的最佳网络架构如下："
+}, {
+  "tag": "P",
+  "text": "● Four hidden layers — of 64, 128, 128 and 64 nodes",
+  "translation": "●四个隐藏层-64、128、128和64个节点"
+}, {
+  "tag": "P",
+  "text": "● Layers are fully connected and use Relu activations",
+  "translation": "●层已完全连接并使用Relu激活"
+}, {
+  "tag": "P",
+  "text": "● The output layer contains a single node with a sigmoid activation",
+  "translation": "●输出层包含具有S形激活的单个节点"
+}, {
+  "tag": "H1",
+  "text": "Feature Engineering",
+  "translation": "特征工程"
+}, {
+  "tag": "P",
+  "text": "Feature Engineering is the craft of determining the specific set of attributes of the available data which will best facilitate the learning of the relationship we seek to infer. We might imagine some article attributes whose utility can be considered:",
+  "translation": "特征工程是确定可用数据的特定属性集的一种技巧，这将最有助于我们寻求推断的关系的学习。 我们可能会想象一些可以考虑其实用性的文章属性："
+}, {
+  "tag": "P",
+  "text": "● The text of the article",
+  "translation": "●文章文字"
+}, {
+  "tag": "P",
+  "text": "● The name of the publication carrying the article",
+  "translation": "●载有该文章的出版物的名称"
+}, {
+  "tag": "P",
+  "text": "● The time at which the article was published",
+  "translation": "●文章发表的时间"
+}, {
+  "tag": "P",
+  "text": "● The publisher’s article ID code",
+  "translation": "●发布者的商品ID代码"
+}, {
+  "tag": "P",
+  "text": "We might subsequently determine that including the article ID with our features is not helpful. Including it might even make the results deteriorate. At an intuitive level, we can think of this feature as just bringing extra noise that is getting in the way of the algorithm in its search for insight. In this case, removing the article ID from the features actually removes a distraction and makes learning easier.",
+  "translation": "随后，我们可能会确定将文章ID与我们的功能一起使用并没有帮助。 包括它甚至可能使结果变差。 从直觉上讲，我们可以认为此功能只是带来了额外的噪音，而这些噪音正阻碍算法寻找洞察力。 在这种情况下，从功能中删除商品ID实际上会消除干扰，并使学习更加轻松。"
+}, {
+  "tag": "P",
+  "text": "Conversely, the text of the article in itself might be very difficult for our algorithm to learn anything from. So another dimension of the Feature Engineering craft is working out what further attributes can be derived from the data in order to help highlight the key relationships and make the algorithm’s work easier. (As mentioned earlier we will work with derived features such as Sentiment)",
+  "translation": "相反，对于我们的算法而言，文章本身本身可能很难学习任何内容。 因此，功能工程技术的另一个方面是研究可以从数据中得出哪些进一步的属性，以帮助突出显示关键关系并使算法的工作更轻松。 （如前所述，我们将使用“情感”等派生功能）"
+}, {
+  "tag": "H1",
+  "text": "The process",
+  "translation": "过程"
+}, {
+  "tag": "P",
+  "text": "To obtain the results presented here, we follow a fairly typical Machine Learning process. Effectively we will randomly split our data into training and testing sets. The results presented are those taken from applying the trained model to the testing test (that is, the set of data which was not used as part of training the model).",
+  "translation": "为了获得此处介绍的结果，我们遵循一个非常典型的机器学习过程。 实际上，我们会将数据随机分为训练和测试集。 呈现的结果是将训练后的模型应用于测试测试所得的结果（即，没有用作训练模型一部分的数据集）。"
+}, {
+  "tag": "P",
+  "text": "To begin, there will be just one feature for a news article — the sentiment of the article. We will associate this with a label of either 0 (meaning the absolute excess return of the stock was less than 1%) or 1 (meaning the absolute excess return was greater than 1%).",
+  "translation": "首先，新闻文章只有一个功能-文章的情感。 我们将其与标签（0（表示股票的绝对超额收益小于1％）或1（表示绝对的超额收益大于1％）的标签相关联。"
+}, {
+  "tag": "P",
+  "text": "Next, we train our Classifier on our randomly selected training subset, then test the trained network by generating predictions from the testing data set and comparing them with the actual recorded historical move in the stock price.",
+  "translation": "接下来，我们在随机选择的训练子集中训练分类器，然后通过从测试数据集中生成预测并将其与实际记录的股价历史走势进行比较来测试训练后的网络。"
+}, {
+  "tag": "P",
+  "text": "To make this comparison useful across a set of data, we need a metric. A common metric for evaluating the success of solutions to classification problems is the F1 Score. This is particularly useful in situations such as ours where there are a large number of ‘true negatives’ in our data set — meaning most articles are not followed by significant stock price moves.",
+  "translation": "为了使这种比较在一组数据中有用，我们需要一个指标。 F1分数是评估分类问题解决方案是否成功的常用指标。 这在我们这样的情况下特别有用，例如在我们的数据集中存在大量“真实负面”信息的情况下-这意味着大多数文章并没有跟随股价的大幅波动。"
+}, {
+  "tag": "P",
+  "text": "Remembering that our model will predict 1 if it expects a news article to be followed by a market move and 0 otherwise, the F1 score is computed as the harmonic mean of the following:",
+  "translation": "请记住，如果模型期望新闻文章跟随市场走势，则模型将预测为1，否则为0，否则F1得分将计算为以下各项的谐波均值："
+}, {
+  "tag": "P",
+  "text": "● The proportion of the 1 predictions from our model which were indeed 1 in reality (the so-called Precision), and",
+  "translation": "●我们模型中1个预测中实际上是1个（所谓的“精确度”）的比例，以及"
+}, {
+  "tag": "P",
+  "text": "● The proportion of all actual 1s that our model correctly predicted as 1 (the Recall).",
+  "translation": "●我们的模型正确预测为1（召回）的所有实际1的比例。"
+}, {
+  "tag": "P",
+  "text": "This value will be 100% if our results are perfect, 0% if they are utterly useless, and more likely somewhere in between.",
+  "translation": "如果我们的结果是完美的，那么此值将为100％，如果完全没有用，则该值为0％，并且更可能介于两者之间。"
+}, {
+  "tag": "P",
+  "text": "To illustrate the evolution of this type of project, we will present the results in a progressive fashion — looking at the F1 scores that we found as we experimented with different sets of features. One important fact to keep in mind:",
+  "translation": "为了说明此类项目的发展，我们将以渐进方式展示结果-查看我们在尝试不同功能集时发现的F1分数。 要记住的一个重要事实："
+}, {
+  "tag": "P",
+  "text": "While the process of adding features is driven by our intuition and wisdom, reality is often unimpressed by even our greatest insights, and can sometimes be a harsh critic.",
+  "translation": "尽管添加功能的过程是由我们的直觉和智慧驱动的，但即使是我们最大的见识，现实也常常不会给他们留下深刻的印象，有时甚至会成为严厉的批评家。"
+}, {
+  "tag": "P",
+  "text": "Regardless, we hope that by judiciously adding features we will improve the predictive power of our model!",
+  "translation": "无论如何，我们希望通过明智地添加功能来提高模型的预测能力！"
+}, {
+  "tag": "H1",
+  "text": "Step One: Those difficult early results",
+  "translation": "第一步：那些困难的早期结果"
+}, {
+  "tag": "P",
+  "text": "Seeing the first results is often the moment at which your intrepid Machine Learning Engineer or Data Scientist will plunge into despair — so we must gird ourselves, proceeding with a degree of forced optimism about where we will ultimately end up.",
+  "translation": "看到最初的结果通常是您无畏的机器学习工程师或数据科学家陷入绝望的那一刻-因此我们必须束手无策，并对最终的结果持一定的乐观态度。"
+}, {
+  "tag": "P",
+  "text": "Although we are not sufficiently naive to imagine that representing an article with a single number — its sentiment — will give our Classifier much hope of inferring whether the article will move the market, it is still useful to start here.",
+  "translation": "尽管我们还不够天真，无法想象用一个数字代表文章（它的情感）会给我们的分类器很大的希望，以推断文章是否会推动市场，但从这里开始仍然有用。"
+}, {
+  "tag": "P",
+  "text": "There are a couple of reasons for this. The first is that it’s a means of checking that our overall pipeline is working correctly — we can assemble the data, build the features, split the test data off, train the model, evaluate the model on the test data, etc. The second is that it helps establish a baseline level of accuracy from which we can make decisions about the utility of adding other data features or of changing the architecture of our Classifier.",
+  "translation": "这有两个原因。 第一个是检查整个管道是否正常工作的一种方法-我们可以组装数据，构建功能，拆分测试数据，训练模型，根据测试数据评估模型等。第二个是 它有助于建立基线的准确度水平，我们可以据此做出有关添加其他数据功能或更改分类器架构的实用程序的决策。"
+}, {
+  "tag": "P",
+  "text": "Still, one hopes that the results we achieve at this stage will be better than random — because that would at least feel encouraging. Instinctively, since we are looking at predicting a Yes/No to whether the article will move the market, it feels binary. So one would be tempted to imagine 50% to be the result of random guessing. Therefore we hope to achieve an F1 score on the test data of somewhere between 50% and 100%.",
+  "translation": "不过，有人希望我们在现阶段所取得的结果会好于随机的，因为这至少会令人鼓舞。 本能地，由于我们正在考虑预测文章是否会推动市场发展，是/否，因此感觉很二元。 因此，人们很容易想到50％是随机猜测的结果。 因此，我们希望在测试数据上获得F1分数在50％到100％之间。"
+}, {
+  "tag": "P",
+  "text": "So when the first run completes, the F1 score appears on the screen, and its value is 25%, it’s hard not to feel a little downhearted. A little reflection allows us to take consolation from the fact that significantly fewer than half our articles were followed by a large market move, and so selecting 0 and 1 with equal frequency would result in lower results, so our results are indeed better than random.",
+  "translation": "因此，当第一次跑步完成时，F1分数就会显示在屏幕上，并且它的值为25％，很难不感到沮丧。 稍加思考，就可以使我们感到安慰，因为只有不到一半的文章紧随其后的是大幅度的市场变动，因此以相同的频率选择0和1会导致较低的结果，因此我们的结果确实比随机结果要好。"
+}, {
+  "tag": "H2",
+  "text": "Progress check: Step One",
+  "translation": "进度检查：第一步"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*U_UcN1qFwpTF0FpCVgGRrw.png?q=20",
+  "type": "image",
+  "file": "1*U_UcN1qFwpTF0FpCVgGRrw.png"
+}, {
+  "tag": "H1",
+  "text": "Step Two: Pre-processing the articles",
+  "translation": "第二步：预处理文章"
+}, {
+  "tag": "P",
+  "text": "One of the most important activities for the Data Scientist is understanding the data. Sometimes this can be trivial. But if a job is sufficiently complex to require a Data Scientist, then the datasets are likely to be large and unstructured. This analysis can be a frustrating and time-consuming activity, but it is also essential.",
+  "translation": "数据科学家最重要的活动之一就是了解数据。 有时这可能是微不足道的。 但是，如果一项工作非常复杂以至于需要一位数据科学家，那么数据集可能会很大且没有结构。 这种分析可能是令人沮丧且耗时的活动，但它也是必不可少的。"
+}, {
+  "tag": "P",
+  "text": "The first article we find is clearly one from which we could hope to learn something:",
+  "translation": "我们发现的第一篇文章显然是我们可以希望从中学到的东西："
+}, {
+  "tag": "P",
+  "text": "Belvoir Lettings PLC (BLV.LN) said Wednesday that it exceeded its 2017 target for portfolio acquisitions. The UK property-lettings company said that during 2017 franchisees completed 23 transactions, increasing network revenue by over 3.3 million pounds and exceeding its target.",
+  "translation": "Belvoir Lettings PLC（BLV.LN）周三表示，已超过了其2017年收购资产组合的目标。 这家英国房地产租赁公司表示，在2017年，特许经营者完成了23笔交易，使网络收入增加了330万英镑，超过了预期目标。"
+}, {
+  "tag": "P",
+  "text": "This article has a few things in its favor:",
+  "translation": "本文支持以下几点："
+}, {
+  "tag": "P",
+  "text": "● It clearly relates to a specific company",
+  "translation": "●显然与特定公司有关"
+}, {
+  "tag": "P",
+  "text": "● It has language from which sentiment can relatively easily be inferred",
+  "translation": "●具有可以相对容易地推断出情感的语言"
+}, {
+  "tag": "P",
+  "text": "● It doesn’t contain a lot of neutral or distracting text",
+  "translation": "●它不包含很多中性或分散注意力的文字"
+}, {
+  "tag": "P",
+  "text": "The same cannot be said of many of the other articles we start to notice. Some forms repeat themselves frequently, among them:",
+  "translation": "我们开始注意到的许多其他文章不能说相同。 一些形式经常重复出现，其中包括："
+}, {
+  "tag": "P",
+  "text": "● Price updates from brokers",
+  "translation": "●经纪人的价格更新"
+}, {
+  "tag": "P",
+  "text": "● Press releases with disclaimers",
+  "translation": "●带有免责声明的新闻稿"
+}, {
+  "tag": "P",
+  "text": "● S&P rating reviews",
+  "translation": "●标准普尔评级评论"
+}, {
+  "tag": "P",
+  "text": "● Articles relating to multiple companies",
+  "translation": "●与多家公司有关的文章"
+}, {
+  "tag": "P",
+  "text": "The first of these is of little use for our purpose since they simply quote the prices at which specific securities are being sold. They are almost entirely numeric in nature — and while that doesn’t preclude them from being useful, our NLP sentiment algorithms are not geared to interpreting them. Such articles are best detected and excluded from our process.",
+  "translation": "其中第一种对于我们的目的没有多大用处，因为它们只是简单地列举了出售特定证券的价格。 实际上，它们几乎完全是数字形式的-尽管这并不妨碍它们有用，但我们的NLP情感算法并不适合于解释它们。 最好检测此类文章并将其排除在我们的流程之外。"
+}, {
+  "tag": "P",
+  "text": "The press releases and S&P ratings reviews are potentially extremely useful. But they often contain long passages of legal verbiage in the form of disclaimers. Sentiment is computed as an average of the sentences of a document. Since legalese tends to be neutral, including these long passages of standard text when analyzing the articles will tend to significantly attenuate the sentiment reported for the article. Thus we will strip such standard text from our articles before evaluating them. This is tedious work but can be effectively implemented with a series of regular expressions.",
+  "translation": "新闻稿和标准普尔评级评论可能非常有用。 但是，它们通常以免责声明的形式包含很长的法律词汇。 情感计算为文档句子的平均值。 由于法律术语趋于中立，因此在分析文章时包括标准文本的这些较长段落将倾向于显着减弱文章报道的情绪。 因此，在评估之前，我们将从文章中删除此类标准文本。 这是一项繁琐的工作，但是可以使用一系列正则表达式有效地实现。"
+}, {
+  "tag": "P",
+  "text": "Some news articles summarize multiple pieces of news relating to different companies. Since these follow specific formats (depending on the publisher, etc) it is often possible to automate splitting these into a series of mini-articles, each covering just one piece of news.",
+  "translation": "一些新闻文章总结了与不同公司有关的多条新闻。 由于这些格式遵循特定的格式（取决于发行商等），因此通常可以自动将它们拆分为一系列微型文章，每个微型文章仅覆盖一条新闻。"
+}, {
+  "tag": "P",
+  "text": "Once we build and implement a set of rules for pre-processing our data, we can re-run our analysis and see what test results we achieve.",
+  "translation": "一旦建立并实施了一套用于预处理数据的规则，我们就可以重新运行分析并查看获得的测试结果。"
+}, {
+  "tag": "H2",
+  "text": "Progress check: Step Two",
+  "translation": "进度检查：第二步"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*eDnr0dXS8zVQxOildDW3KA.png?q=20",
+  "type": "image",
+  "file": "1*eDnr0dXS8zVQxOildDW3KA.png"
+}, {
+  "tag": "P",
+  "text": "In fact we see a 15% improvement in our F1-score by carrying out this pre-processing on the articles. This is the first indication that there is real value to be found in knowing both your problem domain and the technical domain. In this case that means understanding:",
+  "translation": "实际上，通过对商品进行这种预处理，我们的F1分数提高了15％。 这是第一个表明在了解您的问题领域和技术领域中都有真正价值的标志。 在这种情况下，意味着了解："
+}, {
+  "tag": "P",
+  "text": "● Exactly what sort of articles are to be found amid the vast ocean of them, and",
+  "translation": "●在广阔的海洋中究竟能找到什么样的文章，以及"
+}, {
+  "tag": "P",
+  "text": "● How the algorithms will perform on the various types of article",
+  "translation": "●算法将如何在各种类型的文章上执行"
+}, {
+  "tag": "H1",
+  "text": "Step Three: Adding more features",
+  "translation": "第三步：添加更多功能"
+}, {
+  "tag": "P",
+  "text": "To improve our neural network’s chances for learning something, we will now throw more data at it — specifically, we will provide additional features for each of the news articles.",
+  "translation": "为了提高我们的神经网络学习某些东西的机会，我们现在将为它提供更多数据-特别是，我们将为每篇新闻文章提供其他功能。"
+}, {
+  "tag": "P",
+  "text": "Before we do this, it’s useful to reflect upon the fact that a news article can be ‘useful’ to us only to the extent that it changes our perception about something. In our simplified view of the world, we are deriving our sentiment about a stock from the sentiment of the news reporting on that stock. So a news article might be considered interesting if it deviates from our previous sentiment towards the stock. Note that an article doesn’t have to contradict our current opinion, it might just make us more confident in our current opinion. With these objectives in mind, we introduce the following features for each article:",
+  "translation": "在我们这样做之前，反思一下新闻文章对我们来说“有用”的事实是有用的，仅是它改变了我们对某些事物的看法。 从简化的世界观来看，我们从关于某股票的新闻报道的情绪中得出了对该股票的情绪。 因此，如果新闻文章偏离我们先前对股票的看法，则可能会被认为是有趣的。 请注意，一篇文章不必与我们的当前观点相抵触，它可以使我们对我们的当前观点更有信心。 考虑到这些目标，我们为每篇文章介绍以下功能："
+}, {
+  "tag": "P",
+  "text": "● Mean sentiment of recent news articles for this stock",
+  "translation": "●该股近期新闻的平均情绪"
+}, {
+  "tag": "P",
+  "text": "● Deviation between this article’s sentiment and the recent historical mean for the stock",
+  "translation": "●本文的观点与该股票的近期历史均值之间存在偏差"
+}, {
+  "tag": "P",
+  "text": "● Volatility of recent article sentiment for the stock",
+  "translation": "●股票近期商品人气的波动性"
+}, {
+  "tag": "P",
+  "text": "We may also imagine that how a stock responds to a news article might depend on how the stock has been trading recently, so we include measures to capture the following:",
+  "translation": "我们还可以想象，股票对新闻报道的反应可能取决于股票最近的交易方式，因此我们采取了以下措施："
+}, {
+  "tag": "P",
+  "text": "● How has the stock’s traded volume been behaving?",
+  "translation": "●股票的交易量如何？"
+}, {
+  "tag": "P",
+  "text": "● How has the stock been behaving relative to the broader index?",
+  "translation": "●股票相对于大盘表现如何？"
+}, {
+  "tag": "P",
+  "text": "● What is the volatility of recent excess returns for the stock?",
+  "translation": "●股票最近超额收益的波动性是什么？"
+}, {
+  "tag": "P",
+  "text": "Finally, some companies are reported on infrequently during normal times, then more frequently when something significant is afoot. Thus we include a measure of how the reporting frequency on the stock has behaved recently relative to its long run average.",
+  "translation": "最后，一些公司在正常时间很少被报告，而在重大事件发生时则更频繁地被报告。 因此，我们包括一种衡量股票报告频率相对于其长期平均水平最近的表现的方法。"
+}, {
+  "tag": "P",
+  "text": "Putting all these features together and re-running our tests, we see that our F1-score increases from 40% to 49%.",
+  "translation": "将所有这些功能放在一起并重新运行我们的测试，我们看到F1分数从40％增加到49％。"
+}, {
+  "tag": "H2",
+  "text": "Progress check: Step Three",
+  "translation": "进度检查：第三步"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*MS-M-ffjSN-_XbjgAKNbXw.png?q=20",
+  "type": "image",
+  "file": "1*MS-M-ffjSN-_XbjgAKNbXw.png"
+}, {
+  "tag": "H1",
+  "text": "Step Four: a little journalistic insight",
+  "translation": "第四步：一点新闻见解"
+}, {
+  "tag": "P",
+  "text": "One of the most important aspects of this sort of work is developing an understanding of the domain. Much journalism is constructed in accordance with the so-called Inverted Pyramid model. Borrowing from Wikipedia, we can visualize the structure of a typical news article as follows:",
+  "translation": "这类工作最重要的方面之一是对领域的理解。 许多新闻都是根据所谓的“倒金字塔”模型构建的。 从Wikipedia借用，我们可以将典型新闻文章的结构可视化如下："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*7gXe6oVZmn2ihGAXnBUw9Q.png?q=20",
+  "caption": "Inverted Pyramid Model of Journalism courtesy of Wikipedia",
+  "type": "image",
+  "file": "1*7gXe6oVZmn2ihGAXnBUw9Q.png"
+}, {
+  "tag": "P",
+  "text": "This is a fairly standard approach to writing articles. The idea is to convey the who, what, etc, at the beginning of the article, then proceed to provide increasingly ancillary details in the paragraphs that follow. Those first few sentences are referred to as the Lede (or Lead) of the article.",
+  "translation": "这是编写文章的相当标准的方法。 这个想法是在本文开头传达谁，什么等等，然后在随后的段落中提供越来越多的辅助细节。 前几句话称为文章的Lede（或Lead）。"
+}, {
+  "tag": "P",
+  "text": "We might hypothesize that the sentiment conveyed in the Lede relates more to the most important part of the news relating to a company, and that the further into the article we go, the more we will be distracted from it (by focusing on the sentiment of less significant details). If we feel drawn to this hypothesis, then we should consider running a grid search to identify the optimal part of the article to process.",
+  "translation": "我们可能会假设，莱德传达的情感与公司新闻中最重要的部分相关，并且我们越深入文章，就会越分散我们的注意力（关注于情感）。 不太重要的细节）。 如果我们对这个假设感兴趣，那么我们应该考虑运行网格搜索来确定要处理的文章的最佳部分。"
+}, {
+  "tag": "P",
+  "text": "We do this by converting the article text into sentences using the NLTK toolkit. Next, we choose the first n sentences from the article (the same n for each article), then we proceed through the rest of our process with just this part of the text and compute the overall F1 score. Further, we iterate over different values of n until we find the best F1 score. The results we find look as follows:",
+  "translation": "为此，我们使用NLTK工具包将文章文本转换为句子。 接下来，我们从文章中选择前n个句子（每篇文章中相同的n个句子），然后仅对文本的这一部分进行其余的过程，并计算F1总体得分。 此外，我们迭代n的不同值，直到找到最佳的F1分数。 我们发现的结果如下所示："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*pOWj82EbM5JNzrSOwTFv8g.png?q=20",
+  "caption": "F1-score computed using a series of Lede lengths (in number-of-sentences)",
+  "type": "image",
+  "file": "1*pOWj82EbM5JNzrSOwTFv8g.png"
+}, {
+  "tag": "P",
+  "text": "This shows an optimal sentiment information content at around ten sentences, so in finishing step four, we will work with articles restricted to ten sentences.",
+  "translation": "这显示了大约十个句子的最佳情感信息内容，因此在完成第四步时，我们将处理限于十个句子的文章。"
+}, {
+  "tag": "H2",
+  "text": "Progress check: Step Four",
+  "translation": "进度检查：第四步"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*7F9yjRdpFfUp8BId-lUA8w.png?q=20",
+  "type": "image",
+  "file": "1*7F9yjRdpFfUp8BId-lUA8w.png"
+}, {
+  "tag": "H1",
+  "text": "A pause for reflection — are we stuck?",
+  "translation": "停下来思考一下—我们被卡住了吗？"
+}, {
+  "tag": "P",
+  "text": "Through several iterations we have pushed forward to a point where there is some statistical significance to our results, but not sufficient significance to warrant writing an article about it. We’ve spent much time deepening our understanding of the news articles, so now we must try to deepen our understanding of the AI tools that we are using.",
+  "translation": "通过多次迭代，我们将结果推向了一个点，即对我们的结果具有一定的统计意义，但不足以保证撰写关于此结果的文章。 我们已经花了很多时间加深对新闻报道的理解，所以现在我们必须尝试加深对我们正在使用的AI工具的理解。"
+}, {
+  "tag": "P",
+  "text": "In particular, it is worth reflecting on whether Sentiment Analysis is well-geared to the problem we are trying to solve. To do that, we must look a little deeper at the specific Sentiment Analysis tools that are available to us. It is insightful to consider the nature of the corpus on which each was built. Typically the popular sentiment analyzers were not trained on financial news reports. More often they are built using the following:",
+  "translation": "尤其值得反思的是，情感分析是否能很好地解决我们要解决的问题。 为此，我们必须更深入地了解可供我们使用的特定情感分析工具。 考虑建立每个主体的语料库的本质是很有见地的。 通常，流行的情绪分析器没有接受金融新闻报道的培训。 通常，它们是使用以下命令构建的："
+}, {
+  "tag": "P",
+  "text": "● Reviews from Amazon or IMDB",
+  "translation": "●来自Amazon或IMDB的评论"
+}, {
+  "tag": "P",
+  "text": "● Tweets",
+  "translation": "●鸣叫"
+}, {
+  "tag": "P",
+  "text": "Each of these types of text has its own idiosyncrasies. Tweets are certainly written in a very different language to full length journalism, so tools that are well-calibrated for tweets are unlikely to understand the emotional range of more formal writing.",
+  "translation": "这些类型的文本中的每一种都有自己的特质。 推文肯定是用与全长新闻不同的语言编写的，因此针对推文进行良好校准的工具不太可能理解更正式写作的情感范围。"
+}, {
+  "tag": "P",
+  "text": "It’s worth noting that a sentence like, “There was a marginal improvement in results,” is positive from the perspective of our sentiment on the stock. Yet Stanford’s CoreNLP classified this sentence as negative. Once again, all the libraries have idiosyncrasies and inconsistencies, so this is not intended as a criticism of CoreNLP.",
+  "translation": "值得注意的是，从我们对股票的看法来看，“结果略有改善”这样的句子是正面的。 但斯坦福大学的CoreNLP将此句子归类为否定词。 同样，所有库都具有特质和不一致之处，因此，这并不是要批评CoreNLP。"
+}, {
+  "tag": "P",
+  "text": "All this leaves one wondering whether the best way forward is to build our own proprietary sentiment analyzer. If we take a look around at the available tools, it is easy to be seduced by the popularity and purported power of Doc2vec. So let’s take a look and see if it can help.",
+  "translation": "所有这一切让我们怀疑，最好的方法是构建自己的专有情感分析器。 如果我们来看看可用的工具，很容易被Doc2vec的流行和声称的功能所吸引。 因此，让我们看一下是否有帮助。"
+}, {
+  "tag": "H1",
+  "text": "Forging ahead with Doc2vec",
+  "translation": "Doc2vec不断前进"
+}, {
+  "tag": "P",
+  "text": "Doc2vec is an extension of the popular Word2vec, effectively applying the technique at the level of the document rather than the individual word. Word2vec comes originally from research carried out at Google. The idea of Word2vec is to learn a function that will map a word to an n-dimensional vector. The algorithm does this by looking at sequences of words across some corpus. Mechanically, a simple neural network is used to learn to predict which word is most likely to follow any given word. The first surprise is in the next step. Throw away the output layer of the neural network, and look instead at the activations coming out of the n nodes in the penultimate layer. The values of those activations can then be considered as corresponding to our vector representation of the input word.",
+  "translation": "Doc2vec是流行的Word2vec的扩展，有效地在文档级别而不是单个单词上应用了该技术。 Word2vec最初来自Google进行的研究。 Word2vec的思想是学习将单词映射到n维向量的函数。 该算法通过查看整个语料库中的单词序列来实现此目的。 在机械上，简单的神经网络用于学习预测哪个单词最有可能跟随任何给定单词。 第一个惊喜是在下一步。 扔掉神经网络的输出层，然后看倒数第二层中n个节点的激活。 然后可以将这些激活的值视为对应于我们对输入单词的矢量表示。"
+}, {
+  "tag": "P",
+  "text": "Why is that of any use? There is a little uncertainty over how this happens, but if we graph the vector values of a series of words we start to notice some profoundly interesting patterns. Take this image from an article by one of Google’s Deep Mind’s Research Scientists:",
+  "translation": "为什么有什么用呢？ 这种情况如何发生尚不确定，但是如果我们绘制一系列单词的向量值，就会开始注意到一些非常有趣的模式。 从Google Deep Mind的一位研究科学家的文章中获取以下图片："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*3xx3_WqgHWX9gCTUpLldog.png?q=20",
+  "caption": "Word embeddings for related words under Word2vec",
+  "type": "image",
+  "file": "1*3xx3_WqgHWX9gCTUpLldog.png"
+}, {
+  "tag": "P",
+  "text": "Here we are looking at a plot of the vector values corresponding to some common words. (The actual vectors are high-dimensional, but they are being simplified here through a mathematical process known as dimensionality reduction such that they can be approximated, in some sense, in the two dimensions we can graph)",
+  "translation": "在这里，我们正在查看对应于一些常见单词的向量值的曲线图。 （实际矢量是高维的，但是在这里通过称为降维的数学过程对其进行了简化，以便可以在某种程度上在我们可以绘制的二维图中进行近似）"
+}, {
+  "tag": "P",
+  "text": "The thing to note is that while words like “slow”, “short”, “strong”, “dark” all appear in quite different locations on the graph (along the left hand side), the relative displacement of slower and slowest (to slow), is basically identical to what we see for short/shorter/shortest, strong/stronger/strongest, etc.",
+  "translation": "需要注意的是，尽管“慢”，“短”，“强”，“暗”之类的词都出现在图形的完全不同的位置（沿左侧），但相对位移却越来越慢（相对于 慢），基本上与我们看到的短/短/最短，强/强/最强等相同。"
+}, {
+  "tag": "P",
+  "text": "This almost suggests that the algorithm has inferred some sort of arithmetic of the semantics of language. Indeed graphs can be produced showing similarly intriguing results for a number of other properties of language.",
+  "translation": "这几乎表明该算法已推断出语言语义的某种算法。 实际上，可以生成图表，显示出许多其他语言属性的相似结果。"
+}, {
+  "tag": "P",
+  "text": "We won’t dwell on the details here other than to say that Doc2vec extends the approach to the document level — and several papers have been published using the Doc2vec vectorization of documents in sentiment analysis.",
+  "translation": "除了要说Doc2vec将方法扩展到文档级别之外，我们在此不再赘述，并且在情感分析中使用Doc2vec文档向量化已经发表了几篇论文。"
+}, {
+  "tag": "P",
+  "text": "This is particularly interesting since it’s easy to train Doc2vec on any arbitrary document corpus. So we build the vectorization of our news articles, then just as the excitement of following this new direction crests, we look at the next step in the process: training our sentiment analyzer. And we realize the problem.",
+  "translation": "这非常有趣，因为可以轻松地在任意文档语料库上训练Doc2vec。 因此，我们建立了新闻报道的向量化，然后就像跟随这个新方向的激动一样，我们着眼于这一过程的下一步：训练我们的情感分析器。 我们意识到了这个问题。"
+}, {
+  "tag": "P",
+  "text": "The published work on using Doc2vec with Sentiment Analysis is largely done with review data, particularly from Amazon customers or IMDB film reviewers. Something those cases have, which we don’t, is labels — i.e. for every review, there is both the text, and the user-ascribed star rating. The combination of the two greatly simplifies learning the sentiment from the text.",
+  "translation": "有关将Doc2vec与情感分析结合使用的已发布工作很大程度上是通过审阅数据完成的，尤其是来自Amazon客户或IMDB电影审阅者的审阅数据。 这些案例带有的标签是我们没有的，即每条评论都包含文字和用户指定的星级。 两者的结合大大简化了从文本中学习情感的过程。"
+}, {
+  "tag": "P",
+  "text": "However… In our case, we have only articles, no star ratings. Since we know that our objective is to have a sentiment analyzer that’s trained on the type of language that appears in financial news rather than movie reviews, we’re stuck.",
+  "translation": "但是…就我们而言，我们只有文章，没有星级。 由于我们知道我们的目标是要拥有对情绪分析器进行培训，使其能够接受财经新闻而非电影评论中所使用的语言类型的培训，因此我们陷入了困境。"
+}, {
+  "tag": "H1",
+  "text": "And so we hit the wall",
+  "translation": "所以我们撞墙了"
+}, {
+  "tag": "P",
+  "text": "After much effort to find a way to solve our problem, a real obstacle has appeared. And much as the marathon runner must dig deeper that one last time to find a way through, so must we.",
+  "translation": "经过努力寻找解决问题的方法之后，出现了真正的障碍。 就像马拉松运动员必须在最后一次深入挖掘以找到出路一样，我们也必须如此。"
+}, {
+  "tag": "P",
+  "text": "Consider what are we trying to do. Effectively there are two steps:",
+  "translation": "考虑一下我们要做什么。 有效地有两个步骤："
+}, {
+  "tag": "OL",
+  "texts": ["TEXT -> Doc2vec -> SENTIMENT, then", "SENTIMENT -> MARKET OUTCOME PREDICTION"],
+  "translations": ["文本-> Doc2vec->情感，然后", "情感->市场预期"]
+}, {
+  "tag": "P",
+  "text": "Our problem is the lack of a usable sentiment value. But noticing that sentiment is both the output of one step and the input to the next, can’t we just make a simplification?",
+  "translation": "我们的问题是缺乏有用的情感价值。 但要注意，情感既是一步的输出，又是下一步的输入，难道我们不能简单化吗？"
+}, {
+  "tag": "P",
+  "text": "Why not use the market outcome as a proxy for sentiment? This would leave us with just one step:",
+  "translation": "为什么不将市场结果用作情感的代表？ 这将使我们仅需一步："
+}, {
+  "tag": "OL",
+  "texts": ["TEXT -> doc2vec -> MARKET OUTCOME PREDICTION"],
+  "translations": ["文本-> doc2vec->市场成果预测"]
+}, {
+  "tag": "H1",
+  "text": "Step Five: Integrating Doc2vec",
+  "translation": "第五步：集成Doc2vec"
+}, {
+  "tag": "P",
+  "text": "It turns out that a significant improvement can be found in this manner. The implementation is relatively straightforward, although we use gensim, rather than Google’s implementation. The results are shown below.",
+  "translation": "事实证明，以这种方式可以发现明显的改进。 尽管我们使用gensim而不是Google的实现，但实现起来相对简单。 结果如下所示。"
+}, {
+  "tag": "H2",
+  "text": "Progress check: Step Five",
+  "translation": "进度检查：第五步"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*ez4yCtvnhS9-tiELZJVbdA.png?q=20",
+  "type": "image",
+  "file": "1*ez4yCtvnhS9-tiELZJVbdA.png"
+}, {
+  "tag": "H1",
+  "text": "Step Six: Hold the Champagne",
+  "translation": "第六步：拿着香槟"
+}, {
+  "tag": "P",
+  "text": "Amongst the various details we’ve glossed over are some fundamental practical constraints that arise when using Doc2vec. The main issue is that we need a complete set of articles in order to build the model — it is not possible to dynamically add new articles and then make predictions for those articles. This means that we potentially need to retrain our document vectorizer with every new article that appears.",
+  "translation": "在我们介绍的各种细节中，有一些使用Doc2vec时会出现的基本实际约束。 主要问题是，我们需要一套完整的文章来构建模型-无法动态添加新文章，然后对这些文章进行预测。 这意味着我们可能需要对出现的每篇新文章重新训练文档矢量化程序。"
+}, {
+  "tag": "P",
+  "text": "The problem is actually worse than that. The specific vectors in Doc2vec are not the essence of the algorithm — the focus is the relative embeddings of different articles. The shapes between those different vectors may persist when rebuilding the model, but the absolute values are likely to change. Since the neural network we are using as our Classifier is concerned with actual values, then it is also necessary to retrain that.",
+  "translation": "问题实际上比那更糟。 Doc2vec中的特定向量不是算法的本质-重点是不同文章的相对嵌入。 重建模型时，这些不同向量之间的形状可能会保留，但绝对值可能会发生变化。 由于我们用作分类器的神经网络与实际值有关，因此也有必要对其进行重新训练。"
+}, {
+  "tag": "P",
+  "text": "This is a significant computational burden and is not at all convenient in a real time environment with thousands of new articles per day.",
+  "translation": "这是很大的计算负担，并且在每天有成千上万的新文章的实时环境中根本不方便。"
+}, {
+  "tag": "P",
+  "text": "We can consider that the fundamental constraint originates with Doc2vec needing a complete vocabulary in order to build its vectorization model. Given a large enough set of domain-specific training data, there are few new words to encounter in a previously unseen article. But at a practical level, there will always be a new person’s name, place name, company name, etc. This suggests that we could try building our vectors without proper names. Indeed there are NLP tools that enable us to take a text and tag each word’s Part-of-Speech. We can then filter out the words which correspond to proper names.",
+  "translation": "我们可以认为基本约束源自Doc2vec，它需要完整的词汇表才能建立其矢量化模型。 给定足够多的特定领域训练数据集，在以前看不见的文章中几乎没有新词可以遇到。 但实际上，总会有一个新人的名字，地名，公司名称等。这表明我们可以尝试在不使用专有名称的情况下构建向量。 确实，有NLP工具使我们能够获取文本并标记每个单词的词性。 然后我们可以过滤出与专有名称相对应的单词。"
+}, {
+  "tag": "P",
+  "text": "This is intuitively appealing because it should make generalization easier (so what we learn about one stock is guaranteed to apply to another since the name of the stock is excluded). Surely we are guaranteed to find better results… So let’s see.",
+  "translation": "这在直觉上很吸引人，因为它应该使归纳更加容易（因此，由于排除了股票名称，因此我们可以将了解到的一只股票的信息应用于另一只股票）。 当然，我们一定会找到更好的结果……让我们拭目以待。"
+}, {
+  "tag": "H2",
+  "text": "Progress check: Step Six",
+  "translation": "进度检查：第六步"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*Gm6mKBfnEC5Tu4qsvTDu-A.png?q=20",
+  "type": "image",
+  "file": "1*Gm6mKBfnEC5Tu4qsvTDu-A.png"
+}, {
+  "tag": "P",
+  "text": "Unfortunately, this doesn’t improve our results — no matter how appealing the idea was.",
+  "translation": "不幸的是，无论这个想法多么吸引人，这都无法改善我们的结果。"
+}, {
+  "tag": "P",
+  "text": "Closer inspection suggests that the underlying Parts-Of-Speech filtering doesn’t work particularly well — it removes some words that are not really proper nouns. And some of those removed words are needed in order to infer the sentiment.",
+  "translation": "仔细检查后发现，潜在的词性过滤效果不是特别好-它会删除一些不是真正专有名词的词。 并需要一些删除的单词来推断情绪。"
+}, {
+  "tag": "P",
+  "text": "HOWEVER:",
+  "translation": "然而："
+}, {
+  "tag": "P",
+  "text": "The key point to take from this is that by making this step, we solve the difficult real time problem without significantly compromising the quality of our results.",
+  "translation": "采取这一措施的关键点在于，通过执行此步骤，我们可以解决实时难题，而又不会显着影响结果的质量。"
+}, {
+  "tag": "H1",
+  "text": "Conclusion",
+  "translation": "结论"
+}, {
+  "tag": "P",
+  "text": "In this article, we show that it is possible to process news articles and determine which ones are likely to move stock prices. This is not to claim that our model correctly predicts the market 70% of the time. If it did that, we would not be writing this article. Our test is much narrower — remember that we are focusing on forecasting whether a news article will be followed by a move in the stock price which is more than 1% away from the index move. We’re also looking at the change between last night’s close and today’s open. So not all of that change can be directly attributed to this article. And we shouldn’t confuse correlation and causality.",
+  "translation": "在本文中，我们表明可以处理新闻文章并确定哪些新闻可能会影响股价。 这并不是说我们的模型正确地预测了市场70％的时间。 如果这样做的话，我们将不会写这篇文章。 我们的测试范围要窄得多-请记住，我们正在集中精力预测新闻文章是否会跟随股价的变动（与指数变动相差1％以上）。 我们还在研究昨晚和今天之间的变化。 因此，并非所有更改都可以直接归因于本文。 而且我们不应该混淆相关性和因果关系。"
+}, {
+  "tag": "P",
+  "text": "For sure, the more one understands, the better the results that can be achieved. That means it is necessary to look closely at all aspects:",
+  "translation": "当然，了解得越多，可以获得的结果越好。 这意味着有必要仔细研究所有方面："
+}, {
+  "tag": "P",
+  "text": "● Understand the data",
+  "translation": "●了解数据"
+}, {
+  "tag": "P",
+  "text": "● Understand journalism",
+  "translation": "●了解新闻"
+}, {
+  "tag": "P",
+  "text": "● Understand the algorithms",
+  "translation": "●了解算法"
+}, {
+  "tag": "P",
+  "text": "As with many Machine Learning applications, working with the news and working with markets is almost as much a craft as it is a hard science or an engineering discipline. At some level this position at the nexus between science and engineering and craft makes it a fascinating and enjoyable discipline.",
+  "translation": "与许多机器学习应用程序一样，与新闻和市场合作几乎与技巧科学或工程学一样重要。 在某种程度上，这种处于科学与工程与工艺之间关系的位置使其成为一门引人入胜且令人愉快的学科。"
+}, {
+  "tag": "P",
+  "text": "Much work remains in this area — and a lot of research will be done in the coming years. Given the stakes in the financial markets, it is highly unlikely that the best work will be published.",
+  "translation": "这个领域还有很多工作要做-未来几年将进行大量研究。 考虑到金融市场的风险，最好的作品出版的可能性很小。"
+}]
