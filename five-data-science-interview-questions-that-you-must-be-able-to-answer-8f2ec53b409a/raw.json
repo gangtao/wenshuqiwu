@@ -1,0 +1,254 @@
+[{
+  "tag": "P",
+  "text": "In this article I have discussed five questions that I personally faced during a technical data science interview, which I thought could have been better. I highly recommend the following resources to read to hone your basic concepts on a daily basis. Believe me, I must have read these concepts over and over again, and yet I fumbled upon them during my interview.",
+  "translation": "在本文中，我讨论了我在技术数据科学采访中个人遇到的五个问题，我认为这可能会更好。 我强烈建议您阅读以下资源，以每天磨练您的基本概念。 相信我，我一定会一遍又一遍地阅读这些概念，但是我在采访中却偶然发现了这些概念。"
+}, {
+  "tag": "P",
+  "text": "If you enjoyed reading the article please don’t forget to upvote it!",
+  "translation": "如果您喜欢阅读本文，请不要忘记对其进行评论！"
+}, {
+  "tag": "P",
+  "text": "Happy learning!",
+  "translation": "学习愉快！"
+}, {
+  "tag": "OL",
+  "texts": ["Hands-On Machine Learning with Scikit-Learn & TensorFlow", "An Introduction to Statistical Learning"],
+  "translations": ["使用Scikit-Learn和TensorFlow进行动手机器学习", "统计学习导论"]
+}, {
+  "tag": "P",
+  "text": "Question V: What do you mean by model regularization and how will you achieve regularization in linear models?",
+  "translation": "问题V：模型正则化是什么意思，线性模型将如何实现正则化？"
+}, {
+  "tag": "P",
+  "text": "Answer: Regularization is a term used for constraining your machine learning model. One good way to constrain or reduce overfitting in machine learning models is to have fewer degrees of freedom. With fewer degrees of freedom, it gets harder for the model to overfit the data. For example, a simple way to regularize a polynomial model is to reduce the number of polynomial degrees of freedom. However, for linear models, regularization is typically achieved by constraining the weights of the model. So, instead of linear regression, Ridge regression, Lasso Regression and Elastic Net models have three different ways to constraint the weights. For the sake of completeness, lets start with the definition of linear regression first:",
+  "translation": "答：正则化是用于约束机器学习模型的术语。 限制或减少机器学习模型中过度拟合的一种好方法是减少自由度。 自由度越小，模型越难拟合数据。 例如，规范化多项式模型的一种简单方法是减少多项式自由度的数量。 但是，对于线性模型，通常通过限制模型的权重来实现正则化。 因此，代替线性回归，Ridge回归，Lasso回归和弹性网模型具有三种不同的方式来限制权重。 为了完整起见，让我们首先从线性回归的定义开始："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*0b0PW5cFtOWKJrNRWrZsQA.png?q=20",
+  "caption": "Equation V: Linear regression and model prediction",
+  "type": "image",
+  "file": "1*0b0PW5cFtOWKJrNRWrZsQA.png"
+}, {
+  "tag": "UL",
+  "texts": ["y-hat is the predicted value.", "n is the number of features.", "x_i is the nth feature value.", "Theta is the model parameter or also known as feature weights."],
+  "translations": ["y-hat是预测值。", "n是特征数量。", "x_i是第n个特征值。", "Theta是模型参数或也称为特征权重。"]
+}, {
+  "tag": "P",
+  "text": "Mean Square Error cost function for a Linear Regression model is defined as:",
+  "translation": "线性回归模型的均方误差成本函数定义为："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*eNtVMd_ME7Q--g012lAcLA.png?q=20",
+  "caption": "Equation VI: Linear regression cost function.",
+  "type": "image",
+  "file": "1*eNtVMd_ME7Q--g012lAcLA.png"
+}, {
+  "tag": "P",
+  "text": "Where thetaT is the transpose of theta (a row vector instead of column vector).",
+  "translation": "其中theT是theta的转置（行向量而不是列向量）。"
+}, {
+  "tag": "P",
+  "text": "Ridge Regression: Is a regularized version of Linear Regression, i.e., an additional regularization term is added to the cost function. This forces the learning algorithms to not only fit the data but also keep the model weights as small as possible. Note that the regularization term should only be added to the cost function during training. Once the model is trained, you want to evaluate the model’s performance using the unregularized performance measure.",
+  "translation": "岭回归：是线性回归的正则化版本，即在成本函数中增加了一个正则化项。 这迫使学习算法不仅适合数据，而且还使模型权重尽可能小。 请注意，仅在训练期间将正则化项添加到成本函数中。 训练完模型后，您想使用非常规性能指标评估模型的性能。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*F-DXkJ6ckGv1m2r6CHf5bg.png?q=20",
+  "caption": "Equation VII: Ridge regression cost function.",
+  "type": "image",
+  "file": "1*F-DXkJ6ckGv1m2r6CHf5bg.png"
+}, {
+  "tag": "P",
+  "text": "The hyperparameter alpha controls how much you want to regularize the model. If alpha is zero, then ridge regression is just linear regression.",
+  "translation": "超参数Alpha控制要对模型进行正则化的量。 如果alpha为零，则岭回归仅是线性回归。"
+}, {
+  "tag": "P",
+  "text": "Lasso Regression: Least Absolute Shrinkage and Selection Operator Regression (simple called Lasso Regression) is another regularized version of Linear Regression: Just like the Ridge Regression, it adds a regularization term to the cost function, but it uses the L1 norm of the weight vector instead of half the square of the L2 norm .",
+  "translation": "拉索回归：最小绝对收缩和选择算子回归（简单称为拉索回归）是线性回归的另一种正规化版本：就像岭回归一样，它向成本函数添加了正规化项，但它使用权重向量的L1范数 而不是L2范数的平方的一半。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*avZ_-GmJQL2CHRIHH0ujOw.png?q=20",
+  "caption": "Equation VIII: Lasso Regression cost function.",
+  "type": "image",
+  "file": "1*avZ_-GmJQL2CHRIHH0ujOw.png"
+}, {
+  "tag": "P",
+  "text": "An important characteristic of Lasso Regression is that it tends to completely eliminate the weights of the least important features (i.e., set them to zero). In other words, Lasso Regression automatically performs feature selection and outputs a sparse model (i.e., with a few non-zero feature weights).",
+  "translation": "拉索回归的一个重要特征是它趋于完全消除最不重要特征的权重（即将它们设置为零）。 换句话说，套索回归会自动执行特征选择并输出稀疏模型（即具有少量非零特征权重）。"
+}, {
+  "tag": "P",
+  "text": "Elastic Net Regression: This is a middle ground between Ridge and Lasso regression. The regularization term is a simple mix of both Ridge and Lasso’s regularization term and can be controlled with “r”. When r=0, Elastic Net is equivalent to Ridge Regression, and when r=1, it is equivalent to Lasso Regression.",
+  "translation": "弹性净回归：这是Ridge和Lasso回归之间的中间立场。 正则项是Ridge和Lasso的正则项的简单组合，可以用“ r”控制。 当r = 0时，Elastic Net等效于Ridge回归，而当r = 1时，Elastic Net等效于套索回归。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*ba2eE3xfNPbFmUYwpz8hsw.png?q=20",
+  "caption": "Equation IX: Elastic Net cost function.",
+  "type": "image",
+  "file": "1*ba2eE3xfNPbFmUYwpz8hsw.png"
+}, {
+  "tag": "P",
+  "text": "It is always preferable to have at least a little bit of regularization and generally plain linear regression should always be avoided. Ridge is a good default, but if only a few features are useful in a particular data set, then Lasso should be used. In general, Elastic Net is preferred over Lasso since Lasso may behave erratically when the number of features is greater than the number of instances or when several features are strongly correlated.",
+  "translation": "总是最好至少要有一点正则化，并且通常应该避免纯线性回归。 Ridge是一个很好的默认值，但是如果在特定数据集中只有少数功能有用，则应使用套索。 通常，Elastic Net优于Lasso，因为当要素数量大于实例数量或多个要素紧密相关时，Lasso的行为可能会不稳定。"
+}, {
+  "tag": "P",
+  "text": "Question IV: What would be a 3-minute pitch for your data science take home project?",
+  "translation": "问题IV：您的数据科学实绩项目需要3分钟的时间？"
+}, {
+  "tag": "P",
+  "text": "Answer: A typical data science interview process starts with a take home data analysis project. I have taken two of those and time span may vary depending on the complexity of the take home project. First time, I was given two days to solve a problem using machine learning along with an executive summary. While the second time I was given two weeks to solve a problem. It is needless to point out that second time it was a much harder problem where I was dealing with class imbalanced data set. So 3-minutes sales pitch type interview question allows you to showcase your grasp of the problem at hand. Please be sure to start with what is your interpretation of the problem; your brief approach to solving the problem; what types of machine learning models did you use in your approach and why? And close this by boasting about the accuracy of your models.",
+  "translation": "答：典型的数据科学面试过程始于实地数据分析项目。 我已经考虑了其中两个，时间跨度可能会根据带回家项目的复杂性而有所不同。 第一次，我有两天的时间使用机器学习和执行摘要来解决问题。 第二次给我两个星期来解决问题。 无需指出，第二次在我处理类不平衡数据集时，这是一个更加困难的问题。 因此，三分钟的销售推销类型面试问题可让您展示对当前问题的理解。 请确保首先从您对问题的解释开始； 您解决问题的简要方法； 您在方法中使用了哪种类型的机器学习模型，为什么？ 并通过吹嘘模型的准确性来结束这一点。"
+}, {
+  "tag": "P",
+  "text": "I believe that this is a very important question during your interview that enables you to prove that you are a leader in Data Science field and can solve a complex problem with the latest and greatest tools at your disposal.",
+  "translation": "我相信这是您面试中的一个非常重要的问题，它使您能够证明自己是数据科学领域的领导者，并可以使用最新，最好的工具来解决复杂的问题。"
+}, {
+  "tag": "P",
+  "text": "Question III: How will you explain deep neural network to a layman?",
+  "translation": "问题三：您将如何向外行解释深度神经网络？"
+}, {
+  "tag": "P",
+  "text": "Answer: The idea of Neural Network (NN) originally stemmed from human brain that is designed to identify patterns. NN is a set of algorithms that interpret sensory data through machine perception, labeling and clustering raw input data. Any type of real world data, be it images, text, sound or even time series data must be converted into a vector space containing numbers.",
+  "translation": "答：神经网络（NN）的思想最初源于旨在识别模式的人脑。 NN是一组算法，可通过机器感知，标记和聚类原始输入数据来解释感官数据。 任何类型的现实世界数据，例如图像，文本，声音甚至时间序列数据，都必须转换为包含数字的向量空间。"
+}, {
+  "tag": "P",
+  "text": "The word “deep” in deep neural network means that the neural network consists of multiple layers. These layers are made of nodes where computation takes place. An analogy of node is a neuron in human brain which fires when it encounters sufficient stimuli. A node combines data from the raw input with their coefficients or weights that either dampen or amplify that input based on the weight. The product of input and weight is then summed at the summation node shown below in Fig. 3, which is then passed on to the activation function which determines whether and to what extend that signal should progress further through the network to affect the ultimate outcome. A node layer is a row of such neuron-like switches that turn on or off as the input is fed through the network.",
+  "translation": "深层神经网络中的“深层”一词是指神经网络由多层组成。 这些层由进行计算的节点组成。 类比节点是人脑中的神经元，当其受到足够的刺激时会触发。 节点将来自原始输入的数据与它们的系数或权重进行组合，这些系数或权重将基于权重来抑制或放大该输入。 输入和权重的乘积然后在图3中所示的求和节点处求和，然后将其传递到激活函数，该激活函数确定该信号是否以及在何种程度上应继续通过网络传播以影响最终结果。 节点层是一行这样的神经元状开关，当输入通过网络馈送时，它们会打开或关闭。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*Tyc7UJGctvaLBQ-nKcMR9Q.png?q=20",
+  "caption": "Figure 3: An example of node visualization in neural network.",
+  "type": "image",
+  "file": "1*Tyc7UJGctvaLBQ-nKcMR9Q.png"
+}, {
+  "tag": "P",
+  "text": "Deep neural networks differs from earlier version of neural networks such as perceptrons because they were shallow and simply consisted of input and output layer along with one hidden layer.",
+  "translation": "深度神经网络与早期版本的神经网络（例如感知器）不同，因为它们很浅，仅由输入和输出层以及一个隐藏层组成。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*Bd5fdZLyP4o3E4hM4hii4g.png?q=20",
+  "caption": "Figure 4: Deep neural network consists of more than one hidden layer.",
+  "type": "image",
+  "file": "1*Bd5fdZLyP4o3E4hM4hii4g.png"
+}, {
+  "tag": "P",
+  "text": "Question II: How does collinearity affect your models?",
+  "translation": "问题II：共线性如何影响您的模型？"
+}, {
+  "tag": "P",
+  "text": "Answer: Collinearity refers to a situation where two or more predictor variables are closely related to one another. Figure 2 below shows as example of collinear variables. Variable 2 strictly follows variable 1 with a Pearson correlation coefficient of 1. So obviously one of these variables will behave like noise when fed into machine learning models.",
+  "translation": "答：共线性是指两个或多个预测变量彼此密切相关的情况。 下面的图2显示了共线变量的示例。 变量2严格跟随变量1，其Pearson相关系数为1。因此，显然，这些变量之一在馈入机器学习模型时的行为会像噪声一样。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*x-HaQbqXfi7h3jtLdIgkdA.png?q=20",
+  "caption": "Figure 2: Example of collinear variables.",
+  "type": "image",
+  "file": "1*x-HaQbqXfi7h3jtLdIgkdA.png"
+}, {
+  "tag": "P",
+  "text": "The presence of collinearity can become problematic in regression type questions, since it becomes difficult to separate out the individual effects of collinear variables on the response. Or in other words collinearity reduces the accuracy of the estimates of the regression coefficients and results in increase in errors. This will ultimately lead to decline in the t-statistic, as a result, in the presence of collinearity we may fail to reject the null hypothesis.",
+  "translation": "共线性的存在在回归类型问题中可能会成为问题，因为很难区分出共线性变量对响应的影响。 换句话说，共线性降低了回归系数估计的准确性，并导致误差增加。 这最终将导致t统计量的下降，结果，在存在共线性的情况下，我们可能无法拒绝原假设。"
+}, {
+  "tag": "P",
+  "text": "A simple way to detect collinearity is to look at the correlation matrix of the predictor variables. An element of this matrix that is large in absolute value indicates a pair of highly correlated variables, and therefore collinearity problem with the data. Unfortunately not all collinearity problems can be detected by inspection of the correlation matrix: it is possible for the collinearity to exist between three or more variables even if no pair of variables has a particularly high correlation. Such a situation is called multi-collinearity. For such cases, instead of inspecting the correlation matrix, a better way to assess multicollinearity is to compute the variance inflation factor (VIF). The VIF for each variable can be computed using the formula:",
+  "translation": "检测共线性的一种简单方法是查看预测变量的相关矩阵。 此矩阵的绝对值大的元素表示一对高度相关的变量，因此与数据存在共线性问题。 不幸的是，并非所有的共线性问题都可以通过检查相关矩阵来检测到：即使没有一对变量具有特别高的相关性，共线性也可能存在于三个或更多变量之间。 这种情况称为多重共线性。 对于这种情况，代替检查相关矩阵，评估多重共线性的更好方法是计算方差膨胀因子（VIF）。 可以使用以下公式计算每个变量的VIF："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*Zf56hzbPokEvGpgyRm14rQ.png?q=20",
+  "caption": "Equation IV: The Variance Inflation Factor (VIF)",
+  "type": "image",
+  "file": "1*Zf56hzbPokEvGpgyRm14rQ.png"
+}, {
+  "tag": "P",
+  "text": "Where R-square term is the regression of variable X, onto all of the other predictors. If VIF is close to or more than one then collinearity is present. When faced with the problem of collinearity there are two possible solutions. One is to drop the redundant variable. This can be done without compromising the regression fit. The second solution is to combine the collinear variables together into a single predictor.",
+  "translation": "其中R平方项是变量X在所有其他预测变量上的回归。 如果VIF接近或大于1，则存在共线性。 面对共线性问题，有两种可能的解决方案。 一种是删除冗余变量。 这可以在不影响回归拟合的情况下完成。 第二种解决方案是将共线变量组合在一起成为单个预测变量。"
+}, {
+  "tag": "P",
+  "text": "Question 1: Can you explain cost function of decision trees?",
+  "translation": "问题1：您能否解释决策树的成本函数？"
+}, {
+  "tag": "P",
+  "text": "Answer: Before we answer this question, it is important to note that Decision Trees are versatile Machine Learning algorithms that can perform both classification and regression tasks. Hence their cost functions are also different.",
+  "translation": "答：在我们回答这个问题之前，必须注意决策树是通用的机器学习算法，可以执行分类和回归任务。 因此，它们的成本函数也不同。"
+}, {
+  "tag": "P",
+  "text": "Cost function for classification type problems:",
+  "translation": "分类类型问题的成本函数："
+}, {
+  "tag": "P",
+  "text": "Gini impurity is an important concept before we can understand cost function, so let me first explain that.",
+  "translation": "在我们了解成本函数之前，基尼杂质是一个重要的概念，所以让我先解释一下。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*uskofIdESQhoUNSKGu2tvQ.png?q=20",
+  "caption": "Equation I: Gini Impurity",
+  "type": "image",
+  "file": "1*uskofIdESQhoUNSKGu2tvQ.png"
+}, {
+  "tag": "P",
+  "text": "where “p” is the ratio of class k instances among the training instances at the ith node. What does that mean? Let’s understand from an example below. Figure I displays a simple visualization of Iris Decision Tree of depth 2. Top level is the root node. The concept of dividing a training set into a set of decisions is fairly simple in the algorithm. Here, for instance, Iris data set is divided into two subsets based on a single feature called “petal width” at the root node. If petal width is less than or equal to 0.8, then the algorithm goes to depth 1, left. If not, it goes to depth 1, right. Where it further divides instances based on an additional feature of “petal width”. Depth 1, right node has a sample of 100 instances and applies 0 instances to Iris-Setosa, 50 instances to Iris-Versicolor and remaining 50 to Iris-Virginica.",
+  "translation": "其中“ p”是第i个节点的k个实例在训练实例中的比率。 这意味着什么？ 让我们从下面的示例中了解一下。 图一显示了深度2的虹膜决策树的简单可视化。顶层是根节点。 在算法中，将训练集划分为一组决策的概念非常简单。 例如，此处，虹膜数据集基于根节点上称为“花瓣宽度”的单个特征分为两个子集。 如果花瓣宽度小于或等于0.8，则算法转到深度1（左侧）。 如果不是，则转到深度1，对。 它根据“花瓣宽度”的附加特征进一步划分实例。 深度1，右节点有100个实例的样本，并将0个实例应用于Iris-Setosa，将50个实例应用于Iris-Versicolor，其余50个实例应用于Iris-Virginica。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*0LxmW9Q48UEhBm8RWpvaoQ.png?q=20",
+  "caption": "Figure I: Iris Decision Tree, Source",
+  "type": "image",
+  "file": "1*0LxmW9Q48UEhBm8RWpvaoQ.png"
+}, {
+  "tag": "P",
+  "text": "So this node’s gini impurity is 0.5:",
+  "translation": "因此，该节点的基尼杂质为0.5："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*Apg5HwUghvDsLvfjX5m0PA.png?q=20",
+  "caption": "Figure II: Gini impurity calculation",
+  "type": "image",
+  "file": "1*Apg5HwUghvDsLvfjX5m0PA.png"
+}, {
+  "tag": "P",
+  "text": "Similarly, at depth 1, left node, Gini impurity is zero because all training instances apply to the same class. The node is essentially “pure”.",
+  "translation": "同样，在深度1处，左节点的Gini杂质为零，因为所有训练实例都适用于同一类。 该节点实质上是“纯”的。"
+}, {
+  "tag": "P",
+  "text": "Now that understand what is Gini impurity, let’s get into the meat of the answer. Decision Trees use Classification and Regression Tree (CART) algorithm for training purposes based on a simple concept that the data set will be split into two subsets using a single feature (k) and threshold (t) . In Iris data set the feature was “petal width” and threshold was 0.8. How does it choose k and t? It searches for the pair (k, t) that produces the purest subsets. So the cost function that the algorithm tries to minimize is given by below equation:",
+  "translation": "既然了解了什么是基尼杂质，让我们深入探讨答案。 决策树基于简单的概念将分类和回归树（CART）算法用于训练目的，该简单的概念是使用单个特征（k）和阈值（t）将数据集分为两个子集。 在虹膜数据集中，特征为“花瓣宽度”，阈值为0.8。 如何选择k和t？ 它搜索产生最纯子集的对（k，t）。 因此，算法尝试使成本函数最小化的公式如下："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*Ffh3XnDhmzGTth9LsrC2xQ.png?q=20",
+  "caption": "Equation II: Cost function of a classification type decision tree.",
+  "type": "image",
+  "file": "1*Ffh3XnDhmzGTth9LsrC2xQ.png"
+}, {
+  "tag": "P",
+  "text": "where G left or right represent gini impurity of subsets while m represents instances of the subsets.",
+  "translation": "其中G左或右代表子集的基尼杂质，而m代表子集的实例。"
+}, {
+  "tag": "P",
+  "text": "Cost function for regression type problems:",
+  "translation": "回归类型问题的成本函数："
+}, {
+  "tag": "P",
+  "text": "For regression trees, cost function is fairly intuitive. We use Residual Sum of Squares (RSS). Equation III displays cost function of regression type trees, where “y” is ground truth and “y-hat” is the predicted value.",
+  "translation": "对于回归树，成本函数非常直观。 我们使用残差平方和（RSS）。 公式III显示了回归类型树的成本函数，其中“ y”是基本事实，“ y-hat”是预测值。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*ID5twl6r5ifyfBzlL-e9DQ.png?q=20",
+  "caption": "Equation III: Residual Sum of Squares (RSS)",
+  "type": "image",
+  "file": "1*ID5twl6r5ifyfBzlL-e9DQ.png"
+}, {
+  "tag": "H1",
+  "text": "Five Data Science Interview Questions that you must be able to answer",
+  "translation": "您必须能够回答的五个数据科学面试问题"
+}, {
+  "tag": "H2",
+  "text": "“Insider’s guide to Amazon/Netflix/Google Data Scientist interview questions”",
+  "translation": "“有关Amazon / Netflix / Google数据科学家采访问题的内幕人士指南”"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*G7UKIfecwK_ql_fd3HAe9A.png?q=20",
+  "type": "image",
+  "file": "1*G7UKIfecwK_ql_fd3HAe9A.png"
+}, {
+  "tag": "P",
+  "text": "In the interest of not failing twice in the same spot and making yourself useful to others, this post of mine is dedicated to people who want to follow their passion of becoming/improving as a Data Scientist. I strongly believe that you must keep giving interviews even if you are not looking for a career change, just because your learn a great deal when you give interviews. There is no faster way of learning. Data Science is a field that requires constant improvement in your skills set, while developing basic concepts in Machine Learning algorithms on a daily basis. So without further ado, let us dive straight into some questions and answers that you might useful in your next interview.",
+  "translation": "为了避免在同一地点失败两次并让自己对他人有用，我的这个职位专门为那些希望跟随自己成为/提高数据科学家热情的人们提供。 我坚信，即使您不打算换职业，也必须继续进行面试，因为您在进行面试时会学到很多东西。 没有更快的学习方法。 数据科学是一个需要不断提高技能的领域，同时每天都要开发机器学习算法中的基本概念。 因此，事不宜迟，让我们直接探讨一些可能对您下一次面试有用的问题和答案。"
+}]
