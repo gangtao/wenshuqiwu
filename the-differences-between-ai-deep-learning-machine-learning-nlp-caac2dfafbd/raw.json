@@ -1,0 +1,137 @@
+[{
+  "tag": "H1",
+  "text": "The Differences Between AI, Deep Learning, Machine Learning & NLP",
+  "translation": "AI，深度学习，机器学习和NLP之间的差异"
+}, {
+  "tag": "H2",
+  "text": "A brief introduction to four of today’s most important technologies",
+  "translation": "简要介绍当今四种最重要的技术"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*lt4oF70HrHppJtzD.jpeg?q=20",
+  "caption": "Image Source: UnSplash",
+  "type": "image",
+  "file": "0*lt4oF70HrHppJtzD.jpeg"
+}, {
+  "tag": "P",
+  "text": "Artificial Intelligence, Deep Learning, Machine Learning, and NLP are all search terms that are popular as human technology continues to advance.",
+  "translation": "随着人类技术的不断发展，人工智能，深度学习，机器学习和NLP都是受欢迎的搜索词。"
+}, {
+  "tag": "P",
+  "text": "But what are these advanced technologies and how do they differ?",
+  "translation": "但是这些先进技术是什么，它们又有何不同？"
+}, {
+  "tag": "H1",
+  "text": "Artificial Intelligence",
+  "translation": "人工智能"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*ZpO7PFpkGL9fi_hr.jpeg?q=20",
+  "caption": "Image Source: UnSplash",
+  "type": "image",
+  "file": "0*ZpO7PFpkGL9fi_hr.jpeg"
+}, {
+  "tag": "P",
+  "text": "Artificial intelligence is a technology or computer system designed to function in a way that simulates how the human brain thinks.",
+  "translation": "人工智能是一种旨在模拟人类大脑思维的技术或计算机系统。"
+}, {
+  "tag": "P",
+  "text": "The term is an overarching field of computer science that encompasses a broad range of categories, including natural language processing, machine learning, deep learning, neural nets, content abstraction, decision-making and more.",
+  "translation": "该术语是计算机科学的一个主要领域，涵盖了广泛的类别，包括自然语言处理，机器学习，深度学习，神经网络，内容抽象，决策等。"
+}, {
+  "tag": "P",
+  "text": "It was first coined by scientist John McCarthy at Dartmouth University in 1956.",
+  "translation": "它最早是由达特茅斯大学的科学家约翰·麦卡锡（John McCarthy）于1956年创造的。"
+}, {
+  "tag": "P",
+  "text": "It’s important to remember that AI is really composed of algorithms that are fed by data, and the results or recommendations it produces are entirely dependent on the data inputs.",
+  "translation": "重要的是要记住，人工智能实际上是由数据馈送的算法组成的，其产生的结果或建议完全取决于数据输入。"
+}, {
+  "tag": "P",
+  "text": "The more biased the data, the more biased the outputs. And vice versa. Take, for example, Amazon’s failed experiment using AI for recruitment, which produced results that were biased against women due to the number of male CVs in its training data.",
+  "translation": "数据偏差越大，输出偏差也越大。 反之亦然。 例如，亚马逊使用AI进行招聘的失败实验，由于其培训数据中的男性简历数量众多，因此产生的结果对女性有偏见。"
+}, {
+  "tag": "P",
+  "text": "Or, MIT’s Norman experiment which created a cynical AI who ‘thought’ only about death after feeding it data from a particular subreddit feed.",
+  "translation": "或者，麻省理工学院（MIT）的诺曼（Norman）实验创建了一个玩世不恭的AI，该AI在从特定的redredit提要中获取数据后才“思考”死亡。"
+}, {
+  "tag": "H1",
+  "text": "Machine Learning:",
+  "translation": "机器学习："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*qo1VAxSFoz2qZ2Xx.jpeg?q=20",
+  "caption": "Image Source: UnSplash",
+  "type": "image",
+  "file": "0*qo1VAxSFoz2qZ2Xx.jpeg"
+}, {
+  "tag": "P",
+  "text": "Machine learning is a subset of AI which involves ‘training’ machines to ‘learn’ from sets of data, enabling them to draw insights and make predictive decisions. It automates tasks and finds patterns or anomalies, learns from them and creates new rules for next time.",
+  "translation": "机器学习是AI的子集，它涉及“训练”机器以从数据集中“学习”，从而使他们能够得出见解并做出预测性决策。 它可以自动执行任务并查找模式或异常，从中学习并为下次创建新规则。"
+}, {
+  "tag": "P",
+  "text": "Benedict Evans of Andreessen Horowitz writes in his blog that:",
+  "translation": "Andreessen Horowitz的Benedict Evans在他的博客中写道："
+}, {
+  "tag": "P",
+  "text": "“machine learning lets us solve classes of problem that computers could not usefully address before, but each of those problems will require a different implementation, and different data, a different route to market, and often a different company.”",
+  "translation": "“机器学习使我们能够解决计算机以前无法有效解决的问题，但是每个问题都将需要不同的实现，不同的数据，不同的市场途径以及通常是不同的公司。”"
+}, {
+  "tag": "P",
+  "text": "It enables us to automate a particular task, at a massive scale — something that would previously require many, many humans, if possible at all.",
+  "translation": "它使我们能够大规模地自动化特定任务-如果可能的话，以前需要很多人。"
+}, {
+  "tag": "H1",
+  "text": "Deep Learning:",
+  "translation": "深度学习："
+}, {
+  "tag": "P",
+  "text": "Deep learning is currently the most advanced subset of machine learning, and thereby a subset of AI, which intends to bring machines as close as possible to human levels of thinking.",
+  "translation": "深度学习是当前机器学习的最高级子集，因此是AI的子集，它旨在使机器尽可能接近人类的思维水平。"
+}, {
+  "tag": "P",
+  "text": "According to MIT Technology Review, “The software learns, in a very real sense, to recognize patterns in digital representations of sounds, images, and other data” by creating an artificial neural network.",
+  "translation": "根据《麻省理工学院技术评论》的说法，“该软件通过创建人工神经网络，以非常真实的意义学习识别声音，图像和其他数据的数字表示形式中的模式”。"
+}, {
+  "tag": "P",
+  "text": "Image recognition and speech recognition technology fall under deep learning.",
+  "translation": "图像识别和语音识别技术属于深度学习。"
+}, {
+  "tag": "H1",
+  "text": "Natural Language Processing (NLP):",
+  "translation": "自然语言处理（NLP）："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*gb8yRtZZ6hzKdIQo.jpeg?q=20",
+  "caption": "Image Source: UnSplash",
+  "type": "image",
+  "file": "0*gb8yRtZZ6hzKdIQo.jpeg"
+}, {
+  "tag": "P",
+  "text": "Natural Language Processing (NLP) is an element of deep learning that involves translating text or human ways of speaking so that a computer is able to categorize and make sense of it.",
+  "translation": "自然语言处理（NLP）是深度学习的一个元素，涉及翻译文本或人类的说话方式，以便计算机能够对其进行分类和理解。"
+}, {
+  "tag": "P",
+  "text": "NLP is an example of data enrichment. Using this technology, an AI can extract elements from a piece of data — for example, a company name, a date, an event (for instance, an acquisition), links, and sentiment.",
+  "translation": "NLP是数据丰富化的一个示例。 AI可以使用这项技术从一条数据中提取元素，例如，公司名称，日期，事件（例如，收购），链接和情感。"
+}, {
+  "tag": "P",
+  "text": "It also enables AI to analyze other forms of unstructured data — from video, to search.",
+  "translation": "它还使AI能够分析其他形式的非结构化数据-从视频到搜索。"
+}, {
+  "tag": "P",
+  "text": "Combined with semantic analysis, NLP AI can also look at the context to determine meaning from a sentence or data point.",
+  "translation": "结合语义分析，NLP AI还可以查看上下文以确定句子或数据点的含义。"
+}, {
+  "tag": "P",
+  "text": "NLP innovations are helping us to improve search in a way that uses language which more closely resembles the way a human thinks. As a result, it helps improve predictive search, suggests words or sentences in text and email, enables voice recognition, powers translation and more.",
+  "translation": "NLP的创新正在帮助我们以一种更类似于人类思维方式的语言来改进搜索。 结果，它有助于改善预测性搜索，在文本和电子邮件中建议单词或句子，实现语音识别，增强翻译功能等等。"
+}, {
+  "tag": "P",
+  "text": "The AI Revolution is officially here. In order to remain competitive as weforge on toward further technical advancements, it’s vital that every company embraces this new technology and implements change from the top down.",
+  "translation": "AI Revolution正式在这里。 为了在我们进一步发展技术时保持竞争力，至关重要的是，每家公司都必须接受这项新技术并从上到下实施变革。"
+}, {
+  "tag": "P",
+  "text": "Those that are able to understand and speak about these terms will find themselves at an advantage as technology continues to evolve.",
+  "translation": "随着技术的不断发展，那些能够理解和谈论这些术语的人将发现自己处于优势。"
+}]
