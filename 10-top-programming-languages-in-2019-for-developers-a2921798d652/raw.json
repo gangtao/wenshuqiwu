@@ -1,0 +1,232 @@
+[{
+  "tag": "H1",
+  "text": "10 top Programming Languages in 2019 for Businesses",
+  "translation": "2019年面向企业的10种顶级编程语言"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*GMm5IB7iCL1vFuKY?q=20",
+  "type": "image",
+  "file": "0*GMm5IB7iCL1vFuKY"
+}, {
+  "tag": "P",
+  "text": "It is the combination of hardware & software that makes for most of the progress in Technology. The top programming languages are a core part of the modern & emerging technologies we see today.",
+  "translation": "硬件和软件的组合是推动技术进步的主要因素。 顶级编程语言是我们今天所看到的现代和新兴技术的核心部分。"
+}, {
+  "tag": "P",
+  "text": "Developers of the present-day deal with more programming languages than ever before. Similarly, many IT Outsourcing Companies are now working with a huge set of languages for building all different types of software applications.",
+  "translation": "今天的开发人员处理的编程语言比以往任何时候都要多。 同样，许多IT外包公司现在正在使用大量语言来构建所有不同类型的软件应用程序。"
+}, {
+  "tag": "P",
+  "text": "And for those harnessing these programming languages for their needs, be it personal or commercial- there are myriad options to choose from. It is further difficult for businesses to find and hire programmers for their Custom Software Development projects due to the diverse range of languages to choose from.",
+  "translation": "对于那些利用这些编程语言满足其需求的人（无论是个人还是商业的），有多种选择可供选择。 由于要选择多种语言，因此企业很难为其定制软件开发项目找到并雇用程序员。"
+}, {
+  "tag": "P",
+  "text": "But for those harnessing these programming languages for their needs, be it personal or commercial- there are myriad options to choose from. It is even difficult for businesses to find and hire developers due to the diverse range of languages to choose from.",
+  "translation": "但是对于那些利用这些编程语言满足其需求的人（无论是个人还是商业的），有多种选择可供选择。 由于多种语言可供选择，企业甚至很难找到和雇用开发人员。"
+}, {
+  "tag": "P",
+  "text": "I’ve tried to find the most productive and popular programming languages for developers to learn and for businesses to leverage.",
+  "translation": "我试图找到最有生产力和最受欢迎的编程语言，供开发人员学习和企业利用。"
+}, {
+  "tag": "H1",
+  "text": "Top Programming Languages 2019",
+  "translation": "顶尖的编程语言2019"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*AzR5X3tDZgHhl6Au?q=20",
+  "caption": "The popularity of Top Programming languages as per Google trends",
+  "type": "image",
+  "file": "0*AzR5X3tDZgHhl6Au"
+}, {
+  "tag": "P",
+  "text": "Before I list the top programming languages for developers and businesses, I would like to provide a brief overview of the research that went into its making. So here is a briefing of the parameters used for my research:",
+  "translation": "在列出针对开发人员和企业的最佳编程语言之前，我想简要介绍一下其研究工作。 因此，这里简要介绍了我用于研究的参数："
+}, {
+  "tag": "H2",
+  "text": "1. The highest paying top programming languages (Collected from StackOverflow Developer Survey 2019 and Indeed).",
+  "translation": "1.收入最高的顶级编程语言（摘自《 StackOverflow开发人员调查报告2019》和《 Indeed》）。"
+}, {
+  "tag": "P",
+  "text": "Note: The greatness of a language isn’t determined by the developer salary packages. Similarly, it doesn’t matter how much developers are paid for a particular on-demand top programming language. What matters the most, in the long run, is how developers build their skills and work on the languages they already know.",
+  "translation": "注意：语言的出色程度并不取决于开发人员的薪资待遇。 同样，为特定的按需顶级编程语言支付多少开发人员也没有关系。 从长远来看，最重要的是开发人员如何提高技能并使用他们已经知道的语言进行工作。"
+}, {
+  "tag": "P",
+  "text": "However, I have considered this metric for the research because Salaries are if not more, but as equally important as passion.",
+  "translation": "但是，我考虑了这项研究指标，因为薪水甚至更多，但与热情同样重要。"
+}, {
+  "tag": "H2",
+  "text": "2. Preferences of developers based on Surveys from StackOverflow.",
+  "translation": "2.基于来自StackOverflow的调查的开发人员偏好。"
+}, {
+  "tag": "P",
+  "text": "Over the past decade, the development of top programming languages is being focused more on making things easier for developers. So it is only fair that their fondness towards programming languages be used as a metric here.",
+  "translation": "在过去的十年中，顶级编程语言的开发越来越集中在使开发人员更容易上手。 因此，公平地将他们对编程语言的喜爱作为衡量标准。"
+}, {
+  "tag": "H2",
+  "text": "3. Analysis of developer activity on GitHub (Rankings taken from GitHut 2.0 results for Q1 2019).",
+  "translation": "3.分析GitHub上的开发人员活动（排名来自2019年第一季度的GitHut 2.0结果）。"
+}, {
+  "tag": "P",
+  "text": "While there have been no updates to the first version of GitHut since Q2 2014, GitHut 2.0 might perhaps offer similar value in terms of analyzing activity on GitHub. Developer activity plays a huge role in helping businesses determine the value of a particular language/framework or technology stack. They keep a tab on developer activity and choose to rent a coder on this basis.",
+  "translation": "自2014年第二季度以来，GitHut的第一个版本没有更新，但就分析GitHub上的活动而言，GitHut 2.0可能提供类似的价值。 开发人员活动在帮助企业确定特定语言/框架或技术堆栈的价值方面发挥着巨大作用。 他们密切关注开发人员的活动，并以此为基础选择租用编码器。"
+}, {
+  "tag": "H2",
+  "text": "4. Google search trends worldwide from June 2018 — May 2019.",
+  "translation": "4. 2018年6月至2019年5月全球Google搜索趋势。"
+}, {
+  "tag": "P",
+  "text": "So based on the following parameters, the top programming languages 2019 for developers came to be these:",
+  "translation": "因此，基于以下参数，面向开发人员的2019年顶级编程语言为："
+}, {
+  "tag": "OL",
+  "texts": ["JavaScript", "Python", "Java", "Go", "Elixir", "Ruby", "Kotlin", "TypeScript", "Scala", "Clojure"],
+  "translations": ["的JavaScript", "蟒蛇", "爪哇", "走", "长生不老药", "红宝石", "科特林", "打字稿", "斯卡拉", "Clojure"]
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*z-HKxoxS9i3VIABx?q=20",
+  "caption": "Top Programming languages as per GitHut 2.0",
+  "type": "image",
+  "file": "0*z-HKxoxS9i3VIABx"
+}, {
+  "tag": "H1",
+  "text": "1. JavaScript",
+  "translation": "1. JavaScript"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*9p_VJzDjZy2eZDn6.jpg?q=20",
+  "type": "image",
+  "file": "0*9p_VJzDjZy2eZDn6.jpg"
+}, {
+  "tag": "UL",
+  "texts": ["Average JavaScript Developer Salary in the US as per Indeed: $109,462 per year.", "Recognized as the most popular top programming language in the Stack Overflow Developer Survey 2019.", "Most popular programming language on GitHub.", "It seems that JavaScript has gone down in popularity since the past year as per data from Google trends. The language was at its peak score of 100 in June 2018, and as of May 2019, the score is 84."],
+  "translations": ["根据确实数据，美国JavaScript开发人员的平均工资：每年109,462美元。", "在2019年Stack Overflow开发者调查中被公认为最流行的顶级编程语言。", "GitHub上最流行的编程语言。", "根据Google趋势数据显示，JavaScript去年以来的流行度似乎有所下降。 该语言在2018年6月的最高分数是100，而到2019年5月，该分数是84。"]
+}, {
+  "tag": "H1",
+  "text": "2. Python",
+  "translation": "2. Python"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*ThFKwCKnyIF_e0ZN.jpg?q=20",
+  "type": "image",
+  "file": "0*ThFKwCKnyIF_e0ZN.jpg"
+}, {
+  "tag": "UL",
+  "texts": ["Average Python Developer Salary in the US as per Indeed: $117,503 per year.", "Python is one of the top object-oriented programming languages and 2nd in the list of Most loved top programming languages as per Stack Overflow developer survey 2019.", "Also recognized as the most wanted programming language in the StackOverflow Developer survey.", "Second most active programming language on GitHub.", "There are no significant changes to Python’s popularity since last year. The language maintains a score of 88 as of May 2019, while its score in June 2018 was 85."],
+  "translations": ["根据确实的数据，美国Python开发人员的平均薪酬：每年117,503美元。", "根据2019年Stack Overflow开发者调查，Python是最顶级的面向对象编程语言之一，在最受欢迎的顶级编程语言列表中排名第二。", "在StackOverflow Developer调查中也被公认为最需要的编程语言。", "GitHub上第二活跃的编程语言。", "自去年以来，Python的流行程度没有发生重大变化。 截至2019年5月，该语言得分为88，而2018年6月为85。"]
+}, {
+  "tag": "H1",
+  "text": "3. Java",
+  "translation": "3. Java"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*0jn8ey1U5twP5bS9ySqE2Q.jpeg?q=20",
+  "type": "image",
+  "file": "1*0jn8ey1U5twP5bS9ySqE2Q.jpeg"
+}, {
+  "tag": "UL",
+  "texts": ["Average Java Developer salary in the US as per Indeed: $101,929 per year.", "Java happens to be at the 10th place as one of the most dreaded programming languages in 2019.", "Third-most active top programming language on GitHub.", "Java scored a rating of 97 out of 100 in Google trends as of June 2018. As of May 2019, the number has dropped down to 80. This could be because of widespread use of Python as an alternative, and the intense competition between Python Vs Java."],
+  "translations": ["根据确实的数据，美国Java开发人员的平均工资：每年101,929美元。", "作为2019年最令人恐惧的编程语言之一，Java恰好排在第十位。", "GitHub上第三活跃的顶级编程语言。", "截至2018年6月，Java在Google趋势中获得100分中的97分。截至2019年5月，该数字已降至80分。这可能是由于Python广泛使用作为替代方法，以及Python V之间的激烈竞争 Java。"]
+}, {
+  "tag": "H1",
+  "text": "4. Go",
+  "translation": "4.去"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*KSo--yKXP5iijxrM?q=20",
+  "type": "image",
+  "file": "0*KSo--yKXP5iijxrM"
+}, {
+  "tag": "UL",
+  "texts": ["Average Go developer salary globally: $109,483 per year. The average salary in the US for this top programming language is $136K per year.", "Go is the third-most highly paid language globally in the Stack Overflow developer survey 2019.", "The Go programming language is the fourth most active on Github.", "The google search popularity for Go has remained constant since the past year."],
+  "translations": ["Go开发人员的全球平均薪资：每年109,483美元。 在美国，使用这种顶级编程语言的平均年薪为$ 136K。", "在2019年Stack Overflow开发者调查中，Go是全球收入第三高的语言。", "Go编程语言是Github上第四活跃的语言。", "自去年以来，Go的Google搜索受欢迎程度一直保持不变。"]
+}, {
+  "tag": "H1",
+  "text": "5. Elixir",
+  "translation": "5.长生不老药"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*eAa2oS47juUEqIY_?q=20",
+  "type": "image",
+  "file": "0*eAa2oS47juUEqIY_"
+}, {
+  "tag": "UL",
+  "texts": ["Average global salary for development on Elixir: 76K. The average salary for Elixir developers in the US is $123k.", "Elixir is the fifth most highly paid language globally as per Stack Overflow developer survey 2019.", "Elixir has moved more than 3 places in the ranking for most active top programming languages on GitHub.", "The google search trends for Elixir have mostly remained the same since last year."],
+  "translations": ["Elixir的全球平均开发薪资：76K。 美国Elixir开发人员的平均薪水为12.3万美元。", "根据2019年Stack Overflow开发者调查，Elixir是全球收入第五高的语言。", "Elixir在GitHub上最活跃的顶级编程语言排名中已超过3个位置。", "自去年以来，Elixir的Google搜索趋势基本保持不变。"]
+}, {
+  "tag": "H1",
+  "text": "6. Ruby",
+  "translation": "6.红宝石"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*uGHj6krRdU8taFfR?q=20",
+  "type": "image",
+  "file": "0*uGHj6krRdU8taFfR"
+}, {
+  "tag": "UL",
+  "texts": ["Average global salary for development on Ruby: $76k. The average salary for Ruby developers in the US is $123k.", "Ruby is the sixth most highly paid language globally as per Stack Overflow developer survey 2019.", "Ruby has gone down one place since the previous year in the ranking for most active top programming languages in Github.", "Ruby has significantly gone down in popularity in Google search trends. In June last year, the language attained a popularity score of 94 out of 100, as of May 2018, the score is 72."],
+  "translations": ["全球使用Ruby进行开发的平均薪资：$ 76k。 美国Ruby开发人员的平均薪水为12.3万美元。", "根据2019年Stack Overflow开发者调查，Ruby是全球收入第六高的语言。", "自上一年以来，Ruby在Github中最活跃的顶级编程语言排名中下降了一位。", "Ruby在Google搜索趋势中的受欢迎程度已大大下降。 去年6月，该语言的普及度得分为94（满分100），截至2018年5月，该分数为72。"]
+}, {
+  "tag": "H1",
+  "text": "7. Kotlin",
+  "translation": "7.科特林"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*4jSlrDqN0AB23I0y?q=20",
+  "type": "image",
+  "file": "0*4jSlrDqN0AB23I0y"
+}, {
+  "tag": "UL",
+  "texts": ["Average global salary for development on Kotlin: $57k. The average salary for Kotlin developers in the US is $125k.", "Although Kotlin isn’t one of the most highly paid languages as of right now, its demand as soaring thanks to Google declaring it as the official language for android app development.", "Kotlin is the 15th most active top programming language on GitHub, having risen by one rank since the last year.", "Kotlin’s popularity has rapidly soared this year. In 2018, the score of Kotlin in Google trends was a mere 71, and as of May 2019, it scores 90 out of 100."],
+  "translations": ["Kotlin的全球平均开发薪酬：5.7万美元。 在美国，Kotlin开发人员的平均工资为125,000美元。", "尽管Kotlin到目前为止还不是收入最高的语言之一，但由于Google宣布Kotlin是Android应用程序开发的官方语言，因此它的需求激增。", "Kotlin是GitHub上排名第15的最活跃的顶级编程语言，自去年以来已经上升了一位。", "今年Kotlin的知名度迅速飙升。 在2018年，科特林在Google趋势中的得分仅为71，而到2019年5月，它在100分中得分90。"]
+}, {
+  "tag": "H1",
+  "text": "8. TypeScript",
+  "translation": "8. TypeScript"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*2juTvhFd3XIvs2ZA?q=20",
+  "type": "image",
+  "file": "0*2juTvhFd3XIvs2ZA"
+}, {
+  "tag": "UL",
+  "texts": ["Average global salary for development on TypeScript: $60k. The average salary for", "TypeScript developers in the US is $115k.", "TypeScript is the 10th most popular top programming language as per Stack Overflow developer survey.", "The Microsoft-nurtured programming language is the 8th most active on GitHub.", "The popularity of TypeScript as per Google search peaked in May this year, as compared to its score of 84 in June 2018."],
+  "translations": ["使用TypeScript进行开发的平均全球薪资：6万美元。 的平均薪水", "美国的TypeScript开发人员为11.5万美元。", "根据Stack Overflow开发人员调查，TypeScript是排名第十的最受欢迎的顶级编程语言。", "受微软支持的编程语言在GitHub上排名第八。", "根据Google搜索显示的TypeScript的流行度在今年5月达到顶峰，而2018年6月的评分为84分。"]
+}, {
+  "tag": "H1",
+  "text": "9. Scala",
+  "translation": "9. Scala"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*NDOyQGTdw8Oq9BwT?q=20",
+  "type": "image",
+  "file": "0*NDOyQGTdw8Oq9BwT"
+}, {
+  "tag": "UL",
+  "texts": ["Average global salary for development on Scala: $78k. The average salary for Scala developers in the US is $143k.", "As per Stack Overflow annual developer survey 2019, Scala is the highest-paid programming language in the US, and the 4th most highly paid programming language globally.", "Scala is the 12th most active top programming language in 2019 on Github.", "Scala’s popularity in Google search trends has remained more or less the same since the past year."],
+  "translations": ["Scala的全球平均开发工资：78k美元。 Scala开发人员在美国的平均薪水为14.3万美元。", "根据2019年Stack Overflow年度开发人员调查，Scala是美国收入最高的编程语言，也是全球收入第四高的编程语言。", "Scala是2019年Github上排名第12的最活跃的顶级编程语言。", "自去年以来，Scala在Google搜索趋势中的受欢迎程度一直保持不变。"]
+}, {
+  "tag": "H1",
+  "text": "10. Clojure",
+  "translation": "10. Clojure"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*g_KN2COed3IyodiN?q=20",
+  "type": "image",
+  "file": "0*g_KN2COed3IyodiN"
+}, {
+  "tag": "UL",
+  "texts": ["Average global salary for development on Clojure: $90k. The average salary for Clojure developers in the US is $139k.", "As per Stack Overflow developer survey 2019, Clojure is the most highly paid programming language globally, and the 2nd most highly paid in the US.", "However, Clojure isn’t one of the most active top programming languages in 2019 on GitHub. In fact, its ranking has gone down one place since the last year.", "The google search trends for Clojure programming language remain more or less the same."],
+  "translations": ["Clojure的全球平均开发薪酬：9万美元。 Clojure开发人员在美国的平均薪资为13.9万美元。", "根据2019年Stack Overflow开发人员调查，Clojure是全球收入最高的编程语言，在美国排名第二。", "但是，Clojure并不是GitHub上2019年最活跃的顶级编程语言之一。 实际上，它的排名自去年以来已经下降了一位。", "Google对Clojure编程语言的搜索趋势大致相同。"]
+}, {
+  "tag": "H1",
+  "text": "Conclusion",
+  "translation": "结论"
+}, {
+  "tag": "P",
+  "text": "The world of Programming is one which keeps changing with each year. We have some top programming languages such as Java and JavaScript which have an almost eternal place in such lists. Then there are languages such as Kotlin which have risen at an astounding pace and have become one of the most in-demand programming languages to date.",
+  "translation": "编程的世界每年都在变化。 我们有一些顶级的编程语言，例如Java和JavaScript，它们在此类列表中几乎处于永恒的位置。 然后是诸如Kotlin之类的语言，以惊人的速度崛起，并成为迄今为止最受欢迎的编程语言之一。"
+}, {
+  "tag": "P",
+  "text": "As a developer, this list will give you an idea of the 10 most relevant programming languages of today, and perhaps motivate you to learn one of these. If you’re brave enough, then all of it! Such is the beauty of coding and computer programming in general. You have all the resources you’ll ever need to upgrade your strength, and all that matters is where you put your heart and how you put the knowledge into practice.",
+  "translation": "作为开发人员，此列表将使您了解当今的10种最相关的编程语言，并可能激发您学习其中的一种。 如果您足够勇敢，那就一切！ 一般来说，这就是编码和计算机编程的美。 您拥有提升实力所需要的全部资源，而最重要的是您在哪里下定决心以及如何将知识付诸实践。"
+}]
