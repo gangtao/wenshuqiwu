@@ -1,0 +1,223 @@
+[{
+  "tag": "H1",
+  "text": "Conclusion",
+  "translation": "结论"
+}, {
+  "tag": "P",
+  "text": "Technical interviewing is hard — there’s no denying that.",
+  "translation": "技术面试很难-不可否认。"
+}, {
+  "tag": "P",
+  "text": "Likewise, with many things in life, the skill can be improved upon with consistent practice. If it was easy, everyone would be passing interviews and it would feel a lot less rewarding.",
+  "translation": "同样，通过生活中的许多事情，可以通过坚持不懈的练习来提高技能。 如果这很容易的话，那么每个人都会通过面试，而获得的回报会少很多。"
+}, {
+  "tag": "P",
+  "text": "In upcoming posts, I plan on talking about the timeline I used to study. It will include the resources that I used to learn algorithm questions, as well as learning a new language from scratch that I could use to interview with.",
+  "translation": "在接下来的帖子中，我计划谈论我以前学习的时间表。 它将包括我用来学习算法问题的资源，以及从头开始学习可以用来面试的新语言的资源。"
+}, {
+  "tag": "H1",
+  "text": "Evaluating Your Solution",
+  "translation": "评估您的解决方案"
+}, {
+  "tag": "P",
+  "text": "This step is primarily about commenting on what your big-O complexities are.",
+  "translation": "此步骤主要是关于对您的big-O复杂性进行评论。"
+}, {
+  "tag": "P",
+  "text": "It is also a chance to reiterate your previous discussion on why you chose to use this particular algorithm. This step can also be used as a way to talk about the potential areas you would have expanded on if you had more time in the interview.",
+  "translation": "这也是重申您先前关于为什么选择使用此特定算法的讨论的机会。 如果您有更多的时间在面试中，此步骤也可以用作讨论您可能扩展的潜在领域的一种方式。"
+}, {
+  "tag": "H1",
+  "text": "Reviewing Your Solution",
+  "translation": "查看您的解决方案"
+}, {
+  "tag": "P",
+  "text": "After writing up the code to your solution, this is where I would take the examples I created from step one and trace through my code with the respective input line-by-line.",
+  "translation": "在将代码编写到您的解决方案中之后，这里就是我从第一步开始创建的示例的地方，并逐行跟踪代码。"
+}, {
+  "tag": "P",
+  "text": "This will, again, provide a positive signal to your interviewer that the approach is correct and proves that you have strong tracing skills.",
+  "translation": "这将再次向面试官发出积极的信号，表明该方法是正确的，并证明您具有很强的追踪能力。"
+}, {
+  "tag": "P",
+  "text": "Also, this may be a time where you catch a small syntax bug in your code and allow for any small patch-ups as needed. I typically write a comment above the method with the respective variables and what their value is as I go line-by-line in the program.",
+  "translation": "另外，这可能是您在代码中捕获一个小的语法错误并允许根据需要进行任何小的修补的时候。 我通常会在方法上方用相应的变量写注释，并在程序中逐行进行注释。"
+}, {
+  "tag": "P",
+  "text": "There’s no need to make it more stressful on yourself by trying to remember it all in your head.",
+  "translation": "无需试图记住所有这些，从而使自己承受更大的压力。"
+}, {
+  "tag": "H1",
+  "text": "Implementing Your Solution",
+  "translation": "实施您的解决方案"
+}, {
+  "tag": "P",
+  "text": "After spending the majority of your time planning your approach, implementing the solution should be relatively trivial.",
+  "translation": "在花费了大部分时间计划方法之后，实施该解决方案应该相对简单。"
+}, {
+  "tag": "P",
+  "text": "When I typically enter this step, I like to write my code directly under the respective English comment from the previous step.",
+  "translation": "通常，当我进入此步骤时，我想直接在上一步的相应英文注释下编写代码。"
+}, {
+  "tag": "P",
+  "text": "In my opinion, keeping your thoughts organized will help keep you focused. As I code, I like to reiterate out loud what I am coding so the interviewer has an easier time to follow along.",
+  "translation": "我认为，保持思想井井有条将有助于您保持专注。 在编写代码时，我想大声重申自己编写的代码，以便面试官可以轻松地进行后续工作。"
+}, {
+  "tag": "H1",
+  "text": "Planning your Solution",
+  "translation": "规划解决方案"
+}, {
+  "tag": "P",
+  "text": "So, you have a solid idea of which data structure you want to use and just hand-solved some of your own examples.",
+  "translation": "因此，您对要使用哪种数据结构有一个扎实的想法，并且只是手动解决了一些自己的示例。"
+}, {
+  "tag": "P",
+  "text": "Using the previous information from the last two steps, you will want to start writing out your approach in either plain English or pseudo-code.",
+  "translation": "使用最后两个步骤中的先前信息，您将要开始用纯英语或伪代码写出您的方法。"
+}, {
+  "tag": "P",
+  "text": "Personally, I have had interviews where I had two approaches to solve the problem in mind. If you fall into this case, you want to vocalize your thought process about which tradeoffs you are making for each solution.",
+  "translation": "就个人而言，我接受了采访，在采访中我有两种方法可以解决这个问题。 如果您遇到这种情况，则需要表达自己的思维过程，以了解每种解决方案要进行哪些权衡。"
+}, {
+  "tag": "P",
+  "text": "By vocalizing this, you convey to the interviewer that you are a calculative thinker and you are open to discussion/collaboration on the type of solution they are wanting. Again, this is the type of signal you want to provide.",
+  "translation": "通过发声，您可以向面试官传达您是一个有思想的思想家，并且您可以就他们想要的解决方案类型进行讨论/合作。 同样，这是您要提供的信号类型。"
+}, {
+  "tag": "P",
+  "text": "When writing up the flow for how my algorithm will work, I will usually leverage helper methods.",
+  "translation": "在编写算法工作流程时，我通常会利用辅助方法。"
+}, {
+  "tag": "P",
+  "text": "For example, if I want to populate a frequency counter, I’ll typically write populateMap(arr, map) in the main flow of my code and note this helper method outside of the main method, all while letting the interviewer know what the method will do.",
+  "translation": "例如，如果我想填充一个频率计数器，我通常会在我的代码的主要流程中编写populateMap（arr，map）并在main方法之外注意此helper方法，同时让面试官知道该方法是什么 会做。"
+}, {
+  "tag": "P",
+  "text": "Interviewers don’t care about watching you write pseudo-code for how to implement a frequency counter, they care about how you will use it to solve the main problem. Don’t trip up on the boring details.",
+  "translation": "采访者不在乎看着您编写有关如何实现频率计数器的伪代码，而在乎您如何使用它来解决主要问题。 不要沉迷于无聊的细节。"
+}, {
+  "tag": "P",
+  "text": "When writing up your approach, you should always use insightful variable names and method names. Having unreadable/irrelevant variable names is most definitely correlated to a bad signal and might even be harder for you to understand if you have to debug through your code in the later steps.",
+  "translation": "在编写方法时，应始终使用具有洞察力的变量名和方法名。 具有不可读/不相关的变量名最有可能与不良信号相关联，如果您在后续步骤中必须通过代码进行调试，则可能更难以理解。"
+}, {
+  "tag": "P",
+  "text": "After completing the flow of my algorithm and feeling confident, I will go ahead and ask the interviewer the question: “Is it OK if I code this solution up now?”",
+  "translation": "在完成算法流程并感到自信之后，我将继续问面试官以下问题：“如果我现在编写此解决方案可以吗？”"
+}, {
+  "tag": "H1",
+  "text": "Matching the Problem",
+  "translation": "匹配问题"
+}, {
+  "tag": "P",
+  "text": "After creating your own examples, you should have a greater understanding of how you were able to solve it by hand.",
+  "translation": "在创建自己的示例之后，您应该对如何手工解决问题有更多的了解。"
+}, {
+  "tag": "P",
+  "text": "This step is used to think about which data structures/algorithms/techniques can I use to help me with this problem? Is the input array sorted? How can we leverage binary search to help us? Linked list problem? Could we maybe use a slow/fast pointer technique here?",
+  "translation": "此步骤用于考虑我可以使用哪些数据结构/算法/技术来解决此问题？ 输入数组是否已排序？ 我们如何利用二进制搜索来帮助我们？ 链表问题？ 我们可以在这里使用慢速/快速指针技术吗？"
+}, {
+  "tag": "P",
+  "text": "These are the questions you should be thinking about out loud. Being able to comment on the tradeoffs between two different approaches provides a good signal to your interviewer, and chances are, if you are talking about the favorable approach, the interviewer will provide signal that you are on the right path.",
+  "translation": "这些是您应该大声思考的问题。 能够对两种不同方法之间的权衡做出评论，可以为您的面试官提供一个很好的信号，并且，如果您在谈论有利的方法，面试官可能会发出信号，表明您走上了正确的道路。"
+}, {
+  "tag": "H1",
+  "text": "Understanding the Problem",
+  "translation": "了解问题"
+}, {
+  "tag": "P",
+  "text": "The first step in the UMPIRE method. You were just asked a question; this is your time to really understand what the interviewer is asking of you.",
+  "translation": "UMPIRE方法的第一步。 有人问你一个问题。 这是您真正了解面试官对您的要求的时间。"
+}, {
+  "tag": "P",
+  "text": "A common pitfall in the interview is solving the wrong problem. This step is used to eliminate any confusion you may have, assumptions you can make about the problem/edge cases, and most importantly, making your own examples.",
+  "translation": "面试中常见的陷阱是解决错误的问题。 此步骤用于消除可能造成的任何混乱，可以对问题/边缘情况做出的假设，最重要的是，可以制作自己的示例。"
+}, {
+  "tag": "P",
+  "text": "In these algorithm problems, you want to create your own examples to not only solidify your understanding of the problem but to see how you would solve the problem — as a human.",
+  "translation": "在这些算法问题中，您想要创建自己的示例，以不仅巩固您对问题的理解，还可以看到您如何解决问题（作为人类）。"
+}, {
+  "tag": "P",
+  "text": "Through making your own examples and solving them, you should be able to notice some patterns that your brain is automatically making when solving them by hand.",
+  "translation": "通过创建自己的示例并解决它们，您应该能够注意到手动解决它们时大脑自动做出的一些模式。"
+}, {
+  "tag": "P",
+  "text": "This is where you need to take note and reverse-engineer how you solved it as a human so that you can write it in code.",
+  "translation": "在这里，您需要注意并逆向工程如何以人工方式解决它，以便可以用代码编写它。"
+}, {
+  "tag": "H1",
+  "text": "UMPIRE",
+  "translation": "裁判"
+}, {
+  "tag": "P",
+  "text": "UMPIRE is a problem-solving framework that I picked up this past summer from the CodePath technical interviewing course.",
+  "translation": "UMPIRE是一个解决问题的框架，去年夏天，我从CodePath技术面试课程中学到了这一点。"
+}, {
+  "tag": "P",
+  "text": "The purpose of UMPIRE is to break down an algorithm question into very specific parts to help better your understanding and solution to the problem.",
+  "translation": "UMPIRE的目的是将算法问题分解为非常具体的部分，以帮助您更好地理解和解决问题。"
+}, {
+  "tag": "P",
+  "text": "U — Understanding the problem.",
+  "translation": "U —了解问题。"
+}, {
+  "tag": "P",
+  "text": "M — Matching the problem.",
+  "translation": "M-匹配问题。"
+}, {
+  "tag": "P",
+  "text": "P — Planning your solution.",
+  "translation": "P-规划解决方案。"
+}, {
+  "tag": "P",
+  "text": "I — Implementing your solution.",
+  "translation": "我-实施您的解决方案。"
+}, {
+  "tag": "P",
+  "text": "R — Reviewing your solution.",
+  "translation": "R —查看您的解决方案。"
+}, {
+  "tag": "P",
+  "text": "E — Evaluating your solution.",
+  "translation": "E —评估您的解决方案。"
+}, {
+  "tag": "H1",
+  "text": "Introduction",
+  "translation": "介绍"
+}, {
+  "tag": "P",
+  "text": "If you are an up-and-coming developer or a seasoned developer with multiple years of industry experience, you probably have heard or experienced first-hand how nerve-wracking technical interviews can be.",
+  "translation": "如果您是一位新兴的开发人员或具有多年行业经验的经验丰富的开发人员，那么您可能已经听说过或亲身经历过多么令人不安的技术面试。"
+}, {
+  "tag": "P",
+  "text": "While it was true for myself initially, there were a few things that I did to help cope in these high-pressure situations.",
+  "translation": "虽然最初对我来说是对的，但我还是做了一些事情来应对这些高压情况。"
+}, {
+  "tag": "P",
+  "text": "This post and subsequent posts are to not debate whether or not the current way of interviewing is the correct way of conducting interviews for developers. I am treating it as truth and explaining some important concepts on how I played the “game” of interviewing.",
+  "translation": "这篇文章和后续文章不应该争论当前的采访方式是否是对开发人员进行采访的正确方式。 我将其视为真理，并解释了一些有关如何进行面试“游戏”的重要概念。"
+}, {
+  "tag": "P",
+  "text": "In this post, I would like to shed some light on the problem-solving framework I utilized in my interviews. It is best to always have some form of structure when tackling an algorithm question.",
+  "translation": "在这篇文章中，我想对我在访谈中使用的问题解决框架有所了解。 解决算法问题时，最好始终具有某种形式的结构。"
+}, {
+  "tag": "P",
+  "text": "The worst possible thing you can ever do in an interview is immediately starting to write code after being presented with the question.",
+  "translation": "在面试中可能遇到的最糟糕的事情是，在遇到问题后立即开始编写代码。"
+}, {
+  "tag": "P",
+  "text": "So, if you are not supposed to be coding, then what are you supposed to be doing? This is where UMPIRE comes into play.",
+  "translation": "因此，如果您不应该编码，那么您应该做什么？ 这就是UMPIRE发挥作用的地方。"
+}, {
+  "tag": "H1",
+  "text": "How To Stop Being Afraid of Technical Interviews",
+  "translation": "如何停止害怕技术面试"
+}, {
+  "tag": "H2",
+  "text": "Learn the UMPIRE technique",
+  "translation": "了解UMPIRE技术"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*OFRGP4jrkR0i9ODcI1Eaow.jpeg?q=20",
+  "caption": "Photo by Headway on Unsplash",
+  "type": "image",
+  "file": "1*OFRGP4jrkR0i9ODcI1Eaow.jpeg"
+}]
