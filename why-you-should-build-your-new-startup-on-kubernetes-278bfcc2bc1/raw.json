@@ -1,0 +1,215 @@
+[{
+  "tag": "H1",
+  "text": "Conclusion",
+  "translation": "结论"
+}, {
+  "tag": "P",
+  "text": "Kubernetes is perfect for any project that needs to scale and grow over time.",
+  "translation": "Kubernetes非常适合需要随时间扩展和增长的任何项目。"
+}, {
+  "tag": "P",
+  "text": "If you’re a startup, you almost certainly fall into that category. You might be small right now, but you want to grow. It’s what you tell your investors, and it’s the reason you’re hiring so many developers. Your system is going to change and expand quickly, and you want to build it in a way that allows this with the least amount of added cost and friction possible.",
+  "translation": "如果您是一家初创公司，那么几乎可以肯定您属于该类别。 您现在可能很小，但是您想要成长。 这就是您告诉投资者的原因，也是您聘请如此多的开发人员的原因。 您的系统将要快速更改和扩展，因此您希望以尽可能减少成本和摩擦的方式构建系统。"
+}, {
+  "tag": "P",
+  "text": "For that reason alone, I think it makes a lot of sense for any e-commerce, SaaS, or similar company to invest in Kubernetes early on. Even if you’re just deploying a single simple web application within the cluster, planning for the future means building your infrastructure carefully to enable your team to move quickly a year or three down the line.",
+  "translation": "仅出于这个原因，我认为任何电子商务，SaaS或类似公司尽早投资Kubernetes都是很有意义的。 即使您只是在集群中部署单个简单的Web应用程序，为未来做计划也意味着精心构建基础架构，以使您的团队能够快速移动一年或三年。"
+}, {
+  "tag": "P",
+  "text": "Thanks for reading, and best of luck!",
+  "translation": "感谢您的阅读，祝您好运！"
+}, {
+  "tag": "H1",
+  "text": "Situations Where You Probably Don’t Need Kubernetes",
+  "translation": "您可能不需要Kubernetes的情况"
+}, {
+  "tag": "P",
+  "text": "Of course, there is no silver bullet, and there are cases where something like Kubernetes is overkill.",
+  "translation": "当然，没有灵丹妙药，而且在某些情况下，像Kubernetes这样的东西是过大的。"
+}, {
+  "tag": "H2",
+  "text": "Simple WordPress sites, CMSs, etc.",
+  "translation": "简单的WordPress网站，CMS等"
+}, {
+  "tag": "P",
+  "text": "If you’re just running WordPress, you don’t need Kubernetes. If you’re running a CMS that never really gets deployed except once in a while to upgrade libraries or install a plugin, you don’t need Kubernetes. It’s really optimized for managing large, changing systems.",
+  "translation": "如果您仅运行WordPress，则不需要Kubernetes。 如果您运行的CMS仅偶尔进行一次升级，升级库或安装插件，而实际上从未真正部署过，则不需要Kubernetes。 它确实针对管理大型，不断变化的系统进行了优化。"
+}, {
+  "tag": "H2",
+  "text": "Embedded systems, anything needing access to a real OS",
+  "translation": "嵌入式系统，任何需要访问真实操作系统的东西"
+}, {
+  "tag": "P",
+  "text": "Obviously, if you’re writing low-level embedded systems or software that needs to interface with the Linux kernel, Kubernetes is not for you. That goes for any containerization solution.",
+  "translation": "显然，如果您要编写需要与Linux内核接口的低级嵌入式系统或软件，那么Kubernetes不适合您。 这适用于任何容器化解决方案。"
+}, {
+  "tag": "H2",
+  "text": "Your product is primarily a database",
+  "translation": "您的产品主要是数据库"
+}, {
+  "tag": "P",
+  "text": "Kubernetes does have a resource type called a “Stateful Set” intended for running things like databases and message brokers that manage state. In theory, running a Stateful Set could allow you to run multiple replicas and scale them up and down — and attach and grow storage.",
+  "translation": "Kubernetes确实具有一种称为“状态集”的资源类型，旨在运行诸如数据库和管理状态的消息代理之类的东西。 从理论上讲，运行有状态集可以允许您运行多个副本并上下缩放它们，以及附加和扩展存储。"
+}, {
+  "tag": "P",
+  "text": "But doing so always makes me a little nervous. With an application service, I want to make it easy for developers to tweak settings and deploy without trouble. With databases, I want just the opposite. It should be hard to accidentally change a setting or upgrade the system to a new version. I also don’t want my database competing for CPU and memory within the cluster.",
+  "translation": "但是这样做总是让我有些紧张。 借助应用程序服务，我希望使开发人员可以轻松调整设置并轻松进行部署。 对于数据库，我只想相反。 很难意外更改设置或将系统升级到新版本。 我也不希望我的数据库在集群中争夺CPU和内存。"
+}, {
+  "tag": "P",
+  "text": "I’m especially prone to not use Kubernetes for databases if I’m using AWS and have access to RDS. RDS or its equivalent in your cloud provider of choice is going to be a lot easier for managing automatic backups, scaling, and monitoring.",
+  "translation": "如果我使用的是AWS并且可以访问RDS，那么我特别倾向于不使用Kubernetes来存储数据库。 您选择的云提供商中的RDS或其等效产品将更容易管理自动备份，扩展和监视。"
+}, {
+  "tag": "H1",
+  "text": "You Don’t Need a Separate Ops Team That Does Everything",
+  "translation": "您不需要一支可以完成所有任务的独立运营团队"
+}, {
+  "tag": "P",
+  "text": "Kubernetes itself is a complex beast. But using it is achievable for any seasoned developer.",
+  "translation": "Kubernetes本身就是一个复杂的野兽。 但是，任何经验丰富的开发人员都可以使用它。"
+}, {
+  "tag": "P",
+  "text": "That’s because instead of using a complex series of bash scripts, special deploy tools, and so on, Kubernetes deployments are managed with simple declarative YAML files.",
+  "translation": "那是因为，Kubernetes部署不是使用一系列复杂的bash脚本，特殊的部署工具等，而是通过简单的声明性YAML文件进行管理。"
+}, {
+  "tag": "P",
+  "text": "That’s right. The simple XML replacement championed by Ruby enthusiasts is all you need to know to work with Kubernetes.",
+  "translation": "那就对了。 与Kubernetes一起使用时，您需要了解的就是Ruby发烧友倡导的简单XML替换。"
+}, {
+  "tag": "P",
+  "text": "Using nothing but YAML, we can define a whole working system with autoscaling, replication, and service resolution. Then using the kubectl CLI tool, we can ask the cluster to run our configuration. We never directly tell Kubernetes to do anything. Rather, it reads our declarative YAML and interprets what needs to be done.",
+  "translation": "仅使用YAML，我们就可以定义具有自动缩放，复制和服务解析的整个工作系统。 然后，使用kubectl CLI工具，我们可以要求集群运行我们的配置。 我们从不直接告诉Kubernetes做任何事情。 相反，它将读取我们的声明性YAML并解释需要执行的操作。"
+}, {
+  "tag": "P",
+  "text": "Do you think your developers can figure out how to write YAML? I do.",
+  "translation": "您认为您的开发人员可以弄清楚如何编写YAML吗？ 我做。"
+}, {
+  "tag": "P",
+  "text": "I’ve worked on some complex systems that required the person managing the deploy to understand a) Python, b) Bash, c) some minor intricacies of the OS version we were running, d) JVM flags (God help you), e) SCP commands (can you write a valid SCP command without looking at docs?) … and so on.",
+  "translation": "我已经在一些复杂的系统上工作，这些系统要求管理部署的人员了解a）Python，bash，c）我们正在运行的OS版本的一些细微差别，d）JVM标志（上帝帮助您），e） SCP命令（您可以在不查看文档的情况下编写有效的SCP命令吗？）……等等。"
+}, {
+  "tag": "P",
+  "text": "There is also an organizational overhead. Often the deploy scripts and infrastructure code are managed by the ops team. But developers often needed to make changes in the deploy code — for example, to set a flag on startup — and to scale up the system. That creates a tension between developers and ops since the two groups create demands on one another but are often beholden to different objectives.",
+  "translation": "也有组织开销。 部署脚本和基础结构代码通常由运营团队管理。 但是开发人员经常需要更改部署代码，例如，在启动时设置标志，并扩大系统规模。 这在开发人员和操作人员之间造成了紧张关系，因为这两个团队相互之间提出了要求，但通常会遵循不同的目标。"
+}, {
+  "tag": "P",
+  "text": "All that complexity and overhead adds a tax to everything you do in your startup. If you want to develop new features quickly and have the ability to easily jump from project to project, then you really want to keep that friction as low as possible. Kubernetes abstracts away a lot of the pain, leaving you to focus on the product.",
+  "translation": "所有这些复杂性和开销给您在启动过程中所做的一切增加了负担。 如果您想快速开发新功能并且能够轻松地从一个项目跳到另一个项目，那么您真的想保持尽可能小的摩擦。 Kubernetes消除了很多痛苦，让您专注于产品。"
+}, {
+  "tag": "H1",
+  "text": "Deployments Are Easy",
+  "translation": "部署容易"
+}, {
+  "tag": "P",
+  "text": "A traditional Linux production system typically looks like this. You have some code written in Java, Python, or Ruby. The application code is often written by people that don’t know servers very well — or at least aren’t practiced in them.",
+  "translation": "传统的Linux生产系统通常看起来像这样。 您有一些用Java，Python或Ruby编写的代码。 应用程序代码通常是由不太了解服务器的人（或者至少没有在其中使用）编写的。"
+}, {
+  "tag": "P",
+  "text": "You have a machine, let’s say in Amazon EC2, which is managed by someone in your ops team who doesn’t know the application code very well. When the application team completes some work, they want to be able to deploy those changes. The ops team wants to ensure those changes don’t break anything.",
+  "translation": "假设您有一台机器，例如在Amazon EC2中，由您的运营团队中的某人管理，该人不太了解应用程序代码。 当应用程序团队完成某些工作时，他们希望能够部署这些更改。 运营团队希望确保这些更改不会破坏任何内容。"
+}, {
+  "tag": "P",
+  "text": "You also don’t want the system to go offline during a deploy. You want to be able to rollback to a previous version of the code if something goes wrong. And what if your deploy process, from uploading assets to starting the server, takes 30 minutes? Will you take your system offline for 30 minutes?",
+  "translation": "您也不希望系统在部署期间脱机。 如果出现问题，您希望能够回滚到以前的代码版本。 从上载资产到启动服务器的部署过程需要30分钟怎么办？ 您将使系统离线30分钟吗？"
+}, {
+  "tag": "P",
+  "text": "Probably not. You’ll likely come up with some system for keeping version n-1 running until version n starts up, at which point you’ll switch to point to the new version.",
+  "translation": "可能不会。 您可能会想出一些系统来保持版本n-1的运行，直到版本n启动为止，这时您将切换到新版本。"
+}, {
+  "tag": "P",
+  "text": "But boy does that seem complicated. It’s a lot to remember — and a lot that can go wrong. Those deploy rules will be written in a series of scripts that need to be versioned and maintained and could very well contain bugs themselves. And when we’re expanding the company in separate teams, all of them trying to deploy multiple times a day. It starts to feel scary. The ops team members start to get overwhelmed with the amount of churn in the system. Deploys start to take longer and longer as the process becomes laden with more and more complexity.",
+  "translation": "但是男孩确实看起来很复杂。 有很多要记住的地方-还有很多可能出错的地方。 这些部署规则将用一系列脚本进行编写，这些脚本需要进行版本控制和维护，并且很可能本身包含错误。 而且，当我们将公司扩展为独立的团队时，他们所有人都试图一天多次部署。 开始感到恐惧。 运维团队成员开始对系统中的客户流失感到不知所措。 随着过程变得越来越繁琐，部署开始花费的时间越来越长。"
+}, {
+  "tag": "P",
+  "text": "Does this story sound familiar?",
+  "translation": "这个故事听起来很熟悉吗？"
+}, {
+  "tag": "P",
+  "text": "Kubernetes does away with much of that complexity. To deploy a new version of a service, we can simply update the container image to point to the new version of code. We can also define a health check that’ll be performed before declaring the new version is working. If it doesn’t pass, the old version of code keeps running.",
+  "translation": "Kubernetes消除了很多复杂性。 要部署新版本的服务，我们可以简单地更新容器映像以指向新版本的代码。 我们还可以定义运行状况检查，以声明新版本正在运行。 如果未通过，则旧版本的代码将继续运行。"
+}, {
+  "tag": "P",
+  "text": "We can define a service using an internal-only DNS name, like order_service, which will automatically load balance to running replicas. Nobody has to maintain a list of running instances.",
+  "translation": "我们可以使用仅供内部使用的DNS名称（例如order_service）定义服务，该名称将自动对正在运行的副本进行负载平衡。 无需维护运行实例的列表。"
+}, {
+  "tag": "P",
+  "text": "And if we find a problem after the deploy, a simple rollback command looks up the previous container image and applies it. Often this can take just a few seconds, and then we’re back to running the last known stable version of our software.",
+  "translation": "而且，如果我们在部署后发现问题，则可以使用简单的回滚命令查找并应用先前的容器映像。 通常，这可能只需要几秒钟，然后我们回到运行软件的最新已知稳定版本。"
+}, {
+  "tag": "P",
+  "text": "Doesn’t that sound nice?",
+  "translation": "听起来不是很好吗？"
+}, {
+  "tag": "H1",
+  "text": "Kubernetes Pays for Itself",
+  "translation": "Kubernetes自己付出"
+}, {
+  "tag": "P",
+  "text": "I’m not going to lie. EKS (the managed Kubernetes solution provided by Amazon) is expensive. It’ll cost you an overhead of $0.20, or $1,753.20 a year, on top of your EC2 costs. It’s not free.",
+  "translation": "我不会撒谎。 EKS（亚马逊提供的托管Kubernetes解决方案）价格昂贵。 除了EC2费用外，您的管理费用为$ 0.20或每年$ 1,753.20。 它不是免费的。"
+}, {
+  "tag": "P",
+  "text": "But consider what you would pay to have an engineer manually bring up nodes. The amount of time lost to these purely infrastructural changes is simply taking time away from developing your product. If you’re a startup trying to just hit your next goal, you should be happy to pay a (reasonable) overhead to magically erase an error-prone and time-consuming process from your team.",
+  "translation": "但是请考虑您要花多少钱才能让工程师手动启动节点。 这些纯粹的基础架构更改所浪费的时间仅仅是在开发产品上花费时间。 如果您是一家刚想实现下一个目标的初创企业，您应该乐于付出（合理的）管理费用，以神奇地消除团队中容易出错且耗时的过程。"
+}, {
+  "tag": "P",
+  "text": "With the Terraform tool at hand, you can also create a Kubernetes cluster that can be scaled with a simple one-line change. In my last team, our cluster grew from two to four nodes with a Git commit that changed a 2 to a 4. It was literally a one-line change. After the nodes were added, Kubernetes automagically moved resources onto the new nodes, and no further work was required. Then you can move on to solving real problems.",
+  "translation": "使用手头的Terraform工具，您还可以创建一个Kubernetes集群，该集群可以通过简单的单行更改进行扩展。 在我的上一个团队中，我们的集群从2个节点增长到4个节点，其Git提交将2更改为4。这实际上是单行更改。 添加节点后，Kubernetes会自动将资源移动到新节点上，无需进一步的工作。 然后，您可以继续解决实际问题。"
+}, {
+  "tag": "H1",
+  "text": "What Is Kubernetes?",
+  "translation": "什么是Kubernetes？"
+}, {
+  "tag": "P",
+  "text": "In short, Kubernetes is an open-source container-orchestration system, originally developed by Google. It has been contributed back to the community, with lots of new libraries and plugins (called operators) contributed by third parties.",
+  "translation": "简而言之，Kubernetes是最初由Google开发的开源容器编排系统。 它已由第三方贡献给社区，其中包含许多新的库和插件（称为运算符）。"
+}, {
+  "tag": "P",
+  "text": "Kubernetes is not a cloud platform like Amazon Web Services (AWS) or Google Cloud Platform (GCP). In fact, you could run and deploy Kubernetes on your own hardware in your own data center, if you were so inclined — though, I don’t recommend this for startups.",
+  "translation": "Kubernetes不是像Amazon Web Services（AWS）或Google Cloud Platform（GCP）这样的云平台。 实际上，如果您愿意的话，您可以在自己的数据中心的自己的硬件上运行和部署Kubernetes，但是，我不建议初学者使用。"
+}, {
+  "tag": "P",
+  "text": "Think of it more like a language we can use to describe a working system. Once we describe the system in enough detail, Kubernetes can then go and use its compute resources (nodes in Kubernetes parlance — also known as, you know, computers) to run containers that execute our system.",
+  "translation": "认为它更像是一种我们可以用来描述工作系统的语言。 一旦我们对系统进行了足够详细的描述，Kubernetes便可以使用其计算资源（以Kubernetes的话来说，节点，也称为计算机）来运行执行我们系统的容器。"
+}, {
+  "tag": "P",
+  "text": "The big benefit for startups is that this process of “describing the working system” serves as documentation and a centralized location in code for defining infrastructure.",
+  "translation": "对于初创公司而言，最大的好处是“描述工作系统”的过程可作为文档和代码的集中位置来定义基础架构。"
+}, {
+  "tag": "H1",
+  "text": "Why You Should Build Your New Startup on Kubernetes",
+  "translation": "为什么你应该在Kubernetes上建立新的创业公司"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*UWSkLNFCfR5ht-3pzb8LZQ.jpeg?q=20",
+  "caption": "Photo by Markus Spiske on Unsplash",
+  "type": "image",
+  "file": "1*UWSkLNFCfR5ht-3pzb8LZQ.jpeg"
+}, {
+  "tag": "P",
+  "text": "During the last interview cycle I did back in early 2019, I spoke to a handful of startups.",
+  "translation": "在我于2019年初进行的最后一次采访周期中，我与一些初创公司进行了交谈。"
+}, {
+  "tag": "P",
+  "text": "I always ask about the deployment pipeline for startups because it helps me have an idea of what stage of technical complexity the company is at. Some businesses can go really far on a simple PHP web app deployed with SCP.",
+  "translation": "我总是询问初创企业的部署流程，因为它可以帮助我了解公司所处的技术复杂程度。 一些企业可以在使用SCP部署的简单PHP Web应用程序上走得更远。"
+}, {
+  "tag": "P",
+  "text": "Others hit limits and have to rework the system into several services with infrastructure components like Redis or Kafka used to communicate between them.",
+  "translation": "其他的则达到极限，必须使用诸如Redis或Kafka之类的基础结构组件在相互之间进行通信，将系统重做为几个服务。"
+}, {
+  "tag": "P",
+  "text": "When they see Kubernetes on my resume, interviewers often ask about it. There was a lot of interest in dipping toes into Kubernetes but also some anxiety about whether it was appropriate for the particular use case. How did we use it at my last company? Was it difficult to learn? What were the development teams’ experience of working with it? Sometimes there are horror stories of bad implementations and fears that moving to Kubernetes was a mistake. Often I hear some very reasonable skepticism alongside a desire to keep deployments simple and a hesitation to jump on the bandwagon.",
+  "translation": "当他们在我的履历表上看到Kubernetes时，面试官经常问起它。 将脚趾浸入Kubernetes中引起了很多兴趣，但也有人担心它是否适合特定的用例。 我在上一家公司如何使用它？ 学习困难吗？ 开发团队使用它的经验是什么？ 有时，有一些关于实施不当的恐怖故事，并且担心迁移到Kubernetes是一个错误。 我经常听到一些非常合理的怀疑，以及保持简单部署的愿望和犹豫不决的想法。"
+}, {
+  "tag": "P",
+  "text": "So I will jump to the punchline here. If I were starting my own startup from scratch today, I would very likely start with Kubernetes. I’ve used it in two very different companies now, and this is my (admittedly subjective) conclusion.",
+  "translation": "因此，我将跳到这里的重点。 如果今天我要从头开始自己的创业公司，那么我很可能会从Kubernetes开始。 我现在已经在两家截然不同的公司中使用了它，这是我的（公认的主观）结论。"
+}, {
+  "tag": "P",
+  "text": "Quite simply, the few negatives are so greatly outweighed by the positives that I think it’s worth the investment for many startups. Not all startups. Not necessarily your startup. But a lot of them.",
+  "translation": "简而言之，积极因素远远超过了少数不利因素，我认为许多创业公司值得投资。 并非所有创业公司。 不一定是您的创业公司。 但是很多。"
+}, {
+  "tag": "P",
+  "text": "Let’s take a look at the reasons why.",
+  "translation": "让我们来看看原因。"
+}]
