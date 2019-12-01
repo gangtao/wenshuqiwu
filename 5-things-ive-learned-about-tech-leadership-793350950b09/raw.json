@@ -1,0 +1,123 @@
+[{
+  "tag": "H1",
+  "text": "5. Don’t Be a Hero",
+  "translation": "5.不要当英雄"
+}, {
+  "tag": "P",
+  "text": "Everyone wants to be the hero that makes a project go perfectly or rescues a project from a bad spot. But that’s not what being a tech lead is about.",
+  "translation": "每个人都想成为使项目完美进行或从坏处拯救项目的英雄。 但这不是技术领先者的意义。"
+}, {
+  "tag": "P",
+  "text": "You don’t have to — and probably won’t — have all the answers no matter how much experience you have. Sometimes, even if you do have the answer, you shouldn’t say so in order to enable your development team to work through the project as well.",
+  "translation": "无论您有多少经验，都不必（也可能不会）获得所有答案。 有时候，即使您确实有答案，也不应这样说，以使您的开发团队也能够完成整个项目。"
+}, {
+  "tag": "P",
+  "text": "As a tech lead, your most important job is to be an enabler. Your role is to help the developers get their jobs done. It’s a big shift for those coming from a role where they contribute as a developer, but the shift can be so rewarding.",
+  "translation": "作为技术主管，您最重要的工作是成为推动者。 您的角色是帮助开发人员完成工作。 对于那些作为开发人员做出贡献的人来说，这是一个巨大的转变，但这种转变可能会带来巨大的回报。"
+}, {
+  "tag": "P",
+  "text": "You will get your glory eventually. It comes from watching your team succeed.",
+  "translation": "最终您将获得荣耀。 这源于看着您的团队成功。"
+}, {
+  "tag": "H1",
+  "text": "4. Project Budgets and Timelines Are Your Problem Too",
+  "translation": "4.项目预算和时间表也是您的问题"
+}, {
+  "tag": "P",
+  "text": "When you’re first coming into tech leadership, you may think managing the budget and timeline is solely the responsibility of the project manager. Certainly the buck stops with the PM for these aspects of the project, but as an often nontechnical person, they’re going to be a at a loss for how to effectively manage them without input from someone with development experience.",
+  "translation": "刚开始担任技术领导职务时，您可能会认为管理预算和时间表仅是项目经理的职责。 当然，对于项目的这些方面来说，项目经理的责任不大，但是作为一个通常不是技术人员的人，他们将如何有效地管理它们而不需要有开发经验的人的帮助将是一个茫然。"
+}, {
+  "tag": "P",
+  "text": "Developers thrive on constraints. And so, when you give them a big project budget and a big project timeline, they often get lost in the details or lose track of time … or over-engineer at the beginning and run out of time and budget toward the end of the project.",
+  "translation": "开发人员在约束条件下蓬勃发展。 因此，当您给他们很大的项目预算和很大的项目时间表时，他们常常会迷失在细节中或失去时间的轨道……或者在开始时过度设计，并在项目结束时耗尽时间和预算 。"
+}, {
+  "tag": "P",
+  "text": "You can help with this by breaking down the project into smaller chunks. Using your experience, you should be able to look at the requirements and group the project into workable chunks, grouped by features or the like that are easier to reason with.",
+  "translation": "您可以通过将项目分解为较小的块来提供帮助。 利用您的经验，您应该能够查看需求并将项目分组为可用的块，并按更容易推理的功能等分组。"
+}, {
+  "tag": "P",
+  "text": "Breaking projects down early helps developers know where you want them to spend their effort on the project. If there’s a mismatch between your breakdown and how long a developer thinks a task or feature will take, then it can lead to a discussion to make sure you both understand the scope and how it should be implemented.",
+  "translation": "尽早分解项目可帮助开发人员知道您希望他们在项目上花费多少精力。 如果您的细目分类与开发人员认为任务或功能将花费多长时间不匹配，则可能导致讨论以确保您既了解范围又应如何实现。"
+}, {
+  "tag": "H1",
+  "text": "3. Communicate Confidence",
+  "translation": "3.传达信心"
+}, {
+  "tag": "P",
+  "text": "A big part of my role as a tech lead is not only working with the development team but also communicating and representing the development team to the project managers and clients.",
+  "translation": "我作为技术主管的很大一部分不仅是与开发团队合作，而且是与项目经理和客户沟通并代表开发团队。"
+}, {
+  "tag": "P",
+  "text": "I will readily admit that there are many times when I’m thrown into conversations where I don’t have a ton of knowledge of what I’m talking about. As a tech lead, my job is to be a generalist, to know a little bit about a lot of things. Unfortunately that doesn’t cover everything, and so you have to get good at asking the right questions (or doing a bit of effective Googling) to be able get up to speed quickly and speak knowledgeably about a subject on a moment’s notice.",
+  "translation": "我会很容易承认，在很多时候，我对自己所谈论的内容一无所知。 作为技术主管，我的工作是成为一名通才，对很多事情有所了解。 不幸的是，这并不能涵盖所有内容，因此您必须善于提出正确的问题（或做一些有效的Google搜索），以便能够快速掌握并迅速了解某个主题。"
+}, {
+  "tag": "P",
+  "text": "Potentially, more importantly than me understanding what you’re talking about is my ability to exude confidence when you’re talking about the project. Your team is considered subject-matter experts, and it’s your job to maintain stakeholder confidence in your team, ensuring them that you and your team have things under control. Sometimes you flat out don’t know what to say, and for those moments, you have to train your reflexes to not panic. Instead, I suggest conferring with your team and getting back to the stakeholder with an answer later.",
+  "translation": "潜在地，比我更了解您正在说的是，当您谈论该项目时，我有能力表达信心。 您的团队被认为是主题专家，维护利益相关者对团队的信心是您的工作，以确保他们和您的团队处于受控状态。 有时候，您全力以赴，不知道该说些什么，在那一刻，您必须训练自己的反应，以免出现恐慌。 相反，我建议与您的团队商谈，稍后再回覆利益相关者。"
+}, {
+  "tag": "H1",
+  "text": "2. Unblock at All Costs",
+  "translation": "2.不惜一切代价解除封锁"
+}, {
+  "tag": "P",
+  "text": "Anyone who has done any significant amount of programming work knows that it’s easy to get lost in a problem, spending precious time going down a rabbit trail of debugging. Without coming up for air, it gets frustrating and demoralizing — and ends up wasting a lot of time.",
+  "translation": "任何进行过大量编程工作的人都知道，很容易迷失于问题中，将宝贵的时间花在了调试上。 如果不露面，它会令人沮丧和士气低落，最终浪费大量时间。"
+}, {
+  "tag": "P",
+  "text": "As a tech leader, a blocked developer is one of the biggest risks to your project. And it’s your job to help.",
+  "translation": "作为技术主管，受阻的开发人员是您项目的最大风险之一。 这是您的工作所在。"
+}, {
+  "tag": "P",
+  "text": "First, it’s important to recognize the signs of a developer spinning their wheels. Are they asking lots of questions that seem disconnected or aren’t showing progression? Are they showing signs of frustration? Are their status updates or commit messages vague and don’t seem to be moving forward? Changes are if you’re seeing these things that your developer is stuck.",
+  "translation": "首先，重要的是要认识到开发人员旋转轮子的迹象。 他们是在问很多似乎没有联系或没有进展的问题吗？ 他们表现出沮丧的迹象吗？ 他们的状态更新或提交消息是否含糊，似乎还没有向前发展？ 所做的更改是，如果您看到开发人员无法使用这些功能。"
+}, {
+  "tag": "P",
+  "text": "It’s time to jump in. But remember you’re there to unblock, not fix the problem. I usually tackle this by asking a series of questions. Even if I know the solution immediately, I like to guide the developer through my logic of diagnosing the issue. I hope to help them not only solve their issue but also learn from it for the future.",
+  "translation": "现在该入场了。但是请记住，您在那里可以畅通无阻，而不是解决问题。 我通常会问一系列问题来解决这个问题。 即使我立即知道解决方案，我也希望通过诊断问题的逻辑来指导开发人员。 我希望帮助他们不仅解决他们的问题，而且还可以从中学习。"
+}, {
+  "tag": "P",
+  "text": "Even if you don’t know how to fix the issue, asking questions and talking through options with a developer can help get them out of their head and lead them to finding a solution. Don’t be afraid to point a developer to other resources, whether those are code snippets, documentation, or even other team members who you know can help.",
+  "translation": "即使您不知道如何解决该问题，也可以向开发人员提出问题并进行讨论，这可以帮助他们脱颖而出并引导他们找到解决方案。 不要害怕将开发人员指向其他资源，无论这些资源是代码片段，文档，甚至是您知道可以帮助您的其他团队成员。"
+}, {
+  "tag": "H1",
+  "text": "1. Leadership Isn’t About Control",
+  "translation": "1.领导力与控制无关"
+}, {
+  "tag": "P",
+  "text": "First and foremost, tech leadership (and any kind of leadership, really) isn’t about the control you have over the project and team. You don’t become a tech leader so you can be the boss and call all the shots. (And if you do, you probably won’t be a very good one.)",
+  "translation": "首先，技术领导（实际上是任何形式的领导）与您对项目和团队的控制无关。 您没有成为技术领导者，因此您可以成为老板并做主。 （如果这样做，您可能会不是一个很好的人。）"
+}, {
+  "tag": "P",
+  "text": "Rather, tech leadership is about casting a vision for a future state (think project completion — or for a product, release) and helping others on your team get there. It’s not about micromanaging the details or doing it yourself but helping to guide others’ processes so they can end up where you’d have ended up had you done it yourself.",
+  "translation": "而是，技术领导力是为未来状态（想想项目完成或产品发布）的愿景，并帮助团队中的其他人实现目标。 这不是关于细节的微观管理或自己做，而是帮助指导其他人的流程，以便他们可以将自己的工作最终带到您最终要去的地方。"
+}, {
+  "tag": "P",
+  "text": "The thing is, when you’re an individual contributor, your contributions can only go so far. While you can always continue to hone your skills and processes, at the end of the day, you’ll always be limited by the constraint of time. When you’ve got a lot of experience, being a tech leader allows you to increase your own impact and output by helping others be more effective.",
+  "translation": "问题是，当您是个人贡献者时，您的贡献只能走得那么远。 尽管您始终可以继续磨练自己的技能和流程，但最终还是会受到时间限制的限制。 当您拥有丰富的经验时，成为技术领导者可以帮助他人提高效率，从而增加自己的影响力和产出。"
+}, {
+  "tag": "H1",
+  "text": "5 Things I’ve Learned About Tech Leadership",
+  "translation": "关于技术领导力我学到的5件事"
+}, {
+  "tag": "H2",
+  "text": "While some may have leadership tendencies, no one is born knowing how to be a leader",
+  "translation": "尽管有些人可能具有领导才能，但没有人天生知道如何成为领导者"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*n5ktzrphrB51kcLDXDT8DA.jpeg?q=20",
+  "caption": "Photo by Kobu Agency on Unsplash",
+  "type": "image",
+  "file": "1*n5ktzrphrB51kcLDXDT8DA.jpeg"
+}, {
+  "tag": "P",
+  "text": "Tech leadership is a mystery to many. As one racks up years of experience as a developer, there’s often an assumption that one must eventually move into tech leadership to continue to grow. And while this may be true, given the structure and hierarchy of the company you work for, the jump from individual contributor to tech leader isn’t always smooth. The two roles have some crossover in skills, but each also requires its own unique set of skills to get the job done as well.",
+  "translation": "技术领导对于许多人来说都是一个谜。 随着人们积累了多年的开发经验，通常会认为一个人必须最终成为技术领导者才能继续发展。 尽管这可能是对的，但鉴于您所工作的公司的结构和层次结构，从个人贡献者到技术领导者的转变并不总是那么顺利。 这两个角色在技能上有一些交叉，但是每个角色也都需要拥有自己独特的技能集才能完成工作。"
+}, {
+  "tag": "P",
+  "text": "I’ve been a tech lead of sorts for a lot of my career, from my time managing a development team to my side freelance projects, which often involve managing subcontractors. But it’s only in the last two years that I’ve been at Happy Cog, where I’ve been a tech lead in a more official capacity. With that shift came a lot of trial by fire, and I’ve definitely learned a lot along the way.",
+  "translation": "从我管理开发团队到我的自由职业者项目（包括管理分包商）的整个职业生涯中，我一直担任各种技术主管。 但是直到最近两年，我才去过快乐齿轮（Happy Cog），在那里我以官方身份担任技术主管。 这种转变带来了很多尝试，我在此过程中确实学到了很多东西。"
+}, {
+  "tag": "P",
+  "text": "There are always ways to improve, and I most certainly don’t have all the answers. But here are a few things I’ve learned along my journey into tech leadership.",
+  "translation": "总是有改进的方法，而我最肯定没有所有的答案。 但是，在我成为技术领导者的过程中，我学到了一些东西。"
+}]
