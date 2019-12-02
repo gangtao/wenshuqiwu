@@ -1,0 +1,199 @@
+[{
+  "tag": "P",
+  "text": "Goal: Learn how to take a Computational Thinking approach and how thinking like a computer can help break problems into simple pieces.",
+  "translation": "目标：学习如何采用计算思维方法，以及像计算机一样的思维如何将问题分解为简单的部分。"
+}, {
+  "tag": "P",
+  "text": "In the last article, I focused on simplifying computers and tried to relate it to the intuition students have about the natural world. The big take-away was that with just a basic set of rules, we can create machines that think, create virtual worlds, and solve challenging problems. But how do they get there when the rules are so basic?",
+  "translation": "在上一篇文章中，我专注于简化计算机，并试图将其与学生对自然世界的直觉联系起来。 最大的收获是，仅凭一套基本规则，我们就可以创建思考，创建虚拟世界并解决难题的机器。 但是当规则如此基本时，他们如何到达那里？"
+}, {
+  "tag": "P",
+  "text": "Computational Thinking is an important concept that can be applied in any area — even where computers aren’t involved. In this article we’ll see this as we solve challenging problems by simulating how computers “think.” Some of the exercises aren’t technical, because I want to illustrate how students can use this approach when solving any kind of problem.",
+  "translation": "计算思维是一个重要的概念，可以应用于任何领域-即使不涉及计算机。 在本文中，我们将通过模拟计算机的“思维方式”解决挑战性问题。这是一些技术性操作，因为我想说明学生在解决任何类型的问题时如何使用这种方法。"
+}, {
+  "tag": "P",
+  "text": "But first, how should we define Computational Thinking? The simple definition I like to go with is this: making ourselves work the way a computer does to solve a problem. This means creating rules and imposing limits on what we can draw from. It also means forcing us to simplify the problem to its most basic parameters.",
+  "translation": "但是首先，我们应该如何定义计算思维？ 我喜欢使用的简单定义是：让自己像计算机一样解决问题。 这意味着创建规则并限制我们可以借鉴的东西。 这也意味着迫使我们将问题简化为最基本的参数。"
+}, {
+  "tag": "P",
+  "text": "Computational Thinking is making ourselves work the way a computer does to solve a problem.",
+  "translation": "计算思维使自己像计算机一样解决问题。"
+}, {
+  "tag": "H1",
+  "text": "Exercise 1: Diagramming Concepts",
+  "translation": "练习1：绘制概念图"
+}, {
+  "tag": "P",
+  "text": "I like to start off with a simple exercise using a toaster. This exercise was inspired from a great TED Talk that I recommend watching.",
+  "translation": "我喜欢从使用烤面包机的简单练习开始。 此练习的灵感来自我推荐观看的精彩TED演讲。"
+}, {
+  "tag": "P",
+  "text": "Have students break into pairs, and give each of them a marker and a sheet of paper. The instructions go like this:",
+  "translation": "让学生分成几对，分别给他们一个记号笔和一张纸。 说明如下："
+}, {
+  "tag": "P",
+  "text": "Imagine you met a strange girl who escaped from a science lab. She can’t speak English, or read. You’re protecting her from scientists, so you have her live in your basement. The only thing she likes to eat are Eggo waffles. It’s Monday morning, and you are going to be late for school. Your parents are telling you have to leave in 3 minutes — not enough time to make the Eggos! When I say “go” you have 3 minutes to draw a step by step diagram to give her instructions on how to use the toaster so she can make her own Eggos. Remember she can’t read! — 1, 2, 3, GO!",
+  "translation": "想象您遇到一个从科学实验室逃脱的陌生女孩。 她不会说英语，也不会读书。 您正在保护她免受科学家的侵害，因此您可以住在地下室。 她唯一喜欢吃的是蛋饼华夫饼。 今天是星期一早上，您上学要迟到了。 您的父母告诉您，您必须在3分钟内离开-没有足够的时间来制作Eggos！ 当我说“去”时，您有3分钟的时间逐步绘制图表，向她说明如何使用烤面包机，以便她可以制作自己的Eggos。 记住她不会读书！ – 1，2，3，开始！"
+}, {
+  "tag": "P",
+  "text": "(After you say “GO,” don’t give any further instructions or helpful hints. Just recap that they only have 3 minutes.)",
+  "translation": "（在您说“ GO”之后，就不要再提供任何说明或有用的提示了。请回顾一下他们只有3分钟的时间。）"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*JpGGf3ySnfc0v5tp?q=20",
+  "type": "image",
+  "file": "0*JpGGf3ySnfc0v5tp"
+}, {
+  "tag": "P",
+  "text": "Discussion: When they’re done, have them change papers with their partners and compare. Ask: “If you were the girl could you be able to make Eggos using your partner’s instructions?” I usually get a mixed bag so we’ll then discuss what stood out to those who said yes and those who said no.",
+  "translation": "讨论：完成后，让他们与合作伙伴一起更换论文并进行比较。 问：“如果您是女孩，您是否可以按照伴侣的指示制作Eggos？”我通常会感到困惑，因此我们将与那些回答“是”和“拒绝”的人讨论什么。"
+}, {
+  "tag": "P",
+  "text": "Take Away: This example doesn’t quite get into computational thinking, but it’s our launching point. It shows how something as basic as making toast can be challenging when people have to explain it. I like to put a lot of emphasis in this discussion on those actions that are the most simple and basic, as well as the language of common symbols: a clock may mean “wait,” and curvy squiggles may mean “heat.” This common language will come up more later.",
+  "translation": "拿走：这个示例并未完全涉及计算思想，但这是我们的出发点。 它显示了当人们不得不解释时，像烤面包这样最基本的东西可能具有挑战性。 在此讨论中，我想着重于最简单和最基本的动作以及常见符号的语言：时钟可能表示“等待”，而弯曲的弯腰可能表示“热”。 语言将在以后出现。"
+}, {
+  "tag": "H1",
+  "text": "Exercise 2: Three Lights, Three Switches",
+  "translation": "练习2：三灯三开关"
+}, {
+  "tag": "P",
+  "text": "The following is a common software engineering riddle. It can be pretty challenging at first glance, and the instinct is to say it’s impossible. I love this example because it perfectly illustrates how to break down problems to very basic mechanics and how to use what we learned in the last article about representing lots of data with very few tools.",
+  "translation": "以下是一个常见的软件工程之谜。 乍看之下，挑战可能非常艰巨，直觉是说这是不可能的。 我喜欢这个示例，因为它完美地说明了如何将问题分解为非常基本的机制，以及如何使用我们在上一篇文章中学到的关于用很少的工具表示大量数据的知识。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*kndy5GZ_DjZIJTAE?q=20",
+  "type": "image",
+  "file": "0*kndy5GZ_DjZIJTAE"
+}, {
+  "tag": "P",
+  "text": "The riddle goes like this:",
+  "translation": "谜题是这样的："
+}, {
+  "tag": "P",
+  "text": "In a hallway are 3 regular light switches and a door. Behind the door are 3 different light bulbs, each of which are connected to only one of the 3 switches. Your goal is to determine which bulb connects to which switch. There are no windows. You are only allowed to flip the light switches, flipping them on and off as often as you like. You get only one chance to open the door and enter the room. After you enter the room, you can do whatever you like, but you cannot leave the room until you can say which switch connects to which light bulb.",
+  "translation": "走廊上有3个常规电灯开关和一扇门。 门后是3个不同的灯泡，每个灯泡仅连接到3个开关之一。 您的目标是确定哪个灯泡连接到哪个开关。 没有窗户。 只允许您打开电灯开关，并根据需要随意打开和关闭它们。 您只有一次机会打开门进入房间。 进入房间后，您可以做任何想做的事，但是只有说出哪个开关连接到哪个灯泡，您才能离开房间。"
+}, {
+  "tag": "P",
+  "text": "Discussion: I like to solve this problem as a group — so I’ll throw it to the students to raise their hand and provide suggestions. Almost always, the first suggestion is: “Turn a switch on, and go in the room, the one that’s on is the switch you turned on.” But this doesn’t solve the other two switches. At this point, you’ll get some answers like “pull out the switch and follow the wires” (you’re not allowed to do that) or you may have questions that clarify the riddle: Can you turn the switches on/off as many times as you like? Yes. Can you enter the room as many times as you like? No. Can you use a friend or reach the switches when you’re in the room? No. My favorite is: “Why would you create a room with switches on the outside of the room?” Could be a walk-in closet, or bathroom where you want to have the light on so you don’t bump into anything on the way in. Finally, a question that is implied but not explicitly stated: Does flipping a switch up mean that it’s on? Yes — and it’s important to know this.",
+  "translation": "讨论：我想集体解决这个问题，所以我将它交给学生举手并提供建议。几乎总是，第一个建议是：“打开一个开关，然后进入房间，打开的是您打开的开关。”但这不能解决其他两个开关。在这一点上，您将获得一些答案，例如“拔出开关并遵循电线”（不允许这样做），或者您可能有一些疑问可以弄清楚这个谜语：您可以通过以下方式打开/关闭开关吗？你喜欢多少次？是。您可以随意进入房间多次吗？否。当您在房间里时，可以和朋友聊天吗？不，我最喜欢的是：“为什么要创建一个房间，房间的外部有开关？”可能是步入式衣橱，或者是想开灯的浴室，这样就不会碰到任何东西。最后，一个隐含但未明确说明的问题：向上拨动开关是否表示其接通？是的-了解这一点很重要。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*w7OL6HuzCkHO_uGD.jpg?q=20",
+  "caption": "Take a Socratic method of asking questions to lead to the answer.",
+  "type": "image",
+  "file": "0*w7OL6HuzCkHO_uGD.jpg"
+}, {
+  "tag": "P",
+  "text": "Before moving on to the actual solution, I also like to ask the students whether they think there’s a possible solution or not.",
+  "translation": "在继续讨论实际的解决方案之前，我还想问学生他们是否认为有可能的解决方案。"
+}, {
+  "tag": "P",
+  "text": "If the students are still off track I like asking them to tell me some things they’ve noticed about light switches. What can they do, and not do. It’s as simple as turn off/turn on. This is a good reminder then of the last section and binary counting — things can only have two states: on, or off.",
+  "translation": "如果学生们仍然不在轨道上，我喜欢让他们告诉我一些他们注意到的有关电灯开关的事情。 他们能做什么，却不能做什么。 就像关闭/打开一样简单。 这是对上一节和二进制计数的一个很好的提醒-事物只能具有两种状态：打开或关闭。"
+}, {
+  "tag": "P",
+  "text": "What about light bulbs? What can light bulbs do? What properties do they have? I’ll push on this question — do they only make light? Is there anything else about light bulbs we’ve ever noticed? On and off are things you sense with your eyes, is there anything else about them we sense with our eyes? What about the other senses? Smell? Hearing? Taste? Touch? They do get hot!",
+  "translation": "灯泡呢？ 灯泡能做什么？ 他们有什么属性？ 我会提出这个问题-它们只会发光吗？ 我们还没有注意到其他有关灯泡的信息？ 您在用眼睛感知的事物上断断续续，我们用眼睛感知的事物还有别的吗？ 那其他感觉呢？ 闻？ 听力？ 味道？ 触摸？ 他们确实很热！"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*IqKnd5bCaiZq38eJ.jpg?q=20",
+  "type": "image",
+  "file": "0*IqKnd5bCaiZq38eJ.jpg"
+}, {
+  "tag": "P",
+  "text": "This is where we want to lead the discussion further. What makes a light bulb hot? Is it hot right when you turn it on? Can we use the fact that light bulbs only get hot after being on for a while? We could use sight to see which bulbs are on and off, could we use the sense of touch to see which is hot or not?",
+  "translation": "这是我们希望进一步引导讨论的地方。 是什么使灯泡变热？ 开启时热吗？ 我们可以使用灯泡仅在打开一段时间后才会变热的事实吗？ 我们可以用视线查看打开和关闭的灯泡，我们可以用触觉来查看哪个灯泡热吗？"
+}, {
+  "tag": "P",
+  "text": "Usually by now they land on the solution, or get close: Turn a switch on, and wait a minute, then turn it off. Then turn the second switch on and enter the room. The light bulb that’s on is switch we turned on. The light bulb that’s off and cold is connected to the switch we never touched. The light bulb that’s off but warm is the switch we turned on and left on for a minute before turning it off. (It can help to draw this out to provide a visual.)",
+  "translation": "通常，现在它们落在解决方案上，或者接近解决方案：打开开关，等待一分钟，然后将其关闭。 然后打开第二个开关，进入房间。 打开的灯泡是我们打开的开关。 熄灭，冷的灯泡已连接到我们从未触摸过的开关。 熄灭但很热的灯泡是我们打开并打开一分钟后再关闭的开关。 （它可以帮助绘制出来以提供视觉效果。）"
+}, {
+  "tag": "P",
+  "text": "Take away: While our gut reaction may have convinced us there was no solution, in breaking down the problem to the inputs and outputs, and using the few tools we had we’d found a solution. While light switches only have 2 states — on or off — light bulbs actually have more than 2 (on, off, hot, cold). We may have got distracted with everything else about the room, about the wires, about windows, or hacking the problem. But when we started breaking down the problem to the very basic things about light switches and light bulbs, we found the solution.",
+  "translation": "总结：虽然我们的直觉反应可能说服了我们，但没有解决方案，但是将问题分解为输入和输出，并使用我们仅有的几种工具找到了解决方案。 虽然电灯开关只有2种状态（开或关），但灯泡实际上有2种以上（开，关，热，冷）。 我们可能对与房间，电线，窗户或黑客问题有关的所有其他事物都感到分心。 但是，当我们开始将问题分解为有关电灯开关和灯泡的最基本问题时，我们找到了解决方案。"
+}, {
+  "tag": "H1",
+  "text": "Exercise 3: Broken Toaster",
+  "translation": "练习3：破碎的烤面包机"
+}, {
+  "tag": "P",
+  "text": "This is another simple exercise to hammer home the idea of starting simple and tackling the obvious. The question goes like this:",
+  "translation": "这是另一种简单的练习，可以使人们理解从简单开始和解决显而易见的问题。 问题是这样的："
+}, {
+  "tag": "P",
+  "text": "Imagine I’m your boss, and I say I’m a pretty grumpy boss if I don’t get my morning Eggo. The rest of the team tells you they’ve got a system to keep me from being grumpy — they take turns making sure every morning that I walk in, I have a freshly toasted Eggo waiting for me. They tell you Wednesday will be your day to cover. Monday rolls around, I walk in and they have my Eggo ready for me. Tuesday, same thing. Wednesday is your day — you go to the toaster, put the Eggo in, press the button and… nothing happens. You look at the clock and I’ll be at the office any minute now. What do you do?”",
+  "translation": "想象一下，我是你的老板，我说如果我早上不去艾格托，我是个脾气暴躁的老板。 团队的其他成员告诉您，他们有一个防止我脾气暴躁的系统-他们轮流确保每天早上我进去时，我都有新鲜烤的Eggo等着我。 他们告诉您，星期三将是您需要考虑的日子。 星期一临近，我走进去，他们为我准备了我的Eggo。 周二，同样的事情。 星期三是您的一天-您去烤面包机，放上Eggo，按一下按钮，……什么都没有发生。 你看时钟，我现在随时都在办公室。 你是做什么？”"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*p0yPuPVWt_vi8aRIaNIfKA.jpeg?q=20",
+  "type": "image",
+  "file": "1*p0yPuPVWt_vi8aRIaNIfKA.jpeg"
+}, {
+  "tag": "P",
+  "text": "Discussion: This discussion doesn’t need to get too involved — sometimes people have creative solutions, or silly solutions, but the key point is to start small, start with the obvious. Our impulses can cause us to overlook very obvious problems. Software Engineers face this challenge every day, and it’s tempting to overthink a problem. But sometimes the toaster just happens to be unplugged. You may feel silly to check the obvious but it’s sillier to waste a lot of time and effort. Imagine the boss’s reaction to your starting a small fire to toast an Eggo when the toaster just needed to be plugged in.",
+  "translation": "讨论：讨论不需要太忙-有时人们有创造性的解决方案或愚蠢的解决方案，但关键是要从小处着手，从显而易见的开始。 我们的冲动可能使我们忽视非常明显的问题。 软件工程师每天都面临着这一挑战，因此很容易想到一个问题。 但是有时烤面包机恰好被拔掉了。 您可能会觉得很愚蠢，但是浪费很多时间和精力。 想象一下，老板对您刚插上烤面包机时起火来烤鸡蛋的反应。"
+}, {
+  "tag": "P",
+  "text": "Take Away: While this specific example doesn’t get too deep into actual computational thinking, it illustrates a perfect example of how computational thinking breaks down over simple problems. Said differently, computational thinking is a logical step-by-step process of thinking — when something goes wrong, check the inputs in the same step by step way. “I pushed down on the slider, but the toaster didn’t turn on…” should lead to checking if it’s plugged in.",
+  "translation": "拿走：虽然这个特定的例子并没有深入到实际的计算思维中，但是它说明了计算思维如何分解简单问题的一个完美示例。 换句话说，计算思维是一个逐步的逻辑思维过程，当出现问题时，请按照相同的步骤逐步检查输入。 “我按下了滑杆，但是烤面包机没有打开……”应该提示您是否将其插入。"
+}, {
+  "tag": "P",
+  "text": "When you’re picking apples from a tree, it’s best to pick the low-hanging apples first: They’re easier to reach, you can pick those apples fastest, and that may be all the apples you need.",
+  "translation": "当您从树上采摘苹果时，最好先采摘低垂的苹果：它们更容易拿到，您可以最快地采摘那些苹果，而这可能就是您所需要的所有苹果。"
+}, {
+  "tag": "H1",
+  "text": "Exercise 4: Drawing Monsters",
+  "translation": "练习4：绘制怪物"
+}, {
+  "tag": "P",
+  "text": "By now the last few exercises should have them thinking “simple” — so here we’ll have them put this to the test. Once more, they’ll pair up. One of them (Person A) will have their eyes closed, and the other (Person B) will have a sheet of paper and pen. Give them 1 minute, and tell Person B to draw a monster on the paper. Remind Person A not to look. When the minute is up, have Person B cover up their drawing, and then Person A can open their eyes. Person A should now get ready to draw on a blank sheet of paper. Tell them they also only have 1 minute, and they have to draw the same monster as their partner, Person B, but they’re not allowed to look at the drawing. Person B has to describe their drawing to Person A. Once they’re done, have them compare and run through the exercise again, but this time reverse who goes first.",
+  "translation": "到现在为止，最后几次练习应该让他们思考“简单”-因此在这里，我们将让他们进行测试。 他们会再次配对。 其中一个（人A）将闭上眼睛，另一个（人B）将有一张纸和笔。 给他们1分钟，然后告诉B人在纸上画一个怪物。 提醒人A不要看。 当会议记录结束时，请人B遮盖他们的绘图，然后人A可以睁开眼睛。 现在，A人应该准备在一张空白的纸上绘图。 告诉他们他们也只有1分钟的时间，他们必须画出与伴侣B人相同的怪物，但不允许他们看图纸。 B人必须向A人描述他们的绘画。完成后，让他们比较并再次进行练习，但是这次相反，谁先走。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*qWlqhsn4S4pwAyBA?q=20",
+  "type": "image",
+  "file": "0*qWlqhsn4S4pwAyBA"
+}, {
+  "tag": "P",
+  "text": "Discussion:",
+  "translation": "讨论："
+}, {
+  "tag": "OL",
+  "texts": ["Discuss which strategies worked the best, focusing on “simple” instructions.", "Relate this back to Computational Thinking: When they were describing their drawing to their partner they recreated the same steps they took, but in simple instructions that were easy to follow.", "Some instructions may seem complicated like “Draw wings like the Batman symbol,” but these are actually simple. It’s the language of symbols again. It immediately tells someone what it looks like. It’s very different from a more ambiguous statement like: “Draw an angry vampire with wings”. And, sometimes taking too simple an approach makes things complicated: “A wing that’s made up of curves. They curve up to make sharp points on the top and bottom of the wings, around the middle and at the ends…”"],
+  "translations": ["讨论哪种策略最有效，重点是“简单”的说明。", "这与计算思维有关：当他们向伙伴描述图纸时，他们重新创建了他们所采取的相同步骤，但是简单易懂。", "有些说明可能看起来很复杂，例如“像蝙蝠侠符号那样画翅膀”，但实际上很简单。 再次是符号的语言。 它立即告诉某人它的外观。 这与更加模棱两可的说法（例如“用翅膀吸引愤怒的吸血鬼”）大相径庭。 而且，有时候采用过于简单的方法会使事情变得复杂：“由曲线组成的机翼。 它们弯曲起来，在机翼的顶部和底部，中间和末端附近形成尖锐的点……”"]
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*2kiRe-Ql7UBBO5Oh.jpeg?q=20",
+  "caption": "“A ghost-shaped body with legs, two devil horns, cyclops-eye, open mouth with pointy teeth.”",
+  "type": "image",
+  "file": "0*2kiRe-Ql7UBBO5Oh.jpeg"
+}, {
+  "tag": "P",
+  "text": "Concluding Discussion: We didn’t get very deep into real Computational Thinking on purpose. Instead we applied the principles to some games, riddles, and real-world situations to create the basis for thinking linearly, in a step by step methodical process. When faced with a problem — math, science, or broken toasters — Computational Thinking provides a foundation towards problem solving. It’s easy to become overwhelmed by all the details — but if you focus on the beginning (the inputs) and work your way one step at a time through to the end (the outputs) you’ll simplify the overall problem.",
+  "translation": "结论性讨论：我们没有真正地有目的地进行真正的计算思维。 取而代之的是，我们将这些原理应用于一些游戏，谜语和现实情况中，以循序渐进的方法化过程为线性思考奠定了基础。 当面对数学，科学或烤面包机等问题时，计算思维为解决问题提供了基础。 容易被所有细节所淹没-但是，如果您专注于开始（输入），并且每次都一步一步地进行到结束（输出），则可以简化整个问题。"
+}, {
+  "tag": "P",
+  "text": "In the next set of articles, we’re going to get into some actual programming concepts. As we do, remember these last two articles on how computers work and think. They provide an important foundation for why programming structures are the way they are.",
+  "translation": "在下一组文章中，我们将介绍一些实际的编程概念。 在执行操作时，请记住最后两篇有关计算机如何工作和思考的文章。 它们为编程结构为何如此提供了重要基础。"
+}, {
+  "tag": "H2",
+  "text": "#TECHLESSTEACHING",
+  "translation": "＃技术学习"
+}, {
+  "tag": "H1",
+  "text": "Solving Problems like a Computer",
+  "translation": "解决计算机之类的问题"
+}, {
+  "tag": "H2",
+  "text": "Four tech-less exercises simulating how computers “think”",
+  "translation": "四个无技术练习，模拟计算机如何“思考”"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*agrJfV6uKkWYntjejCE-Lg.png?q=20",
+  "type": "image",
+  "file": "1*agrJfV6uKkWYntjejCE-Lg.png"
+}, {
+  "tag": "P",
+  "text": "This article is the second in the #TechlessTeaching series, which encourages educators to take a tech-less approach to teaching students about computers and software engineering. When you skip the iPads, computers, and tech toys, you eliminate distractions, and the students focus on the principles. If you haven’t read the introduction, I recommend starting there.",
+  "translation": "本文是#Techless教学系列中的第二篇文章，该系列鼓励教育工作者采用无技术的方法向学生教授计算机和软件工程。 当您跳过iPad，计算机和高科技玩具时，可以消除干扰，让学生专注于原理。 如果您还没有阅读介绍，建议您从那里开始。"
+}]
