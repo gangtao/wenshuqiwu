@@ -1,0 +1,343 @@
+[{
+  "tag": "H1",
+  "text": "Conclusion",
+  "translation": "结论"
+}, {
+  "tag": "P",
+  "text": "Anyone can aim to be a productive programmer. At the end of the day, productivity feeds our mouths, and it keeps the industry alive by continually delivering valuable software.",
+  "translation": "任何人都可以成为一名高效的程序员。 归根结底，生产力让我们大吃一惊，并通过不断交付有价值的软件来使行业保持活力。"
+}, {
+  "tag": "P",
+  "text": "However, productivity only drives the industry. It’s a dream that drives an effective programmer — a dream to deliver something beyond what is presently possible.",
+  "translation": "但是，生产力只会驱动行业。 这是一个梦想，驱动着一个高效的程序员–一个实现超出当前可能范围的事情的梦想。"
+}, {
+  "tag": "P",
+  "text": "Techniques make you a good programmer.",
+  "translation": "技术使您成为一名优秀的程序员。"
+}, {
+  "tag": "P",
+  "text": "Habits make you an effective one. Being a great one will be a side effect.",
+  "translation": "习惯使您成为一个有效的人。 成为一个伟大的将是一个副作用。"
+}, {
+  "tag": "P",
+  "text": "Cultivating habits to be an effective programmer is a dream worth chasing after.",
+  "translation": "培养成为有效程序员的习惯是一个值得追求的梦想。"
+}, {
+  "tag": "H1",
+  "text": "Test",
+  "translation": "测试"
+}, {
+  "tag": "P",
+  "text": "Despite plenty of available test frameworks, many developers rarely write test cases. Sometimes, they don’t even take the pain to step through every line of code they wrote.",
+  "translation": "尽管有大量可用的测试框架，但许多开发人员很少编写测试用例。 有时，他们甚至不费劲地遍历所编写的每一行代码。"
+}, {
+  "tag": "P",
+  "text": "Resulting bugs turn into bug cycles, quick fixes, and plummeting team motivation.",
+  "translation": "导致的错误变成了错误周期，快速修复和团队动力下降。"
+}, {
+  "tag": "P",
+  "text": "Great developers often write test cases before they develop or soon after a feature freeze. They take extra care covering up the boundary conditions. They cover every possible exception type.",
+  "translation": "优秀的开发人员通常在开发前或功能冻结后不久就编写测试用例。 他们特别注意掩盖边界条件。 它们涵盖了每种可能的异常类型。"
+}, {
+  "tag": "P",
+  "text": "While they’re not number freaks and chase 100%, they ensure the maximum possible code coverage without help from a code-coverage tool.",
+  "translation": "尽管它们不是数字怪胎，而且可以100％追逐，但它们可以确保最大程度地覆盖代码，而无需代码覆盖工具的帮助。"
+}, {
+  "tag": "H1",
+  "text": "Tinker",
+  "translation": "修补匠"
+}, {
+  "tag": "P",
+  "text": "Hack it till you make it.",
+  "translation": "破解它，直到成功。"
+}, {
+  "tag": "P",
+  "text": "Every good programmer can remember breaking a radio, a remote control, or dad’s watch.",
+  "translation": "每个优秀的程序员都可以记住打破收音机，遥控器或爸爸手表的习惯。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*ZcBR_yhO-MyNCcUO?q=20",
+  "caption": "Photo by Giovanni Randisi on Unsplash",
+  "type": "image",
+  "file": "0*ZcBR_yhO-MyNCcUO"
+}, {
+  "tag": "P",
+  "text": "Breaking a problem into a thousand pieces, discovering each piece’s place within a huge machinery, assembling them again to make a faulty piece, breaking and constructing it again, and finally succeeding to recreate it — doesn’t this remind you of putting up a full-stack project?",
+  "translation": "将一个问题分解成一千个片段，在巨大的机器中发现每个片段的位置，再将它们组装成一个有缺陷的片段，再将其分解并重新构造，最后成功地重新创建它，这并不意味着您要提醒自己 堆栈项目？"
+}, {
+  "tag": "P",
+  "text": "If not, it’s surely similar to putting up a CI batch file.",
+  "translation": "如果不是，那肯定类似于放置CI批处理文件。"
+}, {
+  "tag": "P",
+  "text": "But then they say:",
+  "translation": "但随后他们说："
+}, {
+  "tag": "P",
+  "text": "If it ain’t broken, don’t fix it.",
+  "translation": "如果没有损坏，请不要修复。"
+}, {
+  "tag": "P",
+  "text": "That’s the rule many successful managers follow. And it’s often wise, too, considering the financial implications of changing existing behavior. Even though the experimentation is aimed at a dev environment, a good programmer’s time is a trade-off many managers want to avoid.",
+  "translation": "这是许多成功的经理遵循的规则。 考虑到改变现有行为的财务影响，这通常也是明智的。 尽管实验是针对开发环境的，但良好的程序员时间是许多经理想要避免的折衷方案。"
+}, {
+  "tag": "P",
+  "text": "Yet, a programmer worth his salt often works at odd hours to catch a rainbow in the rainy sky. He wants to go beyond existing boundaries, break existing routines, and recreate things to make a better world around him.",
+  "translation": "但是，值得花些力气的程序员经常在零工工作，以在多雨的天空中捕捉彩虹。 他想超越现有的界限，打破现有的惯例，并重新创造事物，以在他周围创造一个更好的世界。"
+}, {
+  "tag": "P",
+  "text": "He often ends up innovating it for the world.",
+  "translation": "他经常最终为世界创新。"
+}, {
+  "tag": "H2",
+  "text": "How To Build a Large Software Project Alone, From Scratch",
+  "translation": "如何从头开始单独构建大型软件项目"
+}, {
+  "tag": "H3",
+  "text": "Because all you need to get started is, well, you…",
+  "translation": "因为您只需要入门就可以了……"
+}, {
+  "tag": "H1",
+  "text": "Decouple",
+  "translation": "解耦"
+}, {
+  "tag": "P",
+  "text": "While this could be a step in the design process, decoupling is a habit that comes in handy in every iteration of the software development life cycle (SDLC), and yet very few developers profess in it.",
+  "translation": "尽管这可能是设计过程中的一步，但是去耦是在软件开发生命周期（SDLC）的每个迭代中都会派上用场的习惯，但很少有开发人员自称。"
+}, {
+  "tag": "P",
+  "text": "When I was developing my first large software project, I ended up writing spaghetti code. My networking helper knew about my 23 business objects. My UI knew about my models. I had no layer in-between to tackle the data conversion and abstraction required to maintain it gracefully.",
+  "translation": "当我开发第一个大型软件项目时，我最终写了意大利面条式代码。 我的网络助手知道我的23个业务对象。 我的UI知道我的模型。 我之间没有中间层可以轻松处理数据转换和抽象化。"
+}, {
+  "tag": "P",
+  "text": "When I revisited my code after a two-month break, nothing made sense. I ended up rewriting everything.",
+  "translation": "两个月的休息后，我重新查看代码时，没有任何意义。 我最终重写了所有内容。"
+}, {
+  "tag": "P",
+  "text": "Lesson learned?",
+  "translation": "学过的知识？"
+}, {
+  "tag": "P",
+  "text": "There’s a method to developing a software megaproject. It’s called decoupling. It rests on abstraction, one of the founding cornerstone of object-oriented programming. I described its importance here:",
+  "translation": "有一种开发软件大型项目的方法。 这就是所谓的去耦。 它基于抽象，它是面向对象编程的奠基石之一。 我在这里描述了它的重要性："
+}, {
+  "tag": "H2",
+  "text": "How To Build a Large Software Project Alone, From Scratch",
+  "translation": "如何从头开始单独构建大型软件项目"
+}, {
+  "tag": "H3",
+  "text": "Because all you need to get started is, well, you…",
+  "translation": "因为您只需要入门就可以了……"
+}, {
+  "tag": "P",
+  "text": "Great developers avoid spaghetti code from the beginning and at every step during maintenance. They carry the single responsibility principle (SRP) on their fingertips. They make reusable functions abstracted from irrelevant data. Even past achieving the functional objective, they iterate until:",
+  "translation": "优秀的开发人员从一开始和维护期间的每一步都避免使用意大利面条式代码。 他们触手可及的是单一责任原则（SRP）。 它们使可重复使用的功能从无关数据中抽象出来。 即使达到了功能目标，它们也会反复进行直到："
+}, {
+  "tag": "UL",
+  "texts": ["All redundant code is removed", "Each object is responsible for a singular task", "Every object is talking to a very limited and specific number of objects, and there are no cross-dependencies"],
+  "translations": ["删除所有冗余代码", "每个对象负责一个单独的任务", "每个对象都与数量非常有限的特定对象通信，并且没有交叉依赖关系"]
+}, {
+  "tag": "H1",
+  "text": "Document",
+  "translation": "文献"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/38/1*sQwb6B3nQxB4qwYqDp3IaQ.jpeg?q=20",
+  "caption": "Al-jabr (Credit: Wikipedia)",
+  "type": "image",
+  "file": "1*sQwb6B3nQxB4qwYqDp3IaQ.jpeg"
+}, {
+  "tag": "P",
+  "text": "This is a manuscript of “Al-jabr” (treaties on Algebra) written by al-Khwarizmi, the Persian polymath who coined the term algorithm.",
+  "translation": "这是波斯语的数学家al-Khwarizmi撰写的“ Al-jabr”（代数上的条约）手稿，他创造了术语算法。"
+}, {
+  "tag": "P",
+  "text": "He lived during the 8th and 9th centuries. Printing was invented five centuries later.",
+  "translation": "他住在8世纪和9世纪。 五个世纪后才发明了印刷技术。"
+}, {
+  "tag": "P",
+  "text": "Imagine the world without ancient manuscripts.",
+  "translation": "想象没有古代手稿的世界。"
+}, {
+  "tag": "P",
+  "text": "Knowledge was available to modern scientists and engineers, and they could build computers because our ancestors were wise enough to document their discoveries even in the absence of technology.",
+  "translation": "知识可供现代科学家和工程师使用，他们可以建造计算机，因为即使没有技术，我们的祖先也足够聪明地记录他们的发现。"
+}, {
+  "tag": "P",
+  "text": "Good developers develop a perfect solution and deliver it.",
+  "translation": "好的开发人员会开发出完美的解决方案并将其交付。"
+}, {
+  "tag": "P",
+  "text": "Great developers document every decision to prepare for unforeseen disruptions. They often do it to invest in future transitions. They always do it to transfer their knowledge to forthcoming stakeholders and programmers.",
+  "translation": "优秀的开发人员记录了为无法预见的破坏做准备的每一个决定。 他们经常这样做是为了投资于未来的转型。 他们总是这样做以将其知识转移给即将到来的利益相关者和程序员。"
+}, {
+  "tag": "P",
+  "text": "They document with perfection in the language (universal and well-known). They document with relevance in format (markdown, functional spec, technical spec, activity diagrams, PPT, or flowcharts).",
+  "translation": "他们以完美的语言记录（通用和知名）。 它们以相关格式（降价，功能规格，技术规格，活动图，PPT或流程图）进行记录。"
+}, {
+  "tag": "P",
+  "text": "Often, their documentation footnotes result into quality manuals for the organization or the programming books of the future.",
+  "translation": "通常，它们的文档脚注会成为组织或未来编程书籍的高质量手册。"
+}, {
+  "tag": "H1",
+  "text": "Design",
+  "translation": "设计"
+}, {
+  "tag": "P",
+  "text": "Rookie developers always jump on coding a problem. This is because they’re often anxious to validate their skills. They‘ a’re eager to know whether they can develop it.",
+  "translation": "新手开发人员总是会着手编写问题。 这是因为他们通常渴望验证自己的技能。 他们渴望知道他们是否可以发展它。"
+}, {
+  "tag": "P",
+  "text": "Effective developers, on the contrary, try to see through a challenge in a much bigger context.They visualize the larger problem. They devise the solution around that problem, instead of focusing their energies on just the challenge.",
+  "translation": "相反，有效率的开发人员会尝试在更大的范围内审视挑战，并将更大的问题可视化。 他们围绕该问题设计解决方案，而不是将精力集中在挑战上。"
+}, {
+  "tag": "P",
+  "text": "Design is a step in the software-development process. But it’s a habit in the life of effective programmers.",
+  "translation": "设计是软件开发过程中的一步。 但这是有效程序员生活中的一种习惯。"
+}, {
+  "tag": "P",
+  "text": "Their ways are various and resourceful: scribbling on whiteboards, brainstorming with colleagues, making presentations, asking in forums, or conjuring up the flow charts.",
+  "translation": "他们的方式多种多样，也很灵活：在白板上涂鸦，与同事集思广益，进行演示，在论坛中提问或设计流程图。"
+}, {
+  "tag": "P",
+  "text": "They spend plenty of time to know:",
+  "translation": "他们花费大量时间来了解："
+}, {
+  "tag": "UL",
+  "texts": ["Does the problem, indeed, deserve to be solved?", "If yes, how much of it must be automated?", "Does it really require technology? (Many problems don’t — e.g., consult, customer care, etc.)", "If yes, how many resources and how much time is required to develop a programming solution? And is it feasible given the assets at your disposal?"],
+  "translations": ["这个问题确实值得解决吗？", "如果是，那么其中有多少必须自动化？", "真的需要技术吗？ （很多问题都没有，例如咨询，客户服务等）", "如果是，开发一个编程解决方案需要多少资源和多少时间？ 考虑到您拥有的资产，这是否可行？"]
+}, {
+  "tag": "H1",
+  "text": "Read",
+  "translation": "读"
+}, {
+  "tag": "P",
+  "text": "RTFM respectfully(!) means Read The Freaking (/Factory) Manual.",
+  "translation": "RTFM敬请注意（！）表示请阅读《怪胎（/ Factory）手册》。"
+}, {
+  "tag": "P",
+  "text": "In the early days of Stack Overflow, this was a highly (ab)used phrase to educate newbie questioners on how to refine their programming questions.",
+  "translation": "在堆栈溢出的早期，这是一个非常（不常用）的词组，用于教育新手提问者如何优化其编程问题。"
+}, {
+  "tag": "P",
+  "text": "Productive developers begin by visiting Stack Overflow to chase their sprint goals. In 70% of the cases, this is the most pragmatic choice.",
+  "translation": "具有生产力的开发人员首先访问Stack Overflow以追求他们的sprint目标。 在70％的情况下，这是最务实的选择。"
+}, {
+  "tag": "P",
+  "text": "There is nothing new under the sun; why reinvent the wheel?",
+  "translation": "阳光下没有新事物。 为什么要重新发明轮子？"
+}, {
+  "tag": "P",
+  "text": "But some programmers do it and end up inventing faster vehicles. Reading cultivates creativity — a trait that’s rare in the majority of programmers today.",
+  "translation": "但是有些程序员这样做，最终发明了更快的车辆。 阅读可以培养创造力，这是当今大多数程序员所罕见的特征。"
+}, {
+  "tag": "P",
+  "text": "Effective developers try to go higher by aiming to reinvent the wheel. They try to embrace the beast when there are not enough forum answers available around a framework or SDK.",
+  "translation": "有效的开发人员试图通过重新发明轮子来提高自己。 当围绕框架或SDK的论坛答案不足时，他们会尝试拥抱野兽。"
+}, {
+  "tag": "P",
+  "text": "They do it by going through verbose and difficult to read manuals/documentation.",
+  "translation": "他们通过冗长且难以阅读的手册/文档来做到这一点。"
+}, {
+  "tag": "P",
+  "text": "They do it by studying research papers, mathematical formulae, pseudocodes, or coding journals. Microsoft TechnNet and Apple’s Technote archive used to be great places for expert developers to publish and discuss possibilities, design guidelines, and bugs. Software journals of the IEEE and Dr. Dobbs were the favorite bookmarks for architects and solution developers in the last decade.",
+  "translation": "他们通过研究论文，数学公式，伪代码或编码期刊来做到这一点。 微软TechnNet和Apple的Technote存档曾经是专家开发人员发布和讨论可能性，设计准则和错误的绝佳场所。 在过去的十年中，IEEE的软件期刊和Dobbs博士是建筑师和解决方案开发人员最喜欢的书签。"
+}, {
+  "tag": "P",
+  "text": "Even while using Google, great programmers expand their resources by trying interrelated search terms or searching deep within proprietary forums, obsolete docs, or unpopular open-source repos.",
+  "translation": "即使在使用Google时，优秀的程序员也可以通过尝试相关的搜索词或在专有论坛，过时的文档或不受欢迎的开放源代码存储库中进行深入搜索来扩展其资源。"
+}, {
+  "tag": "P",
+  "text": "In the absence of a readily available solution, they aim to roll out their novel solutions by following in the footsteps of the programming language creators, book authors, or framework developers.",
+  "translation": "在缺乏现成的解决方案的情况下，他们旨在遵循编程语言创建者，书籍作者或框架开发人员的脚步，推出其新颖的解决方案。"
+}, {
+  "tag": "P",
+  "text": "They use the acquired knowledge not only to deliver the task at hand but also to evolve personally as a programmer and continually iterate on the products already delivered.",
+  "translation": "他们不仅使用获得的知识来交付手头的任务，而且还可以以程序员的身份亲自发展并不断迭代已交付的产品。"
+}, {
+  "tag": "H1",
+  "text": "Observe",
+  "translation": "观察"
+}, {
+  "tag": "P",
+  "text": "Programming wasn’t downloaded from space. Humans created hardware and invented software to run on it.",
+  "translation": "程序不是从太空下载的。 人类创造了硬件并发明了在其上运行的软件。"
+}, {
+  "tag": "P",
+  "text": "Then they developed programming languages.",
+  "translation": "然后他们开发了编程语言。"
+}, {
+  "tag": "P",
+  "text": "They did it to instruct machines using human-understandable semantics. Software is aimed to solve a problem faced by humans. Without real-world correlation, devising software solutions would be a task limited only to genius mathematicians.",
+  "translation": "他们这样做是为了使用人类可理解的语义来指导机器。 软件旨在解决人类面临的问题。 没有现实世界的相关性，设计软件解决方案将仅局限于天才数学家的任务。"
+}, {
+  "tag": "P",
+  "text": "You can’t construct an effective software workflow without understanding the underlying real-world workflow.",
+  "translation": "如果您不了解底层的实际工作流程，就无法构建有效的软件工作流程。"
+}, {
+  "tag": "P",
+  "text": "Can you observe producer-consumer patterns in passengers boarding and getting off a train? Can you see a hash table indexed by street names and zip codes in postal addresses? Can you spot a break statement every time someone makes a final move in a board game?",
+  "translation": "您可以在乘车和下车的乘客中观察生产者-消费者的模式吗？ 您能在邮寄地址中看到以街道名称和邮政编码为索引的哈希表吗？ 每当有人在棋盘游戏中做出最后决定时，您能否发现中断声明？"
+}, {
+  "tag": "P",
+  "text": "If you can do this, you’ll do better converting real-world problems into programming lingo. Conversion of problems into structures that computers can understand marks the first very crucial step in software development.",
+  "translation": "如果可以这样做，则可以更好地将实际问题转换为编程术语。 将问题转换为计算机可以理解的结构，标志着软件开发的第一步非常关键。"
+}, {
+  "tag": "H1",
+  "text": "Who Is an Effective Programmer?",
+  "translation": "谁是有效的程序员？"
+}, {
+  "tag": "P",
+  "text": "Anyone can aim to be a productive programmer. Productivity drives the industry. However, it’s a dream that drives an effective programmer — a dream to deliver something beyond what’s presently possible.",
+  "translation": "任何人都可以成为一名高效的程序员。 生产力带动了整个行业。 但是，这是一个梦想，驱使一个高效的程序员成为一个梦想，那就是交付超出当前可能范围的东西。"
+}, {
+  "tag": "P",
+  "text": "Programmers often compete in programming competitions. There, they’re ranked for accuracy levels (number of test cases passed), execution speeds of their programs, code coverage, and speed of completion.",
+  "translation": "程序员经常参加编程竞赛。 在那里，它们按准确性级别（通过的测试用例数），程序的执行速度，代码覆盖率和完成速度进行排名。"
+}, {
+  "tag": "P",
+  "text": "They practice on LeetCode/HackerRank to get hired by their dream employers (FAAMG and their ilk).",
+  "translation": "他们在LeetCode / HackerRank上实习，以被理想的雇主（FAAMG和他们的同类）雇用。"
+}, {
+  "tag": "P",
+  "text": "But that rarely tells how effective a programmer is with respect to his overall contribution to the software world.",
+  "translation": "但这很少能说明程序员在其对软件世界的总体贡献方面的有效程度。"
+}, {
+  "tag": "P",
+  "text": "Imagine Dennis Ritchie, creator of C, participating in a TopCoder SRM. Brian Acton, the creator of WhatsApp, was rejected by Facebook and Twitter.",
+  "translation": "想象一下，C的创建者Dennis Ritchie参加了TopCoder SRM。 WhatsApp的创建者布莱恩·阿克顿（Brian Acton）被Facebook和Twitter拒绝。"
+}, {
+  "tag": "P",
+  "text": "If Nobel or Booker Prizes were given for programming, what’d be the traits programmers would be judged on? How long would the evaluation span be, what would be the criterion, and which unsung heroes would emerge as winners?",
+  "translation": "如果诺贝尔奖或布克奖被授予编程奖，那么程序员将被评判为哪些特质？ 评估期将持续多长时间，标准将是什么，以及哪些无名英雄将成为赢家？"
+}, {
+  "tag": "P",
+  "text": "Here’s the list of things effective programmers do on a regular basis to contribute the most to the software world.",
+  "translation": "这是有效的程序员定期为软件界做出最大贡献的工作清单。"
+}, {
+  "tag": "H1",
+  "text": "The 7 Habits of Highly Effective Programmers",
+  "translation": "高效程序员的7个习惯"
+}, {
+  "tag": "H2",
+  "text": "A new take on an old theme",
+  "translation": "对旧主题的新认识"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*FachaVQsCSqvzG7C?q=20",
+  "caption": "Photo by Tim Trad on Unsplash",
+  "type": "image",
+  "file": "0*FachaVQsCSqvzG7C"
+}, {
+  "tag": "P",
+  "text": "Before I begin, let me tell you this: There’s already a piece with a similar headline on Medium. While this was a very insightful piece, what I’m about to describe is completely different.",
+  "translation": "在开始之前，我先告诉您：在Medium上已经有一个标题相似的文章。 尽管这是一篇很有见地的文章，但我要描述的是完全不同的。"
+}, {
+  "tag": "P",
+  "text": "The focus of the present article isn’t to share tips and advice — but actionable habits every programmer can follow.",
+  "translation": "本文的重点不是分享技巧和建议，而是每个程序员可以遵循的可行的习惯。"
+}, {
+  "tag": "P",
+  "text": "I begin here by crediting Stephen Covey, the American educator who coined the famous “7 habits of highly effective” trademark phrase.",
+  "translation": "首先，我要归功于美国教育家斯蒂芬·科维（Stephen Covey），他创造了著名的“高效的7个习惯”商标短语。"
+}]
