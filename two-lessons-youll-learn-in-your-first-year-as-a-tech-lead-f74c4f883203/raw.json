@@ -1,0 +1,213 @@
+[{
+  "tag": "P",
+  "text": "That’s it. Two of the lessons I’ve learned the hard way over the past year. If you’ve got your own lessons you’ve learned, I’d love to hear them.",
+  "translation": "而已。 过去一年中，我从艰难的道路中学到了两个教训。 如果您有自己的经验教训，我很乐意听。"
+}, {
+  "tag": "H1",
+  "text": "2. You can’t tell people how to do something.",
+  "translation": "2.您无法告诉别人如何做某事。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*tNXNuzSHn4PmblMV?q=20",
+  "type": "image",
+  "file": "0*tNXNuzSHn4PmblMV"
+}, {
+  "tag": "P",
+  "text": "Or rather, you can tell people how to do something. They just won’t do it very well. Plus they’ll probably think you’re a dickhead.",
+  "translation": "或者更确切地说，您可以告诉人们如何做某事。 他们只是做得不好。 另外，他们可能会认为您是傻瓜。"
+}, {
+  "tag": "P",
+  "text": "If you become a tech lead, you’re probably a little bit switched-on. You can solve things well in your technical domain or belt out some new fancy architecture before brunch.",
+  "translation": "如果您成为技术主管，则可能需要一点时间。 您可以在技术领域很好地解决问题，也可以在早午餐之前推出一些新的精美架构。"
+}, {
+  "tag": "P",
+  "text": "That’s great. That’s why you’re a tech lead. You’re here to solve all these hard technical problems. Which means the first time a hard technical problem comes up, you should race to solve it the best you can, right? I mean, that’s why you’re there. Why would a business pay a person good at solving hard technical problems and expect them to sit on their arse?",
+  "translation": "那很棒。 这就是为什么您是技术主管。 您在这里解决所有这些困难的技术问题。 这意味着第一次出现棘手的技术问题时，您应该争取最好的解决方法，对吗？ 我的意思是，这就是您在那里的原因。 企业为什么要付钱给擅长解决棘手的技术问题的人并期望他们坐下来？"
+}, {
+  "tag": "P",
+  "text": "It comes down to motivation. You can honestly say this in a million different ways: people want autonomy, they don’t want a micromanager, they will work better if they’re brought along on the journey, they need buy-in, they want to solve problems themselves, they want freedom. Et cetera. You get the gist.",
+  "translation": "归结为动机。 您可以用一百万种不同的方式坦白地说：人们想要自治，他们不想要微观管理者，如果他们被带到旅途中，他们会更好地工作，他们需要买入，他们想自己解决问题， 他们想要自由。 等等。 你明白了。"
+}, {
+  "tag": "P",
+  "text": "The point is, your team will be more effective and motivated if everyone comes up with the solution together. I could babble on about pop psychology and make all kinds of claims about human nature, but the explanation just needs a bit of introspection. Do you like being told what to do? Personally, I hate it. It sucks. So why would anyone else in your team like it?",
+  "translation": "关键是，如果每个人都一起提出解决方案，您的团队将更有效率和更有动力。 我可能会谈论流行心理学，并就人性提出各种主张，但解释只需要一点内省即可。 您喜欢被告知该怎么做吗？ 就个人而言，我讨厌它。 糟透了 那么为什么您团队中的其他人会喜欢呢？"
+}, {
+  "tag": "P",
+  "text": "There are two situations where I’ve found this to be especially important.",
+  "translation": "在两种情况下，我发现这特别重要。"
+}, {
+  "tag": "H2",
+  "text": "Technical meetings",
+  "translation": "技术会议"
+}, {
+  "tag": "P",
+  "text": "The most important place to keep your mouth closed is in technical meetings with your team. Whether you’re designing the architecture of a whole new feature or just deciding how to implement a user story, it needs to be in the forefront of your mind.",
+  "translation": "闭嘴最重要的地方是与您的团队举行技术会议。 无论您是设计一个全新功能的体系结构，还是只是决定如何实现用户故事，它都必须摆在您的脑海中。"
+}, {
+  "tag": "P",
+  "text": "In these situations, your role is to be an opinionated facilitator. Get a collaborative vibe going. Make sure everyone is aware of the context and is at the same place in terms of their understanding. It’s important that everyone feels safe to contribute.",
+  "translation": "在这种情况下，您的角色将成为自以为是的促进者。 保持协作氛围。 确保每个人都了解上下文，并且在理解上处于同一位置。 每个人都应感到安全，这一点很重要。"
+}, {
+  "tag": "P",
+  "text": "This means toning down your instinct to race ahead and solve the problem as quickly as possible. Now you’re a tech lead, it’s no longer about getting the right answer. It’s about getting everyone bought in to the right answer. So keep it slow and keep up the good vibes. The majority of the time the team will come up with a better solution than you would on your own anyway. Which shouldn’t surprise you. Bringing people with different experiences and perspectives together creates better outcomes.",
+  "translation": "这意味着减弱您的直觉，以争取前进并尽快解决问题。 现在您已成为技术主管，不再只是获得正确答案的机会。 这是为了让每个人都买到正确的答案。 因此，请保持缓慢并保持良好的氛围。 在大多数情况下，团队都会比您自己提供更好的解决方案。 这不应该让您感到惊讶。 汇集具有不同经验和观点的人们可以创造更好的结果。"
+}, {
+  "tag": "P",
+  "text": "There is a caveat, however. You are, at the end of the day, the tech lead. Which makes you responsible for the quality of the architecture you design as a team. That’s why, for particularly important architecture meetings, it’s a good idea to spend some time beforehand thinking about what architecture you would personally arrive at.",
+  "translation": "但是，有一个警告。 归根结底，您是技术的领导者。 这使您对团队设计的体系结构的质量负责。 这就是为什么在特别重要的架构会议上，花一些时间事先考虑一下您个人将要到达的架构的好主意。"
+}, {
+  "tag": "P",
+  "text": "That way during the meeting you can subtly guide the team in that direction. It’s definitely an art. Too heavy-handed and you’ll be telling people how to do things. Too light-handed and the meeting might lose focus or arrive at an architecture you don’t agree with.",
+  "translation": "通过这种方式，您可以在会议期间巧妙地指导团队朝这个方向发展。 这绝对是一门艺术。 太笨拙了，您会告诉别人怎么做。 太轻松了，会议可能会失去重点或达到您不同意的架构。"
+}, {
+  "tag": "P",
+  "text": "The important thing is to stay humble. If, during the meeting, the team decides to go in a different direction to what you planned, stop and consider. Is there a genuine reason your architecture is better? If not, it’s better to go with the one you decided on as a group.",
+  "translation": "重要的是保持谦虚。 如果在会议期间，团队决定朝与您计划的方向不同的方向前进，请停下来考虑。 是否有真正的理由使您的体系结构更好？ 如果不是这样，最好将您决定的小组一起使用。"
+}, {
+  "tag": "H2",
+  "text": "Everyday problems",
+  "translation": "日常问题"
+}, {
+  "tag": "P",
+  "text": "There’s a second situation where this mistake is frequently made — those small everyday problems the team run into. Good examples are bugs or disputes on implementation details.",
+  "translation": "在第二种情况下，经常犯此错误-团队遇到的那些日常小问题。 很好的例子是关于实现细节的错误或争议。"
+}, {
+  "tag": "P",
+  "text": "These are definitely more subtle and a lot easier to get wrong. It’s instinctual when a problem arises to leap towards the probable cause and propose a solution. Worse still, to delegate it afterwards.",
+  "translation": "这些绝对更微妙，更容易出错。 当问题出现时，本能地跳到可能的原因并提出解决方案。 更糟糕的是，稍后再授权。"
+}, {
+  "tag": "P",
+  "text": "Imagine two responses to this common scenario: a mysterious bug appears in production and is assigned to your team. Based on the description, you’ve got a fairly good idea what the problem is.",
+  "translation": "想象一下对这种常见情况的两种反应：一个神秘的错误出现在生产环境中并分配给您的团队。 根据说明，您已经很好地了解了问题所在。"
+}, {
+  "tag": "P",
+  "text": "In the first imaginary response you take a 10 minute look at the problem, figure out the issue and the best solution. You describe the solution to the newest member of the team and ask them to implement it. They do so in an hour.",
+  "translation": "在第一个假想的响应中，您需要花10分钟的时间查看问题，找出问题和最佳解决方案。 您向团队的最新成员介绍解决方案，并要求他们实施。 他们在一小时内就完成了。"
+}, {
+  "tag": "P",
+  "text": "In the second imaginary response you ask the newest member of your team to look into it. With occasional guidance from teammates who are more knowledgeable about that area of the codebase, they manage to figure out the cause, triage it and then solve it in three hours.",
+  "translation": "在第二个假想答复中，您要求团队中的最新成员对此进行调查。 在偶尔对代码库领域有更多了解的队友的指导下，他们设法找出原因，对其进行分类，然后在三个小时内解决。"
+}, {
+  "tag": "P",
+  "text": "Which has the best outcome? If you were to ask the reporter of the bug, your PM, or any external stakeholder, it’d be the first way for sure. It took a third of the time and the solution was optimal.",
+  "translation": "哪个结果最好？ 如果您要询问该错误的报告者，您的PM或任何外部利益相关者，那肯定是第一种方法。 花了三分之一的时间，解决方案是最佳的。"
+}, {
+  "tag": "P",
+  "text": "What about the team itself and the newest member? Which had the greatest learning potential? Which built confidence and set up the team to succeed the next time a similar bug arises, or if you aren’t there?",
+  "translation": "那么团队本身和最新成员呢？ 哪个学习潜力最大？ 是谁树立了信心并建立了团队在下一次出现类似错误时（如果您不在时）成功？"
+}, {
+  "tag": "P",
+  "text": "The second, of course.",
+  "translation": "第二，当然。"
+}, {
+  "tag": "P",
+  "text": "It seems like an obvious choice on paper, but in the heat of the moment when you’re stressed and stakeholders want things done now rather than later, it’s easy to dictate solutions rather than engage your team. But the discipline to take it slow is vital to helping the team improve.",
+  "translation": "在纸面上看似一个显而易见的选择，但是当您感到压力重重，而利益相关者希望现在而不是以后立即完成工作时，很容易决定解决方案而不是让团队参与。 但是，采取慢节奏的纪律对于帮助团队提高至关重要。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*8RuUMG04CKy7QZZs0Df7Dw.jpeg?q=20",
+  "type": "image",
+  "file": "1*8RuUMG04CKy7QZZs0Df7Dw.jpeg"
+}, {
+  "tag": "H1",
+  "text": "Two Lessons You’ll Learn in Your First Year as a Tech Lead",
+  "translation": "您作为技术主管的第一年将学到的两课"
+}, {
+  "tag": "P",
+  "text": "I’ve been a tech lead for about a year now and I’m not dead yet.",
+  "translation": "我已经担任技术主管约一年了，但还没有死。"
+}, {
+  "tag": "P",
+  "text": "That’s not a lot of time in the grand scheme of a working life, but since tech lead years are like dog years I’ve got a battle scar or two. These are some of lessons they’ve taught me.",
+  "translation": "在工作生涯的宏伟计划中，这不是很多时间，但是由于技术领先的年份就像狗年一样，所以我有一两次伤痕。 这些是他们教给我的一些教训。"
+}, {
+  "tag": "P",
+  "text": "The following points are based on my own experience. Since I’m still new to the role and the responsibilities of being a tech lead differ from company to company, you might disagree with them. That’s great! Leave a comment about it.",
+  "translation": "以下几点是基于我的经验。 由于我仍然是新手，担任公司负责人的角色和职责因公司而异，因此您可能会不同意。 那很棒！ 对此发表评论。"
+}, {
+  "tag": "H1",
+  "text": "1. Saying no is the hardest skill to learn. But also one of the most important.",
+  "translation": "1.拒绝是最难学的技能。 也是最重要的之一。"
+}, {
+  "tag": "P",
+  "text": "As a tech lead, you likely got the role by saying yes a lot. When a new initiative came up, you leapt on the bandwagon and drove it through. When a stakeholder approached the team with questions, you took the time to sit down with them until they were satisfied. You spoke up on an issue of engineering standards or volunteered to give a presentation to the rest of the business. Whatever it was, yes was the answer.",
+  "translation": "作为技术负责人，您可能会说很多话来担任这个角色。 当一个新的计划提出来时，您就跃跃欲试，驾车穿越了。 当利益相关者向团队提出问题时，您会花时间与他们坐下来，直到他们满意为止。 您谈到了工程标准问题，或自愿向其他公司做介绍。 不管是什么，答案都是肯定的。"
+}, {
+  "tag": "P",
+  "text": "That worked to become a tech lead. But being a tech lead? Saying yes all the time is a recipe for disaster.",
+  "translation": "那努力成为技术领先者。 但是成为技术主管？ 一直说是灾难的根源。"
+}, {
+  "tag": "P",
+  "text": "The activities you used to volunteer for are now daily expectations as part of your role. Which means your time is now more precious. And you are a bigger target for questions, problems and interruptions from the rest of the business.",
+  "translation": "您以前自愿参加的活动现在已经成为您日常工作的一部分。 这意味着您的时间现在更加宝贵。 您是其他业务中遇到问题，问题和中断的更大目标。"
+}, {
+  "tag": "P",
+  "text": "One thing you learn quickly is that everything is urgent to somebody. On a given day, you might find someone needs the answer to a question at the same time someone else needs this report updated, someone’s found a bug that needs to be fixed immediately, you need to look at someone’s pull request, your product manager needs this project to be finished early and doesn’t want to waste time on a change that another stakeholder needs to be in there. All this while you’ve got a meeting in 10 minutes that you need to be in. And look, just before you’re about to figure out what to do, someone’s dropped by your desk with a conversation they apparently need to have right now.",
+  "translation": "您很快学到的一件事是，一切对某人来说都是紧迫的。 在给定的一天中，您可能会发现某人需要一个问题的答案，同时某人需要此报告的更新，某人发现了需要立即修复的错误，您需要查看某人的拉取请求，您的产品经理需要 该项目将尽早完成，并且不想浪费时间进行另一个利益相关者需要在那里进行的更改。 所有这一切都在您需要在10分钟之内开会的时候进行。然后，在您想弄清楚该怎么做之前，有人在您的办公桌旁闲坐着，显然他们现在需要进行对话 。"
+}, {
+  "tag": "P",
+  "text": "When you first start in the role, this can be overwhelming. And it will be forever until you learn the magic two-letter word: No.",
+  "translation": "刚开始担任角色时，这可能会令人难以承受。 直到您学会了两个字母的魔术词，它才会永远存在：不。"
+}, {
+  "tag": "P",
+  "text": "Now it’s unfortunately not as simple as grabbing the face of the petitioner, staring them dead in the eyes and whispering ‘Nooooo’. You do this tactfully. But saying no is never as hard you think it’ll be. The only difficult thing is deciding to say no in the first place.",
+  "translation": "不幸的是，现在这还不如抓住请愿者的脸，盯着他们死在眼睛里，低语“ Nooooo”那么简单。 您会巧妙地执行此操作。 但是说“不”从来没有像您想象的那么难。 唯一困难的事情是首先决定拒绝。"
+}, {
+  "tag": "P",
+  "text": "It requires you to swallow your habit of saying yes, bottle up your instinct to jump over to help out the first person who asks, and stay your hand from pitching in on all shiny new initiatives you hear about.",
+  "translation": "它要求您养成习惯，说出自己的习惯，束缚自己的直觉，以跳过帮助第一个提出要求的人，并阻止您参与听到的所有崭新计划。"
+}, {
+  "tag": "P",
+  "text": "Because tech leads are often people-pleasers, this can be difficult. It’s tempting to pile up the tasks and just deal with them by working more. But this is about way more than reducing your workload. It’s about doing your job effectively.",
+  "translation": "由于技术领先者经常让人喜欢，所以这可能很难。 吸引人的任务很诱人，只是通过更多的工作来处理它们。 但这不仅仅是减少工作量。 这是关于有效地完成工作。"
+}, {
+  "tag": "P",
+  "text": "If you or your team take on any random task that comes your way, you’re probably doing a bunch of low-priority work. And this comes at the opportunity cost of the high-priority work that will make your team succeed. It’s not uncommon to see super-busy people spinning their wheels, constantly doing things but not having a lot of impact.",
+  "translation": "如果您或您的团队要执行自己遇到的任何随机任务，那么您可能正在做很多低优先级的工作。 而这是以高优先级工作的机会成本为代价的，这将使您的团队成功。 看到超级忙碌的人转动轮子，不断做事却没有太大影响的情况并不少见。"
+}, {
+  "tag": "H2",
+  "text": "Learn to prioritise",
+  "translation": "学习确定优先顺序"
+}, {
+  "tag": "P",
+  "text": "Okay, we’re now super excited about saying no. But how do we actually decide what to say no to? Unfortunately, there’s no hard and fast rule. Each person will ultimately need to figure it out themselves. Stepping away from individual contributor work means operating in an environment of uncertainty, so there’s never going to be a clear right or wrong answer.",
+  "translation": "好的，我们现在很高兴地说不。 但是，我们实际上如何决定对不说什么呢？ 不幸的是，没有硬性规定。 每个人最终都需要自己弄清楚。 放弃个人贡献者的工作意味着在不确定的环境中进行操作，因此永远不会有明确的正确或错误答案。"
+}, {
+  "tag": "P",
+  "text": "I personally find something called the Eisenhower Matrix helpful. It looks like it comes straight from a wanky business textbook, but I like it regardless. It was born from a quote from Dwight Eisenhower: “I have two kinds of problems, the urgent and the important. The urgent are not important, and the important are never urgent.”",
+  "translation": "我个人认为艾森豪威尔矩阵很有帮助。 看起来好像是来自一本古怪的商业教科书，但无论如何我都喜欢。 它源于德怀特·艾森豪威尔（Dwight Eisenhower）的一句话：“我有两种问题，紧迫的和重要的。 紧急不重要，重要不紧急。”"
+}, {
+  "tag": "P",
+  "text": "Since winning a war against Nazis is probably more difficult than delivering a three-month software project (probably, you can’t be sure), I’m willing to give it a go.",
+  "translation": "由于打赢纳粹的战争可能比交付一个为期三个月的软件项目更困难（可能无法确定），所以我愿意尝试。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*hQzvMz7episBYdx4cpV3Sw.jpeg?q=20",
+  "caption": "The Eisenhower Matrix",
+  "type": "image",
+  "file": "1*hQzvMz7episBYdx4cpV3Sw.jpeg"
+}, {
+  "tag": "P",
+  "text": "The idea is to rank each problem by how important it is and how urgent it is. If you ever come across something both important and urgent (production is down!), you obviously should do it. No brainer.",
+  "translation": "想法是按照问题的重要性和紧迫性对每个问题进行排名。 如果您遇到了既重要又紧急的事情（生产下降！），您显然应该这样做。 没脑子"
+}, {
+  "tag": "P",
+  "text": "Yet if a problem arises that is important but not urgent, you don’t need to drop everything to work on it. Instead, decide when you are going to do it. If you need time to write up an architecture doc, schedule it in your workweek. If a stakeholder needs to be brought along on a journey, schedule a meeting for them. If there’s a bug that can wait but should still be fixed, put it on a Jira ticket and decide when to play it.",
+  "translation": "但是，如果出现的问题很重要但并不紧迫，那么您无需放弃所有工作。 相反，请决定何时要执行此操作。 如果您需要时间编写体系结构文档，请在工作周内安排。 如果需要与利益相关者一起旅行，请安排他们的会议。 如果存在可以等待但仍应修复的错误，请将其放在Jira票证上并决定何时播放。"
+}, {
+  "tag": "P",
+  "text": "If a problem is urgent but not important, delegate it. I don’t really like the word delegate here, since a tech lead is not a position of authority. You can’t say (and hopefully wouldn’t want to) “Jensen! Get your ass over here right now and fix this bug!”. Instead, you ask politely.",
+  "translation": "如果问题很紧急但不重要，则委托它。 我不太喜欢“委托”一词，因为技术负责人并不是权威。 您不能说（希望也不想）“詹森！ 立即解决问题并解决此错误！”。 相反，您要礼貌地问。"
+}, {
+  "tag": "P",
+  "text": "I personally find this one the hardest, because I have a natural inclination to shield the team from random interruptions. If a bug appears in your team’s jurisdiction, it seems like the obvious choice to let them continue with their deep focus work while you dig around looking for the cause. But your team is a team. Everyone has joint responsibility for the quality of the software you produce and the success of the team, so spread these interruptions around. Ask if others can look into to it if you have a lot on your plate.",
+  "translation": "我个人认为这是最难的，因为我很自然地保护团队免受随机干扰。 如果某个错误出现在您团队的管辖范围内，那么当您四处寻找原因时，让他们继续深入研究似乎是显而易见的选择。 但是您的团队是团队。 每个人都对您生产的软件的质量和团队的成功负有共同责任，因此请分散这些干扰。 询问其他人是否可以研究这个问题。"
+}, {
+  "tag": "P",
+  "text": "The last quadrant is my favourite. If you stumble on a problem that is neither urgent or important, then why the hell are you wasting your time on it? For these problems, give yourself the freedom to give them the boot.",
+  "translation": "最后一个象限是我的最爱。 如果您偶然发现了既不紧急也不重要的问题，那为什么还要浪费时间呢？ 对于这些问题，请给自己自由引导。"
+}, {
+  "tag": "P",
+  "text": "This can be difficult if it means turning an individual down. Perhaps someone is lobbying you to get the team to do a bit of extra work that you can see really isn’t important to either your team or the business. Saying no in this situation is difficult, both in figuring how to do it tactfully and also how uncomfortable it will feel. Your insides will squirm a little bit when you tell them ‘sorry, that’s not a priority for our team right now’. But when they walk away and you’re free to focus on what is truly important, you’ll feel liberated.",
+  "translation": "如果这意味着拒绝某人，这可能会很困难。 也许有人在游说您让团队做一些额外的工作，您认为这些工作对您的团队或企业来说都不重要。 在这种情况下拒绝回答是很困难的，既要摸索如何做到，又要使人感到不舒服。 当您告诉他们“对不起，目前这不是我们团队的优先任务”时，您的内部就会有些蠕动。 但是，当他们离开时，您可以自由地专注于真正重要的事情，您会感到自由。"
+}]
