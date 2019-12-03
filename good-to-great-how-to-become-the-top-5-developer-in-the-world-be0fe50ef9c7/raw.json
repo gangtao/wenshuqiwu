@@ -1,0 +1,143 @@
+[{
+  "tag": "P",
+  "text": "Of course, there are more clusters and insights to discover which is why we are making the project accessible to you. By following this link you can access the project and start your exploration journey.",
+  "translation": "当然，还有更多的集群和见解可以发现，这就是我们使您可以访问该项目的原因。 通过单击此链接，您可以访问项目并开始您的探索之旅。"
+}, {
+  "tag": "P",
+  "text": "If you want to know more, feel free to ask us for a demo right here or join our Webinar on June 19.",
+  "translation": "如果您想了解更多信息，请随时在此处要求我们进行演示，或于6月19日加入我们的网络研讨会。"
+}, {
+  "tag": "H2",
+  "text": "Conclusion & Advice",
+  "translation": "结论与建议"
+}, {
+  "tag": "P",
+  "text": "Even though the profiles are very different we can extract a few guidelines for you to enter the top 5%.",
+  "translation": "即使配置文件相差很大，我们也可以提取一些准则供您输入前5％的数据。"
+}, {
+  "tag": "OL",
+  "texts": ["In the US you don’t need a Master Degree, start working right after your Bachelor. Whereas in Germany and the UK, the traditional path through Master Degree and PhD is more common.", "Learning Niche Languages like Rust or WebAssembly will give you a competitive advantage and make you more demanded in the market.", "Company Culture and Diversity of the Company are frequently named criteria for the top 5% when they decided about a job offer. Choosing a workplace that suits you well seems crucial to be successful.", "Be open minded about your career choice. You can make a great Salary as a DevOps or Full-Stack Developer as well as a Designer or a Developer QA"],
+  "translations": ["在美国，您不需要硕士学位，就读学士学位后即可开始工作。 在德国和英国，通过硕士学位和博士学位的传统途径更为普遍。", "学习诸如Rust或WebAssembly之类的利基语言将为您提供竞争优势，并使您对市场的需求更高。", "在决定工作机会时，公司的公司文化和多样性经常被称为前5％的标准。 选择一个适合自己的工作场所似乎对成功至关重要。", "对您的职业选择持开放态度。 作为DevOps或Full-Stack开发人员以及设计人员或开发人员QA，您可以赚取丰厚的薪水"]
+}, {
+  "tag": "P",
+  "text": "To spice our analysis up a little, we asked ourselves the following question before starting our profiling analysis:",
+  "translation": "为了使我们的分析更加有趣，在开始分析之前，我们先问了以下问题："
+}, {
+  "tag": "H1",
+  "text": "Who are the top 5% best earning Developers?",
+  "translation": "谁是收入最高的5％最高的开发人员？"
+}, {
+  "tag": "P",
+  "text": "Filtering the 88883 Survey Respondents by those who have answered most of the questions we end up with a population of 52545. From those we select the 95% Quantile of the Annual USD Salary Column and we end up with around 2600 Respondents for our Project. All these people have a minimum Income of 573,108 USD per year and we want to understand who these people are.",
+  "translation": "通过回答大多数问题的人筛选88883调查对象，我们最终得到了52545人口。从这些对象中，我们选择了美元年度薪金栏的95％分位数，最终为我们的项目吸引了2600名受访者。 这些人的最低年收入为573,108 USD，我们想了解这些人是谁。"
+}, {
+  "tag": "P",
+  "text": "Important: Stack Overflow calculated the Annual USD Salary using the total Compensation, the Currency, the Exchange Rate and the information if that Compensation is Weekly, Monthly or Yearly. A Consultant that charges a lot per project will therefore easily have a virtual annual Salary of more than 2 Mio.",
+  "translation": "重要说明：堆栈溢出使用总薪酬，货币，汇率和信息（如果薪酬是每周，每月或每年）来计算年度美元薪水。 因此，每个项目收费很高的顾问，其虚拟年薪很容易超过2Mio。"
+}, {
+  "tag": "H1",
+  "text": "1. General Network",
+  "translation": "1.通用网络"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*WAVMUjh9AyOx32heYBz4Gw.png?q=20",
+  "type": "image",
+  "file": "1*WAVMUjh9AyOx32heYBz4Gw.png"
+}, {
+  "tag": "P",
+  "text": "After feeding our Dataset into Graphext we end up with this beautiful Graph that you can see above. There are several uniquely colored groups of developers already recognizable, and with one click we can find out what are the main characteristics of these people.",
+  "translation": "将我们的数据集输入到Graphext后，我们最终得到了这个漂亮的Graph，您可以在上面看到。 已经识别出了几组颜色独特的开发人员，单击一下我们就可以发现这些人的主要特征是什么。"
+}, {
+  "tag": "P",
+  "text": "In the following we will show you now the main variables that explain a Profile. The values of each variable are sorted by Uplift, which means:",
+  "translation": "在下面的内容中，我们将向您展示解释概要文件的主要变量。 每个变量的值均按Uplift排序，这意味着："
+}, {
+  "tag": "P",
+  "text": "Imagine only very few people (6%) in the whole population program in VBA. When we create a Filter of our Population it is unlikely that VBA will become the most important programming language in that Selection. BUT if its proportion increases to — let’s say — 12%, its significance for that Selection doubled and we therefore say that it is an important feature of that Person.",
+  "translation": "想象一下，在VBA中整个人口计划中只有极少数的人（6％）。 当我们创建总体过滤器时，VBA不太可能成为该选择中最重要的编程语言。 但是，如果它的比例增加到12％，那么它对于“选择”的意义就会加倍，因此，我们说这是该人的重要特征。"
+}, {
+  "tag": "P",
+  "text": "On the other hand: If 50% of all the People program in Java but in our Cluster only 30% do so, that Characteristic is less important than others even if it would be the single most used Programming Language.",
+  "translation": "另一方面：如果使用Java的所有People程序中有50％，但是在我们的集群中只有30％，那么即使它是最常用的一种编程语言，“特性”也不如其他重要。"
+}, {
+  "tag": "H1",
+  "text": "Profile #1: Americans with Bachelor Degrees",
+  "translation": "资料1：拥有学士学位的美国人"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*BZ8hju1cser5mcJmpVe-LA.png?q=20",
+  "type": "image",
+  "file": "1*BZ8hju1cser5mcJmpVe-LA.png"
+}, {
+  "tag": "H2",
+  "text": "Key Facts",
+  "translation": "关键事实"
+}, {
+  "tag": "UL",
+  "texts": ["Some study besides working", "Data & Business Analysts, Database Admin, Designer, QA, Desktop Applications, ..", "Bachelor and Associate’s Degree", "Work in big Companies", "Important Languages: VBA, C#, F#, PHP, SQL, ..", "They look for flexible schedules, company culture and remote work options when deciding for a job offer"],
+  "translations": ["除了工作以外的一些学习", "数据和业务分析师，数据库管理员，设计人员，质量检查，桌面应用程序，..", "学士和副学士学位", "在大公司工作", "重要语言：VBA，C＃，F＃，PHP，SQL等", "他们在决定工作机会时会寻求灵活的时间表，公司文化和远程工作选择"]
+}, {
+  "tag": "H1",
+  "text": "Profile #2: German DevOps and Backend Devs",
+  "translation": "配置文件2：德国DevOps和后端开发"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*Fy8nh0se-HNNDQxRUrEqYw.png?q=20",
+  "type": "image",
+  "file": "1*Fy8nh0se-HNNDQxRUrEqYw.png"
+}, {
+  "tag": "H2",
+  "text": "Key Facts",
+  "translation": "关键事实"
+}, {
+  "tag": "UL",
+  "texts": ["DevOps, Backend Devs, Dev. for Game and Graphic,..", "Masters Degree, Professional Degree", "Not very satisfied with their Career", "Believe in the Quality of Open Source Software", "Important Languages: Rust, Scala, Erlang, Java, ..", "They look for Diversity, Professional Development and Financial Performance of the Company when deciding for a job offer"],
+  "translations": ["DevOps，后端开发，开发 用于游戏和图形", "硕士学位，专业学位", "对自己的职业不太满意", "相信开源软件的质量", "重要语言：Rust，Scala，Erlang，Java，..", "在决定工作机会时，他们会寻找公司的多元化，专业发展和财务绩效"]
+}, {
+  "tag": "H1",
+  "text": "Profile #3: British with PhDs & Masters",
+  "translation": "简介3：具有博士学位和硕士学位的英国人"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*gUnUCZqh8A044xq0eLoCtQ.png?q=20",
+  "type": "image",
+  "file": "1*gUnUCZqh8A044xq0eLoCtQ.png"
+}, {
+  "tag": "H2",
+  "text": "Key Facts",
+  "translation": "关键事实"
+}, {
+  "tag": "UL",
+  "texts": ["Executives, Mobile Devs, DevOps, Backend, Front-End, Full-Stack, System Admin, ..", "Master & Doctoral Degrees", "Almost all of them work with MacOS", "They work on average less than 40 Hours", "Important Languages: Dart, WebAssembly, Clojure, Ruby, JavaScript", "They look for Diversity, Company Culture and the Industry when deciding for a job offer"],
+  "translations": ["高管，移动开发人员，DevOps，后端，前端，全栈，系统管理员，..", "硕士和博士学位", "几乎所有人都可以使用MacOS", "他们平均不到40小时", "重要语言：Dart，WebAssembly，Clojure，Ruby，JavaScript", "他们在决定工作机会时会寻求多样性，公司文化和行业"]
+}, {
+  "tag": "H1",
+  "text": "Good to Great — How to become the top 5% developer in the world!",
+  "translation": "好极了—如何成为世界上排名前5％的开发商！"
+}, {
+  "tag": "P",
+  "text": "Every Year, Stack Overflow is providing us with many interesting insights of their annual Developer Survey. You will get a great understanding of the markets most demanded programming languages, highest paid roles and much more.",
+  "translation": "每年，Stack Overflow都会为我们提供年度开发人员调查的许多有趣见解。 您将对市场上最需要的编程语言，薪酬最高的职位以及更多内容有深刻的了解。"
+}, {
+  "tag": "P",
+  "text": "At Graphext we are also always very interested in the survey results, but this year we wanted to try to find insights by ourselves. Thanks to Stack Overflow that published their Survey Data we could simply run our own analysis using a different approach. By creating clusters based on all the answers a survey respondent provided we are going to find typical and more detailed developer profiles.",
+  "translation": "在Graphext，我们也总是对调查结果非常感兴趣，但是今年我们想尝试自己寻找见解。 多亏了Stack Overflow发布了他们的调查数据，我们可以简单地使用不同的方法来运行我们自己的分析。 通过根据受访者提供的所有答案创建集群，我们将找到典型且更详细的开发人员资料。"
+}, {
+  "tag": "P",
+  "text": "So today we will show you how we can move from this:",
+  "translation": "因此，今天我们将向您展示如何摆脱这一困境："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*8n9ETNRvKffF5tegvtF09A.png?q=20",
+  "type": "image",
+  "file": "1*8n9ETNRvKffF5tegvtF09A.png"
+}, {
+  "tag": "P",
+  "text": "To This:",
+  "translation": "为此："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*gCX1a_7yTodGaT6m0xFKQg.png?q=20",
+  "type": "image",
+  "file": "1*gCX1a_7yTodGaT6m0xFKQg.png"
+}]
