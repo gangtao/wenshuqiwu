@@ -1,0 +1,435 @@
+[{
+  "tag": "H2",
+  "text": "Comparing DynamoDB and MongoDB",
+  "translation": "比较DynamoDB和MongoDB"
+}, {
+  "tag": "H3",
+  "text": "MongoDB's query language enables developers to build applications that can query and analyze their data in multiple…",
+  "translation": "MongoDB的查询语言使开发人员能够构建可以查询和分析其数据的应用程序，这些数据可以多种..."
+}, {
+  "tag": "H2",
+  "text": "Benefits of Amazon DynamoDB",
+  "translation": "Amazon DynamoDB的好处"
+}, {
+  "tag": "H3",
+  "text": "For handling Data storage requirements in the IT World, you need to depend upon the Database management systems (DBMS)…",
+  "translation": "为了处理IT世界中的数据存储需求，您需要依赖数据库管理系统（DBMS）…"
+}, {
+  "tag": "H2",
+  "text": "What is PostgreSQL",
+  "translation": "什么是PostgreSQL"
+}, {
+  "tag": "H3",
+  "text": "Summary: in this tutorial, you will learn about PostgreSQL and features that make PostgreSQL stand out from other…",
+  "translation": "简介：在本教程中，您将学习PostgreSQL及其使PostgreSQL与众不同的功能。"
+}, {
+  "tag": "H2",
+  "text": "JAMstack WTF",
+  "translation": "JAMstack WTF"
+}, {
+  "tag": "H3",
+  "text": "The following tips will help you leverage the best out of the stack. Content delivery network Since all the markup and…",
+  "translation": "以下技巧将帮助您充分利用堆栈中的最佳内容。 内容交付网络自所有标记和…"
+}, {
+  "tag": "H1",
+  "text": "My Opinion",
+  "translation": "我的意见"
+}, {
+  "tag": "P",
+  "text": "“Containers won the battle, but will lose the war to serverless.”",
+  "translation": "“容器赢得了战斗，但战争将输给了无服务器的人。”"
+}, {
+  "tag": "P",
+  "text": "— Simon Wardley quoted in HackerNoon",
+  "translation": "— HackerNoon引用西蒙·沃德利（Simon Wardley）"
+}, {
+  "tag": "P",
+  "text": "JAM Stack is one of coolest technologies out today. It is absurdly fast, accessible, and SEO-friendly, plus static files are free to host on AWS.",
+  "translation": "JAM Stack是当今最酷的技术之一。 它非常快捷，可访问且对SEO友好，而且可以免费在AWS上托管静态文件。"
+}, {
+  "tag": "P",
+  "text": "However, JAM Stack is only the right option for apps that have the luxury of being able to have a build step and recompile every change.",
+  "translation": "但是，对于那些能够拥有构建步骤并重新编译所有更改的应用程序，JAM Stack是唯一正确的选择。"
+}, {
+  "tag": "P",
+  "text": "If you ask me, I would argue that even very large websites could be built on a JAM Stack through scheduled compilations, say hourly. JAM Stack is rad.",
+  "translation": "如果您问我，我会争辩说，即使是非常大的网站也可以通过计划的编译（例如每小时）在JAM Stack上构建。 JAM Stack是rad。"
+}, {
+  "tag": "P",
+  "text": "It might not work for a news site, but many dynamic sites do not need content updated more frequently than that, and static sites surely do not.",
+  "translation": "它可能不适用于新闻网站，但是许多动态网站并不需要更新的频率更高，而静态网站当然不需要。"
+}, {
+  "tag": "H2",
+  "text": "SQL vs. NoSQL",
+  "translation": "SQL与NoSQL"
+}, {
+  "tag": "P",
+  "text": "If needing a compilation step is a deal-breaker for a project, then it comes down to SQL vs NoSQL: PostgreSQL or DynamoDB.",
+  "translation": "如果需要一个编译步骤是项目的重中之重，那么它取决于SQL与NoSQL：PostgreSQL或DynamoDB。"
+}, {
+  "tag": "P",
+  "text": "PostgreSQL does not have to be hosted on Amazon, though it can be hosted at Amazon RDS. DynamoDB was developed by and is exclusive to Amazon.",
+  "translation": "PostgreSQL不必托管在Amazon上，尽管可以托管在Amazon RDS上。 DynamoDB由Amazon开发并且是Amazon专有的。"
+}, {
+  "tag": "P",
+  "text": "SQL databases are inherently more powerful but also more complicated. Their strength is in business analytics and search.",
+  "translation": "SQL数据库本质上更强大，但也更复杂。 他们的优势在于业务分析和搜索。"
+}, {
+  "tag": "P",
+  "text": "NoSQL databases are easier to set-up and sufficient for many projects. That’s why The Guardian considered DynamoDB for their 2.3m articles.",
+  "translation": "NoSQL数据库更易于设置并且足以用于许多项目。 这就是为什么《卫报》考虑DynamoDB撰写230万篇文章的原因。"
+}, {
+  "tag": "P",
+  "text": "In the end, they chose PostgreSQL because DynamoDB did not offer encryption at rest back in 2017, but they may well have made a different decision if they were considering a move from MongoDB today.",
+  "translation": "最后，他们选择了PostgreSQL，因为DynamoDB在2017年没有提供静态加密，但是如果他们今天考虑从MongoDB迁移，他们可能会做出不同的决定。"
+}, {
+  "tag": "H1",
+  "text": "Wrap-Up",
+  "translation": "包起来"
+}, {
+  "tag": "P",
+  "text": "JAM Stack (serverless architecture) is a wonderful option, especially for any site that is mostly static, and is also a great technology to be aware of.",
+  "translation": "JAM Stack（无服务器体系结构）是一个不错的选择，特别是对于大多数静态站点而言，也是一种值得注意的出色技术。"
+}, {
+  "tag": "P",
+  "text": "PostgreSQL has a huge community and offers all the power of SQL in a reliable, feature-rich, open-source package with great performance.",
+  "translation": "PostgreSQL具有庞大的社区，并以可靠，功能丰富的开源软件包提供了SQL的所有强大功能，并具有出色的性能。"
+}, {
+  "tag": "P",
+  "text": "DynamoDB is a drop-in replacement for MongoDB that gives you scale, security, and speed without needing to maintain any infrastructure.",
+  "translation": "DynamoDB是MongoDB的直接替代品，可为您提供规模，安全性和速度，而无需维护任何基础架构。"
+}, {
+  "tag": "H2",
+  "text": "Additional resources",
+  "translation": "额外资源"
+}, {
+  "tag": "UL",
+  "texts": ["A good way to understand JAM Stack is the site WTF is JAMstack?:"],
+  "translations": ["理解JAM Stack的一种好方法是WTF网站是JAMstack吗？："]
+}, {
+  "tag": "H2",
+  "text": "JAMstack WTF",
+  "translation": "JAMstack WTF"
+}, {
+  "tag": "H3",
+  "text": "The following tips will help you leverage the best out of the stack. Content delivery network Since all the markup and…",
+  "translation": "以下技巧将帮助您充分利用堆栈中的最佳内容。 内容交付网络自所有标记和…"
+}, {
+  "tag": "UL",
+  "texts": ["The website PostgreSQL Tutorial teaches about what makes “PostgreSQL stand out from other database management systems”:"],
+  "translations": ["PostgreSQL Tutorial网站介绍了什么使“ PostgreSQL在其他数据库管理系统中脱颖而出”："]
+}, {
+  "tag": "H2",
+  "text": "What is PostgreSQL",
+  "translation": "什么是PostgreSQL"
+}, {
+  "tag": "H3",
+  "text": "Summary: in this tutorial, you will learn about PostgreSQL and features that make PostgreSQL stand out from other…",
+  "translation": "简介：在本教程中，您将学习PostgreSQL及其使PostgreSQL与众不同的功能。"
+}, {
+  "tag": "UL",
+  "texts": ["The CMARIX TechnoLabs blog explains the benefits of DynamoDB:"],
+  "translations": ["CMARIX TechnoLabs博客介绍了DynamoDB的优点："]
+}, {
+  "tag": "H2",
+  "text": "Benefits of Amazon DynamoDB",
+  "translation": "Amazon DynamoDB的好处"
+}, {
+  "tag": "H3",
+  "text": "For handling Data storage requirements in the IT World, you need to depend upon the Database management systems (DBMS)…",
+  "translation": "为了处理IT世界中的数据存储需求，您需要依赖数据库管理系统（DBMS）…"
+}, {
+  "tag": "UL",
+  "texts": ["If you ask the people at Mongo, MongoDB is way better than DynamoDB:"],
+  "translations": ["如果您问Mongo的人，MongoDB比DynamoDB更好："]
+}, {
+  "tag": "H2",
+  "text": "Comparing DynamoDB and MongoDB",
+  "translation": "比较DynamoDB和MongoDB"
+}, {
+  "tag": "H3",
+  "text": "MongoDB's query language enables developers to build applications that can query and analyze their data in multiple…",
+  "translation": "MongoDB的查询语言使开发人员能够构建可以查询和分析其数据的应用程序，这些数据可以多种..."
+}, {
+  "tag": "H1",
+  "text": "MongoDB Alternative #3: DynamoDB",
+  "translation": "MongoDB替代方案3：DynamoDB"
+}, {
+  "tag": "P",
+  "text": "DynamoDB is the NoSQL product from Amazon Web Services (AWS). Both MongoDB and DynamoDB store JSON-like data with arbitrary schema.",
+  "translation": "DynamoDB是Amazon Web Services（AWS）的NoSQL产品。 MongoDB和DynamoDB都使用任意模式存储类似JSON的数据。"
+}, {
+  "tag": "P",
+  "text": "DynamoDB recently added a feature called encryption at rest, and now it is highly competitive with MongoDB while still being a NoSQL database.",
+  "translation": "DynamoDB最近添加了一个称为“静态加密”的功能，现在它在仍然是NoSQL数据库的同时，与MongoDB相比具有很高的竞争力。"
+}, {
+  "tag": "P",
+  "text": "That means migration from MongoDB to DynamoDB is really pretty easy.",
+  "translation": "这意味着从MongoDB迁移到DynamoDB确实非常容易。"
+}, {
+  "tag": "H2",
+  "text": "Advantages of DynamoDB",
+  "translation": "DynamoDB的优点"
+}, {
+  "tag": "P",
+  "text": "DynamoDB is the flagship NoSQL database on AWS, so its inherent advantage is the AWS platform’s cost, speed, and reliability.",
+  "translation": "DynamoDB是AWS上的旗舰NoSQL数据库，因此其固有的优势是AWS平台的成本，速度和可靠性。"
+}, {
+  "tag": "P",
+  "text": "As an AWS product, it easily integrates with AWS Lambda and API Gateway.",
+  "translation": "作为AWS产品，它可以轻松地与AWS Lambda和API Gateway集成。"
+}, {
+  "tag": "P",
+  "text": "The big advantage of DynamoDB for anyone currently using Mongo is that users can perform a live migration from MongoDB straight to DynamoDB.",
+  "translation": "DynamoDB对于当前使用Mongo的任何人的最大优势是，用户可以直接从MongoDB进行实时迁移到DynamoDB。"
+}, {
+  "tag": "P",
+  "text": "The best part is there is no infrastructure to manage — Amazon handles it.",
+  "translation": "最好的部分是没有可管理的基础架构-Amazon负责管理。"
+}, {
+  "tag": "H2",
+  "text": "Disadvantages of DynamoDB",
+  "translation": "DynamoDB的缺点"
+}, {
+  "tag": "P",
+  "text": "If I am of the opinion that NoSQL has too high of a probability of losing records, then DynamoDB is not going to be a good choice for me.",
+  "translation": "如果我认为NoSQL丢失记录的可能性太大，那么DynamoDB对我来说不是一个好选择。"
+}, {
+  "tag": "P",
+  "text": "DynamoDB can have scalability problems, like those associated with so-called hotkeys, records that are assessed much more frequently than others.",
+  "translation": "DynamoDB可能会遇到可伸缩性问题，例如与所谓的“热键”相关的问题，这些记录的评估频率要比其他记录高得多。"
+}, {
+  "tag": "P",
+  "text": "In addition, compared to MongoDB, DynamoDB supports less complex data types and is an AWS-exclusive product.",
+  "translation": "此外，与MongoDB相比，DynamoDB支持较少复杂的数据类型，并且是AWS专有的产品。"
+}, {
+  "tag": "H1",
+  "text": "MongoDB Alternative #2: PostgreSQL",
+  "translation": "MongoDB替代方案2：PostgreSQL"
+}, {
+  "tag": "P",
+  "text": "Advocates of using SQL cite the ongoing prevalence of SQL architecture and superior ability to perform operation analytics on SQL databases:",
+  "translation": "提倡使用SQL的人引用了SQL体系结构的持续流行以及对SQL数据库执行操作分析的卓越能力："
+}, {
+  "tag": "P",
+  "text": "[R]elational databases have evolved. They can can handle nearly all of the workloads, with the scalability, reliability, and availability requirements that modern applications demand.",
+  "translation": "传统数据库已发展。 他们可以满足现代应用程序所需的可伸缩性，可靠性和可用性要求，几乎可以处理所有工作负载。"
+}, {
+  "tag": "P",
+  "text": "— Rick Negrin on the memSQL Blog",
+  "translation": "— memSQL博客上的Rick Negrin"
+}, {
+  "tag": "P",
+  "text": "In other words, if a SQL database can scale, then it is preferable to NoSQL.",
+  "translation": "换句话说，如果SQL数据库可以扩展，那么它比NoSQL更可取。"
+}, {
+  "tag": "P",
+  "text": "PostgreSQL (also called Postgres) is a popular, free SQL database that calls itself “the world’s most advanced open source database” on its website.",
+  "translation": "PostgreSQL（也称为Postgres）是一种流行的免费SQL数据库，在其网站上称自己为“世界上最先进的开源数据库”。"
+}, {
+  "tag": "H2",
+  "text": "Advantages of PostgreSQL",
+  "translation": "PostgreSQL的优点"
+}, {
+  "tag": "P",
+  "text": "PostgreSQL is a powerful software that has been developed continuously for over 30 years. Lots of people use it and it has a vibrant community.",
+  "translation": "PostgreSQL是功能强大的软件，已经连续开发了30多年。 很多人使用它，并且它有一个充满活力的社区。"
+}, {
+  "tag": "P",
+  "text": "It is platform-independent. For those using AWS, it can be hosted using Amazon Aurora on the Amazon Relational Database Service (RDS).",
+  "translation": "它与平台无关。 对于使用AWS的用户，可以使用Amazon Relational Database Service（RDS）上的Amazon Aurora托管它。"
+}, {
+  "tag": "P",
+  "text": "Plus, PostgreSQL is blazing fast. Its performance is better than MySQL, and MySQL is already much faster than MongoDB.",
+  "translation": "另外，PostgreSQL正在迅速发展。 它的性能优于MySQL，MySQL已经比MongoDB快得多。"
+}, {
+  "tag": "H2",
+  "text": "Disadvantages of PostgreSQL",
+  "translation": "PostgreSQL的缺点"
+}, {
+  "tag": "P",
+  "text": "Using SQL inherently adds complexity to any project. It is an entirely new programming language for a team to use on a day-to-day basis.",
+  "translation": "使用SQL本质上增加了任何项目的复杂性。 它是团队每天使用的全新编程语言。"
+}, {
+  "tag": "P",
+  "text": "It can be difficult to migrate from NoSQL to SQL. They are fundamentally a different type of database structure. NoSQL is a document store with key-value pairs, while SQL is composed of tables and rows.",
+  "translation": "从NoSQL迁移到SQL可能很困难。 从根本上说，它们是一种不同类型的数据库结构。 NoSQL是具有键值对的文档存储，而SQL由表和行组成。"
+}, {
+  "tag": "P",
+  "text": "One option, and what The Guardian used in their migration, is the JSONb column type in PostgreSQL. However, using JSON blobs feels kind of like a hack, like shoehorning a NoSQL database into a SQL format.",
+  "translation": "一个选项以及Guardian在其迁移中使用的选项是PostgreSQL中的JSONb列类型。 但是，使用JSON Blob有点像黑客，就像将NoSQL数据库转换为SQL格式一样。"
+}, {
+  "tag": "H1",
+  "text": "MongoDB Alternative #1: JAM Stack",
+  "translation": "MongoDB替代方案1：JAM堆栈"
+}, {
+  "tag": "P",
+  "text": "JAM Stack is short for JavaScript, APIs, and prerendered Markup, and it is a type of serverless architecture that avoids needing a database at all.",
+  "translation": "JAM Stack是JavaScript，API和预渲染的标记的缩写，它是一种无服务器架构，可以完全避免使用数据库。"
+}, {
+  "tag": "P",
+  "text": "JAM Stack could even replace a document database as long as the data could be moved to a whole lot of JSON files written in Markdown.",
+  "translation": "只要数据可以移动到用Markdown编写的大量JSON文件中，JAM Stack甚至可以替换文档数据库。"
+}, {
+  "tag": "P",
+  "text": "When using JAM Stack, the entire application is then compiled (or built), usually with a tool like Gatsby.",
+  "translation": "使用JAM Stack时，通常使用Gatsby之类的工具来编译（或构建）整个应用程序。"
+}, {
+  "tag": "P",
+  "text": "Unfortunately, that means that any change requires the site to be rebuilt.",
+  "translation": "不幸的是，这意味着任何更改都需要重建站点。"
+}, {
+  "tag": "P",
+  "text": "On the other hand, dynamic content can change in real-time if it is accessed through an API, like comments handled through Disqus.",
+  "translation": "另一方面，如果通过API访问动态内容，则动态内容可以实时更改，例如通过Disqus处理的注释。"
+}, {
+  "tag": "H2",
+  "text": "Advantages of JAM Stack",
+  "translation": "JAM Stack的优势"
+}, {
+  "tag": "P",
+  "text": "Lightning-fast content delivery is the biggest advantage of JAM Stack, because there is no server — the entire app is running client-side.",
+  "translation": "闪电般快速的内容交付是JAM Stack的最大优势，因为它没有服务器，整个应用程序都在客户端运行。"
+}, {
+  "tag": "P",
+  "text": "At the same time, there is also maximum SEO — because the app was pre-compiled, it is being served as static pages, not generated on-demand.",
+  "translation": "同时，还具有最大的SEO-因为该应用程序已经过预编译，因此被当作静态页面使用，而不是按需生成。"
+}, {
+  "tag": "P",
+  "text": "Another advantage to JAM Stack is minimal hosting costs. For example, static pages are basically free to host at AWS.",
+  "translation": "JAM Stack的另一个优势是最小的托管成本。 例如，静态页面基本上可以免费托管在AWS上。"
+}, {
+  "tag": "H2",
+  "text": "Disadvantages of JAM Stack",
+  "translation": "JAM Stack的缺点"
+}, {
+  "tag": "P",
+  "text": "Every single change has to be re-built. That means the app needs to be recompiled before that change is going to be available live online.",
+  "translation": "每个更改都必须重新构建。 这意味着需要重新编译应用程序，然后该更改才能在线上可用。"
+}, {
+  "tag": "P",
+  "text": "And, the larger the website, the longer the build time. Every time.",
+  "translation": "并且，网站越大，构建时间越长。 每次。"
+}, {
+  "tag": "P",
+  "text": "Thus, JAM Stack is usually not seen as a good fit for apps requiring frequent publication, huge amounts of data, or live editing of data records.",
+  "translation": "因此，对于需要频繁发布，大量数据或实时编辑数据记录的应用程序，通常认为JAM Stack不适合。"
+}, {
+  "tag": "H1",
+  "text": "The Three Alternatives to MongoDB",
+  "translation": "MongoDB的三种选择"
+}, {
+  "tag": "P",
+  "text": "While many people continue to use Mongo, there are many alternatives available for software developers and database engineers, such as:",
+  "translation": "当许多人继续使用Mongo时，软件开发人员和数据库工程师可以使用许多替代方法，例如："
+}, {
+  "tag": "OL",
+  "texts": ["JAM Stack: Fast, secure, and dynamic web sites served without web servers.", "PostgreSQL: SQL database known for its reliability, features, and performance.", "DynamoDB: NoSQL database created by Amazon Web Services (AWS)"],
+  "translations": ["JAM Stack：无需网络服务器即可提供快速，安全和动态的网站。", "PostgreSQL：SQL数据库，以其可靠性，功能和性能而闻名。", "DynamoDB：Amazon Web Services（AWS）创建的NoSQL数据库"]
+}, {
+  "tag": "P",
+  "text": "These three options are the current best alternatives to MongoDB. We’ll review the pros and cons of each choice in detail in the next section.",
+  "translation": "这三个选项是当前MongoDB的最佳替代方案。 我们将在下一节中详细介绍每种选择的利弊。"
+}, {
+  "tag": "H2",
+  "text": "Why the Guardian Switched From MongoDB to PostgreSQL",
+  "translation": "为什么监护人从MongoDB切换到PostgreSQL"
+}, {
+  "tag": "H3",
+  "text": "Why they switched, how they migrated-and why they wouldn’t do it today",
+  "translation": "他们为何转换，如何迁移以及今天为什么不这样做"
+}, {
+  "tag": "H2",
+  "text": "Bye bye Mongo, Hello Postgres | Digital blog",
+  "translation": "再见Mongo，您好Postgres | 数字博客"
+}, {
+  "tag": "H3",
+  "text": "At the Guardian, the majority of content - including articles, live blogs, galleries and video content - is produced in…",
+  "translation": "在《卫报》上，大部分内容（包括文章，实时博客，画廊和视频内容）都是在…制作的。"
+}, {
+  "tag": "H1",
+  "text": "The Guardian Famously Left MongoDB",
+  "translation": "著名的监护人离开了MongoDB"
+}, {
+  "tag": "P",
+  "text": "The online publication and British newspaper The Guardian received over 100,000 views on its November 2018 article about leaving MongoDB:",
+  "translation": "在线出版物和英国报纸《卫报》在其2018年11月关于离开MongoDB的文章中获得了100,000多次意见："
+}, {
+  "tag": "H2",
+  "text": "Bye bye Mongo, Hello Postgres | Digital blog",
+  "translation": "再见Mongo，您好Postgres | 数字博客"
+}, {
+  "tag": "H3",
+  "text": "At the Guardian, the majority of content - including articles, live blogs, galleries and video content - is produced in…",
+  "translation": "在《卫报》上，大部分内容（包括文章，实时博客，画廊和视频内容）都是在…制作的。"
+}, {
+  "tag": "P",
+  "text": "In it, the developers who made the switch reveal that their team had problems with OpsManager — Mongo’s database management software — and that Mongo’s support agents were not much help during two outages.",
+  "translation": "在其中，进行切换的开发人员表明，他们的团队在使用OpsManager（Mongo的数据库管理软件）时遇到了问题，并且在两次停机期间，Mongo的支持代理并没有太大帮助。"
+}, {
+  "tag": "P",
+  "text": "I took a deep dive into the reasons the publication chose to move from MongoDB to PostgreSQL in Better Programming:",
+  "translation": "我深入探讨了该出版物选择“更好的编程”从MongoDB迁移到PostgreSQL的原因："
+}, {
+  "tag": "H2",
+  "text": "Why the Guardian Switched From MongoDB to PostgreSQL",
+  "translation": "为什么监护人从MongoDB切换到PostgreSQL"
+}, {
+  "tag": "H3",
+  "text": "Why they switched, how they migrated-and why they wouldn’t do it today",
+  "translation": "他们为何转换，如何迁移以及今天为什么不这样做"
+}, {
+  "tag": "H1",
+  "text": "Why People Are Leaving MongoDB",
+  "translation": "人们为什么要离开MongoDB"
+}, {
+  "tag": "P",
+  "text": "In general, NoSQL has significant differences from previous database architecture that can cause lost records and decreased performance:",
+  "translation": "通常，NoSQL与以前的数据库体系结构有显着差异，可能会导致记录丢失和性能下降："
+}, {
+  "tag": "P",
+  "text": "NoSQL abandoned some of the core features of databases that make them highly performant and easy to use.",
+  "translation": "NoSQL放弃了数据库的一些核心功能，这些功能使它们具有高性能且易于使用。"
+}, {
+  "tag": "P",
+  "text": "— Rick Negrin on the memSQL Blog",
+  "translation": "— memSQL博客上的Rick Negrin"
+}, {
+  "tag": "P",
+  "text": "In response, many developers are considering moving away from MongoDB and NoSQL to alternatives such as JAM Stack, PostgreSQL, or DynamoDB.",
+  "translation": "作为回应，许多开发人员正在考虑从MongoDB和NoSQL转向其他替代方案，例如JAM Stack，PostgreSQL或DynamoDB。"
+}, {
+  "tag": "H1",
+  "text": "The Top Three Alternatives to MongoDB in 2019",
+  "translation": "2019年MongoDB的前三名替代品"
+}, {
+  "tag": "H2",
+  "text": "JAM Stack, PostgreSQL, and Amazon’s DynamoDB are all competitive alternatives to MongoDB",
+  "translation": "JAM Stack，PostgreSQL和Amazon的DynamoDB都是MongoDB的竞争替代品"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*LaNSw_oIifj42PjW8KoXLw.png?q=20",
+  "caption": "Photo by Marlene Prusik on Unsplash",
+  "type": "image",
+  "file": "1*LaNSw_oIifj42PjW8KoXLw.png"
+}, {
+  "tag": "P",
+  "text": "NoSQL is the name used to describe any type of database that does not correspond to the SQL relational model.",
+  "translation": "NoSQL是用于描述任何与SQL关系模型不对应的数据库类型的名称。"
+}, {
+  "tag": "P",
+  "text": "NoSQL databases originated in 2009 as sites like MySpace scaled up:",
+  "translation": "NoSQL数据库起源于2009年，当时MySpace等网站规模不断扩大："
+}, {
+  "tag": "P",
+  "text": "NoSQL came into existence because the databases at the time couldn’t handle the scale required.",
+  "translation": "之所以出现NoSQL，是因为当时的数据库无法满足所需的规模。"
+}, {
+  "tag": "P",
+  "text": "— Rick Negrin on the memSQL Blog",
+  "translation": "— memSQL博客上的Rick Negrin"
+}, {
+  "tag": "P",
+  "text": "MongoDB is the most famous of NoSQL databases. It is frequently used by JavaScript developers, especially those using MERN Stack or MEAN Stack (the combination of Mongo with Express, Angular or React, and Node).",
+  "translation": "MongoDB是最著名的NoSQL数据库。 它经常被JavaScript开发人员使用，特别是那些使用MERN Stack或MEAN Stack（将Mongo与Express，Angular或React和Node结合使用）的开发人员。"
+}]
