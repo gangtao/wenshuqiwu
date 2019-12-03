@@ -1,0 +1,222 @@
+[{
+  "tag": "H1",
+  "text": "What Does It Take To Be a Successful Tech Lead?",
+  "translation": "要成为成功的技术主管需要什么？"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*4550as4Dm3Ax9Bx3V_KFmg.jpeg?q=20",
+  "type": "image",
+  "file": "1*4550as4Dm3Ax9Bx3V_KFmg.jpeg"
+}, {
+  "tag": "P",
+  "text": "Earlier this year, we interviewed a few dozen tech leads and asked them this simple question:",
+  "translation": "今年早些时候，我们采访了几十个技术领先者，并向他们提出了一个简单的问题："
+}, {
+  "tag": "P",
+  "text": "“What does success look like as a tech lead?”",
+  "translation": "“作为技术领先者，成功看起来像什么？”"
+}, {
+  "tag": "P",
+  "text": "Across small and large companies, infrastructure and product teams, enterprise and customer-facing companies, people shared that being a good tech lead means some version of: good execution with a team that’s happy.",
+  "translation": "在大型和小型公司，基础架构和产品团队，面向企业和面向客户的公司中，人们都认为，成为一名优秀的技术领导者意味着：拥有一支乐于助人的团队的良好执行力。"
+}, {
+  "tag": "P",
+  "text": "On every team and at every company, tech lead roles can vary substantially. Tech leads can be managers. They can be mid-level engineers dipping their toe in “people stuff.” They can be the most senior engineer who wants to be a tech lead indefinitely.",
+  "translation": "在每个团队和每个公司中，技术负责人的角色都可能大相径庭。 技术负责人可以是经理。 他们可以是中级工程师，专心于“人事”。他们可以是最想无限期成为技术负责人的高级工程师。"
+}, {
+  "tag": "P",
+  "text": "In our interviews, we found that because the role is so amorphous, people in tech lead roles really craved something to hold onto. “What else should I be doing?” “Am I even doing a good job?” “How can I figure out what I don’t know?”",
+  "translation": "在我们的采访中，我们发现，由于角色是如此的不稳定，因此担任技术主导角色的人们确实渴望保留一些东西。 “我还应该做些什么？”“我什至做得很好？”“我怎么弄清我不知道的东西？”"
+}, {
+  "tag": "P",
+  "text": "So in this post, we dig a bit deeper into this question:",
+  "translation": "因此，在这篇文章中，我们对这个问题进行了更深入的研究："
+}, {
+  "tag": "P",
+  "text": "What makes a good tech lead?",
+  "translation": "是什么使技术领先？"
+}, {
+  "tag": "P",
+  "text": "Below, we share with you shared attributes of good tech leads and some quotes from our interviews. As you read through this post, keep in mind that no one wakes up one day with all these skills — fully ready to be a tech lead. Especially as tech leads first transition into the role, it’s expected that there’s a learning curve. Regardless of how many years you’ve been a tech lead, there are always areas that are your bread-and-butter, as well as areas that you’re still developing and growing into. We developed our two-day Foundations of Effective Tech Leadership experience precisely because we want to help tech leads build a solid foundation in this role.",
+  "translation": "在下面，我们与您分享技术领先者的共同属性以及采访中的一些引述。 当您通读这篇文章时，请记住，没有人每天都具备所有这些技能，而是完全准备成为技术主管。 尤其是在技术人员率先过渡到该角色时，预计会有学习曲线。 不管您担任技术主管有多少年，总有一些领域是您的头条，还有您仍在发展和成长的领域。 我们开发了为期两天的有效技术领导力基础经验，正是因为我们想帮助技术领导者在此角色上打下坚实的基础。"
+}, {
+  "tag": "H1",
+  "text": "A good tech lead excels in delivery and execution",
+  "translation": "优秀的技术领导者在交付和执行方面表现出色"
+}, {
+  "tag": "P",
+  "text": "What people are saying:“Success for me in this role is if I can get the team to accomplish the goals that the company is looking for.”",
+  "translation": "人们在说什么：“担任这个职位对我来说是成功，如果我能让团队实现公司所追求的目标。”"
+}, {
+  "tag": "P",
+  "text": "This is typically what people think of as the main job of the tech lead — do what it takes for the team to deliver quality projects reliably. This is often the area that is closest to what a tech lead was doing as an engineer. And on small 1–2 person teams, the behaviors of an engineer versus those of a tech lead may be indistinguishable.",
+  "translation": "人们通常认为这是技术负责人的主要工作-做团队可靠地交付高质量项目所需的工作。 这通常是最接近技术负责人作为工程师所做的工作的领域。 在1-2人的小型团队中，工程师的行为与技术负责人的行为可能难以区分。"
+}, {
+  "tag": "P",
+  "text": "As the team size grows, excelling in delivery and execution doesn’t just mean being able to do those things yourself, but being able to coordinate, communicate, plan, and delegate effectively.",
+  "translation": "随着团队规模的扩大，出色的交付和执行能力不仅意味着自己能够做这些事情，还意味着能够有效地进行协调，沟通，计划和委派。"
+}, {
+  "tag": "P",
+  "text": "Tech leads that excel in delivery and execution have teams that run like a well-oiled machine. They know exactly what they need to know to keep a finger on the pulse of projects, without being overly mired in the details.",
+  "translation": "在交付和执行方面表现出色的技术领先者的团队运作得像一台运转良好的机器。 他们确切地知道需要掌握哪些内容，以便随时掌握项目脉动，而又不会过多地陷入细节之中。"
+}, {
+  "tag": "P",
+  "text": "Practical Tips",
+  "translation": "实用技巧"
+}, {
+  "tag": "UL",
+  "texts": ["Without cross-team communication, best practices can get stuck in certain teams without cross-pollinating to other teams. Look to how other teams manage their team processes and see what you can learn from them. Take into account differences between team size and team function.", "If you’re feeling overloaded and spread too thin, take a look at the things you’re doing and ask yourself, “What am I uniquely capable of doing?” Ruthlessly delegate the things other people can also do."],
+  "translations": ["如果没有跨团队的沟通，最佳实践可能会卡在某些团队中，而不会相互影响其他团队。 看一下其他团队如何管理他们的团队流程，看看可以从他们那里学到什么。 考虑团队规模和团队职能之间的差异。", "如果您感到超负荷并且摊开得太稀，请看一下您正在做的事情，然后问自己：“我独特的能力是什么？”无情地委派其他人也可以做的事情。"]
+}, {
+  "tag": "H1",
+  "text": "A good tech lead builds a thriving team",
+  "translation": "优秀的技术领导者可以建立一支蒸蒸日上的团队"
+}, {
+  "tag": "P",
+  "text": "What people are saying:“Bringing together a group of people and understanding how to create the context in which these people can succeed.”",
+  "translation": "人们在说什么：“召集一群人，并理解如何为他们创造成功的环境。”"
+}, {
+  "tag": "P",
+  "text": "“How can I grow my skillset in service of helping people grow theirs?”",
+  "translation": "“我如何在帮助人们成长的服务中发展自己的技能？”"
+}, {
+  "tag": "P",
+  "text": "“I’m really proud of the work that we did together as a team. I’m super proud of the progress that they made. And I was really glad that I was able to support them and encourage them to that point.”",
+  "translation": "“我为我们作为一个团队共同完成的工作感到非常自豪。 我为他们取得的进步感到非常自豪。 我很高兴能够支持他们并鼓励他们到这一点。”"
+}, {
+  "tag": "P",
+  "text": "Are people on the team happy, productive, and engaged?",
+  "translation": "团队中的人是否快乐，富有成效和参与度？"
+}, {
+  "tag": "P",
+  "text": "Building a thriving team might look like hiring, mentoring, coaching, running team meetings that feel cohesive, creating team process that is just right, and much more. This is where tech lead responsibilities sometimes overlaps a bit with an engineering manager’s responsibilities. Sometimes, a tech lead is the manager (in a hybrid role commonly called TLM or Tech Lead Manager).",
+  "translation": "组建一支蒸蒸日上的团队可能看起来像招募，指导，指导，组织凝聚力的团队会议，创建恰到好处的团队流程等等。 在这里，技术主管的职责有时与工程经理的职责有些重叠。 有时，技术主管是经理（通常称为TLM或技术主管经理的混合角色）。"
+}, {
+  "tag": "P",
+  "text": "Tech leads can tend to shy away from this area, as it can feel unfamiliar, or they might not wanting to step on a manager’s toes. Developing these skills when you are a tech lead, however, is quite ideal, as you have a bit more flexibility in what areas you want to work on. For example, if you mentor a junior engineer as a tech lead, it’s often seen as a bonus activity, whereas it’s expected for managers. One of the tech leads we interviewed described the role as “an opportunity to cultivate and explore management.”",
+  "translation": "技术负责人可能会不熟悉该领域，因为可能会感到陌生，或者他们可能不想踩踏经理的脚趾。 但是，当您成为技术主管时，发展这些技能是非常理想的，因为您在要从事的领域上有更多的灵活性。 例如，如果您以技术主管的身份指导初级工程师，则通常将其视为奖励活动，而对于经理来说则是期望。 我们采访的一位技术主管将其角色描述为“培养和探索管理的机会”。"
+}, {
+  "tag": "P",
+  "text": "Tech leads that build a thriving team feel personal fulfillment and joy in growing the team around them. The team’s impact and capacity can keep up as the team and responsibilities grow. They also can trust those around them to step up and lead, and don’t end up exhausting themselves under the increased load.",
+  "translation": "建立一支蒸蒸日上的团队的技术领导者在围绕他们成长的团队中感到个人成就感和喜悦。 随着团队和职责的增长，团队的影响力和能力可以跟上。 他们还可以信任周围的人来领导，并不会在增加的负担下精疲力尽。"
+}, {
+  "tag": "P",
+  "text": "Practical Tips",
+  "translation": "实用技巧"
+}, {
+  "tag": "UL",
+  "texts": ["What are you interested in doing more of (hiring, mentoring, running meetings, etc)? Coordinate with your manager to explicitly design how you can work together to help you grow into these skillsets.", "Schedule 1:1s with some engineers on the team to get feedback: What’s going well? What could be going better? How can you best support them as a tech lead?"],
+  "translations": ["您对做更多的事情感兴趣（雇用，指导，召开会议等）？ 与您的经理协调，明确设计如何一起工作以帮助您成长为这些技能组。", "与团队中的一些工程师安排1：1的时间以获得反馈：进展如何？ 有什么会变得更好？ 您如何最好地支持他们作为技术主管？"]
+}, {
+  "tag": "H1",
+  "text": "A good tech lead builds alignment",
+  "translation": "优秀的技术领先者可以达成一致"
+}, {
+  "tag": "P",
+  "text": "What people are saying:“I really need this to be done, but do I have the pieces in place or the environment in place to do the things I need to do?”",
+  "translation": "人们在说什么：“我确实需要做到这一点，但是我有准备好要做的事情还是环境？”"
+}, {
+  "tag": "P",
+  "text": "“My biggest challenge has been learning how to feel empowered to drive clarity upward.”",
+  "translation": "“我最大的挑战是学习如何感到有能力提高清晰度。”"
+}, {
+  "tag": "P",
+  "text": "“True success for a tech lead would be…being able to bring together a group of people to summit a technical challenge, and then socialize that solution.”",
+  "translation": "“真正的技术领导者成功将……能够召集一群人来应对技术挑战，然后使该解决方案实现社会化。”"
+}, {
+  "tag": "P",
+  "text": "Building alignment is absolutely critical for engineers wanting to have more impact and influence in their work, and especially critical for tech leads. That’s why the 1-day leadership course we first designed at Co Leadership focuses entirely on this skill.",
+  "translation": "对于希望在工作中产生更大影响力的工程师而言，建筑物对齐绝对至关重要，特别是对于技术主管而言。 这就是为什么我们最初在Co Leadership设计的为期1天的领导力课程完全专注于这项技能的原因。"
+}, {
+  "tag": "P",
+  "text": "Building alignment means not just being able to get a team of engineers headed in the same direction, but also finding alignment with cross-functional peers and also with the company at large. It means knowing what other people or teams care about and being able to share the impact of the team’s work in language that the audience cares about, at the right level of granularity and detail.",
+  "translation": "建立一致性意味着不仅能够使一组工程师朝相同的方向前进，而且还意味着与跨职能的同行以及整个公司保持一致。 这意味着知道其他人或团队在乎什么，并能够以适当的粒度和详细程度，以受众群体所关心的语言来分享团队工作的影响。"
+}, {
+  "tag": "P",
+  "text": "Tech leads that build alignment find more ease in everything they do. They know how to discover what’s important to people they work with, and then focus on those leverage points as they collaborate together. They spend upfront time investing in relationships and experience far less friction in tactical things.",
+  "translation": "使技术保持一致的技术负责人会发现他们所做的每一件事都更加轻松。 他们知道如何发现对他们所合作的人来说很重要的东西，然后在他们一起合作时专注于这些杠杆作用点。 他们花费前期时间投资于人际关系，在战术方面的摩擦则少得多。"
+}, {
+  "tag": "P",
+  "text": "Practical tips:",
+  "translation": "实用提示："
+}, {
+  "tag": "UL",
+  "texts": ["Find some 1:1 time with someone you work with, and ask them “What’s important to you in working together?” You may be surprised at the responses.", "Check out our 1-day in-person leadership course Building Alignment: How to Create the Impact and Influence You Want as a Leader in Tech — we also run it as a 4-week online course."],
+  "translations": ["与您的同伴找到大约1：1的时间，然后问他们“对您的合作最重要的是什么？”您可能会对这些回应感到惊讶。", "查看我们为期1天的面对面领导力课程“建筑调整：如何创造想要作为技术领导者的影响力和影响力”，我们还将其作为为期4周的在线课程进行。"]
+}, {
+  "tag": "H1",
+  "text": "A good tech lead balances priorities",
+  "translation": "优秀的技术主管可以平衡优先事项"
+}, {
+  "tag": "P",
+  "text": "What people are saying:“You’re constantly trading off short-term delivering things versus long-term tech debt or investing in platforms of things for the future.”",
+  "translation": "人们在说什么：“您一直在不断权衡短期交付物资与长期技术债务或为未来投资物联网平台。”"
+}, {
+  "tag": "P",
+  "text": "“If we only focus on today, we are going to bury ourselves in tech debt or in systems that aren’t flexible enough to handle future use cases.”",
+  "translation": "“如果我们只关注今天，我们将陷入技术债务或不够灵活以应对未来用例的系统中。”"
+}, {
+  "tag": "P",
+  "text": "A tech lead is like the technical counterpart to a product manager — they’re a hub with many inputs. Engineers, engineering managers, product managers, designers, other engineering teams, executives, marketing, the list goes on! Success as a tech lead means finding ways to navigate seemingly competing priorities.",
+  "translation": "技术负责人就像产品经理的技术对口一样，他们是众多投入的枢纽。 工程师，工程经理，产品经理，设计师，其他工程团队，主管，市场营销人员不胜枚举！ 作为技术领先者的成功意味着寻找方法来应对看似相互竞争的优先事项。"
+}, {
+  "tag": "P",
+  "text": "How do you chisel away at technical debt while also meeting the needs of a product team that wants to ship, ship, ship? How do you allocate work so that engineers are working on what they care about or want to learn, while also making sure output is high? How do you do all that while also keeping your own sanity and prioritizing your personal life alongside these work demands?",
+  "translation": "您如何在消除技术债务的同时又满足想要运输，运输和运输的产品团队的需求？ 您如何分配工作，以便工程师在他们关心或想要学习的事情上工作，同时确保高产出？ 您如何做所有这些，同时还要保持自己的理智，并在满足这些工作要求的同时优先考虑个人生活？"
+}, {
+  "tag": "P",
+  "text": "Tech leads that balance priorities create clarity for their teams, which allows team members to make smart decisions that are aligned with the team and company goals.",
+  "translation": "技术领先者可以通过优先权平衡来为团队创造清晰的环境，从而使团队成员能够做出与团队和公司目标一致的明智决策。"
+}, {
+  "tag": "P",
+  "text": "Practical tips:",
+  "translation": "实用提示："
+}, {
+  "tag": "UL",
+  "texts": ["When faced with seemingly competing priorities (tech debt vs. feature work), first ask yourself, “Is there a way forward that achieves both?” Oftentimes we overlook an Option C because we assume it doesn’t exist.", "Define and communicate the top 3 priorities that can help guide decisions for you and your team. For example, in a product push, it might be, 1) Hit product launch dates, 2) Improve existing features, 3) Work on tech debt. In a period that is more focused on investing in engineering longevity, it might be, 1) Tackle high-leverage tech debt projects, 2) Invest in longer-term infrastructure, 3) Maintain existing features."],
+  "translations": ["当面临看似相互竞争的优先事项（技术债务与功能工作）时，首先要问自己：“有没有一种方法可以同时实现这两者？”通常我们会忽略方案C，因为我们认为方案C不存在。", "定义和传达最重要的3个优先事项，可以帮助您和您的团队做出决策。 例如，在产品推销中，可能是：1）推出产品的日期； 2）改进现有功能； 3）处理技术债务。 在更专注于工程寿命投资的时期，可能是：1）处理高杠杆技术债务项目； 2）投资于长期基础设施； 3）维护现有功能。"]
+}, {
+  "tag": "H1",
+  "text": "A good tech lead is clear about what they want",
+  "translation": "好的技术负责人清楚他们想要什么"
+}, {
+  "tag": "P",
+  "text": "What people are saying:“This is a natural path up towards larger engineering management role.”",
+  "translation": "人们在说：“这是通向更大的工程管理职位的自然之路。”"
+}, {
+  "tag": "P",
+  "text": "“The only way that I’m going to grow in leadership is to continue to make impact. The thing for me that has changed about that though is that now I have to learn different ways to make impact.”",
+  "translation": "“我要成为领导层的唯一途径就是继续产生影响。 对于我而言，发生了变化的是，现在我必须学习产生影响的不同方法。”"
+}, {
+  "tag": "P",
+  "text": "In addition to more tactical skills, a successful tech lead also needs to be clear with themselves — what do they want to get out of their role, and are they getting what they need? In a role that interfaces with many engineers and other people within a company, it’s important that they feel like their work is toward some purpose. For a tech lead with aspirations to one day start their own company, that may be gaining visibility of different parts of the business and learning all they can. For a tech lead who sees themselves as a tech lead for quite a long time, that may be honing into specific skills or areas of expertise.",
+  "translation": "除了更多的战术技能外，成功的技术领导者还需要清楚地表明自己-他们想从角色中脱颖而出，并且得到所需的东西吗？ 在与公司中的许多工程师和其他人员进行交互的角色中，重要的是他们必须觉得自己的工作是为了某个目标。 对于渴望在一天之内建立自己的公司的技术领导者来说，这可能会获得业务不同部分的可见性并尽一切可能学习。 对于长期以来一直将自己视为技术领导者的技术领导者来说，这可能是磨练特定技能或专业领域的原因。"
+}, {
+  "tag": "P",
+  "text": "Tech leads that motivate themselves bring that motivation to the team as well. They understand that a motivated individual working towards specific goals is far more productive and efficient and can help align others on their team as well.",
+  "translation": "激励自己的技术领导者也将这种动机带给了团队。 他们知道，有积极进取的个人朝着特定目标努力会更有生产力和效率，并且可以帮助其他人与团队保持一致。"
+}, {
+  "tag": "P",
+  "text": "Practical tips:",
+  "translation": "实用提示："
+}, {
+  "tag": "UL",
+  "texts": ["What do you want to be different about your work in 3 years? What would be intolerable if it were still true? From there, think about what you want to get out of your time in your current role.", "Share your aspirations and what you’d like to get out of your current role with your manager or coworkers. When people around you know what you want, it’s more likely that you’ll be top of mind when opportunities arise."],
+  "translations": ["您希望三年内的工作与众不同吗？ 如果它仍然是真实的，那将是无法忍受的？ 在那儿，考虑一下您想在当前职位上摆脱困境的情况。", "与您的经理或同事分享您的志向以及您希望摆脱目前的职务。 当周围的人知道您想要什么时，当机会出现时，您很可能会成为第一位。"]
+}, {
+  "tag": "H1",
+  "text": "Next Steps for Current and Aspiring Tech Leads",
+  "translation": "当前和有抱负的技术领先者的下一步"
+}, {
+  "tag": "UL",
+  "texts": ["For each of the above categories, give yourself a rating from 1–5. Where comes easily to you? What feels harder?", "Who do you know that excels in each of these categories? Have a conversation with them about what they did to strengthen those areas.", "Look at your immediate team. Between yourself and others, do you feel like there is good coverage between these areas? If not, start a conversation to figure out how to fill in those gaps. Perhaps there’s a more senior tech lead you can consult with to streamline execution, or an engineering manager you can work alongside to bolster team culture.", "Have a conversation with your manager. Which of these areas do they think are your strengths and which are areas to work on a bit more? Come up with a plan together for the areas you want to work on. How can your manager best support you?"],
+  "translations": ["对于上述每个类别，给自己打1到5的评分。 您哪里方便？ 什么感觉更难？", "您知道谁在这些类别中都有出色表现？ 与他们进行对话，讨论他们为加强这些领域所做的工作。", "看看你的直属团队。 在您自己和他人之间，您是否感觉这些区域之间有很好的覆盖范围？ 如果没有，请开始对话以弄清楚如何填补这些空白。 也许您可以咨询更高级的技术主管来简化执行过程，或者可以与工程经理一起工作以增强团队文化。", "与您的经理进行对话。 他们认为您在哪些方面是您的长处，还有哪些需要进一步加强？ 共同针对您要工作的领域制定计划。 您的经理如何最好地支持您？"]
+}, {
+  "tag": "P",
+  "text": "If you want to dive deeper into setting yourself up for success as a tech lead, check out our Foundations of Effective Tech Leadership course in San Francisco. It’s a 2-day immersive experience for new and experienced tech leads where we use live demos, hands-on practice, case studies, deep-dive discussions to give you the core foundations to set you up for success.",
+  "translation": "如果您想更深入地了解如何成功取得技术领导地位，请查看我们在旧金山举行的有效技术领导力基础课程。 对于新的和经验丰富的技术领导者来说，这是一次为期2天的沉浸式体验，我们将使用现场演示，动手实践，案例研究，深入讨论，为您奠定成功的核心基础。"
+}, {
+  "tag": "P",
+  "text": "Originally published on blog.coleadership.com.",
+  "translation": "最初发布在blog.coleadership.com。"
+}]
