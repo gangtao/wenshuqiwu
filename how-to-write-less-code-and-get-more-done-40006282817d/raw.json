@@ -1,0 +1,215 @@
+[{
+  "tag": "H1",
+  "text": "Finally, Don’t Be A Code Hoarder",
+  "translation": "最后，不要成为代码Ho积者"
+}, {
+  "tag": "P",
+  "text": "Compulsive hoarding, also known as hoarding disorder, is a behavioral pattern characterized by excessive acquisition of and an inability or unwillingness to discard large quantities of objects that cover the living areas of the home and cause significant distress or impairment.",
+  "translation": "强迫性ard积，也称为ho积症，是一种行为模式，其特征在于过度获取和无法或不愿意丢弃覆盖住家生活区域并造成严重困扰或损害的大量物体。"
+}, {
+  "tag": "P",
+  "text": "And when developers become hoarders, they cling to code even when it is buggy or obsolete. Such developers never delete any code and resist code removal generally. When confronted, you may get answers like “we may need this code someday” or “I need this code to execute activity X” and so on.",
+  "translation": "而且，当开发人员成为ho积者时，即使它们存在错误或过时，他们也会坚持使用代码。 这样的开发人员通常不会删除任何代码并拒绝删除代码。 遇到问题时，您可能会得到诸如“我们可能有一天需要此代码”或“我需要此代码来执行活动X”之类的答案。"
+}, {
+  "tag": "P",
+  "text": "Have you ever been a code hoarder? Have you given up on any effort of cleaning because you know that you don’t have the time to clean up the mess? If you have, you are a code hoarder, and your work life is a deep and overwhelming mess.",
+  "translation": "您曾经做过代码ho积者吗？ 您是否已因为没有时间清理烂摊子而放弃任何清理工作？ 如果有的话，那么您就是一个代码收藏者，而您的工作生活将是一团深重而压倒性的混乱。"
+}, {
+  "tag": "P",
+  "text": "Hoarding is irrational behavior. If you think the code’s existence can be justified but you are not sure, tag it appropriately for revisiting later so that it remains in your radar. Finally, code that serves no purpose and is not required has to be deleted. Period.",
+  "translation": "积是非理性的行为。 如果您认为该代码的存在是有道理的，但是不确定，请对其进行适当标记以供以后重新使用，以便将其保留在您的雷达中。 最后，无用且不需要的代码必须删除。 期。"
+}, {
+  "tag": "P",
+  "text": "A good programmer makes their code better and better every day. The quality of their code improves with time. The legacy code left by good programmers will always be cleaner than the older code. Good programmers do not leave a mess. They leave a reputation embedded in code to be remembered forever.",
+  "translation": "一个好的程序员每天都会使他们的代码越来越好。 他们的代码质量随时间而提高。 好的程序员留下的遗留代码将始终比旧代码干净。 好的程序员不要乱糟糟。 他们在代码中留下了声誉，将永远铭记在心。"
+}, {
+  "tag": "P",
+  "text": "As Robert Martin has rightly said,",
+  "translation": "正如罗伯特·马丁（Robert Martin）正确地说的那样，"
+}, {
+  "tag": "P",
+  "text": "“Truth can only be found in one place: the code.”",
+  "translation": "“真理只能在一个地方找到：代码。”"
+}, {
+  "tag": "H1",
+  "text": "Avoid Needless Concurrency",
+  "translation": "避免不必要的并发"
+}, {
+  "tag": "P",
+  "text": "Concurrency is a double-edged sword. It should only be used when needed.",
+  "translation": "并发是一把双刃剑。 仅应在需要时使用。"
+}, {
+  "tag": "P",
+  "text": "When source code is executed sequentially, the code is easier to understand and debug. When concurrency is used, code may get executed in parallel or in some irregular order. This difference in execution makes it really difficult to debug issues in code. Needless to say, it complicates program design and implementation in more ways than one. Some issues that may occur due to badly implemented concurrency can be:",
+  "translation": "当源代码按顺序执行时，代码更易于理解和调试。 使用并发时，代码可能会以并行或不规则顺序执行。 这种执行上的差异使调试代码中的问题变得非常困难。 不用说，它使程序的设计和实现复杂化的方式超过一种。 由于并发执行不当而可能发生的一些问题可能是："
+}, {
+  "tag": "UL",
+  "texts": ["Race conditions: Operations occur unpredictably.", "Deadlocks: Tables get locked waiting for simultaneous operations to complete.", "Resource starvation: An operation is perpetually denied access to a resource it is waiting for."],
+  "translations": ["竞赛条件：操作会意外发生。", "死锁：表被锁定，等待同时完成操作。", "资源匮乏：永久拒绝操作访问其正在等待的资源。"]
+}, {
+  "tag": "P",
+  "text": "One of the world’s most infamous software disasters was caused by a badly implemented concurrent condition. A programming error in the Therac-25 radiation therapy device resulted in the deaths of four people.",
+  "translation": "世界上最臭名昭著的软件灾难之一是并发条件实施不当造成的。 Therac-25放射治疗设备发生编程错误，导致四人死亡。"
+}, {
+  "tag": "P",
+  "text": "That said, all modern programming languages and frameworks provide many concurrency tools. But finally, it all depends on the developer, who needs to decide on how, when, and where to implement them to get the best results.",
+  "translation": "也就是说，所有现代编程语言和框架都提供许多并发工具。 但是最后，这完全取决于开发人员，开发人员需要决定如何，何时以及在何处实施以获得最佳结果。"
+}, {
+  "tag": "H1",
+  "text": "Never Make Your Code Worse",
+  "translation": "永远不要让您的代码更糟"
+}, {
+  "tag": "P",
+  "text": "This is the Hippocratic Oath for developers. As developers, we are often advised not to cut corners and take shortcuts that degrade the code and make it worse.",
+  "translation": "这是针对开发人员的希波克拉底誓言。 作为开发人员，通常建议我们不要偷工减料，采取捷径会使代码恶化并使其恶化。"
+}, {
+  "tag": "P",
+  "text": "Software engineering procedures, like medical procedures, can be intrusive and destructive. Likewise, the tools and techniques that we use can be new and untested (or barely tested). Moreover, we don’t have the equivalent of medical licensing boards or the U.S. Food and Drug Administration (FDA) to regulate the practice of software engineering and the tools that we adopt. Thus, we sometimes subject our “patient”—the software—to unnecessarily risky procedures, without really understanding the risks.",
+  "translation": "软件工程程序（例如医疗程序）可能是侵入性的，也可能是破坏性的。 同样，我们使用的工具和技术可能是新的，未经测试（或未经测试）。 而且，我们没有相当于医疗许可委员会或美国食品药品监督管理局（FDA）的机构来规范软件工程的实践和采用的工具。 因此，有时我们使“患者”（即软件）遭受不必要的风险程序，而没有真正理解风险。"
+}, {
+  "tag": "P",
+  "text": "In the course of fixing a problem, we sometimes do more harm than good. In his software engineering classic, “Code Complete,” Steve McConnell says that if you aren’t fixing the underlying source of a problem but just the symptom, you’re doing more harm than good in that you’re deceiving yourself into thinking the problem has gone away.",
+  "translation": "在解决问题的过程中，有时弊大于利。 史蒂夫·麦康奈尔（Steve McConnell）在他的软件工程经典著作《代码完整》中说，如果您不解决问题的根本原因，而只是症状，那么弊端就是弊大于利，这是在欺骗您自己思考问题的根源。 问题已经解决。"
+}, {
+  "tag": "P",
+  "text": "Sometimes this is difficult, however. It may be that legacy code makes it very difficult to add functionality properly without harming your code. To be realistic, we restate “Never make your code worse” to “Only degrade your code intentionally.”",
+  "translation": "但是，有时候这很困难。 可能是遗留代码使得很难在不损害代码的情况下正确添加功能。 现实地说，我们重申“绝不会使您的代码更糟”，改为“仅故意降级您的代码”。"
+}, {
+  "tag": "P",
+  "text": "Yes. If you cannot figure out how to make the change without degrading the code, inform other team members before making the change. The point is that you are intentionally degrading the code.",
+  "translation": "是。 如果您在不降低代码质量的情况下仍无法确定如何进行更改，请在更改之前通知其他团队成员。 关键是您在故意降级代码。"
+}, {
+  "tag": "P",
+  "text": "This is, of course, not going to prevent bad code, but it gives you some time to think and reflect. Experience shows that a person will stop just short of a good solution because they’re willing to do the first thing that comes to mind. Note that we are not requiring getting permission or even getting a better result.",
+  "translation": "当然，这不会防止不良代码，但是它给您一些时间来思考和思考。 经验表明，一个人会因为缺少愿意做的第一件事而停下来。 请注意，我们不需要征求许可，甚至不需要取得更好的结果。"
+}, {
+  "tag": "P",
+  "text": "Another advantage is that it prevents unpleasant surprises at wrong times and makes everybody in the team aware of the problems that can be expected. The team then truly works as a team to get it sorted.",
+  "translation": "另一个优点是，它可以防止在错误的时间出现令人不快的意外情况，并使团队中的每个人都意识到可以预期的问题。 然后，团队真正地以团队的方式进行排序。"
+}, {
+  "tag": "H1",
+  "text": "Do Not Write Bulletproof Code",
+  "translation": "不要编写防弹代码"
+}, {
+  "tag": "P",
+  "text": "A bulletproof code is a perfect code, a code that will work with any input or unexpected condition.",
+  "translation": "防弹代码是一种完美的代码，该代码可在任何输入或意外情况下使用。"
+}, {
+  "tag": "P",
+  "text": "The idea has a lot of emotional appeal, especially to hotshot developers who consider it a personal failure should their code fail some scenario. That said, writing or attempting to write bulletproof code is unrealistic and unnecessary as every object in this world, including software, has limitations.",
+  "translation": "这个想法具有很大的情感吸引力，特别是对于那些热衷于开发人员的人来说，如果他们的代码在某些情况下失败，他们会认为这是个人失败。 也就是说，编写或尝试编写防弹代码是不现实且不必要的，因为这个世界上的每个对象（包括软件）都有局限性。"
+}, {
+  "tag": "P",
+  "text": "Attempting to implement a perfect module will involve writing extra conditions, which will make the code more complicated, obliterating the very purpose for which the code was written. The module, in due course, becomes larger, costlier, and a potential candidate for poor maintenance.",
+  "translation": "尝试实现一个完美的模块将涉及编写额外的条件，这将使代码更加复杂，从而消除了编写代码的目的。 该模块在适当的时候会变得更大，更昂贵，并且可能成为不良维护的潜在选择。"
+}, {
+  "tag": "P",
+  "text": "That is why the rule of thumb to write less code should be to code the simplest thing that could possibly work.",
+  "translation": "这就是为什么编写较少代码的经验法则应该是编写可能可行的最简单的代码。"
+}, {
+  "tag": "P",
+  "text": "Extreme programming mentions two golden rules to write simple code:",
+  "translation": "极限编程提到了编写简单代码的两个黄金法则："
+}, {
+  "tag": "UL",
+  "texts": ["First, implement a new capability in the simplest way you can think of that could possibly work. Don’t build a lot of amazing superstructures, don’t do anything fancy; just put it in to make it work. Make the code pass the unit tests for the new feature (and all features, as always).", "Second, and this is critical to the rule, refactor the system to be the simplest possible code including all the features it now has. Follow the rule of OnceAndOnlyOnce and the other code quality rules to make the system as clean as it can possibly be."],
+  "translations": ["首先，以您认为最可行的最简单方式实施一项新功能。 不要建造许多惊人的上层建筑，不要做任何花哨的事； 只需将其放入即可使用。 使代码通过新功能（以及所有功能，一如既往）的单元测试。", "其次，这对于规则至关重要，因此将系统重构为尽可能简单的代码，包括其现在具有的所有功能。 遵循OnceAndOnlyOnce规则和其他代码质量规则，以使系统尽可能干净。"]
+}, {
+  "tag": "P",
+  "text": "Always remember, we are not looking for the quickest way; we are looking for the simplest result. Therefore, we first break the existing method into pieces. That leaves the existing test cases running. Then we modify (simply, now) one of the little methods to handle the next test case and so on.",
+  "translation": "永远记住，我们并不是在寻找最快的方法； 我们正在寻找最简单的结果。 因此，我们首先将现有方法分解为多个部分。 这样就可以运行现有的测试用例。 然后，我们修改（现在，简单地说）处理下一个测试用例的小方法之一，依此类推。"
+}, {
+  "tag": "P",
+  "text": "Always remember the ultimate elegance is simplicity. Controlling and eliminating complexity is the essence of great programming.",
+  "translation": "永远记住，极致的优雅就是简约。 控制和消除复杂性是出色编程的本质。"
+}, {
+  "tag": "H1",
+  "text": "You Aren’t Gonna Need It",
+  "translation": "你不会需要它"
+}, {
+  "tag": "P",
+  "text": "YouArentGonnaNeedIt (often abbreviated YAGNI) is an extreme programming practice, which states:",
+  "translation": "YouArentGonnaNeedIt（通常缩写为YAGNI）是一种极端的编程习惯，它指出："
+}, {
+  "tag": "P",
+  "text": "“Always implement things when you actually need them, never when you just foresee that you need them.”",
+  "translation": "“总是在真正需要它们时执行它们，而永远不会仅仅在预见到需要它们时就执行。”"
+}, {
+  "tag": "P",
+  "text": "Even if you are totally, totally, totally sure that you will need a feature later on, do not implement it now.",
+  "translation": "即使您完全，完全，完全确定以后将需要某个功能，也不要立即实施它。"
+}, {
+  "tag": "P",
+  "text": "There are two main reasons to practice YAGNI:",
+  "translation": "练习YAGNI的主要原因有两个："
+}, {
+  "tag": "UL",
+  "texts": ["You save time because you avoid writing code that is not required.", "Your code is better because you avoid polluting it with guesses that turn out to be more or less wrong but stick around anyway."],
+  "translations": ["您节省了时间，因为避免了编写不需要的代码。", "您的代码更好，因为您避免使用猜测来污染代码，这些猜测或多或少是错误的，但还是会坚持下去。"]
+}, {
+  "tag": "P",
+  "text": "The YAGNI concept is sensible no matter what project management methodology you use. Superior design requires a thoughtful balance of features. Bad design stuffs in too many features, which creates an unwieldy, “nightmare to maintain” code.",
+  "translation": "无论您使用哪种项目管理方法，YAGNI的概念都是明智的。 上乘的设计需要周全的功能平衡。 错误的设计会带来太多功能，从而造成笨拙的“维护噩梦”代码。"
+}, {
+  "tag": "P",
+  "text": "The rule of thumb is, stay focused on things that are clearly needed and not on what is likely to happen.",
+  "translation": "经验法则是，专注于明显需要的事情，而不是可能发生的事情。"
+}, {
+  "tag": "H2",
+  "text": "Why is there so much unnecessary code?",
+  "translation": "为什么会有那么多不必要的代码？"
+}, {
+  "tag": "H1",
+  "text": "How To Write Less Code and Get More Done.",
+  "translation": "如何编写更少的代码并完成更多工作。"
+}, {
+  "tag": "H2",
+  "text": "The less code there is, the less there is to break, justify, or maintain",
+  "translation": "代码越少，破坏，证明或维护的内容就越少"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*l9TcQXtnM2XgoAzr?q=20",
+  "caption": "Photo by K8 on Unsplash",
+  "type": "image",
+  "file": "0*l9TcQXtnM2XgoAzr"
+}, {
+  "tag": "P",
+  "text": "Legendary author Jules Verne rightly said,",
+  "translation": "传奇作家儒勒·凡尔纳（Jules Verne）正确地说，"
+}, {
+  "tag": "P",
+  "text": "A well-used minimum suffices for everything.",
+  "translation": "充分利用的最低要求足以满足所有需求。"
+}, {
+  "tag": "P",
+  "text": "And in today’s era, the well-used minimum also applies to code. It is sad but true: In our modern world, there is just too much code. More precisely, too much unnecessary code floating around choking the good code around them.",
+  "translation": "在当今时代，常用的最低要求也适用于代码。 不幸的是，这是事实：在我们的现代世界中，代码太多了。 更准确地说，太多不必要的代码四处飘动，窒息了周围的好代码。"
+}, {
+  "tag": "P",
+  "text": "That said, unnecessary code is inherently bad. It rots. It requires periodic maintenance. It has bugs that need to be found. New features mean old code has to be adapted. The more code you have, the more places there are for bugs to hide. The longer checkouts or compiles take, the longer it takes a new employee to make sense of your system.",
+  "translation": "也就是说，不必要的代码本质上是不好的。 烂了 它需要定期维护。 它具有需要发现的错误。 新功能意味着必须修改旧代码。 您拥有的代码越多，隐藏错误的位置就越多。 结帐或编译花费的时间越长，新员工理解您的系统所花费的时间就越长。"
+}, {
+  "tag": "P",
+  "text": "Adding to all this hullaballoo, code is produced by engineers. To make more code requires more engineers. The more engineers, the more the communication costs, which further adds to the ever-increasing basketful of code maintenance and development costs.",
+  "translation": "除此以外，代码是由工程师生成的。 要编写更多代码，需要更多工程师。 工程师越多，通信成本就越高，这进一步增加了一篮子代码维护和开发成本。"
+}, {
+  "tag": "P",
+  "text": "And the one solution to all these problems is writing less code.",
+  "translation": "解决所有这些问题的一种方法是编写更少的代码。"
+}, {
+  "tag": "P",
+  "text": "There are many benefits of less code:",
+  "translation": "减少代码有很多好处："
+}, {
+  "tag": "UL",
+  "texts": ["Less code to develop = lower development cost.", "Less code to develop = lower maintenance cost.", "Less code to develop = fewer bugs in code.", "Less code to develop = more efficient testing."],
+  "translations": ["开发更少的代码=降低开发成本。", "开发更少的代码=更低的维护成本。", "开发更少的代码=更少的错误。", "开发更少的代码=更有效的测试。"]
+}, {
+  "tag": "P",
+  "text": "And the biggest benefit: The less code there is to read, the higher the odds are that someone will actually read it.",
+  "translation": "最大的好处是：读取的代码越少，有人实际读取它的几率就越高。"
+}, {
+  "tag": "P",
+  "text": "Here are some ways to write less code.",
+  "translation": "这里有一些编写更少代码的方法。"
+}]
