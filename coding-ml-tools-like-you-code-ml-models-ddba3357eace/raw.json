@@ -1,0 +1,277 @@
+[{
+  "tag": "P",
+  "text": "Thanks to Amanda Kelly, Thiago Teixeira, TC Ricks, Seth Weidman, Regan Carey, Beverly Treuille, Geneviève Wachtell, and Barney Pell for their helpful input on this article.",
+  "translation": "感谢Amanda Kelly，Thiago Teixeira，TC Ricks，Seth Weidman，Regan Carey，Beverly Treuille，GenevièveWachtell和Barney Pell在本文中提供的有益帮助。"
+}, {
+  "tag": "P",
+  "text": "References:",
+  "translation": "参考文献："
+}, {
+  "tag": "P",
+  "text": "[1] J. Redmon and A. Farhadi, YOLOv3: An Incremental Improvement (2018), arXiv.",
+  "translation": "[1] J. Redmon和A. Farhadi，YOLOv3：增量改进（2018），arXiv。"
+}, {
+  "tag": "P",
+  "text": "[2] T. Karras, T. Aila, S. Laine, and J. Lehtinen, Progressive Growing of GANs for Improved Quality, Stability, and Variation (2018), ICLR.",
+  "translation": "[2] T. Karras，T。Aila，S。Laine和J. Lehtinen，《渐进式增长GAN以提高质量，稳定性和变异性》（2018年），ICLR。"
+}, {
+  "tag": "P",
+  "text": "[3] S. Guan, Controlled image synthesis and editing using a novel TL-GAN model (2018), Insight Data Science Blog.",
+  "translation": "[3] S. Guan，《使用新型TL-GAN模型进行受控图像合成和编辑》（2018年），Insight Data Science Blog。"
+}, {
+  "tag": "P",
+  "text": "This just scratches the surface of what you can do with Streamlit. One of the most exciting aspects of Streamlit is how these primitives can be easily composed into complex apps that look like scripts. There’s a lot more we could say about how our architecture works and the features we have planned, but we’ll save that for future posts.",
+  "translation": "这只是您使用Streamlit可以做的事情的表面。 Streamlit最令人兴奋的方面之一是如何将这些原语轻松地组合成看起来像脚本的复杂应用程序。 关于架构的工作原理和计划的功能，我们还有很多话要说，但我们会保留下来，以备将来之用。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*wmwwsWkOHzsYLe8pB2RzBA.png?q=20",
+  "caption": "Block diagram of Streamlit’s components. More coming soon!",
+  "type": "image",
+  "file": "1*wmwwsWkOHzsYLe8pB2RzBA.png"
+}, {
+  "tag": "P",
+  "text": "We’re excited to finally share Streamlit with the community today and see what you all build with it. We hope that you’ll find it easy and delightful to turn your Python scripts into beautiful ML apps.",
+  "translation": "我们很高兴能最终与当今的社区共享Streamlit，并看到大家使用它构建的东西。 我们希望您会发现将Python脚本转换为漂亮的ML应用变得轻松而愉快。"
+}, {
+  "tag": "P",
+  "text": "As we worked with machine learning teams on their own projects, we came to realize that these simple ideas yield a number of important benefits:",
+  "translation": "在与机器学习团队合作进行自己的项目时，我们意识到这些简单的想法产生了许多重要的好处："
+}, {
+  "tag": "P",
+  "text": "Streamlit apps are pure Python files. So you can use your favorite editor and debugger with Streamlit.",
+  "translation": "Streamlit应用程序是纯Python文件。 因此，您可以在Streamlit中使用自己喜欢的编辑器和调试器。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*4KMALKoeS_3TUSBn0ryzYg.png?q=20",
+  "caption": "My favorite layout for writing Streamlit apps has VSCode on the left and Chrome on the right.",
+  "type": "image",
+  "file": "1*4KMALKoeS_3TUSBn0ryzYg.png"
+}, {
+  "tag": "P",
+  "text": "Pure Python scripts work seamlessly with Git and other source control software, including commits, pull requests, issues, and comments. Because Streamlit’s underlying language is pure Python, you get all the benefits of these amazing collaboration tools for free 🎉.",
+  "translation": "纯Python脚本可与Git和其他源代码控制软件无缝配合，包括提交，拉取请求，问题和注释。 由于Streamlit的基础语言是纯Python，因此您可以免费获得这些出色的协作工具的所有好处。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*pY7e7BLPI2atT_-V?q=20",
+  "caption": "Because Streamlit apps are just Python scripts, you can easily version control them with Git.",
+  "type": "image",
+  "file": "0*pY7e7BLPI2atT_-V"
+}, {
+  "tag": "P",
+  "text": "Streamlit provides an immediate-mode live coding environment. Just click Always rerun when Streamlit detects a source file change.",
+  "translation": "Streamlit提供了即时模式实时编码环境。 当Streamlit检测到源文件更改时，只需单击始终重新运行。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*P3vtLk-HGeCRH_Gu5B5ifg.png?q=20",
+  "caption": "Click “Always rerun” to enable live coding.",
+  "type": "image",
+  "file": "1*P3vtLk-HGeCRH_Gu5B5ifg.png"
+}, {
+  "tag": "P",
+  "text": "Caching simplifies setting up computation pipelines. Amazingly, chaining cached functions automatically creates efficient computation pipelines! Consider this code adapted from our Udacity demo:",
+  "translation": "缓存简化了计算管道的设置。 令人惊讶的是，链接缓存的功能会自动创建高效的计算管道！ 请考虑以下代码，这些代码是从我们的Udacity演示改编而成的："
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/treuille/ac7755eb37c63a78fac7dfef89f3517e/raw/568cc2d190c2f96b2a8a7aaf6fa444d68bde630e/caching_DAG_example.py",
+  "code": "import streamlit as st\nimport pandas as pd\n\n@st.cache\ndef load_metadata():\n    DATA_URL = \"https://streamlit-self-driving.s3-us-west-2.amazonaws.com/labels.csv.gz\"\n    return pd.read_csv(DATA_URL, nrows=1000)\n\n@st.cache\ndef create_summary(metadata, summary_type):\n    one_hot_encoded = pd.get_dummies(metadata[[\"frame\", \"label\"]], columns=[\"label\"])\n    return getattr(one_hot_encoded.groupby([\"frame\"]), summary_type)()\n\n# Piping one st.cache function into another forms a computation DAG.\nsummary_type = st.selectbox(\"Type of summary:\", [\"sum\", \"any\"])\nmetadata = load_metadata()\nsummary = create_summary(metadata, summary_type)\nst.write('## Metadata', metadata, '## Summary', summary)"
+}, {
+  "tag": "P",
+  "text": "Basically, the pipeline is load_metadata → create_summary. Every time the script is run Streamlit only recomputes whatever subset of the pipeline is required to get the right answer. Cool!",
+  "translation": "基本上，管道是load_metadata→create_summary。 每次运行脚本时，Streamlit只会重新计算需要正确的答案的管道子集。 凉！"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*e0-z12L0pXYlCE5OM3n6LA.png?q=20",
+  "caption": "To make apps performant, Streamlit only recomputes whatever is necessary to update the UI.",
+  "type": "image",
+  "file": "1*e0-z12L0pXYlCE5OM3n6LA.png"
+}, {
+  "tag": "P",
+  "text": "Streamlit is built for GPUs. Streamlit allows direct access to machine-level primitives like TensorFlow and PyTorch and complements these libraries. For example in this demo, Streamlit’s cache stores the entire NVIDIA celebrity face GAN [2]. This approach enables nearly instantaneous inference as the user updates sliders.",
+  "translation": "Streamlit是为GPU构建的。 Streamlit允许直接访问机器级原语，例如TensorFlow和PyTorch，并补充了这些库。 例如，在此演示中，Streamlit的缓存存储了整个NVIDIA名人头像GAN [2]。 当用户更新滑块时，这种方法几乎可以实现瞬时推断。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/freeze/max/30/1*188SkUE1onGcpQIuSZsiMQ.gif?q=20",
+  "caption": "This Streamlit app demonstrates NVIDIA celebrity face GAN [2] model using Shaobo Guan’s TL-GAN [3].",
+  "type": "image",
+  "file": "1*188SkUE1onGcpQIuSZsiMQ.gif"
+}, {
+  "tag": "P",
+  "text": "Streamlit is a free and open-source library rather than a proprietary web app. You can serve Streamlit apps on-prem without contacting us. You can even run Streamlit locally on a laptop without an Internet connection! Furthermore, existing projects can adopt Streamlit incrementally.",
+  "translation": "Streamlit是一个免费的开源库，而不是专有的Web应用程序。 您可以在不与我们联系的情况下在本地提供Streamlit应用程序。 您甚至可以在没有Internet连接的笔记本电脑上本地运行Streamlit！ 此外，现有项目可以逐步采用Streamlit。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*nyOMWYNcM9mPTU5mHf1CxQ.png?q=20",
+  "caption": "Several ways incrementally adopt Streamlit. (Icons courtesy of fullvector / Freepik.)",
+  "type": "image",
+  "file": "1*nyOMWYNcM9mPTU5mHf1CxQ.png"
+}, {
+  "tag": "P",
+  "text": "Ok. Are you back from playing with fractals? Those can be mesmerizing.",
+  "translation": "好。 你从分形玩回来了吗？ 这些可能会令人着迷。"
+}, {
+  "tag": "P",
+  "text": "The simplicity of these ideas does not prevent you from creating incredibly rich and useful apps with Streamlit. During my time at Zoox and Google X, I watched as self-driving car projects ballooned into gigabytes of visual data, which needed to be searched and understood, including running models on images to compare performance. Every self-driving car project I’ve seen eventually has had entire teams working on this tooling.",
+  "translation": "这些想法的简单性不会阻止您使用Streamlit创建令人难以置信的丰富实用的应用程序。 在Zoox和Google X期间，我看着无人驾驶汽车项目激增为数以十亿计的视觉数据，需要对其进行搜索和理解，包括在图像上运行模型以比较性能。 我见过的每个自动驾驶汽车项目最终都会让整个团队都在使用这种工具。"
+}, {
+  "tag": "P",
+  "text": "Building such a tool in Streamlit is easy. This Streamlit demo lets you perform semantic search across the entire Udacity self-driving car photo dataset, visualize human-annotated ground truth labels, and run a complete neural net (YOLO) in real time from within the app [1].",
+  "translation": "在Streamlit中构建这样的工具很容易。 这个Streamlit演示使您可以在整个Udacity自动驾驶汽车照片数据集中执行语义搜索，可视化带有人工注释的地面真相标签，并可以从应用程序内部实时运行完整的神经网络（YOLO）[1]。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/freeze/max/30/1*p3XPm-x0TUIuMmQQa4mjHQ.gif?q=20",
+  "caption": "This 300-line Streamlit demo combines semantic visual search with interactive neural net inference.",
+  "type": "image",
+  "file": "1*p3XPm-x0TUIuMmQQa4mjHQ.gif"
+}, {
+  "tag": "P",
+  "text": "The whole app is a completely self-contained, 300-line Python script, most of which is machine learning code. In fact, there are only 23 Streamlit calls in the whole app. You can run it yourself right now!",
+  "translation": "整个应用程序是一个完全自包含的300行Python脚本，其中大多数是机器学习代码。 实际上，整个应用程序中只有23个Streamlit调用。 您可以立即自己运行它！"
+}, {
+  "tag": "PRE",
+  "text": "$ pip install --upgrade streamlit opencv-python$ streamlit runhttps://raw.githubusercontent.com/streamlit/demo-self-driving/master/app.py",
+  "translation": "$ pip install --upgrade streamlit opencv-python $ streamlit runhttps：//raw.githubusercontent.com/streamlit/demo-self-driving/master/app.py"
+}, {
+  "tag": "H1",
+  "text": "Turn Python Scripts into Beautiful ML Tools",
+  "translation": "将Python脚本变成漂亮的ML工具"
+}, {
+  "tag": "H2",
+  "text": "Introducing Streamlit, an app framework built for ML engineers",
+  "translation": "介绍Streamlit，这是专为ML工程师打造的应用程序框架"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/freeze/max/30/1*Mbn2SxozueUkGKPW1NJkOw.gif?q=20",
+  "caption": "Coding a semantic search engine with real-time neural-net inference in 300 lines of Python.",
+  "type": "image",
+  "file": "1*Mbn2SxozueUkGKPW1NJkOw.gif"
+}, {
+  "tag": "P",
+  "text": "In my experience, every nontrivial machine learning project is eventually stitched together with bug-ridden and unmaintainable internal tools. These tools — often a patchwork of Jupyter Notebooks and Flask apps — are difficult to deploy, require reasoning about client-server architecture, and don’t integrate well with machine learning constructs like Tensorflow GPU sessions.",
+  "translation": "以我的经验，每个不平凡的机器学习项目最终都将使用漏洞缠身且无法维护的内部工具进行缝合。 这些工具（通常是Jupyter Notebook和Flask应用程序的拼凑而成）难以部署，需要对客户端-服务器架构进行推理，并且无法与Tensorflow GPU会话等机器学习结构很好地集成。"
+}, {
+  "tag": "P",
+  "text": "I saw this first at Carnegie Mellon, then at Berkeley, Google X, and finally while building autonomous robots at Zoox. These tools were often born as little Jupyter notebooks: the sensor calibration tool, the simulation comparison app, the LIDAR alignment app, the scenario replay tool, and so on.",
+  "translation": "我首先在卡内基·梅隆大学（Carnegie Mellon），然后在伯克利（Berkeley），谷歌X（Google X），以及后来在Zoox构建自动机器人时就看到了。 这些工具通常是在Jupyter笔记本电脑中诞生的：传感器校准工具，模拟比较应用程序，LIDAR对准应用程序，场景重播工具等等。"
+}, {
+  "tag": "P",
+  "text": "As a tool grew in importance, project managers stepped in. Processes sprouted. Requirements flowered. These solo projects gestated into scripts, and matured into gangly maintenance nightmares.",
+  "translation": "随着工具重要性的提高，项目经理介入了。过程萌芽了。 要求开花。 这些单独的项目孕育成脚本，并逐渐成为繁琐的维护噩梦。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*5BWfc_oBn2yypksY8-QuKA.png?q=20",
+  "caption": "The machine learning engineers’ ad-hoc app building flow.",
+  "type": "image",
+  "file": "1*5BWfc_oBn2yypksY8-QuKA.png"
+}, {
+  "tag": "P",
+  "text": "When a tool became crucial, we called in the tools team. They wrote fluent Vue and React. They blinged their laptops with stickers about declarative frameworks. They had a design process:",
+  "translation": "当工具变得至关重要时，我们召集了工具团队。 他们写了流利的Vue和React。 他们在笔记本电脑上贴上声明性框架的标签。 他们有一个设计过程："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*hNO5NYKjcsEV7jIpEaz8Eg.png?q=20",
+  "caption": "The tools team’s clean-slate app building flow.",
+  "type": "image",
+  "file": "1*hNO5NYKjcsEV7jIpEaz8Eg.png"
+}, {
+  "tag": "P",
+  "text": "Which was awesome. But these tools all needed new features, like weekly. And the tools team was supporting ten other projects. They would say, “we’ll update your tool again in two months.”",
+  "translation": "太棒了 但是这些工具都需要新功能，例如每周一次。 工具团队正在支持其他十个项目。 他们会说：“我们将在两个月内再次更新您的工具。”"
+}, {
+  "tag": "P",
+  "text": "So we were back to building our own tools, deploying Flask apps, writing HTML, CSS, and JavaScript, and trying to version control everything from notebooks to stylesheets. So my old Google X friend, Thiago Teixeira, and I began thinking about the following question: What if we could make building tools as easy as writing Python scripts?",
+  "translation": "因此，我们回到了构建自己的工具，部署Flask应用程序，编写HTML，CSS和JavaScript，以及尝试对从笔记本到样式表的所有内容进行版本控制的过程。 因此，我的老Google X朋友Thiago Teixeira和我开始思考以下问题：如果我们能够使构建工具像编写Python脚本一样容易，该怎么办？"
+}, {
+  "tag": "P",
+  "text": "We wanted machine learning engineers to be able to create beautiful apps without needing a tools team. These internal tools should arise as a natural byproduct of the ML workflow. Writing such tools should feel like training a neural net or performing an ad-hoc analysis in Jupyter! At the same time, we wanted to preserve all of the flexibility of a powerful app framework. We wanted to create beautiful, performant tools that engineers could show off. Basically, we wanted this:",
+  "translation": "我们希望机器学习工程师无需工具团队就能创建精美的应用程序。 这些内部工具应作为ML工作流程的自然副产品而出现。 编写此类工具应该像在Jupyter中训练神经网络或执行即席分析一样！ 同时，我们希望保留功能强大的应用程序框架的所有灵活性。 我们想要创建工程师可以炫耀的漂亮，高性能的工具。 基本上，我们想要这样："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*gdD55KRcRVRvfjsQ_Ls-XA.png?q=20",
+  "caption": "The Streamlit app building flow.",
+  "type": "image",
+  "file": "1*gdD55KRcRVRvfjsQ_Ls-XA.png"
+}, {
+  "tag": "P",
+  "text": "With an amazing beta community including engineers from Uber, Twitter, Stitch Fix, and Dropbox, we worked for a year to create Streamlit, a completely free and open source app framework for ML engineers. With each prototype, the core principles of Streamlit became simpler and purer. They are:",
+  "translation": "我们拥有一个了不起的Beta社区，其中包括来自Uber，Twitter，Stitch Fix和Dropbox的工程师，我们工作了一年时间，为Stream ML创建了Streamlit，这是一个完全免费的开源应用程序框架。 对于每个原型，Streamlit的核心原理变得越来越简单。 他们是："
+}, {
+  "tag": "P",
+  "text": "#1: Embrace Python scripting. Streamlit apps are really just scripts that run from top to bottom. There’s no hidden state. You can factor your code with function calls. If you know how to write Python scripts, you can write Streamlit apps. For example, this is how you write to the screen:",
+  "translation": "＃1：拥抱Python脚本。 Streamlit应用程序实际上只是从上到下运行的脚本。 没有隐藏状态。 您可以使用函数调用来分解代码。 如果您知道如何编写Python脚本，则可以编写Streamlit应用程序。 例如，这是您写入屏幕的方式："
+}, {
+  "tag": "PRE",
+  "text": "import streamlit as stst.write('Hello, world!')",
+  "translation": "导入streamlit为stst.write（'Hello，world！'）"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*VNqEOqFJQl5fB7Z0ed5lMw.png?q=20",
+  "caption": "Nice to meet you.",
+  "type": "image",
+  "file": "1*VNqEOqFJQl5fB7Z0ed5lMw.png"
+}, {
+  "tag": "P",
+  "text": "#2: Treat widgets as variables. There are no callbacks in Streamlit! Every interaction simply reruns the script from top to bottom. This approach leads to really clean code:",
+  "translation": "＃2：将小部件视为变量。 Streamlit中没有回调！ 每次交互都只是从上到下重新运行脚本。 这种方法可以产生非常干净的代码："
+}, {
+  "tag": "PRE",
+  "text": "import streamlit as stx = st.slider('x')st.write(x, 'squared is', x * x)",
+  "translation": "导入streamlit为stx = st.slider（'x'）st.write（x，'squared is'，x * x）"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*h8BwonRrhnh3KtjO5cDEcA.png?q=20",
+  "caption": "An interactive Streamlit app in three lines of code.",
+  "type": "image",
+  "file": "1*h8BwonRrhnh3KtjO5cDEcA.png"
+}, {
+  "tag": "P",
+  "text": "#3: Reuse data and computation. What if you download lots of data or perform complex computation? The key is to safely reuse information across runs. Streamlit introduces a cache primitive that behaves like a persistent, immutable-by-default, data store that lets Streamlit apps safely and effortlessly reuse information. For example, this code downloads data only once from the Udacity Self-driving car project, yielding a simple, fast app:",
+  "translation": "＃3：重用数据和计算。 如果您下载大量数据或执行复杂的计算该怎么办？ 关键是跨运行安全地重用信息。 Streamlit引入了一种缓存原语，其行为类似于持久的默认情况下不可变的数据存储，可让Streamlit应用程序安全，轻松地重用信息。 例如，此代码仅从Udacity自动驾驶汽车项目下载一次数据，从而产生一个简单，快速的应用程序："
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/treuille/c633dc8bc86efaa98eb8abe76478aa81/raw/2019640b6a9ff5da5ab6d5b11b3345ddc764b285/cache_example.py",
+  "code": "import streamlit as st\nimport pandas as pd\n\n# Reuse this data across runs!\nread_and_cache_csv = st.cache(pd.read_csv)\n\nBUCKET = \"https://streamlit-self-driving.s3-us-west-2.amazonaws.com/\"\ndata = read_and_cache_csv(BUCKET + \"labels.csv.gz\", nrows=1000)\ndesired_label = st.selectbox('Filter to:', ['car', 'truck'])\nst.write(data[data.label == desired_label])"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*vLvk0xZUVEx1GcrzYhWxXQ.png?q=20",
+  "caption": "The output of running the st.cache example above.",
+  "type": "image",
+  "file": "1*vLvk0xZUVEx1GcrzYhWxXQ.png"
+}, {
+  "tag": "P",
+  "text": "In short, Streamlit works like this:",
+  "translation": "简而言之，Streamlit的工作方式如下："
+}, {
+  "tag": "OL",
+  "texts": ["The entire script is run from scratch for each user interaction.", "Streamlit assigns each variable an up-to-date value given widget states.", "Caching allows Streamlit to skip redundant data fetches and computation."],
+  "translations": ["对于每个用户交互，整个脚本都是从头开始运行的。", "Streamlit在给定小部件状态的情况下为每个变量分配一个最新值。", "缓存允许Streamlit跳过冗余数据获取和计算。"]
+}, {
+  "tag": "P",
+  "text": "Or in pictures:",
+  "translation": "或在图片中："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*l4gxFYEZnRhysQ_QWIVJgA.png?q=20",
+  "caption": "User events trigger Streamlit to rerun the script from scratch. Only the cache persists across runs.",
+  "type": "image",
+  "file": "1*l4gxFYEZnRhysQ_QWIVJgA.png"
+}, {
+  "tag": "P",
+  "text": "If this sounds intriguing, you can try it right now! Just run:",
+  "translation": "如果这听起来很有趣，那么您可以立即尝试！ 赶紧跑："
+}, {
+  "tag": "PRE",
+  "text": "$ pip install --upgrade streamlit $ streamlit hello   You can now view your Streamlit app in your browser.   Local URL: http://localhost:8501   Network URL: http://10.0.1.29:8501",
+  "translation": "$ pip install --upgrade streamlit $ streamlit你好现在，您可以在浏览器中查看Streamlit应用程序。 本地URL：http：// localhost：8501网络URL：http://10.0.1.29:8501"
+}, {
+  "tag": "P",
+  "text": "This will automatically pop open a web browser pointing to your local Streamlit app. If not, just click the link.",
+  "translation": "这将自动弹出打开一个指向您本地Streamlit应用程序的Web浏览器。 如果没有，只需单击链接。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*_Btm7O0pYqAk_enXUPECLw.png?q=20",
+  "caption": "To see more examples like this fractal animation, run streamlit hello from the command line.",
+  "type": "image",
+  "file": "1*_Btm7O0pYqAk_enXUPECLw.png"
+}]
