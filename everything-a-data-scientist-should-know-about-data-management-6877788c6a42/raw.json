@@ -1,0 +1,226 @@
+[{
+  "tag": "P",
+  "text": "Disclaimer: The views expressed in this article are our own and do not represent the views of our past or current employers.",
+  "translation": "免责声明：本文中表达的观点是我们自己的观点，并不代表我们过去或现在的雇主的观点。"
+}, {
+  "tag": "H2",
+  "text": "Case Study: Building the End-to-End Data Science Infrastructure for a Recommendation App Startup",
+  "translation": "案例研究：为推荐应用程序启动构建端到端数据科学基础架构"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*pY8S1N-OJpvGWneX?q=20",
+  "caption": "Machine learning packages for different types of data environment (Source: Kosyakov (2016))",
+  "type": "image",
+  "file": "0*pY8S1N-OJpvGWneX"
+}, {
+  "tag": "P",
+  "text": "Building out a viable data science product involves much more than just building a machine learning model with scikit-learn, pickling it, and loading it on a server. It requires an understanding of how all the parts of the enterprise’s ecosystem work together, starting with where/how the data flows into the data team, the environment where the data is processed/transformed, the enterprise’s conventions for visualizing/presenting data, and how the model output will be converted as input for some other enterprise applications. The main goals involve building a process that will be easy to maintain; where models can be iterated on and the performance is reproducible; and the model’s output can be easily understood and visualized for other stakeholders so that they may make better informed business decisions. Achieving those goals require selecting the right tools, as well as an understanding of what others in the industry are doing and the best practices.",
+  "translation": "构建可行的数据科学产品所涉及的不只是使用scikit-learn构建机器学习模型，对其进行腌制并将其加载到服务器上。 它需要了解企业生态系统的所有部分如何协同工作，从数据在何处/如何流入数据团队，处理/转换数据的环境，企业用于可视化/呈现数据的约定开始，以及 模型输出将转换为其他一些企业应用程序的输入。 主要目标涉及建立易于维护的流程； 在哪里可以迭代模型并且性能可重现； 并且其他利益相关者可以轻松理解和可视化模型的输出，以便他们可以做出更明智的业务决策。 要实现这些目标，就需要选择正确的工具，并了解行业中其他人在做什么以及最佳实践。"
+}, {
+  "tag": "P",
+  "text": "Let’s illustrate with a scenario: suppose you just got hired as the lead data scientist for a vacation recommendation app startup that is expected to collect hundreds of gigabytes of both structured (customer profiles, temperatures, prices, and transaction records) and unstructured (customers’ posts/comments and image files) data from users daily. Your predictive models would need to be retrained with new data weekly and make recommendations instantaneously on demand. Since you expect your app to be a huge hit, your data collection, storage, and analytics capacity would have to be extremely scalable. How would you design your data science process and productionize your models? What are the tools that you’d need to get the job done? Since this is a startup and you are the lead — and perhaps the only — data scientist, it’s on you to make these decisions.",
+  "translation": "让我们用一个场景进行说明：假设您刚刚被聘为度假推荐应用程序启动的首席数据科学家，该应用程序有望收集数百GB的结构化（客户资料，温度，价格和交易记录）和非结构化（客户 每日来自用户的帖子/评论和图片文件）数据。 您的预测模型将需要每周重新训练以提供新数据，并根据需要立即提出建议。 由于您希望应用程序会大受欢迎，因此您的数据收集，存储和分析功能必须具有极高的可扩展性。 您将如何设计数据科学流程并生产模型？ 完成工作需要哪些工具？ 由于这是一家初创企业，而您是数据科学家的领导者（也许是唯一的），因此由您来做出这些决定。"
+}, {
+  "tag": "P",
+  "text": "First, you’d have to figure out how to set up the data pipeline that takes in the raw data from data sources, processes the data, and feeds the processed data to databases. The ideal data pipeline has low event latency (ability to query data as soon as it’s been collected); scalability (able to handle massive amount of data as your product scales); interactive querying (support both batch queries and smaller interactive queries that allow data scientists to explore the tables and schemas); versioning (ability to make changes to the pipeline without bringing down the pipeline and losing data); monitoring (the pipeline should generate alerts when data stops coming in); and testing (ability to test the pipeline without interruptions). Perhaps most importantly, it had better not interfere with daily business operations — e.g. heads will roll if the new model you’re testing causes your operational database to grind to a halt. Building and maintaining the data pipeline is usually the responsibility of a data engineer (for more details, this article has an excellent overview on building the data pipeline for startups), but a data scientist should at least be familiar with the process, its limitations, and the tools needed to access the processed data for analysis.",
+  "translation": "首先，您必须弄清楚如何建立数据管道，该管道将从数据源中获取原始数据，处理数据，并将处理后的数据馈送到数据库中。理想的数据管道具有较低的事件等待时间（能够在收集到数据后立即查询数据）；可扩展性（能够随着您的产品规模处理大量数据）；交互式查询（同时支持批处理查询和较小的交互式查询，这些查询允许数据科学家探索表和模式）；版本控制（在不中断管道且不会丢失数据的情况下更改管道的能力）；监视（当数据停止进入时，管道应生成警报）；和测试（能够不间断地测试管道的能力）。也许最重要的是，最好不要干扰日常业务运营-例如如果您正在测试的新模型导致您的运营数据库陷入瘫痪，那么头将滚动。建立和维护数据管道通常是数据工程师的责任（有关更多详细信息，本文对为初创企业构建数据管道进行了很好的概述），但是数据科学家至少应该熟悉该过程，其局限性，以及访问处理后的数据进行分析所需的工具。"
+}, {
+  "tag": "P",
+  "text": "Next, you’d have to decide if you want to set up on-premises infrastructure or use cloud services. For a startup, the top priority is to scale data collection without scaling operational resources. As mentioned earlier, on-premises infrastructure requires huge upfront and maintenance costs, so cloud services tend to be a better option for startups. Cloud services allow scaling to match demand and require minimal maintenance efforts, so that your small team of staff could focus on the product and analytics instead of infrastructure management.",
+  "translation": "接下来，您必须决定是要设置本地基础结构还是使用云服务。 对于一家初创公司而言，最重要的是在不扩展运营资源的情况下扩展数据收集。 如前所述，内部部署基础架构需要大量的前期和维护成本，因此云服务对于初创公司而言往往是更好的选择。 云服务允许扩展以适应需求并需要最少的维护工作，因此您的一小团队人员可以专注于产品和分析，而不是基础架构管理。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*VsCnCDsZeLUwRCam?q=20",
+  "caption": "Examples of vendors that provide Hadoop-based solutions (Source: WikiCommons)",
+  "type": "image",
+  "file": "0*VsCnCDsZeLUwRCam"
+}, {
+  "tag": "P",
+  "text": "In order to choose a cloud service provider, you’d have to first establish the data that you’d need for analytics, and the databases and analytics infrastructure most suitable for those data types. Since there’d be both structured and unstructured data in your analytics pipeline, you might want to set up both a Data Warehouse and a Data Lake. An important thing to consider for data scientists is whether the storage layer supports the big data tools that are needed to build the models, and if the database provides effective in-database analytics. For example, some ML libraries such as Spark’s MLlib cannot be used effectively with databases as the main interface for data — the data would have to be unloaded from the database before it can be operated on, which could be extremely time-consuming as data volume grows and might become a bottleneck when you’ve to retrain your models regularly (thus causing another “heads-rolling” situation).",
+  "translation": "为了选择云服务提供商，您必须首先建立分析所需的数据，以及最适合这些数据类型的数据库和分析基础架构。 由于您的分析渠道中既有结构化数据又有非结构化数据，因此您可能要同时设置数据仓库和数据湖。 数据科学家需要考虑的重要事情是存储层是否支持构建模型所需的大数据工具，以及数据库是否提供有效的数据库内分析。 例如，某些ML库（例如Spark的MLlib）不能有效地与数据库一起用作数据的主要接口-必须先从数据库中卸载数据，然后才能对其进行操作，这可能是非常耗时的数据量 当您必须定期重新训练模型时，它会增长并可能成为瓶颈（从而导致另一种“前滚”情况）。"
+}, {
+  "tag": "P",
+  "text": "For data science in the cloud, most cloud providers are working hard to develop their native machine learning capabilities that allow data scientists to build and deploy machine learning models easily with data stored in their own platform (Amazon has SageMaker, Google has BigQuery ML, Microsoft has Azure Machine Learning). But the toolsets are still developing and often incomplete: for example, BigQuery ML currently only support linear regression, binary and multiclass logistic regression, K-means clustering, and TensorFlow model importing. If you decide to use these tools, you’d have to test their capabilities thoroughly to make sure they do what you need them to do.",
+  "translation": "对于云中的数据科学，大多数云提供商都在努力开发其本机机器学习功能，以使数据科学家能够使用存储在其自己平台中的数据轻松构建和部署机器学习模型（亚马逊拥有SageMaker，谷歌拥有BigQuery ML，微软 具有Azure机器学习）。 但是工具集仍在开发中，并且常常不完整：例如，BigQuery ML当前仅支持线性回归，二进制和多类逻辑回归，K-means聚类和TensorFlow模型导入。 如果您决定使用这些工具，则必须彻底测试它们的功能，以确保它们能够按照您的要求进行操作。"
+}, {
+  "tag": "P",
+  "text": "Another major thing to consider when choosing a cloud provider is vendor-lock in. If you choose a proprietary cloud database solution, you most likely won’t be able to access the software or the data in your local environment, and switching vendor would require migrating to a different database, which could be costly. One way to address this problem is to choose vendors that support open source technologies (here’s Netflix explaining why they use open source software). Another advantage of using open source technologies is that they tend to attract a larger community of users, meaning it’d be easier for you to hire someone who has the experience and skills to work within your infrastructure. Another way to address the problem is to choose third-party vendors (such as Pivotal Greenplum and Snowflake) that provide cloud database solutions using other major cloud providers as storage backend, which also allows you to store your data in multiple clouds if that fits your startup’s needs.",
+  "translation": "选择云提供商时要考虑的另一项主要事情是锁定供应商。如果选择专有的云数据库解决方案，则很可能将无法访问本地环境中的软件或数据，因此更换供应商将需要迁移到其他数据库可能会很昂贵。解决此问题的一种方法是选择支持开源技术的供应商（这里是Netflix解释为什么他们使用开源软件的原因）。使用开源技术的另一个优势是，它们倾向于吸引更大的用户群体，这意味着您可以更轻松地雇用具有经验和技能的人员来在基础架构中工作。解决该问题的另一种方法是选择使用其他主要云提供商作为存储后端来提供云数据库解决方案的第三方供应商（例如Pivotal Greenplum和Snowflake），如果适合，您还可以将数据存储在多个云中创业的需求。"
+}, {
+  "tag": "P",
+  "text": "Finally, since you expect the company to grow, you’d have to put in place a robust cloud management practice to secure your cloud and prevent data loss and leakages — such as managing data access and securing interfaces and APIs. You’d also want to implement data governance best practices to maintain data quality and ensure your Data Lake won’t turn into a Data Swamp.",
+  "translation": "最后，由于您希望公司发展，因此必须采取稳健的云管理实践来保护您的云并防止数据丢失和泄漏，例如管理数据访问并保护接口和API。 您还希望实施数据治理最佳实践，以保持数据质量并确保您的Data Lake不会变成数据沼泽。"
+}, {
+  "tag": "P",
+  "text": "As you can see, there’s so much more in an enterprise data science project than tuning the hyperparameters in your machine learning models! We hope this high-level overview has gotten you excited to learn more about data management, and maybe pick up a few things to impress the data engineers at the water cooler.",
+  "translation": "如您所见，在企业数据科学项目中，除了调整机器学习模型中的超参数之外，还有更多其他功能！ 我们希望这个高层次的概述能使您兴奋地学习更多有关数据管理的知识，并且也许可以从中获得一些启发，从而给饮水机的数据工程师留下深刻的印象。"
+}, {
+  "tag": "H2",
+  "text": "The Rise of Unstructured Data & Big Data Tools",
+  "translation": "非结构化数据和大数据工具的兴起"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*Fz7nDoYorQS9cRQaLP-SkA.jpeg?q=20",
+  "caption": "IBM 305 RAMAC (Source: WikiCommons)",
+  "type": "image",
+  "file": "1*Fz7nDoYorQS9cRQaLP-SkA.jpeg"
+}, {
+  "tag": "P",
+  "text": "The story of data science is really the story of data storage. In the pre-digital age, data was stored in our heads, on clay tablets, or on paper, which made aggregating and analyzing data extremely time-consuming. In 1956, IBM introduced the first commercial computer with a magnetic hard drive, 305 RAMAC. The entire unit required 30 ft x 50 ft of physical space, weighed over a ton, and for $3,200 a month, companies could lease the unit to store up to 5 MB of data. In the 60 years since, prices per gigabyte in DRAM has dropped from a whopping $2.64 billion in 1965 to $4.9 in 2017. Besides being magnitudes cheaper, data storage also became much denser/smaller in size. A disk platter in the 305 RAMAC stored a hundred bits per square inch, compared to over a trillion bits per square inch in a typical disk platter today.",
+  "translation": "数据科学的故事实际上就是数据存储的故事。 在数字化时代之前，数据被存储在我们的头脑中，粘土板上或纸上，这使得汇总和分析数据非常耗时。 1956年，IBM推出了第一台带有磁性硬盘驱动器的商用计算机305 RAMAC。 整个设备需要30英尺x 50英尺的物理空间，重达一吨，每月花费3200美元，公司可以租用该设备以存储多达5 MB的数据。 从那以后的60年中，DRAM的每千兆字节价格已从1965年的26.4亿美元下降到2017年的4.9美元。除了价格便宜之外，数据存储也变得越来越密集/越来越小。 305 RAMAC中的磁盘存储每平方英寸存储一百位，而如今的典型磁盘存储每平方英寸存储超过万亿位。"
+}, {
+  "tag": "P",
+  "text": "This combination of dramatically reduced cost and size in data storage is what makes today’s big data analytics possible. With ultra-low storage cost, building the data science infrastructure to collect and extract insights from huge amount of data became a profitable approach for businesses. And with the profusion of IoT devices that constantly generate and transmit users’ data, businesses are collecting data on an ever increasing number of activities, creating a massive amount of high-volume, high-velocity, and high-variety information assets (or the “three Vs of big data”). Most of these activities (e.g. emails, videos, audio, chat messages, social media posts) generate unstructured data, which accounts for almost 80% of total enterprise data today and is growing twice as fast as structured data in the past decade.",
+  "translation": "数据存储成本和大小的显着降低结合在一起，才使当今的大数据分析成为可能。 以超低的存储成本，建立数据科学基础架构以从大量数据中收集和提取见解已成为企业的获利方法。 随着大量IoT设备不断生成和传输用户数据，企业正在收集与数量越来越多的活动有关的数据，从而创建了大量的高容量，高速度和高多样性的信息资产（或 “大数据的三个Vs”）。 其中大多数活动（例如电子邮件，视频，音频，聊天消息，社交媒体帖子）都会生成非结构化数据，这些数据占当今企业总数据的近80％，并且其增长速度是过去十年中结构化数据的两倍。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*JeIC6PreHjgh06w3WqkXMA.jpeg?q=20",
+  "caption": "125 Exabytes of enterprise data was stored in 2017; 80% was unstructured data. (Source: Credit Suisse)",
+  "type": "image",
+  "file": "1*JeIC6PreHjgh06w3WqkXMA.jpeg"
+}, {
+  "tag": "P",
+  "text": "This massive data growth dramatically transformed the way data is stored and analyzed, as the traditional tools and approaches were not equipped to handle the “three Vs of big data.” New technologies were developed with the ability to handle the ever increasing volume and variety of data, and at a faster speed and lower cost. These new tools also have profound effects on how data scientists do their job — allowing them to monetize the massive data volume by performing analytics and building new applications that were not possible before. Below are the major big data management innovations that we think every data scientist should know about.",
+  "translation": "大量的数据增长极大地改变了数据的存储和分析方式，因为传统的工具和方法无法应对“三个大数据”。开发出了能够处理不断增长的数量和种类的新技术的新技术。 数据，并且速度更快，成本更低。 这些新工具还对数据科学家的工作方式产生深远影响-允许他们通过执行分析和构建以前无法实现的新应用程序，通过海量数据获利。 以下是我们认为每位数据科学家都应了解的主要大数据管理创新。"
+}, {
+  "tag": "P",
+  "text": "Relational Databases & NoSQL",
+  "translation": "关系数据库和NoSQL"
+}, {
+  "tag": "P",
+  "text": "Relational Database Management Systems (RDBMS) emerged in the 1970’s to store data as tables with rows and columns, using Structured Query Language (SQL) statements to query and maintain the database. A relational database is basically a collection of tables, each with a schema that rigidly defines the attributes and types of data that they store, as well as keys that identify specific columns or rows to facilitate access. The RDBMS landscape was once ruled by Oracle and IBM, but today many open source options, like MySQL, SQLite, and PostgreSQL are just as popular.",
+  "translation": "关系数据库管理系统（RDBMS）于1970年代问世，它使用结构化查询语言（SQL）语句查询和维护数据库，将数据存储为具有行和列的表。 关系数据库基本上是表的集合，每个表都具有一个模式，该模式严格定义了它们存储的数据的属性和类型，以及用于标识特定列或行以方便访问的键。 RDBMS格局曾经由Oracle和IBM统治，但是如今许多开源选项（例如MySQL，SQLite和PostgreSQL）同样受欢迎。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*BcJW0soJynaxRoK_?q=20",
+  "caption": "RDBMS ranked by popularity (Source: DB-Engines)",
+  "type": "image",
+  "file": "0*BcJW0soJynaxRoK_"
+}, {
+  "tag": "P",
+  "text": "Relational databases found a home in the business world due to some very appealing properties. Data integrity is absolutely paramount in relational databases. RDBMS satisfy the requirements of Atomicity, Consistency, Isolation, and Durability (or ACID-compliant) by imposing a number of constraints to ensure that the stored data is reliable and accurate, making them ideal for tracking and storing things like account numbers, orders, and payments. But these constraints come with costly tradeoffs. Because of the schema and type constraints, RDBMS are terrible at storing unstructured or semi-structured data. The rigid schema also makes RDBMS more expensive to set up, maintain and grow. Setting up a RDBMS requires users to have specific use cases in advance; any changes to the schema are usually difficult and time-consuming. In addition, traditional RDBMS were designed to run on a single computer node, which means their speed is significantly slower when processing large volumes of data. Sharding RDBMS in order to scale horizontally while maintaining ACID compliance is also extremely challenging. All these attributes make traditional RDBMS ill-equipped to handle modern big data.",
+  "translation": "关系数据库由于具有一些非常吸引人的特性而在商业世界中找到了家。在关系数据库中，数据完整性绝对至关重要。 RDBMS通过施加许多约束条件来确保存储的数据可靠且准确，从而满足跟踪，存储，帐号，订单，和付款。但是这些限制伴随着代价高昂的折衷。由于架构和类型的限制，RDBMS在存储非结构化或半结构化数据时非常糟糕。严格的架构也使RDBMS的设置，维护和增长变得更加昂贵。设置RDBMS要求用户事先具有特定的用例。对模式的任何更改通常都是困难且耗时的。此外，传统的RDBMS被设计为在单个计算机节点上运行，这意味着在处理大量数据时，它们的速度大大降低。分片RDBMS以便在保持ACID合规性的同时进行水平扩展也非常具有挑战性。所有这些属性使传统的RDBMS不能很好地处理现代大数据。"
+}, {
+  "tag": "P",
+  "text": "By the mid-2000’s, the existing RDBMS could no longer handle the changing needs and exponential growth of a few very successful online businesses, and many non-relational (or NoSQL) databases were developed as a result (here’s a story on how Facebook dealt with the limitations of MySQL when their data volume started to grow). Without any known solutions at the time, these online businesses invented new approaches and tools to handle the massive amount of unstructured data they collected: Google created GFS, MapReduce, and BigTable; Amazon created DynamoDB; Yahoo created Hadoop; Facebook created Cassandra and Hive; LinkedIn created Kafka. Some of these businesses open sourced their work; some published research papers detailing their designs, resulting in a proliferation of databases with the new technologies, and NoSQL databases emerged as a major player in the industry.",
+  "translation": "到2000年代中期，现有的RDBMS不再能够处理一些非常成功的在线业务的变化需求和指数增长，结果开发了许多非关系（或NoSQL）数据库（这是有关Facebook如何处理的故事 数据量开始增长时受到MySQL的限制）。 当时还没有任何已知的解决方案，这些在线业务发明了新的方法和工具来处理他们收集的大量非结构化数据：Google创建了GFS，MapReduce和BigTable； 亚马逊创建了DynamoDB； 雅虎创建了Hadoop； Facebook创建了Cassandra和Hive； LinkedIn创建了Kafka。 这些业务中有一些是开源的。 一些发表的研究论文详细介绍了它们的设计，导致使用新技术的数据库激增，NoSQL数据库成为该行业的主要参与者。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*EeRO-8cl2oZkZ49J?q=20",
+  "caption": "An explosion of database options since the 2000’s. Source: Korflatis et. al (2016)",
+  "type": "image",
+  "file": "0*EeRO-8cl2oZkZ49J"
+}, {
+  "tag": "P",
+  "text": "NoSQL databases are schema agnostic and provide the flexibility needed to store and manipulate large volumes of unstructured and semi-structured data. Users don’t need to know what types of data will be stored during set-up, and the system can accommodate changes in data types and schema. Designed to distribute data across different nodes, NoSQL databases are generally more horizontally scalable and fault-tolerant. However, these performance benefits also come with a cost — NoSQL databases are not ACID compliant and data consistency is not guaranteed. They instead provide “eventual consistency”: when old data is getting overwritten, they’d return results that are a little wrong temporarily. For example, Google’s search engine index can’t overwrite its data while people are simultaneously searching a given term, so it doesn’t give us the most up-to-date results when we search, but it gives us the latest, best answer it can. While this setup won’t work in situations where data consistency is absolutely necessary (such as financial transactions); it’s just fine for tasks that require speed rather than pin-point accuracy.",
+  "translation": "NoSQL数据库与模式无关，并提供存储和处理大量非结构化和半结构化数据所需的灵活性。用户无需知道在设置过程中将存储什么类型的数据，并且系统可以适应数据类型和架构的更改。设计用于在不同节点之间分布数据，NoSQL数据库通常具有更高的水平可扩展性和容错性。但是，这些性能优势也要付出代价-NoSQL数据库不符合ACID，并且不能保证数据的一致性。相反，它们提供了“最终的一致性”：当旧数据被覆盖时，它们会暂时返回错误的结果。例如，当人们同时搜索给定术语时，Google的搜索引擎索引无法覆盖其数据，因此当我们进行搜索时，它不会为我们提供最新的结果，但可以为我们提供最新，最佳的答案它可以。尽管此设置在绝对需要数据一致性（例如财务交易）的情况下不起作用；对于需要速度而不是精确度的任务来说，这是很好的选择。"
+}, {
+  "tag": "P",
+  "text": "There are now several different categories of NoSQL, each serving some specific purposes. Key-Value Stores, such as Redis, DynamoDB, and Cosmos DB, store only key-value pairs and provide basic functionality for retrieving the value associated with a known key. They work best with a simple database schema and when speed is important. Wide Column Stores, such as Cassandra, Scylla, and HBase, store data in column families or tables, and are built to manage petabytes of data across a massive, distributed system. Document Stores, such as MongoDB and Couchbase, store data in XML or JSON format, with the document name as key and the contents of the document as value. The documents can contain many different value types, and can be nested, making them particularly well-suited to manage semi-structured data across distributed systems. Graph Databases, such as Neo4J and Amazon Neptune, represent data as a network of related nodes or objects in order to facilitate data visualizations and graph analytics. Graph databases are particularly useful for analyzing the relationships between heterogeneous data points, such as in fraud prevention or Facebook’s friends graph.",
+  "translation": "现在有几种不同的NoSQL类别，每种类别都有特定的用途。键值存储（例如Redis，DynamoDB和Cosmos DB）仅存储键值对，并提供用于检索与已知键关联的值的基本功能。当速度很重要时，它们最适合使用简单的数据库架构。宽列存储（例如Cassandra，Scylla和HBase）将数据存储在列族或表中，并被构建为在大规模分布式系统中管理PB级数据。文档存储（例如MongoDB和Couchbase）以XML或JSON格式存储数据，文档名称为键，文档内容为值。这些文档可以包含许多不同的值类型，并且可以嵌套，使它们特别适合于管理分布式系统中的半结构化数据。诸如Neo4J和Amazon Neptune之类的图形数据库将数据表示为相关节点或对象的网络，以便于数据可视化和图形分析。图形数据库对于分析异构数据点之间的关系特别有用，例如在欺诈预防或Facebook的朋友图形中。"
+}, {
+  "tag": "P",
+  "text": "MongoDB is currently the most popular NoSQL database, and has delivered substantial values for some businesses that have been struggling to handle their unstructured data with the traditional RDBMS approach. Here are two industry examples: after MetLife spent years trying to build a centralized customer database on a RDBMS that could handle all its insurance products, someone at an internal hackathon built one with MongoDB within hours, which went to production in 90 days. YouGov, a market research firm that collects 5 gigabits of data an hour, saved 70 percent of the storage capacity it formerly used by migrating from RDBMS to MongoDB.",
+  "translation": "MongoDB是目前最流行的NoSQL数据库，并且为一些使用传统RDBMS方法处理非结构化数据的企业提供了可观的价值。 这是两个行业示例：大都会人寿（MetLife）花费了数年时间试图在可以处理其所有保险产品的RDBMS上建立集中式客户数据库之后，内部黑客马拉松中的某人在数小时内就用MongoDB构建了一个数据库，并在90天内投入生产。 市场研究公司YouGov每小时收集5 GB的数据，通过从RDBMS迁移到MongoDB，节省了以前使用的70％的存储容量。"
+}, {
+  "tag": "P",
+  "text": "Data Warehouse, Data Lake, & Data Swamp",
+  "translation": "数据仓库，数据湖和数据沼泽"
+}, {
+  "tag": "P",
+  "text": "As data sources continue to grow, performing data analytics with multiple databases became inefficient and costly. One solution called Data Warehouse emerged in the 1980’s, which centralizes an enterprise’s data from all of its databases. Data Warehouse supports the flow of data from operational systems to analytics/decision systems by creating a single repository of data from various sources (both internal and external). In most cases, a Data Warehouse is a relational database that stores processed data that is optimized for gathering business insights. It collects data with predetermined structure and schema coming from transactional systems and business applications, and the data is typically used for operational reporting and analysis.",
+  "translation": "随着数据源的不断增长，使用多个数据库执行数据分析变得效率低下且成本高昂。 1980年代出现了一种称为数据仓库的解决方案，该解决方案集中了企业所有数据库中的数据。 数据仓库通过创建来自各种来源（内部和外部）的单个数据存储库，支持从操作系统到分析/决策系统的数据流。 在大多数情况下，数据仓库是一个关系数据库，用于存储经过处理的数据，这些数据针对收集业务见解进行了优化。 它收集来自交易系统和业务应用程序的具有预定结构和架构的数据，并且该数据通常用于运营报告和分析。"
+}, {
+  "tag": "P",
+  "text": "But because data that goes into data warehouses needs to be processed before it gets stored — with today’s massive amount of unstructured data, that could take significant time and resources. In response, businesses started maintaining Data Lakes in the 2010's, which store all of an enterprise’s structured and unstructured data at any scale. Data Lakes store raw data, and could be set up without having to first define the data structure and schema. Data Lakes allow users to run analytics without having to move the data to a separate analytics system, enabling businesses to gain insights from new sources of data that was not available for analysis before, for instance by building machine learning models using data from log files, click-streams, social media, and IoT devices. By making all of the enterprise data readily available for analysis, data scientists could answer a new set of business questions, or tackle old questions with new data.",
+  "translation": "但是，由于存储在数据仓库中的数据需要在存储之前进行处理-使用当今大量的非结构化数据，这可能会花费大量时间和资源。 作为响应，企业开始在2010年代维护Data Lakes，该数据湖以任意规模存储企业的所有结构化和非结构化数据。 数据湖存储原始数据，无需先定义数据结构和架构即可进行设置。 数据湖使用户无需将数据移至单独的分析系统即可运行分析，从而使企业能够从以前无法进行分析的新数据源中获取见解，例如，通过使用日志文件中的数据构建机器学习模型， 点击流，社交媒体和物联网设备。 通过使所有企业数据易于分析，数据科学家可以回答一组新的业务问题，或者用新数据解决旧问题。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*QC4YhkOjmsLrnt6f?q=20",
+  "caption": "Data Warehouse and Data Lake Comparisons (Source: AWS)",
+  "type": "image",
+  "file": "0*QC4YhkOjmsLrnt6f"
+}, {
+  "tag": "P",
+  "text": "A common challenge with the Data Lake architecture is that without the appropriate data quality and governance framework in place, when terabytes of structured and unstructured data flow into the Data Lakes, it often becomes extremely difficult to sort through their content. The Data Lakes could turn into Data Swamps as the stored data become too messy to be usable. Many organizations are now calling for more data governance and metadata management practices to prevent Data Swamps from forming.",
+  "translation": "Data Lake体系结构的一个共同挑战是，如果没有适当的数据质量和治理框架，当数以千亿计的结构化和非结构化数据流入Data Lakes时，对它们的内容进行分类通常变得非常困难。 由于存储的数据太乱而无法使用，因此数据湖可能会变成数据沼泽。 现在，许多组织都在呼吁采取更多的数据治理和元数据管理实践，以防止形成数据沼泽。"
+}, {
+  "tag": "P",
+  "text": "Distributed & Parallel Processing: Hadoop, Spark, & MPP",
+  "translation": "分布式和并行处理：Hadoop，Spark和MPP"
+}, {
+  "tag": "P",
+  "text": "While storage and computing needs grew by leaps and bounds in the last several decades, traditional hardware has not advanced enough to keep up. Enterprise data no longer fits neatly in standard storage, and the computation power required to handle most big data analytics tasks might take weeks, months, or simply not possible to complete on a standard computer. To overcome this deficiency, many new technologies have evolved to include multiple computers working together, distributing the database to thousands of commodity servers. When a network of computers are connected and work together to accomplish the same task, the computers form a cluster. A cluster can be thought of as a single computer, but can dramatically improve the performance, availability, and scalability over a single, more powerful machine, and at a lower cost by using commodity hardware. Apache Hadoop is an example of distributed data infrastructures that leverage clusters to store and process massive amounts of data, and what enables the Data Lake architecture."
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*Qll4HLSAjByLHgn3?q=20",
+  "caption": "Evolution of database technologies (Source: Business Analytic 3.0)",
+  "type": "image",
+  "file": "0*Qll4HLSAjByLHgn3"
+}, {
+  "tag": "P",
+  "text": "When you think Hadoop, think “distribution.” Hadoop consists of three main components: Hadoop Distributed File System (HDFS), a way to store and keep track of your data across multiple (distributed) physical hard drives; MapReduce, a framework for processing data across distributed processors; and Yet Another Resource Negotiator (YARN), a cluster management framework that orchestrates the distribution of things such as CPU usage, memory, and network bandwidth allocation across distributed computers. Hadoop’s processing layer is an especially notable innovation: MapReduce is a two step computational approach for processing large (multi-terabyte or greater) data sets distributed across large clusters of commodity hardware in a reliable, fault-tolerant way. The first step is to distribute your data across multiple computers (Map), with each performing a computation on its slice of the data in parallel. The next step is to combine those results in a pair-wise manner (Reduce). Google published a paper on MapReduce in 2004, which got picked up by Yahoo programmers who implemented it in the open source Apache environment in 2006, providing every business the capability to store an unprecedented volume of data using commodity hardware. Even though there are many open source implementations of the idea, the Google brand name MapReduce has stuck around, kind of like Jacuzzi or Kleenex.",
+  "translation": "当您考虑Hadoop时，请考虑“分布式”。Hadoop由三个主要组件组成：Hadoop分布式文件系统（HDFS），一种跨多个（分布式）物理硬盘驱动器存储和跟踪数据的方式； MapReduce，一个用于在分布式处理器上处理数据的框架；还有另一个资源协商程序（YARN），它是一个群集管理框架，可在分布式计算机之间协调诸如CPU使用率，内存和网络带宽分配之类的事物的分布。 Hadoop的处理层是一项特别引人注目的创新：MapReduce是一种两步计算方法，用于以可靠，容错的方式处理分布在大型商品硬件集群中的大型（多TB或更大）数据集。第一步是将数据分布在多台计算机（地图）上，每台计算机并行对其数据切片执行计算。下一步是以成对的方式合并这些结果（减少）。 Google于2004年在MapReduce上发表了一篇论文，该论文得到了Yahoo程序员的青睐，他们于2006年在开源Apache环境中实现了该功能，从而为每家企业提供了使用商品硬件存储前所未有的数据量的功能。即使该想法有许多开源实现，Google品牌名称MapReduce仍然存在，就像极可意浴缸或Kleenex。"
+}, {
+  "tag": "P",
+  "text": "Hadoop is built for iterative computations, scanning massive amounts of data in a single operation from disk, distributing the processing across multiple nodes, and storing the results back on disk. Querying zettabytes of indexed data that would take 4 hours to run in a traditional data warehouse environment could be completed in 10–12 seconds with Hadoop and HBase. Hadoop is typically used to generate complex analytics models or high volume data storage applications such as retrospective and predictive analytics; machine learning and pattern matching; customer segmentation and churn analysis; and active archives.",
+  "translation": "Hadoop专为迭代计算而构建，可通过一次操作从磁盘扫描大量数据，将处理分布在多个节点上，并将结果存储回磁盘。 在Hadoop和HBase中，在传统的数据仓库环境中运行需要4个小时才能运行的索引数据的ZB的查询可以在10到12秒内完成。 Hadoop通常用于生成复杂的分析模型或大容量数据存储应用程序，例如追溯和预测分析。 机器学习和模式匹配； 客户细分和客户流失分析； 和活动档案。"
+}, {
+  "tag": "P",
+  "text": "But MapReduce processes data in batches and is therefore not suitable for processing real-time data. Apache Spark was built in 2012 to fill that gap. Spark is a parallel data processing tool that is optimized for speed and efficiency by processing data in-memory. It operates under the same MapReduce principle, but runs much faster by completing most of the computation in memory and only writing to disk when memory is full or the computation is complete. This in-memory computation allows Spark to “run programs up to 100x faster than Hadoop MapReduce in memory, or 10x faster on disk.” However, when the data set is so large that insufficient RAM becomes an issue (usually hundreds of gigabytes or more), Hadoop MapReduce might outperform Spark. Spark also has an extensive set of data analytics libraries covering a wide range of functions: Spark SQL for SQL and structured data; MLib for machine learning, Spark Streaming for stream processing, and GraphX for graph analytics. Since Spark’s focus is on computation, it does not come with its own storage system and instead runs on a variety of storage systems such as Amazon S3, Azure Storage, and Hadoop’s HDFS.",
+  "translation": "但是MapReduce批量处理数据，因此不适合处理实时数据。 Apache Spark成立于2012年，以填补这一空白。 Spark是一个并行数据处理工具，通过在内存中处理数据来优化速度和效率。它以相同的MapReduce原理运行，但是通过完成内存中的大多数计算并且仅在内存已满或计算完成时才写入磁盘，才能运行得更快。这种内存内计算使Spark“在内存中运行程序的速度比Hadoop MapReduce快100倍，在磁盘上的速度快10倍。”但是，当数据集太大而导致RAM不足成为问题时（通常为数百GB或更多） ），Hadoop MapReduce可能会胜过Spark。 Spark还具有广泛的数据分析库集，涵盖了广泛的功能：用于SQL和结构化数据的Spark SQL；用于SQL和结构化数据的Spark SQL；用于SQL的Spark SQL。 MLib用于机器学习，Spark Streaming用于流处理，而GraphX用于图形分析。由于Spark的重点是计算，因此它没有自己的存储系统，而是在各种存储系统（例如Amazon S3，Azure存储和Hadoop的HDFS）上运行。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*MbOv4dHH2DLiEjGd?q=20",
+  "caption": "In an MPP system, all the nodes are interconnected and data could be exchanged across the network (Source: IBM)",
+  "type": "image",
+  "file": "0*MbOv4dHH2DLiEjGd"
+}, {
+  "tag": "P",
+  "text": "Hadoop and Spark are not the only technologies that leverage clusters to process large volumes of data. Another popular computational approach to distributed query processing is called Massively Parallel Processing (MPP). Similar to MapReduce, MPP distributes data processing across multiple nodes, and the nodes process the data in parallel for faster speed. But unlike Hadoop, MPP is used in RDBMS and utilizes a “share-nothing” architecture — each node processes its own slice of the data with multi-core processors, making them many times faster than traditional RDBMS. Some MPP databases, like Pivotal Greenplum, have mature machine learning libraries that allow for in-database analytics. However, as with traditional RDBMS, most MPP databases do not support unstructured data, and even structured data will require some processing to fit the MPP infrastructure; therefore it takes additional time and resources to set up the data pipeline for an MPP database. Since MPP databases are ACID-compliant and deliver much faster speed than traditional RDBMS, they are usually employed in high-end enterprise data warehousing solutions such as Amazon Redshift, Pivotal Greenplum, and Snowflake. As an industry example, the New York Stock Exchange receives four to five terabytes of data daily and conducts complex analytics, market surveillance, capacity planning and monitoring. The company had been using a traditional database that couldn’t handle the workload, which took hours to load and had poor query speed. Moving to an MPP database reduced their daily analysis run time by eight hours.",
+  "translation": "并非只有Hadoop和Spark能够利用群集来处理大量数据。分布式查询处理的另一种流行的计算方法称为大规模并行处理（MPP）。与MapReduce相似，MPP在多个节点之间分布数据处理，并且节点并行处理数据以提高速度。但是与Hadoop不同，MPP用于RDBMS，并使用“无共享”架构-每个节点都使用多核处理器处理自己的数据片段，使其速度比传统RDBMS快许多倍。一些MPP数据库，例如Pivotal Greenplum，具有成熟的机器学习库，可用于数据库内分析。但是，与传统的RDBMS一样，大多数MPP数据库不支持非结构化数据，甚至结构化数据也需要进行一些处理才能适合MPP基础结构；因此，要花费更多的时间和资源来建立MPP数据库的数据管道。由于MPP数据库符合ACID标准，并且提供的速度比传统RDBMS快得多，因此它们通常用于高端企业数据仓库解决方案中，例如Amazon Redshift，Pivotal Greenplum和Snowflake。作为一个行业示例，纽约证券交易所每天接收4到5 TB的数据，并进行复杂的分析，市场监视，容量计划和监视。该公司一直在使用无法处理工作负载的传统数据库，该数据库要花几个小时才能加载，查询速度也很慢。转移到MPP数据库后，其每日分析运行时间减少了八个小时。"
+}, {
+  "tag": "P",
+  "text": "Cloud Services",
+  "translation": "云服务"
+}, {
+  "tag": "P",
+  "text": "Another innovation that completely transformed enterprise big data analytics capabilities is the rise of cloud services. In the bad old days before cloud services were available, businesses had to buy on-premises data storage and analytics solutions from software and hardware vendors, usually paying upfront perpetual software license fees and annual hardware maintenance and service fees. On top of those are the costs of power, cooling, security, disaster protection, IT staff, etc, for building and maintaining the on-premises infrastructure. Even when it was technically possible to store and process big data, most businesses found it cost prohibitive to do so at scale. Scaling with on-premises infrastructure also require an extensive design and procurement process, which takes a long time to implement and requires substantial upfront capital. Many potentially valuable data collection and analytics possibilities were ignored as a result.",
+  "translation": "彻底改变企业大数据分析功能的另一项创新是云服务的兴起。 在云服务可用之前的糟糕年代，企业不得不从软件和硬件供应商那里购买本地数据存储和分析解决方案，通常要支付前期永久性软件许可费以及年度硬件维护和服务费。 最重要的是用于构建和维护本地基础结构的电源，冷却，安全，灾难保护，IT人员等的成本。 即使从技术上讲，可以存储和处理大数据，但大多数企业发现大规模进行此操作成本过高。 使用本地基础架构进行扩展还需要大量的设计和采购过程，这需要很长时间才能实施，并且需要大量的前期资金。 结果，许多潜在有价值的数据收集和分析可能性被忽略了。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*T2yuJKY3GsI1DLux?q=20",
+  "caption": "“As a Service” providers: e.g. Infrastructure as a Service (IaaS) and Storage as a Service (STaaS) (Source: IMELGRAT.ME)",
+  "type": "image",
+  "file": "0*T2yuJKY3GsI1DLux"
+}, {
+  "tag": "P",
+  "text": "The on-premises model began to lose market share quickly when cloud services were introduced in the late 2000’s — the global cloud services market has been growing 15% annually in the past decade. Cloud service platforms provide subscriptions to a variety of services (from virtual computing to storage infrastructure to databases), delivered over the internet on a pay-as-you-go basis, offering customers rapid access to flexible and low-cost storage and virtual computing resources. Cloud service providers are responsible for all of their hardware and software purchases and maintenance, and usually have a vast network of servers and support staff to provide reliable services. Many businesses discovered that they could significantly reduce costs and improve operational efficiencies with cloud services, and are able to develop and productionize their products more quickly with the out-of-the-box cloud resources and their built-in scalability. By removing the upfront costs and time commitment to build on-premises infrastructure, cloud services also lower the barriers to adopt big data tools, and effectively democratized big data analytics for small and med-size businesses.",
+  "translation": "在2000年代末推出云服务后，本地模型开始迅速失去市场份额-在过去十年中，全球云服务市场每年以15％的速度增长。云服务平台提供按需付费的方式通过互联网交付的各种服务（从虚拟计算到存储基础结构再到数据库）的订阅，为客户提供快速访问灵活且低成本的存储和虚拟计算的机会资源。云服务提供商负责所有其硬件和软件的购买与维护，并且通常拥有庞大的服务器网络和支持人员以提供可靠的服务。许多企业发现他们可以使用云服务显着降低成本并提高运营效率，并且能够利用现成的云资源及其内置的可扩展性更快地开发和生产其产品。通过消除建立本地基础架构的前期成本和时间承诺，云服务还降低了采用大数据工具的障碍，并有效地使中小型企业的大数据分析民主化。"
+}, {
+  "tag": "P",
+  "text": "There are several cloud services models, with public clouds being the most common. In a public cloud, all hardware, software, and other supporting infrastructure are owned and managed by the cloud service provider. Customers share the cloud infrastructure with other “cloud tenants” and access their services through a web browser. A private cloud is often used by organizations with special security needs such as government agencies and financial institutions. In a private cloud, the services and infrastructure are dedicated solely to one organization and are maintained on a private network. The private cloud can be on-premises, or hosted by a third-party service provider elsewhere. Hybrid clouds combine private clouds with public clouds, allowing organizations to reap the advantages of both. In a hybrid cloud, data and applications can move between private and public clouds for greater flexibility: e.g. the public cloud could be used for high-volume, lower-security data, and the private cloud for sensitive, business-critical data like financial reporting. The multi-cloud model involves multiple cloud platforms, each delivers a specific application service. A multi-cloud can be a combination of public, private, and hybrid clouds to achieve the organization’s goals. Organizations often choose multi-cloud to suit their particular business, locations, and timing needs, and to avoid vendor lock-in.",
+  "translation": "有几种云服务模型，最常见的是公共云。在公共云中，所有硬件，软件和其他支持基础结构均由云服务提供商拥有和管理。客户与其他“云租户”共享云基础架构，并通过Web浏览器访问其服务。私有云通常由具有特殊安全需求的组织（例如政府机构和金融机构）使用。在私有云中，服务和基础架构专用于一个组织，并在私有网络上维护。私有云可以是本地的，也可以由其他地方的第三方服务提供商托管。混合云将私有云与公共云结合在一起，使组织可以利用两者的优势。在混合云中，数据和应用程序可以在私有云和公共云之间移动，以实现更大的灵活性：公共云可用于大批量，低安全性数据，私有云可用于敏感的关键业务数据，例如财务报告。多云模型涉及多个云平台，每个平台都提供特定的应用程序服务。多云可以是公共云，私有云和混合云的组合，以实现组织的目标。组织经常选择多云以适合其特定的业务，位置和时间需求，并避免供应商锁定。"
+}, {
+  "tag": "H1",
+  "text": "Everything a Data Scientist Should Know About Data Management*",
+  "translation": "数据科学家应了解的有关数据管理的一切*"
+}, {
+  "tag": "H2",
+  "text": "(*But Was Afraid to Ask)",
+  "translation": "（*但是不敢问）"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*KXqR51UdAHxrdn0hdfz7ew.jpeg?q=20",
+  "caption": "NIST Big Data Taxonomy (Source: WikiCommons)",
+  "type": "image",
+  "file": "1*KXqR51UdAHxrdn0hdfz7ew.jpeg"
+}, {
+  "tag": "P",
+  "text": "By Phoebe Wong & Robert Bennett",
+  "translation": "Phoebe Wong和Robert Bennett"
+}, {
+  "tag": "P",
+  "text": "To be a real “full-stack” data scientist, or what many bloggers and employers call a “unicorn,” you’ve to master every step of the data science process — all the way from storing your data, to putting your finished product (typically a predictive model) in production. But the bulk of data science training focuses on machine/deep learning techniques; data management knowledge is often treated as an afterthought. Data science students usually learn modeling skills with processed and cleaned data in text files stored on their laptop, ignoring how the data sausage is made. Students often don’t realize that in industry settings, getting the raw data from various sources to be ready for modeling is usually 80% of the work. And because enterprise projects usually involve a massive amount of data that their local machine is not equipped to handle, the entire modeling process often takes place in the cloud, with most of the applications and databases hosted on servers in data centers elsewhere. Even after the student landed a job as a data scientist, data management often becomes something that a separate data engineering team takes care of. As a result, too many data scientists know too little about data storage and infrastructure, often to the detriment of their ability to make the right decisions at their jobs. The goal of this article is to provide a roadmap of what a data scientist in 2019 should know about data management — from types of databases, where and how data is stored and processed, to the current commercial options — so the aspiring “unicorns” could dive deeper on their own, or at least learn enough to sound like one at interviews and cocktail parties.",
+  "translation": "要成为真正的“全栈”数据科学家，或者被许多博主和雇主称为“独角兽”，您必须掌握数据科学过程的每个步骤-从存储数据到完成产品的整个过程（通常是预测模型）。但是，大多数数据科学培训都集中在机器/深度学习技术上。数据管理知识通常被认为是事后的想法。数据科学专业的学生通常会使用笔记本电脑上存储的文本文件中经过处理和清理的数据来学习建模技能，而忽略了如何制作数据香肠。学生通常不会意识到在行业环境中，从各种来源获取原始数据以进行建模通常是工作的80％。而且，由于企业项目通常涉及其本地计算机无法处理的大量数据，因此整个建模过程通常在云中进行，大多数应用程序和数据库托管在其他数据中心的服务器上。即使在学生找到了数据科学家的工作之后，数据管理通常也变成了由单独的数据工程团队负责的事情。结果，太多的数据科学家对数据存储和基础设施知之甚少，这常常损害了他们在工作中做出正确决定的能力。本文的目的是为2019年数据科学家应了解的数据管理提供一个路线图-从数据库类型，数据在何处以及如何存储和处理到当前的商业选择-以便有抱负的“独角兽”可以自己更深入地学习，或者至少在面试和鸡尾酒会上学到足够多的声音。"
+}]
