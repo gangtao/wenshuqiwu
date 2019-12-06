@@ -1,0 +1,285 @@
+[{
+  "tag": "P",
+  "text": "This post continues the ongoing series of educating Data Scientists to become business-savvy. The series aims at helping you polish your overall Data Science skill set. If you enjoy the format, please follow me on LinkedIn or Medium to stay up to date with new articles.",
+  "translation": "这篇文章延续了正在进行的一系列培训数据科学家的知识，使其变得精通业务。 该系列旨在帮助您提高整体数据科学技能。 如果您喜欢这种格式，请在LinkedIn或Medium上关注我，以获取最新的文章。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/20/1*yCcVspjdDfRZV9Sln8BEMA.jpeg?q=20",
+  "caption": "Photo by Mirko Blicke on Unsplash",
+  "type": "image",
+  "file": "1*yCcVspjdDfRZV9Sln8BEMA.jpeg"
+}, {
+  "tag": "H1",
+  "text": "Key Takeaways",
+  "translation": "重要要点"
+}, {
+  "tag": "P",
+  "text": "Navigating the Data Science Career Levels is fun. Remember the following Key Takeaways:",
+  "translation": "导航数据科学职业级别很有趣。 请记住以下关键要点："
+}, {
+  "tag": "UL",
+  "texts": ["Junior Data Scientists have good statistical skills", "Senior Data Scientists excel at putting models into production", "Principal Data Scientists know how to create business value", "To level up, evaluate your skills, announce your desire to progress, and work on outstanding skills"],
+  "translations": ["初级数据科学家具有良好的统计技能", "高级数据科学家擅长将模型投入生产", "首席数据科学家知道如何创造业务价值", "要升级，评估您的技能，宣布您对进步的渴望并致力于出色的技能"]
+}, {
+  "tag": "P",
+  "text": "Nuances exist within the different Data Science Career Levels. For instance, Séb Foucaud is rather looking for strong engineering than math skills in Junior Data Scientists. Some Senior Data Scientists might discover their passion for building scalable data pipelines and transition to a Data Engineering role. Some Principal Data Scientists prefer to develop technical expertise while others rejoice in focusing on business skills. Whatever career path you take, developing your skills around the three main areas of Data Science expertise will get you far.",
+  "translation": "在不同的数据科学职业级别中存在细微差别。 例如，SébFoucaud宁愿在Junior Data Scientists中寻找强大的工程技术，而不是数学技能。 一些高级数据科学家可能会发现他们对建立可伸缩数据管道和过渡到数据工程角色的热情。 一些首席数据科学家喜欢发展技术专长，而另一些则很高兴专注于业务技能。 无论您采取哪种职业道路，围绕数据科学专业知识的三个主要领域发展自己的技能将使您走得更远。"
+}, {
+  "tag": "H1",
+  "text": "Leveling up your Data Science Career",
+  "translation": "提升您的数据科学职业"
+}, {
+  "tag": "P",
+  "text": "It doesn’t matter if you’re looking to enter the Data Science Career Game on Level 1.0 or you’re looking to progress into a higher Level. Take the following steps to make your next career move.",
+  "translation": "无论您是想进入1.0级的Data Science Career游戏，还是要升级到更高的级别，都没有关系。 请采取以下步骤，使您的下一个职业发展。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*QRr0j_3oStZ1OhWqMEsLUg.jpeg?q=20",
+  "type": "image",
+  "file": "1*QRr0j_3oStZ1OhWqMEsLUg.jpeg"
+}, {
+  "tag": "H2",
+  "text": "1. Evaluate your skills",
+  "translation": "1.评估你的技能"
+}, {
+  "tag": "P",
+  "text": "As a first step, compare your skills to the Data Science Skills Matrix. How solid are your statistics skills? How good are your engineering skills? How business-savvy are you?",
+  "translation": "第一步，将您的技能与数据科学技能列表进行比较。 您的统计能力如何？ 您的工程技术水平如何？ 您的业务情况如何？"
+}, {
+  "tag": "H2",
+  "text": "2. Plan your promotion",
+  "translation": "2.计划您的促销"
+}, {
+  "tag": "P",
+  "text": "Many companies have annual promotion cycles to advance their employees. Julie Zhuo, VP of Product Design at Facebook, recommends as the first step to get promoted to make your aspirations to level up known. State at the beginning of the progression cycle that you’d like to advance your career to your manager. Ask your manager how she ranks your current skill set and what is expected to reach the next Data Science Career Level.",
+  "translation": "许多公司都有年度晋升周期以提升其员工。 Facebook产品设计副总裁朱莉卓（Julie Zhuo）推荐您，首先要获得晋升，使自己的晋升愿望得到提升。 在晋升周期开始时，说明您想将职业发展为经理。 询问您的经理，她如何评价您当前的技能水平，以及期望达到下一个数据科学职业水平的条件。"
+}, {
+  "tag": "H2",
+  "text": "3. Improve your skills",
+  "translation": "3.提高你的技能"
+}, {
+  "tag": "P",
+  "text": "Once you’ve analyzed your skills and announced your desire for a promotion, it’s time to level up your skills.",
+  "translation": "在您分析了技能并宣布希望升职之后，就该提高您的技能了。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*DIpg-kS0ZbdJ9XxThTp4kw.jpeg?q=20",
+  "caption": "Photo by Samuel Zeller on Unsplash",
+  "type": "image",
+  "file": "1*DIpg-kS0ZbdJ9XxThTp4kw.jpeg"
+}, {
+  "tag": "P",
+  "text": "Do you want to break into AI? Then get rock solid about statistical models and learn how to solve problems with structured datasets. Do you look to enter Level 3.0? Make sure you have your math, engineering, and business skills on lock. Armed with these points, you’re well-prepared to negotiate the promotion with your manager.",
+  "translation": "你想闯入人工智能吗？ 然后深入了解统计模型，并学习如何解决结构化数据集的问题。 您想进入3.0级吗？ 确保掌握数学，工程和业务技能。 有了这些要点，您就做好了与经理进行促销谈判的准备。"
+}, {
+  "tag": "H1",
+  "text": "The Principal Data Scientist — Endgame Level 3.0",
+  "translation": "首席数据科学家-Endgame Level 3.0"
+}, {
+  "tag": "P",
+  "text": "The Principal Data Scientist is the most experienced member of a Data Science team. She has 5+ years of experience and is well-versed in various types of Data Science models. She knows the best practices when putting models to work. She knows how to write code computationally efficient and is lurking around to find high-impact business projects.",
+  "translation": "首席数据科学家是数据科学团队中经验最丰富的成员。 她拥有5年以上的经验，并且精通各种类型的数据科学模型。 她了解将模型付诸实践的最佳实践。 她知道如何高效地编写代码，并且潜伏着寻找具有高影响力的业务项目。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*UP6D-bwuTMyAwvVhvl5nXg.jpeg?q=20",
+  "type": "image",
+  "file": "1*UP6D-bwuTMyAwvVhvl5nXg.jpeg"
+}, {
+  "tag": "P",
+  "text": "In addition to her impeccable engineering skills and deep understanding of the scientific models used, she also firmly understands the business that her company works in. She has a track record of impacting the business baseline with Data Science.",
+  "translation": "除了她无可挑剔的工程技能和对所使用的科学模型的深刻理解之外，她还牢牢地了解公司所从事的业务。她拥有使用Data Science影响业务基准的记录。"
+}, {
+  "tag": "P",
+  "text": "Principal Data Scientists need to have a very good understanding of the business problem they are solving before writing one line of code. Meaning, they need to have the ability to validate ideas prior to implementation. This approach increases the Data Science project success. — Adnan Boz, AI Product Leader at eBay",
+  "translation": "首席数据科学家在编写一行代码之前，需要对正在解决的业务问题有很好的了解。 这意味着，他们需要具备在实施之前验证想法的能力。 这种方法提高了数据科学项目的成功率。 — eBay AI产品负责人Adnan Boz"
+}, {
+  "tag": "H2",
+  "text": "What they do",
+  "translation": "他们做什么"
+}, {
+  "tag": "P",
+  "text": "The Principal Data Scientist is responsible for creating high-impact Data Science projects. In close coordination with stakeholders, she is responsible for leading a potentially cross-functional team in providing the best solution to a given problem. Hence, her leadership skills have developed since Level 1.0 and 2.0. The Principal Data Scientist acts as a technical consultant to Product Managers from different departments. With her vast experience and skills in the major Data Science categories, she becomes a highly valued asset to any project.",
+  "translation": "首席数据科学家负责创建高影响力的数据科学项目。 在与利益相关者的密切协调下，她负责领导一个潜在的跨职能团队，为特定问题提供最佳解决方案。 因此，从1.0和2.0级开始，她的领导能力得到了发展。 首席数据科学家担任来自不同部门的产品经理的技术顾问。 凭借在主要数据科学领域的丰富经验和技能，她成为任何项目的极有价值资产。"
+}, {
+  "tag": "H2",
+  "text": "What they don't do",
+  "translation": "他们不做什么"
+}, {
+  "tag": "P",
+  "text": "While shaping the discussion about desired skills, it is not the responsibility of the Principal Data Scientist to recruit new team members. Although she understands the business of her company and suggests impactful new products, the Product Managers are still responsible for market adoption. She also leads teams, but career progression decisions are still taken by the team lead.",
+  "translation": "在讨论有关所需技能的讨论时，首席数据科学家没有责任招募新的团队成员。 尽管她了解公司的业务并提出了具有影响力的新产品，但产品经理仍负责市场采用。 她还领导团队，但是职业发展决定仍由团队领导做出。"
+}, {
+  "tag": "P",
+  "text": "The Principal Data Scientist should steer projects independently from the Head of Data Science. This person is expected to obtain first leadership skills and therefore it is important that this person communicates clearly, is empathetic, and has a good eye for people. — Dat Tran",
+  "translation": "首席数据科学家应独立于数据科学负责人指导项目。 期望此人具有首要的领导技能，因此，重要的是，此人应保持清晰的沟通，善解人意并具有良好的视线。 -Dat Tran"
+}, {
+  "tag": "P",
+  "text": "The Principal Data Scientist has seen why products fail and thus she drives new projects successfully. She is a valued contributor to product discussions and enjoys educating the company about Data Science. With her experience in delivering impactful Data Science solutions, she is the most valuable asset in the Data Science department.",
+  "translation": "首席数据科学家已经了解了为什么产品会失败，从而成功推动了新项目。 她是产品讨论的重要贡献者，并且喜欢为公司提供有关Data Science的教育。 凭借在交付具有影响力的数据科学解决方案方面的经验，她是数据科学部门中最有价值的资产。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*UsMrR4QUd8FFgf4OqTceSA.jpeg?q=20",
+  "caption": "Photo by Val Vesa on Unsplash",
+  "type": "image",
+  "file": "1*UsMrR4QUd8FFgf4OqTceSA.jpeg"
+}, {
+  "tag": "P",
+  "text": "Now that you’ve seen the different expectations of a Data Scientist from Level 1.0 to 2.0 until 3.0, let’s find out how you can use this knowledge to advance your career.",
+  "translation": "现在，您已经看到了数据科学家从1.0级到2.0级到3.0级的不同期望，让我们了解如何利用这些知识来促进自己的职业生涯。"
+}, {
+  "tag": "H1",
+  "text": "The Senior Data Scientist — Reaching Level 2.0",
+  "translation": "资深数据科学家-达到2.0级"
+}, {
+  "tag": "P",
+  "text": "The Senior Data Scientist has already worked as a Junior Data Scientist, Software Engineer, or completed a Ph.D. He has 3–5 years of relevant experience in the field, writes reusable code, and builds resilient data pipelines in cloud environments.",
+  "translation": "该高级数据科学家已经担任初级数据科学家，软件工程师或完成博士学位。 他在该领域具有3-5年的相关经验，编写可重用的代码，并在云环境中建立了弹性的数据管道。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*O7xsS20GCdN7UMicLGri7A.jpeg?q=20",
+  "type": "image",
+  "file": "1*O7xsS20GCdN7UMicLGri7A.jpeg"
+}, {
+  "tag": "P",
+  "text": "Senior Data Scientists should be able to frame Data Science problems. Good candidates have great insights from past Data Science experiences. I also dig deeper into their ability to write production code. — Kian Katanforoosh",
+  "translation": "高级数据科学家应该能够解决数据科学问题。 优秀的候选人具有从过去的数据科学经验中获得的深刻见解。 我还将更深入地研究他们编写生产代码的能力。 —凯恩·卡坦福鲁什"
+}, {
+  "tag": "P",
+  "text": "Companies prefer to hire Senior Data Scientists because they provide tremendous value at a reasonable salary. They are more experienced than Junior Data Scientists, thus omitting costly greenhorn mistakes. They are also not as expensive as Principal Data Scientists, while still being expected to deliver Data Science models in production. It’s a very fun level to play, having surpassed Level 1.0 and yet having room to grow to Level 3.0.",
+  "translation": "公司喜欢雇用高级数据科学家，因为他们以合理的薪水提供了巨大的价值。 他们比初级数据科学家更有经验，因此省去了代价高昂的新手错误。 它们也没有首席数据科学家贵，但仍有望在生产中交付数据科学模型。 这是一个非常有趣的关卡，已经超过了1.0级，但仍有发展到3.0级的空间。"
+}, {
+  "tag": "H2",
+  "text": "What they do",
+  "translation": "他们做什么"
+}, {
+  "tag": "P",
+  "text": "The Senior Data Scientist masters the art of putting mathematical models into production. While Principal Data Scientists or Business Managers assign tasks, the Senior Data Scientist takes pride in building well-architected products. He avoids logical flaws in the model, doubts systems that perform too well, and takes pride in preparing data correctly. The Senior Data Scientist mentors Junior Data Scientists and answers business questions to management.",
+  "translation": "高级数据科学家精通将数学模型投入生产的艺术。 当首席数据科学家或业务经理分配任务时，高级数据科学家以构建结构良好的产品而感到自豪。 他避免了模型中的逻辑缺陷，怀疑系统性能是否良好，并为正确准备数据感到自豪。 高级数据科学家指导初级数据科学家，并向管理层回答业务问题。"
+}, {
+  "tag": "H2",
+  "text": "What they don't do",
+  "translation": "他们不做什么"
+}, {
+  "tag": "P",
+  "text": "The Senior Data Scientist is not expected to lead entire teams. It is not the responsibility of the Senior Data Scientist to come up with ideas for new products since they are generated by more experienced colleagues and managers. While the Senior Data Scientist knows the details of the products they have built, they are not expected to know the overall architecture of all data-driven products. The Level 2.0 Data Scientist is skilled in statistics and better in engineering than a Level 1.0 Data Scientist but strays away from the non-fun business part from Level 3.0.",
+  "translation": "预计高级数据科学家不会领导整个团队。 由于新产品的想法是由经验更丰富的同事和经理产生的，因此高级数据科学家没有责任提出新产品的想法。 尽管高级数据科学家了解他们所构建产品的详细信息，但他们并不希望他们了解所有数据驱动产品的总体架构。 与1.0级数据科学家相比，2.0级数据科学家在统计方面和技术水平方面更高，但偏离了3.0级的非趣味业务部分。"
+}, {
+  "tag": "P",
+  "text": "A Senior Data Scientist has to be able to bring their code in production (with some support of the data engineers). Seniors should be able to complete the projects they are given independently. — Sébastien Foucaud, VP of Data Science at Xing",
+  "translation": "高级数据科学家必须能够将其代码投入生产（在数据工程师的一些支持下）。 老年人应该能够完成独立完成的项目。 — Xing数据科学副总裁SébastienFoucaud"
+}, {
+  "tag": "P",
+  "text": "The Senior Data Scientist is measured by the impact their models generate. He has a good intuition about the inner workings of statistical models and how to implement them. He is in the process of understanding the business of the company better but isn’t expected to provide solutions to business problems just yet.",
+  "translation": "高级数据科学家通过其模型产生的影响来衡量。 他对统计模型的内部运作以及如何实现它们有很好的直觉。 他正在更好地了解公司的业务，但预计目前尚无法为业务问题提供解决方案。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*zCmEkUCXzeYekXge32qSxg.jpeg?q=20",
+  "caption": "Photo by Carl Raw on Unsplash",
+  "type": "image",
+  "file": "1*zCmEkUCXzeYekXge32qSxg.jpeg"
+}, {
+  "tag": "P",
+  "text": "Now that we’ve investigated Level 2.0, let’s see what the final Level 3.0 looks like.",
+  "translation": "既然我们已经研究了Level 2.0，现在让我们看看最终的Level 3.0是什么样子。"
+}, {
+  "tag": "H1",
+  "text": "The Junior Data Scientist — Enter Level 1.0",
+  "translation": "初级数据科学家-进入1.0级"
+}, {
+  "tag": "P",
+  "text": "The prototypical Junior Data Scientist is a young graduate. Popular fields of study include Computer Science, Mathematics, or Engineering. A Junior Data Scientist has 0–2 years of work experience and is familiar with creating prototypes with structured data sets in Python or R. She has participated in kaggle competitions and has a GitHub profile.",
+  "translation": "典型的初级数据科学家是一名年轻毕业生。 流行的研究领域包括计算机科学，数学或工程学。 一位初级数据科学家具有0–2年的工作经验，并且熟悉使用Python或R创建带有结构化数据集的原型的经验。她参加过kaggle竞赛，并拥有GitHub个人资料。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*w-BFv2QaeRtvZaCXte0idw.jpeg?q=20",
+  "type": "image",
+  "file": "1*w-BFv2QaeRtvZaCXte0idw.jpeg"
+}, {
+  "tag": "P",
+  "text": "Junior Data Scientists can provide tremendous value to companies. They are fresh off taking online courses and can provide immediate help. They are usually self-taught since few universities offer Data Science degrees and thus show tremendous commitment and curiosity. They are enthusiastic about the field they have chosen and are eager to learn more. The Junior Data Scientist is good at prototyping solutions, but still lacks proficiency in engineering and business mindset.",
+  "translation": "初级数据科学家可以为公司提供巨大的价值。 他们刚参加在线课程，可以立即提供帮助。 他们通常是自学成才的，因为很少有大学提供数据科学学位，因此显示出巨大的决心和好奇心。 他们对所选领域充满热情，并渴望了解更多。 初级数据科学家擅长于原型解决方案，但仍缺乏工程和业务思维的能力。"
+}, {
+  "tag": "P",
+  "text": "Junior Data Scientists should have a strong passion for Machine Learning. You can demonstrate your passion by contributing to open-source projects or participating in kaggle challenges. — Dat Tran, Axel Springer AI Lead",
+  "translation": "初级数据科学家应该对机器学习充满热情。 您可以通过对开源项目做出贡献或参与kaggle挑战来展示自己的热情。 — Axel Springer AI总监Dat Tran"
+}, {
+  "tag": "H2",
+  "text": "What they do",
+  "translation": "他们做什么"
+}, {
+  "tag": "P",
+  "text": "If a company is hiring Junior Data Scientists, usually a Data Science team is already in place. The company is then looking for help to make life easier for more experienced colleagues. This involves rapidly testing new ideas, debugging, and refactoring existing models. You will discuss ideas as sparring partners with the team. You pitch new ideas on how to do things better. You take responsibility for your code, continuously striving to improve code quality and impact. You’re a great team player, constantly looking to support your teammates on their mission of building great data products.",
+  "translation": "如果公司正在招聘初级数据科学家，通常已经有一个数据科学团队。 然后，该公司正在寻求帮助，以使经验丰富的同事更轻松地生活。 这涉及快速测试新想法，调试和重构现有模型。 您将与团队作为陪练伙伴讨论想法。 您会提出如何做得更好的新想法。 您对代码负责，并不断努力提高代码质量和影响力。 您是一个出色的团队合作者，不断寻求支持您的队友构建出色数据产品的使命。"
+}, {
+  "tag": "H2",
+  "text": "What they don't do",
+  "translation": "他们不做什么"
+}, {
+  "tag": "P",
+  "text": "Junior Data Scientists don’t have experience in engineering complex product solutions. Ergo, she works in a team to put Data Science models into production. Since the Junior Data Scientist just joined the company, she is not immersed in the business of the company. Hence, she is not expected to come up with new products to impact the Fundamental Business Equation. However, what is always expected is the desire to learn and improve your skills.",
+  "translation": "初级数据科学家没有设计复杂产品解决方案的经验。 Ergo，她在一个团队中工作，将数据科学模型投入生产。 由于初级数据科学家刚刚加入公司，因此她没有沉迷于公司的业务。 因此，预计她不会提出新产品来影响基本业务方程式。 但是，始终期望学习和提高技能的愿望。"
+}, {
+  "tag": "P",
+  "text": "I’m interested in a Junior Data Scientists ability to complete a non-trivial project. By complete, I mean that the project was completed from start to end by the person — or within a group — and culminated in a fully flushed-out product. I find it to correlate with the Data Scientist’s ability to lead projects on the job. — Kian Katanforoosh, Founding member deeplearning.ai, Stanford CS Lecturer",
+  "translation": "我对初级数据科学家能够完成一项重要项目的能力感兴趣。 所谓完成，是指该项目是由个人（或一个小组）从头到尾完成的，最终达到完全冲洗的产品状态。 我发现它与数据科学家领导这项工作的能力有关。 — Kian Katanforoosh，斯坦福大学CS讲师deeplearning.ai的创始成员"
+}, {
+  "tag": "P",
+  "text": "If you excel at being a Junior Data Scientist, you have a strong background in understanding Data Science models. You show insatiable curiosity to learn about engineering and the business of your company to improve your skill set.",
+  "translation": "如果您擅长作为初级数据科学家，那么您将具有理解数据科学模型的强大背景。 您表现出无限的好奇心，以了解您的工程技术和公司业务以提高技能。"
+}, {
+  "tag": "P",
+  "text": "What does the next level look like? Let’s find out about Senior Data Scientists next.",
+  "translation": "下一级别是什么样的？ 接下来，让我们了解高级数据科学家。"
+}, {
+  "tag": "H1",
+  "text": "The Data Science Skills Matrix",
+  "translation": "数据科学技能矩阵"
+}, {
+  "tag": "P",
+  "text": "A Data Scientist is expected to have knowledge in three areas: Statistics, Engineering, and Business. However, you’re not expected to master all three areas right from the get-go. Which skills should you focus on when seeking an entry-level position? Which skills become more important as you progress through the career ladder?",
+  "translation": "预计数据科学家将在三个领域拥有知识：统计，工程和业务。 但是，您不应该一开始就掌握所有这三个领域。 寻找入门级职位时应重点关注哪些技能？ 随着职业发展，哪些技能变得越来越重要？"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*fDtY2EP5LthD2mi3VD34mg.jpeg?q=20",
+  "type": "image",
+  "file": "1*fDtY2EP5LthD2mi3VD34mg.jpeg"
+}, {
+  "tag": "P",
+  "text": "The graphic below shows the market expectations for each Data Science Level from 1.0 to 3.0. The results are based on my personal experience in the field and conversations with experts and influencers from Stanford, eBay, Axel Springer, and Xing. To avoid confusion, we will refer to the positions as Level 1.0 to 3.0.",
+  "translation": "下图显示了从1.0到3.0的每个数据科学水平的市场预期。 结果基于我在该领域的个人经验以及与斯坦福大学，eBay，Axel Springer和Xing的专家和影响者的对话。 为避免混淆，我们将职位称为1.0到3.0级。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*ZbI2lwYI2E64PL9Umusu6g.jpeg?q=20",
+  "type": "image",
+  "file": "1*ZbI2lwYI2E64PL9Umusu6g.jpeg"
+}, {
+  "tag": "P",
+  "text": "Let’s analyze the expectations of these positions in detail below.",
+  "translation": "让我们在下面详细分析这些职位的期望。"
+}, {
+  "tag": "H1",
+  "text": "Becoming a Level 3.0 Data Scientist",
+  "translation": "成为3.0级数据科学家"
+}, {
+  "tag": "H2",
+  "text": "Want to be a Junior, Senior, or Principal Data Scientists? Find out what you need to do to navigate the Data Science Career Game.",
+  "translation": "想要成为初级，高级或首席数据科学家？ 找出导航Data Science Career游戏所需要做的事情。"
+}, {
+  "tag": "P",
+  "text": "Companies are hiring Data Scientists on three levels: Junior, Senior, or Principal. Whether you’re just getting started with Data Science or looking to switch careers, you will inevitably find yourself on one of these levels.",
+  "translation": "公司在三个级别上招聘数据科学家：初级，高级或负责人。 无论您是刚开始使用Data Science还是想转行，您都将不可避免地身处其中之一。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*mWV37dTAOl6WxxJc37ssjg.jpeg?q=20",
+  "caption": "Photo by Kelly Sikkema on Unsplash",
+  "type": "image",
+  "file": "1*mWV37dTAOl6WxxJc37ssjg.jpeg"
+}, {
+  "tag": "P",
+  "text": "This post aims to shed light on what’s expected and what’s outside of the scope of each Data Science Career Level. While companies might have different job titles, this post provides a general baseline. Furthermore, the post concludes with hands-on tips on how to prepare your career for the switch into AI or the well-deserved promotion.",
+  "translation": "这篇文章旨在阐明每个数据科学职业级别的期望和范围之外的内容。 尽管公司可能具有不同的职位，但该职位提供了一个总体基准。 此外，该帖子以实践技巧作为结尾，介绍了如何为转入AI或当之无愧的晋升做好准备。"
+}, {
+  "tag": "P",
+  "text": "Let’s level up. 🎚",
+  "translation": "让我们升级。 🎚"
+}]
