@@ -1,0 +1,364 @@
+[{
+  "tag": "P",
+  "text": "As always, I welcome feedback and constructive criticism. I can be reached on Twitter @koehrsen_will.",
+  "translation": "一如既往，我欢迎反馈和建设性的批评。 可以通过Twitter @koehrsen_will与我联系。"
+}, {
+  "tag": "H1",
+  "text": "Advanced Plots",
+  "translation": "高级图"
+}, {
+  "tag": "P",
+  "text": "Now we’ll get into a few plots that you probably won’t use all that often, but which can be quite impressive. We’ll use the plotly figure_factory, to keep even these incredible plots to one line.",
+  "translation": "现在，我们将介绍一些您可能不会经常使用的图表，但它们会给人留下深刻的印象。 我们将使用plotly fig_factory，甚至将这些难以置信的情节保持在一行上。"
+}, {
+  "tag": "H2",
+  "text": "Scatter Matrix",
+  "translation": "散点矩阵"
+}, {
+  "tag": "P",
+  "text": "When we want to explore relationships among many variables, a scattermatrix (also called a splom) is a great option:",
+  "translation": "当我们要探索许多变量之间的关系时，散点图（也称为splom）是一个不错的选择："
+}, {
+  "tag": "PRE",
+  "text": "import plotly.figure_factory as fffigure = ff.create_scatterplotmatrix(    df[['claps', 'publication', 'views',              'read_ratio','word_count']],    diag='histogram',    index='publication')"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*Q2j1aD-xmizC2X2ujlnkNQ.png?q=20",
+  "type": "image",
+  "file": "1*Q2j1aD-xmizC2X2ujlnkNQ.png"
+}, {
+  "tag": "P",
+  "text": "Even this plot is completely interactive allowing us to explore the data.",
+  "translation": "即使该图是完全互动的，也允许我们探索数据。"
+}, {
+  "tag": "H2",
+  "text": "Correlation Heatmap",
+  "translation": "关联热图"
+}, {
+  "tag": "P",
+  "text": "To visualize the correlations between numeric variables, we calculate the correlations and then make an annotated heatmap:",
+  "translation": "为了可视化数值变量之间的相关性，我们计算相关性，然后制作带注释的热图："
+}, {
+  "tag": "PRE",
+  "text": "corrs = df.corr()figure = ff.create_annotated_heatmap(    z=corrs.values,    x=list(corrs.columns),    y=list(corrs.index),    annotation_text=corrs.round(2).values,    showscale=True)"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*-p9xUe9IKKQtMNHFe8zI2Q.png?q=20",
+  "type": "image",
+  "file": "1*-p9xUe9IKKQtMNHFe8zI2Q.png"
+}, {
+  "tag": "P",
+  "text": "The list of plots goes on and on. Cufflinks also has several themes we can use to get completely different styling with no effort. For example, below we have a ratio plot in the “space” theme and a spread plot in “ggplot”:",
+  "translation": "情节清单不胜枚举。 袖扣还具有几个主题，我们可以轻松使用它们来获得完全不同的样式。 例如，下面我们在“ space”主题中有一个比率图，在“ ggplot”中有一个展布图："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*ck5W8aXaltVq1-PjG9hB7g.png?q=20",
+  "type": "image",
+  "file": "1*ck5W8aXaltVq1-PjG9hB7g.png"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*u0jL7qsDJpWLupcqjKlZTQ.png?q=20",
+  "type": "image",
+  "file": "1*u0jL7qsDJpWLupcqjKlZTQ.png"
+}, {
+  "tag": "P",
+  "text": "We also get 3D plots (surface and bubble):",
+  "translation": "我们还获得了3D图（表面和气泡）："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*RiKPOE_KL5SNAmRODhx5Ww.png?q=20",
+  "type": "image",
+  "file": "1*RiKPOE_KL5SNAmRODhx5Ww.png"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*dgCraKLvY80K-JYiIyi1Sg.png?q=20",
+  "type": "image",
+  "file": "1*dgCraKLvY80K-JYiIyi1Sg.png"
+}, {
+  "tag": "P",
+  "text": "For those who are so inclined, you can even make a pie chart:",
+  "translation": "对于那些喜欢的人，您甚至可以制作饼图："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*hMhRTpErpCoqQQ0RdBnowQ.png?q=20",
+  "type": "image",
+  "file": "1*hMhRTpErpCoqQQ0RdBnowQ.png"
+}, {
+  "tag": "H2",
+  "text": "Editing in Plotly Chart Studio",
+  "translation": "在Plotly Chart Studio中进行编辑"
+}, {
+  "tag": "P",
+  "text": "When you make these plots in the notebook, you’ll notice a small link on the lower right-hand side on the graph that says “Export to plot.ly”. If you click that link, you are then taken to the chart studio where you can touch up your plot for a final presentation. You can add annotations, specify the colors, and generally clean everything up for a great figure. Then, you can publish your figure online so anyone can find it with the link.",
+  "translation": "在笔记本上绘制这些图时，您会在图形的右下方看到一个小链接，上面显示“导出到图.ly”。 如果单击该链接，那么您将被带到制图工作室，在这里您可以对绘图进行修饰以进行最终演示。 您可以添加注释，指定颜色，并通常将所有内容清理干净，以获得一个不错的形象。 然后，您可以在线发布图形，以便任何人都可以通过链接找到它。"
+}, {
+  "tag": "P",
+  "text": "Below are two charts I touched up in Chart Studio:",
+  "translation": "以下是我在Chart Studio中修改过的两个图表："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*_RU1jyZy2YCYQnXdEcB52Q.png?q=20",
+  "type": "image",
+  "file": "1*_RU1jyZy2YCYQnXdEcB52Q.png"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*yzvK0uzeO002hADIu0HRVg.png?q=20",
+  "type": "image",
+  "file": "1*yzvK0uzeO002hADIu0HRVg.png"
+}, {
+  "tag": "P",
+  "text": "With everything mentioned here, we are still not exploring the full capabilities of the library! I’d encourage you to check out both the plotly and the cufflinks documentation for more incredible graphics.",
+  "translation": "对于这里提到的所有内容，我们仍然没有探索库的全部功能！ 我建议您同时查看plotly和袖扣文档，以获取更多令人难以置信的图形。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*AVImsTA-CXldeDDsbBzvkg.png?q=20",
+  "caption": "Plotly interactive graphics of wind farms in United States (Source)",
+  "type": "image",
+  "file": "1*AVImsTA-CXldeDDsbBzvkg.png"
+}, {
+  "tag": "H1",
+  "text": "Conclusions",
+  "translation": "结论"
+}, {
+  "tag": "P",
+  "text": "The worst part about the sunk cost fallacy is you only realize how much time you’ve wasted after you’ve quit the endeavor. Fortunately, now that I’ve made the mistake of sticking with matploblib for too long, you don’t have to!",
+  "translation": "关于沉没成本谬误的最糟糕的部分是，您只会意识到自己退出这项工作后浪费了多少时间。 幸运的是，由于我犯了长时间使用matploblib的错误，您不必这样做！"
+}, {
+  "tag": "P",
+  "text": "When thinking about plotting libraries, there are a few things we want:",
+  "translation": "在考虑绘制库时，我们需要做一些事情："
+}, {
+  "tag": "OL",
+  "texts": ["One-line charts for rapid exploration", "Interactive elements for subsetting/investigating data", "Option to dig into details as needed", "Easy customization for final presentation"],
+  "translations": ["一线图表快速探索", "子集/调查数据的交互元素", "可选择根据需要深入研究细节", "轻松定制以进行最终演示"]
+}, {
+  "tag": "P",
+  "text": "As of right now, the best option for doing all of these in Python is plotly. Plotly allows us to make visualizations quickly and helps us get better insight into our data through interactivity. Also, let’s admit it, plotting should be one of the most enjoyable parts of data science! With other libraries, plotting turned into a tedious task, but with plotly, there is again joy in making a great figure!",
+  "translation": "截至目前，在Python中完成所有这些操作的最佳选择是密谋。 通过Plotly，我们可以快速进行可视化，并通过交互性帮助我们更好地了解数据。 另外，让我们承认，绘图应该是数据科学中最令人愉快的部分之一！ 在其他图书馆中，密谋变成了一项繁琐的工作，但在密谋中，再次成为一个伟大的人物就很高兴！"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*oBjoGHxcba2UsQbFf5bzsw.png?q=20",
+  "caption": "A plot of my enjoyment with plotting in Python over time",
+  "type": "image",
+  "file": "1*oBjoGHxcba2UsQbFf5bzsw.png"
+}, {
+  "tag": "P",
+  "text": "Now that it’s 2019, it is time to upgrade your Python plotting library for better efficiency, functionality, and aesthetics in your data science visualizations.",
+  "translation": "现在已经到了2019年，是时候升级Python绘图库了，以便在数据科学可视化中实现更高的效率，功能和美观性。"
+}, {
+  "tag": "H1",
+  "text": "Scatterplots",
+  "translation": "散点图"
+}, {
+  "tag": "P",
+  "text": "The scatterplot is the heart of most analyses. It allows us to see the evolution of a variable over time or the relationship between two (or more) variables.",
+  "translation": "散点图是大多数分析的核心。 它使我们能够看到变量随时间的变化或两个（或多个）变量之间的关系。"
+}, {
+  "tag": "H2",
+  "text": "Time-Series",
+  "translation": "时间序列"
+}, {
+  "tag": "P",
+  "text": "A considerable portion of real-world data has a time element. Luckily, plotly + cufflinks was designed with time-series visualizations in mind. Let’s make a dataframe of my TDS articles and look at how the trends have changed.",
+  "translation": "现实世界中相当一部分数据具有时间元素。 幸运的是，plotly +袖扣的设计考虑了时间序列的可视化。 让我们为我的TDS文章制作一个数据框，然后看看趋势如何变化。"
+}, {
+  "tag": "PRE",
+  "text": " Create a dataframe of Towards Data Science Articlestds = df[df['publication'] == 'Towards Data Science'].\\         set_index('published_date')# Plot read time as a time seriestds[['claps', 'fans', 'title']].iplot(    y='claps', mode='lines+markers', secondary_y = 'fans',    secondary_y_title='Fans', xTitle='Date', yTitle='Claps',    text='title', title='Fans and Claps over Time')",
+  "translation": "创建Towards Data Science Articlestds = df [df ['publication'] =='Towards Data Science']。\\ set_index（'published_date'）＃将读取时间绘制为时间序列tds [['claps'，'fans' ，'title']]。iplot（y ='claps'，mode ='lines + markers'，secondary_y ='fans'，secondary_y_title ='Fans'，xTitle ='Date'，yTitle ='Claps，text =' title'，title =“随着时间的流逝而鼓掌”）"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/freeze/max/30/1*wIvogMrLisCfBjB9Yq0krw.gif?q=20",
+  "type": "image",
+  "file": "1*wIvogMrLisCfBjB9Yq0krw.gif"
+}, {
+  "tag": "P",
+  "text": "Here we are doing quite a few different things all in one line:",
+  "translation": "在这里，我们正在一行中做很多不同的事情："
+}, {
+  "tag": "UL",
+  "texts": ["Getting a nicely formatted time-series x-axis automatically", "Adding a secondary y-axis because our variables have different ranges", "Adding in the title of the articles as hover information"],
+  "translations": ["自动获取格式正确的时序X轴", "添加辅助y轴，因为我们的变量具有不同的范围", "添加文章标题作为悬停信息"]
+}, {
+  "tag": "P",
+  "text": "For more information, we can also add in text annotations quite easily:",
+  "translation": "有关更多信息，我们还可以轻松添加文本注释："
+}, {
+  "tag": "PRE",
+  "text": "tds_monthly_totals.iplot(    mode='lines+markers+text',    text=text,    y='word_count',    opacity=0.8,    xTitle='Date',    yTitle='Word Count',    title='Total Word Count by Month')",
+  "translation": "tds_monthly_totals.iplot（mode ='lines + markers + text'，text = text，y ='word_count'，opacity = 0.8，xTitle ='Date'，yTitle ='Word Count'，title ='按月统计的总字数' ）"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*Nq4AdwAcB-GCjf-LUMUTLg.png?q=20",
+  "caption": "Scatterplot with annotations",
+  "type": "image",
+  "file": "1*Nq4AdwAcB-GCjf-LUMUTLg.png"
+}, {
+  "tag": "P",
+  "text": "For a two-variable scatter plot colored by a third categorical variable we use:",
+  "translation": "对于由第三个类别变量着色的两变量散点图，我们使用："
+}, {
+  "tag": "PRE",
+  "text": "df.iplot(    x='read_time',    y='read_ratio',    # Specify the category    categories='publication',    xTitle='Read Time',    yTitle='Reading Percent',    title='Reading Percent vs Read Ratio by Publication')",
+  "translation": "df.iplot（x ='read_time'，y ='read_ratio'，＃指定类别category ='publication'，xTitle ='Read Time'，yTitle ='Reading Percent'，title ='Reading％vs Read Ratio by Publication '）"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*3HF7uBmfLsETJvRNSy4i7Q.png?q=20",
+  "type": "image",
+  "file": "1*3HF7uBmfLsETJvRNSy4i7Q.png"
+}, {
+  "tag": "P",
+  "text": "Let’s get a little more sophisticated by using a log axis — specified as a plotly layout — (see the Plotly documentation for the layout specifics) and sizing the bubbles by a numeric variable:",
+  "translation": "通过使用指定为打印布局的对数轴（请参见Plotly文档以获取布局详细信息），并使用数值变量来调整气泡大小，让我们更加复杂一些："
+}, {
+  "tag": "PRE",
+  "text": "tds.iplot(    x='word_count',    y='reads',    size='read_ratio',    text=text,    mode='markers',    # Log xaxis    layout=dict(        xaxis=dict(type='log', title='Word Count'),        yaxis=dict(title='Reads'),        title='Reads vs Log Word Count Sized by Read Ratio'))",
+  "translation": "tds.iplot（x ='word_count'，y ='reads'，size ='read_ratio'，text = text，mode ='markers'，＃Log xaxis layout = dict（xaxis = dict（type ='log'，title ='字数'），yaxis = dict（title ='Reads'），title ='Reads vs Log Word Count by Read Ratio'）"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*jyy7yVdGrVU7DuE6Z9sRhw.png?q=20",
+  "type": "image",
+  "file": "1*jyy7yVdGrVU7DuE6Z9sRhw.png"
+}, {
+  "tag": "P",
+  "text": "With a little more work (see notebook for details), we can even put four variables (this is not advised) on one graph!",
+  "translation": "通过做更多的工作（有关详细信息，请参阅笔记本），我们甚至可以在一个图表上放置四个变量（不建议这样做）！"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*53LomjR1tGSySn7Aevtd6g.png?q=20",
+  "type": "image",
+  "file": "1*53LomjR1tGSySn7Aevtd6g.png"
+}, {
+  "tag": "P",
+  "text": "As before, we can combine pandas with plotly+cufflinks for useful plots",
+  "translation": "和以前一样，我们可以将Pandas与plotly + cufflinks结合使用，以获得有用的地块"
+}, {
+  "tag": "PRE",
+  "text": "df.pivot_table(    values='views', index='published_date',    columns='publication').cumsum().iplot(        mode='markers+lines',        size=8,        symbol=[1, 2, 3, 4, 5],        layout=dict(            xaxis=dict(title='Date'),            yaxis=dict(type='log', title='Total Views'),            title='Total Views over Time by Publication'))",
+  "translation": "df.pivot_table（values ='views'，index ='published_date'，columns ='publication'）。cumsum（）。iplot（mode ='markers + lines'，size = 8，symbol = [1,2,3， 4、5]，layout = dict（xaxis = dict（title ='Date'），yaxis = dict（type ='log'，title ='Total Views'），title ='Total Views on Time of Publication'）"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*Sge36RGR1LEDzyvVq98nNg.png?q=20",
+  "type": "image",
+  "file": "1*Sge36RGR1LEDzyvVq98nNg.png"
+}, {
+  "tag": "P",
+  "text": "See the notebook or the documentation for more examples of added functionality. We can add in text annotations, reference lines, and best-fit lines to our plots with a single line of code, and still with all the interaction.",
+  "translation": "有关更多功能的更多示例，请参见笔记本或文档。 我们可以使用一行代码，并且仍然具有所有交互功能，将文本注释，参考线和最佳拟合线添加到绘图中。"
+}, {
+  "tag": "H1",
+  "text": "Single Variable Distributions: Histograms and Boxplots",
+  "translation": "单变量分布：直方图和箱线图"
+}, {
+  "tag": "P",
+  "text": "Single variable — univariate — plots are a standard way to start an analysis and the histogram is a go-to plot (although it has some issues) for graphing a distribution. Here, using my Medium article statistics (you can see how to get your own stats here or use mine here) let’s make an interactive histogram of the number of claps for articles ( df is a standard Pandas dataframe):",
+  "translation": "单变量（单变量）图是开始分析的标准方法，直方图是用于绘制分布图的首选图（尽管有一些问题）。 在这里，使用我的中型文章统计信息（您可以在此处查看如何获得自己的统计信息或在此处使用我的统计信息），让我们制作文章拍手数量的交互式直方图（df是标准的Pandas数据框）："
+}, {
+  "tag": "PRE",
+  "text": "df['claps'].iplot(kind='hist', xTitle='claps',                  yTitle='count', title='Claps Distribution')",
+  "translation": "df ['claps']。iplot（kind ='hist'，xTitle ='claps'，yTitle ='count'，title ='Claps Distribution'）"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/freeze/max/30/1*K6LaqTMhc46R8QQuEIczxw.gif?q=20",
+  "caption": "Interactive histogram made with plotly+cufflinks",
+  "type": "image",
+  "file": "1*K6LaqTMhc46R8QQuEIczxw.gif"
+}, {
+  "tag": "P",
+  "text": "For those used to matplotlib, all we have to do is add one more letter ( iplot instead of plot) and we get a much better-looking and interactive chart! We can click on the data to get more details, zoom into sections of the plot, and as we’ll see later, select different categories to highlight.",
+  "translation": "对于那些习惯于使用matplotlib的用户，我们所要做的就是再添加一个字母（用iplot代替plot），我们将获得一个外观更好，更具交互性的图表！ 我们可以单击数据以获取更多详细信息，将其放大到绘图的各个部分，然后如稍后所见，选择不同的类别以突出显示。"
+}, {
+  "tag": "P",
+  "text": "If we want to plot overlaid histograms, that’s just as simple:",
+  "translation": "如果我们想绘制重叠的直方图，那很简单："
+}, {
+  "tag": "PRE",
+  "text": "df[['time_started', 'time_published']].iplot(    kind='hist',    histnorm='percent',    barmode='overlay',    xTitle='Time of Day',    yTitle='(%) of Articles',    title='Time Started and Time Published')",
+  "translation": "df [[''time_started'，'time_published']]。iplot（kind ='hist'，histnorm ='percent'，barmode ='overlay'，xTitle ='一天中的时间'，yTitle ='文章的（％）' ，标题=“开始时间和发布时间”）"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*8mWiMINu1zgn3irxptzEig.png?q=20",
+  "type": "image",
+  "file": "1*8mWiMINu1zgn3irxptzEig.png"
+}, {
+  "tag": "P",
+  "text": "With a little bit of pandas manipulation, we can do a barplot:",
+  "translation": "借助一些熊猫操作，我们可以绘制一个小图："
+}, {
+  "tag": "PRE",
+  "text": "# Resample to monthly frequency and plot df2 = df[['view','reads','published_date']].\\         set_index('published_date').\\         resample('M').mean()df2.iplot(kind='bar', xTitle='Date', yTitle='Average',    title='Monthly Average Views and Reads')",
+  "translation": "＃重新采样到每月频率并绘制df2 = df [[''view'，'reads'，'published_date']]。\\ set_index（'published_date'）。\\ resample（'M'）。mean（）df2.iplot（kind ='bar'，xTitle ='Date'，yTitle ='Average'，title ='每月平均观看次数和阅读次数））"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*B6v0i6KNUjL5ifaH1ijlAg.png?q=20",
+  "type": "image",
+  "file": "1*B6v0i6KNUjL5ifaH1ijlAg.png"
+}, {
+  "tag": "P",
+  "text": "s we saw, we can combine the power of pandas with plotly + cufflinks. For a boxplot of the fans per story by publication, we use a pivot and then plot:",
+  "translation": "如我们所见，我们可以将熊猫的力量与情节+袖扣结合起来。 对于每个故事按出版物发布的粉丝的箱线图，我们使用枢轴，然后绘制："
+}, {
+  "tag": "PRE",
+  "text": "df.pivot(columns='publication', values='fans').iplot(        kind='box',        yTitle='fans',        title='Fans Distribution by Publication')",
+  "translation": "df.pivot（columns ='publication'，values ='fans'）。iplot（kind ='box'，yTitle ='fans'，title ='Fans Distribution by Publication'）"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/freeze/max/30/1*-8CsIE7F5G6sJLMv1ADJOQ.gif?q=20",
+  "type": "image",
+  "file": "1*-8CsIE7F5G6sJLMv1ADJOQ.gif"
+}, {
+  "tag": "P",
+  "text": "The benefits of interactivity are that we can explore and subset the data as we like. There’s a lot of information in a boxplot, and without the ability to see the numbers, we’ll miss most of it!",
+  "translation": "交互的好处是我们可以根据需要浏览和子集数据。 箱形图中有很多信息，并且如果无法查看数字，我们将错过大多数信息！"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*AwEPBK2mt55RQKhGYqMHUw.jpeg?q=20",
+  "caption": "(Source)",
+  "type": "image",
+  "file": "1*AwEPBK2mt55RQKhGYqMHUw.jpeg"
+}, {
+  "tag": "H1",
+  "text": "The Next Level of Data Visualization in Python",
+  "translation": "Python中数据可视化的新层次"
+}, {
+  "tag": "H2",
+  "text": "How to make great-looking, fully-interactive plots with a single line of Python",
+  "translation": "如何使用单行Python制作美观，完全交互的图"
+}, {
+  "tag": "P",
+  "text": "The sunk-cost fallacy is one of many harmful cognitive biases to which humans fall prey. It refers to our tendency to continue to devote time and resources to a lost cause because we have already spent — sunk — so much time in the pursuit. The sunk-cost fallacy applies to staying in bad jobs longer than we should, slaving away at a project even when it’s clear it won’t work, and yes, continuing to use a tedious, outdated plotting library — matplotlib — when more efficient, interactive, and better-looking alternatives exist.",
+  "translation": "沉没成本的谬论是人类沦为猎物的许多有害认知偏见之一。 它是指我们倾向于继续将时间和资源用于失败的事业，因为我们已经花了很多时间去沉没。 沉没成本的谬误适用于比我们应该更长的时间呆在糟糕的工作上，即使很显然它行不通，也将项目拒之门外，是的，当效率更高时，继续使用乏味，过时的绘图库-matplotlib 存在交互性和外观更好的替代方案。"
+}, {
+  "tag": "P",
+  "text": "Over the past few months, I’ve realized the only reason I use matplotlib is the hundreds of hours I’ve sunk into learning the convoluted syntax. This complication leads to hours of frustration on StackOverflow figuring out how to format dates or add a second y-axis. Fortunately, this is a great time for Python plotting, and after exploring the options, a clear winner — in terms of ease-of-use, documentation, and functionality — is the plotly Python library. In this article, we’ll dive right into plotly, learning how to make better plots in less time — often with one line of code.",
+  "translation": "在过去的几个月中，我意识到使用Matplotlib的唯一原因是我花了数百个小时来学习复杂的语法。 这种复杂性导致StackOverflow数小时的挫败感，弄清了如何格式化日期或添加第二个y轴。 幸运的是，这是进行Python绘图的绝佳时机，在探索了各种选择之后，就其易用性，文档和功能而言，明显的赢家是可开发的Python库。 在本文中，我们将深入研究绘图，学习如何在更短的时间内制作更好的绘图-通常只需一行代码。"
+}, {
+  "tag": "P",
+  "text": "All of the code for this article is available on GitHub. The charts are all interactive and can be viewed on NBViewer here.",
+  "translation": "GitHub上提供了本文的所有代码。 这些图表都是交互式的，可以在NBViewer上查看。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*D10-b01-wu-Unv-2WThIsQ.png?q=20",
+  "caption": "Example of plotly figures (source)",
+  "type": "image",
+  "file": "1*D10-b01-wu-Unv-2WThIsQ.png"
+}, {
+  "tag": "H2",
+  "text": "Plotly Brief Overview",
+  "translation": "简要概述"
+}, {
+  "tag": "P",
+  "text": "The plotly Python package is an open-source library built on plotly.js which in turn is built on d3.js. We’ll be using a wrapper on plotly called cufflinks designed to work with Pandas dataframes. So, our entire stack is cufflinks > plotly > plotly.js > d3.js which means we get the efficiency of coding in Python with the incredible interactive graphics capabilities of d3.",
+  "translation": "plotly Python软件包是一个基于plotly.js的开源库，该库又基于d3.js。 我们将在设计用于Pandas数据帧的称为袖扣的袖扣上使用包装器。 因此，我们的整个堆栈都是袖扣> plotly> plotly.js> d3.js，这意味着我们通过d3令人难以置信的交互式图形功能获得了Python编码的效率。"
+}, {
+  "tag": "P",
+  "text": "(Plotly itself is a graphics company with several products and open-source tools. The Python library is free to use, and we can make unlimited charts in offline mode plus up to 25 charts in online mode to share with the world.)",
+  "translation": "（Plotly本身是一家图形公司，提供多种产品和开源工具。Python库是免费使用的，我们可以在离线模式下制作无限制的图表，而在线模式下最多可以制作25个图表以与世界共享。）"
+}, {
+  "tag": "P",
+  "text": "All the work in this article was done in a Jupyter Notebook with plotly + cufflinks running in offline mode. After installing plotly and cufflinks with pip install cufflinks plotly import the following to run in Jupyter:",
+  "translation": "本文中的所有工作都是在Jupyter Notebook中完成的，并且在离线模式下运行有绘图+袖扣。 使用pip安装plotly和袖扣后，以袖珍方式导入以下内容以在Jupyter中运行："
+}, {
+  "tag": "PRE",
+  "text": "# Standard plotly importsimport plotly.plotly as pyimport plotly.graph_objs as gofrom plotly.offline import iplot, init_notebook_mode# Using plotly + cufflinks in offline modeimport cufflinkscufflinks.go_offline(connected=True)init_notebook_mode(connected=True)",
+  "translation": "＃标准plotly导入plotly.plotly作为pyimport plotly.graph_objs作为gofrom plotly.offline导入iplot，init_notebook_mode＃在脱机模式下使用plotly +袖扣导入cufflinkscufflinks.go_offline（connected = True）init_notebook_mode（connected = True）"
+}]
