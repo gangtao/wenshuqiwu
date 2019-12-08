@@ -1,0 +1,117 @@
+[{
+  "tag": "H2",
+  "text": "3 Quick Ways To Compare Data in Python",
+  "translation": "3种在Python中比较数据的快速方法"
+}, {
+  "tag": "H3",
+  "text": "For anyone working in an analytical role, receiving requests to compare data will be all too familiar. Whether that is…",
+  "translation": "对于从事分析工作的任何人来说，接收比较数据的请求都将非常熟悉。 不管是..."
+}, {
+  "tag": "H1",
+  "text": "Learn How to Quickly Create UIs in Python",
+  "translation": "了解如何在Python中快速创建UI"
+}, {
+  "tag": "H2",
+  "text": "Finally a library you can pick up in under 5 minutes",
+  "translation": "最后，您可以在5分钟内找到图书馆"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*ZgU5krrr16l8eV3m?q=20",
+  "caption": "Photo by Eftakher Alam on Unsplash",
+  "type": "image",
+  "file": "0*ZgU5krrr16l8eV3m"
+}, {
+  "tag": "P",
+  "text": "The biggest advantage of python is the ease of use and the abundance of libraries for just about anything. With a few lines of code, there is nothing you couldn’t do. As long as your python scripts are for personal use or your target audience is technical enough, you would never even have to think about a User Interface (UI).",
+  "translation": "python的最大优点是易用性以及几乎所有内容的丰富库。 只需几行代码，您便无所不能。 只要您的python脚本供个人使用或目标读者足够技术，您甚至都无需考虑用户界面（UI）。"
+}, {
+  "tag": "P",
+  "text": "Sometimes, however, your target audience is not technical enough. They’d love to use your python scripts but only as long as they didn’t have to look at a single line of code. In those cases, providing command line scripts will simply not cut it. You would ideally need to provide them with a UI. Although I wouldn’t be surprised if you have your typical desktop client versus web-based UI debate, in this blog posts, the aim is to use Python exclusively.",
+  "translation": "但是，有时您的目标受众还不够技术。 他们很乐意使用您的python脚本，但前提是他们不必只看一行代码。 在那种情况下，提供命令行脚本根本不会削减它。 理想情况下，您需要为他们提供一个UI。 尽管您会遇到典型的桌面客户端与基于Web的UI辩论，我不会感到惊讶，但在此博客文章中，我们的目标是专门使用Python。"
+}, {
+  "tag": "H1",
+  "text": "Python Libraries Available for UI usage",
+  "translation": "可用于UI的Python库"
+}, {
+  "tag": "P",
+  "text": "There are essentially 3 big Python UI libraries; Tkinter, wxPython and PyQT. While reviewing all three, I realised that everything that I liked about Python was nowhere to be found in using these libraries. Python libraries, in general, make a very good job of abstracting away the super technical. If I needed to work with Object Oriented Programming, I might as well have loaded up Java or .Net.",
+  "translation": "本质上有3个大型Python UI库； Tkinter，wxPython和PyQT。 在回顾所有这三个库时，我意识到使用Python库找不到我喜欢的一切。 通常，Python库在抽象超级技术方面做得很好。 如果需要使用面向对象编程，那么我可能还已经加载了Java或.Net。"
+}, {
+  "tag": "P",
+  "text": "Much to my delight, however, I came across a fourth option that seemed to be catering to my kind of liking. The library I begun reviewing and ultimately choosing to create Python UIs from is called PySimpleGUI. Funnily enough, this library is using all the 3 popular libraries, but abstracts away the super technical.",
+  "translation": "然而，令我非常高兴的是，我遇到了第四个选择，它似乎可以满足我的喜好。 我开始审查并最终选择从中创建Python UI的库称为PySimpleGUI。 有趣的是，该库使用了所有3种流行的库，但是抽象了超级技术。"
+}, {
+  "tag": "P",
+  "text": "Without any further ado, let’s dive in and explore this library by solving a real problem at the same time.",
+  "translation": "事不宜迟，让我们通过同时解决一个实际问题来深入研究该库。"
+}, {
+  "tag": "H1",
+  "text": "Check that two files are identical",
+  "translation": "检查两个文件是否相同"
+}, {
+  "tag": "P",
+  "text": "Using my previous article 3 Quick Ways to Compare Data in Python, we can use the first section, Check the Integrity of the Data to attempt to build a UI.",
+  "translation": "使用我以前的文章3用Python比较数据的快速方法，我们可以使用第一部分“检查数据的完整性”来尝试构建UI。"
+}, {
+  "tag": "H2",
+  "text": "3 Quick Ways To Compare Data in Python",
+  "translation": "3种在Python中比较数据的快速方法"
+}, {
+  "tag": "H3",
+  "text": "For anyone working in an analytical role, receiving requests to compare data will be all too familiar. Whether that is…",
+  "translation": "对于从事分析工作的任何人来说，接收比较数据的请求都将非常熟悉。 不管是..."
+}, {
+  "tag": "P",
+  "text": "We essentially need a way to load up two files, and then choose the encryption we would like to use to do the file comparison.",
+  "translation": "本质上，我们需要一种加载两个文件的方式，然后选择我们要用于进行文件比较的加密。"
+}, {
+  "tag": "H2",
+  "text": "Code the UI",
+  "translation": "编写用户界面"
+}, {
+  "tag": "P",
+  "text": "To build that UI, we can use the following code:",
+  "translation": "要构建该UI，我们可以使用以下代码："
+}, {
+  "tag": "PRE",
+  "text": "import PySimpleGUI as sglayout = [    [sg.Text('File 1'), sg.InputText(), sg.FileBrowse(),     sg.Checkbox('MD5'), sg.Checkbox('SHA1')     ],    [sg.Text('File 2'), sg.InputText(), sg.FileBrowse(),     sg.Checkbox('SHA256')     ],    [sg.Output(size=(88, 20))],    [sg.Submit(), sg.Cancel()]]window = sg.Window('File Compare', layout)while True:                             # The Event Loop    event, values = window.read()    # print(event, values) #debug    if event in (None, 'Exit', 'Cancel'):        break"
+}, {
+  "tag": "P",
+  "text": "which results in:",
+  "translation": "结果是："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*HvmUi_7Bx_Oq1kMtYr8gkw.png?q=20",
+  "caption": "Simply Python UI, generated by the above code",
+  "type": "image",
+  "file": "1*HvmUi_7Bx_Oq1kMtYr8gkw.png"
+}, {
+  "tag": "H2",
+  "text": "Plugging in the logic",
+  "translation": "插入逻辑"
+}, {
+  "tag": "P",
+  "text": "With the UI in place, it’s simple for one to see how to plug in the rest of the code. We simply need to monitor for what the user inputs and then act accordingly. We can very easily do that, with the following code.",
+  "translation": "有了用户界面，就很容易看到如何插入其余代码。 我们只需要监视用户输入的内容，然后采取相应的措施即可。 我们可以使用以下代码轻松地做到这一点。"
+}, {
+  "tag": "PRE",
+  "text": "import PySimpleGUI as sgimport reimport hashlibdef hash(fname, algo):    if algo == 'MD5':        hash = hashlib.md5()    elif algo == 'SHA1':        hash = hashlib.sha1()    elif algo == 'SHA256':        hash = hashlib.sha256()    with open(fname) as handle: #opening the file one line at a time for memory considerations        for line in handle:            hash.update(line.encode(encoding = 'utf-8'))    return(hash.hexdigest())layout = [    [sg.Text('File 1'), sg.InputText(), sg.FileBrowse(),     sg.Checkbox('MD5'), sg.Checkbox('SHA1')     ],    [sg.Text('File 2'), sg.InputText(), sg.FileBrowse(),     sg.Checkbox('SHA256')     ],    [sg.Output(size=(88, 20))],    [sg.Submit(), sg.Cancel()]]window = sg.Window('File Compare', layout)while True:                             # The Event Loop    event, values = window.read()    # print(event, values) #debug    if event in (None, 'Exit', 'Cancel'):        break    if event == 'Submit':        file1 = file2 = isitago = None        # print(values[0],values[3])        if values[0] and values[3]:            file1 = re.findall('.+:\\/.+\\.+.', values[0])            file2 = re.findall('.+:\\/.+\\.+.', values[3])            isitago = 1            if not file1 and file1 is not None:                print('Error: File 1 path not valid.')                isitago = 0            elif not file2 and file2 is not None:                print('Error: File 2 path not valid.')                isitago = 0            elif values[1] is not True and values[2] is not True and values[4] is not True:                print('Error: Choose at least one type of Encryption Algorithm')            elif isitago == 1:                print('Info: Filepaths correctly defined.')                algos = [] #algos to compare                if values[1] == True: algos.append('MD5')                if values[2] == True: algos.append('SHA1')                if values[4] == True: algos.append('SHA256')                filepaths = [] #files                filepaths.append(values[0])                filepaths.append(values[3])                print('Info: File Comparison using:', algos)                for algo in algos:                    print(algo, ':')                    print(filepaths[0], ':', hash(filepaths[0], algo))                    print(filepaths[1], ':', hash(filepaths[1], algo))                    if hash(filepaths[0],algo) == hash(filepaths[1],algo):                        print('Files match for ', algo)                    else:                        print('Files do NOT match for ', algo)        else:            print('Please choose 2 files.')window.close()",
+  "translation": "导入PySimpleGUI作为sg导入重新导入hashlibdef hash（fname，algo）：if algo =='MD5'：hash = hashlib.md5（）elif algo =='SHA1'：hash = hashlib.sha1（）elif algo =='SHA256' ：hash = hashlib.sha256（），以open（fname）作为句柄：＃一次打开文件一行，以考虑句柄中的行的内存考虑：hash.update（line.encode（encoding ='utf-8'）） return（hash.hexdigest（））layout = [[sg.Text（'File 1'），sg.InputText（），sg.FileBrowse（），sg.Checkbox（'MD5'），sg.Checkbox（'SHA1' ）]，[sg.Text（'File 2'），sg.InputText（），sg.FileBrowse（），sg.Checkbox（'SHA256'）]，[sg.Output（size =（88，20））] ，[sg.Submit（），sg.Cancel（）]]窗口= sg.Window（“文件比较”，布局），同时为True：＃事件循环事件，值= window.read（）＃打印（事件，值）＃调试if（None，'Exit'，'Cancel'）中的事件：if event =='Submit'时中断：file1 = file2 = isitago = None＃print（va lues [0]，values [3]），如果values [0]和values [3]：file1 = re.findall（'。+：\\ /.+ \\。+。'，values [0]）file2 = re。 findall（'。+：\\ /.+ \\。+。'，values [3]）isitago = 1，如果不是file1并且file1不是None：print（'错误：文件1路径无效。'）isitago = 0 elif not file2和file2不是None：print（'错误：文件2路径无效。'）isitago = 0 elif values [1]不是True且values [2]不是True和values [4]不是True：print （“错误：选择至少一种加密算法”）elif isitago == 1：print（'Info：正确定义了文件路径。'）algos = [] #algos比较values [1] == True：algos。 append（'MD5'）if values [2] == True：algos.append（'SHA1'）if values [4] == True：algos.append（'SHA256'）filepaths = [] #files filepaths.append（值s [0]）filepaths.append（values [3]）print（'Info：使用Algos进行算法的文件比较：'，algos）在算法中使用algo：print（algo，'：'）print（filepaths [0]，'：' ，hash（filepaths [0]，algo））print（filepaths [1]，'：'，hash（filepaths [1]，algo））如果hash（filepaths [0]，algo）== hash（filepaths [1] ，algo）：print（'文件与'，algo匹配）else：print（'文件与'，algo不匹配）else：print（'请选择2个文件。'）window.close（）"
+}, {
+  "tag": "P",
+  "text": "Running the above code will give you the following outcome:",
+  "translation": "运行上面的代码将为您提供以下结果："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*fVWBk7vx3-QviSOK87F9qw.png?q=20",
+  "type": "image",
+  "file": "1*fVWBk7vx3-QviSOK87F9qw.png"
+}, {
+  "tag": "H1",
+  "text": "Closing Thoughts",
+  "translation": "总结思想"
+}, {
+  "tag": "P",
+  "text": "Although not the prettiest of UIs, this library allows you to quickly spin up simple python UIs and share them with whoever you may need to. More importantly, the code that you require to do so, is simple and very readable. You will still have the problem of having to run the code to get the UI, which may make sharing a bit difficult, but you can consider using something like PyInstaller which will turn your python script into a .exe that people can simply double click.",
+  "translation": "尽管不是最漂亮的UI，但该库允许您快速启动简单的python UI并与可能需要的人共享。 更重要的是，您所需的代码是简单易读的。 您仍然会遇到必须运行代码来获取UI的问题，这可能会使共享变得有些困难，但是您可以考虑使用PyInstaller之类的工具，它将您的python脚本转换为.exe，人们只需双击即可。"
+}]
