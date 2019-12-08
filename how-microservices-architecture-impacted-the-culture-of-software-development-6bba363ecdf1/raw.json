@@ -1,0 +1,71 @@
+[{
+  "tag": "H1",
+  "text": "Conclusion",
+  "translation": "结论"
+}, {
+  "tag": "P",
+  "text": "In my opinion, having smaller teams with clear ownership brings a lot of joy to the day-to-day development work and gives developers the kind of freedom that sparks creativity. Also, working with small code bases feels like being involved with smaller projects again, even when working within a big organization.",
+  "translation": "在我看来，拥有所有权明确的较小团队可以为日常开发工作带来很多乐趣，并为开发人员带来激发创造力的自由。 而且，即使在大型组织中工作，使用小型代码库也感觉像是再次参与较小的项目。"
+}, {
+  "tag": "P",
+  "text": "Don’t get me wrong, there are no silver bullets. And while microservices-oriented architecture facilitates the possibility of having code ownership and feature teams, it is certainly not for everyone. After all, it’s possible to have these features within monolithic codebases, it just requires more organizational involvement to make it happen.",
+  "translation": "别误会我，没有银弹。 尽管面向微服务的体系结构促进了拥有代码所有权和功能团队的可能性，但它并不适合所有人。 毕竟，有可能将这些功能包含在整体代码库中，只需要更多的组织参与才能实现。"
+}, {
+  "tag": "H1",
+  "text": "Code Ownership",
+  "translation": "代码所有权"
+}, {
+  "tag": "P",
+  "text": "I always like to think about programming as a form of art (or at least craftsmanship). When I started my adventure with programming, I spent years working on small projects like games, desktop/web applications, and websites. It felt liberating to transfer ideas from my head into the code. However, when I started my professional career in software development it felt more like working at a pizza joint than creating art.",
+  "translation": "我一直喜欢将编程视为一种艺术形式（或至少是一种手工艺）。 当我从编程开始冒险时，我花了多年的时间从事小型项目，例如游戏，桌面/ Web应用程序和网站。 将思想从我的头脑转移到代码中感到很自由。 但是，当我开始从事软件开发的职业生涯时，感觉更像是在披萨店工作而不是创造艺术品。"
+}, {
+  "tag": "P",
+  "text": "Besides fuzzy accountability, having a centralized code base and data storage was also a limiting factor when choosing technologies. Decisions about framework, language, design patterns, or database engines had to be global. In short, it’s hard to get creative when one has no control over any of these aspects.",
+  "translation": "除了模糊责任制之外，拥有集中的代码库和数据存储也是选择技术时的限制因素。 有关框架，语言，设计模式或数据库引擎的决策必须是全球性的。 简而言之，如果人们无法控制这些方面，就很难发挥创意。"
+}, {
+  "tag": "P",
+  "text": "Microservices architecture brought about the concept of small code bases. Creating dozens of smaller repositories instead of a big one made it possible to set clear owners for specific repositories. Obviously, code ownership doesn’t have to mean that a single team or individual is responsible for maintaining the entire code. Other teams can also submit pull requests if needed (inner sourcing). However, the owner of the code guards the quality of the solutions and makes sure that all pull requests follow the code standards and API contracts.",
+  "translation": "微服务架构带来了小型代码库的概念。 创建数十个较小的存储库而不是大型存储库，可以为特定存储库设置明确的所有者。 显然，代码所有权并不一定意味着一个团队或个人负责维护整个代码。 其他团队也可以根据需要提交拉取请求（内部采购）。 但是，代码所有者保护解决方案的质量，并确保所有提取请求均遵循代码标准和API合同。"
+}, {
+  "tag": "H1",
+  "text": "Feature Teams",
+  "translation": "功能团队"
+}, {
+  "tag": "P",
+  "text": "Even though it was possible to have cross-functional feature teams within monolithic architectures, organizations would typically split the teams based on their technical capabilities (e.g., front end, back end, sysadmin, database development, etc.) Thus, developers rarely had access to the production environment, leading to split responsibilities when it came down to production and maintenance. James Lewis and Martin Fowler point directly to this notion within the article that initially defined the concept of microservices architecture.",
+  "translation": "即使有可能在单一体系结构中拥有跨功能的功能团队，组织通常也会根据其技术能力（例如，前端，后端，系统管理员，数据库开发等）来拆分团队。因此，开发人员很少能够访问 到生产环境，导致在生产和维护方面责任分担。 James Lewis和Martin Fowler在本文中直接指出了这一概念，该文章最初定义了微服务架构的概念。"
+}, {
+  "tag": "P",
+  "text": "Microservice proponents tend to avoid this model, preferring instead the notion that a team should own a product over its full lifetime. A common inspiration for this is Amazon’s notion of “you build, you run it” where a development team takes full responsibility for the software in production.",
+  "translation": "微服务的支持者倾向于避免这种模式，而是倾向于团队应该在产品的整个生命周期内拥有产品的想法。 这样做的一个共同灵感是亚马逊的“构建，运行”概念，其中开发团队对生产中的软件负全部责任。"
+}, {
+  "tag": "P",
+  "text": "In addition, bringing people with other specialties to the team (e.g., product/marketing) allows for the scope to be increased far beyond technological aspects. Being able to monitor customer feedback, user adoption, and commercial value makes teams fully accountable and responsible for every aspect of the feature and its functionality. By following this model, teams can see the impact they have on the product and within the business itself.",
+  "translation": "另外，将具有其他专业知识的人员加入团队（例如产品/市场营销）可以使范围扩大到远远超出技术方面。 能够监视客户的反馈，用户采用率和商业价值，使团队可以完全负责并对功能及其功能的各个方面负责。 通过遵循此模型，团队可以看到他们对产品和业务本身的影响。"
+}, {
+  "tag": "H1",
+  "text": "How Microservices Architecture Impacted the Culture of Software Development",
+  "translation": "微服务架构如何影响软件开发文化"
+}, {
+  "tag": "H2",
+  "text": "And why it’s more than just a way of structuring code",
+  "translation": "以及为什么它不仅仅是结构化代码的一种方式"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*KhCDUF804OkgO9xn?q=20",
+  "caption": "Photo by Clark Tibbs on Unsplash",
+  "type": "image",
+  "file": "0*KhCDUF804OkgO9xn"
+}, {
+  "tag": "P",
+  "text": "Microservices stumbled into the world of web development with a bang. The topic caused heated debates, endless posts, many comparisons to the monolithic architecture, and even use cases coming from big organizations. However, whenever the topic comes up, developers tend to focus mostly on the technical aspects of the microservices revolution rather than the cultural changes that it sparked. While the technology that grew around it is indeed very cool, I find the cultural changes to be more disruptive.",
+  "translation": "微服务轰轰烈烈地跌入Web开发领域。 这个话题引起了激烈的辩论，无休止的帖子，与整体架构的许多比较，甚至是来自大型组织的用例。 但是，无论何时出现这个话题，开发人员都倾向于将重点更多地放在微服务革命的技术方面，而不是它引发的文化变革上。 虽然发展起来的技术确实非常酷，但我发现文化变革更具破坏性。"
+}, {
+  "tag": "P",
+  "text": "I was lucky to get onto the bandwagon relatively quickly, around 2014, and I still remember how exciting it was to migrate old monoliths into the new cool and sexy microservices. Like many, I was overly focused on technological aspects to begin with — after all, it was a very exciting time (e.g., Docker had just come around).",
+  "translation": "我很幸运能在2014年左右相对较快地赶上潮流，而我仍然记得将旧的整体迁移到新的凉爽而性感的微服务中是多么令人兴奋。 与许多人一样，我一开始就过于关注技术方面，毕竟那是一段非常激动人心的时刻（例如，Docker刚刚问世）。"
+}, {
+  "tag": "P",
+  "text": "However, after a couple of years and despite how much things have changed in terms of technology, I believe that code ownership and feature teams had the biggest impact on how software is developed within organizations that adopted microservices.",
+  "translation": "但是，经过几年的发展，尽管技术发生了很大变化，但我相信代码所有权和功能团队对采用微服务的组织内部软件开发方式的影响最大。"
+}]
