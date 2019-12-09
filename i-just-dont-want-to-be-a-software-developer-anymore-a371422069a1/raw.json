@@ -1,0 +1,85 @@
+[{
+  "tag": "H1",
+  "text": "I just don’t want to be a software developer anymore",
+  "translation": "我只是不想再成为软件开发人员"
+}, {
+  "tag": "P",
+  "text": "I still love coding, but I hate this industry",
+  "translation": "我仍然喜欢编码，但我讨厌这个行业"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/freeze/max/60/1*jw2vUeVAbmu8KNaByRWIGA.gif?q=20",
+  "type": "image",
+  "file": "1*jw2vUeVAbmu8KNaByRWIGA.gif"
+}, {
+  "tag": "P",
+  "text": "It’s an easy story for me to tell. When I was 10 there was nothing more exciting to me than playing around with the old broken computers my dad, who worked in tech, would give me. I became a teenage game modder and hobby web developer. After college I worked at a non-profit, not making much, when I was offered an exciting position as a web developer where I made 5x as much. I’ve been doing it ever since. It’s a story people who hire me or who promote the tech industry love to hear. But it’s not the whole story.",
+  "translation": "对我来说，这是一个简单的故事。 当我十岁的时候，对我来说，没有什么比我父亲从事技术工作的破旧计算机给我带来的刺激更令人兴奋了。 我成为一名青少年游戏开发者和业余爱好网络开发人员。 大学毕业后，我在一家非盈利性组织工作，收入不高，当时我被任命为网络开发人员，这是我获得的令人兴奋的职位，使我的收入提高了五倍。 从那以后我一直在做。 这是一个雇用我或促进科技行业的人们喜欢听的故事。 但这不是全部。"
+}, {
+  "tag": "P",
+  "text": "Passion is prized in this industry and people who come into code out of love are considered special. It is also considered the reason why certain groups of people are less represented in tech, because not as many of them are building Linux machines in their basements for fun.",
+  "translation": "激情在这个行业中备受推崇，出于爱而进入代码的人们被认为是特殊的。 人们还认为某些人在科技领域的代表较少的原因是，因为没有多少人在他们的地下室里玩Linux机器。"
+}, {
+  "tag": "P",
+  "text": "But the problem with that is that hobby coding isn’t at all like coding for work. Very few coding jobs allow you to do the kind of work that hobby coders enjoy. I think in many ways the industry is becoming a lot like the programming portrayed in Snow Crash, which was written in 1992 but reads as almost an oracle:",
+  "translation": "但问题在于，业余爱好编码根本不像工作编码。 很少有编码工作可让您完成业余编码员喜欢的工作。 我认为该行业在很多方面都变得像《雪崩》（Snow Crash）中描绘的程序一样，该程序编写于1992年，但几乎是一个oracle："
+}, {
+  "tag": "P",
+  "text": "She is an applications programmer for the Feds. In the old days, she would have written computer programs for a living. Nowadays, she writes fragments of computer programs. These programs are designed by Marietta and Marietta’s superiors in massive week-long meetings on the top floor. Once they get the design down, they start breaking up the problem into tinier and tinier segments, assigning them to group managers, who break them down even more and feed little bits of work to the individual programmers. In order to keep the work done by the individual coders from colliding, it all has to be done according to a set of rules and regulations even bigger and more fluid than the Government procedure manual.",
+  "translation": "她是美联储的一名应用程序程序员。 在过去，她会写计算机程序为生。 如今，她编写了计算机程序的片段。 这些程序是由Marietta和Marietta的上级在顶层进行的为期一周的大规模会议中设计的。 一旦确定了设计，他们便开始将问题分解为细微的细分，然后将其分配给小组经理，小组经理将其分解得更多，并为个别程序员提供少量工作。 为了避免各个编码人员的工作发生冲突，所有这些工作都必须按照一套比政府程序手册更大，更灵活的规则进行。"
+}, {
+  "tag": "P",
+  "text": "There are certainly more engaging jobs out there, but the reality is a lot of us do work on little fragments, work that is often tedious and devoid of any kind of creativity. As a developer I’ve often had trouble figuring out if a job would be Snow Crashy or not, and been seduced by promises of engaging work only to find myself ferreting out bugs on some enterprise CMS.",
+  "translation": "当然，那里还有更多吸引人的工作，但现实是，我们中的很多人都做零碎的工作，这些工作通常很乏味并且没有任何创造力。 作为一名开发人员，我经常很难弄清一份工作是否会因Snow Crashy而失败，并且被从事工作的承诺所吸引，却发现自己发现了一些企业CMS上的错误。"
+}, {
+  "tag": "P",
+  "text": "But for a long time I pretended it was fun. That I loved it. Because there is a lot of social pressure to portray yourself that way in the industry. People hiring you will run the other way as soon as they see a crack in that facade.",
+  "translation": "但是很长一段时间我都装作很有趣。 我喜欢它。 因为在行业中以这种方式描绘自己存在着很大的社会压力。 雇用您的人一旦看到该立面出现裂缝，就会立即采取另一种方式。"
+}, {
+  "tag": "P",
+  "text": "Wanna here the real story of how I became a professional developer? I actually was a freelancer after working at that non-profit, I took the developer job because the medical bills piled up. And stayed because they never went away.",
+  "translation": "想在这里了解我如何成为专业开发人员的真实故事吗？ 在那个非营利性组织工作后，我实际上是一名自由职业者，我因为医疗费用堆积而接任开发人员的工作。 留下来，因为他们从来没有离开过。"
+}, {
+  "tag": "P",
+  "text": "It’s hard for me to admit, I know it’s hard for a lot of people. I know there are others working as developers for the health insurance or to support their families. Even James Damore, who became infamous for his claim women are less represented in tech because we are less interested in it, admits as much in a CNN interview:"
+}, {
+  "tag": "P",
+  "text": "part of the reason so many men go into tech is because it’s high paying, I know of many people in Google who weren’t necessarily passionate about it but it would provide for their family and so they still worked there",
+  "translation": "如此之多的人使用高科技的部分原因是因为它的高薪，我知道Google中有很多人不一定对它充满热情，但是它可以养家糊口，所以他们仍然在那里工作"
+}, {
+  "tag": "P",
+  "text": "If I won the lottery would I still code? I would, but it would not be like work. It would be projects I enjoyed. And it would be fewer hours.",
+  "translation": "如果我中了彩票，我还会编码吗？ 我会的，但那不会像工作。 这将是我喜欢的项目。 而且会更少的时间。"
+}, {
+  "tag": "P",
+  "text": "Coding for a couple of hours a day in your spare time isn’t the same as coding for 8+ hours a day. Over the past decade it has worn me down. I have regular painful migraines triggered by working long hours. I have the beginnings of arthritis in my neck. I’ve tried standing desks, balance board desks, treadmill desks, special diets, exercising more before and after work. Doctors, physical therapists, massage therapists of every stripe. I’ve spent thousands and thousands of dollars. I’ve hidden it because I was afraid it would make me unemployable. I’ve worked those long hours in intense pain. I’m not sure desk jockeying for these kind of hours is good for anyone, it certainly wasn’t good for me.",
+  "translation": "业余时间每天编码几个小时与每天编码8小时以上是不一样的。 在过去的十年中，它使我感到失望。 长时间工作会导致我经常出现痛苦的偏头痛。 我的脖子上患有关节炎。 我尝试过站立式书桌，平衡板书桌，跑步机书桌，特殊饮食，下班前后多做运动。 每个条纹的医生，物理治疗师，按摩治疗师。 我花了成千上万美元。 我将其隐藏起来是因为我担心它会使我失业。 我辛苦工作了很长时间。 我不确定这类时间的咨询服务对任何人都有利，但对我当然不利。"
+}, {
+  "tag": "P",
+  "text": "I also have to say that there is a toll to the constant backlash against women in tech. That what James Damore said that really cut to the core was that a lot of us women in tech were only there because a bar was lowered to get us in to meet some quota. And reading the reaction to it on websites I frequented and from people I once counted as friends was very hard. I can’t pretend this didn’t contribute to being demoralized. On the other side I am really sick of diversity programs I encountered that are corporate cheerleading and totally unwilling to do the hard work it would actually take to make this a better industry for women.",
+  "translation": "我还必须说，科技领域对女性的持续反弹会给人们带来巨大的损失。 詹姆斯·达莫尔（James Damore）所说的真正切入核心的是，我们中很多技术女性都只在那里，因为降低了门槛以让我们进入某些配额。 在我经常访问的网站上以及从我曾经被视为朋友的人们那里读到它的反应非常困难。 我不能假装这没有助长士气低落。 另一方面，我真的厌倦了我遇到的多样性项目，这些项目是公司的啦啦队表演，完全不愿为使妇女成为一个更好的行业而付出艰辛的努力。"
+}, {
+  "tag": "P",
+  "text": "It’s really hard to celebrate “women’s day” with free feminist speakers when I just found out some guy who does the same work as me is getting paid 20% more. Also once in a while some jerk will be like “if women really were paid less why wouldn’t companies hire more women to save money?” I’m pretty sure they already do this and that recent lawsuits will reveal it is a common practice. My experience is companies are thrilled to hire women, it makes them look good AND they can usually pay them less. It’s not about quotas.",
+  "translation": "当我发现有个与我做同样工作的人的薪水增加了20％时，很难与自由的女权主义者庆祝“妇女节”。 有时还会有些混蛋，例如“如果真的给了女性更少的薪水，为什么公司不雇用更多的女性来省钱？”我很确定他们已经这样做了，而且最近的诉讼将表明这是一种普遍做法。 。 我的经验是，公司很高兴雇用女性，这使她们看起来很漂亮，而且她们通常可以少付薪水。 这与配额无关。"
+}, {
+  "tag": "P",
+  "text": "Commenters on my previous article asked me why I didn’t just get my skills up to snuff and get “better” jobs. I’ve never really had trouble with that. I take to new technology easily and learn fast. I suspect I’ll keep doing that. But at this point I’ve lost all desire to try to hack it in the industry.",
+  "translation": "我上一篇文章的评论者问我，为什么我不仅仅掌握自己的技能并获得“更好”的工作。 我从来没有真正遇到过麻烦。 我轻松地学习新技术并快速学习。 我怀疑我会继续这样做。 但是到了这一刻，我已经失去了尝试破解该行业的所有欲望。"
+}, {
+  "tag": "P",
+  "text": "Because it’s not really “passion” they are looking for, but people who are merely willing to endure long hours. They aren’t really looking for the person who spends a few hours on the weekend on an open-source project, they are looking for the person who comes home from work and spends all night on it.",
+  "translation": "因为他们并不是真正在寻找“激情”，而是只愿意忍受长时间的人们。 他们并不是在找一个周末在开源项目上花几个小时的人，而是在找一个下班回家然后整夜花时间的人。"
+}, {
+  "tag": "P",
+  "text": "The good news is I basically already did win the lottery. I built up savings working as a developer which allowed me to quit. I also have a safety net in that if things really go to hell I can live and work on my family’s farm. This is an immense privilege I am grateful for. That savings was originally for a downpayment for a house, but now gives me a landing pad where I can take some time to really do what I love. A few hours of coding, a few hours of writing. I’ve gone from most of my days filled with pain to only a few isolated incidents. Ample time with people I care about. In January I’m starting a leatherwork vocational program.",
+  "translation": "好消息是我基本上已经中了彩票。 我积累了作为开发人员的积蓄，这使我得以辞职。 我还有一个安全网，如果事情真的到了地狱，我可以在家人的农场里生活和工作。 我非常感激这是一项巨大的特权。 节省下来的钱本来是用来支付房屋首付的，但是现在给了我一块登陆垫，让我可以花一些时间来真正地做自己喜欢的事情。 几个小时的编码，几个小时的写作。 从我大部分时间都充满痛苦的经历，到只有几次孤立的事件。 与我关心的人有足够的时间。 我在一月份开始皮具职业培训。"
+}, {
+  "tag": "P",
+  "text": "Where do I go from here? That house downpayment money isn’t going to last forever. I’m not delusional in that I know the effect this is having on my career track. That selling USA-made consumer goods is a tough industry. I’ve had lots of dire warnings from various people in my life. If I try to go back, I know a lot of companies will run as soon as they know I have other priorities in my life and I’m not afraid to defend them. But I have a diverse skillset that hopefully will earn me value somehow.",
+  "translation": "我从这里去哪里？ 那套房子的首付钱不会永远持续下去。 我并不妄想，因为我知道这会对我的职业生涯产生影响。 销售美国制造的消费品是一个艰难的行业。 我一生中受到许多人的严厉警告。 如果我试着回去，我知道许多公司会在知道我的生活中还有其他优先事项时便开始运营，并且我不怕捍卫它们。 但是我有各种各样的技能，希望能以某种方式使我有价值。"
+}, {
+  "tag": "P",
+  "text": "Of course there are a lot of jobs out there besides software development that involve long, harmful hours. I dream of a world where we all work less. In the meantime I’ll still be here coding, maybe actually enjoying it again, and trying to find a life where I have true balance between my work and my other needs.",
+  "translation": "当然，除了软件开发之外，还有很多工作要花很长时间，这很有害。 我梦想着一个人人都少工作的世界。 同时，我仍然会在这里编码，也许实际上又在享受它，并试图找到一种在工作与其他需求之间达到真正平衡的生活。"
+}]
