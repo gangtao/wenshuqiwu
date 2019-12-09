@@ -1,0 +1,419 @@
+[{
+  "tag": "H1",
+  "text": "Beginner’s Guide to Machine Learning with Python",
+  "translation": "Python机器学习入门指南"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*Vr22w3sQrFpGzksz?q=20",
+  "type": "image",
+  "file": "0*Vr22w3sQrFpGzksz"
+}, {
+  "tag": "P",
+  "text": "Machine Learning, a prominent topic in Artificial Intelligence domain, has been in the spotlight for quite some time now. This area may offer an attractive opportunity, and starting a career in it is not as difficult as it may seem at first glance. Even if you have zero-experience in math or programming, it is not a problem. The most important element of your success is purely your own interest and motivation to learn all those things.",
+  "translation": "机器学习是人工智能领域的一个突出主题，已经有相当长的一段时间了。 这个领域可能提供有吸引力的机会，并且在其中开始职业并不像乍看起来那样困难。 即使您在数学或编程方面的经验为零，这也不是问题。 成功的最重要因素纯粹是您自己的兴趣和学习所有这些东西的动力。"
+}, {
+  "tag": "P",
+  "text": "If you are a newcomer, you do not know where to start studying and why you need Machine Learning and why it is gaining more and more popularity lately, you got into the right place! I’ve gathered all the needed information and useful resources to help you gain new knowledge and accomplish your first projects.",
+  "translation": "如果您是新手，则不知道从哪里开始学习，以及为什么需要机器学习以及为什么机器学习最近越来越流行，您来对地方了！ 我收集了所有必要的信息和有用的资源，以帮助您获得新知识并完成您的第一个项目。"
+}, {
+  "tag": "H1",
+  "text": "Why Starting With Python?",
+  "translation": "为什么从Python开始？"
+}, {
+  "tag": "P",
+  "text": "If your aim is growing into a successful coder, you need to know a lot of things. But, for Machine Learning & Data Science, it is pretty enough to master at least one coding language and use it confidently. So, calm down, you don’t have to be a programming genius.",
+  "translation": "如果您的目标是成为一名成功的编码人员，那么您需要了解很多事情。 但是，对于机器学习和数据科学而言，足以掌握至少一种编码语言并自信地使用它就足够了。 因此，冷静点，您不必成为编程天才。"
+}, {
+  "tag": "P",
+  "text": "For successful Machine Learning journey, it’s necessary to choose the appropriate coding language right from the beginning, as your choice will determine your future. On this step, you must think strategically and arranged correctly the priorities and don’t spend time on unnecessary things.",
+  "translation": "为了成功进行机器学习，有必要从一开始就选择合适的编码语言，因为您的选择将决定您的未来。 在此步骤中，您必须进行战略性思考并正确安排优先事项，并且不要将时间浪费在不必要的事情上。"
+}, {
+  "tag": "P",
+  "text": "My opinion — Python is a perfect choice for beginner to make your focus on in order to jump into the field of machine learning and data science. It is a minimalistic and intuitive language with a full-featured library line (also called frameworks) which significantly reduces the time required to get your first results.",
+  "translation": "我的观点– Python是初学者专注于进入机器学习和数据科学领域的理想选择。 它是一种简约而直观的语言，具有功能齐全的库系列（也称为框架），可显着减少获得第一个结果所需的时间。"
+}, {
+  "tag": "P",
+  "text": "You can also, by the way, consider the R language, but personally, I am more prone to Python. You can read my detailed explanation on this matter here:",
+  "translation": "您也可以考虑使用R语言，但是就我个人而言，我更倾向于Python。 您可以在这里阅读我对此事的详细解释："
+}, {
+  "tag": "P",
+  "text": "Python vs R. Choosing the Best Tool for AI, ML & Data Science.",
+  "translation": "Python vsR。为AI，ML和数据科学选择最佳工具。"
+}, {
+  "tag": "H1",
+  "text": "Step 0. Brief Overview of ML Process You Need to Know",
+  "translation": "步骤0。您需要了解的ML过程的简要概述"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*URygNs2533rfkQnS?q=20",
+  "type": "image",
+  "file": "0*URygNs2533rfkQnS"
+}, {
+  "tag": "P",
+  "text": "Machine learning is learning based on experience. As an example, it is like a person who learns to play chess through observation as others play. In this way, computers can be programmed through the provision of information which they are trained, acquiring the ability to identify elements or their characteristics with high probability.",
+  "translation": "机器学习是基于经验的学习。 例如，就像一个人通过观察来学习下棋，而其他人则在下棋。 这样，可以通过提供经过培训的信息来对计算机进行编程，从而以很高的概率获得识别要素或其特征的能力。"
+}, {
+  "tag": "P",
+  "text": "First of all, you need to know that there are various stages of machine learning:",
+  "translation": "首先，您需要知道机器学习的各个阶段："
+}, {
+  "tag": "UL",
+  "texts": ["data collection", "data sorting", "data analysis", "algorithm development", "checking algorithm generated", "the use of an algorithm to further conclusions"],
+  "translations": ["数据采集", "数据分类", "数据分析", "算法开发", "生成检查算法", "使用算法得出进一步的结论"]
+}, {
+  "tag": "P",
+  "text": "To look for patterns, various algorithms are used, which are divided into two groups:",
+  "translation": "为了寻找模式，使用了各种算法，这些算法分为两组："
+}, {
+  "tag": "UL",
+  "texts": ["Unsupervised learning", "Supervised learning"],
+  "translations": ["无监督学习", "监督学习"]
+}, {
+  "tag": "P",
+  "text": "With unsupervised learning, your machine receives only a set of input data. Thereafter, the machine is up to determine the relationship between the entered data and any other hypothetical data. Unlike supervised learning, where the machine is provided with some verification data for learning, independent Unsupervised learning implies that the computer itself will find patterns and relationships between different data sets. Unsupervised learning can be further divided into clustering and association.",
+  "translation": "在无监督学习的情况下，您的机器仅接收一组输入数据。 此后，机器开始确定输入数据与任何其他假设数据之间的关系。 与监督学习不同，在监督学习中，为计算机提供了一些用于学习的验证数据，独立的非监督学习意味着计算机本身将发现不同数据集之间的模式和关系。 无监督学习可以进一步分为聚类和关联。"
+}, {
+  "tag": "P",
+  "text": "Supervised learning implies the computer ability to recognize elements based on the provided samples. The computer studies it and develops the ability to recognize new data based on this data. For example, you can train your computer to filter spam messages based on previously received information.",
+  "translation": "监督学习意味着计算机能够根据提供的样本识别元素。 计算机将对其进行研究，并开发出基于此数据识别新数据的功能。 例如，您可以训练您的计算机以根据先前收到的信息过滤垃圾邮件。"
+}, {
+  "tag": "P",
+  "text": "Some Supervised learning algorithms include:",
+  "translation": "一些监督学习算法包括："
+}, {
+  "tag": "UL",
+  "texts": ["Decision trees", "Support-vector machine", "Naive Bayes classifier", "k-nearest neighbors", "linear regression"],
+  "translations": ["决策树", "支持向量机", "朴素贝叶斯分类器", "k最近邻居", "线性回归"]
+}, {
+  "tag": "H1",
+  "text": "Step 1. Brush up Your Math Skills Needed for Python Mathematical Libraries",
+  "translation": "第1步。提高Python数学库所需的数学技能"
+}, {
+  "tag": "P",
+  "text": "A person working in the field of AI and ML who doesn’t know math is like a politician who doesn’t know how to persuade. Both have an inescapable area to work upon!",
+  "translation": "在AI和ML领域工作的，不懂数学的人就像一个不知道如何说服的政客。 两者都有不可避免的领域！"
+}, {
+  "tag": "P",
+  "text": "So yes, you can’t deal with ML and Data Science projects without leastwise minor math knowledge basis. However, you don’t need to have a degree in Mathematics to succeed. In my personal experience, devoting at-least 30–45 minutes every day will bear much fruit and you’ll understand and learn advanced Python topics for Maths and Statistics faster.",
+  "translation": "因此，是的，没有最少的数学基础知识，就无法处理ML和Data Science项目。 但是，您无需拥有数学学位即可取得成功。 以我的个人经验，每天至少花费30-45分钟会收获很多成果，并且您会更快地理解和学习有关数学和统计学的高级Python主题。"
+}, {
+  "tag": "P",
+  "text": "You need to read or refresh the underlying theory. No need to read a whole tutorial, just focus on key concepts.",
+  "translation": "您需要阅读或刷新基础理论。 无需阅读整个教程，只需专注于关键概念。"
+}, {
+  "tag": "H2",
+  "text": "Here are 3 steps to learn the mathematics needed for analysis and machine learning:",
+  "translation": "这是学习分析和机器学习所需的数学的3个步骤："
+}, {
+  "tag": "P",
+  "text": "1 — Linear algebra for data analysis: Scalars, Vectors, Matrices, and Tensors",
+  "translation": "1-用于数据分析的线性代数：标量，向量，矩阵和张量"
+}, {
+  "tag": "P",
+  "text": "For example, for the Principal Component Method, you need to know the eigenvectors, and the regression requires matrix multiplication. In addition, machine learning often works with high-dimensional data (data with many variables). This data type is best represented by matrices.",
+  "translation": "例如，对于主成分法，您需要了解特征向量，并且回归需要矩阵乘法。 此外，机器学习通常适用于高维数据（具有许多变量的数据）。 此数据类型最好用矩阵表示。"
+}, {
+  "tag": "P",
+  "text": "2 — Mathematical Analysis: Derivatives and Gradients",
+  "translation": "2 —数学分析：导数和梯度"
+}, {
+  "tag": "P",
+  "text": "Mathematical analysis underlies many machine learning algorithms. Derivatives and gradients will be needed for optimization problems. For example, one of the most common optimization methods is gradient descent.",
+  "translation": "数学分析是许多机器学习算法的基础。 优化问题将需要导数和梯度。 例如，最常见的优化方法之一是梯度下降。"
+}, {
+  "tag": "P",
+  "text": "For quick learning of Linear Algebra and Math Analysis, I would like to recommend these courses:",
+  "translation": "为了快速学习线性代数和数学分析，我推荐以下课程："
+}, {
+  "tag": "P",
+  "text": "Khan Academy provides short practical lessons on linear algebra and math analysis. They cover the most important topics.",
+  "translation": "可汗学院提供有关线性代数和数学分析的简短实践课程。 它们涵盖了最重要的主题。"
+}, {
+  "tag": "P",
+  "text": "MIT OpenCourseWare offers great courses for learning math for ML. All video lectures and study materials are included.",
+  "translation": "MIT OpenCourseWare提供了学习ML数学的出色课程。 包括所有视频讲座和学习资料。"
+}, {
+  "tag": "P",
+  "text": "3 — Gradient descent: building a simple Neural Network from scratch",
+  "translation": "3 —梯度下降：从头开始构建简单的神经网络"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*Wh_6IekuvcoPXqcH?q=20",
+  "type": "image",
+  "file": "0*Wh_6IekuvcoPXqcH"
+}, {
+  "tag": "P",
+  "text": "One of the best ways to learn mathematics in the field of analysis and machine learning is to build a simple neural network from scratch. You will use linear algebra to represent a network and mathematical analysis to optimize it. In particular, you will create a gradient descent from scratch. Do not worry too much about the nuances of neural networks. This is fine if you just follow the instructions and write the code.",
+  "translation": "在分析和机器学习领域中学习数学的最好方法之一是从头开始构建简单的神经网络。 您将使用线性代数来表示网络，并使用数学分析对其进行优化。 特别是，您将从头开始创建梯度下降。 不必太担心神经网络的细微差别。 如果您只是按照说明进行操作并编写代码，那很好。"
+}, {
+  "tag": "P",
+  "text": "Here are some good walkthroughs:",
+  "translation": "以下是一些不错的演练："
+}, {
+  "tag": "P",
+  "text": "Neural Network in Python — This is a great tutorial in which you can build a simple neural network from start. You will find useful illustrations and learn how a gradient descent works.",
+  "translation": "Python中的神经网络-这是一个很棒的教程，您可以从一开始就构建一个简单的神经网络。 您将找到有用的插图，并了解梯度下降的工作原理。"
+}, {
+  "tag": "P",
+  "text": "Shorter tutorials that will also help you master neural networks step by step:",
+  "translation": "简短的教程也将帮助您逐步掌握神经网络："
+}, {
+  "tag": "P",
+  "text": "How to build your own Neural Network from scratch in Python",
+  "translation": "如何在Python中从头开始构建自己的神经网络"
+}, {
+  "tag": "P",
+  "text": "Implementing a Neural Network from Scratch in Python — An Introduction.",
+  "translation": "使用Python从头开始实现神经网络-简介。"
+}, {
+  "tag": "P",
+  "text": "Machine Learning for Beginners: An Introduction to Neural Networks — one more good simple explanation of how Neural Networks work and how to implement one from scratch in Python.",
+  "translation": "面向初学者的机器学习：神经网络入门-关于神经网络如何工作以及如何从头开始在Python中实现神经网络的一个更好的简单解释。"
+}, {
+  "tag": "H1",
+  "text": "Step 2. Learn the Basics of Python Syntax",
+  "translation": "第2步。学习Python语法的基础"
+}, {
+  "tag": "P",
+  "text": "Great news: you do not need a full learning course, as Python and data analysis are not synonymous.",
+  "translation": "好消息：您不需要完整的学习课程，因为Python和数据分析不是同义词。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*gzw1Oq4ABg7KGs38?q=20",
+  "type": "image",
+  "file": "0*gzw1Oq4ABg7KGs38"
+}, {
+  "tag": "P",
+  "text": "Before starting diving into the syntax, I want to share one insightful advice, which may minimize your possible failures.",
+  "translation": "在开始深入探讨语法之前，我想分享一个有见地的建议，该建议可以最大程度地减少可能的失败。"
+}, {
+  "tag": "P",
+  "text": "Learn to swim by reading books on swimming techniques is impossible, but reading them in parallel with training in the pool results in gaining skills more effectively.",
+  "translation": "通过阅读有关游泳技巧的书来学习游泳是不可能的，但是在游泳池进行训练的同时阅读它们会更有效地获得技能。"
+}, {
+  "tag": "P",
+  "text": "A similar action occurs with the study of programming. It is not worthwhile to focus solely on the syntax. Just like that, you risk losing your interest.",
+  "translation": "对编程的研究也发生了类似的动作。 仅关注语法是不值得的。 那样，您可能会失去兴趣。"
+}, {
+  "tag": "P",
+  "text": "You do not need to memorize everything. Make small steps and do not be afraid to combine theoretical knowledge with practice. Focus on an intuitive understanding, for example, which function is appropriate in a particular case and how conditional operators work. You will gradually memorize the syntax by reading the documentation and in the process of writing code. Soon you no longer have to google such things.",
+  "translation": "您无需记住所有内容。 迈出小步，不要害怕将理论知识与实践相结合。 例如，专注于直观的理解，在特定情况下哪种功能合适以及条件运算符如何工作。 您将通过阅读文档并在编写代码的过程中逐步记住语法。 很快，您不再需要使用Google这样的工具。"
+}, {
+  "tag": "P",
+  "text": "If you don’t have any programming understanding, I recommend reading Automate the Boring Stuff With Python. The book offers to explain practical programming for total beginners and teach from scratch. Read Chapter 6, “String Manipulation,” and complete the practical tasks for this lesson. That will be enough.",
+  "translation": "如果您没有任何编程知识，建议阅读“使用Python自动完成无聊的事情”。 该书为初学者提供了实用的编程说明，并从零开始讲授。 阅读第6章，“字符串操作”，并完成本课的实际任务。 这样就足够了。"
+}, {
+  "tag": "P",
+  "text": "Here are some other great resources to explore:",
+  "translation": "这里还有一些其他值得探索的资源："
+}, {
+  "tag": "P",
+  "text": "Codecademy — teaches good general syntax",
+  "translation": "Codecademy-教授良好的通用语法"
+}, {
+  "tag": "P",
+  "text": "Learn Python the Hard Way — a brilliant manual-like book that explains both basics and more complex applications.",
+  "translation": "艰难地学习Python –一本精巧的类似手册的书，介绍了基础知识和更复杂的应用程序。"
+}, {
+  "tag": "P",
+  "text": "Dataquest — this resource teaches syntax while also teaching data science",
+  "translation": "Dataquest-此资源教授语法，同时也教授数据科学"
+}, {
+  "tag": "P",
+  "text": "The Python Tutorial — official documentation",
+  "translation": "Python教程—官方文档"
+}, {
+  "tag": "P",
+  "text": "And remember, the sooner you start working on real projects, the sooner you will learn it. Anyway, you can always go back to the syntax if you need it.",
+  "translation": "请记住，您越早开始从事实际项目，您就会越早学习它。 无论如何，如果需要，您总是可以返回语法。"
+}, {
+  "tag": "H1",
+  "text": "Step 3. Discover the Main Data Analysis Libraries",
+  "translation": "步骤3.发现主数据分析库"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*dAiGm5JDmM83PZTf?q=20",
+  "type": "image",
+  "file": "0*dAiGm5JDmM83PZTf"
+}, {
+  "tag": "P",
+  "text": "The further stage is to revise and mug up the part of Python that is applicable to data science. And yes, it is time to learn libraries or frameworks. As pointed out before, Python possesses a vast number of libraries. Libraries are purely a collection of ready-made functions and objects that you can import into your script to invest less time.",
+  "translation": "进一步的阶段是修改和完善适用于数据科学的Python部分。 是的，是时候学习库或框架了。 如前所述，Python拥有大量的库。 库纯粹是现成的函数和对象的集合，您可以将其导入脚本中以节省时间。"
+}, {
+  "tag": "P",
+  "text": "How to use libraries? Here are my recommendations:",
+  "translation": "如何使用图书馆？ 这是我的建议："
+}, {
+  "tag": "OL",
+  "texts": ["Open Jupyter Notebook (see below).", "Go over the library documentation in about half an hour.", "Import the library into your Jupyter Notebook.", "Follow the step-by-step guide to see the library in action.", "Examine the documentation to see what else it is capable of."],
+  "translations": ["打开Jupyter Notebook（请参阅下文）。", "在大约半小时内浏览库文档。", "将库导入到Jupyter Notebook中。", "请按照分步指南查看实际使用的库。", "检查文档以查看其还具有什么功能。"]
+}, {
+  "tag": "P",
+  "text": "I do not recommend immediately diving into learning libraries, because you will probably forget most of what you learned by the time you start using them in projects. Instead, try to find out what each library is capable of.",
+  "translation": "我不建议立即进入学习库，因为在项目中开始使用它们时，您可能会忘记所学的大部分内容。 相反，请尝试找出每个库的功能。"
+}, {
+  "tag": "P",
+  "text": "#Jupyter Notebook",
+  "translation": "#Jupyter笔记本"
+}, {
+  "tag": "P",
+  "text": "Jupyter Notebook is a lightweight IDE that is a favorite among analysts. In most cases, the installation package for Python already includes Jupyter Notebook. You can open a new project through Anaconda Navigator, which is included in the Anaconda package. Watch this introductory video.",
+  "translation": "Jupyter Notebook是一种轻量级的IDE，在分析人员中非常喜欢。 在大多数情况下，Python的安装包中已经包含Jupyter Notebook。 您可以通过Anaconda导航器（包含在Anaconda软件包中）打开一个新项目。 观看此介绍性视频。"
+}, {
+  "tag": "H1",
+  "text": "Python libraries you will need:",
+  "translation": "您将需要的Python库："
+}, {
+  "tag": "H1",
+  "text": "NumPy",
+  "translation": "NumPy"
+}, {
+  "tag": "P",
+  "text": "Documentation",
+  "translation": "文献资料"
+}, {
+  "tag": "P",
+  "text": "Quickstart tutorial",
+  "translation": "快速入门教程"
+}, {
+  "tag": "P",
+  "text": "NumPy is shortened from Numerical Python, it is the most universal and versatile library both for pros and beginners. Using this tool you are up to operate with multi-dimensional arrays and matrices with ease and comfort. Such functions like linear algebra operations and numerical conversions are also available.",
+  "translation": "NumPy是从Numeric Python简化而来的，它是针对专业人士和初学者的最通用，最通用的库。 使用此工具，您可以轻松，舒适地处理多维数组和矩阵。 也可以使用诸如线性代数运算和数值转换之类的函数。"
+}, {
+  "tag": "H1",
+  "text": "Pandas",
+  "translation": "大熊猫"
+}, {
+  "tag": "P",
+  "text": "Documentation",
+  "translation": "文献资料"
+}, {
+  "tag": "P",
+  "text": "Quickstart Tutorial",
+  "translation": "快速入门教程"
+}, {
+  "tag": "P",
+  "text": "Pandas is a well-known and high-performance tool for presenting data frames. Using it you can load data from almost any source, calculate various functions and create new parameters, build queries to data using aggregate functions akin to SQL. What is more, there are various matrix transformation functions, a sliding window method and other methods for obtaining information from data. So it’s totally an indispensable thing in the arsenal of a good specialist.",
+  "translation": "Pandas是一个著名的高性能工具，用于显示数据帧。 使用它，您可以从几乎任何来源加载数据，计算各种函数并创建新参数，并使用类似于SQL的聚合函数对数据进行查询。 而且，存在各种矩阵变换函数，滑动窗口方法以及用于从数据获得信息的其他方法。 因此，对于一个好的专家来说，这完全是不可或缺的事情。"
+}, {
+  "tag": "H1",
+  "text": "Matplotlib",
+  "translation": "Matplotlib"
+}, {
+  "tag": "P",
+  "text": "Documentation",
+  "translation": "文献资料"
+}, {
+  "tag": "P",
+  "text": "Quickstart Tutorial",
+  "translation": "快速入门教程"
+}, {
+  "tag": "P",
+  "text": "Matplotlib is a flexible library for creating graphs and visualization. It is powerful but somewhat heavy-weight. At this point, you can skip Matplotlib and use Seaborn to get started (see Seaborn below).",
+  "translation": "Matplotlib是用于创建图形和可视化的灵活库。 它功能强大，但重量却很大。 此时，您可以跳过Matplotlib并使用Seaborn入门（请参见下面的Seaborn）。"
+}, {
+  "tag": "H1",
+  "text": "Scikit-Learn",
+  "translation": "Scikit学习"
+}, {
+  "tag": "P",
+  "text": "Documentation",
+  "translation": "文献资料"
+}, {
+  "tag": "P",
+  "text": "Quickstart Tutorial",
+  "translation": "快速入门教程"
+}, {
+  "tag": "P",
+  "text": "I can say it’s the most well-designed ML package I’ve observed so far. It implements a wide-range of machine-learning algorithms and makes it comfortable to plug them into actual applications. You can use a whole slew of functions here like regression, clustering, model selection, preprocessing, classification and more. So, it’s totally worth learning and using. The great advantage here is the high speed of work. So it’s not surprising why such leading platforms like Spotify, Booking.com, J.P.Morgan are using scikit-learn.",
+  "translation": "我可以说这是我迄今为止观察到的设计最完善的ML程序包。 它实现了广泛的机器学习算法，并且很容易将其插入实际应用中。 您可以在此处使用一系列功能，例如回归，聚类，模型选择，预处理，分类等。 因此，完全值得学习和使用。 这里的最大优势是工作速度高。 因此，毫不奇怪，为什么像Spotify，Booking.com和J.P.Morgan这样的领先平台都使用scikit-learn。"
+}, {
+  "tag": "H1",
+  "text": "Step 4. Develop Structured Projects",
+  "translation": "步骤4.开发结构化项目"
+}, {
+  "tag": "P",
+  "text": "Once you master the basic syntax and explore the basics of libraries, you can already begin to make projects yourself. Thanks to the projects, you will be able to learn about new things as well as create a portfolio for further job search.",
+  "translation": "掌握了基本语法并探索了库的基础之后，您就可以开始自己制作项目了。 通过这些项目，您将能够了解新事物以及创建用于进一步求职的投资组合。"
+}, {
+  "tag": "P",
+  "text": "There are enough resources that offer topics for structured projects.",
+  "translation": "有足够的资源为结构化项目提供主题。"
+}, {
+  "tag": "P",
+  "text": "Dataquest — Interactively teaches Python and data science. You are analyzing a series of interesting data sets, starting with the documents of the Central Intelligence Agency and ending with the statistics of the National Basketball Association’s games. You will develop tactical algorithms that include neural networks and decision trees.",
+  "translation": "Dataquest-交互式地教授Python和数据科学。 您正在分析一系列有趣的数据集，从中央情报局的文件开始，以国家篮球协会的比赛统计数据结束。 您将开发战术算法，其中包括神经网络和决策树。"
+}, {
+  "tag": "P",
+  "text": "Python for Data Analysis — A book written by the author of many papers on the analysis of data on Python.",
+  "translation": "Python for Data Analysis —由许多论文的作者撰写的关于Python数据分析的书。"
+}, {
+  "tag": "P",
+  "text": "Scikit — documentation — The main computer training library on Python.",
+  "translation": "Scikit —文档— Python上的主要计算机培训库。"
+}, {
+  "tag": "P",
+  "text": "CS109 — Courses from Harvard University for Data Science.",
+  "translation": "CS109 —哈佛大学数据科学专业的课程。"
+}, {
+  "tag": "H1",
+  "text": "Step 5. Work on Your Own Projects",
+  "translation": "步骤5.处理自己的项目"
+}, {
+  "tag": "P",
+  "text": "You can find a lot of new things, but it is important to find those projects that will spark a light in you. However, right before this happy moment of finding your dream job, you should learn how to handle errors in your programs excellently. Among the most popular useful resources for this purpose, one can distinguish the following:",
+  "translation": "您可以找到很多新事物，但是找到那些能够激发您灵感的项目很重要。 但是，就在找到理想工作的快乐时刻之前，您应该学习如何出色地处理程序中的错误。 在用于此目的的最受欢迎的有用资源中，可以区分以下内容："
+}, {
+  "tag": "P",
+  "text": "StackOverflow — multi-functional site with a bunch of questions and answers where people discuss all possible problems. Plus, it’s the most popular place, so you can ask about your errors and get the answer from a huge audience",
+  "translation": "StackOverflow —多功能站点，提供了许多问题和答案，人们可以在其中讨论所有可能的问题。 另外，它是最受欢迎的地方，因此您可以询问自己的错误并从众多受众中获得答案"
+}, {
+  "tag": "P",
+  "text": "Python Documentation — one more good place to search for reference material",
+  "translation": "Python文档-另一个搜索参考资料的好地方"
+}, {
+  "tag": "P",
+  "text": "It goes without saying, you also should not neglect any opportunity or collaboration you are requested. Participate in all possible events related to Python and find people who work on interesting projects. Explore new projects that have been made by other people, by the way, Github is an excellent place for this aim. Learn about new and stay tuned in a theme — all this will definitely contribute for level up your game!",
+  "translation": "不用说，您也不应该忽略任何需要的机会或合作。 参与与Python相关的所有可能的事件，并找到从事有趣项目的人员。 顺便探索别人开发的新项目，Github是实现此目标的绝佳场所。 了解新知识并继续关注主题-所有这些都必将有助于提升游戏水平！"
+}, {
+  "tag": "H1",
+  "text": "Final Word and a Bit of Motivation",
+  "translation": "最后的话和一点动机"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*6dhSWBINMOlSG9q6?q=20",
+  "type": "image",
+  "file": "0*6dhSWBINMOlSG9q6"
+}, {
+  "tag": "P",
+  "text": "You may probably ask ‘why should I plunge into machine learning realm; probably, there are already lots of other good specialists.’",
+  "translation": "您可能会问：“我为什么要涉足机器学习领域？ 可能已经有很多其他优秀专家了。’"
+}, {
+  "tag": "P",
+  "text": "Know what? I had also been fallen into this trap and now can boldly say — such thinking will not bring you anything good. It’s an immense barrier to your success.",
+  "translation": "知道什么？ 我也曾陷入这个陷阱，现在可以大胆地说-这种想法不会给您带来任何好处。 这是您取得成功的巨大障碍。"
+}, {
+  "tag": "P",
+  "text": "According to Moore’s Law, the number of transistors on an integrated circuit doubles every 24 months. This means that every year the performance of our computers is growing, which means that the previously inaccessible boundaries of knowledge are again “shifted to the right” — there is room for studying big data and machine learning algorithms!",
+  "translation": "根据摩尔定律，集成电路中的晶体管数量每24个月翻一番。 这意味着我们的计算机的性能每年都在增长，这意味着以前无法访问的知识范围再次“向右移动” —有研究大数据和机器学习算法的空间！"
+}, {
+  "tag": "P",
+  "text": "Who knows what awaits us in the future. Perhaps these numbers will increase even more and machine learning will become more important? And most likely, yes!",
+  "translation": "谁知道未来在等我们。 也许这些数字将进一步增加，并且机器学习将变得更加重要？ 而且很可能是的！"
+}, {
+  "tag": "P",
+  "text": "Dude, the most terrible thing you can do is to assume your place is already taken by another specialist.",
+  "translation": "杜德（Dude），您能做的最可怕的事情就是假设您的位置已被另一位专家接过。"
+}, {
+  "tag": "P",
+  "text": "I wish you to have a lot of willingness and strength to learn and afterward have those projects that will certainly spark a light in you! Share your experience in comments below!",
+  "translation": "我希望您有很多学习的意愿和力量，之后再进行那些肯定能激发您灵感的项目！ 在下面的评论中分享您的经验！"
+}, {
+  "tag": "P",
+  "text": "…………………………………..",
+  "translation": "……………………………….."
+}, {
+  "tag": "P",
+  "text": "Explore more useful tips and read dope topics on AI, ML & Data Science from my Medium or Instagram blog.",
+  "translation": "探索更多有用的技巧，并从我的Medium或Instagram博客中阅读有关AI，ML和数据科学的涂料主题。"
+}]
