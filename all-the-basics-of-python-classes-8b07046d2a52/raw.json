@@ -1,0 +1,135 @@
+[{
+  "tag": "H1",
+  "text": "Like to learn?",
+  "translation": "喜欢学习吗？"
+}, {
+  "tag": "P",
+  "text": "Follow me on Twitter, where I post all about the latest and greatest AI, Technology, and Science! Connect with me on LinkedIn too!",
+  "translation": "在Twitter上关注我，在其中发布有关最新，最出色的AI，技术和科学的所有信息！ 也在LinkedIn上与我联系！"
+}, {
+  "tag": "H1",
+  "text": "All the basics of Python classes",
+  "translation": "Python类的所有基础知识"
+}, {
+  "tag": "H2",
+  "text": "Everything you need to know about Python classes!",
+  "translation": "您需要了解的有关Python类的所有知识！"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*ICBT-jxfLVgpCO80d897fw.jpeg?q=20",
+  "type": "image",
+  "file": "1*ICBT-jxfLVgpCO80d897fw.jpeg"
+}, {
+  "tag": "P",
+  "text": "The Python programming language, at its core, is a high-level object-oriented language. Its design is specifically aimed at helping programmers write clear, logical code for projects of any size.",
+  "translation": "Python编程语言的核心是一种高级的面向对象的语言。 它的设计专门用于帮助程序员为任何规模的项目编写清晰，逻辑的代码。"
+}, {
+  "tag": "P",
+  "text": "Python is simple, clear, and easy to understand — yet powerful. One feature where those design principles really show through is in Python classes.",
+  "translation": "Python简单，清晰，易于理解，但功能强大。 这些设计原理真正展现出来的功能是Python类。"
+}, {
+  "tag": "H1",
+  "text": "The Python Class",
+  "translation": "Python类"
+}, {
+  "tag": "P",
+  "text": "Almost everything in Python is an object. And naturally, every object comes with its own features, properties, and functions.",
+  "translation": "Python中的几乎所有东西都是对象。 当然，每个对象都具有自己的特征，属性和功能。"
+}, {
+  "tag": "P",
+  "text": "We can think of a class as a “blueprint” for creating objects. Specifically, our very own custom-designed blueprint for an object. And since we’re the ones customizing it, we can give it whatever features, properties, and functions we want!",
+  "translation": "我们可以将类视为创建对象的“蓝图”。 具体来说，就是我们自己针对对象定制设计的蓝图。 由于我们是定制它的人，因此我们可以为其提供所需的任何功能，特性和功能！"
+}, {
+  "tag": "P",
+  "text": "Let’s start with a simple example. We’re going to create a class that has the property “x” where x=10. Here’s our class definition:",
+  "translation": "让我们从一个简单的例子开始。 我们将创建一个具有“ x”属性的类，其中x = 10。 这是我们的班级定义："
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/GeorgeSeif/62dde9a792932ab709dd5d2e3e854180/raw/139c426d903f2a59b3ffbe407aeff597cbfa950b/py_class_1.py",
+  "code": "class my_class:\n  x = 10"
+}, {
+  "tag": "P",
+  "text": "That’s it! We’ve created our first Python class called my_class and that class has a property called x with a value of 10. To actually use our class we “call” our function and can then access any properties of the class individually.",
+  "translation": "而已！ 我们创建了第一个Python类my_class，该类具有名为x的属性，其值为10。要实际使用该类，我们可以“调用”函数，然后可以分别访问该类的任何属性。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/GeorgeSeif/172630c86d7abe637f44281c4756f61d/raw/2089278a4662f7772a52fc91656dfe5d9fe57cd6/py_class_2.py",
+  "code": "class my_class:\n  x = 10\n\nc_1 = my_class()\nprint(c_1.x)"
+}, {
+  "tag": "P",
+  "text": "The code above prints out the number 10. Easy!",
+  "translation": "上面的代码打印出数字10。容易！"
+}, {
+  "tag": "P",
+  "text": "We can also modify that variable, simply by assigning it to a new value. Instead of having x be equal to 10, let’s make it equal to the string “Bob”.",
+  "translation": "我们还可以修改该变量，只需将其分配给新值即可。 让我们使其不等于10，而应使其等于字符串“ Bob”。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/GeorgeSeif/78644faf1ad40b7fe89ca0f89f709464/raw/6403d35bf8f59e4cd7408c7ee27bbf8e3824f166/py_class_3.py",
+  "code": "class my_class:\n  x = 10\n\nc_1 = my_class()\nc_1.x = \"Bob\"\nprint(c_1.x)"
+}, {
+  "tag": "H1",
+  "text": "The __init__() Function",
+  "translation": "__init __（）函数"
+}, {
+  "tag": "P",
+  "text": "All classes have a function which we can modify at any time called __init__(). The __init__() function is always executed when an object is created from this class and can be used to initialize some class variables. So, __init__() becomes very useful when we want our Python class to always start out with certain properties.",
+  "translation": "所有类都有一个可以随时修改的函数，称为__init __（）。 当从此类创建对象时，总是执行__init __（）函数，该函数可用于初始化某些类变量。 因此，当我们希望Python类始终以某些属性开始时，__init __（）变得非常有用。"
+}, {
+  "tag": "P",
+  "text": "Let’s take the code below as an example.",
+  "translation": "让我们以下面的代码为例。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/GeorgeSeif/17fa03d2e3b16c97a062648516ee6d72/raw/9df6f048a4c21c3f1f4919c00b943ae4be03c053/py_class_4.py",
+  "code": "class Person:\n  def __init__(self, name, gender):\n    self.name = name\n    self.gender = gender\n    self.country = \"USA\"\n\nperson_1 = Person(\"Bob\", \"Male\")\nperson_2 = Person(\"Kate\", \"Female\")\n\nprint(person_1.name)\nprint(person_1.gender)\nprint(person_1.country)\n\nprint(person_2.name)\nprint(person_2.gender)\nprint(person_2.country)"
+}, {
+  "tag": "P",
+  "text": "In the code above, we created 2 people with the “Person” class named Bob and Kate. In both cases, __init__() was executed, initializing class variables for the name, gender, and country of the person.",
+  "translation": "在上面的代码中，我们使用名为Bob和Kate的“人员”类创建了2个人。 在这两种情况下，都将执行__init __（），以初始化人员的姓名，性别和所在国家/地区的类变量。"
+}, {
+  "tag": "P",
+  "text": "For name and gender, we passed our own variables to the class which were taken in by the __init__(). In the case of the “country” variable, it was initialized on the creation of the object, also within __init__(). The only difference is that because it’s not a function variable of __init__(), it can’t be assigned from the outside — i.e all persons will have the country “USA”!",
+  "translation": "对于名称和性别，我们将自己的变量传递给__init __（）接受的类。 对于“国家/地区”变量，它是在创建对象时也在__init __（）中初始化的。 唯一的区别是，由于它不是__init __（）的函数变量，因此无法从外部进行分配-即所有人将拥有“美国”国家/地区！"
+}, {
+  "tag": "P",
+  "text": "The print out of that code will be:",
+  "translation": "该代码的打印输出为："
+}, {
+  "tag": "PRE",
+  "text": "BobMaleUSAKateFemaleUSA",
+  "translation": "鲍勃·男美国凯特·女美国"
+}, {
+  "tag": "H1",
+  "text": "Class Functions",
+  "translation": "类功能"
+}, {
+  "tag": "P",
+  "text": "Just like any object, Python classes can contain functions! The functions act and perform in the exact same way as those that would be outside of the class. The only real difference is that class functions are able to access class variables directly without having to take them on as arguments.",
+  "translation": "就像任何对象一样，Python类可以包含函数！ 这些函数的作用和执行与类之外的完全相同。 唯一真正的区别是类函数能够直接访问类变量，而不必将其作为参数。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/GeorgeSeif/29e55535a3220b9d848b2c334e603e23/raw/0e65792c773b2873b8de30b2e2b1fd7d7f3bba65/py_class_5.py",
+  "code": "class Person:\n  def __init__(self, name, gender, age):\n    self.name = name\n    self.gender = gender\n    self.age = age\n    \n    self.country = \"USA\"\n    \n  def print_info(self):\n    print(\"Name: {}\".format(self.name))\n    print(\"Gender: {}\".format(self.gender))\n    print(\"Age: {}\".format(self.age))\n    print(\"Country: {}\".format(self.country))\n    \n  def grow_person(self, years_of_growth):\n    self.age = self.age + years_of_growth\n    \n    \ndef grow_person(current_age, years_of_growth):\n  return current_age + years_of_growth\n\n\n# Initialise the person\nperson_1 = Person(\"Bob\", \"Male\", 30)\n\n# Print all information about Bob by grabbing each variable\nprint(\"Name: {}\".format(person_1.name))\nprint(\"Gender: {}\".format(person_1.gender))\nprint(\"Age: {}\".format(person_1.age))\nprint(\"Country: {}\".format(person_1.country))\n\n# Print all information about Bob using the class function\nperson_1.print_info()\n\n# Use the external function\nperson_1.age = grow_person(person_1.age, years_of_growth=5)\n\n# Use the class function\nperson_1.grow_person(years_of_growth=5)"
+}, {
+  "tag": "P",
+  "text": "The first-class function is at line 9 called print_info() which prints all available information about our Person object. Notice how since we are using class variables with self, we’re able to access Bob’s information from anywhere in the class! This makes it super convenient to apply functions on your Python objects since you have all the data directly available.",
+  "translation": "一流的函数在第9行称为print_info（），它打印有关我们的Person对象的所有可用信息。 请注意，由于我们将类变量与self一起使用，因此我们可以从班级中的任何地方访问Bob的信息！ 由于可以直接获得所有数据，因此在将函数应用于Python对象时非常方便。"
+}, {
+  "tag": "P",
+  "text": "On the other hand, notice how much extra code we need to print out Bob’s information using Python print() externally. It’s also much more organized and clean to have functions which are specifically designed for a particular class-type to be defined within that class.",
+  "translation": "另一方面，请注意，我们需要在外部使用Python print（）打印出Bob的信息，需要多少额外的代码。 具有专门针对要在该类中定义的特定类类型而设计的功能的地方，也更加井井有条。"
+}, {
+  "tag": "P",
+  "text": "The second function we wrote is called grow_person() which increases the age of the person by a user-specified number of years. Naturally, it makes more sense to have this as a class function since it’s mainly related to our Person class. The code also ends up looking a lot more human-readable and clean!",
+  "translation": "我们编写的第二个函数称为grow_person（），它将用户的年龄增加用户指定的年限。 自然地，将此作为类函数更有意义，因为它主要与我们的Person类有关。 该代码还最终看起来更加易于阅读和清晰！"
+}, {
+  "tag": "PRE",
+  "text": "this document is translated from article 《All the basics of Python classes》 written by George Seif, refer to https://levelup.gitconnected.com/all-the-basics-of-python-classes-8b07046d2a52",
+  "translation": "本文档摘自George Seif撰写的文章《 Python类的所有基础知识》，请参阅https://levelup.gitconnected.com/all-the-basics-of-python-classes-8b07046d2a52"
+}]
