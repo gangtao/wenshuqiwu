@@ -123,5 +123,5 @@ person_1.grow_person(years_of_growth=5)
 
 我们编写的第二个函数称为grow_person（），它将用户的年龄增加用户指定的年限。 自然地，将此作为类函数更有意义，因为它主要与我们的Person类有关。 该代码还最终看起来更加易于阅读和清晰！
 ```
-this document is translated from article 《All the basics of Python classes》 written by George Seif, refer to https://levelup.gitconnected.com/all-the-basics-of-python-classes-8b07046d2a52
+本文翻译自George Seif的文章《All the basics of Python classes》，参考：https://levelup.gitconnected.com/all-the-basics-of-python-classes-8b07046d2a52
 ```
