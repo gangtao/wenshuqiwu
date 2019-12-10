@@ -1,0 +1,401 @@
+[{
+  "tag": "H1",
+  "text": "How To Use Kubernetes, and a Simple Example",
+  "translation": "如何使用Kubernetes和一个简单示例"
+}, {
+  "tag": "P",
+  "text": "Now that we have gone through the basics of Kubernetes, we will take a detailed look at a simple example. In this example, we will deploy a web application using Kubernetes. We will be using Docker as our container runtime. The application in our example has three distinct parts:",
+  "translation": "现在我们已经了解了Kubernetes的基础知识，我们将详细研究一个简单的示例。 在此示例中，我们将使用Kubernetes部署Web应用程序。 我们将使用Docker作为我们的容器运行时。 我们的示例中的应用程序包含三个不同的部分："
+}, {
+  "tag": "UL",
+  "texts": ["Database (MySQL server)", "Back end (Java Spring Boot application)", "Front end (Angular app)"],
+  "translations": ["数据库（MySQL服务器）", "后端（Java Spring Boot应用程序）", "前端（Angular应用）"]
+}, {
+  "tag": "P",
+  "text": "We will deploy all of these components on a Kubernetes cluster. We will have one replica of database, two replicas of back end and two replicas of front end. Front-end instances will communicate with back end through HTTP. Back-end instances will communicate with the database. To facilitate this communication, we have to configure Kubernetes accordingly.",
+  "translation": "我们将在Kubernetes集群上部署所有这些组件。 我们将有一个数据库副本，两个后端副本和两个前端副本。 前端实例将通过HTTP与后端进行通信。 后端实例将与数据库通信。 为了促进这种通信，我们必须相应地配置Kubernetes。"
+}, {
+  "tag": "P",
+  "text": "We will configure the cluster by creating Kubernetes objects. These Kubernetes objects will contain the desired state of our deployment. Once these objects are persisted into the cluster state store, the internal architecture of Kubernetes will take necessary steps to ensure that the abstract state in the cluster state store is the same as the physical state of the cluster.",
+  "translation": "我们将通过创建Kubernetes对象来配置集群。 这些Kubernetes对象将包含所需的部署状态。 一旦这些对象被持久保存到集群状态存储中，Kubernetes的内部架构将采取必要的步骤，以确保集群状态存储中的抽象状态与集群的物理状态相同。"
+}, {
+  "tag": "P",
+  "text": "We will use kubectl to create the objects. Kubernetes supports both imperative and declarative ways of creating objects. Production environments are generally configured by the declarative approach. We will use the declarative approach in this example. For each object, we will first prepare a manifest file, a yaml file containing all the information related to the object. Then we will execute the kubectl command, kubectl apply -f <FILE_NAME>to persist the object in the cluster state store.",
+  "translation": "我们将使用kubectl创建对象。 Kubernetes支持命令式和声明式创建对象的方式。 生产环境通常通过声明性方法进行配置。 在此示例中，我们将使用声明式方法。 对于每个对象，我们将首先准备一个清单文件，一个yaml文件，其中包含与该对象有关的所有信息。 然后，我们将执行kubectl命令，kubectl apply -f <FILE_NAME>将对象持久保存在集群状态存储中。"
+}, {
+  "tag": "P",
+  "text": "We will first containerize the application code we have implemented. After this, we will configure the deployment of our database followed by back end. We will finish the example by configuring the front end.",
+  "translation": "我们将首先容器化已实现的应用程序代码。 之后，我们将配置数据库的部署，然后配置后端。 我们将通过配置前端来完成示例。"
+}, {
+  "tag": "H2",
+  "text": "Step 1. Containerize the application and upload image to container image registry",
+  "translation": "步骤1.将应用程序容器化并将图像上载到容器图像注册表"
+}, {
+  "tag": "P",
+  "text": "The first step would be to create a container image of the application we have implemented and upload it to container registry.",
+  "translation": "第一步是为我们已实现的应用程序创建一个容器映像，并将其上传到容器注册表。"
+}, {
+  "tag": "P",
+  "text": "A container image is a packaged form of the containerized application. It can be transferred across computers, just like any normal file. The container runtime environment can create a running instance of a containerized application using the container image.",
+  "translation": "容器映像是容器化应用程序的打包形式。 就像任何普通文件一样，它可以在计算机之间传输。 容器运行时环境可以使用容器映像创建容器化应用程序的运行实例。"
+}, {
+  "tag": "P",
+  "text": "Container registry is generally the centralized repository where container images are stored. One could upload container images to a container registry and download them wherever and whenever they are needed. There are numerous container registry services available: Azure Container Registry, Google Container Registry, Amazon ECR, etc. We will use Docker hub for this example, but one could use any image registry (public or private) that fits their use case.",
+  "translation": "容器注册表通常是存储容器映像的集中式存储库。 可以将容器映像上载到容器注册表，并在需要时随时随地下载它们。 有许多可用的容器注册表服务：Azure容器注册表，Google容器注册表，Amazon ECR等。在此示例中，我们将使用Docker集线器，但是可以使用适合其用例的任何图像注册表（公共或私有）。"
+}, {
+  "tag": "P",
+  "text": "The application we are going to deploy has front end implemented with Angular Framework, and back end implemented with Spring Boot Framework. Links to GitHub repositories containing the code are provided in the final section of this piece. Once we have implemented the code as per our requirements, we will build executables with build tools (Angular CLI and Maven in this case).",
+  "translation": "我们将要部署的应用程序的前端通过Angular Framework实现，后端通过Spring Boot Framework实现。 在本文的最后部分，提供了包含代码的GitHub存储库的链接。 一旦按照要求实现了代码，便将使用构建工具（在这种情况下为Angular CLI和Maven）构建可执行文件。"
+}, {
+  "tag": "P",
+  "text": "Now we will create container images by building docker images using Dockerfile . Dockerfile for both front end and back end used in this example are shown below.",
+  "translation": "现在，我们将通过使用Dockerfile构建docker镜像来创建容器镜像。 本示例中使用的前端和后端的Dockerfile如下所示。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/shri-kanth/92918d87ffcbebd6886dd2544042e444/raw/0c405f293b1a11704e97af58618ec643c0afdb48/frontEnd.DockerFile",
+  "code": "FROM node:7.7-alpine\n\n# install dependencies\nADD package.json /tmp/package.json\nRUN cd /tmp && npm install\n\n# Copy dependencies\nRUN mkdir -p /opt/to-do-app && cp -a /tmp/node_modules /opt/to-do-app\n\n# Setup workdir\nWORKDIR /opt/to-do-app\n\nRUN mkdir /opt/to-do-app/dist\nCOPY dist /opt/to-do-app/dist\nCOPY server.js /opt/to-do-app\nCOPY initialize.js /opt/to-do-app\n\n# run\nEXPOSE 8080\nCMD [\"sh\", \"-c\", \"node initialize && node server\"]\n"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/shri-kanth/0833114b8bd4efbbd0a8a126bd71de1c/raw/3368d11b010e6291329bc4c8414f3602c1dbd6d1/backEnd.DockerFile",
+  "code": "FROM openjdk:10-jre-slim\nRUN mkdir -p /opt/to-do-app/ \nCOPY ./target/to-do-listEntity-app-0.0.1-SNAPSHOT.jar /opt/to-do-app/\nWORKDIR /opt/to-do-app/\nEXPOSE 8080\nCMD [\"java\", \"-jar\", \"to-do-listEntity-app-0.0.1-SNAPSHOT.jar\"]\n"
+}, {
+  "tag": "P",
+  "text": "Once container images are created, we can upload these to any container image registry. Here we will upload these images to Docker Hub. We have uploaded the front-end image with the namekubernetesdemo/to-do-app-frontend, and the back-end image with the name kubernetesdemo/to-do-app-backend. We will obtain the database image from the official MySQL docker repository mysql. Official Docker images generally do not have any prefix, like mysql. Unofficial images are required to have a prefix like kubernetesdemo/here.",
+  "translation": "创建容器映像后，我们可以将其上传到任何容器映像注册表。 在这里，我们将这些图像上传到Docker Hub。 我们已上传名称为kubernetesdemo / to-do-app-frontend的前端映像，以及后端名称为kubernetesdemo / to-do-app-backend的后端映像。 我们将从官方的MySQL docker存储库mysql获取数据库映像。 官方Docker映像通常没有任何前缀，例如mysql。 非官方图片必须具有前缀kubernetesdemo / here。"
+}, {
+  "tag": "P",
+  "text": "We have to mention the name of these images in the Kubernetes manifest files, which we will see below. Kubernetes will fetch and run these images on respective cluster nodes whenever required.",
+  "translation": "我们必须在Kubernetes清单文件中提及这些图像的名称，我们将在下面看到。 Kubernetes将在需要时在相应的群集节点上获取并运行这些映像。"
+}, {
+  "tag": "H2",
+  "text": "Step 2. Set up Kubernetes cluster and CLI",
+  "translation": "步骤2.设置Kubernetes集群和CLI"
+}, {
+  "tag": "P",
+  "text": "There are numerous solutions available for setting up a Kubernetes cluster. Different Kubernetes solutions meet different requirements: ease of maintenance, security, control, available resources, and expertise required to operate and manage a cluster. One could refer to the official documentation for more details about how a cluster could be set up. This example has been replicated on both local (Minikube) and cloud provider (GKE) setup. Kops is a project that aims to simplify the Kubernetes cluster setup process.",
+  "translation": "有许多解决方案可用于设置Kubernetes集群。 不同的Kubernetes解决方案满足不同的要求：易于维护，安全性，控制，可用资源以及操作和管理集群所需的专业知识。 有关如何设置集群的更多详细信息，请参考官方文档。 此示例已在本地（Minikube）和云提供商（GKE）设置中复制。 Kops是一个旨在简化Kubernetes集群设置过程的项目。"
+}, {
+  "tag": "P",
+  "text": "As mentioned earlier, we will use kubectl as our CLI. Instructions for installing kubectl can be found here. Once kubectl is installed, it should be configured to communicate with the Kubernetes cluster we have set up. In the case of Minikube, minikube start command will automatically configure kubectl. For cloud setup, instructions can be found in their respective quick start guide(eg: GKE).",
+  "translation": "如前所述，我们将使用kubectl作为我们的CLI。 有关安装kubectl的说明，请参见此处。 安装kubectl后，应将其配置为与我们已设置的Kubernetes集群通信。 对于Minikube，minikube start命令将自动配置kubectl。 对于云设置，可以在其各自的快速入门指南（例如：GKE）中找到说明。"
+}, {
+  "tag": "H2",
+  "text": "Step 3. Database configuration setup",
+  "translation": "步骤3.数据库配置设置"
+}, {
+  "tag": "P",
+  "text": "Back-end instances need to communicate with the database. All the configuration details required to connect with the database are stored in a configuration file.",
+  "translation": "后端实例需要与数据库进行通信。 与数据库连接所需的所有配置详细信息都存储在配置文件中。"
+}, {
+  "tag": "P",
+  "text": "Let’s take a look at the back-end spring configuration file in this example",
+  "translation": "让我们看一下此示例中的后端spring配置文件"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/shri-kanth/7e04b55671e3ea98cf38f357c72c88f5/raw/9eab228a2215bc562d9d86447aa0442daf7bd195/backend-spring-application.yaml",
+  "code": "spring:\n  datasource:\n    type: com.zaxxer.hikari.HikariDataSource\n    hikari:\n      idle-timeout: 10000\n    platform: mysql\n    username: ${DB_USERNAME}\n    password: ${DB_PASSWORD}\n    url: jdbc:mysql://${DB_HOST}/${DB_NAME}\n  jpa:\n    hibernate:\n      naming:\n        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl"
+}, {
+  "tag": "P",
+  "text": "This configuration file expects some environment variables, like DB_USERNAME, DB_PASSWORD, DB_HOST, DB_NAME . We will pass the values of these variables to Kubernetes through configMaps and secrets. Then we will configure the back-end pod to read the environment variable from the configMaps and secrets .",
+  "translation": "该配置文件需要一些环境变量，例如DB_USERNAME，DB_PASSWORD，DB_HOST和DB_NAME。 我们将通过configMaps和secret将这些变量的值传递给Kubernetes。 然后，我们将配置后端容器以从configMaps和secrets中读取环境变量。"
+}, {
+  "tag": "P",
+  "text": "The MySQL Database docker image expects some environment variables. We will need to configure the following environment variables MYSQL_ROOT_PASSWORD, MYSQL_USER, MYSQL_PASSWORD, MYSQL_DATABASE.",
+  "translation": "MySQL数据库docker映像需要一些环境变量。 我们将需要配置以下环境变量MYSQL_ROOT_PASSWORD，MYSQL_USER，MYSQL_PASSWORD，MYSQL_DATABASE。"
+}, {
+  "tag": "P",
+  "text": "Now that we have an idea about the configuration required for our application, we will create configMaps and secrets in our Kubernetes cluster with required data.",
+  "translation": "现在，我们对应用程序所需的配置有了一个想法，我们将在Kubernetes集群中使用所需的数据创建configMaps和密钥。"
+}, {
+  "tag": "P",
+  "text": "First, to hold database specific information, we will create one configMap and two secrets. The configMap will contain non-sensitive information about the database setup, like the location where the database is hosted and the name of the database. We will define a Kubernetes service, this will expose the location of the database. Kuberebetes DNS will resolve the service name to actual ip address of the database during runtime. Below is the configMap, which is used to store non-sensitive information related to the database in this example",
+  "translation": "首先，要保存数据库的特定信息，我们将创建一个configMap和两个秘密。 configMap将包含有关数据库设置的非敏感信息，例如数据库的托管位置和数据库名称。 我们将定义一个Kubernetes服务，这将公开数据库的位置。 Kuberebetes DNS将在运行时将服务名称解析为数据库的实际IP地址。 下面是configMap，在此示例中，它用于存储与数据库有关的非敏感信息"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/shri-kanth/66344c3ceb8fc53ae685544e52238d0b/raw/ff2724bba7333a4455f440398c4e1a0c041092c8/mysql-configmap.yaml",
+  "code": "# Define 'Configmap' to store non-sensitive database configuration \napiVersion: v1\nkind: ConfigMap\nmetadata:\n  name: db-conf  # name of ConfigMap, referenced in other files\ndata:\n  host: mysql   # host address of mysql server, we are using DNS of Service\n  name: to-do-app-db # name of the database for application\n\n"
+}, {
+  "tag": "P",
+  "text": "We will use two secrets to store sensitive data. The first secret will contain the database root user credentials and the second secret will contain application user credentials. Below are these two files",
+  "translation": "我们将使用两个秘密来存储敏感数据。 第一个机密将包含数据库根用户凭据，第二个机密将包含应用程序用户凭据。 以下是这两个文件"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/shri-kanth/82c21e4ba8a5ad1391cb84a0f3025b0a/raw/256fe3b4ae971752982e3ccef04abe242a10ff99/db-root-credentials-secret.yaml",
+  "code": "# Define 'Secret' to store 'root' user Credentials\napiVersion: v1\nkind: Secret\nmetadata:\n  name: db-root-credentials # Name of the Secret\ndata:\n  password: bWFnaWM= # base64 encoded 'root' password \n"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/shri-kanth/aeaa108eef377736e0b1773b68b11ec2/raw/6da9fac48d9edc15a2146b41e73fc48965d70e69/db-credentials-secret.yaml",
+  "code": "# Define 'Secret' to store db-credentials \napiVersion: v1\nkind: Secret\nmetadata:\n  name: db-credentials # Name of the 'Secret'\ndata:\n  username: dXNlcg==  # base64 encoded 'Secret' username\n  password: ZGV2ZWxvcA== # base64 encoded 'Secret' password"
+}, {
+  "tag": "P",
+  "text": "By executing kubectl apply -f <FILE_NAME>we will create the ConfigMap and Secret objects in our Kubernetes cluster state store. We stored the values of host and name in this ConfigMap object and username and password in Secret object. We will access thesesecrets and ConfigMaps in later steps to configure our deployments .",
+  "translation": "通过执行kubectl apply -f <FILE_NAME>，我们将在我们的Kubernetes集群状态存储中创建ConfigMap和Secret对象。 我们将主机和名称的值存储在此ConfigMap对象中，并将用户名和密码存储在Secret对象中。 我们将在后续步骤中访问这些秘密和ConfigMap，以配置我们的部署。"
+}, {
+  "tag": "P",
+  "text": "Similarly, the configuration of front end expects environment variable SERVER_URI which will indicate where back end is hosted. We will create this configMap after configuring back-end Deployment",
+  "translation": "同样，前端的配置需要环境变量SERVER_URI，该变量将指示后端的托管位置。 我们将在配置后端部署之后创建此configMap。"
+}, {
+  "tag": "H2",
+  "text": "Step 4. Configure PVC, service, and deployment for database",
+  "translation": "步骤4.为数据库配置PVC，服务和部署"
+}, {
+  "tag": "P",
+  "text": "Our next step would be to create the services and deployments required for our database setup. Below is the file which creates relevant Kubernetes Service and Kubernetes Deployment for the database setup in this application.",
+  "translation": "我们的下一步将是创建数据库设置所需的服务和部署。 以下是为该应用程序中的数据库设置创建相关的Kubernetes服务和Kubernetes部署的文件。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/shri-kanth/3c32b5400bf7ead0d05602a14a3fbabe/raw/73a722ec1cc6330626ff6526a5aac8480a2ac092/mysql-deployment.yaml",
+  "code": "# Define a 'Service' To Expose mysql to Other Services\napiVersion: v1\nkind: Service\nmetadata:\n  name: mysql  # DNS name \n  labels:\n    app: mysql\n    tier: database\nspec:\n  ports:\n    - port: 3306\n      targetPort: 3306\n  selector:       # mysql Pod Should contain same labels\n    app: mysql\n    tier: database\n  clusterIP: None  # We Use DNS, Thus ClusterIP is not relevant\n---\n# Define a 'Persistent Voulume Claim'(PVC) for Mysql Storage, dynamically provisioned by cluster\napiVersion: v1\nkind: PersistentVolumeClaim\nmetadata:\n  name: mysql-pv-claim # name of PVC essential for identifying the storage data \n  labels:\n    app: mysql\n    tier: database\nspec:\n  accessModes:\n    - ReadWriteOnce\n  resources:\n    requests:\n      storage: 1Gi\n---\n# Configure 'Deployment' of mysql server\napiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: mysql\n  labels:\n    app: mysql\n    tier: database\nspec:\n  selector: # mysql Pod Should contain same labels \n    matchLabels:\n      app: mysql\n      tier: database\n  strategy:\n    type: Recreate\n  template:\n    metadata:\n      labels: # Must match 'Service' and 'Deployment' selectors\n        app: mysql\n        tier: database\n    spec:\n      containers:\n      - image: mysql:5.7 # image from docker-hub\n        args:\n          - \"--ignore-db-dir=lost+found\" # Workaround for https://github.com/docker-library/mysql/issues/186\n        name: mysql \n        env:\n        - name: MYSQL_ROOT_PASSWORD # Setting Root Password of mysql From a 'Secret'\n          valueFrom:\n            secretKeyRef:\n              name: db-root-credentials # Name of the 'Secret'\n              key: password   # 'key' inside the Secret which contains required 'value'\n        - name: MYSQL_USER # Setting USER username on mysql From a 'Secret'\n          valueFrom:\n            secretKeyRef:\n              name: db-credentials\n              key: username\n        - name: MYSQL_PASSWORD # Setting USER Password on mysql From a 'Secret'\n          valueFrom:\n            secretKeyRef:\n              name: db-credentials\n              key: password\n        - name: MYSQL_DATABASE # Setting Database Name from a 'ConfigMap'\n          valueFrom:\n            configMapKeyRef:\n              name: db-conf\n              key: name\n        ports:\n        - containerPort: 3306\n          name: mysql\n        volumeMounts:        # Mounting voulume obtained from Persistent Volume Claim\n        - name: mysql-persistent-storage\n          mountPath: /var/lib/mysql\n      volumes:\n      - name: mysql-persistent-storage # Obtaining 'vloume' from PVC\n        persistentVolumeClaim:\n          claimName: mysql-pv-claim"
+}, {
+  "tag": "P",
+  "text": "Through this file, we created multiple Kubernetes objects. First, we created a Kubernetes Service with the name mysql for accessing the pod running the MySQL container. Next, we created a Persistent Volume Claim (PVC) of one GB, this will result in Kubernetes cluster dynamically allocating the required persistent storage for MySQL (enable default dynamic storage, if it is not enabled in your cluster). After this, we created a Deployment object, which configures the deployment of MySQL Server in the cluster. Into the MySQL container, we injected environment variables like MYSQL_ROOT_PASSWORD, MYSQL_USER, MYSQL_PASSWORD , and MYSQL_DATABASE using the configMaps and services we created in the previous step.",
+  "translation": "通过此文件，我们创建了多个Kubernetes对象。 首先，我们创建了一个名为mysql的Kubernetes服务，用于访问运行MySQL容器的pod。 接下来，我们创建了一个1 GB的持久卷声明（PVC），这将导致Kubernetes集群为MySQL动态分配所需的持久存储（如果您的集群中未启用，则启用默认动态存储）。 此后，我们创建了一个Deployment对象，它配置了集群中MySQL Server的部署。 使用上一步中创建的configMaps和服务，将诸如MYSQL_ROOT_PASSWORD，MYSQL_USER，MYSQL_PASSWORD和MYSQL_DATABASE之类的环境变量注入到MySQL容器中。"
+}, {
+  "tag": "H2",
+  "text": "Step 5. Configure service and deployment for back end",
+  "translation": "步骤5.为后端配置服务和部署"
+}, {
+  "tag": "P",
+  "text": "Next, we set up our back-end application deployment. Below is the yaml file which creates the required Kubernetes objects.",
+  "translation": "接下来，我们设置后端应用程序部署。 以下是创建所需Kubernetes对象的yaml文件。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/shri-kanth/4eb8d90c312003b0a042a8a5a0b7c225/raw/52eeaabdbc77179b1a1f13278834557baef0d124/backend-deployment.yaml",
+  "code": "# Define 'Service' to expose backend application deployment\napiVersion: v1\nkind: Service\nmetadata:\n  name: to-do-app-backend  \nspec:\n  selector:  # backend application pod lables should match these\n    app: to-do-app\n    tier: backend\n  ports:\n  - protocol: \"TCP\"\n    port: 80\n    targetPort: 8080\n  type: LoadBalancer   # use NodePort, if you are not running Kubernetes on cloud\n---\n# Configure 'Deployment' of backend application\napiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: to-do-app-backend\n  labels: \n    app: to-do-app\n    tier: backend\nspec:\n  replicas: 2    # Number of replicas of back-end application to be deployed\n  selector:\n    matchLabels: # backend application pod labels should match these\n      app: to-do-app\n      tier: backend\n  template:\n    metadata:\n      labels: # Must macth 'Service' and 'Deployment' labels\n        app: to-do-app\n        tier: backend  \n    spec:                 \n      containers: \n      - name: to-do-app-backend \n        image: kubernetesdemo/to-do-app-backend   # docker image of backend application\n        env:   # Setting Enviornmental Variables\n          - name: DB_HOST   # Setting Database host address from configMap\n            valueFrom: \n              configMapKeyRef:\n                name: db-conf  # name of configMap\n                key: host\n          - name: DB_NAME  # Setting Database name from configMap\n            valueFrom:\n              configMapKeyRef:\n                name: db-conf \n                key: name\n          - name: DB_USERNAME  # Setting Database username from Secret\n            valueFrom:\n              secretKeyRef:\n                name: db-credentials # Secret Name\n                key: username\n          - name: DB_PASSWORD # Setting Database password from Secret\n            valueFrom:\n              secretKeyRef:\n                name: db-credentials\n                key: password     \n        ports:\n        - containerPort: 8080"
+}, {
+  "tag": "P",
+  "text": "Here we first created a Service of type LoadBalancer (use NodePort if you are running Kubernetes locally) which exposes the back-end instances. Loadbalancer type provides an External-IP , through which one could access the back-end services externally. (use minikube ipwith the port if you are using minikube). Next, we created the Deployment object configured to contain two replicas of the back-end instance. And then injected the required environment variables from the configMaps and secrets we have created earlier. This deployment will use the image kubernetesdemo/to-do-app-backend which we created in step one.",
+  "translation": "在这里，我们首先创建了一个类型为LoadBalancer的服务（如果您在本地运行Kubernetes，则使用NodePort），该服务公开了后端实例。 Loadbalancer类型提供了一个External-IP，通过它可以从外部访问后端服务。 （如果您使用的是minikube，请在端口上使用minikube ip）。 接下来，我们创建了Deployment对象，该对象配置为包含后端实例的两个副本。 然后从前面创建的configMap和秘密中注入所需的环境变量。 此部署将使用我们在第一步中创建的映像kubernetesdemo / to-do-app-backend。"
+}, {
+  "tag": "H2",
+  "text": "Step 6. Front-end configuration setup",
+  "translation": "步骤6.前端配置设置"
+}, {
+  "tag": "P",
+  "text": "Front end expects the value of External-IP of back end, generated in the above step, to be passed in the form of the environment variable SERVER_URI. We will now create a config map to store this information related to the back-end setup.",
+  "translation": "前端希望在上述步骤中生成的后端的External-IP值以环境变量SERVER_URI的形式传递。 现在，我们将创建一个配置映射来存储与后端设置有关的信息。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/shri-kanth/faf7aec6ba1debde1e42472c502220ca/raw/33ed9e38e21ab6a8a4c60b74c329175bf3d61dfe/backend-configMap.yaml",
+  "code": "# ConfigMap to expose configuration related to backend application\napiVersion: v1\nkind: ConfigMap\nmetadata:\n  name: backend-conf # name of configMap\ndata:\n  server-uri: 34.66.207.42 # enternal ip of backend application 'Service'\n"
+}, {
+  "tag": "P",
+  "text": "We will use this configMap to inject SERVER_URI value when configuring the deployment of front end, in the next step.",
+  "translation": "在下一步中，我们将在配置前端部署时使用此configMap注入SERVER_URI值。"
+}, {
+  "tag": "H2",
+  "text": "Step 7. Configure service and deployment for front end",
+  "translation": "步骤7.为前端配置服务和部署"
+}, {
+  "tag": "P",
+  "text": "Next, we set up our front-end application deployment. Below is the yaml file which creates the required Kubernetes objects.",
+  "translation": "接下来，我们设置前端应用程序部署。 以下是创建所需Kubernetes对象的yaml文件。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/shri-kanth/1bf81bcc7c6b522cf105d21f337494fb/raw/5af309b7efcba89e23e71aaeb23bfb7d43b24ea2/frontend-deployment.yaml",
+  "code": "# Define 'Service' to expose FrontEnd Application\napiVersion: v1\nkind: Service\nmetadata:\n  name: to-do-app-frontend\nspec:\n  selector: # pod labels should match these\n    app: to-do-app\n    tier: frontend\n  ports:\n  - protocol: \"TCP\"\n    port: 80\n    targetPort: 8080\n  type: LoadBalancer # use NodePort if you are not running Kubernetes on Cloud\n---\n# 'Deployment' to manage of configuration of frontEnd Deployment\napiVersion: apps/v1\nkind: Deployment\nmetadata:\n  name: to-do-app-frontend\n  labels: # pod labels should match these\n    app: to-do-app\n    tier: frontend\nspec:\n  replicas: 2  # number of replicas of frontEnd application\n  selector:\n    matchLabels: \n      app: to-do-app\n      tier: frontend\n  template:\n    metadata:\n      labels: # Must match 'Service' and 'Deployment' labels\n        app: to-do-app\n        tier: frontend  \n    spec:                 \n      containers: \n      - name: to-do-app-frontend \n        image: kubernetesdemo/to-do-app-frontend # docker image of frontend application\n        env: # Setting Environmental Variables\n          -  name: SERVER_URI # Setting Backend URI from configMap\n             valueFrom:\n               configMapKeyRef:\n                 name: backend-conf # Name of configMap\n                 key: server-uri\n        ports:\n        - containerPort: 8080"
+}, {
+  "tag": "P",
+  "text": "Here, we first created a Service of type LoadBalancer (use NodePort if you are running Kubernetes locally) which exposes the front-end instances. Loadbalancer type provides an External-IP , through which one could access the front-end services externally. (use minikube ipwith the port if you are using minikube). Next, we created the Deployment object configured to contain two replicas of the front-end instance. This deployment will use the image kubernetesdemo/to-do-app-frontend, which we created in step one. After this, we injected the environment variable SERVER_URI from configMap, which we created in the above setup.",
+  "translation": "在这里，我们首先创建了一个类型为LoadBalancer的服务（如果您在本地运行Kubernetes，则使用NodePort），该服务公开了前端实例。 负载平衡器类型提供了一个External-IP，通过它可以从外部访问前端服务。 （如果您使用的是minikube，请在端口上使用minikube ip）。 接下来，我们创建了Deployment对象，该对象配置为包含前端实例的两个副本。 此部署将使用我们在第一步中创建的映像kubernetesdemo / to-do-app-frontend。 此后，我们从在上面的设置中创建的configMap注入了环境变量SERVER_URI。"
+}, {
+  "tag": "P",
+  "text": "That’s it. Our simple application is now completely deployed. After this, the front end of the application should be accessible using front-end service External-IP from any browser. The Angular app will call the back end through HTTP and back end will communicate with MySQL database, where our application data is persisted. The image below shows the overall setup described in this example",
+  "translation": "而已。 我们的简单应用程序现已完全部署。 之后，应该可以通过任何浏览器使用前端服务External-IP访问应用程序的前端。 Angular应用程序将通过HTTP调用后端，并且后端将与MySQL数据库进行通信，我们的应用程序数据将保留在该数据库中。 下图显示了此示例中描述的总体设置"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/48/1*78_FSXLxWFY8eOQS-zJ8qA.png?q=20",
+  "caption": "High-Level View of To-Do-App Deployment Setup on Kubernetes",
+  "type": "image",
+  "file": "1*78_FSXLxWFY8eOQS-zJ8qA.png"
+}, {
+  "tag": "P",
+  "text": "This entire deployment is now managed by Kubernetes. If one of the pods goes down for unknown reasons, Kubernetes will bring up a new pod without any manual intervention. Using kubectl, we could monitor and update this deployment, whenever required.",
+  "translation": "现在，整个部署由Kubernetes管理。 如果某个吊舱因未知原因而掉落，Kubernetes将在没有任何手动干预的情况下启动新吊舱。 使用kubectl，我们可以在需要时监视和更新此部署。"
+}, {
+  "tag": "H1",
+  "text": "External Links",
+  "translation": "外部链接"
+}, {
+  "tag": "UL",
+  "texts": ["The GitHub Repository Containing the manifest files used for deployment and configuration of Kubernetes Cluster discussed in this piece can be found here.", "The GitHub Repository Containing the back-end implementation discussed in this piece can be found here.", "The GitHub Repository Containing the front-end implementation discussed in this piece can be found here."],
+  "translations": ["可以在此处找到包含用于本文讨论的Kubernetes Cluster的部署和配置的清单文件的GitHub存储库。", "包含本文讨论的后端实现的GitHub存储库可在此处找到。", "包含本文讨论的前端实现的GitHub存储库可在此处找到。"]
+}, {
+  "tag": "H1",
+  "text": "Kubernetes Objects",
+  "translation": "Kubernetes对象"
+}, {
+  "tag": "P",
+  "text": "Kubernetes defines a large number of abstract objects. For brevity’s sake, we will only discuss those Kubernetes objects that are absolutely essential for understanding our example.",
+  "translation": "Kubernetes定义了大量抽象对象。 为简便起见，我们将只讨论对于理解我们的示例绝对必要的Kubernetes对象。"
+}, {
+  "tag": "UL",
+  "texts": ["Pod: We know that through Kubernetes, we could run containerized applications. Instead of abstracting a single container as a Kubernetes object, Kubernetes defines pod, which is a group of one or more containers. There is an advantage that comes with this choice. For simpler cases, each pod in the system could represent a single container. But, whenever there is a need to deploy additional capabilities that are not directly related to the core business functionality of the container — like support for logging, caching, etc — we have an option to package these additional capabilities into separate containers and place them in a single pod. This ensures they always stay logically together. Pods are the smallest deployable units of computing that can be created and managed in Kubernetes. It is the place where the actual application code implemented by the end-user runs. Each pod has it’s own IP address and is completely decoupled from the host.", "Service: In Kubernetes, pods are volatile. To ensure high availability and optimum use of compute resources, Kubernetes could dynamically kill and create pods. Because of this, the IP address of a pod is not a reliable way to access business functionality offered by the pod. Instead, Kubernetes recommends using a service to access the business functionality. Kubernetes service is an abstraction which defines a logical set of pods and a policy to access them. Every Kubernetes service has an IP address, but unlike the IP address of a pod, it is stable. A Kubernetes service continuously keeps track of all the pods in the system, and identifies the pods it is expected to target. Whenever a request to access a particular business functionality reaches the service, it will redirect the request to the IP address of one of the pods that are active in the system at that point in time. Ideally, to access the pods from outside the cluster, one must use Ingress. As of now, however, the Kubernetes Ingress feature is still beta. Thus, in this example, we will use a service to expose the traffic externally as well.", "Persistent- Volume and Persistent-Volume Claim: Managing storage is a distinct problem from managing compute. Kubernetes defines two key abstractions to handle this problem, persistent volume, and persistent volume Claim. In Kubernetes, a persistent-volume is a piece of storage in the cluster that has been provisioned to be used by the cluster for its storage requirements. A persistent-volume claim is a request by an application to consume the abstract storage resources declared through persistent volume. To make persistent storage available to the applications running inside Kubernetes, one should first declare persistent volume and then configure the application to make a claim to use that volume.", "ConfigMap: Configmap is a Kubernetes abstraction meant to decouple environment-dependent application-configuration-data from containerized applications, allowing them to remain portable across environments.", "Secrets: A secret is an object that contains a small amount of sensitive data such as a password, a token, or a key. Putting such sensitive information in a secret allows for more control over how it is used and reduces the risk of accidental exposure.", "Deployment: Deployment is an abstraction meant to represent the desired state of an actual deployment on Kubernetes. A deployment object typically contains all the information required — the location to obtain and build containerized applications, configuration of pods expected to package and run these containers,the number of replicas of each pod that should be maintained, the location of application configuration in terms of config-maps and secrets meant to be used by the containers, configuration of data storage (if the application needs persistent data storage). All of these could be declared inside deployment. Although it is possible to create individual pods and services in Kubernetes it is recommended that one use deployment to manage deployments. By using the deployment object, typical operations like roll-out, roll-back, and monitoring are greatly simplified."],
+  "translations": ["Pod：我们知道，通过Kubernetes，我们可以运行容器化的应用程序。 Kubernetes并没有将单个容器抽象为Kubernetes对象，而是定义了pod，pod是一组一个或多个容器。 此选择具有一个优势。 对于更简单的情况，系统中的每个吊舱可以代表一个容器。 但是，只要需要部署与容器的核心业务功能不直接相关的其他功能（例如对日志记录，缓存等的支持），我们都可以选择将这些其他功能打包到单独的容器中并将其放入 一个豆荚。 这样可以确保他们始终保持逻辑上的在一起。 Pod是可以在Kubernetes中创建和管理的最小的可部署计算单元。 这是最终用户实现的实际应用程序代码运行的地方。 每个Pod都有自己的IP地址，并且与主机完全分离。", "服务：在Kubernetes中，豆荚是易变的。为了确保高可用性和优化使用计算资源，Kubernetes可以动态终止并创建Pod。因此，容器的IP地址不是访问容器提供的业务功能的可靠方法。相反，Kubernetes建议使用服务来访问业务功能。 Kubernetes服务是一种抽象，定义了一组逻辑上的Pod和访问它们的策略。每个Kubernetes服务都有一个IP地址，但是与pod的IP地址不同，它是稳定的。 Kubernetes服务持续跟踪系统中的所有Pod，并识别预期要定位的Pod。每当访问特定业务功能的请求到达服务时，它将把请求重定向到该时间点在系统中处于活动状态的Pod之一的IP地址。理想情况下，要从集群外部访问Pod，必须使用Ingress。但是，到目前为止，Kubernetes Ingress功能仍为beta。因此，在此示例中，我们还将使用服务在外部公开流量。", "持久卷和持久卷声明：管理存储与管理计算是一个明显的问题。 Kubernetes定义了两个关键抽象来处理此问题，即持久卷和持久卷Claim。 在Kubernetes中，持久卷是集群中的一块存储，已被调配以供集群用于其存储需求。 持久卷声明是应用程序请求使用通过持久卷声明的抽象存储资源的请求。 为了使持久性存储可用于Kubernetes中运行的应用程序，应首先声明持久性卷，然后配置该应用程序以声明使用该卷。", "ConfigMap：Configmap是Kubernetes的抽象概念，旨在使与环境相关的应用程序配置数据与容器化应用程序脱钩，从而使它们在整个环境中保持可移植性。", "机密：机密是包含少量敏感数据（例如密码，令牌或密钥）的对象。 将此类敏感信息保密后，可以更好地控制其使用方式，并降低意外暴露的风险。", "部署：部署是一种抽象，旨在表示Kubernetes上实际部署的所需状态。 部署对象通常包含所有必需的信息-获取和构建容器化应用程序的位置，预期用于打包和运行这些容器的Pod的配置，应维护的每个Pod的副本数，就以下方面而言应用程序配置的位置： 容器要使用的配置映射和机密，数据存储的配置（如果应用程序需要持久性数据存储）。 所有这些都可以在部署中声明。 尽管可以在Kubernetes中创建单独的Pod和服务，但是建议使用一种部署来管理部署。 通过使用部署对象，可以大大简化诸如转出，回滚和监视之类的典型操作。"]
+}, {
+  "tag": "H1",
+  "text": "Design Principles and Architecture Behind Kubernetes",
+  "translation": "Kubernetes背后的设计原理和架构"
+}, {
+  "tag": "P",
+  "text": "Kubernetes is architected to abide by a set of design principles. To better understand why Kubernetes is architected the way it is, one should be familiar with these principles. So, let’s start our discussion there.",
+  "translation": "Kubernetes的设计遵循一组设计原则。 为了更好地理解Kubernetes为何以这种方式构建，应该熟悉这些原理。 因此，让我们在这里开始讨论。"
+}, {
+  "tag": "H2",
+  "text": "Design principles of Kubernetes",
+  "translation": "Kubernetes的设计原理"
+}, {
+  "tag": "UL",
+  "texts": ["Portable: Kubernetes can run anywhere. Kubernetes runs with consistent behavior across various environments — public cloud, private cloud, on-premise or personal laptop. Applications deployed on Kubernetes can be ported across different environments with minimal effort.", "General-purpose: Kubernetes doesn’t put any restrictions on what type of applications can be deployed through it. Although it focuses on deployment and management of micro-services and cloud-native applications, any type of workload (batch jobs, stateless or stateful services, legacy monolithic single instance applications) can be deployed through Kubernetes. Applications could be written in any language or framework without any restrictions.", "Flexible: Kubernetes allows for many parts of its functionality to be substituted with custom, built-in solutions. This gives the ability to use a specialized solution along with Kubernetes wherever necessary. To ensure this flexibility, Kubernetes is built as a collection of pluggable components and layers.", "Extensible: Kubernetes facilitates the addition of specialized capabilities whenever necessary. This is achieved by exposing interfaces, which could be implemented to add new functionality on top of existing functionality. This allows for numerous add-ons to be developed for Kubernetes.", "Automatable: Kubernetes aims to reduce the burden of manual operations. Once configured, applications deployed through Kubernetes will scale and self heal without any manual intervention. Kubernetes could be integrated with a Continuous Integration (CI) pipeline, allowing a code change committed by a developer to be deployed onto the test environment automatically."],
+  "translations": ["可移植性：Kubernetes可以在任何地方运行。 Kubernetes在各种环境-公共云，私有云，本地或个人笔记本电脑中以一致的行为运行。 Kubernetes上部署的应用程序可以轻松地跨不同环境移植。", "通用：Kubernetes对可以通过它部署什么类型的应用程序没有任何限制。 尽管它专注于微服务和云原生应用程序的部署和管理，但是可以通过Kubernetes部署任何类型的工作负载（批处理作业，无状态或有状态服务，遗留的整体式单实例应用程序）。 可以用任何语言或框架编写应用程序而没有任何限制。", "灵活：Kubernetes允许将其功能的许多部分替换为自定义的内置解决方案。 这样就可以在必要时与Kubernetes一起使用专门的解决方案。 为了确保这种灵活性，Kubernetes构建为可插入组件和层的集合。", "可扩展：Kubernetes可以在必要时促进添加专用功能。 这可以通过公开接口来实现，可以将其实现以在现有功能之上添加新功能。 这允许为Kubernetes开发许多附加组件。", "自动化：Kubernetes旨在减轻手动操作的负担。 配置完成后，通过Kubernetes部署的应用程序将可以扩展和自我修复，而无需任何手动干预。 Kubernetes可以与持续集成（CI）管道集成在一起，从而允许开发人员提交的代码更改自动部署到测试环境中。"]
+}, {
+  "tag": "P",
+  "text": "Each of these principles adds great value to the end user who is using Kubernetes. Portability allows for reliable testing of the application on various environments, such as testing and production, and prevents getting locked in with a single cloud-provider or vendor.",
+  "translation": "这些原则中的每一项都为使用Kubernetes的最终用户带来了巨大的价值。 可移植性允许在各种环境（例如测试和生产）上对应用程序进行可靠的测试，并防止被单一的云提供商或供应商锁定。"
+}, {
+  "tag": "P",
+  "text": "General purpose gives developers the freedom to choose the exact development tools and frameworks necessary to meet the business functionality, without worrying about the infrastructure or deployment.",
+  "translation": "通用目的使开发人员可以自由选择满足业务功能所需的确切开发工具和框架，而不必担心基础结构或部署。"
+}, {
+  "tag": "P",
+  "text": "Flexibility and extensibility allow the addition of customized functionality wherever the built-in functionality is not sufficient.",
+  "translation": "灵活性和可扩展性允许在内置功能不足的地方添加自定义功能。"
+}, {
+  "tag": "P",
+  "text": "Automatability ensures that manual work necessary for the maintenance of a large-scale application is kept a minimum. This allows for a relatively small team to successfully maintain a large-scale, distributed application deployed on the cloud.",
+  "translation": "自动化确保将维护大规模应用程序所需的手动工作保持在最低限度。 这允许相对较小的团队成功维护部署在云上的大规模分布式应用程序。"
+}, {
+  "tag": "P",
+  "text": "Let’s now discuss the Kubernetes architecture which was developed keeping these principles in consideration",
+  "translation": "现在让我们讨论Kubernetes架构，该架构是在考虑这些原则的基础上开发的"
+}, {
+  "tag": "H2",
+  "text": "Architecture of Kubernetes",
+  "translation": "Kubernetes的架构"
+}, {
+  "tag": "P",
+  "text": "High-level Kubernetes comprises of the master system and workers. The master system controls the workers and runs applications on them. The desired state of the cluster (compute resources) is represented as abstract objects. These abstract Kubernetes objects are records of intent. Kubernetes will constantly work to ensure that the state represented in these abstract objects is the actual physical state of the cluster. An external client could connect to the master and obtain information about the cluster state and issue commands to change it as per requirement.",
+  "translation": "高级Kubernetes由主系统和工作人员组成。 主系统控制工作程序并在其上运行应用程序。 群集的所需状态（计算资源）表示为抽象对象。 这些抽象的Kubernetes对象是意图的记录。 Kubernetes将不断努力以确保这些抽象对象中表示的状态是集群的实际物理状态。 外部客户端可以连接到主服务器，并获取有关群集状态的信息，并发出命令以根据需要对其进行更改。"
+}, {
+  "tag": "P",
+  "text": "Whenever one wishes to update the physical state of the cluster, all they would have to do is update the abstract Kubernetes objects, and Kubernetes will take care of the rest. Let’s dive deeper and briefly discuss the components of the master system and workers.",
+  "translation": "每当有人希望更新集群的物理状态时，他们所要做的就是更新抽象的Kubernetes对象，而Kubernetes将负责其余的工作。 让我们深入探讨一下，简要讨论主系统和工作人员的组件。"
+}, {
+  "tag": "H2",
+  "text": "Components of Kubernetes master",
+  "translation": "Kubernetes Master的组件"
+}, {
+  "tag": "P",
+  "text": "The Kubernetes master system, also known as the control pane, is designed as a set of components. Let’s briefly discuss it’s key components.",
+  "translation": "Kubernetes主系统（也称为控制窗格）被设计为一组组件。 让我们简要讨论一下它的关键组成部分。"
+}, {
+  "tag": "UL",
+  "texts": ["API server: Kubernetes mostly uses REST API for internal and external communication. All the abstract Kubernetes objects are exposed as REST resources. API server is the component that is responsible for processing the REST requests, validating them, and performing appropriate CRUD operations on corresponding abstract Kubernetes objects.", "Cluster State Store: To perform the CRUD operations, API server would need a backing data store. As the name indicates, cluster state store is a persistent storage instance which stores the state of all the abstract Kubernetes objects configured in the system. The cluster state store has support for watch functionality. Through this functionality, all the coordinating components could be quickly notified whenever a change is made to an object.", "Controller Manager: This is the component of master that runs controllers. Controllers run loops and monitor the actual cluster state and state represented in the abstract Kubernetes objects. Whenever a change to cluster state is notified, they are responsible for performing necessary actions, such that the actual state and the abstract state are consistent with each other. Kubernetes has numerous controllers, each one responsible for a different set of Kubernetes objects.", "Scheduler: It is the component of the master responsible for allocating physical resources on the cluster to run applications/jobs added to the abstract data store. These scheduling decisions are made taking into account numerous factors like hardware/software constraints, among others."],
+  "translations": ["API服务器：Kubernetes大多使用REST API进行内部和外部通信。 所有抽象的Kubernetes对象都作为REST资源公开。 API服务器是负责处理REST请求，对其进行验证并在相应的抽象Kubernetes对象上执行适当的CRUD操作的组件。", "群集状态存储：要执行CRUD操作，API服务器将需要一个后备数据存储。 顾名思义，集群状态存储是一个持久性存储实例，用于存储系统中配置的所有抽象Kubernetes对象的状态。 群集状态存储支持监视功能。 通过此功能，每当对对象进行更改时，所有协调组件都可以快速得到通知。", "控制器管理器：这是运行控制器的主机的组件。 控制器运行循环并监视实际的群集状态和抽象Kubernetes对象中表示的状态。 每当通知集群状态更改时，它们负责执行必要的操作，以使实际状态和抽象状态相互一致。 Kubernetes有许多控制器，每个控制器负责一组不同的Kubernetes对象。", "调度程序：调度程序是主机的组件，负责在群集上分配物理资源以运行添加到抽象数据存储中的应用程序/作业。 这些调度决策是在考虑到诸如硬件/软件约束之类的众多因素之后做出的。"]
+}, {
+  "tag": "P",
+  "text": "A Kubernetes master system could have multiple replicas of each of these components to ensure high availability, and could be deployed along with worker node components on a single physical instance. However, for simplicity, setup scripts typically start all master components on the same machine, and do not run any worker instances on this machine.",
+  "translation": "Kubernetes主系统可以对每个组件具有多个副本以确保高可用性，并且可以与工作节点组件一起部署在单个物理实例上。 但是，为简单起见，安装脚本通常在同一台计算机上启动所有主组件，并且不在该计算机上运行任何辅助实例。"
+}, {
+  "tag": "P",
+  "text": "The exact cluster setup is dependent on the requirements of the end user. For smaller applications, a single instance with both master and worker components is more than sufficient. For larger applications customized effort is essential for configuring the Kubernetes cluster.",
+  "translation": "确切的群集设置取决于最终用户的要求。 对于较小的应用程序，具有主组件和辅助组件的单个实例绰绰有余。 对于大型应用程序，自定义工作对于配置Kubernetes集群至关重要。"
+}, {
+  "tag": "H2",
+  "text": "Components of Kubernetes worker",
+  "translation": "Kubernetes worker的组成部分"
+}, {
+  "tag": "P",
+  "text": "The worker instances, or nodes, are also composed of multiple components. The main function of Kubernetes worker components is to process the instructions from master and execute them on the node. The following are the key components of a worker node:",
+  "translation": "工作程序实例或节点也由多个组件组成。 Kubernetes worker组件的主要功能是处理来自master的指令并在节点上执行它们。 以下是工作程序节点的关键组件："
+}, {
+  "tag": "UL",
+  "texts": ["Kubelet: It is the component of worker responsible for making sure that the containers scheduled by the master on this node are running and are healthy.", "Container runtime: Container runtime is the software that is responsible for running containers. Kubernetes supports several runtimes and any implementation of the Kubernetes CRI. Each worker node uses this to run the containerized applications scheduled by the master. Running non-containerized applications is discouraged and not supported by Kubernetes.", "Kube proxy: It is the component of Worker responsible for maintaining network rules on the worker and performing connection forwarding. This essentially enables efficient and effective communication throughout the cluster. External application traffic will get redirected to the appropriate container through these components."],
+  "translations": ["Kubelet：它是工作程序的组件，负责确保由主服务器在此节点上调度的容器正在运行并且状态良好。", "容器运行时：容器运行时是负责运行容器的软件。 Kubernetes支持多个运行时以及Kubernetes CRI的任何实现。 每个工作节点都使用它来运行由主节点调度的容器化应用程序。 不鼓励运行非容器化的应用程序，Kubernetes不支持这种应用程序。", "Kube代理：它是Worker的组件，负责维护Worker上的网络规则并执行连接转发。 这从根本上实现了整个集群之间的高效通信。 外部应用程序流量将通过这些组件重定向到适当的容器。"]
+}, {
+  "tag": "H2",
+  "text": "External Kubernetes client",
+  "translation": "外部Kubernetes客户端"
+}, {
+  "tag": "P",
+  "text": "Theoretically, external Kubernetes client could be any application that can communicate with API server through the well-defined REST API. But the most predominant choice is to use Kubectl.",
+  "translation": "从理论上讲，外部Kubernetes客户端可以是可以通过定义良好的REST API与API服务器通信的任何应用程序。 但是最主要的选择是使用Kubectl。"
+}, {
+  "tag": "P",
+  "text": "Kubectl is a command line tool that is intended to be used by an end-user responsible for managing application deployments. Kubectl users can execute commands on a terminal. Each of these commands is converted into an API call in the background and sent to the API server on Kubernetes master, where necessary action will be performed.",
+  "translation": "Kubectl是一个命令行工具，供负责管理应用程序部署的最终用户使用。 Kubectl用户可以在终端上执行命令。 这些命令中的每一个都会在后台转换为API调用，并发送到Kubernetes主服务器上的API服务器，在此将执行必要的操作。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*qC23lB5QHvlK88WorDzqLg.png?q=20",
+  "caption": "High-Level Kubernetes Architecture",
+  "type": "image",
+  "file": "1*qC23lB5QHvlK88WorDzqLg.png"
+}, {
+  "tag": "P",
+  "text": "Let’s take a step back and look at the overall architecture of Kubernetes. One could notice that it is designed as a set of loosely coupled components working together, instead of a single monolithic instance being responsible for all the functionality. We already discussed the various advantages of such an architectural style. In particular, this choice allows Kubernetes to stay flexible and extensible.",
+  "translation": "让我们退后一步，看看Kubernetes的总体架构。 可能会注意到，它是作为一组松散耦合的组件一起工作而设计的，而不是由单个整体实例负责所有功能。 我们已经讨论了这种建筑风格的各种优点。 特别是，这种选择可使Kubernetes保持灵活性和可扩展性。"
+}, {
+  "tag": "P",
+  "text": "The choice to use rest to create and update the cluster configuration ensures that any configuration created on one environment will work on any other environment. This allows application deployments created on Kubernetes to remain portable.",
+  "translation": "选择使用rest来创建和更新集群配置可确保在一个环境中创建的任何配置都可在任何其他环境中使用。 这使在Kubernetes上创建的应用程序部署保持可移植性。"
+}, {
+  "tag": "P",
+  "text": "Controller manager and scheduler act as components which continuously watch for changes to the abstract objects in cluster state store. They send instructions to worker nodes whenever necessary to automatically update the actual state of cluster This design choice eliminates a great deal of manual work and ensure Kubernetes is autonomic. In fact, this declarative approach to cluster management was one of the main features which lead to the rapid adoption of Kubernetes.",
+  "translation": "控制器管理器和调度程序充当持续监视集群状态存储中抽象对象更改的组件。 它们在必要时将指令发送到工作节点，以自动更新集群的实际状态。这种设计选择省去了大量的人工工作，并确保Kubernetes具有自主性。 实际上，这种声明式的集群管理方法是导致Kubernetes迅速被采用的主要特征之一。"
+}, {
+  "tag": "P",
+  "text": "The choice to run only containerized applications by interacting with the container runtime through an interface ensures that any type of application could run on Kubernetes, and allows Kubernetes to remain general purpose.",
+  "translation": "通过通过与接口与容器运行时交互来选择仅运行容器化应用程序的选择，可以确保任何类型的应用程序都可以在Kubernetes上运行，并使Kubernetes保持通用。"
+}, {
+  "tag": "P",
+  "text": "We can now look into the abstract objects used to represent and manage the cluster state in Kubernetes. Knowledge of these Kubernetes objects is the final piece of the puzzle we need to understand before we dive into the example",
+  "translation": "现在，我们可以研究用于表示和管理Kubernetes中集群状态的抽象对象。 了解这些Kubernetes对象是我们深入研究示例之前需要理解的最后一个难题"
+}, {
+  "tag": "H1",
+  "text": "Kubernetes: A Detailed Example of Deployment of a Stateful Application",
+  "translation": "Kubernetes：部署有状态应用程序的详细示例"
+}, {
+  "tag": "H2",
+  "text": "This piece is the second part of a two-part series",
+  "translation": "这是两部分系列的第二部分"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*XODQ5FYsqWyqr_TR9KrxiA.jpeg?q=20",
+  "caption": "Photo by Ihor Dvoretskyi on Unsplash",
+  "type": "image",
+  "file": "1*XODQ5FYsqWyqr_TR9KrxiA.jpeg"
+}, {
+  "tag": "P",
+  "text": "In Part One of this series, we discussed:",
+  "translation": "在本系列的第一部分中，我们讨论了："
+}, {
+  "tag": "UL",
+  "texts": ["What is Kubernetes?", "What problems does it aim to solve?", "When should one choose to use Kubernetes? What alternatives are available?"],
+  "translations": ["什么是Kubernetes？", "它旨在解决什么问题？", "什么时候应该选择使用Kubernetes？ 有哪些替代选择？"]
+}, {
+  "tag": "P",
+  "text": "In this piece, we will explore",
+  "translation": "在这一部分中，我们将探索"
+}, {
+  "tag": "UL",
+  "texts": ["What are the design principles and architecture of Kubernetes?", "How to use Kubernetes, and a simple example."],
+  "translations": ["Kubernetes的设计原理和架构是什么？", "如何使用Kubernetes，还有一个简单的示例。"]
+}, {
+  "tag": "P",
+  "text": "To understand an example that describes how to deploy applications on Kubernetes, one should first have a preliminary understanding of Kubernetes architecture and objects. Thus, we will first outline the design principles and architecture of Kubernetes, followed by a brief explanation of relevant Kubernetes objects, and, finally, the example itself.",
+  "translation": "要理解描述如何在Kubernetes上部署应用程序的示例，首先应该对Kubernetes的体系结构和对象有一个初步的了解。 因此，我们将首先概述Kubernetes的设计原理和体系结构，然后简要说明相关的Kubernetes对象，最后是示例本身。"
+}, {
+  "tag": "PRE",
+  "text": "本文翻译自Srikanth Koraveni的文章《Kubernetes: A Detailed Example of Deployment of a Stateful Application》，参考：https://medium.com/better-programming/kubernetes-a-detailed-example-of-deployment-of-a-stateful-application-de3de33c8632",
+  "translation": "本文翻译自Srikanth Koraveni的文章《 Kubernetes：有状态应用程序部署的详细示例》，参考：https：//medium.com/better-programming/kubernetes-a-detailed-example-of-deployment-of-a -有状态应用程序-de3de33c8632"
+}]
