@@ -1,0 +1,150 @@
+[{
+  "tag": "H1",
+  "text": "Automation — A Lot of It",
+  "translation": "自动化—很多"
+}, {
+  "tag": "P",
+  "text": "Kubernetes encourages declarative configuration, rather than a series of procedural commands that strictly tell K8s what to do. This is one of its great strengths and it improves the automation of your applications. You’re going to love simply writing YAML and pushing it to Kubernetes, safe in the knowledge that the API server’s got you covered.",
+  "translation": "Kubernetes鼓励声明式配置，而不是一系列严格告诉K8做什么的程序命令。 这是它的强大优势之一，它可以提高应用程序的自动化程度。 您会喜欢编写YAML并将其推送到Kubernetes，这很安全，因为知道API服务器可以帮助您。"
+}, {
+  "tag": "P",
+  "text": "Then you’re going to look at everything else around your cluster…",
+  "translation": "然后，您将查看集群中的其他所有信息……"
+}, {
+  "tag": "P",
+  "text": "Those manually created databases, hand crafted security groups, stray EC2 instances. You’re going to long for the sweet automated bliss of your cluster. But you’ve stepped out of Plato’s cave and, try as you might, you can’t go back to the way things were. It’s time to roll up your sleeves.",
+  "translation": "那些手动创建的数据库，手工制作的安全组，零散的EC2实例。 您将渴望集群中的自动化功能。 但是您已经走出柏拉图的山洞，并且尽您所能尝试，就无法回到原来的样子。 现在该收起袖子了。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*Hrnbl0vQTXLPPY1N.png?q=20",
+  "caption": "That skull represents the dodgy scripts on your DBAs laptop",
+  "type": "image",
+  "file": "0*Hrnbl0vQTXLPPY1N.png"
+}, {
+  "tag": "P",
+  "text": "Kubernetes sets the bar and it’s easy to make it your mission to drag everything else up to that standard. My only advice here is this: be economical. Automation is great but the more you automate, the more you need to manage. Often, the more difficult question to answer is how you’re going to operationally maintain all of your automated tools, once you’ve built them.",
+  "translation": "Kubernetes设定了标准，很容易将您的任务拖到该标准上。 我唯一的建议是：经济。 自动化很棒，但是自动化程度越高，您需要管理的工作就越多。 通常，更难回答的问题是一旦构建完所有自动化工具，您将如何对其进行操作维护。"
+}, {
+  "tag": "H1",
+  "text": "Taking the “Product” Out of “Production”",
+  "translation": "从“生产”中取出“产品”"
+}, {
+  "tag": "P",
+  "text": "Unless your product is very large, it is likely that your product will be deployed into an existing production cluster. This decoupling of your production environment from your application is, initially, strange.",
+  "translation": "除非您的产品很大，否则很可能会将您的产品部署到现有的生产集群中。 生产环境与应用程序之间的这种脱钩最初是很奇怪的。"
+}, {
+  "tag": "P",
+  "text": "With different technologies, you simply build your environment when the product is ready to ship. You own that environment in its entirety.",
+  "translation": "使用不同的技术，您可以在产品准备好交付时简单地构建环境。 您完全拥有该环境。"
+}, {
+  "tag": "P",
+  "text": "But now? You’re in a shared living space — simultaneously the tenant and guest. It’s uncomfortable, it feels like a restriction of autonomy. Previously, you could do as you pleased with your environment. Now? Everything has someone else’s name on it and you’ve got to be careful. So how do you break out of this rut?",
+  "translation": "但现在？ 您处于一个共享的生活空间中-房客和客人同时居住。 这很不舒服，感觉像是对自主权的限制。 以前，您可以根据自己的环境进行操作。 现在？ 一切都有别人的名字，你必须要小心。 那么，您如何摆脱这种发情呢？"
+}, {
+  "tag": "H2",
+  "text": "Collaboration",
+  "translation": "合作"
+}, {
+  "tag": "P",
+  "text": "This can be unnerving. You don’t know these other folks. What if they’re total mavericks? Well, what you’re experiencing is the beginning of trust. You’ve recognised that you need to rely on another party. There’s a shared responsibility. The best way to handle this? Meet up, explain your anxieties, set up some loose ways of working and regularly improve them.",
+  "translation": "这可能令人不安。 您不认识其他人。 如果他们是特立独行的人怎么办？ 好吧，您正在经历的是信任的开始。 您已经认识到需要依靠另一方。 有共同的责任。 处理此问题的最佳方法？ 开会，解释您的焦虑，建立一些宽松的工作方式并定期改善它们。"
+}, {
+  "tag": "P",
+  "text": "Your shared Kubernetes cluster is going to force you to talk. If you avoid talking, you’re going to struggle. Be prepared for a much more active, tight form of collaboration. It will take some getting used to and it may feel like an invasion into the sacred space that your team occupies, but with a little practice it will become perfectly natural and the benefits will present themselves.",
+  "translation": "您共享的Kubernetes集群将迫使您讲话。 如果您避免讲话，那您将很挣扎。 为更加积极，紧密的协作做好准备。 这将需要一些时间来适应，并且可能感觉像是入侵了您团队所占据的神圣空间，但是只要稍加练习，它就会变得很自然，并且收益也会显现出来。"
+}, {
+  "tag": "H1",
+  "text": "Platform Thinking",
+  "translation": "平台思维"
+}, {
+  "tag": "P",
+  "text": "Many of the Kubernetes concepts lend themselves well to platform thinking. This encourages the building of shared, central services and removes the waste and rework of projects with bespoke solutions.",
+  "translation": "Kubernetes的许多概念非常适合平台思考。 这鼓励建立共享的中央服务，并通过定制解决方案消除项目的浪费和返工。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*GFj2vPF4QKcBuHB-.jpg?q=20",
+  "type": "image",
+  "file": "0*GFj2vPF4QKcBuHB-.jpg"
+}, {
+  "tag": "P",
+  "text": "Platform thinking comes with risks. If everyone relies on the same shared monitoring service, a single outage can have a huge blast radius. You can decide a separation for your monitoring solution to limit the impact of this, but, ultimately, you’re increasing the responsibility of individual services.",
+  "translation": "平台思维伴随着风险。 如果每个人都依赖于相同的共享监视服务，则一次中断可能具有巨大的爆炸半径。 您可以为监视解决方案确定一个隔离方案，以限制其影响，但最终，您将增加单个服务的职责。"
+}, {
+  "tag": "P",
+  "text": "Kubernetes can happily support either, but when you’re all living in the same cluster, centralised strategic services are built more naturally than product-specific services in a silo. Their benefits are obvious:",
+  "translation": "Kubernetes可以很高兴地提供支持，但是当您都生活在同一个集群中时，集中式战略服务的构建要比孤岛中针对特定产品的服务更自然。 它们的好处显而易见："
+}, {
+  "tag": "UL",
+  "texts": ["Experiments go live with access to production-grade services", "Because you lower the cost of deploying something new, many more new things are tried and greater experimentation leads to greater learning"],
+  "translations": ["可以使用生产级服务进行实验", "因为您降低了部署新事物的成本，所以尝试了更多的新事物，更多的实验导致了更多的学习"]
+}, {
+  "tag": "H1",
+  "text": "Inversion of Control",
+  "translation": "控制反转"
+}, {
+  "tag": "P",
+  "text": "Kubernetes comes with incredible automation built in. Automatic redundancy, high availability, self-healing, configuration management and much more. I have seen people tie themselves in knots over this.",
+  "translation": "Kubernetes内置了令人难以置信的自动化功能。自动冗余，高可用性，自我修复，配置管理等等。 我见过人们为此而纠结。"
+}, {
+  "tag": "P",
+  "text": "They’ve spent years hacking together their own automation and now there’s a solution that brings a lot more to the table. Naturally, they keep their procedural mindset.",
+  "translation": "他们花了多年的时间来破解自己的自动化技术，现在有了一种解决方案，可以为您带来更多收益。 他们自然会保持程序思维。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/freeze/max/60/0*qAiFzvTkHSuU8jr2.gif?q=20",
+  "type": "image",
+  "file": "0*qAiFzvTkHSuU8jr2.gif"
+}, {
+  "tag": "H2",
+  "text": "Declare, don’t dictate",
+  "translation": "声明，不要说"
+}, {
+  "tag": "P",
+  "text": "Luckily, embracing this automation is simple. When you’re defining Kubernetes resources, be declarative. Tell Kubernetes what “good” looks like. The aim is to put as much into the K8s control world as possible. Supplement with automation where needed.",
+  "translation": "幸运的是，采用这种自动化很简单。 在定义Kubernetes资源时，请进行声明。 告诉Kubernetes“好”是什么样子。 目的是尽可能多地进入K8s控制世界。 在需要时补充自动化。"
+}, {
+  "tag": "P",
+  "text": "Let Kubernetes do what it’s best at and you can fill in the blanks for your business.",
+  "translation": "让Kubernetes尽其所能，您可以为您的业务填补空白。"
+}, {
+  "tag": "H1",
+  "text": "Thinking in Kubernetes (K8s)",
+  "translation": "Kubernetes（K8s）中的思考"
+}, {
+  "tag": "H2",
+  "text": "Calibrate your brain before your cluster",
+  "translation": "在群集之前先校准大脑"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*Ole3feAoD9-0-gGzpAxbjA.jpeg?q=20",
+  "type": "image",
+  "file": "1*Ole3feAoD9-0-gGzpAxbjA.jpeg"
+}, {
+  "tag": "P",
+  "text": "When I was first introduced to Kubernetes, it was a “Container Orchestration Platform” at the edge of my professional radar. Kubernetes was an odd word — it didn’t roll well in the anglophone mouth.",
+  "translation": "当我初次接触Kubernetes时，它是我专业雷达边缘的“容器编排平台”。 Kubernetes是个奇怪的词-在英语口中不能很好地滚动。"
+}, {
+  "tag": "P",
+  "text": "When I became involved with the platform, I realised there was something to it. The level of automation it brought to the table was unlike anything I’d seen before. The doors it opened couldn’t be closed. I had to learn more.",
+  "translation": "当我参与该平台时，我意识到它有一些功能。 它带来的自动化水平与我之前见过的任何东西都不一样。 打开的门无法关闭。 我必须学习更多。"
+}, {
+  "tag": "P",
+  "text": "Then I ran into a problem.",
+  "translation": "然后我遇到了一个问题。"
+}, {
+  "tag": "H2",
+  "text": "When you’re thinking traditional, you’re fighting against Kubernetes",
+  "translation": "当您想到传统时，就是在与Kubernetes作战"
+}, {
+  "tag": "P",
+  "text": "Kubernetes isn’t some pre-packaged silver bullet solution — it doesn’t claim to be. Yet many approach it from that perspective. Unlike the next Oracle monstrosity that is going to literally change your business (read: cost you money), Kubernetes plays a more humble role. Until you’re in the right mindset, that role might seem odd.",
+  "translation": "Kubernetes并不是预包装的解决方案，也没有声称是。 但是，许多人都是从这种角度来解决这个问题的。 与下一次甲骨文将彻底改变您的业务（请阅读：花钱）不同，Kubernetes扮演着更为谦虚的角色。 在您拥有正确的心态之前，这个角色可能看起来很奇怪。"
+}, {
+  "tag": "P",
+  "text": "So I thought I’d write down some mindset changes that Kubernetes encourages. If you can get these out of the way early, you’re going to have a much smoother journey through the Kubernetes jungle.",
+  "translation": "因此，我认为我应该写下Kubernetes鼓励的一些观念转变。 如果您可以尽早解决这些问题，那么您将在Kubernetes丛林中度过一个更加流畅的旅程。"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Chris Cooney的文章《Thinking in Kubernetes (K8s)》，参考：https://medium.com/better-programming/thinking-in-kubernetes-k8s-3770bf14c463)",
+  "translation": "（本文翻译自克里斯·库尼的文章《在Kubernetes中思考（K8s）》，参考：https：//medium.com/better-programming/thinking-in-kubernetes-k8s-3770bf14c463）"
+}]

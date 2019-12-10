@@ -1,0 +1,388 @@
+[{
+  "tag": "H2",
+  "text": "ECE 543: Statistical Learning Theory (Spring 2018)",
+  "translation": "ECE 543：统计学习理论（2018春季）"
+}, {
+  "tag": "H3",
+  "text": "Statistical learning theory is a burgeoning research field at the intersection of probability, statistics, computer…",
+  "translation": "统计学习理论是在概率，统计，计算机……的交叉点上蓬勃发展的研究领域。"
+}, {
+  "tag": "H2",
+  "text": "9.520/6.860, Fall 2018",
+  "translation": "9.520 / 6.860，2018秋季"
+}, {
+  "tag": "H3",
+  "text": "The course covers foundations and recent advances of machine learning from the point of view of statistical learning…",
+  "translation": "本课程从统计学习的角度介绍了机器学习的基础和最新进展。"
+}, {
+  "tag": "H2",
+  "text": "So which is better?",
+  "translation": "那么哪个更好呢？"
+}, {
+  "tag": "P",
+  "text": "This is actually a silly question. In terms of statistics vs machine learning, machine learning would not exist without statistics, but machine learning is pretty useful in the modern age due to the abundance of data humanity has access to since the information explosion.",
+  "translation": "这实际上是一个愚蠢的问题。 在统计与机器学习之间，没有统计就不会存在机器学习，但是由于信息爆炸以来人类拥有大量数据，因此机器学习在现代非常有用。"
+}, {
+  "tag": "P",
+  "text": "Comparing machine learning and statistical models is a bit more difficult. Which you use depends largely on what your purpose is. If you just want to create an algorithm that can predict housing prices to a high accuracy, or use data to determine whether someone is likely to contract certain types of diseases, machine learning is likely the better approach. If you are trying to prove a relationship between variables or make inferences from data, a statistical model is likely the better approach.",
+  "translation": "比较机器学习和统计模型要困难一些。 您使用哪种取决于您的目的。 如果您只想创建一种可以高精度预测房价的算法，或者使用数据确定某人是否可能感染某些类型的疾病，那么机器学习可能是更好的方法。 如果您试图证明变量之间的关系或根据数据进行推断，则统计模型可能是更好的方法。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/25/1*UKIHA2AHtB9WPG-KrfwSZg.png?q=20",
+  "caption": "Source: StackExchange",
+  "type": "image",
+  "file": "1*UKIHA2AHtB9WPG-KrfwSZg.png"
+}, {
+  "tag": "P",
+  "text": "If you do not have a strong background in statistics, you can still study machine learning and make use of it, the abstraction offered by machine learning libraries makes it pretty easy to use them as a non-expert, but you still need some understanding of the underlying statistical ideas in order to prevent models from overfitting and giving specious inferences.",
+  "translation": "如果您没有统计方面的扎实背景，您仍然可以学习机器学习并加以利用，机器学习库提供的抽象特性使得将它们作为非专家使用起来非常容易，但是您仍然需要一些了解 基本的统计思想，以防止模型过度拟合并提供虚假推论。"
+}, {
+  "tag": "H2",
+  "text": "Where can I learn more?",
+  "translation": "在哪里可以了解更多？"
+}, {
+  "tag": "P",
+  "text": "If you are interested in delving more into statistical learning theory, there are many books and university courses on the subject. Here are some lecture courses I recommend:",
+  "translation": "如果您有兴趣深入研究统计学习理论，则有很多关于该主题的书籍和大学课程。 这是我推荐的一些讲座课程："
+}, {
+  "tag": "H2",
+  "text": "9.520/6.860, Fall 2018",
+  "translation": "9.520 / 6.860，2018秋季"
+}, {
+  "tag": "H3",
+  "text": "The course covers foundations and recent advances of machine learning from the point of view of statistical learning…",
+  "translation": "本课程从统计学习的角度介绍了机器学习的基础和最新进展。"
+}, {
+  "tag": "H2",
+  "text": "ECE 543: Statistical Learning Theory (Spring 2018)",
+  "translation": "ECE 543：统计学习理论（2018春季）"
+}, {
+  "tag": "H3",
+  "text": "Statistical learning theory is a burgeoning research field at the intersection of probability, statistics, computer…",
+  "translation": "统计学习理论是在概率，统计，计算机……的交叉点上蓬勃发展的研究领域。"
+}, {
+  "tag": "P",
+  "text": "If you are interested in delving more into probability spaces then I warn you in advance it is pretty heavy in mathematics and is typically only covered in graduate statistics classes. Here are some good sources on the topic:",
+  "translation": "如果您有兴趣深入研究概率空间，那么我会提前警告您，它在数学上非常繁重，通常只在研究生统计课程中涉及。 以下是有关该主题的一些好资料："
+}, {
+  "tag": "P",
+  "text": "http://users.jyu.fi/~miparvia/Opetus/Stokastiikka/introduction-probability.pdf",
+  "translation": "http://users.jyu.fi/~miparvia/Opetus/Stokastiikka/introduction-probability.pdf"
+}, {
+  "tag": "P",
+  "text": "https://people.smp.uq.edu.au/DirkKroese/asitp.pdf",
+  "translation": "https://people.smp.uq.edu.au/DirkKroese/asitp.pdf"
+}, {
+  "tag": "P",
+  "text": "Thank you for reading!",
+  "translation": "感谢您的阅读！"
+}, {
+  "tag": "P",
+  "text": "Examples",
+  "translation": "例子"
+}, {
+  "tag": "P",
+  "text": "Take the simple case of linear regression. In the traditional sense, we try to minimize the error between some data in order to find a function which can be used to describe the data. In this case, we typically use the mean squared error. We square it so that positive and negative errors do not cancel each other out. We can then solve for the regression coefficients in a closed form manner.",
+  "translation": "以线性回归的简单情况为例。 在传统意义上，我们试图使某些数据之间的误差最小化，以便找到可用于描述数据的函数。 在这种情况下，我们通常使用均方误差。 我们对它求平方，以使正误差和负误差不会互相抵消。 然后，我们可以以封闭形式求解回归系数。"
+}, {
+  "tag": "P",
+  "text": "It just so happens, that if we take our loss function to be the mean squared error and perform empirical risk minimization as espoused by statistical learning theory, we end up with the same result as traditional linear regression analysis.",
+  "translation": "碰巧的是，如果我们将损失函数作为均方误差，并按照统计学习理论的要求进行经验风险最小化，则最终结果与传统线性回归分析相同。"
+}, {
+  "tag": "P",
+  "text": "This is just because these two cases are equivalent, in the same way that performing maximum likelihood on this same data will also give you the same result. Maximum likelihood has a different way of achieving this same goal, but nobody is going to argue and say that maximum likelihood is the same as linear regression. The simplest case clearly does not help to differentiate these methods.",
+  "translation": "这只是因为这两种情况是等效的，以相同的方式对同一数据执行最大似然法也将获得相同的结果。 最大似然具有实现同一目标的不同方法，但是没有人会说最大似然与线性回归相同。 最简单的情况显然无助于区分这些方法。"
+}, {
+  "tag": "P",
+  "text": "Another important point to make here is that in traditional statistical approaches, there is no concept of a training and test set, but we do use metrics to help us examine how our model performs. So the evaluation procedure is different but both methods are able to give us results that are statistically robust.",
+  "translation": "这里要说明的另一个重要点是，在传统的统计方法中，没有训练和测试集的概念，但是我们确实使用度量标准来帮助我们检查模型的性能。 因此，评估程序有所不同，但是两种方法都能够为我们提供统计上可靠的结果。"
+}, {
+  "tag": "P",
+  "text": "A further point is that the traditional statistic approach here gave us the optimal solution because the solution had a closed form. It did not test out any other hypotheses and converge to a solution. Whereas, the machine learning method tried a bunch of different models and converged to the final hypothesis, which aligned with the outcome from the regression algorithm.",
+  "translation": "还有一点是，这里的传统统计方法为我们提供了最佳解决方案，因为该解决方案具有封闭形式。 它没有检验任何其他假设并收敛到一个解决方案。 然而，机器学习方法尝试了一堆不同的模型并收敛到最终假设，该假设与回归算法的结果一致。"
+}, {
+  "tag": "P",
+  "text": "If we had used a different loss function, the results would not have converged. For example, if we had used hinge loss (which is not differentiable using standard gradient descent, so other techniques like proximal gradient descent would be required) then the results would not be the same.",
+  "translation": "如果我们使用其他损失函数，则结果将不会收敛。 例如，如果我们使用了铰链损耗（使用标准梯度下降是无法区分的，那么就需要其他技术（例如近端梯度下降）），结果将是不同的。"
+}, {
+  "tag": "P",
+  "text": "A final comparison can be made by considering the bias of the model. One could ask the machine learning algorithm to test linear models, as well as polynomial models, exponential models, and so on, to see if these hypotheses fit the data better given our a priori loss function. This is akin to increasing the relevant hypothesis space. In the traditional statistical sense, we select one model and can evaluate its accuracy, but cannot automatically make it select the best model from 100 different models. Obviously, there is always some bias in the model which stems from the initial choice of algorithm. This is necessary since finding an arbitrary function that is optimal for the dataset is an NP-hard problem.",
+  "translation": "可以通过考虑模型的偏差进行最终比较。 可以要求机器学习算法来测试线性模型以及多项式模型，指数模型等，以在给定先验损失函数的情况下查看这些假设是否更适合数据。 这类似于增加相关的假设空间。 在传统的统计意义上，我们选择一个模型并可以评估其准确性，但不能自动使其从100个不同模型中选择最佳模型。 显然，由于算法的最初选择，模型中总是存在一些偏差。 这是必要的，因为找到对数据集最佳的任意函数是一个NP难题。"
+}, {
+  "tag": "P",
+  "text": "Machine learning is based on statistical learning theory, which is still based on this axiomatic notion of probability spaces. This theory was developed in the 1960s and expands upon traditional statistics.",
+  "translation": "机器学习基于统计学习理论，而统计学学习理论仍基于概率空间的公理概念。 该理论于1960年代发展，并在传统统计基础上扩展。"
+}, {
+  "tag": "P",
+  "text": "There are several categories of machine learning, and as such I will only focus on supervised learning here since it is the easiest to explain (although still somewhat esoteric as it is buried in math).",
+  "translation": "机器学习有几种类别，因此，由于它最容易解释（尽管它深深地埋藏在数学中，因此在这里我仅关注有监督的学习）。"
+}, {
+  "tag": "P",
+  "text": "Statistical learning theory for supervised learning tells us that we have a set of data, which we denote as S = {(xᵢ,yᵢ)}. This basically says that we a data set of n data points, each of which is described by some other values we call features, which are provided by x, and these features are mapped by a certain function to give us the value y.",
+  "translation": "用于监督学习的统计学习理论告诉我们，我们有一组数据，我们将其表示为S = {（xᵢ，yᵢ）}。 这基本上就是说，我们有一个n个数据点的数据集，每个数据点都由其他一些我们称为特征的值来描述，这些值由x提供，并且这些特征通过某个函数进行映射以得到值y。"
+}, {
+  "tag": "P",
+  "text": "It says that we know that we have this data, and our goal is to find the function that maps the x values to the y values. We call the set of all possible functions that can describe this mapping as the hypothesis space.",
+  "translation": "它说我们知道我们有此数据，我们的目标是找到将x值映射到y值的函数。 我们将可以描述这种映射的所有可能函数的集合称为假设空间。"
+}, {
+  "tag": "P",
+  "text": "To find this function we have to give the algorithm some way to ‘learn’ what is the best way to approach the problem. This is provided by something called a loss function. So, for each hypothesis (proposed function) that we have, we need to evaluate how that function performs by looking at the value of its expected risk over all of the data.",
+  "translation": "要找到此功能，我们必须给算法某种方式“学习”解决问题的最佳方法。 这由称为损失函数的东西提供。 因此，对于我们拥有的每个假设（拟议功能），我们需要通过查看其在所有数据上的预期风险的值来评估该功能的执行情况。"
+}, {
+  "tag": "P",
+  "text": "The expected risk is essentially a sum of the loss function multiplied by the probability distribution of the data. If we knew the joint probability distribution of the mapping, it would be easy to find the best function. However, this is in general not known, and thus our best bet is to guess the best function and then empirically decide whether the loss function is better or not. We call this the empirical risk.",
+  "translation": "预期风险实质上是损失函数的总和乘以数据的概率分布。 如果我们知道映射的联合概率分布，则很容易找到最佳函数。 但是，这通常是未知的，因此我们最好的选择是猜测最佳函数，然后凭经验确定损失函数是否更好。 我们称其为经验风险。"
+}, {
+  "tag": "P",
+  "text": "We can then compare different functions and look for the hypothesis that gives us the minimum expected risk, that is, the hypothesis that gives the minimal value (called the infimum) of all hypotheses on the data.",
+  "translation": "然后，我们可以比较不同的函数，并寻找给我们最小预期风险的假设，即给数据上所有假设的最小值（称为最小）的假设。"
+}, {
+  "tag": "P",
+  "text": "However, the algorithm has a tendency to cheat in order to minimize its loss function by overfitting to data. This is why after learning a function based on the training set data, that function is validated on a test set of data, data that did not appear in the training set.",
+  "translation": "但是，该算法倾向于作弊，以通过过度拟合数据来最小化其损失函数。 这就是为什么在基于训练集数据学习功能后，在测试数据集（未出现在训练集中的数据）上验证该功能的原因。"
+}, {
+  "tag": "P",
+  "text": "The nature of how we have just defined machine learning introduced the problem of overfitting and justified the need for having a training and test set when performing machine learning. This is not an inherent feature of statistics because we are not trying to minimize our empirical risk.",
+  "translation": "我们刚刚定义机器学习的方式的性质引入了过度拟合的问题，并证明了在进行机器学习时需要训练和测试集的合理性。 这不是统计数据的固有特征，因为我们没有试图将经验风险降到最低。"
+}, {
+  "tag": "P",
+  "text": "A learning algorithm that chooses the function that minimizes the empirical risk is called empirical risk minimization.",
+  "translation": "选择将经验风险最小化的函数的学习算法称为经验风险最小化。"
+}, {
+  "tag": "P",
+  "text": "Machine Learning is built upon Statistics",
+  "translation": "机器学习基于统计"
+}, {
+  "tag": "P",
+  "text": "Before we discuss what is different about statistics and machine learning, let us discuss first the similarities. We have already touched on this somewhat in the previous sections.",
+  "translation": "在讨论统计学和机器学习的不同之处之前，让我们首先讨论它们的相似之处。 在前面的部分中，我们已经对此进行了一些探讨。"
+}, {
+  "tag": "P",
+  "text": "Machine learning is built upon a statistical framework. This should be overtly obvious since machine learning involves data, and data has to be described using a statistical framework. However, statistical mechanics, which is expanded into thermodynamics for large numbers of particles, is also built upon a statistical framework. The concept of pressure is actually a statistic, and temperature is also a statistic. If you think this sounds ludicrous, fair enough, but it is actually true. This is why you cannot describe the temperature or pressure of a molecule, it is nonsensical. Temperature is the manifestation of the average energy produced by molecular collisions. For a large enough amount of molecules, it makes sense that we can describe the temperature of something like a house or the outdoors.",
+  "translation": "机器学习基于统计框架。 这很明显，因为机器学习涉及数据，并且必须使用统计框架来描述数据。 但是，统计力学也建立在统计框架上，该统计力学已扩展为针对大量粒子的热力学。 压力的概念实际上是一个统计量，而温度也是一个统计量。 如果您认为这听起来很荒谬，很公平，但实际上是事实。 这就是为什么您无法描述分子的温度或压力的原因，这是荒谬的。 温度是分子碰撞产生的平均能量的体现。 对于足够大量的分子，有意义的是我们可以描述房屋或室外物体的温度。"
+}, {
+  "tag": "P",
+  "text": "Would you concede that thermodynamics and statistics are the same? No, thermodynamics uses statistics to help us understand the interaction of work and heat in the form of transport phenomena.",
+  "translation": "您是否承认热力学和统计学相同？ 不，热力学使用统计数据来帮助我们以传输现象的形式理解功与热的相互作用。"
+}, {
+  "tag": "P",
+  "text": "In fact, thermodynamics is built upon many more items apart from just statistics. Similarly, machine learning draws upon a large number of other fields of mathematics and computer science, for example:",
+  "translation": "实际上，除了统计以外，热力学还建立在更多的项目上。 同样，机器学习还利用了数学和计算机科学的许多其他领域，例如："
+}, {
+  "tag": "UL",
+  "texts": ["ML theory from fields like mathematics & statistics", "ML algorithms from fields like optimization, matrix algebra, calculus", "ML implementations from computer science & engineering concepts (e.g. kernel tricks, feature hashing)"],
+  "translations": ["来自数学和统计学等领域的ML理论", "来自优化，矩阵代数，微积分等领域的ML算法", "来自计算机科学与工程概念的ML实现（例如内核技巧，功能哈希）"]
+}, {
+  "tag": "P",
+  "text": "When one starts coding on Python and whips out the sklearn library and starts using these algorithms, a lot of these concepts are abstracted so that it is difficult to see these differences. In this case, this abstraction has led to a form of ignorance with respect to what machine learning actually involves.",
+  "translation": "当人们开始使用Python进行编码并鞭打sklearn库并开始使用这些算法时，其中许多概念都被抽象化了，因此很难看到这些差异。 在这种情况下，这种抽象导致对机器学习实际涉及的内容一无所知。"
+}, {
+  "tag": "P",
+  "text": "Statistical Learning Theory — The Statistical Basis of Machine Learning",
+  "translation": "统计学习理论—机器学习的统计基础"
+}, {
+  "tag": "P",
+  "text": "The major difference between statistics and machine learning is that statistics is based solely on probability spaces. You can derive the entirety of statistics from set theory, which discusses how we can group numbers into categories, called sets, and then impose a measure on this set to ensure that the summed value of all of these is 1. We call this a probability space.",
+  "translation": "统计与机器学习之间的主要区别在于统计仅基于概率空间。 您可以从集合论中得出整个统计数据，集合论讨论了如何将数字分组到称为集合的类别中，然后对该集合施加度量以确保所有这些集合的总和为1。我们称之为概率 空间。"
+}, {
+  "tag": "P",
+  "text": "Statistics makes no other assumptions about the universe except these concepts of sets and measures. This is why when we specify a probability space in very rigorous mathematical terms, we specify 3 things.",
+  "translation": "除了这些集合和测度的概念外，统计学对宇宙没有其他假设。 这就是为什么当我们用非常严格的数学术语指定概率空间时，我们指定了3件事。"
+}, {
+  "tag": "P",
+  "text": "A probability space, which we denote like this, (Ω, F, P), consists of three parts:",
+  "translation": "像这样表示的概率空间（Ω，F，P）由三部分组成："
+}, {
+  "tag": "OL",
+  "texts": ["A sample space, Ω, which is the set of all possible outcomes.", "A set of events, F, where each event is a set containing zero or more outcomes.", "The assignment of probabilities to the events, P; that is, a function from events to probabilities."],
+  "translations": ["样本空间Ω，它是所有可能结果的集合。", "一组事件F，其中每个事件都是一个包含零个或多个结果的集合。", "对事件的概率分配，P； 即从事件到概率的函数。"]
+}, {
+  "tag": "H2",
+  "text": "Points of Significance: Statistics versus machine learning",
+  "translation": "重点：统计与机器学习"
+}, {
+  "tag": "H3",
+  "text": "Statistics draws population inferences from a sample, and machine learning finds generalizable predictive patterns. Two…",
+  "translation": "统计数据从样本中得出总体推断，而机器学习则可以找到可概括的预测模式。 二…"
+}, {
+  "tag": "P",
+  "text": "Statistical Models vs Machine learning — Linear Regression Example",
+  "translation": "统计模型与机器学习—线性回归示例"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*iOeogMb0QiO4sTe4Jiu92A.png?q=20",
+  "type": "image",
+  "file": "1*iOeogMb0QiO4sTe4Jiu92A.png"
+}, {
+  "tag": "P",
+  "text": "It seems to me that the similarity of methods that are used in statistical modeling and in machine learning has caused people to assume that they are the same thing. This is understandable, but simply not true.",
+  "translation": "在我看来，统计建模和机器学习中使用的方法的相似性使人们认为它们是同一件事。 这是可以理解的，但事实并非如此。"
+}, {
+  "tag": "P",
+  "text": "The most obvious example is the case of linear regression, which is probably the major cause of this misunderstanding. Linear regression is a statistical method, we can train a linear regressor and obtain the same outcome as a statistical regression model aiming to minimize the squared error between data points.",
+  "translation": "最明显的例子是线性回归，这可能是造成这种误解的主要原因。 线性回归是一种统计方法，我们可以训练线性回归并获得与统计回归模型相同的结果，旨在最小化数据点之间的平方误差。"
+}, {
+  "tag": "P",
+  "text": "We see that in one case we do something called ‘training’ the model, which involves using a subset of our data, and we do not know how well the model will perform until we ‘test’ this data on additional data that was not present during training, called the test set. The purpose of machine learning, in this case, is to obtain the best performance on the test set.",
+  "translation": "我们看到，在一种情况下，我们执行了一种称为“训练”模型的操作，其中涉及使用数据的一个子集，并且直到我们对不存在的其他数据“测试”此数据之前，我们不知道模型的性能如何 在训练期间，称为测试集。 在这种情况下，机器学习的目的是在测试集上获得最佳性能。"
+}, {
+  "tag": "P",
+  "text": "For the statistical model, we find a line that minimizes the mean squared error across all of the data, assuming the data to be a linear regressor with some random noise added, which is typically Gaussian in nature. No training and no test set are necessary. For many cases, especially in research (such as the sensor example below), the point of our model is to characterize the relationship between the data and our outcome variable, not to make predictions about future data. We call this procedure statistical inference, as opposed to prediction. However, we can still use this model to make predictions, and this may be your primary purpose, but the way the model is evaluated will not involve a test set and will instead involve evaluating the significance and robustness of the model parameters.",
+  "translation": "对于统计模型，我们假设一条数据线使所有数据的均方误差最小，假设该数据是线性回归变量，并且添加了一些随机噪声，这在本质上通常是高斯分布。 无需培训，也不需要测试集。 在许多情况下，尤其是在研究中（例如下面的传感器示例），我们模型的重点是表征数据与结果变量之间的关系，而不是对未来数据进行预测。 我们称此过程为统计推断，而不是预测。 但是，我们仍然可以使用此模型进行预测，这可能是您的主要目的，但是评估模型的方式将不涉及测试集，而将涉及评估模型参数的重要性和稳健性。"
+}, {
+  "tag": "P",
+  "text": "The purpose of (supervised) machine learning is obtaining a model that can make repeatable predictions. We typically do not care if the model is interpretable, although I would personally recommend always testing to ensure that model predictions do make sense. Machine learning is all about results, it is likely working in a company where your worth is characterized solely by your performance. Whereas, statistical modeling is more about finding relationships between variables and the significance of those relationships, whilst also catering for prediction.",
+  "translation": "（监督）机器学习的目的是获得可以做出可重复预测的模型。 尽管我个人建议始终进行测试以确保模型预测确实有意义，但我们通常并不关心模型是否可以解释。 机器学习是关于结果的全部，它可能在一家公司的工作中，您的价值仅取决于您的表现。 而统计建模更多地是在寻找变量之间的关系以及这些关系的重要性，同时还要满足预测的需要。"
+}, {
+  "tag": "P",
+  "text": "To give a concrete example of the difference between these two procedures, I will give a personal example. By day, I am an environmental scientist and I work primarily with sensor data. If I am trying to prove that a sensor is able to respond to a certain kind of stimuli (such as a concentration of a gas), then I would use a statistical model to determine whether the signal response is statistically significant. I would try to understand this relationship and test for its repeatability so that I can accurately characterize the sensor response and make inferences based on this data. Some things I might test are whether the response is, in fact, linear, whether the response can be attributed to the gas concentration and not random noise in the sensor, etc.",
+  "translation": "为了给出这两个过程之间区别的具体示例，我将给出一个个人示例。 每天，我都是一名环境科学家，主要处理传感器数据。 如果我试图证明传感器能够对某种刺激（例如气体浓度）做出响应，那么我将使用统计模型来确定信号响应是否具有统计意义。 我将尝试理解这种关系并测试其可重复性，以便我可以准确地表征传感器的响应并根据此数据进行推断。 我可能要测试的一些事情是响应是否实际上是线性的，响应是否可以归因于气体浓度而不是传感器中的随机噪声等。"
+}, {
+  "tag": "P",
+  "text": "In contrast, I can also get an array of 20 different sensors, and I can use this to try and predict the response of my newly characterized sensor. This may seem a bit strange if you do not know much about sensors, but this is currently an important area of environmental science. A model with 20 different variables predicting the outcome of my sensor is clearly all about prediction, and I do not expect it to be particularly interpretable. This model would likely be something a bit more esoteric like a neural network due to non-linearities arising from chemical kinetics and the relationship between physical variables and gas concentrations. I would like the model to make sense, but as long as I can make accurate predictions I would be pretty happy.",
+  "translation": "相比之下，我还可以获得20个不同传感器的阵列，并且可以使用它来尝试并预测我的新特性传感器的响应。 如果您对传感器不太了解，这似乎有些奇怪，但这是当前环境科学的重要领域。 具有20个不同变量来预测传感器结果的模型显然与预测有关，我不希望它具有特别的可解释性。 由于化学动力学产生的非线性以及物理变量与气体浓度之间的关系，该模型可能更像神经网络那样深奥。 我希望该模型有意义，但是只要我能做出准确的预测，我都会很高兴。"
+}, {
+  "tag": "P",
+  "text": "If I am trying to prove the relationship between my data variables to a degree of statistical significance so that I can publish it in a scientific paper, I would use a statistical model and not machine learning. This is because I care more about the relationship between the variables as opposed to making a prediction. Making predictions may still be important, but the lack of interpretability afforded by most machine learning algorithms makes it difficult to prove relationships within the data (this is actually a big problem in academic research now, with researchers using algorithms that they do not understand and obtaining specious inferences).",
+  "translation": "如果我试图证明我的数据变量之间的关系具有一定的统计意义，以便可以将其发布到科学论文中，那么我将使用统计模型而不是机器学习。 这是因为我更关心变量之间的关系，而不是进行预测。 进行预测可能仍然很重要，但是大多数机器学习算法缺乏解释性，因此很难证明数据之间的关系（这实际上是学术研究中的一个大问题，研究人员使用的算法无法理解和获取 虚假推断）。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*d9V26_D3YbP9CLt3RA_RQw.jpeg?q=20",
+  "caption": "Source: Analytics Vidhya",
+  "type": "image",
+  "file": "1*d9V26_D3YbP9CLt3RA_RQw.jpeg"
+}, {
+  "tag": "P",
+  "text": "It should be clear that these two approaches are different in their goal, despite using similar means to get there. The assessment of the machine learning algorithm uses a test set to validate its accuracy. Whereas, for a statistical model, analysis of the regression parameters via confidence intervals, significance tests, and other tests can be used to assess the model’s legitimacy. Since these methods produce the same result, it is easy to see why one might assume that they are the same.",
+  "translation": "应该清楚的是，尽管使用了类似的方法来实现这两种方法，但它们的目标是不同的。 机器学习算法的评估使用测试集来验证其准确性。 而对于统计模型，可以通过置信区间，显着性检验和其他检验对回归参数进行分析，以评估模型的合法性。 由于这些方法产生相同的结果，因此很容易理解为什么可能会假定它们相同。"
+}, {
+  "tag": "P",
+  "text": "Statistics vs Machine Learning — Linear Regression Example",
+  "translation": "统计与机器学习—线性回归示例"
+}, {
+  "tag": "P",
+  "text": "I think this misconception is quite well encapsulated in this ostensibly witty 10-year challenge comparing statistics and machine learning.",
+  "translation": "我认为，这种误解已很好地封装在表面上比较机智的十年挑战中，比较统计数据和机器学习。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*mXeEWBymq-UXPXF2Oai5mg.jpeg?q=20",
+  "type": "image",
+  "file": "1*mXeEWBymq-UXPXF2Oai5mg.jpeg"
+}, {
+  "tag": "P",
+  "text": "However, conflating these two terms based solely on the fact that they both leverage the same fundamental notions of probability is unjustified. For example, if we make the statement that machine learning is simply glorified statistics based on this fact, we could also make the following statements.",
+  "translation": "但是，仅基于两个术语都使用相同的基本概率概念来混淆这两个术语是不合理的。 例如，如果我们基于这种事实作出这样的陈述：机器学习只是简单的统计数据，那么我们也可以做出以下陈述。"
+}, {
+  "tag": "P",
+  "text": "Physics is just glorified mathematics.",
+  "translation": "物理学只是光荣的数学。"
+}, {
+  "tag": "P",
+  "text": "Zoology is just glorified stamp collection.",
+  "translation": "动物学只是美化的集邮。"
+}, {
+  "tag": "P",
+  "text": "Architecture is just glorified sand-castle construction.",
+  "translation": "建筑只是荣耀的沙堡建筑。"
+}, {
+  "tag": "P",
+  "text": "These statements (especially the last one) are pretty ridiculous and all based on this idea of conflating terms that are built upon similar ideas (pun intended for the architecture example).",
+  "translation": "这些语句（尤其是最后一个语句）非常荒谬，并且全部基于这种将基于相似思想的术语组合在一起的思想（用于体系结构示例的双关语）。"
+}, {
+  "tag": "P",
+  "text": "In actuality, physics is built upon mathematics, it is the application of mathematics to understand physical phenomena present in reality. Physics also includes aspects of statistics, and the modern form of statistics is typically built from a framework consisting of Zermelo-Frankel set theory combined with measure theory to produce probability spaces. They both have a lot in common because they come from a similar origin and apply similar ideas to reach a logical conclusion. Similarly, architecture and sand-castle construction probably have a lot in common — although I am not an architect so I cannot give an informed explanation — but they are clearly not the same.",
+  "translation": "实际上，物理学是建立在数学之上的，它是数学的应用，可以理解现实中存在的物理现象。 物理学还包括统计学的各个方面，而现代的统计学形式通常是由一个由Zermelo-Frankel集理论与测度理论组成的框架构建的，以产生概率空间。 它们之所以有很多共同点，是因为它们来自相似的起源，并运用相似的思想得出合乎逻辑的结论。 同样，建筑和沙堡建筑可能有很多共同点-尽管我不是建筑师，所以我不能给出明智的解释-但它们显然是不同的。"
+}, {
+  "tag": "P",
+  "text": "To give you a scope of how far this debate goes, there is actually a paper published in Nature Methods which outlines the difference between statistics and machine learning. This idea might seem laughable, but it is kind of sad that this level of discussion is necessary.",
+  "translation": "为了让您更深入地讨论这场争论，实际上在《自然方法》上发表了一篇论文，概述了统计学和机器学习之间的区别。 这个想法看似可笑，但令人遗憾的是，这种程度的讨论是必要的。"
+}, {
+  "tag": "H2",
+  "text": "Points of Significance: Statistics versus machine learning",
+  "translation": "重点：统计与机器学习"
+}, {
+  "tag": "H3",
+  "text": "Statistics draws population inferences from a sample, and machine learning finds generalizable predictive patterns. Two…",
+  "translation": "统计数据从样本中得出总体推断，而机器学习则可以找到可概括的预测模式。 二…"
+}, {
+  "tag": "P",
+  "text": "Before we go on further, I will quickly clear up two other common misconceptions that are related to machine learning and statistics. These are that AI is different from machine learning and that data science is different from statistics. These are fairly uncontested issues so it will be quick.",
+  "translation": "在继续进行之前，我将快速清除另外两个与机器学习和统计有关的常见误解。 这些是AI与机器学习不同，数据科学与统计不同。 这些都是无可争议的问题，因此将很快解决。"
+}, {
+  "tag": "P",
+  "text": "Data Science is essentially computational and statistical methods that are applied to data, these can be small or large data sets. This can also include things like exploratory data analysis, where the data is examined and visualized to help the scientist understand the data better and make inferences from it. Data science also includes things like data wrangling and preprocessing, and thus involves some level of computer science since it involves coding, setting up connections and pipelines between databases, web servers, etc.",
+  "translation": "数据科学本质上是应用于数据的计算和统计方法，这些方法可以是小型或大型数据集。 这还可以包括探索性数据分析之类的内容，在该数据中进行检查和可视化以帮助科学家更好地理解数据并从中进行推断。 数据科学还包括数据整理和预处理之类的内容，因此涉及某种程度的计算机科学，因为它涉及编码，建立数据库，Web服务器之间的连接和管道。"
+}, {
+  "tag": "P",
+  "text": "You do not necessarily need to use a computer to do statistics, but you cannot really do data science without one. You can once again see that although data science uses statistics, they are clearly not the same.",
+  "translation": "您不一定需要使用计算机进行统计，但是如果没有计算机，就无法真正进行数据科学。 您可以再次看到，尽管数据科学使用统计数据，但是它们显然并不相同。"
+}, {
+  "tag": "P",
+  "text": "Similarly, machine learning is not the same as artificial intelligence. In fact, machine learning is a subset of AI. This is pretty obvious since we are teaching (‘training’) a machine to make generalizable inferences about some type of data based on previous data.",
+  "translation": "同样，机器学习与人工智能也不相同。 实际上，机器学习是AI的子集。 这很明显，因为我们正在教（训练）一台机器，以根据先前的数据对某种类型的数据进行一般化的推断。"
+}, {
+  "tag": "P",
+  "text": "The Argument",
+  "translation": "争论"
+}, {
+  "tag": "P",
+  "text": "Contrary to popular belief, machine learning has been around for several decades. It was initially shunned due to its large computational requirements and the limitations of computing power present at the time. However, machine learning has seen a revival in recent years due to the preponderance of data stemming from the information explosion.",
+  "translation": "与普遍的看法相反，机器学习已经存在了几十年。 最初由于其庞大的计算需求和当时存在的计算能力的限制而被人们所避开。 但是，由于信息爆炸带来的大量数据，机器学习近年来得到了复兴。"
+}, {
+  "tag": "P",
+  "text": "So, if machine learning and statistics are synonymous with one another, why are we not seeing every statistics department in every university closing down or transitioning to being a ‘machine learning’ department? Because they are not the same!",
+  "translation": "因此，如果机器学习和统计是彼此的同义词，为什么我们没有看到每所大学中的每个统计部门都关闭或过渡为“机器学习”部门？ 因为他们不一样！"
+}, {
+  "tag": "P",
+  "text": "There are several vague statements that I often hear on this topic, the most common one being something along these lines:",
+  "translation": "在这个主题上，我经常听到一些模糊的陈述，最常见的是遵循这些思路的陈述："
+}, {
+  "tag": "P",
+  "text": "“The major difference between machine learning and statistics is their purpose. Machine learning models are designed to make the most accurate predictions possible. Statistical models are designed for inference about the relationships between variables.”",
+  "translation": "“机器学习和统计学之间的主要区别在于它们的目的。 机器学习模型旨在做出最准确的预测。 统计模型旨在推断变量之间的关系。”"
+}, {
+  "tag": "P",
+  "text": "Whilst this is technically true, it does not give a particularly explicit or satisfying answer. A major difference between machine learning and statistics is indeed their purpose. However, saying machine learning is all about accurate predictions whereas statistical models are designed for inference is almost a meaningless statement unless you are well versed in these concepts.",
+  "translation": "尽管从技术上讲这是正确的，但它并未给出特别明确或令人满意的答案。 机器学习和统计学之间的主要区别确实是它们的目的。 然而，除非您精通这些概念，否则说机器学习就是关于准确的预测，而统计模型是为推理而设计的，这几乎是毫无意义的陈述。"
+}, {
+  "tag": "P",
+  "text": "Firstly, we must understand that statistics and statistical models are not the same. Statistics is the mathematical study of data. You cannot do statistics unless you have data. A statistical model is a model for the data that is used either to infer something about the relationships within the data or to create a model that is able to predict future values. Often, these two go hand-in-hand.",
+  "translation": "首先，我们必须了解统计数据和统计模型并不相同。 统计是对数据的数学研究。 除非有数据，否则您无法进行统计。 统计模型是用于数据的模型，该模型可用于推断有关数据内关系的某些信息或用于创建能够预测未来值的模型。 通常，这两者是并驾齐驱的。"
+}, {
+  "tag": "P",
+  "text": "So there are actually two things we need to discuss: firstly, how is statistics different from machine learning, and secondly, how are statistical models different from machine learning.",
+  "translation": "因此，实际上我们需要讨论两件事：首先，统计学与机器学习有何不同；其次，统计模型与机器学习有何不同。"
+}, {
+  "tag": "P",
+  "text": "To make this slightly more explicit, there are lots of statistical models that can make predictions, but predictive accuracy is not their strength.",
+  "translation": "为了使这一点更加明确，有许多统计模型可以做出预测，但是预测准确性并不是它们的优势。"
+}, {
+  "tag": "P",
+  "text": "Likewise, machine learning models provide various degrees of interpretability, from the highly interpretable lasso regression to impenetrable neural networks, but they generally sacrifice interpretability for predictive power.",
+  "translation": "同样，机器学习模型提供了不同程度的可解释性，从高度可解释的套索回归到难以理解的神经网络，但它们通常会牺牲可解释性来提高预测能力。"
+}, {
+  "tag": "P",
+  "text": "From a high-level perspective, this is a good answer. Good enough for most people. However, there are cases where this explanation leaves us with a misunderstanding about the differences between machine learning and statistical modeling. Let us look at the example of linear regression.",
+  "translation": "从高层的角度来看，这是一个很好的答案。 对大多数人来说足够好了。 但是，在某些情况下，这种解释使我们对机器学习和统计建模之间的差异产生了误解。 让我们看一下线性回归的例子。"
+}, {
+  "tag": "H1",
+  "text": "The Actual Difference Between Statistics and Machine Learning",
+  "translation": "统计与机器学习之间的实际差异"
+}, {
+  "tag": "H2",
+  "text": "No, they are not the same. If machine learning is just glorified statistics, then architecture is just glorified sand-castle construction.",
+  "translation": "不，他们不一样。 如果说机器学习只是美化的统计数据，那么建筑就是美化的沙堡建筑。"
+}, {
+  "tag": "P",
+  "text": "I am, to be quite honest, tired of hearing this debate reiterated on social media and within my University on a near-daily basis. Usually, this is accompanied by somewhat vague statements to explain away the issue. Both sides are guilty of doing this. I hope that by the end of this article you will have a more informed position on these somewhat vague terms.",
+  "translation": "老实说，我厌倦了听到这场辩论在社交媒体上以及我大学内部几乎每天都会重复。 通常，这会伴随一些含糊的陈述来解释这个问题。 双方都为此感到内gui。 我希望到本文结尾时，您将对这些模糊的术语有更全面的了解。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*tvhpiV_aH1ytRdeKTTFKyQ.jpeg?q=20",
+  "type": "image",
+  "file": "1*tvhpiV_aH1ytRdeKTTFKyQ.jpeg"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Matthew Stewart, PhD Researcher的文章《The Actual Difference Between Statistics and Machine Learning》，参考：https://towardsdatascience.com/the-actual-difference-between-statistics-and-machine-learning-64b49f07ea3)",
+  "translation": "（本文作者：马修·斯图尔特（Matthew Stewart），博士研究员，《统计与机器学习之间的实际差异》，参考：https：//towardsdatascience.com/the-actual-difference-between-statistics-and-machine-learning-64b49f07ea3）"
+}]
