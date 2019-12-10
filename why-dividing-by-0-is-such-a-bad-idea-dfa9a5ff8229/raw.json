@@ -1,0 +1,137 @@
+[{
+  "tag": "H1",
+  "text": "Division by Zero Can Make a True Statement False",
+  "translation": "零除可以使正确的陈述为假"
+}, {
+  "tag": "P",
+  "text": "The more logical answer is that division by zero can make any statement false, even a true one.",
+  "translation": "更为逻辑的答案是，被零除可以使任何语句为假，甚至是真实的语句。"
+}, {
+  "tag": "P",
+  "text": "Let’s look at a simple calculation.",
+  "translation": "让我们看一个简单的计算。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*ja9zR8Z3nGW1e-5Y7JTEjA.png?q=20",
+  "caption": "Calculation Drawn by Author.",
+  "type": "image",
+  "file": "1*ja9zR8Z3nGW1e-5Y7JTEjA.png"
+}, {
+  "tag": "P",
+  "text": "This is part one of a calculation that is typical for middle school or early high school. In the first line (I), we set x=y. We then multiply both sides by x and get the equation as shown in line (II). We then subtract y² on both sides to receive equation (III) and factorize. This leads us to the equation as shown in line (IV). So far, everything is correct.",
+  "translation": "这是中学或初中的典型计算的一部分。 在第一行（I）中，我们设置x = y。 然后，将两边都乘以x，得到方程式，如第（II）行所示。 然后，我们在两边都减去y²来接收方程式（III）并分解。 这将我们引到第（IV）行所示的方程式。 到目前为止，一切都正确。"
+}, {
+  "tag": "P",
+  "text": "Now let’s divide by (x-y) and do a few more calculations.",
+  "translation": "现在，除以（x-y），然后再进行一些计算。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*TWh6XtysQ4Y1B5794nKX7Q.png?q=20",
+  "caption": "Calculation Drawn by Author.",
+  "type": "image",
+  "file": "1*TWh6XtysQ4Y1B5794nKX7Q.png"
+}, {
+  "tag": "P",
+  "text": "Division by (x-y) leads to line (V). Remember that at the beginning we set x=y, so we now substitute this back to get equation (VI). Division by y then leads to the last equation in line (VII) which is given by 2 =1 and which is obviously wrong!",
+  "translation": "除以（x-y）导致线（V）。 请记住，一开始我们设置x = y，所以现在将其代入方程式（VI）。 然后被y除以得到第（VII）行中的最后一个方程，该方程由2 = 1给出，这显然是错误的！"
+}, {
+  "tag": "P",
+  "text": "What? What happened here? How can this be explained? Is all of a sudden everything that we learned about math wrong? Is there something that we have missed? Where is the problem?",
+  "translation": "什么？ 这里发生了什么？ 如何解释呢？ 我们学到的关于数学的所有知识突然之间都错了吗？ 有什么我们想念的吗？ 问题出在哪里？"
+}, {
+  "tag": "P",
+  "text": "Luckily, the answer is simple: We divided by 0 on our way from equation (IV) to equation (V), because of x = y and thus x-y = 0.",
+  "translation": "幸运的是，答案很简单：由于x = y，因此x-y = 0，所以从方程（IV）到方程（V）的方式除以0。"
+}, {
+  "tag": "P",
+  "text": "Everything else in the calculations was correct (we still have to be careful about division by y in the last step!), but this little step ruined everything for us.",
+  "translation": "计算中的其他所有内容都是正确的（在最后一步中，我们仍需小心除以y！），但是这一小步骤对我们来说毁了一切。"
+}, {
+  "tag": "P",
+  "text": "Or almost everything: it may have ruined the correctness of our calculations, but it did give us a wonderful explanation of why we should never divide by 0. Because division by 0 can make a true statement false.",
+  "translation": "或几乎所有内容：它可能破坏了我们计算的正确性，但确实为我们提供了一个绝妙的解释，说明为什么我们永远不应该除以0。因为除以0可以使真实的陈述为假。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*bQLno4fkMrAFlzttZEIk3g.jpeg?q=20",
+  "caption": "Meme by Author.",
+  "type": "image",
+  "file": "1*bQLno4fkMrAFlzttZEIk3g.jpeg"
+}, {
+  "tag": "P",
+  "text": "And thus we can conclude: One does not simply divide by 0.",
+  "translation": "因此我们可以得出结论：1不能简单地除以0。"
+}, {
+  "tag": "H1",
+  "text": "Why dividing by 0 is Such a Bad Idea",
+  "translation": "为什么除以0真是个坏主意"
+}, {
+  "tag": "H2",
+  "text": "An Explanation For Everyone Who Has Ever Wondered Why Their Teachers Get so Mad About Division by 0",
+  "translation": "给所有曾经想知道为什么老师对0除法如此疯狂的人的解释"
+}, {
+  "tag": "P",
+  "text": "Most likely, you have visited some kind of math class in your life. And no matter how much your memories of these classes have faded, you probably still remember this: One should never divide by zero.",
+  "translation": "您很可能在您的生活中上过某种数学课。 而且，无论您对这些类的记忆消失了多少，您都可能还记得这一点：一不应该被零除。"
+}, {
+  "tag": "P",
+  "text": "What teachers usually tell you is:",
+  "translation": "老师通常告诉您的是："
+}, {
+  "tag": "UL",
+  "texts": ["Either: division by zero is not defined.", "Or: it does not make sense to divide by zero.", "Or: anything could be the result if you divide by zero."],
+  "translations": ["要么：未定义除以零。", "或者：除以零是没有意义的。", "或者：如果除以零，则可能是任何结果。"]
+}, {
+  "tag": "H1",
+  "text": "The Intuitive Explanation",
+  "translation": "直觉的解释"
+}, {
+  "tag": "P",
+  "text": "Yes, the intuitive explanation is that dividing by zero does not make much sense. To understand this, let’s go back to how we learned division in elementary school. Just imagine you have 3 pizzas.",
+  "translation": "是的，直观的解释是除以零没有多大意义。 要了解这一点，让我们回到小学的学习方式。 试想一下，您有3个披萨。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*yCCMsYlkNYdqKCx2mGxn2g.png?q=20",
+  "caption": "Drawing by Author. (Art class was the only class I ever failed — so please, I am trying here!)",
+  "type": "image",
+  "file": "1*yCCMsYlkNYdqKCx2mGxn2g.png"
+}, {
+  "tag": "P",
+  "text": "If we divide these three pizzas by three people, everybody gets one pizza (one pizza/person). If we divide these three pizzas by six people, everybody gets half a pizza (0.5 pizzas/person).",
+  "translation": "如果我们将这三个披萨除以三人，每个人都会得到一个披萨（一个披萨/人）。 如果我们将这三个披萨除以六个人，那么每个人都会得到一半的披萨（每人0.5个披萨）。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*uJec2ve0OSCAbMu-oFHEzg.png?q=20",
+  "caption": "Drawing by Author.",
+  "type": "image",
+  "file": "1*uJec2ve0OSCAbMu-oFHEzg.png"
+}, {
+  "tag": "P",
+  "text": "So far, so easy. I hope you’re still with me until here. Let’s now divide the six pizzas by 0 people. How much pizza does everyone get?",
+  "translation": "到目前为止，非常容易。 希望您一直与我在一起，直到这里。 现在，将六个披萨除以0人。 每个人都得到多少比萨饼？"
+}, {
+  "tag": "UL",
+  "texts": ["0?", "3?", "Infinite?"],
+  "translations": ["0？", "3？", "无穷？"]
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*9_yqPfooZZ43NnBvvL0b7g.png?q=20",
+  "caption": "Drawing by Author.",
+  "type": "image",
+  "file": "1*9_yqPfooZZ43NnBvvL0b7g.png"
+}, {
+  "tag": "P",
+  "text": "Neither of these answers seems to be satisfying. There are zero people, so nobody gets anything after all. Thus, should the result be 0? Or should we say that there are still 3 pizzas, so the answer should be 3? Or by looking at limits, should the answer be infinity?",
+  "translation": "这些答案似乎都不令人满意。 人为零，所以没人能得到任何东西。 因此，结果应为0吗？ 还是应该说还有3个披萨，所以答案应该是3个？ 还是看极限，答案应该是无穷大？"
+}, {
+  "tag": "P",
+  "text": "The right answer is not obviously clear and thus, it makes sense to simply say: Division by 0 is not defined because there is no intuitive answer.",
+  "translation": "正确的答案显然不是很清楚，因此，简单地说一下是有道理的：未定义除以0，因为没有直观的答案。"
+}, {
+  "tag": "P",
+  "text": "But if you’re somebody who loves logic (like me), this answer is not very satisfying. Instead, I’ll give you another explanation that will hopefully satisfy you for life and next time somebody asks you why you cannot divide by 0, this is your time to shine.",
+  "translation": "但是，如果您是喜欢逻辑的人（例如我），那么这个答案就不会很令人满意。 取而代之的是，我会再给您一个解释，希望您终生满意。下次有人问您为什么不能除以0时，这就是您的光辉时刻。"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Maike Elisa的文章《Why dividing by 0 is Such a Bad Idea》，参考：https://medium.com/swlh/why-dividing-by-0-is-such-a-bad-idea-dfa9a5ff8229)",
+  "translation": "（本文翻译自Maike Elisa的文章《为什么除以0是一个坏主意》，参考：https：//medium.com/swlh/why-dividing-by-0-is-such-a-bad-idea- dfa9a5ff8229）"
+}]
