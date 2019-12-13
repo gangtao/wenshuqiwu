@@ -1,0 +1,396 @@
+[{
+  "tag": "H1",
+  "text": "Conclusion",
+  "translation": "结论"
+}, {
+  "tag": "P",
+  "text": "In this article, I showed you 10 important things front-end developers should try to learn, improve, or master in 2020.",
+  "translation": "在本文中，我向您展示了前端开发人员应在2020年尝试学习，改进或掌握的10项重要内容。"
+}, {
+  "tag": "P",
+  "text": "This list isn’t trying to be complete, but I hope it gives you some inspiration for the next year — the choice is all yours!",
+  "translation": "这份清单并不是要完整，但希望它能给您明年的灵感-选择全由您决定！"
+}, {
+  "tag": "H1",
+  "text": "10. Soft Skills",
+  "translation": "10.软技能"
+}, {
+  "tag": "P",
+  "text": "Often overlooked but really, really important for developers is the acquisition of soft skills.",
+  "translation": "对于开发人员来说，经常被忽视但确实非常重要的是获得软技能。"
+}, {
+  "tag": "P",
+  "text": "While it helps to understand the technical side of things, it’s equally important to know how to communicate in a team. If you’re serious about a career in tech and/or plan to move to a senior position, you should work on the following soft skills:",
+  "translation": "虽然有助于了解事物的技术方面，但了解如何在团队中进行交流也同样重要。 如果您对技术职业很认真，并且/或者打算升任高级职位，则应该从事以下软技能方面的工作："
+}, {
+  "tag": "UL",
+  "texts": ["Empathy", "Communication", "Teamwork", "Approachability and helpfulness", "Patience", "Open-mindedness", "Problem-solving", "Accountability", "Creativity", "Time management"],
+  "translations": ["同情", "通讯", "团队合作", "平易近人和乐于助人", "忍耐", "开放的思想", "解决问题", "问责制", "创造力", "时间管理"]
+}, {
+  "tag": "P",
+  "text": "Always remember: The most important deliverable for a senior developer is more senior developers.",
+  "translation": "永远记住：高级开发人员最重要的交付物是高级开发人员。"
+}, {
+  "tag": "H1",
+  "text": "9. Git",
+  "translation": "9. Git"
+}, {
+  "tag": "P",
+  "text": "Git is without doubt, the standard for version control in web development these days. It’s really important for every front-end engineer to know basic Git concepts and workflows to work effectively in teams of all sizes.",
+  "translation": "毫无疑问，Git是当今Web开发中版本控制的标准。 对于每个前端工程师而言，了解基本的Git概念和工作流程以在各种规模的团队中有效工作都是非常重要的。"
+}, {
+  "tag": "P",
+  "text": "Here are some popular Git commands you should know:",
+  "translation": "这是您应该知道的一些流行的Git命令："
+}, {
+  "tag": "UL",
+  "texts": ["git config", "git init", "git clone", "git status", "git add", "git commit", "git push", "git pull", "git branch"],
+  "translations": ["git配置", "git初始化", "git克隆", "git状态", "git添加", "git提交", "git推", "git pull", "git分支"]
+}, {
+  "tag": "P",
+  "text": "While it’s always good to know these commands for increasing your productivity, front-end engineers should also learn the fundamental concepts behind Git. Here are some resources for you:",
+  "translation": "知道这些命令可以提高工作效率总是很高兴的，但是前端工程师还应该学习Git的基本概念。 以下是一些适合您的资源："
+}, {
+  "tag": "UL",
+  "texts": ["“Explaining the Basic Concepts of Git and How to Use GitHub”", "“How To Use GitHub — Developers Collaboration Using GitHub”", "GitHub"],
+  "translations": ["“解释Git的基本概念以及如何使用GitHub”", "“如何使用GitHub –使用GitHub进行开发人员协作”", "的GitHub"]
+}, {
+  "tag": "H1",
+  "text": "8. Clean Code",
+  "translation": "8.清洁代码"
+}, {
+  "tag": "P",
+  "text": "Being able to write clean code is a great skill and is in high demand by many organizations. If you want to step up from a developer position to a senior developer position, you should really learn the concepts of clean code.",
+  "translation": "能够编写干净的代码是一项很棒的技能，许多组织都对此提出了很高的要求。 如果您想从开发人员的位置升级为高级开发人员的位置，则应真正学习干净代码的概念。"
+}, {
+  "tag": "P",
+  "text": "Clean code should be elegant and pleasing to read. It should be focused, and you should take care of it. All tests are run in clean code. They shouldn’t contain duplications, and the use of entities, such as classes, methods, and function, should be minimized.",
+  "translation": "简洁的代码应优雅且易于阅读。 它应该重点突出，您应该注意这一点。 所有测试均以纯净代码运行。 它们不应包含重复项，应尽量减少使用实体（例如类，方法和函数）。"
+}, {
+  "tag": "P",
+  "text": "Some things a clean-code developer should do are:",
+  "translation": "干净代码开发人员应做的一些事情是："
+}, {
+  "tag": "UL",
+  "texts": ["Create meaningful names for variables, classes, methods, and functions", "Functions should be small and have as few arguments as possible", "Comments shouldn’t be required at all — the code should speak for itself"],
+  "translations": ["为变量，类，方法和函数创建有意义的名称", "函数应该很小并且参数应尽可能少", "根本不需要注释-代码应该说明一切"]
+}, {
+  "tag": "P",
+  "text": "If you want to learn more about clean coding check, out the books and posts from Robert C. Martin.",
+  "translation": "如果您想了解有关干净代码检查的更多信息，请阅读Robert C. Martin的书籍和帖子。"
+}, {
+  "tag": "H1",
+  "text": "7. Testing",
+  "translation": "7.测试"
+}, {
+  "tag": "P",
+  "text": "No untested code should find it’s way to production.",
+  "translation": "未经测试的代码不应找到它的生产方式。"
+}, {
+  "tag": "P",
+  "text": "While it might seem convenient to not have any tests in your personal projects, it’s mandatory to have them when working in commercial and enterprise environments. So it’s better for any developer to integrate tests in the development workflow whenever possible.",
+  "translation": "在您的个人项目中似乎没有任何测试似乎很方便，但在商业和企业环境中工作时必须进行测试。 因此，对于任何开发人员而言，最好尽可能将测试集成到开发工作流程中。"
+}, {
+  "tag": "P",
+  "text": "One can differentiate between test cases like:",
+  "translation": "可以区分以下测试用例："
+}, {
+  "tag": "H2",
+  "text": "Unit tests",
+  "translation": "单元测试"
+}, {
+  "tag": "P",
+  "text": "Testing a single component or function in isolation.",
+  "translation": "隔离测试单个组件或功能。"
+}, {
+  "tag": "H2",
+  "text": "Integration tests",
+  "translation": "整合测试"
+}, {
+  "tag": "P",
+  "text": "Testing interactions between components.",
+  "translation": "测试组件之间的交互。"
+}, {
+  "tag": "H2",
+  "text": "End-to-end test",
+  "translation": "端到端测试"
+}, {
+  "tag": "P",
+  "text": "Testing full-blown user flows in the browser.",
+  "translation": "在浏览器中测试功能完善的用户流。"
+}, {
+  "tag": "P",
+  "text": "There are more ways of testing, such as manual testing, snapshot testing, etc. If you want to move to a senior developer position or aim for a job with a large corporation that has some development standards, you should try to work on your testing skills.",
+  "translation": "有更多测试方法，例如手动测试，快照测试等。如果您想升任高级开发人员职位或打算在拥有某些开发标准的大型公司工作，则应尝试进行测试 技能。"
+}, {
+  "tag": "H1",
+  "text": "6. Code Editors/IDEs",
+  "translation": "6.代码编辑器/ IDE"
+}, {
+  "tag": "P",
+  "text": "Just like in 2019, Microsoft’s VS Code will be the number one editor for most front-end engineers in 2020.",
+  "translation": "与2019年一样，微软的VS Code将在2020年成为大多数前端工程师的第一编辑器。"
+}, {
+  "tag": "P",
+  "text": "It offers almost IDE-like features, like code completion and highlighting, and can be extended almost infinitely via its extension marketplace.",
+  "translation": "它提供几乎类似于IDE的功能，例如代码完成和突出显示，并且可以通过其扩展市场进行几乎无限的扩展。"
+}, {
+  "tag": "P",
+  "text": "The marketplace, in particular, is what makes VS Code so awesome. Here are some great extensions for you as a front-end developer:",
+  "translation": "特别是市场使VS Code如此出色。 以下是您作为前端开发人员的一些出色扩展："
+}, {
+  "tag": "UL",
+  "texts": ["JavaScript (ES6) code snippets", "npm", "Prettier", "CSS Peek", "Vetur", "ESLint", "Live Sass Compiler", "Debugger for Chrome", "Live Server", "Beautify"],
+  "translations": ["JavaScript（ES6）代码段", "npm", "更漂亮", "CSS速览", "威图", "ESLint", "Live Sass编译器", "Chrome调试器", "实时服务器", "美化"]
+}, {
+  "tag": "P",
+  "text": "These are some pretty cool examples. There’s much more to discover in VS Code, so I encourage you to try out it if you aren’t already using it.",
+  "translation": "这些是很酷的例子。 在VS Code中还有很多可以发现的地方，因此，如果您尚未使用它，我建议您尝试一下。"
+}, {
+  "tag": "H1",
+  "text": "5. GraphQL",
+  "translation": "5. GraphQL"
+}, {
+  "tag": "P",
+  "text": "One of the hottest topics right now and definitely a thing for you to learn or improve on in 2020 is GraphQL.",
+  "translation": "GraphQL是当前最热门的主题之一，并且绝对是您在2020年需要学习或改进的东西。"
+}, {
+  "tag": "P",
+  "text": "While REST has long been consider the de facto standard for designing web APIs by offering great concepts like stateless servers, RESTful APIs are more and more considered inflexible when it comes to keeping up with the rapidly changing clients accessing them.",
+  "translation": "尽管REST通过提供无状态服务器之类的出色概念一直被认为是设计Web API的事实上的标准，但在跟上快速变化的客户端访问RESTful API时，RESTful API却越来越不灵活。"
+}, {
+  "tag": "P",
+  "text": "GraphQL was developed by Facebook to tackle the exact issues developers are facing when dealing with Restful APIs.",
+  "translation": "GraphQL由Facebook开发，旨在解决开发人员在处理Restful API时面临的确切问题。"
+}, {
+  "tag": "P",
+  "text": "With REST APIs, developers would gather data by fetching it from multiple endpoints that have been created with a specific purpose — like, for example, a /users/<id> endpoint or a /tours/<id>/location endpoint.",
+  "translation": "使用REST API，开发人员可以通过从具有特定目的的多个端点（例如/ users / <id>端点或/ tours / <id> / location端点）中获取数据来收集数据。"
+}, {
+  "tag": "P",
+  "text": "Using GraphQL, this would work differently. Developers would send a query to a GraphQL server with their data requirements. The server would then return a JSON object with all the corresponding data.",
+  "translation": "使用GraphQL，这将以不同的方式工作。 开发人员会将查询与他们的数据要求一起发送到GraphQL服务器。 然后，服务器将返回带有所有相应数据的JSON对象。"
+}, {
+  "tag": "P",
+  "text": "Another benefit of using GraphQL is it uses a strong type system. Everything on the GraphQL server is defined via a schema using the GraphQL schema definition language (SDL). Once the schema has been created, both front-end and back-end developers can work quite independently from one another because they’re aware of the defined data structure.",
+  "translation": "使用GraphQL的另一个好处是它使用了强类型系统。 GraphQL服务器上的所有内容都是使用GraphQL模式定义语言（SDL）通过模式定义的。 创建架构后，前端开发人员和后端开发人员都可以彼此独立地工作，因为他们知道已定义的数据结构。"
+}, {
+  "tag": "P",
+  "text": "If you want to learn more about GraphQL, check out these great resources:",
+  "translation": "如果您想了解有关GraphQL的更多信息，请查看以下重要资源："
+}, {
+  "tag": "P",
+  "text": "GraphQL",
+  "translation": "GraphQL"
+}, {
+  "tag": "P",
+  "text": "How to GraphQL",
+  "translation": "如何使用GraphQL"
+}, {
+  "tag": "P",
+  "text": "“Getting Started with GraphQL Content API”",
+  "translation": "“ GraphQL Content API入门”"
+}, {
+  "tag": "P",
+  "text": "“GraphQL: A data query language”",
+  "translation": "“ GraphQL：一种数据查询语言”"
+}, {
+  "tag": "H1",
+  "text": "4. PWA",
+  "translation": "4. PWA"
+}, {
+  "tag": "P",
+  "text": "Progressive web apps (PWA) will definitely be a thing in 2020. More and more companies are choosing PWAs over native apps to offer rich mobile experiences to their users.",
+  "translation": "渐进式Web应用程序（PWA）无疑将在2020年成为现实。越来越多的公司选择PWA取代本机应用程序，以便为用户提供丰富的移动体验。"
+}, {
+  "tag": "P",
+  "text": "PWAs are reliable (instant loading, work without internet connection), fast (smooth animations, quick responses to user interaction), and engaging (native-app feeling, great user experience).",
+  "translation": "PWA可靠（即时加载，无需连接互联网即可工作），快速（流畅的动画，对用户交互的快速响应）和吸引人的体验（本机应用程序的感觉，出色的用户体验）。"
+}, {
+  "tag": "P",
+  "text": "They make use of service workers for offline functionality and a web-app manifest file for a full-screen experience.",
+  "translation": "他们利用服务人员提供脱机功能，并利用Web应用清单文件提供全屏体验。"
+}, {
+  "tag": "P",
+  "text": "Reasons for building a progressive web app are, for example:",
+  "translation": "构建渐进式Web应用程序的原因有："
+}, {
+  "tag": "UL",
+  "texts": ["Can be added to a user’s home screen from the browser", "Work even if there isn’t an internet connection", "Support web push notifications for enhanced user engagement", "Make use of Google’s Lighthouse features"],
+  "translations": ["可以从浏览器添加到用户的主屏幕", "即使没有互联网也能正常工作", "支持网络推送通知以增强用户参与度", "利用Google的Lighthouse功能"]
+}, {
+  "tag": "P",
+  "text": "If you want to learn more about PWAs, feel free to check out these additional resources:",
+  "translation": "如果您想了解有关PWA的更多信息，请随时查看以下其他资源："
+}, {
+  "tag": "UL",
+  "texts": ["Progressive Web Apps", "“Your First Progressive Web App”"],
+  "translations": ["渐进式Web应用", "“您的第一个渐进式Web应用程序”"]
+}, {
+  "tag": "H1",
+  "text": "3. JAMstack",
+  "translation": "3. JAMstack"
+}, {
+  "tag": "P",
+  "text": "The term JAMstack stands for JavaScript (running on the client — for example, React, Vue, or VanillaJS), API (server-side processes are abstracted and accessed over HTTPS via JavaScript), and markup (templated markup that’s prebuilt at deploy time).",
+  "translation": "术语JAMstack代表JavaScript（在客户端上运行-例如，React，Vue或VanillaJS），API（服务器端进程通过JavaScript通过HTTPS抽象并访问）和标记（在部署时预先构建的模板标记）。 。"
+}, {
+  "tag": "P",
+  "text": "It’s a way of building websites and apps for better performance — lower scaling costs, providing higher security, and offering a better developer experience.",
+  "translation": "这是一种构建网站和应用程序以提高性能的方法-降低扩展成本，提供更高的安全性并提供更好的开发人员体验。"
+}, {
+  "tag": "P",
+  "text": "While these terms are nothing new on their own, they all have the same thing in common — they don’t depend on a web server. So a monolithic app that relies on a Ruby or Node.js back end or a site built with a server-side CMS like Drupal or WordPress isn’t built with the JAMstack.",
+  "translation": "尽管这些术语本身并不是什么新鲜事物，但它们的共同点是相同的-它们并不依赖于Web服务器。 因此，依赖于Ruby或Node.js后端或使用服务器端CMS（例如Drupal或WordPress）构建的网站的单片应用程序不是使用JAMstack构建的。"
+}, {
+  "tag": "P",
+  "text": "There are some best practices if you want to work with the JAMstack:",
+  "translation": "如果要使用JAMstack，有一些最佳实践："
+}, {
+  "tag": "H2",
+  "text": "Entire project served on a CDN",
+  "translation": "整个项目都在CDN上提供服务"
+}, {
+  "tag": "P",
+  "text": "Because no server is needed, the whole project can be served from a CDN, unlocking speed and performance that can’t be beat.",
+  "translation": "由于不需要服务器，因此整个项目都可以通过CDN进行服务，从而释放出无与伦比的速度和性能。"
+}, {
+  "tag": "H2",
+  "text": "Everything lives in Git",
+  "translation": "一切都生活在Git中"
+}, {
+  "tag": "P",
+  "text": "Everyone should be able to clone the whole project from a Git repo without the need for a database or a complex setup.",
+  "translation": "每个人都应该能够从Git存储库克隆整个项目，而无需数据库或复杂的设置。"
+}, {
+  "tag": "H2",
+  "text": "Automated builds",
+  "translation": "自动化构建"
+}, {
+  "tag": "P",
+  "text": "You can automated builds perfectly because all of the markup is prebuilt — for example, with webhooks or cloud services.",
+  "translation": "您可以完美地自动构建，因为所有标记都是预先构建的，例如使用webhooks或云服务。"
+}, {
+  "tag": "H2",
+  "text": "Atomic deploys",
+  "translation": "原子部署"
+}, {
+  "tag": "P",
+  "text": "In order to avoid inconsistent states by redeploying hundred or thousands of files in large projects, atomic deploys wait for all files to be uploaded before changes go live.",
+  "translation": "为了通过在大型项目中重新部署数百或数千个文件来避免出现不一致的状态，原子部署将等待所有文件上传，然后再进行更改。"
+}, {
+  "tag": "H2",
+  "text": "Instant cache invalidation",
+  "translation": "即时缓存失效"
+}, {
+  "tag": "P",
+  "text": "When a site goes live, you must make sure your CDN can handle instant cache purges for changes to become visible.",
+  "translation": "当站点上线时，必须确保CDN可以处理即时缓存清除，以使更改可见。"
+}, {
+  "tag": "P",
+  "text": "Well known hosts, like Netlify or Zeit, support JAMstack applications, and large corporations use them to deliver great experiences to their users.",
+  "translation": "像Netlify或Zeit这样的著名主机都支持JAMstack应用程序，大公司使用它们为用户提供出色的体验。"
+}, {
+  "tag": "P",
+  "text": "It’s definitely something you want to get your head around as a front-end developer in 2020. If you want to learn more about JAMstacks, here are some great resources:",
+  "translation": "您绝对想在2020年成为一名前端开发人员。如果您想了解有关JAMstacks的更多信息，这里有一些很棒的资源："
+}, {
+  "tag": "UL",
+  "texts": ["JAMstack", "JAMstack WTF", "“New to JAMstack? Everything You Need to Know to Get Started”"],
+  "translations": ["JAMstack", "JAMstack WTF", "“ JAMstack的新手？ 您需要了解的一切入门知识”"]
+}, {
+  "tag": "H1",
+  "text": "2. Static Site Generators",
+  "translation": "2.静态网站生成器"
+}, {
+  "tag": "P",
+  "text": "Static site generators combine both the power of server-side rendering (very important for SEO but also initial load time) and single-page applications.",
+  "translation": "静态站点生成器结合了服务器端渲染的功能（对于SEO非常重要，而且还具有初始加载时间）和单页应用程序。"
+}, {
+  "tag": "P",
+  "text": "Many projects these days choose a SSG even if they don’t need server-side rendering because solutions like Next or Nuxt come with handy features, such as markdown support, module bundlers, integrated test runners, etc.",
+  "translation": "如今，许多项目即使不需要服务器端渲染也选择了SSG，因为Next或Nuxt之类的解决方案具有便捷的功能，例如降价支持，模块捆绑器，集成测试运行器等。"
+}, {
+  "tag": "P",
+  "text": "If you’re serious about front-end development, you should take a close look into the following projects, and try to get some hands-on experience on them:",
+  "translation": "如果您认真对待前端开发，则应仔细研究以下项目，并尝试获得一些实践经验："
+}, {
+  "tag": "UL",
+  "texts": ["Next (React-based)", "Nuxt (Vue-based)", "Gatsby (React-based)", "Gridsome (Vue-based)"],
+  "translations": ["下一步（基于反应）", "Nuxt（基于Vue）", "盖茨比（基于反应）", "Gridsome（基于Vue）"]
+}, {
+  "tag": "P",
+  "text": "These will probably be the hottest ones in 2020, though there are more out there. Check out these resources if you want to learn more about them:",
+  "translation": "这些可能是2020年最热门的，尽管还有更多。 如果您想了解更多关于它们的信息，请查看这些资源："
+}, {
+  "tag": "UL",
+  "texts": ["Next.js", "Nuxt.js", "Gatsby", "Gridsome"],
+  "translations": ["Next.js", "Nuxt.js", "盖茨比", "网格状"]
+}, {
+  "tag": "H1",
+  "text": "1. Frameworks",
+  "translation": "1.框架"
+}, {
+  "tag": "P",
+  "text": "In 2020, we’ll probably see a duel between Facebook’s ReactJS and the community-driven VueJS. React currently has 140,000 stars on GitHub, while Vue has been starred even more — 153,000 stars. Angular, for example, has only 53,000 stars.",
+  "translation": "2020年，我们可能会看到Facebook的ReactJS与社区驱动的VueJS之间的对决。 目前，React在GitHub上拥有140,000星，而Vue则拥有153,000星。 例如，Angular只有53,000个恒星。"
+}, {
+  "tag": "P",
+  "text": "The search volume in 2019 for React (blue line), Vue (red line), Angular (yellow line), and Svelte (green line) supports this assumption — with Vue being slightly above React. Angular cannot keep up in terms of search volume, and Svelte plays absolutely no role in this comparison.",
+  "translation": "在2019年，React（蓝线），Vue（红线），Angular（黄线）和Svelte（绿线）的搜索量支持此假设-Vue略高于React。 Angular在搜索量方面无法跟上，Svelte在此比较中绝对不起作用。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*QhFi6kS4xun6AVPxWq9rSQ.png?q=20",
+  "type": "image",
+  "file": "1*QhFi6kS4xun6AVPxWq9rSQ.png"
+}, {
+  "tag": "P",
+  "text": "So for 2020, front-end developers working with or wanting to work with JavaScript frameworks should focus on React and Vue as their primary choices. Angular is a valid option if you’re working on large enterprise projects.",
+  "translation": "因此，对于2020年，使用或希望使用JavaScript框架的前端开发人员应将React和Vue作为他们的主要选择。 如果您正在处理大型企业项目，则Angular是有效的选择。"
+}, {
+  "tag": "P",
+  "text": "If you want to learn more about these frameworks, check out these great resources:",
+  "translation": "如果您想了解有关这些框架的更多信息，请查看以下重要资源："
+}, {
+  "tag": "UL",
+  "texts": ["React", "Vue.js"],
+  "translations": ["反应", "Vue.js"]
+}, {
+  "tag": "H1",
+  "text": "10 Things Front-End Developers Should Learn in 2020",
+  "translation": "前端开发人员在2020年应学习的10件事"
+}, {
+  "tag": "H2",
+  "text": "How to boost your engineering career next year",
+  "translation": "明年如何提升您的工程职业"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*C4fKJYbmwDLMRolQ?q=20",
+  "caption": "Photo by Isaac Smith on Unsplash",
+  "type": "image",
+  "file": "0*C4fKJYbmwDLMRolQ"
+}, {
+  "tag": "H1",
+  "text": "Introduction",
+  "translation": "介绍"
+}, {
+  "tag": "P",
+  "text": "There’s no doubt that front-end development will be one of the hottest disciplines in tech in 2020.",
+  "translation": "毫无疑问，前端开发将成为2020年技术领域最热门的学科之一。"
+}, {
+  "tag": "P",
+  "text": "It was previously sufficient for developers in the front-end space to know some HTML, CSS, and maybe jQuery to create interactive websites, but today they’re faced with a broad and constantly changing ecosystem of skills to develop; tools, libraries, and frameworks to master; and a need to constantly invest in personal education.",
+  "translation": "以前，前端空间的开发人员足以了解一些HTML，CSS，也许还有jQuery来创建交互式网站，但是今天，他们面临着广泛且不断变化的开发技能生态系统； 掌握的工具，库和框架； 并且需要不断投资于个人教育。"
+}, {
+  "tag": "P",
+  "text": "The last couple of years brought us awesome new libraries and frameworks, like ReactJS, VueJS, and Svelte, utilizing JavaScript to power major web applications.",
+  "translation": "最近几年，我们使用JavaScript为主要的Web应用程序提供了强大的新库和框架，例如ReactJS，VueJS和Svelte。"
+}, {
+  "tag": "P",
+  "text": "This piece aims to give you some guidance on what you should focus on in 2020 as a front-end developer to level up your game, whether you’re just starting with programming or already have some experience.",
+  "translation": "本文旨在为您提供一些指导，指导您在2020年作为前端开发人员来提升游戏水平，无论您是刚开始编程还是已经有一定的经验。"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Simon Holdorf的文章《10 Things Front-End Developers Should Learn in 2020》，参考：https://medium.com/better-programming/10-things-front-end-developers-should-learn-in-2020-61b448e75483)",
+  "translation": "（本文翻译自Simon Holdorf的文章《 2020年前端开发人员应该学习的十件事》，参考：https：//medium.com/better-programming/10-things-front-end-end-developers-should-learn-in -2020-61b448e75483）"
+}]
