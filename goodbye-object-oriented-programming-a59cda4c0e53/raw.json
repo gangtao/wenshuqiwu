@@ -1,0 +1,612 @@
+[{
+  "tag": "H1",
+  "text": "Goodbye, Object Oriented Programming",
+  "translation": "再见，面向对象编程"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*cBFSQ9Ytv_D0jwGtpuL5WA.png?q=20",
+  "type": "image",
+  "file": "1*cBFSQ9Ytv_D0jwGtpuL5WA.png"
+}, {
+  "tag": "P",
+  "text": "I’ve been programming in Object Oriented languages for decades. The first OO language I used was C++ and then Smalltalk and finally .NET and Java.",
+  "translation": "我从事面向对象语言的编程已有数十年了。 我使用的第一种面向对象语言是C ++，然后是Smalltalk，最后是.NET和Java。"
+}, {
+  "tag": "P",
+  "text": "I was gung-ho to leverage the benefits of Inheritance, Encapsulation, and Polymorphism. The Three Pillars of the Paradigm.",
+  "translation": "我很想利用继承，封装和多态性的好处。 范式的三个支柱。"
+}, {
+  "tag": "P",
+  "text": "I was eager to gain the promise of Reuse and leverage the wisdom gained by those who came before me in this new and exciting landscape.",
+  "translation": "我渴望获得重用的承诺，并利用在这个新的令人兴奋的环境中出现在我之前的人们所获得的智慧。"
+}, {
+  "tag": "P",
+  "text": "I couldn’t contain my excitement at the thought of mapping my real-world objects into their Classes and expected the whole world to fall neatly into place.",
+  "translation": "想到将现实世界的对象映射到它们的类中，并希望整个世界都能整齐地摆放，我激动不已。"
+}, {
+  "tag": "P",
+  "text": "I couldn’t have been more wrong.",
+  "translation": "我再也不会错了。"
+}, {
+  "tag": "H1",
+  "text": "Inheritance, the First Pillar to Fall",
+  "translation": "继承，第一个跌落的支柱"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*T2x8IApyIXIs4nNexGryEw.png?q=20",
+  "type": "image",
+  "file": "1*T2x8IApyIXIs4nNexGryEw.png"
+}, {
+  "tag": "P",
+  "text": "At first glance, Inheritance appears to be the biggest benefit of the Object Oriented Paradigm. All the simplistic examples of shape hierarchies that are paraded out as examples to the newly indoctrinated seem to make logical sense.",
+  "translation": "乍一看，继承似乎是面向对象范例的最大好处。 形形色色的结构的所有简单示例都被认为是新学说的示例，这似乎是合乎逻辑的。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*o-Mdcrd9B5hTrrQKhcP8yA.png?q=20",
+  "type": "image",
+  "file": "1*o-Mdcrd9B5hTrrQKhcP8yA.png"
+}, {
+  "tag": "P",
+  "text": "And Reuse is the word of the day. No… make that the year and perhaps evermore.",
+  "translation": "重用是当今的话题。 不……让这一年，甚至永远。"
+}, {
+  "tag": "P",
+  "text": "I swallowed this whole and rushed out into the world with my newfound insight.",
+  "translation": "我吞下了这一切，并以我新发现的见识冲进了世界。"
+}, {
+  "tag": "H2",
+  "text": "Banana Monkey Jungle Problem",
+  "translation": "香蕉猴丛林问题"
+}, {
+  "tag": "P",
+  "text": "With religion in my heart and problems to solve, I started building Class Hierarchies and writing code. And all was right with the world.",
+  "translation": "出于宗教信仰和解决问题的需要，我开始构建类层次结构并编写代码。 世界上一切都正确。"
+}, {
+  "tag": "P",
+  "text": "I’ll never forget that day when I was ready to cash in on the promise of Reuse by inheriting from an existing class. This was the moment I had been waiting for.",
+  "translation": "我永远不会忘记这一天，当我准备通过继承现有类来兑现“重用”的承诺时。 这是我一直在等待的时刻。"
+}, {
+  "tag": "P",
+  "text": "A new project came along and I thought back to that Class that I was so fond of in my last project.",
+  "translation": "一个新项目出现了，我回想起我上一个项目中非常喜欢的那个班级。"
+}, {
+  "tag": "P",
+  "text": "No problem. Reuse to the rescue. All I gotta do is simply grab that Class from the other project and use it.",
+  "translation": "没问题。 重新使用进行救援。 我要做的只是从另一个项目中获取该Class并使用它。"
+}, {
+  "tag": "P",
+  "text": "Well… actually… not just that Class. We’re gonna need the parent Class. But… But that’s it.",
+  "translation": "好吧……实际上……不只是那个班级。 我们需要家长班。 但是……仅此而已。"
+}, {
+  "tag": "P",
+  "text": "Ugh… Wait… Looks like we gonna also need the parent’s parent too... And then… We’re going to need ALL of the parents. Okay… Okay… I handle this. No problem.",
+  "translation": "嗯...等等...看来我们也将需要父母的父母...然后...我们将需要所有父母。 好吧好吧我会处理的 没问题。"
+}, {
+  "tag": "P",
+  "text": "And great. Now it won’t compile. Why?? Oh, I see… This object contains this other object. So I’m gonna need that too. No problem.",
+  "translation": "太好了 现在它将无法编译。 为什么？？ 哦，我明白了…这个对象包含另一个对象。 所以我也需要 没问题。"
+}, {
+  "tag": "P",
+  "text": "Wait… I don’t just need that object. I need the object’s parent and its parent’s parent and so on and so on with every contained object and ALL the parents of what those contain along with their parent’s, parent’s, parent’s…",
+  "translation": "等等...我不仅需要那个物体。 我需要对象的父对象及其父对象的父对象，依此类推，依次包含每个包含的对象以及包含对象的所有父对象以及其父对象，父对象，父对象……"
+}, {
+  "tag": "P",
+  "text": "Ugh.",
+  "translation": "啊。"
+}, {
+  "tag": "P",
+  "text": "There’s a great quote by Joe Armstrong, the creator of Erlang:",
+  "translation": "Erlang的创建者Joe Armstrong引用了一句话："
+}, {
+  "tag": "P",
+  "text": "The problem with object-oriented languages is they’ve got all this implicit environment that they carry around with them. You wanted a banana but what you got was a gorilla holding the banana and the entire jungle.",
+  "translation": "面向对象语言的问题在于，它们具有随身携带的所有隐式环境。 您想要香蕉，但是得到的是一只大猩猩，拿着香蕉和整个丛林。"
+}, {
+  "tag": "H2",
+  "text": "Banana Monkey Jungle Solution",
+  "translation": "香蕉猴丛林解决方案"
+}, {
+  "tag": "P",
+  "text": "I can tame this problem by not creating hierarchies that are too deep. But if Inheritance is the key to Reuse, then any limits I place on that mechanism will surely limit the benefits of Reuse. Right?",
+  "translation": "我可以通过不创建太深的层次结构来解决这个问题。 但是，如果继承是重用的关键，那么我对该机制的任何限制肯定会限制重用的好处。 对？"
+}, {
+  "tag": "P",
+  "text": "Right.",
+  "translation": "对。"
+}, {
+  "tag": "P",
+  "text": "So what’s a poor Object Oriented Programmer, who’s had a healthy helping of the Kool-aid, to do?",
+  "translation": "那么，在Kool-aid的健康帮助下，可怜的面向对象程序员该怎么办呢？"
+}, {
+  "tag": "P",
+  "text": "Contain and Delegate. More on this later.",
+  "translation": "包含并委托。 稍后再详细介绍。"
+}, {
+  "tag": "H2",
+  "text": "The Diamond Problem",
+  "translation": "钻石问题"
+}, {
+  "tag": "P",
+  "text": "Sooner or later, the following problem will rear its ugly and, depending on the language, unsolvable head.",
+  "translation": "迟早，以下问题将变得很丑陋，并且根据语言的不同，还会出现无法解决的问题。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*88yGno_LfU7P26RAHLGHCw.png?q=20",
+  "type": "image",
+  "file": "1*88yGno_LfU7P26RAHLGHCw.png"
+}, {
+  "tag": "P",
+  "text": "Most OO languages do not support this, even though this seems to make logical sense. What’s so difficult about supporting this in OO languages?",
+  "translation": "尽管这似乎合乎逻辑，但大多数OO语言都不支持此功能。 用OO语言支持此功能有何困难？"
+}, {
+  "tag": "P",
+  "text": "Well, imagine the following pseudocode:",
+  "translation": "好吧，想象一下下面的伪代码："
+}, {
+  "tag": "PRE",
+  "text": "Class PoweredDevice {}Class Scanner inherits from PoweredDevice {  function start() {  }}Class Printer inherits from PoweredDevice {  function start() {  }}Class Copier inherits from Scanner, Printer {}",
+  "translation": "类PoweredDevice {}类扫描仪继承自PoweredDevice {函数start（）{}}类打印机类继承自PoweredDevice {函数start（）{}}类复印机继承自Scanner打印机{}"
+}, {
+  "tag": "P",
+  "text": "Notice that both the Scanner class and the Printer class implement a function called start.",
+  "translation": "请注意，Scanner类和Printer类都实现了一个名为start的函数。"
+}, {
+  "tag": "P",
+  "text": "So which start function does the Copier class inherit? The Scanner one? The Printer one? It can’t be both.",
+  "translation": "那么Copier类继承了哪个启动函数？ 扫描仪开启了吗？ 打印机一台？ 不能两者兼有。"
+}, {
+  "tag": "H2",
+  "text": "The Diamond Solution",
+  "translation": "钻石解决方案"
+}, {
+  "tag": "P",
+  "text": "The solution is simple. Don’t do that.",
+  "translation": "解决方案很简单。 不要那样做"
+}, {
+  "tag": "P",
+  "text": "Yes that’s right. Most OO languages don’t let you do this.",
+  "translation": "是的，这是正确的。 大多数OO语言不允许您这样做。"
+}, {
+  "tag": "P",
+  "text": "But, but… what if I have to model this? I want my Reuse!",
+  "translation": "但是，但是……如果我必须对此建模呢？ 我要重用！"
+}, {
+  "tag": "P",
+  "text": "Then you must Contain and Delegate.",
+  "translation": "然后，您必须包含并委托。"
+}, {
+  "tag": "PRE",
+  "text": "Class PoweredDevice {}Class Scanner inherits from PoweredDevice {  function start() {  }}Class Printer inherits from PoweredDevice {  function start() {  }}Class Copier {  Scanner scanner  Printer printer  function start() {    printer.start()  }}",
+  "translation": "类PoweredDevice {}类扫描仪继承自PoweredDevice {函数start（）{}}类打印机继承自PoweredDevice {函数start（）{}}类复印机{扫描仪扫描仪打印机打印机函数start（）{printer.start（）}}"
+}, {
+  "tag": "P",
+  "text": "Notice here that the Copier class now contains an instance of a Printer and of a Scanner. It delegates the start function to the Printer class’s implementation. It could just as easily delegated to the Scanner.",
+  "translation": "请注意，此处的Copier类现在包含Printer和Scanner的实例。 它将启动函数委托给Printer类的实现。 它可以轻松地委派给扫描仪。"
+}, {
+  "tag": "P",
+  "text": "This problem is yet another crack in the Inheritance pillar.",
+  "translation": "这个问题是继承支柱中的另一个难题。"
+}, {
+  "tag": "H2",
+  "text": "The Fragile Base Class Problem",
+  "translation": "脆弱的基类问题"
+}, {
+  "tag": "P",
+  "text": "So I’m making my hierarchies shallow and keeping them from being cyclical. No diamonds for me.",
+  "translation": "因此，我正在简化层次结构，以防止其具有周期性。 我没有钻石。"
+}, {
+  "tag": "P",
+  "text": "And all was right with the world. That is until…",
+  "translation": "世界上一切都正确。 直到..."
+}, {
+  "tag": "P",
+  "text": "One day, my code works and the next day it stops working. Here’s the kicker. I didn’t change my code.",
+  "translation": "有一天，我的代码可以工作，而第二天它将停止工作。 这是踢脚线。 我没有更改代码。"
+}, {
+  "tag": "P",
+  "text": "Well, maybe it’s a bug… But wait… Something did change…",
+  "translation": "好吧，也许是个错误……但是等等……有些事情确实发生了变化……"
+}, {
+  "tag": "P",
+  "text": "But it wasn’t in my code. Turns out the change was in the class that I inherited from.",
+  "translation": "但这不在我的代码中。 原来更改是在我继承的类中进行的。"
+}, {
+  "tag": "P",
+  "text": "How could a change in the Base class break my code??",
+  "translation": "基类的更改如何破坏我的代码？"
+}, {
+  "tag": "P",
+  "text": "This is how…",
+  "translation": "这就是..."
+}, {
+  "tag": "P",
+  "text": "Imagine the following Base class (It’s written in Java, but it should be easy to understand if you don’t know Java):",
+  "translation": "想象一下以下基类（它是用Java编写的，但是如果您不懂Java，应该很容易理解）："
+}, {
+  "tag": "PRE",
+  "text": "import java.util.ArrayList; public class Array{  private ArrayList<Object> a = new ArrayList<Object>();   public void add(Object element)  {    a.add(element);  }   public void addAll(Object elements[])  {    for (int i = 0; i < elements.length; ++i)      a.add(elements[i]); // this line is going to be changed  }}",
+  "translation": "导入java.util.ArrayList; 公共类Array {private ArrayList <Object> a = new ArrayList <Object>（）; public void add（Object element）{a.add（element）; } public void addAll（Object elements []）{for（int i = 0; i <elements.length; ++ i）a.add（elements [i]）; //此行将被更改}}"
+}, {
+  "tag": "P",
+  "text": "IMPORTANT: Notice the commented line of code. This line is going to be changed later which will break things.",
+  "translation": "重要说明：请注意注释的代码行。 稍后将更改此行，这将使事情中断。"
+}, {
+  "tag": "P",
+  "text": "This class has 2 functions on its interface, add() and addAll(). The add() function will add a single element and addAll() will add multiple elements by calling the add function.",
+  "translation": "此类在其接口上具有2个函数add（）和addAll（）。 add（）函数将添加单个元素，而addAll（）将通过调用add函数添加多个元素。"
+}, {
+  "tag": "P",
+  "text": "And here’s the Derived class:",
+  "translation": "这是派生类："
+}, {
+  "tag": "PRE",
+  "text": "public class ArrayCount extends Array{  private int count = 0;   @Override  public void add(Object element)  {    super.add(element);    ++count;  }   @Override  public void addAll(Object elements[])  {    super.addAll(elements);    count += elements.length;  }}",
+  "translation": "公共类ArrayCount扩展了Array {private int count = 0; @Override public void add（Object element）{super.add（element）; ++ count; } @Override public void addAll（Object elements []）{super.addAll（elements）; 计数+ = elements.length; }}"
+}, {
+  "tag": "P",
+  "text": "The ArrayCount class is a specialization of the general Array class. The only behavioral difference is that the ArrayCount keeps a count of the number of elements.",
+  "translation": "ArrayCount类是常规Array类的专用化。 唯一的行为差异是ArrayCount保留元素数量的计数。"
+}, {
+  "tag": "P",
+  "text": "Let’s look at both of these classes in detail.",
+  "translation": "让我们详细看看这两个类。"
+}, {
+  "tag": "P",
+  "text": "The Array add() adds an element to a local ArrayList.The Array addAll() calls the local ArrayList add for each element.",
+  "translation": "Array add（）将元素添加到本地ArrayList.Array addAll（）为每个元素调用本地ArrayList add。"
+}, {
+  "tag": "P",
+  "text": "The ArrayCount add() calls its parent’s add() and then increments the count.The ArrayCount addAll() calls its parent’s addAll() and then increments the count by the number of elements.",
+  "translation": "ArrayCount add（）调用其父级的add（），然后增加计数。ArrayCount addAll（）调用其父级的addAll（），然后将计数增加元素数。"
+}, {
+  "tag": "P",
+  "text": "And all works fine.",
+  "translation": "而且一切正常。"
+}, {
+  "tag": "P",
+  "text": "Now for the breaking change. The commented line of code in the Base class is changed to the following:",
+  "translation": "现在是突破性的变化。 基类中的代码注释行更改为以下内容："
+}, {
+  "tag": "PRE",
+  "text": "  public void addAll(Object elements[])  {    for (int i = 0; i < elements.length; ++i)      add(elements[i]); // this line was changed  }",
+  "translation": "public void addAll（Object elements []）{for（int i = 0; i <elements.length; ++ i）add（elements [i]）; //此行已更改}"
+}, {
+  "tag": "P",
+  "text": "As far as the owner of the Base class is concerned, it still functions as advertised. And all of the automated tests still pass.",
+  "translation": "就基类的所有者而言，它仍按公告功能运行。 并且所有自动化测试仍然通过。"
+}, {
+  "tag": "P",
+  "text": "But the owner is oblivious to the Derived class. And the owner of Derived class is in for a rude awakening.",
+  "translation": "但是所有者没有理会派生类。 派生类的所有者正在粗鲁地觉醒。"
+}, {
+  "tag": "P",
+  "text": "Now ArrayCount addAll() calls its parent’s addAll() which internally calls the add() which has been OVERRIDEN by the Derived class.",
+  "translation": "现在，ArrayCount addAll（）调用其父级的addAll（），该父类在内部调用已由Derived类覆盖的add（）。"
+}, {
+  "tag": "P",
+  "text": "This causes the count to be incremented each time the Derived class’s add() is called and then it’s incremented AGAIN by the number of elements that were added in the Derived class’s addAll().",
+  "translation": "这会导致计数在每次调用派生类的add（）时增加，然后再次增加在派生类的addAll（）中添加的元素数。"
+}, {
+  "tag": "P",
+  "text": "IT’S COUNTED TWICE.",
+  "translation": "算了两次。"
+}, {
+  "tag": "P",
+  "text": "If this can happen, and it does, the author of the Derived class must KNOW how the Base class has been implemented. And they must be informed about every change in the Base class since it could break their Derived class in unpredictable ways.",
+  "translation": "如果可以做到这一点，那么派生类的作者必须知道如何实现基类。 并且必须通知他们有关基类的每项更改，因为它可能以不可预测的方式破坏其派生类。"
+}, {
+  "tag": "P",
+  "text": "Ugh! This huge crack is forever threatening the stability of precious Inheritance pillar.",
+  "translation": "啊! 这个巨大的裂缝永远威胁着宝贵的继承支柱的稳定性。"
+}, {
+  "tag": "H2",
+  "text": "The Fragile Base Class Solution",
+  "translation": "脆弱的基类解决方案"
+}, {
+  "tag": "P",
+  "text": "Once again Contain and Delegate to the rescue.",
+  "translation": "再次包含并委托救援人员。"
+}, {
+  "tag": "P",
+  "text": "By using Contain and Delegate, we go from White Box programming to Black Box programming. With White Box programming, we have to look at the implementation of the base class.",
+  "translation": "通过使用包含和委托，我们从白盒编程到黑盒编程。 对于White Box编程，我们必须查看基类的实现。"
+}, {
+  "tag": "P",
+  "text": "With Black Box programming, we can be completely ignorant of the implementation since we cannot inject code into the Base class by overriding one of its functions. We only have to concern ourselves with the Interface.",
+  "translation": "使用黑匣子编程，由于无法通过覆盖基函数的功能之一将代码注入到基类中，因此我们可以完全不了解其实现。 我们只需要关心接口。"
+}, {
+  "tag": "P",
+  "text": "This trend is disturbing…",
+  "translation": "这个趋势令人不安..."
+}, {
+  "tag": "P",
+  "text": "Inheritance was supposed to be a huge win for Reuse.",
+  "translation": "继承被认为是重用的巨大胜利。"
+}, {
+  "tag": "P",
+  "text": "Object Oriented languages don’t make Contain and Delegate easy to do. They were designed to make Inheritance easy.",
+  "translation": "面向对象的语言很难使“包含”和“委托”变得容易。 它们旨在简化继承。"
+}, {
+  "tag": "P",
+  "text": "If you’re like me, you’re starting to wonder about this Inheritance thing. But more important, this should shake your confidence in the power of Classification via Hierarchies.",
+  "translation": "如果您像我一样，就开始对这种继承感到好奇。 但更重要的是，这应该动摇您对通过层次结构进行分类的能力的信心。"
+}, {
+  "tag": "H2",
+  "text": "The Hierarchy Problem",
+  "translation": "层次问题"
+}, {
+  "tag": "P",
+  "text": "Every time I start at a new company, I struggle with the problem when I’m creating a place to put my Company Documents, e.g. the Employee Handbook.",
+  "translation": "每当我创建新公司时，在创建放置公司文件的地方时都会遇到麻烦，例如 员工手册。"
+}, {
+  "tag": "P",
+  "text": "Do I create a folder called Documents and then create a folder called Company in that?",
+  "translation": "我是否要创建一个名为Documents的文件夹，然后在其中创建一个名为Company的文件夹？"
+}, {
+  "tag": "P",
+  "text": "Or do I create a folder called Company and then create a folder called Documents in that?",
+  "translation": "还是创建一个名为Company的文件夹，然后在其中创建一个名为Documents的文件夹？"
+}, {
+  "tag": "P",
+  "text": "Both work. But which is right? Which is best?",
+  "translation": "两者都可以。 但是哪个是对的？ 哪个最好？"
+}, {
+  "tag": "P",
+  "text": "The idea of Categorical Hierarchies was that there were Base Classes (parents) that were more general and that Derived Classes (children) were more specialized versions of those classes. And even more specialized as we make our way down the inheritance chain. (See the Shape Hierarchy above)",
+  "translation": "类别层次结构的思想是，有些基类（父母）更为笼统，而派生类（子代）则是这些类的更专业版本。 随着我们沿着继承链的发展，甚至更加专业。 （请参阅上面的形状层次结构）"
+}, {
+  "tag": "P",
+  "text": "But if a parent and child could arbitrarily switch places, then clearly something is wrong with this model.",
+  "translation": "但是，如果父母和孩子可以任意切换位置，则显然此模型有问题。"
+}, {
+  "tag": "H2",
+  "text": "The Hierarchy Solution",
+  "translation": "层次解决方案"
+}, {
+  "tag": "P",
+  "text": "What’s wrong is…",
+  "translation": "怎么了"
+}, {
+  "tag": "P",
+  "text": "Categorical Hierarchies don’t work.",
+  "translation": "分类层次结构无效。"
+}, {
+  "tag": "P",
+  "text": "So what are hierarchies good for?",
+  "translation": "那么，层次结构有什么好处呢？"
+}, {
+  "tag": "P",
+  "text": "Containment.",
+  "translation": "遏制。"
+}, {
+  "tag": "P",
+  "text": "If you look at the real world, you’ll see Containment (or Exclusive Ownership) Hierarchies everywhere.",
+  "translation": "如果您查看现实世界，那么到处都会看到遏制（或专有所有权）层次结构。"
+}, {
+  "tag": "P",
+  "text": "What you won’t find is Categorical Hierarchies. Let that sink in for a moment. The Object Oriented Paradigm was predicated upon the real world, one filled with Objects. But then it uses a broken model, viz. Categorical Hierarchies, where there is no real-world analogy.",
+  "translation": "您将找不到分类层次结构。 让它陷入片刻。 面向对象范例基于真实世界，其中充满了对象。 但随后它使用了损坏的模型，即。 没有现实世界类比的分类层次结构。"
+}, {
+  "tag": "P",
+  "text": "But the real world is filled with Containment Hierarchies. A great example of a Containment Hierarchy is your socks. They are in a sock drawer which is contained in one drawer in your dresser which is contained in your bedroom which is contained in your house, etc.",
+  "translation": "但是现实世界充满了遏制层次结构。 围护结构的一个很好的例子是您的袜子。 它们位于袜子抽屉中，该抽屉包含在您的梳妆台的一个抽屉中，该抽屉包含在您的卧室中，也包含在您的房屋中，等等。"
+}, {
+  "tag": "P",
+  "text": "Directories on your hard drive are another example of a Containment Hierarchy. They contains files.",
+  "translation": "硬盘驱动器上的目录是“包含层次结构”的另一个示例。 它们包含文件。"
+}, {
+  "tag": "P",
+  "text": "So how do we categorize then?",
+  "translation": "那么我们该如何分类呢？"
+}, {
+  "tag": "P",
+  "text": "Well, if you think of the Company Documents, it pretty much doesn’t matter where I put them. I can put them in a folder of Documents or a folder called Stuff.",
+  "translation": "好吧，如果您想到公司文件，我放在哪里几乎都没有关系。 我可以将它们放在“文档”文件夹或名为“ Stuff”的文件夹中。"
+}, {
+  "tag": "P",
+  "text": "The way I categorize it is with tags. I tag the file with the following tags:",
+  "translation": "我对其进行分类的方式是使用标签。 我用以下标签标记文件："
+}, {
+  "tag": "PRE",
+  "text": "DocumentCompanyHandbook",
+  "translation": "文件公司手册"
+}, {
+  "tag": "P",
+  "text": "Tags have no order or hierarchy. (This solves the Diamond Problem too.)",
+  "translation": "标签没有顺序或层次。 （这也解决了钻石问题。）"
+}, {
+  "tag": "P",
+  "text": "Tags are analogous to interfaces since you can have multiple types associated with the document.",
+  "translation": "标签类似于接口，因为您可以将多种类型与文档关联。"
+}, {
+  "tag": "P",
+  "text": "But with so many cracks, it looks like the Inheritance pillar has fallen.",
+  "translation": "但是，裂缝如此之多，看来继承支柱已经倒下了。"
+}, {
+  "tag": "P",
+  "text": "Goodbye, Inheritance.",
+  "translation": "再见，继承。"
+}, {
+  "tag": "H1",
+  "text": "Encapsulation, the Second Pillar to Fall",
+  "translation": "封装，第二倒下的支柱"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*ta9gcTzwC_RxZxvD7EhlAw.png?q=20",
+  "type": "image",
+  "file": "1*ta9gcTzwC_RxZxvD7EhlAw.png"
+}, {
+  "tag": "P",
+  "text": "At first glance, Encapsulation appears to be second biggest benefit of Object Oriented Programming.",
+  "translation": "乍一看，封装似乎是面向对象编程的第二大优点。"
+}, {
+  "tag": "P",
+  "text": "Object state variables are protected from outside access, i.e. they’re Encapsulated in the Object.",
+  "translation": "保护对象状态变量不受外部访问，即它们被封装在对象中。"
+}, {
+  "tag": "P",
+  "text": "No longer will we have to worry about global variables that are being accessed by who-knows-who.",
+  "translation": "我们不再需要担心who-knows-who正在访问的全局变量。"
+}, {
+  "tag": "P",
+  "text": "Encapsulation is a Safe for your variables.",
+  "translation": "封装对于您的变量是安全的。"
+}, {
+  "tag": "P",
+  "text": "This Encapsulation thing is INCREDIBLE!!",
+  "translation": "这个封装的东西是不可思议的！"
+}, {
+  "tag": "P",
+  "text": "Long live Encapsulation…",
+  "translation": "封装寿命长…"
+}, {
+  "tag": "P",
+  "text": "That is until…",
+  "translation": "直到..."
+}, {
+  "tag": "H2",
+  "text": "The Reference Problem",
+  "translation": "参考问题"
+}, {
+  "tag": "P",
+  "text": "For efficiency sake, Objects are passed to functions NOT by their value but by reference.",
+  "translation": "为了提高效率，对象不是通过其值而是通过引用传递给函数。"
+}, {
+  "tag": "P",
+  "text": "What that means is that functions will not pass the Object, but instead pass a reference or pointer to the Object.",
+  "translation": "这意味着函数不会传递对象，而是传递对对象的引用或指针。"
+}, {
+  "tag": "P",
+  "text": "If an Object is passed by reference to an Object Constructor, the constructor can put that Object reference in a private variable which is protected by Encapsulation.",
+  "translation": "如果将对象通过引用传递给对象构造函数，则构造函数可以将该对象引用放入受封装保护的私有变量中。"
+}, {
+  "tag": "P",
+  "text": "But the passed Object is NOT safe!",
+  "translation": "但是传递的对象并不安全！"
+}, {
+  "tag": "P",
+  "text": "Why not? Because some other piece of code has a pointer to the Object, viz. the code that called the Constructor. It MUST have a reference to the Object otherwise it couldn’t pass it to the Constructor?",
+  "translation": "为什么不？ 因为其他一些代码具有指向对象的指针，即。 调用构造函数的代码。 它必须具有对对象的引用，否则无法将其传递给构造函数？"
+}, {
+  "tag": "H2",
+  "text": "The Reference Solution",
+  "translation": "参考解决方案"
+}, {
+  "tag": "P",
+  "text": "The Constructor will have to Clone the passed in Object. And not a shallow clone but a deep clone, i.e. every object that is contained in the passed in Object and every object in those objects and so on and so on.",
+  "translation": "构造函数将必须克隆传入的对象。 不是浅层克隆，而是深层克隆，即传入对象中包含的每个对象以及这些对象中的每个对象，依此类推。"
+}, {
+  "tag": "P",
+  "text": "So much for efficiency.",
+  "translation": "效率非常重要。"
+}, {
+  "tag": "P",
+  "text": "And here’s the kicker. Not all objects can be Cloned. Some have Operating System resources associated with them making cloning useless at best or at worst impossible.",
+  "translation": "这是踢脚线。 并非所有对象都可以被克隆。 有些具有与操作系统资源相关联的资源，从而使克隆在最好或最坏的情况下变得无用。"
+}, {
+  "tag": "P",
+  "text": "And EVERY single mainstream OO language has this problem.",
+  "translation": "而且每种主流OO语言都存在此问题。"
+}, {
+  "tag": "P",
+  "text": "Goodbye, Encapsulation.",
+  "translation": "再见，封装。"
+}, {
+  "tag": "H1",
+  "text": "Polymorphism, the Third Pillar to Fall",
+  "translation": "多态性，下降的第三大支柱"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*PgDq0T-0PpSd-huvTaZxkw.png?q=20",
+  "type": "image",
+  "file": "1*PgDq0T-0PpSd-huvTaZxkw.png"
+}, {
+  "tag": "P",
+  "text": "Polymorphism was the redheaded stepchild of the Object Oriented Trinity.",
+  "translation": "多态是面向对象三位一体的红发继子。"
+}, {
+  "tag": "P",
+  "text": "It’s sort of the Larry Fine of the group.",
+  "translation": "这是该小组的Larry Fine。"
+}, {
+  "tag": "P",
+  "text": "Everywhere they went he was there, but he was just a supporting character.",
+  "translation": "他们到处走，他都在那里，但他只是一个配角。"
+}, {
+  "tag": "P",
+  "text": "It’s not that Polymorphism isn’t great, it’s just that you don’t need an Object Oriented language to get this.",
+  "translation": "并不是说多态性不是很好，而是您不需要使用面向对象的语言来实现。"
+}, {
+  "tag": "P",
+  "text": "Interfaces will give you this. And without all of the baggage of OO.",
+  "translation": "接口会给你这个。 而且没有OO的所有包g。"
+}, {
+  "tag": "P",
+  "text": "And with Interfaces, there isn’t a limit to how many different behaviors you can mix in.",
+  "translation": "有了Interfaces，您可以混合多少种不同的行为就没有限制。"
+}, {
+  "tag": "P",
+  "text": "So without much ado, we say goodbye to OO Polymorphism and hello to interface-based Polymorphism.",
+  "translation": "因此，事不宜迟，我们告别了OO多态，而向基于接口的多态问好。"
+}, {
+  "tag": "H1",
+  "text": "Broken Promises",
+  "translation": "破碎的承诺"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*BKqtA-ynElomtJ7v6n5FHw.png?q=20",
+  "type": "image",
+  "file": "1*BKqtA-ynElomtJ7v6n5FHw.png"
+}, {
+  "tag": "P",
+  "text": "Well, OO sure promised a lot in the early days. And these promises are still being made to naive programmers sitting in classrooms, reading blogs and taking online courses.",
+  "translation": "好吧，OO在早期肯定会许诺很多。 这些天赋仍然是给坐在教室，阅读博客和在线课程的程序员的。"
+}, {
+  "tag": "P",
+  "text": "It’s taken me years to realize how OO lied to me. I too was wide-eyed and inexperienced and trusting.",
+  "translation": "我花了很多年才意识到OO对我撒谎。 我也宽容，经验不足和信任。"
+}, {
+  "tag": "P",
+  "text": "And I got burned.",
+  "translation": "我被烧死了。"
+}, {
+  "tag": "P",
+  "text": "Good-bye, Object Oriented Programming.",
+  "translation": "再见，面向对象的编程。"
+}, {
+  "tag": "H1",
+  "text": "So then what?",
+  "translation": "那又如何呢？"
+}, {
+  "tag": "P",
+  "text": "Hello, Functional Programming. It’s been so nice to work with you over the past few years.",
+  "translation": "您好，函数式编程。 过去几年与您合作真是太好了。"
+}, {
+  "tag": "P",
+  "text": "Just so you know, I’m NOT taking any of your promises at face value. I’m going to have to see it to believe it.",
+  "translation": "请注意，我不会兑现您的任何承诺。 我将不得不看到它才能相信它。"
+}, {
+  "tag": "P",
+  "text": "Once burned, twice shy and all.",
+  "translation": "一旦被烧毁，两次都害羞。"
+}, {
+  "tag": "P",
+  "text": "You understand.",
+  "translation": "你明白。"
+}, {
+  "tag": "P",
+  "text": "If you liked this, click the💚 below so other people will see this here on Medium.",
+  "translation": "如果您喜欢这个，请单击下面的so，以便其他人可以在Medium上看到此内容。"
+}, {
+  "tag": "P",
+  "text": "If you want to join a community of web developers learning and helping each other to develop web apps using Functional Programming in Elm please check out my Facebook Group, Learn Elm Programming https://www.facebook.com/groups/learnelm/",
+  "translation": "如果您想加入Web开发人员社区，以学习和互相帮助使用Elm中的Functional Programming开发Web应用程序，请查看我的Facebook组，Learn Elm Programming https://www.facebook.com/groups/learnelm/"
+}, {
+  "tag": "P",
+  "text": "My Twitter: @cscalfani",
+  "translation": "我的Twitter：@cscalfani"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Charles Scalfani的文章《Goodbye, Object Oriented Programming》，参考：https://medium.com/@cscalfani/goodbye-object-oriented-programming-a59cda4c0e53)",
+  "translation": "（本文翻译自Charles Scalfani的文章，《再见，面向对象编程》，参考：https：//medium.com/@cscalfani/goodbye-object-directional-programming-a59cda4c0e53）"
+}]
