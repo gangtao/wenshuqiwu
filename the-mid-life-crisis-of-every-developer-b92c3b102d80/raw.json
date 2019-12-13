@@ -1,0 +1,108 @@
+[{
+  "tag": "H1",
+  "text": "Conclusion",
+  "translation": "结论"
+}, {
+  "tag": "P",
+  "text": "Whenever you face a problem, always keep in mind that you are heading in the correct path. Think of your life as a game. The better you play, the harder the level will be. The challenges you face are not insurmountable. Keep these tips in mind and take comfort in the fact that you aren’t the only one; your colleagues have faced these problems at some point, too.",
+  "translation": "每当遇到问题时，请始终牢记正确的道路。 将您的生活视为游戏。 你玩的越好，水平就越强。 您面临的挑战并非无法克服。 请记住这些提示，并让您感到舒适，因为您不是唯一的一个。 您的同事在某些时候也面临这些问题。"
+}, {
+  "tag": "H1",
+  "text": "Time Management",
+  "translation": "时间管理"
+}, {
+  "tag": "P",
+  "text": "“Time is the most valuable thing a man can spend.” — Theophrastus",
+  "translation": "“时间是一个人可以花费的最宝贵的东西。” — Theophrastus"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*R9QegkTg-9j8NXytNuYzuA.jpeg?q=20",
+  "caption": "Photo by Icons8 Team on Unsplash",
+  "type": "image",
+  "file": "1*R9QegkTg-9j8NXytNuYzuA.jpeg"
+}, {
+  "tag": "P",
+  "text": "Time management is a crucial skill in every job role. You always have 24 hours per day — not more, not less. It’s up to you to utilize them to the fullest. As a developer, there will be times where you will not be able to keep up to your time estimation for a task.",
+  "translation": "在每个工作角色中，时间管理都是至关重要的技能。 您每天总是有24小时-不多也不少。 您可以充分利用它们。 作为开发人员，有时您将无法跟上任务的时间估算。"
+}, {
+  "tag": "P",
+  "text": "Estimates are important in software development. They can be a basis for price quotes and project schedules. Schedule delays cause problems and may compromise trust.",
+  "translation": "估算在软件开发中很重要。 它们可以作为报价和项目进度表的基础。 进度延误会导致问题，并可能损害信任。"
+}, {
+  "tag": "P",
+  "text": "As a new programmer, you might be tempted to put in more time than you need for a task, with the assumption that doing so might impress your boss and be good for the project. But doing this can come back to bite you. It can put you way behind schedule and behind your team, which makes you look bad.",
+  "translation": "作为一个新的程序员，您可能会倾向于投入比完成一项任务所需的时间更多的时间，并假设这样做可能会给您的老板留下深刻的印象，并有益于项目。 但是这样做可能会再次咬你。 它会使您落后于计划和团队，这会让您看起来很糟糕。"
+}, {
+  "tag": "P",
+  "text": "To stay ahead of your time estimations,",
+  "translation": "为了超越您的时间估算，"
+}, {
+  "tag": "UL",
+  "texts": ["Break down tasks — The best way to make tasks more manageable is to break them down into smaller microtasks. Breaking down your heavy workload will keep things from overwhelming.", "Time yourself accordingly — If a task takes around 20 minutes, give it around 30 minutes, with some additional time for any disturbances that might occur."],
+  "translations": ["分解任务-使任务更易于管理的最佳方法是将其分解为较小的微任务。 减少繁重的工作量将使您免于压倒一切。", "相应地安排自己的时间-如果一项任务大约需要20分钟，请给它大约30分钟，并留出一些额外的时间来处理可能发生的干扰。"]
+}, {
+  "tag": "H1",
+  "text": "Communication",
+  "translation": "通讯"
+}, {
+  "tag": "P",
+  "text": "Every developer eventually becomes a part of a team. Poor communication is one of the major issues a developer will face in their lifetime. At its worst, it can cause conflicts within the team and the workplace. The blame for poor communication falls on you because it’s in your power to control. If you don’t try to build good communications with your team, you are ultimately responsible for the problem.",
+  "translation": "每个开发人员最终都成为团队的一部分。 沟通不畅是开发人员一生中将面临的主要问题之一。 在最坏的情况下，它可能导致团队和工作场所内部发生冲突。 沟通不畅的责任归咎于您，因为您有控制权。 如果您不尝试与您的团队建立良好的沟通，那么您将最终对此问题负责。"
+}, {
+  "tag": "P",
+  "text": "The only way to solve this problem is to improve your communication skills.",
+  "translation": "解决此问题的唯一方法是提高您的沟通技巧。"
+}, {
+  "tag": "UL",
+  "texts": ["Be proactive — Communicating only when you need something is not going to help you at all. You should be able to mingle with your colleagues and not be scared to ask them questions, especially about any workplace-related issues. You can get accustomed to the workplace culture faster if you open up to other people. And if you are a shy person, well, your lack of self-confidence is something that you will have to work on.", "Be confident and consistent — There will be times where you are not clear in what you want to say, and this can cause problems. Don’t feel bad at times like that. Accept your mistake and learn from it. Work until you are able to freely express yourself."],
+  "translations": ["积极主动-仅在您需要某些东西时进行交流根本无法帮助您。 您应该能够与同事打成一片，而不必害怕向他们提出问题，尤其是与工作场所相关的问题。 如果您向其他人开放，您可以更快地习惯工作场所文化。 而且，如果您是一个害羞的人，那么，您将需要努力解决缺乏自信的问题。", "保持自信和一致-有时您不清楚自己想说些什么，这可能会引起问题。 那样的时候不要难过。 接受错误并从中学习。 努力工作，直到您能够自由表达自己。"]
+}, {
+  "tag": "H1",
+  "text": "Debugging",
+  "translation": "调试"
+}, {
+  "tag": "P",
+  "text": "Imagine a scenario where you come home and receive an email from Quality Assurance with a list of bugs to work through. Trust me, that email will ruin your day. But the good news is that bugs are common in programming. In fact, even the best-written code can have them. And they can be fixed.",
+  "translation": "想象一下一个场景，您回家后会收到来自Quality Assurance的电子邮件，其中列出了需要解决的错误。 相信我，那封电子邮件会毁了您的一天。 但是好消息是，错误在编程中很常见。 实际上，即使是编写最好的代码也可以拥有它们。 而且可以固定。"
+}, {
+  "tag": "P",
+  "text": "In order to solve this problem, you should",
+  "translation": "为了解决这个问题，你应该"
+}, {
+  "tag": "UL",
+  "texts": ["Reproduce the error — The best way for you to fix a bug is to find its root cause and fix it.", "Get help — If you can’t reproduce it, get help. The tester who found the bug may be able to reproduce it for you."],
+  "translations": ["重现该错误-修复错误的最佳方法是找到其根本原因并进行修复。", "获取帮助-如果无法复制，请获取帮助。 发现该错误的测试人员可以为您重现该错误。"]
+}, {
+  "tag": "H1",
+  "text": "Understanding How the Program Works",
+  "translation": "了解程序的工作方式"
+}, {
+  "tag": "P",
+  "text": "This is an issue every newbie developer faces. You should always understand that most of the time, it’s never the program’s fault. The program simply follows what it’s commanded to do. This concept is called GIGO (Garbage In, Garbage Out). If you find a library or a code snippet not performing its job, it’s most likely because the programmer wrote it that way. To get a better idea of GIGO, please watch the below video.",
+  "translation": "这是每个新手开发人员都面临的问题。 您应该始终了解，在大多数情况下，这绝不是程序的错。 该程序只需按照其命令执行即可。 这个概念称为GIGO（垃圾进，垃圾出）。 如果您发现某个库或代码段未执行其工作，则很可能是因为程序员是用这种方式编写的。 为了更好地了解GIGO，请观看以下视频。"
+}, {
+  "tag": "FIGURE",
+  "type": "code"
+}, {
+  "tag": "H1",
+  "text": "The Mid-Life Crisis of Every Developer",
+  "translation": "每个开发人员的中年危机"
+}, {
+  "tag": "H2",
+  "text": "No one said being a developer is easy",
+  "translation": "没有人说成为开发人员很容易"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*Gs1cLsPT1FdiGZeI0h2RiQ.jpeg?q=20",
+  "caption": "Photo by Jukan Tateisi on Unsplash",
+  "type": "image",
+  "file": "1*Gs1cLsPT1FdiGZeI0h2RiQ.jpeg"
+}, {
+  "tag": "P",
+  "text": "As developers, our daily lives are a battle against machines. We do our best to perform efficiently, but at times the problems get ahold of us. Here are the issues every developer will face at least once in their lifetime.",
+  "translation": "作为开发人员，我们的日常生活是与机器的斗争。 我们尽最大努力有效地执行任务，但有时问题仍在我们身边。 这是每个开发人员一生中至少会遇到一次的问题。"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Mahdhi Rezvi的文章《The Mid-Life Crisis of Every Developer》，参考：https://medium.com/better-programming/the-mid-life-crisis-of-every-developer-b92c3b102d80)",
+  "translation": "（本文翻译自Mahdhi Rezvi的文章，《每个开发人员的中年危机》，参考：https：//medium.com/better-programming/the-mid-life-crisis-of-every-developer-b92c3b102d80）"
+}]
