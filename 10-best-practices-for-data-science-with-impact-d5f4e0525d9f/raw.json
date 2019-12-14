@@ -1,0 +1,179 @@
+[{
+  "tag": "H1",
+  "text": "10 Best Practices for Data Science with Impact",
+  "translation": "具有影响力的10种数据科学最佳实践"
+}, {
+  "tag": "H2",
+  "text": "or … how not to fail in Data Science",
+  "translation": "或……如何在数据科学中不失败"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*W5_BmYECY96rKYZ5jtJ9bA.jpeg?q=20",
+  "caption": "Photo by Vlad Hilitanu on Unsplash",
+  "type": "image",
+  "file": "1*W5_BmYECY96rKYZ5jtJ9bA.jpeg"
+}, {
+  "tag": "P",
+  "text": "Gartner predicted in 2018, that through 2022, 85% of Data Science projects will fail. This type of statistic is not unique. The Economist published a study concluding that while 70% of business executives rated analytics as “very” or “extremely important”, just 2% said that they had achieved “broad positive results”.",
+  "translation": "Gartner在2018年预测，到2022年，将有85％的数据科学项目失败。 这种统计信息不是唯一的。 《经济学人》发表了一项研究，得出结论，虽然70％的企业高管将分析评为“非常”或“极其重要”，但只有2％的企业高管认为他们已经取得了“广泛的积极成果”。"
+}, {
+  "tag": "P",
+  "text": "The top 3 reported reasons for this difference between expectations and reality are:",
+  "translation": "报告的3个导致预期与现实之间差异的原因是："
+}, {
+  "tag": "P",
+  "text": "1. Difficulty in defining or framing the problem to be solved.",
+  "translation": "1.难以定义或构架要解决的问题。"
+}, {
+  "tag": "P",
+  "text": "2. Difficulty in coming up with a solution approach or design.",
+  "translation": "2.难以提出解决方案或设计。"
+}, {
+  "tag": "P",
+  "text": "3. Inability to translate the data science insights into actions that truly change the way the business executes.",
+  "translation": "3.无法将数据科学见解转化为真正改变业务执行方式的行动。"
+}, {
+  "tag": "P",
+  "text": "To succeed in Data Science, it is important to maintain the chain from data to analysis to insight to action.",
+  "translation": "为了在数据科学中取得成功，重要的是保持从数据到分析，从洞察到行动的链。"
+}, {
+  "tag": "P",
+  "text": "To help businesses bridge the gap from insights to actions, we created a Data Science Elite team, with a mission to help businesses not only succeed, but lead in Data Science and AI.",
+  "translation": "为了帮助企业弥合从见识到行动的鸿沟，我们创建了一个Data Science Elite团队，其使命不仅是帮助企业成功，而且要领导Data Science和AI。"
+}, {
+  "tag": "P",
+  "text": "We worked with more than 100 clients across virtually every industry, from finance, to energy, to healthcare, and beyond.",
+  "translation": "我们与几乎每个行业的100多个客户合作，从金融，能源，医疗保健等等。"
+}, {
+  "tag": "P",
+  "text": "We worked with clients at any point on their journey, whether they were establishing a data science practice, building and growing their data science competence, or modernizing and innovating an already mature data science organization. Through this experience, we learned an applied many best practices — below my top 10 essential best practices to succeed in data science.",
+  "translation": "无论客户是建立数据科学实践，建立和发展其数据科学能力，还是现代化和创新已经成熟的数据科学组织，我们都可以在他们旅途中的任何时候与客户合作。 通过这次经验，我们学到了许多实用的最佳实践-低于我在数据科学领域取得成功的十大基本最佳实践。"
+}, {
+  "tag": "P",
+  "text": "Best Practice 1: Start with a quick-win use case to gain business buy-in",
+  "translation": "最佳实践1：以双赢的用例开始，获得业务支持"
+}, {
+  "tag": "P",
+  "text": "What type of use case leads to a quick-win? Is it when you envision a multi-million dollar opportunity, or when you have terabytes of data where you suspect there are hidden nuggets to discover? It’s neither — to get quick-win results within 6–12 weeks, you need to target use cases with 3 essential characteristics:",
+  "translation": "哪种用例可带来双赢？ 是当您设想数百万美元的机会时，还是当您拥有数TB的数据而怀疑有隐藏的矿块要发现时？ 两者都不是-要在6-12周内获得双赢的结果，您需要针对具有3个基本特征的用例进行定位："
+}, {
+  "tag": "P",
+  "text": "1. A business champion willing to own the success. The champion is essential to validate the business significance of the use case, and to gain buy-in from the broader business and executive level.",
+  "translation": "1.一个愿意拥有成功的商业冠军。 拥护者对于验证用例的业务重要性以及从更广泛的业务和执行级别获得支持至关重要。"
+}, {
+  "tag": "P",
+  "text": "2. Clear KPIs to measure business impact of the results. These are essential to demonstrate the measurable before vs after business impact of your project to business stakeholders.",
+  "translation": "2.清除KPI以衡量结果对业务的影响。 这些对于向业务涉众证明项目可衡量的业务前后影响至关重要。"
+}, {
+  "tag": "P",
+  "text": "3. Available, accessible and clean data. A quick-win must show business results quickly in order to keep the business interested — if your data has quality or availability issues, you risk turning your quick-win into a data cleansing exercise.",
+  "translation": "3.可用，可访问且干净的数据。 为了使企业保持兴趣，速赢必须快速显示业务成果-如果您的数据存在质量或可用性问题，则冒着将速赢变成数据清理工作的风险。"
+}, {
+  "tag": "P",
+  "text": "Best Practice 2: Create an effective Data Science organization and team",
+  "translation": "最佳实践2：创建有效的数据科学组织和团队"
+}, {
+  "tag": "P",
+  "text": "While several Data Science organizational structures are possible, we’ve seen a lot of success with a hub-and-spoke model. Here, the hub consists of a central Data Science Center-of-Excellence (CoE) led by a Chief Data Officer. The spokes are satellite Data Science teams sitting in various business functions, such as marketing, finance, and so forth. In this structure, the central CoE has the freedom to innovate, while working with the spokes to bring new innovations to market for relevant business use cases.",
+  "translation": "尽管可以建立几种数据科学的组织结构，但中心辐射型模型已经取得了很多成功。 在这里，中心由一个由首席数据官领导的中央数据科学卓越中心（CoE）组成。 发言人是卫星数据科学团队的成员，他们从事各种业务职能，例如市场营销，财务等。 在这种结构中，中央CoE可以自由进行创新，同时可以与辐条合作，为相关业务用例向市场推出新的创新。"
+}, {
+  "tag": "P",
+  "text": "Effective Data Science teams have cross-functional talent and sponsors. Project owners come not only from the Data Science CoE, but also from the Line-of-Business and IT. One of the biggest mistakes we’ve seen is neglecting IT in the Data Science project ownership — early IT involvement is key to avoid getting stuck in Proof-of-Concept (POC) limbo. Effective Data Science teams tend to assign squads to projects, with the squad leader being an experienced Data Scientist or Engineer, and the squad members consisting of a mix of data scientists, data engineers, visualization experts, architects, and data science storytellers. If you have a fledgling Data Science organization, outsource as needed to complement your team for maximal impact.",
+  "translation": "有效的数据科学团队拥有跨职能的人才和赞助商。 项目所有者不仅来自数据科学中心，而且还来自业务线和IT。 我们看到的最大错误之一是在数据科学项目所有权中忽略了IT –尽早参与IT是避免陷入概念验证（POC）困境的关键。 有效的数据科学团队倾向于将团队分配给项目，该团队的负责人是经验丰富的数据科学家或工程师，而该团队的成员由数据科学家，数据工程师，可视化专家，架构师和数据科学讲故事的人组成。 如果您的数据科学组织尚处于起步阶段，则可以根据需要外包以补充您的团队，以发挥最大的作用。"
+}, {
+  "tag": "P",
+  "text": "Best Practice 3: Select the right tools and metrics to match the job",
+  "translation": "最佳实践3：选择合适的工具和指标以匹配工作"
+}, {
+  "tag": "P",
+  "text": "Plan whether you need tools for coding, or visual modeling, or both — if your team is just starting out, visual tools might be more appropriate, but if you have senior data scientists, they might prefer working in languages such as Python. Or perhaps your team needs tools that cover both these groups in a single environment. Plan for an infrastructure that will fit your corporate strategy — for example, whether you need a multi-cloud infrastructure or remain behind a firewall. Plan for the data volume and velocity you’d need to scale to, or the computational power required. Think about the right methodology and algorithms for what you are trying to achieve — for example, do you need custom algorithms, or will out-of-the-box suffice?",
+  "translation": "规划您是否需要编码工具或可视化建模工具，或两者都需要-如果您的团队刚刚起步，则可视化工具可能更合适，但是如果您有高级数据科学家，他们可能更喜欢使用Python等语言进行工作。 或者您的团队需要在单个环境中涵盖这两个组的工具。 规划适合您公司战略的基础架构，例如，您是否需要多云基础架构，还是保留在防火墙后面。 规划您需要扩展的数据量和速度，或所需的计算能力。 考虑要达到的目标的正确方法论和算法，例如，您是否需要自定义算法，或者现成的就足够了？"
+}, {
+  "tag": "P",
+  "text": "In terms of metrics, it is important to select the right metrics to tie the data science results to business goals. For example, the performance of predictive algorithms is often measured in terms of the Root-Mean-Square-Error (RMSE), but depending on the related business goal, a metric of Logarithmic-Root-Mean-Square-Error might achieve better results. For optimization algorithms, on the other hand, metrics are typically business KPIs, like cost or revenue.",
+  "translation": "在指标方面，选择正确的指标以将数据科学结果与业务目标联系起来很重要。 例如，预测算法的性能通常是根据均方根误差（RMSE）来衡量的，但是根据相关的业务目标，对数均方根误差的度量可能会获得更好的结果 。 另一方面，对于优化算法，指标通常是业务KPI，例如成本或收入。"
+}, {
+  "tag": "P",
+  "text": "It is important to translate data science metrics into business metrics, and to estimate Return on Investment (ROI). Many data scientists make the mistake of reporting their success to C-level in terms of Data Science metrics. Telling your business stakeholder that your algorithm’s RMSE has improved by 50% is meaningless to that person. Instead, make sure you translate this into a business KPIs such as impact on costs, profit, or customer services levels.",
+  "translation": "重要的是将数据科学指标转换为业务指标，并估算投资回报率（ROI）。 许多数据科学家错误地将其成功报告给了数据科学指标方面的C级人员。 告诉您的业务涉众，您的算法的RMSE已提高了50％，这对该人毫无意义。 相反，请确保将其转换为业务KPI，例如对成本，利润或客户服务水平的影响。"
+}, {
+  "tag": "P",
+  "text": "Best Practice 4: Build a business stakeholder POC dashboard early on",
+  "translation": "最佳实践4：尽早构建业务涉众POC仪表板"
+}, {
+  "tag": "P",
+  "text": "Building a business stakeholder POC dashboard early is key to gaining business buy-in. To do this, involve the business stakeholders in a Design Thinking workshop to kick off your project. During this session, sketch ideas and brainstorm around what would be meaningful to them in terms of a dashboard resulting from the project. Then, quickly build a POC dashboard — it doesn’t need to be the most “design” or sophisticated dashboard — even people with limited visualization skills can use existing no-code dashboarding tools for this purpose. In your dashboard, be sure to include visuals on Business ROI, as well as before vs. after scenario analysis.",
+  "translation": "尽早建立业务利益相关者POC仪表板是获得业务支持的关键。 为此，请业务利益相关者参加“设计思想”研讨会以启动您的项目。 在本次会议中，根据项目产生的仪表板，草拟想法并进行头脑风暴，围绕对他们有意义的事情进行讨论。 然后，快速构建POC仪表板-它不必是最“设计”或最复杂的仪表板-即使具有有限可视化技能的人也可以使用现有的无代码仪表板工具来实现此目的。 在仪表板中，请确保包括业务投资回报率以及场景分析前后的可视化。"
+}, {
+  "tag": "P",
+  "text": "Best Practice 5: Communicate widely and frequently",
+  "translation": "最佳实践5：广泛而频繁地交流"
+}, {
+  "tag": "P",
+  "text": "Establish continued business buy-in via frequent project progress reviews. In these reviews, let your business stakeholder lead the presentation. Avoid presenting code, and instead use your POC dashboard to present the results in business language.",
+  "translation": "通过频繁的项目进度审查来建立持续的业务支持。 在这些审核中，让您的业务利益相关者主持演示。 避免显示代码，而使用POC仪表板以商务语言显示结果。"
+}, {
+  "tag": "P",
+  "text": "Alternatively, create shareable stories to educate the wider business on the purpose and vision of your project, in business language. Methods like Scrollytelling work especially well for this.",
+  "translation": "或者，创建可共享的故事，以商务语言对更广泛的业务进行项目目的和愿景的教育。 像Scrollingtelling这样的方法对此特别有效。"
+}, {
+  "tag": "P",
+  "text": "Best Practice 6: Use an Agile approach",
+  "translation": "最佳实践6：使用敏捷方法"
+}, {
+  "tag": "P",
+  "text": "To ensure consistent progress, implement an Agile Data Science approach. This means at a minimum breaking your project into 2–3 week sprints, with sprint reviews at the end of each sprint cycle to present demos of results achieved, as well as Agile task planning. Invite all stakeholders to the sprint reviews and sprint planning, to reduce uncertainty, manage risks, gain common understanding, and contain the scope of the project.",
+  "translation": "为了确保进度一致，请实施敏捷数据科学方法。 这意味着您至少要将您的项目分成2-3周的冲刺，并在每个冲刺周期结束时进行冲刺审查，以展示所取得的成果以及敏捷任务计划的演示。 邀请所有利益相关者参加冲刺评审和冲刺计划，以减少不确定性，管理风险，达成共识并控制项目范围。"
+}, {
+  "tag": "P",
+  "text": "Best Practice 7: Plan ahead for flexible infrastructure",
+  "translation": "最佳实践7：为灵活的基础架构提前计划"
+}, {
+  "tag": "P",
+  "text": "A major reason why Data Science POCs fail to make it to the real world, is that when scale-up is required, the required infrastructure is not available. The POC then gets put on-the-shelf until infrastructure is acquired, which often means indefinitely, or by the time the POC is forgotten. For this reason, be sure to involve IT early on to plan how your POC will scale in production. For example, think of elastic compute capacity, a back-up environment, and a multi-cloud approach for increased flexibility.",
+  "translation": "数据科学POC无法进入现实世界的主要原因是，当需要扩大规模时，所需的基础架构将不可用。 然后，将POC放在货架上，直到获得基础结构为止，这通常意味着无限期，或者在忘记POC时。 因此，请确保尽早参与IT计划您的POC如何在生产中扩展。 例如，考虑一下弹性计算能力，备份环境和多云方法，以提高灵活性。"
+}, {
+  "tag": "P",
+  "text": "Best Practice 8: Ask operational questions during the POC phase",
+  "translation": "最佳实践8：在POC阶段提出操作问题"
+}, {
+  "tag": "P",
+  "text": "During the POC, find answers to operational questions, such as how you will invoke your models (e.g. real-time vs. batch), how often models will need to be tuned, the rate of data ingestion (e.g. streaming vs. a scheduled job), the data volume in production, and the size of hardware required. Also focus on the end-user experience, for example identifying the people who will need to execute recommended actions, the environments they are comfortable working in, and start addressing any change management needs.",
+  "translation": "在POC期间，找到操作问题的答案，例如您将如何调用模型（例如实时与批处理），需要调整模型的频率，数据摄取率（例如流与计划作业的对比） ），生产中的数据量以及所需的硬件大小。 还应关注最终用户的体验，例如，确定将需要执行建议措施的人员，他们舒适的工作环境并开始满足任何变更管理需求。"
+}, {
+  "tag": "P",
+  "text": "Best Practice 9: Have a plan to operationalize your POC",
+  "translation": "最佳实践9：制定实施POC的计划"
+}, {
+  "tag": "P",
+  "text": "Start planning how you will put your POC into production from day 1, and include a plan to production in your final POC sprint review. During POC time, you might be working with a subset of data — to deploy your POC into the real-world, you need to also think of other data requirements related to, for example governance, volume, and the role of data stewards. During POC time, you might be working with a subset of the required infrastructure. For example, a POC built in a public cloud environment, might need to run in a private cloud in production — plan for such transitions via flexible environments. During POC phase, the actual work might involve mostly data scientists and data engineers, while putting your POC into operation requires more commitment from developers, business users, and analysts. Bring this extended team into the POC process from the start, to gain their early buy-in.",
+  "translation": "从第1天开始计划如何将POC投入生产，并在最终POC冲刺审核中包括生产计划。 在POC期间，您可能正在处理数据的子集-要将POC部署到实际环境中，还需要考虑与治理，数量和数据管理员的角色等其他数据要求。 在POC期间，您可能正在使用所需基础结构的一部分。 例如，在公共云环境中构建的POC，可能需要在生产中的私有云中运行-通过灵活的环境计划此类过渡。 在POC阶段，实际工作可能主要涉及数据科学家和数据工程师，而要使您的POC投入运行，则需要开发人员，业务用户和分析师做出更多的承诺。 从一开始就将这个扩展的团队带入POC流程，以尽早加入。"
+}, {
+  "tag": "P",
+  "text": "Best practice 10: Go beyond insights and predictions, to optimized actions",
+  "translation": "最佳实践10：超越见识和预测，而采取最佳行动"
+}, {
+  "tag": "P",
+  "text": "Traditional business intelligence tools provide insights into the state of the business, but they will not help you understand what could happen in the future — for that, your require predictive analytics. In turn, predictive analytics can help you understand what could happen in the future, but it will not help you get recommendations on what to do about that — for that, you require prescriptive analytics. The secret sauce of Prescriptive Analytics is Decision Optimization. It is the only technology capable of considering multiple trade-offs between thousands, if not millions of simultaneous possibilities and business constraints, and able to recommend the next best action or plan into the future.",
+  "translation": "传统的商业智能工具可提供有关业务状态的见解，但它们无法帮助您了解未来可能发生的情况，为此，您需要进行预测性分析。 反过来，预测分析可以帮助您了解将来可能发生的情况，但是并不能帮助您获得有关该怎么做的建议-为此，您需要进行规范性分析。 规范分析的秘密之处在于决策优化。 它是唯一一种能够考虑成千上万个（即使不是数百万个）同时发生的可能性和业务限制之间的多重权衡，并且能够推荐未来的最佳行动或计划的技术。"
+}, {
+  "tag": "P",
+  "text": "To give a simple example illustrating this point, consider decision-making for a utility company to better plan their operations, whether related to energy generation, market dynamics, or their distribution network. Predictive analytics will inform them how much energy they could generate, based on available capacity and weather patterns in the case of renewables. It will not recommend how much energy they should generate — for that they need decision optimization. Predictive analytics will inform them how prices in the market might evolve, but it will not recommend how much energy they should buy or sell via partners — that comes from decision optimization. Predictive analytics will inform them how demand for energy might evolve over time, but it will not recommend how they should plan their infrastructure to handle changing demands and uncertainty around climate change — for that, once again, they need Decision Optimization.",
+  "translation": "为了给出一个简单的例子来说明这一点，请考虑为公用事业公司制定决策，以更好地计划其运营，无论是与能源生产，市场动态还是其分销网络有关。 基于可再生能源的可用容量和天气模式，预测分析将告知他们可以产生多少能量。 它不会建议应该产生多少能量，因为它们需要决策优化。 预测分析将告诉他们市场价格将如何变化，但不会建议他们应该通过合作伙伴购买或出售多少能量，这些能量来自决策优化。 预测分析将告诉他们能源需求如何随着时间变化，但不会建议他们如何规划基础架构以应对气候变化带来的需求变化和不确定性，为此，他们再次需要决策优化。"
+}, {
+  "tag": "P",
+  "text": "To truly go from insights, to predictions, to better decisions, explore what Decision Optimization could do for your business.",
+  "translation": "要真正地从见识，预测到更好的决策，请探索决策优化可以为您的业务做些什么。"
+}, {
+  "tag": "P",
+  "text": "Which Best Practices do you apply to get more from your Data Science endeavors? Please comment!",
+  "translation": "您应用哪些最佳实践来从数据科学工作中获得更多收益？ 请给出意见！"
+}, {
+  "tag": "P",
+  "text": "Visit our community to read more about the IBM Data Science Elite team, and how we apply these best practices with our clients.",
+  "translation": "访问我们的社区，以了解有关IBM Data Science Elite团队的更多信息，以及我们如何与客户一起应用这些最佳实践。"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Dr. Susara van den Heever的文章《10 Best Practices for Data Science with Impact》，参考：https://towardsdatascience.com/10-best-practices-for-data-science-with-impact-d5f4e0525d9f)",
+  "translation": "（本文翻译自Susara van den Heever博士的文章《具有影响力的数据科学10最佳实践》，参考：https：//towardsdatascience.com/10-best-practices-for-data-science-with-impact-d5f4e0525d9f ）"
+}]
