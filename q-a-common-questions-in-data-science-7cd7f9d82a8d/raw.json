@@ -1,0 +1,157 @@
+[{
+  "tag": "H2",
+  "text": "ASK US ANYTHING",
+  "translation": "询问我们任何事情"
+}, {
+  "tag": "H1",
+  "text": "Q&A: Common Questions in Data Science",
+  "translation": "问答：数据科学中的常见问题"
+}, {
+  "tag": "H2",
+  "text": "Answering some of the most common questions asked at the Towards Data Science Team.",
+  "translation": "回答Towards数据科学团队提出的一些最常见的问题。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*YA7oZ_Z36iQbeHB2?q=20",
+  "caption": "Photo by Ian Schneider on Unsplash",
+  "type": "image",
+  "file": "0*YA7oZ_Z36iQbeHB2"
+}, {
+  "tag": "H1",
+  "text": "Introduction",
+  "translation": "介绍"
+}, {
+  "tag": "P",
+  "text": "Recently, Towards Data Science (TDS) launched a new column called “Ask Us Anything” which gives TDS readers the opportunity to ask any questions they have about Data Science to the team. In this article, I am going to answer some of the most common questions we have received so far.",
+  "translation": "最近，Towards Data Science（TDS）开设了一个名为“ Ask Us Anything”的新专栏，使TDS读者有机会向团队提出他们对Data Science的任何疑问。 在本文中，我将回答到目前为止我们收到的一些最常见的问题。"
+}, {
+  "tag": "P",
+  "text": "One of the main reasons why there is so much interest in Data Science is its various applications. Data has always been a really important component in human history and making smart decisions based on past experiences and the information given can play a crucial role for either individuals or organizations.",
+  "translation": "人们对数据科学如此感兴趣的主要原因之一是它的各种应用。 数据一直是人类历史上非常重要的组成部分，根据过去的经验做出明智的决策，所提供的信息对于个人或组织都可以发挥至关重要的作用。"
+}, {
+  "tag": "P",
+  "text": "Because of the interdisciplinarity of this subject (Figure 1), Data Science can be both a really exciting field to work in and also a daunting place to get started in. That’s why asking questions can come naturally in this habitat.",
+  "translation": "由于该学科的跨学科性（图1），数据科学既是一个令人兴奋的工作领域，又是一个令人生畏的入门之地。这就是为什么在这个栖息地自然可以提出问题。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*jd_xgOzAFw7rBklREtgOTQ.png?q=20",
+  "caption": "Figure 1: Data Science in summary. [1]",
+  "type": "image",
+  "file": "1*jd_xgOzAFw7rBklREtgOTQ.png"
+}, {
+  "tag": "H1",
+  "text": "Readers Questions",
+  "translation": "读者问题"
+}, {
+  "tag": "H2",
+  "text": "How to get started in data science?",
+  "translation": "如何开始数据科学？"
+}, {
+  "tag": "P",
+  "text": "Getting started in a new field can always be unexpectedly a really exciting and scary experience at the same time. Fortunately, over the last few years, many free resources have been created in order to increase the public interest in Data Science. Some examples are:",
+  "translation": "出乎意料的是，同时进入一个新领域总是很令人兴奋和恐惧的经历。 幸运的是，在过去几年中，已经创建了许多免费资源，以提高公众对数据科学的兴趣。 一些例子是："
+}, {
+  "tag": "UL",
+  "texts": ["Online Courses: Google AI Education, Coursera: Machine Learning by Andrew Ng, etc...", "Books: Pattern Recognition and Machine Learning, by Christopher Bishop, An Introduction to Statistical Learning by Gareth James et al., etc…", "Online Publications: Towards Data Science!, Distill, No Free Hunch, etc…", "YouTube Channels: 3Blue1Brown, Arxiv Insights, Towards Data Science, Two Minute Papers, etc…", "Podcasts: DeepMind Podcast, TDS Podcast, etc…"],
+  "translations": ["在线课程：Google AI教育，Coursera：Andrew Ng的机器学习等...", "书籍：模式识别与机器学习，克里斯托弗·毕晓普（Christopher Bishop），加雷斯·詹姆斯（Gareth James）等人撰写的《统计学习入门》等。", "在线出版物：迈向数据科学！，蒸馏，免费试用等…", "YouTube频道：3Blue1Brown，Arxiv见解，走向数据科学，两分钟论文等…", "播客：DeepMind播客，TDS播客等…"]
+}, {
+  "tag": "P",
+  "text": "After having gained the necessary background knowledge about Data Science, it is really important for beginners to get started with practical projects. If you are looking for some inspiration, Kaggle can be a great place to start.",
+  "translation": "在获得了有关数据科学的必要背景知识之后，对于初学者来说，开始实际的项目非常重要。 如果您正在寻找灵感，Kaggle可能是一个不错的起点。"
+}, {
+  "tag": "H2",
+  "text": "How do I write a great data science article?",
+  "translation": "如何撰写出色的数据科学文章？"
+}, {
+  "tag": "P",
+  "text": "Once you have gained some knowledge in Data Science, it is a great idea to try to showcase some of the projects and topics you have researched. One of the easiest ways to do that is by writing articles either on your own personal website or for online publications (to reach a wider audience). If you are interested in writing for Towards Data Science, you can find more information and tips in this my previous article. Some main guidelines to write articles about Data Science are:",
+  "translation": "一旦掌握了数据科学知识，最好展示一下您研究过的一些项目和主题。 最简单的方法之一是在您自己的个人网站上或在线出版物上写文章（以覆盖更广泛的受众）。 如果您有兴趣撰写Towards Data Science，可以在我的前一篇文章中找到更多信息和技巧。 撰写有关数据科学的文章的一些主要准则是："
+}, {
+  "tag": "UL",
+  "texts": ["Use GitHub Gists to share your code.", "Make use of free open data sources. In this way, it will become easier for the readers to test walkthrough examples.", "Make use of interactive data visualization tools to provide additional insights.", "Follow the curators' guidelines!"],
+  "translations": ["使用GitHub Gists共享您的代码。", "利用免费的开放数据源。 这样，读者可以更轻松地测试演练示例。", "利用交互式数据可视化工具来提供其他见解。", "遵循策展人的指导！"]
+}, {
+  "tag": "H2",
+  "text": "What are some of the best options to identify which variables in a data set have the most impact on a response variable?",
+  "translation": "确定数据集中哪些变量对响应变量影响最大的最佳选择是什么？"
+}, {
+  "tag": "P",
+  "text": "Understanding which features bring more information in a data-analysis is a crucial task (especially when working with a large amount of data!). Some of the main benefits of reducing the number of features in a dataset are:",
+  "translation": "了解哪些功能会在数据分析中带来更多信息是一项至关重要的任务（尤其是在处理大量数据时！）。 减少数据集中要素数量的一些主要好处是："
+}, {
+  "tag": "UL",
+  "texts": ["Accuracy improvements.", "Overfitting risk reduction.", "Speed up in training.", "Improved Data Visualization.", "Increase in explainability of our model."],
+  "translations": ["准确性提高。", "减少过度拟合的风险。", "加快训练速度。", "改进的数据可视化。", "增加我们模型的可解释性。"]
+}, {
+  "tag": "P",
+  "text": "In order to reduce the number of features in a dataset, there are two main approaches; Feature Selection and Feature Extraction.",
+  "translation": "为了减少数据集中的要素数量，主要有两种方法： 特征选择和特征提取。"
+}, {
+  "tag": "UL",
+  "texts": ["Feature Selection: in Feature Selection we make use of different techniques such as the Filter/Wrapper/Embedded methods to choose which features to keep and which ones to discard from a dataset.", "Feature Extraction: in Feature Extraction, we instead reduce the number of features in a dataset by creating new features from the existing ones (and then discarding the original features). This can be done by using techniques such as Principal Component Analysis (PCA), Locally Linear Embedding (LLE), etc…"],
+  "translations": ["特征选择：在特征选择中，我们使用不同的技术（例如过滤器/包装器/嵌入式方法）来选择要保留的特征和要从数据集中丢弃的特征。", "特征提取：在特征提取中，我们通过从现有特征中创建新特征（然后丢弃原始特征）来减少数据集中的特征数量。 这可以通过使用诸如主成分分析（PCA），局部线性嵌入（LLE）等技术来完成。"]
+}, {
+  "tag": "P",
+  "text": "If you are interested in finding out more about Feature Selection and Feature Extraction techniques, more information is available here and here.",
+  "translation": "如果您想了解有关特征选择和特征提取技术的更多信息，请在此处和此处获得更多信息。"
+}, {
+  "tag": "H2",
+  "text": "How do you take into consideration expert knowledge in your model?",
+  "translation": "您如何在模型中考虑专家知识？"
+}, {
+  "tag": "P",
+  "text": "Having a sound background knowledge of the data being analysed can be of great help when trying to decide which features to feed in a machine learning model for a prediction task.",
+  "translation": "尝试确定要为预测任务提供机器学习模型的功能时，对被分析的数据有良好的背景知识可能会很有帮助。"
+}, {
+  "tag": "P",
+  "text": "For example, let us imagine we have a dataset with the departure, arrival time and distance travelled of different taxi trips and we want to predict the taxi fare for each of the different trips. Feeding in a Machine Learning model directly the departure and arrival times might not be the best idea since we would have to leave the ML model figure out what kind of relationship between these two features can be useful to predict the taxi fare. Using Expert Knowledge, we can instead first try to calculate the time difference between arrival and departure (by simply subtracting the two columns) and then feed in this new column (in conjunction with the travelled distance) into our model. This way, it is much more likely that our model will be able to perform better. The art of preparing raw features for Machine Learning analysis is typically called Feature Engineering.",
+  "translation": "例如，让我们假设我们有一个包含不同出租车行程的出发，到达时间和行进距离的数据集，并且我们希望预测每个不同行程的出租车票价。 直接输入机器学习模型的出发时间和到达时间可能不是最好的主意，因为我们必须让ML模型弄清楚这两个功能之间的什么样的关系可以用来预测出租车费用。 相反，我们可以使用专家知识来尝试计算到达和离开之间的时间差（只需将两列相减），然后将此新列（与行驶距离结合）输入到我们的模型中。 这样，我们的模型更有可能表现出更好的性能。 为机器学习分析准备原始特征的技术通常称为特征工程。"
+}, {
+  "tag": "P",
+  "text": "If you are interested in finding out more about different Feature Engineering techniques, more information is available here.",
+  "translation": "如果您有兴趣了解有关不同功能工程技术的更多信息，请在此处获取更多信息。"
+}, {
+  "tag": "H2",
+  "text": "How to get started with Robotic Process Automation (RPA)?",
+  "translation": "如何开始使用机器人过程自动化（RPA）？"
+}, {
+  "tag": "P",
+  "text": "Robotic Process Automation (RPA) is a technology being developed to be used to automate manual tasks. What distinguishes RPA from traditional programming is its graphical user interface (GUI). RPA automation is performed by breaking down tasks performed by a user and repeating them. This technology can make programming easier for the automation of graphics-based processes. On average, robots can perform equivalent processes three times faster than humans and they are able to work every day of the year 24 hours a day. Some common examples of RPA companies are Automation Anywhere, UIPath and blueprism [2].",
+  "translation": "机器人过程自动化（RPA）是一项正在开发的用于自动执行手动任务的技术。 RPA与传统编程的区别在于其图形用户界面（GUI）。 通过分解用户执行的任务并重复执行任务来执行RPA自动化。 这项技术可以使基于图形处理的自动化编程变得更加容易。 平均而言，机器人执行等效过程的速度比人类快三倍，并且他们一年中的每一天都能一天24小时工作。 RPA公司的一些常见示例是Automation Anywhere，UIPath和blueprism [2]。"
+}, {
+  "tag": "P",
+  "text": "If you are planning to get started using RPA, UIPath Community Edition is freely available to download on Windows. Using UIPath, it is possible to implement complex workflows creating sequences and flowchart-based architectures. Each sequence/flowchart can then be composed of many sub-activities such as recording of a set of actions for the robot to perform or screen and data scraping instructions. Additionally, UIPath also enables error handling mechanisms in case of decision-making situations or the occurrence of unexpected delays between different processes.",
+  "translation": "如果您打算开始使用RPA，则可以在Windows上免费下载UIPath Community Edition。 使用UIPath，可以实现创建序列和基于流程图的体系结构的复杂工作流。 然后，每个序列/流程图都可以由许多子活动组成，例如记录一组动作以供机器人执行或筛选和抓取数据指令。 此外，UIPath还可以在决策情况或不同进程之间发生意外延迟的情况下启用错误处理机制。"
+}, {
+  "tag": "P",
+  "text": "In case you are looking for more information about RPA, you can have a look at my GitHub repository containing some examples or this my previous article.",
+  "translation": "如果您正在寻找有关RPA的更多信息，可以查看我的GitHub存储库，其中包含一些示例，或者这是我以前的文章。"
+}, {
+  "tag": "H1",
+  "text": "Contacts",
+  "translation": "联络人"
+}, {
+  "tag": "P",
+  "text": "If you want to keep updated with my latest articles and projects follow me on Medium and subscribe to my mailing list. These are some of my contacts details:",
+  "translation": "如果您想更新我的最新文章和项目，请在Medium上关注我并订阅我的邮件列表。 这些是我的一些联系方式："
+}, {
+  "tag": "UL",
+  "texts": ["Linkedin", "Personal Blog", "Personal Website", "Medium Profile", "GitHub", "Kaggle"],
+  "translations": ["领英", "个人博客", "个人网站", "中档", "的GitHub", "卡格勒"]
+}, {
+  "tag": "H1",
+  "text": "Bibliography",
+  "translation": "参考书目"
+}, {
+  "tag": "P",
+  "text": "[1] Data science concepts you need to know! Part 1, Michael Barber. Accessed at: https://towardsdatascience.com/introduction-to-statistics-e9d72d818745",
+  "translation": "[1]您需要了解的数据科学概念！ 第1部分，迈克尔·巴伯（Michael Barber）。 访问以下网址：https：//towardsdatascience.com/introduction-to-statistics-e9d72d818745"
+}, {
+  "tag": "P",
+  "text": "[2] Analytics Insight, Kamalika Some = https://www.analyticsinsight.net/top-10-robotic-process-automation-companies-of-2018/",
+  "translation": "[2] Analytics Insight，Kamalika Some = https://www.analyticsinsight.net/top-10-robotic-process-automation-companies-of-2018/"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Pier Paolo Ippolito的文章《Q&A: Common Questions in Data Science》，参考：https://towardsdatascience.com/q-a-common-questions-in-data-science-7cd7f9d82a8d)",
+  "translation": "（本文翻译自《 Pier Paolo Ippolito的文章》，《问答：数据科学中的常见问题》，参考：https：//towardsdatascience.com/q-a-common-questions-in-data-science-7cd7f9d82a8d）"
+}]
