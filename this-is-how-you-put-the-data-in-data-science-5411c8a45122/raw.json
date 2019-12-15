@@ -1,0 +1,287 @@
+[{
+  "tag": "H1",
+  "text": "This is how you put the data in Data Science!",
+  "translation": "这就是您将数据放入数据科学的方式！"
+}, {
+  "tag": "H2",
+  "text": "Data Science has evolved. These 20 million datasets are proof.",
+  "translation": "数据科学已经发展。 这2000万个数据集就是证明。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*xVq5O52gmn3XZODkwpCSDA.png?q=20",
+  "caption": "(Er, wrong Data search tool.)",
+  "type": "image",
+  "file": "1*xVq5O52gmn3XZODkwpCSDA.png"
+}, {
+  "tag": "P",
+  "text": "One of my favorite recent additions to the Google Search family is Dataset Search. Yes, you heard that right. You can search for datasets just like you can search for images!",
+  "translation": "我最近最喜欢的Google搜索系列产品之一是数据集搜索。 是的，你听到的是对的。 您可以像搜索图像一样搜索数据集！"
+}, {
+  "tag": "P",
+  "text": "You can now search for datasets just like you search for images!",
+  "translation": "您现在可以像搜索图像一样搜索数据集！"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*F_YC1j3dJ0q6bAjJswIjSw.png?q=20",
+  "caption": "You can play with Dataset Search here.",
+  "type": "image",
+  "file": "1*F_YC1j3dJ0q6bAjJswIjSw.png"
+}, {
+  "tag": "H2",
+  "text": "What Dataset Search says about the public’s data literacy",
+  "translation": "数据集搜索如何评价公众的数据素养"
+}, {
+  "tag": "P",
+  "text": "Google’s vertical search engines like Google Images or Google Scholar wouldn’t last long if no one used them, so their varieties tell you a little something about what people tend to look for on the internet. Images, videos, and news are hardly surprising. But datasets? There’s your hint that working with datasets isn’t just for three isolated professors in a faraway igloo. It’s big. …and it’s getting bigger.",
+  "translation": "如果没有人使用Google的垂直搜索引擎（如Google Images或Google Scholar），它们将不会持续很长时间，因此它们的种类告诉您人们倾向于在互联网上寻找什么的一些信息。 图片，视频和新闻不足为奇。 但是数据集？ 您的提示是，不仅要为遥远的冰屋中的三位孤立的教授使用数据集。 好大 …而且越来越大。"
+}, {
+  "tag": "P",
+  "text": "What’s the catch? There isn’t one. This really is the same thing as searching with Google Images or Google Scholar, but for datasets. Over 20 million (!) datasets are currently indexed and available… and that index is growing quickly.",
+  "translation": "有什么收获？ 没有一个。 这实际上与使用Google图片或Google学术搜索进行搜索相同，只是针对数据集。 当前已建立索引并可以使用超过2000万（！）数据集……并且该索引正在快速增长。"
+}, {
+  "tag": "P",
+  "text": "Today it puts 20 million datasets at your fingertips… and there will be more tomorrow.",
+  "translation": "今天，您可以轻松触及2000万个数据集……明天还会有更多。"
+}, {
+  "tag": "P",
+  "text": "Now that you know it exists, you can go play with it here or you can stick around for a discussion of how Dataset Search works and what it means for the data science profession and humanity in general.",
+  "translation": "现在您已经知道它的存在，您可以在这里试用它，也可以继续讨论“数据集搜索”的工作原理以及它对数据科学专业和整个人类的意义。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*-PJ7QJkdKvloGfkaK-XiWg.png?q=20",
+  "caption": "A screenshot from my most recent Dataset Search session. Back when I was in grad school I would have groveled shamelessly for clues about where to beg for access to data like these. (That’s literally what we had to do to get it: write long emails begging other laboratories to cough it up, usually to no avail. Give me a moment while I get misty-eyed over how easy the new way is.)",
+  "type": "image",
+  "file": "1*-PJ7QJkdKvloGfkaK-XiWg.png"
+}, {
+  "tag": "H2",
+  "text": "A revolution in accelerated analytics",
+  "translation": "加速分析的一场革命"
+}, {
+  "tag": "P",
+  "text": "Analytics is that part of data science that’s all about getting inspired quickly. Unlike statistics or machine learning, the highest virtue in analytics is speed. (To stay safe, good analysts form an immunity to jumping to conclusions before they’ve followed up in new data.)",
+  "translation": "Analytics（分析）是资料科学的一部分，旨在迅速激发灵感。 与统计或机器学习不同，分析的最高优点是速度。 （为安全起见，优秀的分析人员可避免在得出新数据之前就得出结论。）"
+}, {
+  "tag": "P",
+  "text": "Faster access to data gives you stronger analytics capabilities.",
+  "translation": "更快地访问数据可为您提供更强大的分析功能。"
+}, {
+  "tag": "P",
+  "text": "You know what you get when datasets are easy to find? Faster analytics! Dataset Search represents an incredible is a speed boost for all you professional analysts and data scientists out there. (But do remember to follow up more carefully with a statistical approach if you’re in danger of taking your inspiration seriously.)",
+  "translation": "您知道容易找到数据集时会得到什么吗？ 更快的分析！ 数据集搜索代表了您所有专业分析师和数据科学家的不可思议的速度提升。 （但是，如果您有认真对待灵感的危险，请务必谨慎地采用统计方法进行跟进。）"
+}, {
+  "tag": "H2",
+  "text": "Yeah, but what’s the catch, really?",
+  "translation": "是的，但是真正的收获是什么？"
+}, {
+  "tag": "P",
+  "text": "If you grew up in a world where datasets were rare, precious, and often curated by professors or by data providers — as most of us did! — you might have a touch of unconscious bias: you assume that whoever is giving you the data takes responsibility for its quality (and probably has a PhD or two tucked away somewhere). If you mostly worked with datasets in a learning or scientific context, you might have formed the impression that datasets are lovingly massaged before they get to you.",
+  "translation": "如果您是在一个数据集非常稀有，珍贵并且经常由教授或数据提供者策划的世界中长大的，就像我们大多数人一样！ —您可能会出现一些无意识的偏见：您假设向谁提供数据的人应对数据质量负责（并且可能在某处藏了一两个博士学位）。 如果您主要是在学习或科学的背景下使用数据集，则可能会给人一种印象，即数据集在到达您之前就受到了精心的按摩。"
+}, {
+  "tag": "P",
+  "text": "Real life data science is a jungle, not a sacred space curated by your professors.",
+  "translation": "现实生活中的数据科学是一个丛林，而不是您的教授策划的神圣空间。"
+}, {
+  "tag": "P",
+  "text": "Set that bias aside for a moment and consider a different one: the toxic effect of data worship among laypeople. Anyone who has the tendency to pronounce data with a capital “D” might assume that all information packaged in structured form is useful and true. Hey, it’s not magic. Don’t believe everything you read and don’t believe every dataset either. Learn more about the nature of data and data worship here.",
+  "translation": "暂时搁置这一偏见，然后考虑另一种偏见：外行人之间数据崇拜的毒性作用。 任何倾向于用大写“ D”表示数据的人都可能会认为，以结构化形式打包的所有信息都是有用且真实的。 嘿，这不是魔术。 不要相信您阅读的所有内容，也不要相信每个数据集。 在此处了解有关数据性质和数据崇拜的更多信息。"
+}, {
+  "tag": "P",
+  "text": "If you lived a life where most people giving you data were reputable and/or you were taught to worship data and science, you’re in for a nasty shock. Guess what! A dataset could be a bunch of structured rubbish. It could be broken. It could be made up. It could be six billion zeros. It could be anything at all. Just like the written word!",
+  "translation": "如果您过着大多数为您提供数据的人享有声誉的生活，并且/或者被教导您崇拜数据和科学，那么您将感到震惊。 你猜怎么了！ 数据集可能是一堆结构化的垃圾。 可能会坏掉。 它可以弥补。 可能是60亿个零。 可能什么都没有。 就像文字一样！"
+}, {
+  "tag": "P",
+  "text": "“If it’s written in a book, it must be true…”",
+  "translation": "“如果是写在书上，那一定是真的……”"
+}, {
+  "tag": "P",
+  "text": "Speaking of the written word: “If it’s written in a book, it must be true…” Right? Wrong! Even worse: “If it’s written online, it must be true…” I see the face you just pulled and I love it. Good. You’re skeptical. You should be. Now how about “If it’s written in a dataset, it must be true…”",
+  "translation": "说到文字：“如果是写在书上，那一定是真的……”对吗？ 错误！ 更糟糕的是：“如果是在网上写的，那一定是真的……”我看到你刚刚拉过的脸，我很喜欢。 好。 您对此表示怀疑。 你应该。 现在，“如果它写在数据集中，那一定是真的……”"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*zMzk0Ue9l3r0IZ_SYyhyYw.png?q=20",
+  "caption": "A book! It must be true.",
+  "type": "image",
+  "file": "1*zMzk0Ue9l3r0IZ_SYyhyYw.png"
+}, {
+  "tag": "P",
+  "text": "There’s lots of junk out there since anyone can write whatever they want. You know better than to trust it. Instead, you take a moment to think about the source. Excellent, since that habit is going to keep you safe in the realm of data too.",
+  "translation": "那里有很多垃圾，因为任何人都可以写他们想要的东西。 您比相信它更好。 相反，您需要花一点时间来考虑源。 很好，因为这种习惯也将使您在数据领域中保持安全。"
+}, {
+  "tag": "P",
+  "text": "If you’re in the habit of trusting data more than the written word, watch yourself.",
+  "translation": "如果您习惯于信任数据而不是书面数据，请当心。"
+}, {
+  "tag": "P",
+  "text": "If you’re in the habit of trusting data more than the written word, watch yourself. You might have that habit without realizing it. Don’t treat data as something capital-D sacred. Reorient toward your streetwise web habits, the ones you always use while searching Google Images or the web at large. You know Google doesn’t own or edit those cat pics or the invisibility potion recipe it serves up when you ask nicely. (You know those invisibility potions don’t work, right?) You know that quality varies and it’s up to you to think critically about the source before you believe everything you read. You know there’s all kinds of stuff out there on the interwebs and you’re long past gullibility. Well, mostly. Even the best of us occasionally click on those “One Weird Trick” links or outlandish news stories.",
+  "translation": "如果您习惯于信任数据而不是书面数据，请当心。 您可能有这种习惯，而没有意识到。 不要将数据视为大写字母D的缩写。 重新定向您的街头网络习惯，即您在搜索Google图片或整个网络时经常使用的习惯。 您知道，当您问得好时，Google不会拥有或编辑这些猫图片或它提供的隐形药水配方。 （您知道那些隐形药水是行不通的，对吗？）您知道质量会有所不同，并且要由您来认真考虑一下来源，然后再相信所有阅读内容。 您知道互联网上有各种各样的东西，而且您已经很容易受到欺骗。 好吧，主要是。 即使是我们最好的人，也偶尔会点击那些“一个怪诞的把戏”链接或古怪的新闻报道。"
+}, {
+  "tag": "P",
+  "text": "If you apply your usual streetwise internet search skepticism to Dataset Search, there’s no catch.",
+  "translation": "如果您将惯常的街头互联网搜索怀疑度应用于数据集搜索，则不会有任何收获。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/22/0*IAYVjkM9oRCKnhJr.png?q=20",
+  "type": "image",
+  "file": "0*IAYVjkM9oRCKnhJr.png"
+}, {
+  "tag": "P",
+  "text": "Treat Dataset Search results like any other internet search results. The tool will help you sift the haystack, but it’s up to you to double-check the quality of what the cat drags in.",
+  "translation": "像对待任何其他Internet搜索结果一样对待Dataset Search结果。 该工具将帮助您筛选大海捞针，但您需要仔细检查猫所拖入物的质量。"
+}, {
+  "tag": "P",
+  "text": "But hey, if given the choice between a vast searchable cornucopia of cat images of varying quality and a small album of 3 beautifully curated cat images, I’d pick the former any day. (Well, I’d actually pick both because I’m greedy… and you can too. There’s nothing about these search tools that demands your monogamy.)",
+  "translation": "但是，如果要在质量各异的巨大可搜索的聚宝盆猫图片和3张精美策划的猫图片的小相册之间进行选择，我会每天选择前者。 （嗯，我实际上会选择这两个，因为我很贪婪……您也可以。这些搜索工具没有一夫一妻制。）"
+}, {
+  "tag": "H2",
+  "text": "The internet is mostly made of spam",
+  "translation": "互联网主要是垃圾邮件"
+}, {
+  "tag": "P",
+  "text": "Not everything out there is good for you. That said, Google does try its best to fight spam and prioritize legitimate results. Yes, people will put spammy datasets out there to steal your attention and yes, we rank it to try to serve you the good stuff instead. Just like regular search. But you shouldn’t expect these things to be perfect.",
+  "translation": "并非所有事物都对您有好处。 也就是说，Google会竭尽全力打击垃圾邮件并优先考虑合法结果。 是的，人们会把垃圾数据集放到那里来吸引您的注意力，是的，我们将其排名以尝试为您提供优质的服务。 就像常规搜索一样。 但是您不应该期望这些东西是完美的。"
+}, {
+  "tag": "P",
+  "text": "All it takes to make your dataset searchable is adding metadata in schema.org to each web page that describes a dataset.",
+  "translation": "要使您的数据集可搜索，只需将schema.org中的元数据添加到描述数据集的每个网页上。"
+}, {
+  "tag": "P",
+  "text": "All it takes to make your dataset searchable is adding metadata in schema.org to each web page that describes a dataset. Anyone can do it, just like anyone can write a blog post. It could be rubbish (maybe this blog post is… uh-oh) so think critically about the source.",
+  "translation": "要使您的数据集可搜索，只需将schema.org中的元数据添加到描述数据集的每个网页上。 任何人都可以做到，就像任何人都可以写博客文章一样。 可能是垃圾（也许此博客文章是……呃，哦），所以请认真考虑来源。"
+}, {
+  "tag": "P",
+  "text": "If you’re about to consume free range data, you need to keep your wits about you. Don’t believe everything you read.",
+  "translation": "如果您要使用自由范围数据，则需要保持智慧。 不要相信您阅读的所有内容。"
+}, {
+  "tag": "H2",
+  "text": "How does it work and what is schema.org?",
+  "translation": "它是如何工作的，schema.org是什么？"
+}, {
+  "tag": "P",
+  "text": "The idea for schema.org was birthed in 2011 by a consortium drawn from the usual suspects: Google, Bing, Yandex, Microsoft, and Yahoo. They were tired of guessing the contents of scraped web pages, so they decided to create a common vocabulary that providers could use to tell them what was what. This vocabulary gets embedded in HTML to indicate which bits describe an event, an address, a recipe, and so forth. It’s a little schema (hence the name!) that describes different types of information. When you choose to add schema.org to your page and tell it the page has a dataset, that dataset becomes eligible to show up in the Dataset Search results.",
+  "translation": "schema.org的构想由一个由通常的嫌疑人组成的财团于2011年提出：Google，Bing，Yandex，Microsoft和Yahoo。 他们厌倦了猜测已刮取网页的内容，因此他们决定创建一个通用词汇表，供提供者用来告诉他们什么。 该词汇表已嵌入HTML中，以指示哪些位描述了事件，地址，配方等。 它是一个描述不同类型信息的小模式（因此得名！）。 当您选择将schema.org添加到页面并告诉它页面包含数据集时，该数据集将有资格显示在“数据集搜索”结果中。"
+}, {
+  "tag": "P",
+  "text": "Data providers use schema.org to tell us there’s a dataset on their page and describe some metadata about it.",
+  "translation": "数据提供商使用schema.org告诉我们他们的页面上有一个数据集，并描述了一些有关它的元数据。"
+}, {
+  "tag": "P",
+  "text": "This isn’t some Google-specific magic; it’s an open community standard that anyone can contribute to. Many companies have been using it behind the scenes for years. The Google-specific bit is your new ability to search those datasets with Dataset Search. We let data providers use schema.org to tell us there’s a dataset on their page and describe some metadata about it. Dataset Search is a lot like regular search, but the results are limited to pages that claim to have a dataset on them. Simple and useful.",
+  "translation": "这不是Google特有的魔法； 这是任何人都可以贡献的开放社区标准。 许多公司已经在后台使用了多年。 Google专有的功能是您可以使用“数据集搜索”搜索这些数据集的新功能。 我们让数据提供商使用schema.org告诉我们他们的页面上有一个数据集，并描述一些有关它的元数据。 数据集搜索与常规搜索非常相似，但是结果仅限于声称拥有数据集的页面。 简单实用。"
+}, {
+  "tag": "H2",
+  "text": "How to participate in sharing data",
+  "translation": "如何参与共享数据"
+}, {
+  "tag": "P",
+  "text": "When data came exclusively from a few large providers who took responsibility for curating each one carefully (such as governments and universities), smaller players lacked an avenue to share theirs.",
+  "translation": "当数据仅来自负责精心策划每个人的少数大型提供商（例如政府和大学）时，较小的参与者就没有共享它们的途径。"
+}, {
+  "tag": "P",
+  "text": "Imagine this scenario: A group of high school girls is working on an extracurricular robotics project. They’re collecting plenty of data that might be handy for people with similar hobbies. They’re even willing to share it (how nice of them). They’ve put a link to it on their high school’s website. Their data just so happen to be exactly what you need to help your prototyping along. What now?",
+  "translation": "想象一下这种情况：一群高中女生正在从事课外机器人项目。 他们正在收集大量数据，这些数据可能对具有相似爱好的人非常有用。 他们甚至愿意分享它（他们多么友好）。 他们已经在高中网站上添加了指向该网站的链接。 恰好它们的数据恰好是帮助您进行原型制作所需的。 现在怎么办？"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*CAwzydxATNu7Q7LS.jpg?q=20",
+  "caption": "All-girls Afghan robotics team. Image: SOURCE.",
+  "type": "image",
+  "file": "0*CAwzydxATNu7Q7LS.jpg"
+}, {
+  "tag": "P",
+  "text": "If their dataset isn’t searchable, you’ll never find it. If their data must be hosted by a curator (like a government) to be accessible, they’ll be told to get in line… and they’ll probably never get to the front. Providers who spend scarce resources on heavy curation only have time and attention a limited set of priority sources. The upshot? You’ll never know what you missed out on.",
+  "translation": "如果他们的数据集不可搜索，那么您将永远找不到。 如果必须由策展人（如政府）托管他们的数据以便访问，则会被告知要排队……而且他们可能永远也不会出现在前列。 那些花费大量资源进行大量策展的提供者只有有限的时间和注意力集中在优先资源上。 结果如何？ 您永远不会知道错过了什么。"
+}, {
+  "tag": "P",
+  "text": "That’s why I find this whole dataset search paradigm so pretty. Sharing data (without an intermediary telling you to get lost) means that people can find and provide great resources even if they’ve got niche tastes… or obscure high school websites.",
+  "translation": "这就是为什么我觉得整个数据集搜索范式非常漂亮的原因。 共享数据（无需中间人告诉您迷路）意味着即使人们有小众口味，也可以找到并提供丰富的资源……或者使高中网站晦涩难懂。"
+}, {
+  "tag": "P",
+  "text": "To participate in sharing searchable data:",
+  "translation": "参与共享可搜索数据："
+}, {
+  "tag": "OL",
+  "texts": ["You need to have data.", "You need to indicate that you have data via schema.org. (You can do it yourself or you can put it in a repository like Zenodo that does it for you.)"],
+  "translations": ["您需要数据。", "您需要通过schema.org指示您有数据。 （您可以自己执行此操作，也可以将其放入Zenodo这样的存储库中，为您执行此操作。）"]
+}, {
+  "tag": "H2",
+  "text": "The other catch",
+  "translation": "其他抓住"
+}, {
+  "tag": "P",
+  "text": "I hope it doesn’t surprise you that the propensity to meet both of these conditions varies from field to field. Governments were among the first to index their datasets, so the kind of datasets they tend to collect (weather data, anyone?) are great candidates for your feeding frenzy, while proprietary data that’s expensive to collect will be sparsely available. That said, more data is being added every day and the search serves up doors to free and paid data alike. (A bit like those watermarked proprietary images in Google Images.) It’s up to you to pick which doors you’d like to go through and whether the toll is worth it.",
+  "translation": "希望同时满足这两个条件的意愿因地而异，这并不使您感到惊讶。 政府是率先索引其数据集的政府之一，因此，他们倾向于收集的数据集（天气数据，有人吗？）是您疯狂进食的最佳人选，而稀疏收集的专有数据将很少出现。 也就是说，每天都在添加更多数据，搜索为免费和付费数据提供了方便。 （有点像Google图片中带有水印的专有图片。）您可以根据自己的意愿选择要经过的门，以及收费是否值得。"
+}, {
+  "tag": "H2",
+  "text": "The bigger picture for humankind",
+  "translation": "人类的大局"
+}, {
+  "tag": "P",
+  "text": "A large user base for something like Dataset Search is a symbol of humanity’s evolution with respect to data science and data literacy. We are growing up as a species and extending the way that we can deploy our senses and the way that we communicate with information.",
+  "translation": "诸如数据集搜索之类的庞大用户群是人类在数据科学和数据素养方面的发展的象征。 我们正在成长为一个物种，并且正在扩展我们部署感官的方式以及与信息进行交流的方式。"
+}, {
+  "tag": "P",
+  "text": "Data analytics is becoming everyone’s game.",
+  "translation": "数据分析正在成为每个人的游戏。"
+}, {
+  "tag": "P",
+  "text": "We used to be impressed by the ability to open a single page on the internet, then by the ability to open 50 tabs in our browsers — one per datapoint — to eyeball that mess for patterns. Now we’re hungry for more. We want datasets we can shape and summarize quickly with code tools (like Python and R) built for the job. The data-fluent community has critical mass now; enough of us have skills to understand data and we’re no longer content with picture-covered written pages. (Of the kind you’re staring at right now. Hah.)",
+  "translation": "过去，我们曾经在Internet上打开单个页面的能力给人留下了深刻的印象，然后在浏览器中打开50个选项卡（每个数据点一个）的能力给人留下了深刻的印象。 现在我们渴望更多。 我们希望数据集可以使用为这项工作而构建的代码工具（例如Python和R）快速定型和汇总。 精通数据的社区现在已达到临界规模。 我们中足够的人具有理解数据的技能，而我们不再满足于图片覆盖的书面页面。 （您现在正在凝视的那种。哈。）"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*B56E9kmaB82DIViw.jpg?q=20",
+  "caption": "Image: SOURCE.",
+  "type": "image",
+  "file": "0*B56E9kmaB82DIViw.jpg"
+}, {
+  "tag": "H2",
+  "text": "The literacy evolution",
+  "translation": "素养的演变"
+}, {
+  "tag": "P",
+  "text": "To consume information from sources like the one you’re reading right at this veeery moment, you need a particular kind of literacy. Your mind needs to be able to wrap itself around the written word. That’s a skill you take for granted. If very few people had the skill, this blog post wouldn’t exist. Google probably wouldn’t exist either.",
+  "translation": "要使用当前正在阅读的资源（例如您正在阅读的资源）中的信息，您需要特殊的读写能力。 您的思维需要能够将自己包裹在文字周围。 这是您理所当然的技能。 如果只有很少的人掌握这项技术，那么此博客文章将不存在。 Google可能也不存在。"
+}, {
+  "tag": "P",
+  "text": "Dataset Search represents a rising tide in the democratization of data literacy.",
+  "translation": "数据集搜索代表着数据素养民主化的上升趋势。"
+}, {
+  "tag": "P",
+  "text": "In the same way, Dataset Search represents a rising tide in the democratization of data literacy. This whole development is a way of clambering to the top if the mountain and yodeling, “Working with data isn’t a completely niche skill anymore!” It’s no longer limited to a few scribes chiseling hieroglyphics into clay tablets. (Oh, wait, that’s writing. Same idea though.)",
+  "translation": "同样，数据集搜索代表着数据素养民主化的上升趋势。 如果说山峰和犹豫不决的话，那么整个开发过程就是一种攀登顶峰的方式，“处理数据不再是一种完全利基的技能！”它不再局限于少数抄写员将象形文字雕刻成粘土片。 （哦，等等，那是写作。尽管是相同的想法。）"
+}, {
+  "tag": "P",
+  "text": "Online datasets provide a new vehicle for self-expression that follows the same rules as the rest of the internet.",
+  "translation": "在线数据集提供了一种新的自我表达工具，它遵循了与互联网其他部分相同的规则。"
+}, {
+  "tag": "P",
+  "text": "Dataset Search helps you find the gems among the chatter.",
+  "translation": "数据集搜索可帮助您在聊天中找到宝石。"
+}, {
+  "tag": "P",
+  "text": "Datasets are becoming a widespread form of communication — a beautiful new language that many of us speak fluently and many more are studying every day. For those of us who’ve been speaking data since childhood, it’s a great relief to be able to get search results in our language.",
+  "translation": "数据集正在成为一种广泛的交流形式-一种美丽的新语言，我们许多人都能说流利，而且每天都有很多人在学习。 对于那些从小就开始讲数据的人来说，能够以我们的语言获得搜索结果真是令人欣慰。"
+}, {
+  "tag": "P",
+  "text": "Which is why my feelings about Dataset Search are straightforward: “Fiiiinally!”",
+  "translation": "这就是为什么我对数据集搜索的感受直截了当的原因：“最后！”"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*mbPb3SDYoGaPu-Dk?q=20",
+  "type": "image",
+  "file": "0*mbPb3SDYoGaPu-Dk"
+}, {
+  "tag": "P",
+  "text": "Technical details for your amusement:",
+  "translation": "您娱乐的技术细节："
+}, {
+  "tag": "UL",
+  "texts": ["Google AI blog post", "Web Conference 2019 paper"],
+  "translations": ["Google AI博客文章", "Web Conference 2019论文"]
+}, {
+  "tag": "P",
+  "text": "Try it out at bit.ly/dataset_search.",
+  "translation": "在bit.ly/dataset_search上尝试一下。"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Cassie Kozyrkov的文章《This is how you put the data in Data Science!》，参考：https://towardsdatascience.com/this-is-how-you-put-the-data-in-data-science-5411c8a45122)",
+  "translation": "（本文翻译自Cassie Kozyrkov的文章，《这是将数据放入数据科学中的方法！》，参考：https：//towardsdatascience.com/this-is-how-you-put-the-data-in-data- 科学5411c8a45122）"
+}]
