@@ -1,0 +1,409 @@
+[{
+  "tag": "H2",
+  "text": "Reference/Recommendation",
+  "translation": "参考/推荐"
+}, {
+  "tag": "P",
+  "text": "I highly recommend E.T. Jaynes’ book mentioned above.",
+  "translation": "我强烈推荐E.T. 上面提到的杰恩斯的书。"
+}, {
+  "tag": "P",
+  "text": "For context, E.T. Jaynes is what you might call a militant Bayesian.",
+  "translation": "就上下文而言 贾恩斯就是您所说的好战贝叶斯主义者。"
+}, {
+  "tag": "UL",
+  "texts": ["The perspective of “evidence” I am advancing here is attributable to him and, as discussed, arises naturally in the Bayesian context.", "Another great feature of the book is that it derives (!!) the laws of probability from qualitative considerations about the “degree of plausibility.” I find this quite interesting philosophically."],
+  "translations": ["我在这里提出的“证据”的观点归因于他，并且正如所讨论的，在贝叶斯语境中自然而然地出现了。", "这本书的另一个重要特征是它从关于“合理程度”的定性考虑中得出（!!）概率定律。我从哲学上发现这很有趣。"]
+}, {
+  "tag": "P",
+  "text": "Also: there seem to be a number of pdfs of the book floating around on Google if you don’t want to get a hard copy.",
+  "translation": "另外：如果您不想获得纸质版本，那么Google上似乎有很多pdf的书。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*xuDhGc5E9EVQdbQE?q=20",
+  "caption": "Photo by Franki Chamaki on Unsplash",
+  "type": "image",
+  "file": "0*xuDhGc5E9EVQdbQE"
+}, {
+  "tag": "H1",
+  "text": "Understanding Logistic Regression Coefficients",
+  "translation": "了解逻辑回归系数"
+}, {
+  "tag": "H2",
+  "text": "Or a better way to think about probability in terms of evidence",
+  "translation": "或者以更好的方式根据证据考虑概率"
+}, {
+  "tag": "P",
+  "text": "Logistic Regression suffers from a common frustration: the coefficients are hard to interpret. If you’ve fit a Logistic Regression model, you might try to say something like “if variable X goes up by 1, then the probability of the dependent variable happening goes up by ???” but the “???” is a little hard to fill in.",
+  "translation": "Logistic回归存在一个普遍的挫败感：系数难以解释。 如果您使用Logistic回归模型，则可以尝试说“如果变量X上升1，则因变量发生的概率上升???”，而“ ???”是 有点难填写。"
+}, {
+  "tag": "P",
+  "text": "The trick lies in changing the word “probability” to “evidence.” In this post, we’ll understand how to quantify evidence. Using that, we’ll talk about how to interpret Logistic Regression coefficients.",
+  "translation": "诀窍在于将“概率”一词更改为“证据”。在本文中，我们将了解如何量化证据。 借此，我们将讨论如何解释Logistic回归系数。"
+}, {
+  "tag": "P",
+  "text": "Finally, we will briefly discuss multi-class Logistic Regression in this context and make the connection to Information Theory.",
+  "translation": "最后，我们将在这种情况下简要讨论多类Logistic回归，并与信息论建立联系。"
+}, {
+  "tag": "P",
+  "text": "This post assumes you have some experience interpreting Linear Regression coefficients and have seen Logistic Regression at least once before.",
+  "translation": "这篇文章假设您具有解释线性回归系数的经验，并且至少曾经看过一次Logistic回归。"
+}, {
+  "tag": "H1",
+  "text": "Part 1: Two More Ways to Think about Probability",
+  "translation": "第1部分：另外两种考虑概率的方法"
+}, {
+  "tag": "H2",
+  "text": "Odds and Evidence",
+  "translation": "赔率和证据"
+}, {
+  "tag": "P",
+  "text": "We are used to thinking about probability as a number between 0 and 1 (or equivalently, 0 to 100%). But this is just a particular mathematical representation of the “degree of plausibility.”",
+  "translation": "我们习惯于将概率视为0到1（或等价的0到100％）之间的数字。 但这只是“合理程度”的特殊数学表示。"
+}, {
+  "tag": "P",
+  "text": "There is a second representation of “degree of plausibility” with which you are familiar: odds ratios. For example, if I tell you that “the odds that an observation is correctly classified is 2:1”, you can check that the probability of correct classification is two thirds. Similarly, “even odds” means 50%.",
+  "translation": "您熟悉的还有第二种表示“可信度”的方法：优势比。 例如，如果我告诉您“观察结果正确分类的几率是2：1”，则可以检查正确分类的几率是三分之二。 同样，“偶数赔率”是指50％。"
+}, {
+  "tag": "P",
+  "text": "My goal is convince you to adopt a third: the log-odds, or the logarithm of the odds. For interpretation, we we will call the log-odds the evidence. This follows E.T. Jaynes in his post-humous 2003 magnum opus Probability Theory: The Logic of Science.",
+  "translation": "我的目标是说服您采用第三个：对数奇数或赔率的对数。 为了解释，我们将对数称为证据。 这是E.T. 杰恩斯（Jaynes）在其发表于2003年的巨著《概率论：科学逻辑》中。"
+}, {
+  "tag": "P",
+  "text": "In general, there are two considerations when using a mathematical representation. First, it should be interpretable. Second, the mathematical properties should be convenient.",
+  "translation": "通常，使用数学表示法时有两个注意事项。 首先，它应该是可解释的。 其次，数学性质应该方便。"
+}, {
+  "tag": "H2",
+  "text": "Interpreting Evidence: Measuring in Hartleys",
+  "translation": "解释证据：以哈特利计量"
+}, {
+  "tag": "P",
+  "text": "In order to convince you that evidence is interpretable, I am going to give you some numerical scales to calibrate your intuition.",
+  "translation": "为了使您相信证据是可以解释的，我将为您提供一些数字量表，以校准您的直觉。"
+}, {
+  "tag": "P",
+  "text": "First, evidence can be measured in a number of different units. We’ll start with just one, the Hartley. The Hartley has many names: Alan Turing called it a “ban” after the name of a town near Bletchley Park, where the English decoded Nazi communications during World War II. It is also called a “dit” which is short for “decimal digit.”",
+  "translation": "首先，可以用许多不同的单位来衡量证据。 我们将从哈特利（Hartley）一开始。 哈特利（Hartley）有许多名字：阿兰·图灵（Alan Turing）称其为“禁令”，是布莱奇利公园附近一个城镇的名字。 它也被称为“ dit”，它是“十进制数字”的缩写。"
+}, {
+  "tag": "P",
+  "text": "The formula to find the evidence of an event with probability p in Hartleys is quite simple:",
+  "translation": "查找Hartleys中概率为p的事件的证据的公式非常简单："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*bPDk5Z79tdj6IpzXWwOOsA.png?q=20",
+  "caption": "Computing the evidence, in Hartleys",
+  "type": "image",
+  "file": "1*bPDk5Z79tdj6IpzXWwOOsA.png"
+}, {
+  "tag": "P",
+  "text": "Where the odds are p/(1-p). This is much easier to explain with the table below. Note that judicious use of rounding has been made to make the probability look nice. With this careful rounding, it is clear that 1 Hartley is approximately “1 nine.”",
+  "translation": "其中赔率是p /（1-p）。 下表更容易解释。 请注意，已明智地使用了舍入以使概率看起来不错。 通过这种仔细的四舍五入，很明显1 Hartley大约是“ 1 9”。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*Irk-k2GZTWY7_3Bc_SHn6Q.png?q=20",
+  "caption": "Table of Evidence, Odds, and Probability",
+  "type": "image",
+  "file": "1*Irk-k2GZTWY7_3Bc_SHn6Q.png"
+}, {
+  "tag": "P",
+  "text": "Notice that 1 Hartley is quite a bit of evidence for an event. A more useful measure could be a tenth of a Hartley. A “deci-Hartley” sounds terrible, so more common names are “deciban” or a decibel. Here is another table so that you can get a sense of how much information a deciban is. Hopefully you can see this is a decent scale on which to measure evidence: not too large and not too small.",
+  "translation": "注意1 Hartley是事件的充分证据。 一个更有用的措施可能是哈特利的十分之一。 “ deci-Hartley”听起来很糟糕，因此更常见的名称是“ deciban”或分贝。 这是另一个表格，使您可以了解分贝的数量。 希望您能看到这是衡量证据的一个不错的标准：不要太大也不能太小。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*7zVn7ihZlVYY22eK9BrGWw.png?q=20",
+  "type": "image",
+  "file": "1*7zVn7ihZlVYY22eK9BrGWw.png"
+}, {
+  "tag": "H2",
+  "text": "Using Evidence: Bayes’ Rule",
+  "translation": "使用证据：贝叶斯法则"
+}, {
+  "tag": "P",
+  "text": "I also said that evidence should have convenient mathematical properties. It turns out that evidence appears naturally in Bayesian statistics.",
+  "translation": "我还说过，证据应该具有便利的数学性质。 事实证明，证据自然出现在贝叶斯统计中。"
+}, {
+  "tag": "P",
+  "text": "Suppose we wish to classify an observation as either True or False. We can write:",
+  "translation": "假设我们希望将观察分类为True或False。 我们可以这样写："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*N-6YvOd3H1Wocn-IKBchYA.png?q=20",
+  "caption": "Bayes’ Law for Binary Classification",
+  "type": "image",
+  "file": "1*N-6YvOd3H1Wocn-IKBchYA.png"
+}, {
+  "tag": "P",
+  "text": "In Bayesian statistics the left hand side of each equation is called the “posterior probability” and is the assigned probability after seeing the data. The P(True) and P(False) on the right hand side are each the “prior probability” from before we saw the data. We think of these probabilities as states of belief and of Bayes’ law as telling us how to go from the prior state of belief to the posterior state. If you don’t like fancy Latinate words, you could also call this “after ← before” beliefs.",
+  "translation": "在贝叶斯统计中，每个等式的左侧称为“后验概率”，是查看数据后分配的概率。 右侧的P（True）和P（False）都是我们看到数据之前的“先验概率”。 我们将这些概率视为信念状态，而贝叶斯定律则告诉我们如何从先前的信念状态转变为后继状态。 如果您不喜欢花哨的拉丁语单词，也可以将其称为“在←后”。"
+}, {
+  "tag": "P",
+  "text": "More on what our prior (“before”) state of belief was later. The standard approach here is to compute each probability. This is a bit of a slog that you may have been made to do once. The slick way is to start by considering the odds. If we divide the two previous equations, we get an equation for the “posterior odds.”",
+  "translation": "关于我们之前（“之前”）的信念状态后来的更多信息。 这里的标准方法是计算每个概率。 这可能只是一次尝试而已。 明智的方法是首先考虑赔率。 如果我们将前面的两个方程式相除，就会得到一个“后验几率”的方程式。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*XfRlmUkeuBS1A5iBqeXxRg.png?q=20",
+  "caption": "The Posterior Odds",
+  "type": "image",
+  "file": "1*XfRlmUkeuBS1A5iBqeXxRg.png"
+}, {
+  "tag": "P",
+  "text": "And then we will consider the evidence which we will denote Ev. So Ev(True) is the prior (“before”) evidence for the True classification. And Ev(True|Data) is the posterior (“after”). We get this in units of Hartleys by taking the log in base 10:",
+  "translation": "然后，我们将考虑表示Ev的证据。 因此，Ev（True）是True分类的先验（“之前”）证据。 Ev（True | Data）是后验的（“ after”）。 我们以10的底数为单位，以Hartleys为单位得到此值："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*p66o3cUmjEve9Egye6nSGw.png?q=20",
+  "caption": "The Data Science process, quantified",
+  "type": "image",
+  "file": "1*p66o3cUmjEve9Egye6nSGw.png"
+}, {
+  "tag": "P",
+  "text": "In the context of binary classification, this tells us that we can interpret the Data Science process as: collect data, then add or subtract to the evidence you already have for the hypothesis. By quantifying evidence, we can make this quite literal: you add or subtract the amount!",
+  "translation": "在二元分类的情况下，这告诉我们可以将数据科学过程解释为：收集数据，然后在假设中已有证据的基础上增加或减去。 通过量化证据，我们可以说得很直白：增加或减少金额！"
+}, {
+  "tag": "H2",
+  "text": "Other Unit Systems",
+  "translation": "其他单位系统"
+}, {
+  "tag": "P",
+  "text": "There are three common unit conventions for measuring evidence. We have met one, which uses Hartleys/bans/dits (or decibans etc.). This choice of unit arises when we take the logarithm in base 10.",
+  "translation": "衡量证据有三种常见的单位惯例。 我们遇到了一个使用Hartleys / bans / dits（或decibans等）的文件。 当我们以10为底的对数时，就出现了单位的选择。"
+}, {
+  "tag": "P",
+  "text": "The next unit is “nat” and is also sometimes called the “nit.” It can be computed simply by taking the logarithm in base e. Recall that e ≈2.718 is Euler’s Number.",
+  "translation": "下一个单位是“ nat”，有时也称为“ nit”。可以简单地通过以e为底的对数来计算。 回想一下e≈2.718是欧拉数。"
+}, {
+  "tag": "P",
+  "text": "The final common unit is the “bit” and is computed by taking the logarithm in base 2. It is also sometimes called a Shannon after the legendary contributor to Information Theory, Claude Shannon.",
+  "translation": "最终的通用单位是“位”，是通过以2为底的对数来计算的。在信息理论的传奇贡献者克劳德·香农（Claude Shannon）的传奇贡献之后，有时也称为香农。"
+}, {
+  "tag": "P",
+  "text": "Until the invention of computers, the Hartley was the most commonly used unit of evidence and information because it was substantially easier to compute than the other two. (Note that information is slightly different than evidence; more below.)",
+  "translation": "在计算机发明之前，Hartley是最常用的证据和信息单位，因为它比其他两个要容易得多。 （请注意，信息与证据略有不同；更多信息请参见下文。）"
+}, {
+  "tag": "P",
+  "text": "With the advent computers, it made sense to move to the bit, because information theory was often concerned with transmitting and storing information on computers, which use physical bits.",
+  "translation": "对于出现的计算机，移动到位是有意义的，因为信息理论通常与在使用物理位的计算机上传输和存储信息有关。"
+}, {
+  "tag": "P",
+  "text": "Finally, the natural log is the most “natural” according to the mathematicians. For this reason, this is the default choice for many software packages. It is also common in physics.",
+  "translation": "最后，根据数学家的说法，自然对数是最“自然的”。 因此，这是许多软件包的默认选择。 在物理学中也很常见。"
+}, {
+  "tag": "P",
+  "text": "I believe, and I encourage you to believe:",
+  "translation": "我相信，并鼓励您相信："
+}, {
+  "tag": "UL",
+  "texts": ["The Hartley or deciban (base 10) is the most interpretable and should be used by Data Scientists interested in quantifying evidence.", "The bit should be used by computer scientists interested in quantifying information.", "The nat should be used by physicists, for example in computing the entropy of a physical system."],
+  "translations": ["Hartley或deciban（以10为底）是最易解释的，应由对定量证据感兴趣的数据科学家使用。", "有兴趣量化信息的计算机科学家应使用该位。", "nat应该由物理学家使用，例如在计算物理系统的熵时。"]
+}, {
+  "tag": "P",
+  "text": "Note, for data scientists, this involves converting model outputs from the default option, which is the nat.",
+  "translation": "请注意，对于数据科学家而言，这涉及从默认选项nat转换模型输出。"
+}, {
+  "tag": "P",
+  "text": "Finally, here is a unit conversion table. I have empirically found that a number of people know the first row off the top of their head. The 0.69 is the basis of the Rule of 72, common in finance. The 3.01 ≈ 3.0 is well known to many electrical engineers (“3 decibels is a doubling of power”).",
+  "translation": "最后，这是一个单位换算表。 我凭经验发现，很多人都知道头顶上的第一行。 0.69是金融中常见的72规则的基础。 3.01≈3.0是许多电气工程师所熟知的（“ 3分贝是功率的两倍”）。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*yOn6ytz3VEGEQr73LbUGSw.png?q=20",
+  "caption": "Unit Conversion Table for Evidence",
+  "type": "image",
+  "file": "1*yOn6ytz3VEGEQr73LbUGSw.png"
+}, {
+  "tag": "H2",
+  "text": "Converting Evidence to Odds and Probability",
+  "translation": "将证据转换为赔率和概率"
+}, {
+  "tag": "P",
+  "text": "Having just said that we should use decibans instead of nats, I am going to do this section in nats so that you recognize the equations if you have seen them before. Let’s denote the evidence (in nats) as S. The formula is:",
+  "translation": "刚刚说过，我们应该使用分贝而不是nat，我将在nat中进行本节操作，以便您以前已看过方程式。 让我们将证据表示为S。（公式为："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*gn1m4CB4uwljXtGKDxx3zQ.png?q=20",
+  "caption": "Formula for the Evidence S in nats",
+  "type": "image",
+  "file": "1*gn1m4CB4uwljXtGKDxx3zQ.png"
+}, {
+  "tag": "P",
+  "text": "Let’s say that the evidence for True is S. Then the odds and probability can be computed as follows:",
+  "translation": "假设True的证据为S。则赔率和概率可以如下计算："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*AHCDloR8Gu_2dPunSZt_qA.png?q=20",
+  "caption": "Converting evidence S to odds or a probability",
+  "type": "image",
+  "file": "1*AHCDloR8Gu_2dPunSZt_qA.png"
+}, {
+  "tag": "P",
+  "text": "If the last two formulas seem confusing, just work out the probability that your horse wins if the odds are 2:3 against. You will first add 2 and 3, then divide 2 by their sum.",
+  "translation": "如果最后两个公式看起来令人困惑，请计算出赔率是2：3的情况下您的马获胜的概率。 您将首先将2和3相加，然后将2除以它们的总和。"
+}, {
+  "tag": "H1",
+  "text": "Part 2: Understanding Logistic Regression",
+  "translation": "第2部分：了解逻辑回归"
+}, {
+  "tag": "P",
+  "text": "If you believe me that evidence is a nice way to think about things, then hopefully you are starting to see a very clean way to interpret logistic regression. First, remember the logistic sigmoid function:",
+  "translation": "如果您相信我认为证据是思考事物的好方法，那么希望您开始看到一种非常干净的方法来解释逻辑回归。 首先，请记住逻辑S形函数："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*vZk1fEWi0kQUbcxxC9k3Ew.png?q=20",
+  "type": "image",
+  "file": "1*vZk1fEWi0kQUbcxxC9k3Ew.png"
+}, {
+  "tag": "P",
+  "text": "Hopefully instead of a complicated jumble of symbols you see this as the function that converts information to probability. It’s exactly the same as the one above!",
+  "translation": "希望您可以将其视为将信息转换为概率的函数，而不是复杂的符号混杂。 与上面的完全一样！"
+}, {
+  "tag": "P",
+  "text": "Let’s treat our dependent variable as a 0/1 valued indicator. So 0 = False and 1 = True in the language above. The logistic regression model is",
+  "translation": "让我们将因变量视为0/1值指标。 因此，在以上语言中，0 = False和1 = True。 逻辑回归模型为"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*GhwAVKnQ-vQyF9CTkYDXig.png?q=20",
+  "type": "image",
+  "file": "1*GhwAVKnQ-vQyF9CTkYDXig.png"
+}, {
+  "tag": "P",
+  "text": "Where X is the vector of observed values for an observation (including a constant), β is the vector of coefficients, and σ is the sigmoid function above.",
+  "translation": "其中X是观测值（包括常数）的观测值向量，β是系数的向量，而σ是上面的S型函数。"
+}, {
+  "tag": "P",
+  "text": "This immediately tells us that we can interpret a coefficient as the amount of evidence provided per change in the associated predictor.",
+  "translation": "这立即告诉我们，我们可以将系数解释为相关预测变量中每次更改提供的证据数量。"
+}, {
+  "tag": "P",
+  "text": "For example, suppose we are classifying “will it go viral or not” for online videos and one of our predictors is the number minutes of the video that have a cat in it (“cats”).",
+  "translation": "例如，假设我们对在线视频分类为“是否会传播病毒”，而我们的预测指标之一是视频中包含猫咪的分钟数（“猫咪”）。"
+}, {
+  "tag": "UL",
+  "texts": ["If the coefficient of this “cats” variable comes out to 3.7, that tells us that, for each increase by one minute of cat presence, we have 3.7 more nats (16.1 decibans) of evidence towards the proposition that the video will go viral.", "Add up all the evidence from all the predictors (and the prior evidence — see below) and you get a total score.", "Classify to “True” or 1 with positive total evidence and to “False” or 0 with negative total evidence. But more to the point, just look at how much evidence you have!"],
+  "translations": ["如果该“猫”变量的系数为3.7，则表明我们每增加一分钟的猫出现时间，就会有3.7个nat（16.1分贝）的证据表明视频会传播病毒。", "将所有预测变量中的所有证据加起来（以及先前的证据-参见下文），您将获得总分。", "如果总证据为阳性，则分类为“ True”或1，如果总证据为阴性，则分类为“ False”或0。 但更重要的是，只需看看您有多少证据即可！"]
+}, {
+  "tag": "H2",
+  "text": "Miscellany",
+  "translation": "杂记"
+}, {
+  "tag": "P",
+  "text": "A few brief points I’ve chosen not to go into depth on.",
+  "translation": "我选择了一些简短的要点。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*OxcZgRXgw9vIr-jc322EUg.png?q=20",
+  "caption": "The logit function is the inverse of the logistic function",
+  "type": "image",
+  "file": "1*OxcZgRXgw9vIr-jc322EUg.png"
+}, {
+  "tag": "OL",
+  "texts": ["The inverse to the logistic sigmoid function is the logit, given above. Many authors define logistic regression in terms of the logit. Where the logistic function converts evidence into probabilities, its inverse converts probabilities into evidence.Also — as usual, mathematics is done in units of nats but you are of course free to use a different base for the logarithm if you want a different unit.", "The prior is nothing to be afraid of. By default, you chose the prior of “no evidence either way” in other words, 0 evidence. Hopefully this seems reasonable. Changing your prior is equivalent to changing the threshold for classification. This is a good way to think about how an ROC curve is constructed.", "You can check that the cross entropy loss (also called the log-loss or deviance) may be described as follows. Let S evidence be given by the model in favor of the wrong prediction. Then, in the limit as S is large, the loss is S. Conversely, if S is the evidence given in favor of the correct prediction, then, in the limit as S is large, the cross-entropy loss is exp(-S)."],
+  "translations": ["逻辑乙状结肠功能的逆函数是上述的logit。 许多作者根据logit定义了logistic回归。 当逻辑函数将证据转换为概率时，它的逆函数将概率转换为证据。此外，像往常一样，数学以纳特为单位进行，但是如果您想要不同的单位，那么您当然可以使用对数的不同底数。", "先验没什么可害怕的。 默认情况下，您选择“无任何证据”的先验，换句话说，选择0证据。 希望这似乎是合理的。 更改先验等同于更改分类阈值。 这是考虑如何构造ROC曲线的好方法。", "您可以检查交叉熵损失（也称为对数损失或偏差）可以描述如下。 让模型给出S证据以支持错误的预测。 那么，在S较大的极限中，损失为S。反之，如果S是支持正确预测的证据，则在S较大的极限中，交叉熵损失为exp（-S ）。"]
+}, {
+  "tag": "H1",
+  "text": "Part 3: Multi-class logistic regression",
+  "translation": "第3部分：多类逻辑回归"
+}, {
+  "tag": "P",
+  "text": "Given the discussion above, the intuitive thing to do in the multi-class case is to quantify the information in favor of each class and then (a) classify to the class with the most information in favor; and/or (b) predict probabilities for each class such that the log odds ratio between any two classes is the difference in evidence between them.",
+  "translation": "鉴于以上讨论，在多类情况下要做的直观的事情是量化有利于每个类的信息，然后（a）分类为具有最有利信息的类； 和/或（b）预测每个类别的概率，以使任何两个类别之间的对数比值比是它们之间证据的差异。"
+}, {
+  "tag": "P",
+  "text": "We can achieve (b) by the softmax function. The probability of observing class k out of n total classes is:",
+  "translation": "我们可以通过softmax函数来实现（b）。 观察总共n个类别中的k类的概率为："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*bEdGBeB9VxQaacV0f04V2A.png?q=20",
+  "caption": "Softmax: Probability of observing class k out of n possibilities given the information in favor of each",
+  "type": "image",
+  "file": "1*bEdGBeB9VxQaacV0f04V2A.png"
+}, {
+  "tag": "P",
+  "text": "Dividing any two of these (say for k and ℓ) gives the appropriate log odds.",
+  "translation": "将它们中的任意两个相除（例如k和ℓ）可得出适当的对数赔率。"
+}, {
+  "tag": "P",
+  "text": "How do we estimate the information in favor of each class? There are two apparent options:",
+  "translation": "我们如何估算有利于每个班级的信息？ 有两个明显的选择："
+}, {
+  "tag": "OL",
+  "texts": ["(Multinomial) Notice that, mathematically, shifting the whole list of information in favor of each class of by some constant number of Hartleys doesn’t change the probability distribution. This is because we only care about the differences in information between classes.So, we might as well pick a class, say class ⭑, and set its information to 0. Then estimate the evidence for each other class relative to class ⭑.", "(One Versus Rest) For each class, say class k, run a simple logistic regression (binary classification) for “is the observation class k or not.”"],
+  "translations": ["（多项式）请注意，从数学上来说，将整个信息列表偏向每个类别都移动一定数量的Hartleys不会改变概率分布。 这是因为我们只关心类之间的信息差异。因此，我们不妨选择一个类（例如class类）并将其信息设置为0。然后估计相对于⭑类的每个其他类的证据。", "（相对于休息）对每个类别（例如k类），针对“是否为观察类k”运行简单的逻辑回归（二进制分类）。"]
+}, {
+  "tag": "P",
+  "text": "In the case of n = 2, approach 1 most obviously reproduces the logistic sigmoid function from above. Approach 2 turns out to be equivalent as well.",
+  "translation": "在n = 2的情况下，方法1最明显地从上方再现了逻辑S型函数。 方法2也是等效的。"
+}, {
+  "tag": "P",
+  "text": "Warning: for n > 2, these approaches are not the same. (The good news is that the choice of class ⭑ in option 1 does not change the results of the regression.)",
+  "translation": "警告：对于n> 2，这些方法不相同。 （好消息是，在选项1中选择类别does不会改变回归的结果。）"
+}, {
+  "tag": "P",
+  "text": "I am not going to go into much depth about this here, because I don’t have many good references for it. If you want to read more, consider starting with the scikit-learn documentation (which also talks about 1v1 multi-class classification). If you have/find a good reference, please let me know! The point here is more to see how the evidence perspective extends to the multi-class case.",
+  "translation": "在这里，我不会对此做深入探讨，因为我没有很多好的参考资料。 如果您想了解更多信息，请考虑从scikit-learn文档开始（该文档还讨论了1v1多类分类）。 如果您有/找到了很好的参考，请告诉我！ 这里的重点更多是看证据的角度如何扩展到多类案件。"
+}, {
+  "tag": "H1",
+  "text": "Part 4: Information Theory",
+  "translation": "第四部分：信息论"
+}, {
+  "tag": "P",
+  "text": "This will be very brief, but I want to point towards how this fits towards the classic theory of Information. Information Theory got its start in studying how many bits are required to write down a message as well as properties of sending messages. In 1948, Claude Shannon was able to derive that the information (or entropy or surprisal) of an event with probability p occurring is:",
+  "translation": "这将是非常简短的，但是我想指出这与经典的信息理论相适应的方式。 信息理论从研究消息写下来需要多少位以及发送消息的属性开始。 1948年，克劳德·香农（Claude Shannon）能够得出概率为p的事件的信息（或熵或意外）是："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*NZNrrstIwtvLsPQ5ue2g2w.png?q=20",
+  "type": "image",
+  "file": "1*NZNrrstIwtvLsPQ5ue2g2w.png"
+}, {
+  "tag": "P",
+  "text": "Given a probability distribution, we can compute the expected amount of information per sample and obtain the entropy S:",
+  "translation": "给定一个概率分布，我们可以计算每个样本的预期信息量，并获得熵S："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*nFNxmCxb2TzVp8c0AAGSvw.png?q=20",
+  "type": "image",
+  "file": "1*nFNxmCxb2TzVp8c0AAGSvw.png"
+}, {
+  "tag": "P",
+  "text": "where I have chosen to omit the base of the logarithm, which sets the units (in bits, nats, or bans). Physically, the information is realized in the fact that it is impossible to losslessly compress a message below its information content.",
+  "translation": "我选择省略对数的底数，该底数设置了单位（以位，小数或禁令为单位）。 从物理上讲，信息是这样实现的，即不可能无损地将消息压缩到其信息内容以下。"
+}, {
+  "tag": "P",
+  "text": "The connection for us is somewhat loose, but we have that in the binary case, the evidence for True is",
+  "translation": "我们之间的联系有些松散，但在二进制情况下，True的证据是"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*o6vmn_WS0aIfwUcbqk2Xjw.png?q=20",
+  "type": "image",
+  "file": "1*o6vmn_WS0aIfwUcbqk2Xjw.png"
+}, {
+  "tag": "P",
+  "text": "The negative sign is quite necessary because, in the analysis of signals, something that always happens has no surprisal or information content; for us, something that always happens has quite a bit of evidence for it.",
+  "translation": "负号是非常必要的，因为在信号分析中，经常发生的事情没有任何惊喜或信息内容； 对我们来说，经常发生的事情有很多证据。"
+}, {
+  "tag": "H1",
+  "text": "Conclusion",
+  "translation": "结论"
+}, {
+  "tag": "P",
+  "text": "Information is the resolution of uncertainty– Claude Shannon",
+  "translation": "信息是不确定性的解决方案– Claude Shannon"
+}, {
+  "tag": "P",
+  "text": "Probability is a common language shared by most humans and the easiest to communicate in. But it is not the best for every context. In this post:",
+  "translation": "概率是大多数人共享的一种通用语言，也是最容易交流的语言。但是，并不是每种情况都适用。 在这篇文章中："
+}, {
+  "tag": "UL",
+  "texts": ["We saw that evidence is simple to compute with: you just add it;", "we calibrated your sense for “a lot” of evidence (10–20+ decibels), “some” evidence (3–9 decibels), or “not much” evidence (0–3 decibels);", "we saw how evidence arises naturally in interpreting logistic regression coefficients and in the Bayesian context; and", "we saw how it leads us to the correct considerations for the multi-class case"],
+  "translations": ["我们看到，证据的计算很简单：只需添加证据即可；", "我们针对“大量”证据（10至20分贝），“一些”证据（3至9分贝）或“不多”证据（0至3分贝）校准了您的感觉；", "我们看到了在解释逻辑回归系数时以及在贝叶斯环境中自然产生的证据。 和", "我们看到了它如何引导我们针对多类案例进行正确考虑"]
+}, {
+  "tag": "P",
+  "text": "I hope that you will get in the habit of converting your coefficients to decibels/decibans and thinking in terms of evidence, not probability.",
+  "translation": "我希望您养成将系数转换为分贝/分贝的习惯，并根据证据而非概率进行思考。"
+}, {
+  "tag": "P",
+  "text": "–Ravi",
+  "translation": "–拉维"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Ravi Charan的文章《Understanding Logistic Regression Coefficients》，参考：https://towardsdatascience.com/understanding-logistic-regression-coefficients-7a719ebebd35)",
+  "translation": "（本文翻译自Ravi Charan的文章，《了解逻辑回归系数》，参考：https：//towardsdatascience.com/understanding-logistic-regression-coefficients-7a719ebebdd35）"
+}]
