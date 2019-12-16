@@ -1,0 +1,183 @@
+[{
+  "tag": "H1",
+  "text": "Final Thoughts",
+  "translation": "最后的想法"
+}, {
+  "tag": "P",
+  "text": "Creating consistent, clean code is a process that takes practice. The more we clean up after ourselves, the easier it becomes to recognize our personal flawed patterns and habits.",
+  "translation": "创建一致，干净的代码是需要实践的过程。 我们对自己进行的清理工作越多，就越容易识别我们个人的缺陷模式和习惯。"
+}, {
+  "tag": "P",
+  "text": "Sometimes, it takes learning something new and overcoming your resistance to writing easier, but potentially flaky, code. We tend to fall back on what we know best, but that doesn’t always mean it actually is the best pattern or method.",
+  "translation": "有时，它需要学习一些新知识，并克服您对编写更简单但可能存在问题的代码的抵触。 我们倾向于依靠我们最了解的知识，但这并不总是意味着它实际上是最好的模式或方法。"
+}, {
+  "tag": "P",
+  "text": "In fact, there is no such thing as “best” in code. Rather, it’s what is most efficient and effective for your project’s requirements based on time constraints and resources available.",
+  "translation": "实际上，代码中没有“最好”的东西。 而是根据时间限制和可用资源来最有效地满足您项目的要求。"
+}, {
+  "tag": "P",
+  "text": "Thank you for reading.",
+  "translation": "感谢您的阅读。"
+}, {
+  "tag": "H1",
+  "text": "What, Exactly, Are You Trying to Capture?",
+  "translation": "确切地说，您正在尝试捕获什么？"
+}, {
+  "tag": "P",
+  "text": "Code always has a purpose. It exists to represent something. The question becomes, what, exactly, does your code represent?",
+  "translation": "代码总是有目的的。 它的存在代表事物。 问题变成了，您的代码到底代表什么？"
+}, {
+  "tag": "P",
+  "text": "What is the expected output? How do we get to that expected output? Being vague in our names and functional processes will result in flaky code that has no clear boundaries or purpose for existing.",
+  "translation": "什么是预期的输出？ 我们如何达到预期的输出？ 在我们的名称和功能过程中含糊不清会导致不稳定的代码，没有明确的界限或存在的目的。"
+}, {
+  "tag": "P",
+  "text": "When business requires new elements to be added, that’s a change caused by growth. Will this growth break the original component? Or is it isolated enough, with clear boundaries, to receive minimal impact?",
+  "translation": "当业务需要添加新元素时，那就是增长带来的变化。 这种增长会打破原来的组成部分吗？ 还是它具有足够的隔离性和清晰的边界，以使影响最小？"
+}, {
+  "tag": "P",
+  "text": "Flexible code isn’t about how much ground it can cover. Rather, it’s about how resilient it is to change. When you know what the expected outputs are, it’s easier to ring-fence and protect it through a single-responsibility methodology.",
+  "translation": "灵活的代码并不是关于它可以覆盖多大的范围。 相反，它关系到更改的弹性。 当您知道预期的结果是什么时，可以通过单一责任方法更容易地围起来并加以保护。"
+}, {
+  "tag": "H1",
+  "text": "Have You Written This Before?",
+  "translation": "你以前写过这个吗？"
+}, {
+  "tag": "P",
+  "text": "Some things repeat themselves over and over again. Sometimes, we recognize the patterns in our code and realize that we’ve already written something before, but in another function, class or method.",
+  "translation": "有些事情一遍又一遍地重复。 有时，我们会在代码中识别出模式，并意识到我们已经在其他函数，类或方法中编写过某些内容。"
+}, {
+  "tag": "P",
+  "text": "Or perhaps someone else wrote it in another place. This is where abstraction and refactoring become necessary for maintaining the cohesion of your code and preventing repetition.",
+  "translation": "或者，也许有人在另一个地方写了它。 在这里，必须进行抽象和重构，以保持代码的凝聚力并防止重复。"
+}, {
+  "tag": "P",
+  "text": "If it looks familiar, chances are, it’s because you’ve already written the same patterns somewhere else. Refactoring is the act and process of restructuring code to meet the growth of the codebase and maintain the long term stability of cohesive executions.",
+  "translation": "如果看起来很熟悉，很可能是因为您已经在其他地方编写了相同的模式。 重构是重构代码的行为和过程，以适应代码库的增长并保持内聚执行的长期稳定性。"
+}, {
+  "tag": "P",
+  "text": "Refactoring itself doesn’t have to be on a grand scale. Micro-refactoring often occurs on the fly when we’re writing our own code and taking time to make efficient the inefficiencies that arise from the process of capturing business logic.",
+  "translation": "重构本身并不需要大规模。 当我们编写自己的代码并花时间使捕获业务逻辑过程中出现的效率低下时，微重构通常会实时进行。"
+}, {
+  "tag": "H1",
+  "text": "Are Your Names Actually Useful?",
+  "translation": "您的名字实际上有用吗？"
+}, {
+  "tag": "P",
+  "text": "When it comes to code, complex code is not sexy code. You’re not trying to peacock your way into the favors of future developers reading what you’ve written.",
+  "translation": "说到代码，复杂的代码不是性感代码。 您并不是想让自己的方式吸引未来的开发人员阅读您所写的内容。"
+}, {
+  "tag": "P",
+  "text": "Long names with redundant descriptions often contribute to the noise of unnecessary code. Short acronyms that make no sense to the uninitiated bode future disasters, because meaning is no longer explicit and rests with humans who may leave the company, never to be seen or heard of again.",
+  "translation": "具有冗长描述的长名称通常会导致不必要的代码杂音。 简短的首字母缩略词对未预示的未来灾难没有意义，因为含义不再是明确的，而是由可能离开公司，再也不会被看到或听到的人所拥有。"
+}, {
+  "tag": "P",
+  "text": "It only takes one generation for knowledge to be lost to any civilization. It only takes the departure of one developer from a company to lose whatever implicit information the function tracusboo is supposed to represent.",
+  "translation": "知识在任何文明中流失只需要一代人的时间。 只需要一名开发人员离开公司就可以丢失tracusboo函数应该表示的任何隐式信息。"
+}, {
+  "tag": "P",
+  "text": "So write useful names. Tell it like it is. If the name gets too long, it means you are trying to capture too much information and things may need to be abstracted out. Your code is not a Hollywood “Matrix” screen, so don’t write it like one.",
+  "translation": "因此，写下有用的名称。 照原样告诉它。 如果名称太长，则意味着您正试图捕获太多信息，因此可能需要抽象出一些东西。 您的代码不是好莱坞的“矩阵”屏幕，因此请不要像这样编写。"
+}, {
+  "tag": "H1",
+  "text": "Are You Over- or Under-Abstracting?",
+  "translation": "您是过度抽象还是抽象不足？"
+}, {
+  "tag": "P",
+  "text": "Sometimes, we get carried away in the act of codifying business requirements. We become obsessed with the idea of modularity, or simply become too engrossed in trying to capture a complex idea.",
+  "translation": "有时，我们会因编纂业务需求的行为而发疯。 我们沉迷于模块化的想法，或者只是太着迷于尝试捕捉一个复杂的想法。"
+}, {
+  "tag": "P",
+  "text": "Over-abstracting occurs when we try to make our code too modular because we’ve been told that it’s the way to do things. Under-abstracting is when we are faced with a complicated set of rules that we haven’t quite figured out how to simplify yet. By the end of the exercise, abstraction is simply too mentally taxing to refactor out or we’ve just run out of time.",
+  "translation": "当我们试图使代码过于模块化时，就会发生过度抽象的情况，因为我们被告知这是做事的方法。 摘要不足是指我们面临着一系列复杂的规则，而我们还没有弄清楚如何简化这些规则。 在练习结束时，抽象在精神上太费力了，无法进行重构，否则我们就快用完了。"
+}, {
+  "tag": "P",
+  "text": "So what exactly is the right amount of abstraction?",
+  "translation": "那么正确的抽象量到底是多少呢？"
+}, {
+  "tag": "P",
+  "text": "The purpose of abstraction is to extract out clear boundaries of repeatable code. The right amount of abstraction occurs when we don’t over-plan potential usage, nor write the same logic again but in a different scope space.",
+  "translation": "抽象的目的是提取出可重复代码的明确边界。 当我们不过度规划潜在使用量，也不再在相同的作用域空间中再次编写相同的逻辑时，就会发生适当数量的抽象。"
+}, {
+  "tag": "P",
+  "text": "Nesting is usually the first sign of under-abstraction. Multiple injections and calling of numerous external functions is a key marker for over-abstraction.",
+  "translation": "嵌套通常是抽象不足的第一个迹象。 多次注入和调用大量外部功能是过度抽象的关键标志。"
+}, {
+  "tag": "H1",
+  "text": "Does It Need to Be Public?",
+  "translation": "是否需要公开？"
+}, {
+  "tag": "P",
+  "text": "Not everything has to be a global state or exist as a public function. Sometimes, code privacy is a good thing; it can prevent scope creep and create security for your variables.",
+  "translation": "并非所有事物都必须是全局状态或作为公共功能存在。 有时，代码隐私是一件好事； 它可以防止范围蠕变并为变量创建安全性。"
+}, {
+  "tag": "P",
+  "text": "It’s easy to make everything public but that’s not the point of accessibility scoping.",
+  "translation": "将所有内容公开都很容易，但这并不是可访问性范围的重点。"
+}, {
+  "tag": "P",
+  "text": "When you make everything public, the code inside your services and factories becomes prone to external mutability. This increases the scope of change and takes it beyond your potential and expected cases.",
+  "translation": "当您公开所有内容时，服务和工厂内部的代码很容易受到外部可变性的影响。 这将扩大更改范围，并使更改范围超出您的潜在和预期情况。"
+}, {
+  "tag": "P",
+  "text": "In JavaScript, everything is technically accessible and global. But with the advent of TypeScript and its growing, widespread usage, creating clear distinctions in public and private variables and functions gives your code robustness against unwanted access and change.",
+  "translation": "在JavaScript中，所有内容在技术上都是可访问的并且是全局的。 但是随着TypeScript的出现及其不断增长的广泛使用，在公共变量和私有变量与函数之间建立了明显的区别，从而使您的代码具有强大的鲁棒性，可以防止不必要的访问和更改。"
+}, {
+  "tag": "H1",
+  "text": "How Functional Is It?",
+  "translation": "它的功能如何？"
+}, {
+  "tag": "P",
+  "text": "As much as we love the idea of object-oriented patterns, functional ideologies can also exist within classes and methods. Functional programming deals with how data is processed based on the given situation and has a strong aversion to dependencies.",
+  "translation": "尽管我们喜欢面向对象模式的思想，但是功能意识形态也可以存在于类和方法中。 函数式编程根据给定的情况处理数据的处理方式，并且强烈反对依赖关系。"
+}, {
+  "tag": "P",
+  "text": "Dependencies aren’t bad, but too many can result in an unwanted spiderweb.",
+  "translation": "依赖关系还不错，但是过多的依赖关系会导致有害的蜘蛛网。"
+}, {
+  "tag": "P",
+  "text": "The chaining effect caused by dependency injections reduces the modularity of the code. You’re depending on the previous item to work correctly, creating a series-circuit effect.",
+  "translation": "由依赖项注入引起的链接效应降低了代码的模块化。 您需要依靠上一项才能正常工作，从而产生串联电路效果。"
+}, {
+  "tag": "P",
+  "text": "Functional patterns transform the way you code into sets of parallel states that can exist on their own, thus increasing modularity — which is the act of isolating and creating clear domains of logic. When code is modular, it won’t break as much or as often.",
+  "translation": "功能模式将您的编码方式转换为可以独立存在的并行状态集，从而提高了模块化—这是隔离并创建清晰的逻辑域的行为。 当代码是模块化的时，它不会中断太多或频繁。"
+}, {
+  "tag": "P",
+  "text": "Dependancies can also exist within the function itself, creating redundancies, despite the logical ring-fencing created. This often comes in the form of repeated values under different names, loops within loops, or nested logic. If this occurs, the best quick fix is to flatten your logic and abstract it out.",
+  "translation": "尽管已创建逻辑环围，但依赖关系也可以存在于函数本身内，从而创建冗余。 这通常以不同名称下的重复值，循环内的循环或嵌套逻辑的形式出现。 如果发生这种情况，最好的快速解决方案是将逻辑弄平并抽象出来。"
+}, {
+  "tag": "H1",
+  "text": "Are You Writing Too Much Code?",
+  "translation": "您写太多代码了吗？"
+}, {
+  "tag": "H2",
+  "text": "Ask yourself these six questions and find out",
+  "translation": "问问自己这六个问题，找出答案"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*caSE-_lRylrgAtW5BlNLxg.png?q=20",
+  "caption": "Image by Aphinya Dechalert.",
+  "type": "image",
+  "file": "1*caSE-_lRylrgAtW5BlNLxg.png"
+}, {
+  "tag": "P",
+  "text": "For many beginners, code is the act of writing if else statements and trying to figure out how to make things work. During this process, the code produced becomes a convoluted mammoth with unexpected plot twists that rival the Red Wedding from “Game of Thrones.”",
+  "translation": "对于许多初学者而言，代码是编写if else语句并试图弄清楚如何使其正常工作的行为。 在此过程中，生成的代码变成了回旋的庞然大物，其意外的情节曲折可与《权力的游戏》中的《红色婚礼》相媲美。"
+}, {
+  "tag": "P",
+  "text": "More code isn’t always better code. Sure, it made sense at the time you were writing it — until you look back and try to unravel the mystery novel you unintentionally created, with no sense of clear direction, structure, and major plot holes that trip up linear processes.",
+  "translation": "编写更多代码并不总是更好的代码。 当然，在您编写它时，它是有道理的-直到您回头看并试图揭开您无意间创造的神秘小说时，没有清晰的方向，结构和绊倒线性过程的主要情节漏洞。"
+}, {
+  "tag": "P",
+  "text": "Bugs occur when there’s a gap in the developer’s knowledge, mostly born out of being unaware of efficient and effective patterns in code. The bliss of structural oblivion often does last long, even after the code produced is working. Over time, however, it contributes to the frustrations that arise out of things being too jumbled.",
+  "translation": "当开发人员的知识存在空白时，就会发生错误，这些错误主要是由于不了解有效的代码模式而产生的。 即使产生的代码有效，结构性遗忘的幸福也常常持续很长时间。 但是，随着时间的流逝，它会加剧由于过于混乱而引起的挫败感。"
+}, {
+  "tag": "P",
+  "text": "Here are some questions to help you structure your logic and bring awareness to important patterns in software development.",
+  "translation": "这里有一些问题可以帮助您构建逻辑并提高对软件开发中重要模式的认识。"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Aphinya Dechalert的文章《Are You Writing Too Much Code?》，参考：https://medium.com/better-programming/are-you-writing-too-much-code-fb4a9605375)",
+  "translation": "（本文翻译自Aphinya Dechalert的文章，《您编写的代码太多吗？》，参考：https：//medium.com/better-programming/are-you-writing-too-much-code-fb4a9605375）"
+}]
