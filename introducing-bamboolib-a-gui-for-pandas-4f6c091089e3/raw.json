@@ -1,0 +1,376 @@
+[{
+  "tag": "H1",
+  "text": "Is it worth it?",
+  "translation": "这值得么？"
+}, {
+  "tag": "P",
+  "text": "Until this point, I showcased briefly the main functionalities of Bamboolib — by no means was it exhaustive tutorial — just wanted to show you the idea behind it.",
+  "translation": "在此之前，我只是简单地展示了Bamboolib的主要功能-绝不是详尽的教程-只是想向您展示其背后的想法。"
+}, {
+  "tag": "P",
+  "text": "The question remains, is it worth the money?",
+  "translation": "问题仍然存在，是否值得？"
+}, {
+  "tag": "P",
+  "text": "That is if you decide to go with the paid route. You can still use it for free, provided that you don’t mind sharing your work with others. The library by itself is worth checking out for two main reasons:",
+  "translation": "也就是说，如果您决定采用付费路线。 只要您不介意与他人分享您的作品，仍然可以免费使用。 图书馆本身值得一试的原因有两个："
+}, {
+  "tag": "OL",
+  "texts": ["It provides a great way to learn Pandas — it’s much more easy to learn by doing than by reading, and a GUI tool like this will most certainly only help you", "It’s great for playing around with data — let’s face it, there are times when you know what you want to do, but you just don’t know how to implement it in code — Bamboolib can assist"],
+  "translations": ["它提供了一种学习熊猫的好方法-边做边学比读书容易得多，而且像这样的GUI工具一定会帮助您", "这非常适合处理数据-面对现实，有时候您知道自己想做什么，但是却不知道如何在代码中实现-Bamboolib可以为您提供帮助"]
+}, {
+  "tag": "P",
+  "text": "Keep in mind — you won’t get any additional features with the paid version — the only real benefit is that your work will be private and that there’s an option for commercial use.",
+  "translation": "请记住-付费版本不会提供任何其他功能-唯一的真正好处是您的作品将是私人的，并且可以选择用于商业用途。"
+}, {
+  "tag": "P",
+  "text": "Even if you’re not ready to grab your credit card just yet, it can’t harm you to try out the free version and see if it’s something you can benefit from.",
+  "translation": "即使您还没有准备好拿起信用卡，尝试免费版本并查看是否可以从中受益也不会对您造成伤害。"
+}, {
+  "tag": "P",
+  "text": "Thanks for reading. Take care.",
+  "translation": "谢谢阅读。 照顾自己。"
+}, {
+  "tag": "H1",
+  "text": "Getting the Code",
+  "translation": "获取代码"
+}, {
+  "tag": "P",
+  "text": "It was all fun and games until now, but sooner or later you’ll notice the operations don’t act in place — ergo the dataset will not get modified if you don’t explicitly specify it.",
+  "translation": "到目前为止，这一切都很有趣，也很有趣，但是您迟早会注意到这些操作并不起作用-如果您未明确指定数据集，则不会对它们进行修改。"
+}, {
+  "tag": "P",
+  "text": "That’s not a bug, as it enables you to play around without messing the original dataset. What Bamboolib will do, however, it will generate Python code for achieving the desired transformations.",
+  "translation": "那不是错误，因为它使您可以在不弄乱原始数据集的情况下进行游戏。 Bamboolib将做什么，但是，它将生成Python代码以实现所需的转换。"
+}, {
+  "tag": "P",
+  "text": "To get the code, first, click on the Export button:",
+  "translation": "要获取代码，请首先单击“导出”按钮："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*dvimPICLxscCWvrz6TFFJg.png?q=20",
+  "type": "image",
+  "file": "1*dvimPICLxscCWvrz6TFFJg.png"
+}, {
+  "tag": "P",
+  "text": "Now specify how do you want it exported — I’ve selected the first option:",
+  "translation": "现在指定要如何导出它-我选择了第一个选项："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*6UAtpw_DCR2wkpGQFVDkqg.png?q=20",
+  "type": "image",
+  "file": "1*6UAtpw_DCR2wkpGQFVDkqg.png"
+}, {
+  "tag": "P",
+  "text": "And it will finally give you the code which you can copy and apply to the dataset:",
+  "translation": "最后，它将为您提供可复制并应用于数据集的代码："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*u-DUduMvwaDfUAxxnn9F6A.png?q=20",
+  "type": "image",
+  "file": "1*u-DUduMvwaDfUAxxnn9F6A.png"
+}, {
+  "tag": "H1",
+  "text": "One Hot Encoding",
+  "translation": "一种热编码"
+}, {
+  "tag": "P",
+  "text": "Many times when preparing data for machine learning you’ll want to create dummy variables, ergo create a new column per unique value of a given attribute. It’s a good idea to do so because many machine learning algorithms can’t work with text data.",
+  "translation": "很多时候，在为机器学习准备数据时，您都会想要创建虚拟变量，因此，ergo为给定属性的唯一值创建一个新列。 这样做是个好主意，因为许多机器学习算法无法处理文本数据。"
+}, {
+  "tag": "P",
+  "text": "To implement that logic via Bamboolib, hit the OneHotEncoder button. I’ve decided to create dummy variables from the “Embarked” attribute because it has 3 distinct values and you can’t state that one is better than the other. Also, make sure to remove the first dummy to avoid collinearity issues (having variable which is a perfect predictor for some other variable):",
+  "translation": "要通过Bamboolib实现该逻辑，请点击OneHotEncoder按钮。 我决定从“ Embarked”属性创建虚拟变量，因为它具有3个不同的值，并且您不能说一个比另一个更好。 另外，请确保删除第一个虚拟对象以避免共线性问题（具有变量，该变量对于某些其他变量是理想的预测变量）："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*bOZNrKeA_6VNIizzqHPcHg.png?q=20",
+  "type": "image",
+  "file": "1*bOZNrKeA_6VNIizzqHPcHg.png"
+}, {
+  "tag": "P",
+  "text": "Executing will create two new columns in the dataset, just as you would expect:",
+  "translation": "正如您所期望的那样，执行将在数据集中创建两个新列："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/22/1*Bh9-fQDPTU1gezNlXyKuLg.png?q=20",
+  "type": "image",
+  "file": "1*Bh9-fQDPTU1gezNlXyKuLg.png"
+}, {
+  "tag": "P",
+  "text": "That’s nice, I’ve done my transformations, but what’s next?",
+  "translation": "很好，我已经完成了转换，但是接下来呢？"
+}, {
+  "tag": "H1",
+  "text": "Group By",
+  "translation": "通过...分组"
+}, {
+  "tag": "P",
+  "text": "Yes, you can also perform aggregations! To get started, click on the Aggregate/Group by button and specify what should be done in the side menu.",
+  "translation": "是的，您还可以执行聚合！ 首先，单击“聚合/分组依据”按钮，然后在侧面菜单中指定要执行的操作。"
+}, {
+  "tag": "P",
+  "text": "I’ve decided to group by “Pclass”, because I want to see the total number of survivors per passenger class:",
+  "translation": "我决定按“ Pclass”分组，因为我想查看每个乘客舱的幸存者总数："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*NPalKsRQYD_GrKap9mZ2bg.png?q=20",
+  "type": "image",
+  "file": "1*NPalKsRQYD_GrKap9mZ2bg.png"
+}, {
+  "tag": "P",
+  "text": "That will yield the following output:",
+  "translation": "这将产生以下输出："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*f7jq-IJSlYZ2-mq61Ulybg.png?q=20",
+  "type": "image",
+  "file": "1*f7jq-IJSlYZ2-mq61Ulybg.png"
+}, {
+  "tag": "P",
+  "text": "Awesome! Let’s explore one more thing before wrapping up.",
+  "translation": "太棒了！ 最后总结一下。"
+}, {
+  "tag": "H1",
+  "text": "Replacing Values",
+  "translation": "替换值"
+}, {
+  "tag": "P",
+  "text": "Another one of those common everyday tasks is to replace string values with the respective numerical alternative. This dataset is perfect to demonstrate value replacement because we can easily replace string values in the “Sex” column with numeric ones.",
+  "translation": "那些日常工作中的另一项是用相应的数字替换字符串值。 该数据集非常适合演示值替换，因为我们可以轻松地用数字替换“性别”列中的字符串值。"
+}, {
+  "tag": "P",
+  "text": "To begin, hit the Replace value button and specify the column, the value you want to replace and what you want to replace it with:",
+  "translation": "首先，请单击“替换值”按钮并指定列，要替换的值以及要替换为的值："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*9ucYBw6XIbkHQ1VZxf8eHA.png?q=20",
+  "type": "image",
+  "file": "1*9ucYBw6XIbkHQ1VZxf8eHA.png"
+}, {
+  "tag": "P",
+  "text": "And once the Execute button is hit:",
+  "translation": "然后单击执行按钮："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/11/1*3kjaAlpZIUZMecPmvjfUIA.png?q=20",
+  "type": "image",
+  "file": "1*3kjaAlpZIUZMecPmvjfUIA.png"
+}, {
+  "tag": "P",
+  "text": "Fantastic! You can do the same for the “female” option, but it’s up to you whether you want to do it or not.",
+  "translation": "太棒了！ 您可以对“女性”选项执行相同的操作，但是是否要执行由您自己决定。"
+}, {
+  "tag": "H1",
+  "text": "Data Filtering",
+  "translation": "资料筛选"
+}, {
+  "tag": "P",
+  "text": "One of the most common everyday tasks of any data analyst/scientist is data filtering. Basically you want to keep only a subset of data that’s relevant to you in a given moment.",
+  "translation": "数据过滤是任何数据分析师/科学家最常见的日常任务之一。 基本上，您只想保留给定时刻与您相关的数据子集。"
+}, {
+  "tag": "P",
+  "text": "To start filtering with Bamboolib, click on the Filter button.",
+  "translation": "要开始使用Bamboolib进行过滤，请单击“过滤器”按钮。"
+}, {
+  "tag": "P",
+  "text": "A side menu like the one below should pop up. I’ve decided to filter by the “Age” column, and keep only the rows where the value of “Age” is less than 18:",
+  "translation": "弹出下面的侧面菜单。 我决定按“年龄”列进行过滤，并仅保留“年龄”值小于18的行："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*DfJCHuHV1YwrUBks_WqMAw.png?q=20",
+  "type": "image",
+  "file": "1*DfJCHuHV1YwrUBks_WqMAw.png"
+}, {
+  "tag": "P",
+  "text": "Once you press Execute, you’ll see the actions took place immediately:",
+  "translation": "按下[执行]后，您会看到动作立即发生："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*6CaQAUiF0DgFAnmg1sVJCw.png?q=20",
+  "type": "image",
+  "file": "1*6CaQAUiF0DgFAnmg1sVJCw.png"
+}, {
+  "tag": "P",
+  "text": "That’s great! But what more can you do?",
+  "translation": "那很棒！ 但是您还能做什么？"
+}, {
+  "tag": "H1",
+  "text": "The First Use",
+  "translation": "第一次使用"
+}, {
+  "tag": "P",
+  "text": "Once in Jupyter, you can import Bamboolib and Pandas, and then use Pandas to load in some dataset:",
+  "translation": "进入Jupyter后，您可以导入Bamboolib和Pandas，然后使用Pandas加载一些数据集："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*W6w0jOIDiuwLc8ZxYrV3ug.png?q=20",
+  "type": "image",
+  "file": "1*W6w0jOIDiuwLc8ZxYrV3ug.png"
+}, {
+  "tag": "P",
+  "text": "Here’s how you’d use the library to view the dataset:",
+  "translation": "使用库查看数据集的方法如下："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*pkbC18rjOVmZmic98tqDWg.png?q=20",
+  "type": "image",
+  "file": "1*pkbC18rjOVmZmic98tqDWg.png"
+}, {
+  "tag": "P",
+  "text": "That’s not gonna work the first time you’re using the library. You’ll need to activate it, so make sure to have the license key somewhere near:",
+  "translation": "第一次使用该库将无法正常工作。 您需要激活它，因此请确保将许可证密钥放在附近："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*ZbmQT6o__6rS4PjY5oyPxw.png?q=20",
+  "type": "image",
+  "file": "1*ZbmQT6o__6rS4PjY5oyPxw.png"
+}, {
+  "tag": "P",
+  "text": "Once you’ve entered the email and license key, you should get the following message indicating that everything went well:",
+  "translation": "输入电子邮件和许可证密钥后，您将收到以下消息，指示一切正常："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*svD-O9hCrX7MjeL630Ncug.png?q=20",
+  "type": "image",
+  "file": "1*svD-O9hCrX7MjeL630Ncug.png"
+}, {
+  "tag": "P",
+  "text": "Great, now you can once again execute the previous cell. Immediately you’ll see an unfamiliar, but friendly-looking interface:",
+  "translation": "太好了，现在您可以再次执行上一个单元格。 随即您会看到一个陌生但外观友好的界面："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*lODYiLykUAbH2LnEB52H7w.png?q=20",
+  "type": "image",
+  "file": "1*lODYiLykUAbH2LnEB52H7w.png"
+}, {
+  "tag": "P",
+  "text": "Now everything is good to go, and we can dive into some basic functionalities. It was a lot of work to get to this point, but trust me, it was worth it!",
+  "translation": "现在一切顺利，我们可以深入研究一些基本功能。 要达到这一点需要做很多工作，但是请相信我，这是值得的！"
+}, {
+  "tag": "H1",
+  "text": "The Installation Process",
+  "translation": "安装过程"
+}, {
+  "tag": "P",
+  "text": "The first and most obvious thing to do is pip install:",
+  "translation": "首先也是最明显的事情是pip install："
+}, {
+  "tag": "PRE",
+  "text": "pip install bamboolib",
+  "translation": "点安装竹节"
+}, {
+  "tag": "P",
+  "text": "However, there’s a lot more to do if you want this thing fully working. It is designed to be a Jupyter Lab extension (or Jupyter Notebook if you still use those), so we’ll need to set up a couple of things there also.",
+  "translation": "但是，如果您想让此功能完全正常运行，还有很多事情要做。 它被设计为Jupyter Lab扩展程序（如果仍使用Jupyter Notebook，则为Jupyter Notebook），因此我们还需要在其中进行一些设置。"
+}, {
+  "tag": "P",
+  "text": "In a command line type the following:",
+  "translation": "在命令行中键入以下内容："
+}, {
+  "tag": "PRE",
+  "text": "jupyter nbextension enable --py qgrid --sys-prefixjupyter nbextension enable --py widgetsnbextension --sys-prefixjupyter nbextension install --py bamboolib --sys-prefixjupyter nbextension enable --py bamboolib --sys-prefix",
+  "translation": "jupyter nbextension enable --py qgrid --sys-prefixjupyter nbextension enable --py小部件"
+}, {
+  "tag": "P",
+  "text": "Now you’ll need to find the major version of Jupyter Lab installed on your machine. You can obtain it with the following command:",
+  "translation": "现在，您需要找到计算机上安装的Jupyter Lab的主要版本。 您可以使用以下命令获取它："
+}, {
+  "tag": "PRE",
+  "text": "jupyter labextension list",
+  "translation": "Jupyter LabExtension清单"
+}, {
+  "tag": "P",
+  "text": "Mine is “1.0”, but yours can be anything, so here’s a generic version of the next command you’ll need to execute:",
+  "translation": "我的是“ 1.0”，但您的可以是任何东西，因此这是您需要执行的下一个命令的通用版本："
+}, {
+  "tag": "PRE",
+  "text": "jupyter labextension install @jupyter-widgets/jupyterlab-manager@MAJOR_VERSION.MINOR_VERSION --no-build",
+  "translation": "jupyter labextension安装@ jupyter-widgets / jupyterlab-manager @ MAJOR_VERSION.MINOR_VERSION --no-build"
+}, {
+  "tag": "P",
+  "text": "Note that you need to replace “MAJOR_VERSION.MINOR_VERSION” with the version number, which is “1.0” in my case.",
+  "translation": "请注意，您需要将“ MAJOR_VERSION.MINOR_VERSION”替换为版本号，在本例中为“ 1.0”。"
+}, {
+  "tag": "P",
+  "text": "A couple of commands more and you’re ready to rock:",
+  "translation": "还有几个命令，您已经准备就绪："
+}, {
+  "tag": "PRE",
+  "text": "jupyter labextension install @8080labs/qgrid@1.1.1 --no-buildjupyter labextension install plotlywidget --no-buildjupyter labextension install jupyterlab-plotly --no-buildjupyter labextension install bamboolib --no-buildjupyter lab build --minimize=False",
+  "translation": "jupyter labextension install @ 8080labs / qgrid @ 1.1.1 --no-buildjupyter labextension install plotlywidget --no-buildjupyter labextension install jupyterlab-plotly --no-buildjupyter labextension installamboliblib --no-buildjupyter lab build --minimize = False"
+}, {
+  "tag": "P",
+  "text": "That’ it. Now you can start Juypter Lab and we can dive into the good stuff.",
+  "translation": "就是这样 现在您可以启动Juypter Lab，我们可以深入研究好东西。"
+}, {
+  "tag": "H1",
+  "text": "Is it Free?",
+  "translation": "免费吗？"
+}, {
+  "tag": "P",
+  "text": "In a world where such amazing libraries like Numpy and Pandas are free to use, this question may not even pop in your head. However, it should, because not all versions of Bamboolib are free.",
+  "translation": "在一个像Numpy和Pandas这样令人惊叹的库可以免费使用的世界中，这个问题甚至可能没有出现在您的脑海中。 但是，应该这样，因为不是所有版本的Bamboolib都是免费的。"
+}, {
+  "tag": "P",
+  "text": "If you don’t mind sharing your work with others, then yeah, it’s free to use, but if that poses a problem then it will set you back at least $10 a month which might be a bummer for the average users. Down below is the full pricing list:",
+  "translation": "如果您不介意与他人分享您的作品，是的，它是免费的，但是如果这样做会带来问题，那么您每月至少要回扣10美元，这对于普通用户而言可能是个大麻烦。 以下是完整的价格表："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*i2dgCR7--8JfW-jmOQzgQw.png?q=20",
+  "type": "image",
+  "file": "1*i2dgCR7--8JfW-jmOQzgQw.png"
+}, {
+  "tag": "P",
+  "text": "As the developer of the library stated, Bamboolib is designed to help you learn Pandas, so I don’t see a problem with going with the free option — most likely you won’t be working on some top-secret project if just starting out.",
+  "translation": "正如该库的开发人员所述，Bamboolib旨在帮助您学习熊猫，所以我认为使用free选项不会有问题-如果刚开始，您很可能不会从事某些绝密项目 。"
+}, {
+  "tag": "P",
+  "text": "This review will, however, be based on the private version of the library, as that’s the one Tobias gave access to me. With that being said, this article is by no means written with the idea of persuading you to buy the license, it only provides my personal opinion.",
+  "translation": "但是，此评论将基于图书馆的私人版本，因为那是Tobias授予我的访问权限。 话虽这么说，本文绝不是说服您购买许可证的想法，仅是我个人的看法。"
+}, {
+  "tag": "P",
+  "text": "Before jumping into the good stuff, you’ll need to install the library first.",
+  "translation": "在跳入好东西之前，您需要先安装该库。"
+}, {
+  "tag": "H1",
+  "text": "Introducing Bamboolib — a GUI for Pandas",
+  "translation": "引入Bamboolib —熊猫的GUI"
+}, {
+  "tag": "H2",
+  "text": "A couple of days back, mister Tobias Krabel contacted me via LinkedIn to introduce me to his product, a Python library called Bamboolib, which he states to be a GUI tool for learning Pandas — Python’s data analysis and visualization library.",
+  "translation": "几天前，托比亚斯·克拉贝尔（Tobias Krabel）先生通过LinkedIn与我联系，向我介绍了他的产品，一个名为Bamboolib的Python库，他说这是学习Pandas的GUI工具-Python的数据分析和可视化库。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*WubkFB12qzbYN3E8?q=20",
+  "caption": "Photo by Marius Masalar on Unsplash",
+  "type": "image",
+  "file": "0*WubkFB12qzbYN3E8"
+}, {
+  "tag": "P",
+  "text": "He states, and I quote:",
+  "translation": "他说，我引用："
+}, {
+  "tag": "P",
+  "text": "Our goal is to help people quickly learn and work with pandas, and we want to onboard the next generation of python data scientists.",
+  "translation": "我们的目标是帮助人们快速学习和使用熊猫，并且我们希望加入下一代python数据科学家的行列。"
+}, {
+  "tag": "P",
+  "text": "I have to admit, I was skeptical at first, mainly because I’m not a big fan of GUI tools and drag & drop principle in general. Still, I’ve opened the URL and watched the introduction video.",
+  "translation": "我不得不承认，起初我持怀疑态度，主要是因为我一般都不是GUI工具和拖放原理的忠实拥护者。 尽管如此，我还是打开了网址并观看了介绍视频。"
+}, {
+  "tag": "P",
+  "text": "It was one of those rare times when I was legitimately intrigued.",
+  "translation": "那是我应有的兴趣的罕见时期之一。"
+}, {
+  "tag": "P",
+  "text": "From there I’ve quickly responded to Tobias, and he kindly offered me to test out the library and see if I liked it.",
+  "translation": "从那以后，我迅速对Tobias做出了回应，他恳求我对图书馆进行测试，看看我是否喜欢它。"
+}, {
+  "tag": "P",
+  "text": "How was it? Well, you’ll have to keep reading to find the answer to that. So let’s get started.",
+  "translation": "它怎么样？ 好吧，您必须继续阅读才能找到答案。 因此，让我们开始吧。"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Dario Radečić的文章《Introducing Bamboolib — a GUI for Pandas》，参考：https://towardsdatascience.com/introducing-bamboolib-a-gui-for-pandas-4f6c091089e3)",
+  "translation": "（本文翻译自DarioRadečić的文章《 Bamboolib简介-熊猫的GUI》，参考：https：//towardsdatascience.com/introducing-bamboolib-a-gui-for-pandas-4f6c091089e3）"
+}]
