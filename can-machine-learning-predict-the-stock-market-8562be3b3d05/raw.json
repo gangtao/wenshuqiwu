@@ -1,0 +1,486 @@
+[{
+  "tag": "H1",
+  "text": "Can Machine Learning Predict The Stock Market?",
+  "translation": "机器学习可以预测股市吗？"
+}, {
+  "tag": "H2",
+  "text": "We test to see if technology is powerful enough to solve the mystery of financial markets",
+  "translation": "我们进行测试，看看技术是否足够强大以解决金融市场的奥秘"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*5mcK1HO50cdgfQ6LGc9FPw.png?q=20",
+  "type": "image",
+  "file": "1*5mcK1HO50cdgfQ6LGc9FPw.png"
+}, {
+  "tag": "P",
+  "text": "If invested correctly and wisely, the U.S. stock market can generate astonishing returns. Following the steps of quantitative investment firms like Two Sigma and Citadel, we are interested in knowing if we can use machine learning to predict stock price movements.",
+  "translation": "如果正确，明智地进行投资，美国股市会产生惊人的回报。 遵循“两个西格玛”和“城堡”之类的定量投资公司的步骤，我们有兴趣知道是否可以使用机器学习来预测股价走势。"
+}, {
+  "tag": "H1",
+  "text": "The Data",
+  "translation": "数据"
+}, {
+  "tag": "P",
+  "text": "We used Alpha Vantage API to pull daily price data for five ETFs (QQQ, TQQQ, VTI, IWM, SPY) and started out with just Open, High, Low, Close and Volume.",
+  "translation": "我们使用Alpha Vantage API提取了五只ETF（QQQ，TQQQ，VTI，IWM，SPY）的每日价格数据，并以开盘，最高，最低，收盘和成交量开始。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*l3pn1AWTTkQ2WUzR?q=20",
+  "type": "image",
+  "file": "0*l3pn1AWTTkQ2WUzR"
+}, {
+  "tag": "H1",
+  "text": "Feature Generation",
+  "translation": "特征生成"
+}, {
+  "tag": "P",
+  "text": "We decided to manually create functions in python to calculate several heavily use technical indicators in trading: Chaikin A/D, BBAND, CCI, EMA, MACD, OBV, RSI, SMA, and STOCH.",
+  "translation": "我们决定在python中手动创建函数，以计算交易中一些使用频繁的技术指标：Chaikin A / D，BBAND，CCI，EMA，MACD，OBV，RSI，SMA和STOCH。"
+}, {
+  "tag": "H2",
+  "text": "Simple Moving Average",
+  "translation": "简单移动平均线"
+}, {
+  "tag": "P",
+  "text": "Moving Averages are used to smooth the data in an array to help eliminate noise and identify trends. The Simple Moving Average is literally the simplest form of a moving average. Each output value is the average of the previous n values. In a Simple Moving Average, each value in the time period carries equal weight, and values outside of the time period are not included in the average. This makes it less responsive to recent changes in the data, which can be useful for filtering out those changes.",
+  "translation": "移动平均线用于平滑数组中的数据，以帮助消除噪音并确定趋势。 从字面上看，简单移动平均线是移动平均线的最简单形式。 每个输出值是前n个值的平均值。 在简单移动平均线中，时间段中的每个值均具有相等的权重，该时间段以外的值不包括在平均值中。 这使得它对数据的最新更改的响应较慢，这对于过滤掉这些更改很有用。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*7eM15_e8nIa43UmY?q=20",
+  "type": "image",
+  "file": "0*7eM15_e8nIa43UmY"
+}, {
+  "tag": "H2",
+  "text": "Exponential Moving Average",
+  "translation": "指数移动平均线"
+}, {
+  "tag": "P",
+  "text": "The Exponential Moving Average is a staple of technical analysis and is used in countless technical indicators. In a Simple Moving Average, each value in the time period carries equal weight, and values outside of the time period are not included in the average. However, the Exponential Moving Average is a cumulative calculation, including all data. Past values have a diminishing contribution to the average, while more recent values have a greater contribution. This method allows the moving average to be more responsive to changes in the data.",
+  "translation": "指数移动平均线是技术分析的主要内容，并用于无数技术指标中。 在简单移动平均线中，时间段中的每个值均具有相等的权重，该时间段以外的值不包括在平均值中。 但是，指数移动平均值是包括所有数据在内的累积计算。 过去的值对平均值的贡献减小，而最近的值对平均值的贡献更大。 这种方法使移动平均值对数据的变化更加敏感。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*WM4sdrwz-Nb-_iJZ?q=20",
+  "type": "image",
+  "file": "0*WM4sdrwz-Nb-_iJZ"
+}, {
+  "tag": "H2",
+  "text": "Moving Average Convergence Divergence",
+  "translation": "移动平均收敛散度"
+}, {
+  "tag": "P",
+  "text": "The Moving Average Convergence Divergence (MACD) is the difference between two Exponential Moving Averages. The Signal line is an Exponential Moving Average of the MACD.",
+  "translation": "移动平均收敛散度（MACD）是两个指数移动平均数之间的差。 信号线是MACD的指数移动平均线。"
+}, {
+  "tag": "P",
+  "text": "The MACD signals trend changes and indicates the start of the new trend direction. High values indicate overbought conditions, low values indicate oversold conditions. Divergence with the price indicates an end to the current trend, especially if the MACD is at extremely high or low values. When the MACD line crosses above the signal line a buy signal is generated. When the MACD crosses below the signal line, a sell signal is generated. To confirm the signal, the MACD should be above zero for a buy, and below zero for a sell.",
+  "translation": "MACD信号趋势变化并指示新趋势方向的开始。 高值表示超买情况，低值表示超卖情况。 价格差异表明当前趋势已结束，尤其是如果MACD处于极高或极低的值时。 当MACD线穿过信号线上方时，将产生买入信号。 当MACD在信号线下方穿过时，会产生卖出信号。 为了确认信号，MACD对于买入应该高于零，对于卖出应该低于零。"
+}, {
+  "tag": "P",
+  "text": "The time periods for the MACD are often given as 26 and 12. However, the function actually uses exponential constants of 0.075 and 0.15, which are closer to 25.6667 and 12.3333 periods. To create a similar indicator with time periods other than those built into the MACD, use the Price Oscillator function.",
+  "translation": "MACD的时间周期通常为26和12。但是，该函数实际上使用的指数常数为0.075和0.15，这更接近25.6667和12.3333周期。 要使用MACD内置的时间段以外的其他时间段创建类似的指标，请使用价格振荡器功能。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*t3_aWHWHrutNniOM?q=20",
+  "type": "image",
+  "file": "0*t3_aWHWHrutNniOM"
+}, {
+  "tag": "H2",
+  "text": "Stochastic Oscillator",
+  "translation": "随机振荡器"
+}, {
+  "tag": "P",
+  "text": "The Stochastic Oscillator measures where the close is in relation to the recent trading range. The values range from zero to 100. %D values over 75 indicate an overbought condition; values under 25 indicate an oversold condition. When the Fast %D crosses above the Slow %D, it is a buy signal; when it crosses below, it is a sell signal. The Raw %K is generally considered too erratic to use for crossover signals.",
+  "translation": "随机指标测量收盘价相对于近期交易区间的收盘价。 值范围从零到100。超过75的％D值表示超买状态； 低于25的值表示超卖情况。 当快速％D超过缓慢％D时，这是一个买入信号； 当它穿过下方时，这是一个卖出信号。 通常认为Raw％K太不稳定，无法用于分频信号。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*1WG3J2Kt49IOgl7n?q=20",
+  "type": "image",
+  "file": "0*1WG3J2Kt49IOgl7n"
+}, {
+  "tag": "H2",
+  "text": "Accumulation/Distribution Line",
+  "translation": "积累/分配线"
+}, {
+  "tag": "P",
+  "text": "The Accumulation/Distribution Line is similar to the On Balance Volume (OBV), which sums the volume times +1/-1 based on whether the close is higher than the previous close. The Accumulation/Distribution indicator, however, multiplies the volume by the close location value (CLV). The CLV is based on the movement of the issue within a single bar and can be +1, -1 or zero.",
+  "translation": "累积/分配行类似于平衡时的交易量（OBV），该交易量基于收盘价是否高于上一个收盘价而将交易量乘以+ 1 / -1。 但是，“累积/分配”指示器会将音量乘以关闭位置值（CLV）。 CLV基于问题在单个条形内的移动，可以为+ 1，-1或零。"
+}, {
+  "tag": "P",
+  "text": "The Accumulation/Distribution Line is interpreted by looking for a divergence in the direction of the indicator relative to price. If the Accumulation/Distribution Line is trending upward it indicates that the price may follow. Also, if the Accumulation/Distribution Line becomes flat while the price is still rising (or falling) then it signals an impending flattening of the price.",
+  "translation": "通过在指标相对于价格的方向上寻找差异来解释“累积/分配线”。 如果累积/分配线呈上升趋势，则表示价格可能跟随。 同样，如果在价格仍在上涨（或下降）时累积/分配线变平，则表示价格即将趋于平缓。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*ZIYbXgGSFfKcSGie?q=20",
+  "type": "image",
+  "file": "0*ZIYbXgGSFfKcSGie"
+}, {
+  "tag": "H2",
+  "text": "Bollinger Bands",
+  "translation": "布林乐队"
+}, {
+  "tag": "P",
+  "text": "Bollinger Bands consist of three lines. The middle band is a simple moving average (generally 20 periods) of the typical price (TP). The upper and lower bands are F standard deviations (generally 2) above and below the middle band. The bands widen and narrow when the volatility of the price is higher or lower, respectively.",
+  "translation": "布林带由三行组成。 中间带是典型价格（TP）的简单移动平均线（通常为20个周期）。 上带和下带是中带上方和下方的F标准偏差（通常为2）。 当价格的波动性更高或更低时，波段分别变宽和变窄。"
+}, {
+  "tag": "P",
+  "text": "Bollinger Bands do not, in themselves, generate buy or sell signals; they are an indicator of overbought or oversold conditions. When the price is near the upper or lower band it indicates that a reversal may be imminent. The middle band becomes a support or resistance level. The upper and lower bands can also be interpreted as price targets. When the price bounces off of the lower band and crosses the middle band, then the upper band becomes the price target.",
+  "translation": "布林带本身不会产生买入或卖出信号； 它们指示超买或超卖情况。 当价格接近上限或下限时，表明可能即将发生反转。 中带成为支撑或阻力位。 上限和下限也可以解释为目标价格。 当价格从较低的区域反弹并越过中间的区域时，则较高的区域成为价格目标。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*HkxeXS3K3gJ5e-7Z?q=20",
+  "type": "image",
+  "file": "0*HkxeXS3K3gJ5e-7Z"
+}, {
+  "tag": "H2",
+  "text": "On Balance Volume",
+  "translation": "平衡量"
+}, {
+  "tag": "P",
+  "text": "The On Balance Volume (OBV) is a cumulative total of the up and down volume. When the close is higher than the previous close, the volume is added to the running total, and when the close is lower than the previous close, the volume is subtracted from the running total.",
+  "translation": "平衡量（OBV）是上下量的累积总计。 当收盘价高于上一个收盘价时，该交易量将被添加到运行总计中；当该收盘价低于上一个收盘价时，将从运行总额中减去该交易量。"
+}, {
+  "tag": "P",
+  "text": "To interpret the OBV, look for the OBV to move with the price or precede price moves. If the price moves before the OBV, then it is a non-confirmed move. A series of rising peaks, or falling troughs, in the OBV indicates a strong trend. If the OBV is flat, then the market is not trending.",
+  "translation": "要解释OBV，请寻找随价格移动或先于价格移动的OBV。 如果价格在OBV之前移动，那么这是未经确认的移动。 OBV中出现一系列上升或下降的趋势，表明趋势很明显。 如果OBV持平，则市场没有趋势。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*3zAGwuIb1THub3NV?q=20",
+  "type": "image",
+  "file": "0*3zAGwuIb1THub3NV"
+}, {
+  "tag": "H1",
+  "text": "Data After Feature Generation",
+  "translation": "特征生成后的数据"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*lr1n__l3MuEHYvzJ?q=20",
+  "type": "image",
+  "file": "0*lr1n__l3MuEHYvzJ"
+}, {
+  "tag": "H1",
+  "text": "Our Hypothesis",
+  "translation": "我们的假设"
+}, {
+  "tag": "P",
+  "text": "We initially wanted to build a single model using data from all ETFs (QQQ, TQQQ, SPY, VTI, IWM) to predict a long term price trend for stocks traded on an exchange. We set the label as 1 if the return 20 trading days in the future > 3% and 0 otherwise.",
+  "translation": "我们最初希望使用来自所有ETF（QQQ，TQQQ，SPY，VTI，IWM）的数据建立一个单一模型，以预测在交易所交易的股票的长期价格趋势。 如果未来20个交易日的回报率> 3％，我们将标签设置为1，否则设置为0。"
+}, {
+  "tag": "P",
+  "text": "However, we found that there is great variance in the data between each ETF, so we decided that we needed to build separate models for each ETF. We ended up only using the QQQ ETF dataset to build our model.",
+  "translation": "但是，我们发现每个ETF之间的数据差异很大，因此我们决定需要为每个ETF建立单独的模型。 我们最终仅使用QQQ ETF数据集来构建模型。"
+}, {
+  "tag": "H1",
+  "text": "Experiment 1 (20-day return > 3% as label)",
+  "translation": "实验1（20天的回报率> 3％作为标签）"
+}, {
+  "tag": "H2",
+  "text": "LSTM: Test AUC 0.476",
+  "translation": "LSTM：测试AUC 0.476"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*ntjE1-fTOxIk1Ovx?q=20",
+  "type": "image",
+  "file": "0*ntjE1-fTOxIk1Ovx"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*tW8zF9BqVecp_Fue?q=20",
+  "type": "image",
+  "file": "0*tW8zF9BqVecp_Fue"
+}, {
+  "tag": "H2",
+  "text": "MLP Neural Network: Test AUC 0.577",
+  "translation": "MLP神经网络：测试AUC 0.577"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*8-Vagpa5vJpo27W8?q=20",
+  "type": "image",
+  "file": "0*8-Vagpa5vJpo27W8"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*KfRKQvmTCKzkPEo7?q=20",
+  "type": "image",
+  "file": "0*KfRKQvmTCKzkPEo7"
+}, {
+  "tag": "H2",
+  "text": "Random Forest: Test AUC 0.917",
+  "translation": "随机森林：测试AUC 0.917"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*dq6qkT-mbv51agiJ?q=20",
+  "type": "image",
+  "file": "0*dq6qkT-mbv51agiJ"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*4KPNoGPdjaPaGxCb?q=20",
+  "type": "image",
+  "file": "0*4KPNoGPdjaPaGxCb"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*xHEcCm3p-1OtWEUJ?q=20",
+  "type": "image",
+  "file": "0*xHEcCm3p-1OtWEUJ"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*EKuAqWi2BlQ4mgzq?q=20",
+  "type": "image",
+  "file": "0*EKuAqWi2BlQ4mgzq"
+}, {
+  "tag": "H1",
+  "text": "Too Good To Be True — A False Hope",
+  "translation": "太好了不能成为现实-一个虚假的希望"
+}, {
+  "tag": "P",
+  "text": "Our best model using the QQQ dataset gave us an AUC of .917. We had thought that we figured out a way to predict the stock market. However, this was not the case as we found a major flaw with our model.",
+  "translation": "使用QQQ数据集的最佳模型得出的AUC为.917。 我们以为我们想出了一种预测股市的方法。 但是，情况并非如此，因为我们发现模型存在重大缺陷。"
+}, {
+  "tag": "P",
+  "text": "It is known by convention that in machine learning, you need to shuffle your dataset in order to create your training and test sets. It is necessary to do this because you want the data in your test set to come from the same distribution as your training data. However, because historical stock data is time-dependent, meaning the data of the subsequent days does not exist until those subsequent days occur, shuffling our data would mean that the training dataset would have access to some data that is actually set in the future. For example, hypothetically, if we were to train our model in 2017 using our dataset which has data from 2018, we could not actually use this training dataset to train our model because, in 2017, the 2018 data had not yet existed. For this reason, we cannot shuffle our data when creating our training and test datasets.",
+  "translation": "众所周知，在机器学习中，您需要重新整理数据集以创建训练和测试集。 这样做是有必要的，因为您希望测试集中的数据来自与训练数据相同的分布。 但是，由于历史库存数据是随时间变化的，这意味着随后几天的数据要等到随后几天出现后才存在，对我们的数据进行混排将意味着训练数据集将可以访问将来实际设置的某些数据。 例如，假设，如果我们要使用具有2018年数据的数据集在2017年训练模型，则实际上不能使用此训练数据集来训练模型，因为在2017年还不存在2018年的数据。 因此，在创建训练和测试数据集时，我们无法洗牌。"
+}, {
+  "tag": "P",
+  "text": "For our next model, we used data from 2010 through 2016 as our training set and data from 2017 through 2019 as our test set. This distribution split is also useful because it basically allows us to “simulate” how our model would do with future data.",
+  "translation": "对于下一个模型，我们使用2010年至2016年的数据作为训练集，并使用2017年至2019年的数据作为测试集。 此分布拆分也很有用，因为它基本上使我们可以“模拟”我们的模型如何处理将来的数据。"
+}, {
+  "tag": "P",
+  "text": "Sadly with this model, the AUC score dropped significantly to 0.44 with the same Random Forest Classifier.",
+  "translation": "令人遗憾的是，使用相同的随机森林分类器，该模型的AUC得分显着下降至0.44。"
+}, {
+  "tag": "H2",
+  "text": "Random Forest: Test AUC 0.440",
+  "translation": "随机森林：测试AUC 0.440"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*yEJkjyR0rfwmIMW0?q=20",
+  "type": "image",
+  "file": "0*yEJkjyR0rfwmIMW0"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*xcONkYgqexrfanNn?q=20",
+  "type": "image",
+  "file": "0*xcONkYgqexrfanNn"
+}, {
+  "tag": "H1",
+  "text": "Rethinking Label Distribution",
+  "translation": "重新思考标签分配"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*JIR6M-qNMvEnqZYZ?q=20",
+  "type": "image",
+  "file": "0*JIR6M-qNMvEnqZYZ"
+}, {
+  "tag": "P",
+  "text": "As you can see in our sample dataset here, all of these rows have very similar 20-MAs, open, and closes. If 20 days after 1/4/2019 has a > 3% increase, then the days around 1/4/2019 will also have a > 3% increase, and that being true for any stock, the determining factor in the label going up in 20 days is generally not decided on the 20th day. It is determined in the days the records have overlapping periods in their 20 future trading periods. In this case, if we extract 1/6/2019 out and as the test set and train on the rest of it, the model will for sure assign the test data a label of one because all of its features are similar to the dates around it which form a cluster. The other issue with this approach is that, as stated earlier, the model is allowing the training set to use future data to predict. For example, the training set included 1/7/2019 -1/11/2019, to predict 1/6/2019, which is impossible to do in the real world.",
+  "translation": "正如您在此处的样本数据集中看到的那样，所有这些行都有非常相似的20-MA，分别是打开和关闭。 如果1/4/2019之后的20天增加了> 3％，那么1/4/2019左右的那一天也将增加> 3％，对于任何股票来说都是如此，标签中的决定因素将上升 通常在20天之内无法确定20天。 确定记录在其20个未来交易期间中有重叠期间的天数。 在这种情况下，如果我们提取1/6/2019作为测试集并对其进行训练，则该模型将确定为测试数据分配一个标签，因为其所有功能都与日期相似 它形成一个集群。 如前所述，这种方法的另一个问题是该模型允许训练集使用将来的数据进行预测。 例如，训练集包括1/7/2019 -1/11/2019，以预测1/6/2019，这在现实世界中是不可能做到的。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*WJcudnncY71mkvIM?q=20",
+  "type": "image",
+  "file": "0*WJcudnncY71mkvIM"
+}, {
+  "tag": "P",
+  "text": "And that becomes a problem when we are not shuffling the original dataset and when we use later dates as the test set. In this case, the closing prices in the training set hover around 20 dollars per share, but since we are using 2019 as the test set, the prices are dramatically different, thus, the model would perform poorly in assigning them the correct labels, especially considering the features of our records having a range of values that is not present in the training set.",
+  "translation": "当我们不对原始数据集进行混洗时，以及当我们使用以后的日期作为测试集时，这将成为一个问题。 在这种情况下，训练集中的收盘价徘徊在每股20美元左右，但是由于我们使用2019年作为测试集，因此价格差异很大，因此该模型在为它们分配正确的标签方面表现不佳，尤其是 考虑我们的记录的特征，这些特征具有训练集中不存在的一系列值。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*YosijWrdK_jvzsOB?q=20",
+  "type": "image",
+  "file": "0*YosijWrdK_jvzsOB"
+}, {
+  "tag": "P",
+  "text": "The solution we came up with was to change our label to a daily stock price movement. If the next day’s closing price is greater than the current day’s closing price, then the label is 1. Here, whether a day’s stock price goes up the next day is independent of one another, which resolved our problem of forming clusters and peeking future data.",
+  "translation": "我们想出的解决方案是将标签更改为每日股价变动。 如果第二天的收盘价大于当天的收盘价，则标签为1。这里，第二天的一天的股价是否上涨彼此独立，这解决了我们形成集群和查看未来数据的问题。 。"
+}, {
+  "tag": "H1",
+  "text": "Experiment 2 (next day price increase/decrease as label)",
+  "translation": "实验2（第二天价格上涨/下跌作为标签）"
+}, {
+  "tag": "H2",
+  "text": "1. TPOT",
+  "translation": "1. TPOT"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*_9rlrYGYo1-NBBgw?q=20",
+  "type": "image",
+  "file": "0*_9rlrYGYo1-NBBgw"
+}, {
+  "tag": "P",
+  "text": "References:",
+  "translation": "参考文献："
+}, {
+  "tag": "P",
+  "text": "https://towardsdatascience.com/tpot-automated-machine-learning-in-python-4c063b3e5de9",
+  "translation": "https://towardsdatascience.com/tpot-automated-machine-learning-in-python-4c063b3e5de9"
+}, {
+  "tag": "P",
+  "text": "https://epistasislab.github.io/tpot/using/",
+  "translation": "https://epistasislab.github.io/tpot/using/"
+}, {
+  "tag": "P",
+  "text": "TPOT is an open-source AutoML python package and runs through many different combinations of feature engineering and model selection. TPOT automatically creates many pipelines that include different ways of feature engineering (PCA, MaxAbsScaler, MinMaxScaler, etc) as well as different models with various mixtures of hyperparameters.",
+  "translation": "TPOT是一个开放源代码的AutoML python软件包，它通过特征工程和模型选择的许多不同组合来运行。 TPOT自动创建许多管线，这些管线包括不同的特征工程方法（PCA，MaxAbsScaler，MinMaxScaler等）以及具有各种超参数混合的不同模型。"
+}, {
+  "tag": "P",
+  "text": "The performance of TPOT heavily depends on the number of pipelines and the time you allow it to run. The total number of pipelines is equal to POPULATION_SIZE + GENERATIONS x OFFSPRING_SIZE, which can be determined in TPOT’s parameters.",
+  "translation": "TPOT的性能在很大程度上取决于管道的数量以及允许它运行的时间。 管道总数等于POPULATION_SIZE + GENERATIONS x OFFSPRING_SIZE，可以在TPOT的参数中确定。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*NH4_qFEwhxyn6rQZ?q=20",
+  "type": "image",
+  "file": "0*NH4_qFEwhxyn6rQZ"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*uov0DJGWXSyGp8PF?q=20",
+  "type": "image",
+  "file": "0*uov0DJGWXSyGp8PF"
+}, {
+  "tag": "P",
+  "text": "Since we only let TPOT ran 150 pipelines, which only took less than 15 minutes, the performance is not ideal: TEST AUC 0.509. However, with enough time (tens of hours or even days), TPOT can be a very powerful and easy tool to generate great results.",
+  "translation": "由于我们只让TPOT运行了150条管道，只用了不到15分钟的时间，所以性能并不理想：TEST AUC 0.509。 但是，如果有足够的时间（数十小时甚至几天），TPOT可能是一种非常强大且容易的工具，可以产生出色的结果。"
+}, {
+  "tag": "P",
+  "text": "Additionally, TPOT automatically stores the best pipeline it searched through and allows users to export those results as a .py file. As you can see, in our case, TPOT performed PCA on our data and selected GaussianNB as the best classification model.",
+  "translation": "此外，TPOT会自动存储搜索到的最佳管道，并允许用户将这些结果导出为.py文件。 如您所见，在我们的案例中，TPOT对我们的数据执行了PCA，并选择了GaussianNB作为最佳分类模型。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*fFsGOJwtD3yvD3Zv?q=20",
+  "type": "image",
+  "file": "0*fFsGOJwtD3yvD3Zv"
+}, {
+  "tag": "H2",
+  "text": "2. XGBoost",
+  "translation": "2. XGBoost"
+}, {
+  "tag": "P",
+  "text": "Using an XGBClassifier, we did not have to configure much other than the learning rate, max depth, n_estimators, and subsample. Using cross-validation and a scoring metric of AUC, we optimized the hyperparameters. Finally, we used the optimized hyperparameters to make a final model on an X_train and y_train. The accuracy (not AUC) on the test set was 50.5%",
+  "translation": "使用XGBClassifier，除了学习率，最大深度，n_estimators和子样本外，我们无需进行其他配置。 使用交叉验证和AUC评分标准，我们优化了超参数。 最后，我们使用优化的超参数在X_train和y_train上建立最终模型。 测试仪的准确度（不是AUC）为50.5％"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*qNOLT9G7HGeHqBeh?q=20",
+  "type": "image",
+  "file": "0*qNOLT9G7HGeHqBeh"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*FQMC0gvK66m6tFBR?q=20",
+  "type": "image",
+  "file": "0*FQMC0gvK66m6tFBR"
+}, {
+  "tag": "P",
+  "text": "With XGBClassifier, we obtain a 0.478 Test Set AUC Score",
+  "translation": "使用XGBClassifier，我们获得0.478测试集AUC分数"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*eHpnKqkfSwCUwncN?q=20",
+  "type": "image",
+  "file": "0*eHpnKqkfSwCUwncN"
+}, {
+  "tag": "H2",
+  "text": "3. Random Forest",
+  "translation": "3.随机森林"
+}, {
+  "tag": "P",
+  "text": "Using a random forest classifier, we tuned hyperparameters across a range of values using the brute force Grid Search Cross-Validation. The best parameters are shown with max_depth = 3 and min_samples_leaf = 3.",
+  "translation": "使用随机森林分类器，我们使用蛮力网格搜索交叉验证在值的范围内调整了超参数。 最佳参数显示为max_depth = 3和min_samples_leaf = 3。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*ZONcFpdh_WPrJPYK?q=20",
+  "type": "image",
+  "file": "0*ZONcFpdh_WPrJPYK"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*C_lpji1pn1K2ZU4P?q=20",
+  "type": "image",
+  "file": "0*C_lpji1pn1K2ZU4P"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*xQ4Ga87R4jakHb2K?q=20",
+  "type": "image",
+  "file": "0*xQ4Ga87R4jakHb2K"
+}, {
+  "tag": "P",
+  "text": "With this Random Forest Classifier, we obtain a 0.519 Test Set AUC Score",
+  "translation": "使用该随机森林分类器，我们获得0.519测试集AUC得分"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*PZCn39_9o3SZabTC?q=20",
+  "type": "image",
+  "file": "0*PZCn39_9o3SZabTC"
+}, {
+  "tag": "H2",
+  "text": "4. Google AutoML",
+  "translation": "4. Google AutoML"
+}, {
+  "tag": "P",
+  "text": "With the increasing popularity of AutoML, we decided to input our dataset to Google Cloud AutoML to see if it can predict a better AUC score than us. Google AutoML has a very user-friendly interface that automatically spits out some statistics after you upload your dataset.",
+  "translation": "随着AutoML的日益普及，我们决定将数据集输入到Google Cloud AutoML中，以查看它是否可以预测比我们更好的AUC分数。 Google AutoML具有非常友好的用户界面，可在您上传数据集后自动吐出一些统计信息。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*PQsM8FD19h4jx_mc?q=20",
+  "type": "image",
+  "file": "0*PQsM8FD19h4jx_mc"
+}, {
+  "tag": "P",
+  "text": "In a classification projects like ours, Google AutoML allows users to select different performance metrics to optimize the final model.",
+  "translation": "在像我们这样的分类项目中，Google AutoML允许用户选择不同的性能指标来优化最终模型。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/23/0*dvOq6HG1WTSFzY2s?q=20",
+  "type": "image",
+  "file": "0*dvOq6HG1WTSFzY2s"
+}, {
+  "tag": "P",
+  "text": "So how did Google AutoML did? After just one hour of training, it returned an AUC of 0.529, by far the highest in our process. It is important to note that the AUC with random forest reaches 0.519 which is only 0.01 lower than the Google AutoML.",
+  "translation": "那么Google AutoML的表现如何？ 经过仅一个小时的培训，它的AUC值为0.529，是迄今为止我们过程中最高的。 重要的是要注意，具有随机森林的AUC达到0.519，仅比Google AutoML低0.01。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*lZ8IrGw-NSpia4Xu?q=20",
+  "type": "image",
+  "file": "0*lZ8IrGw-NSpia4Xu"
+}, {
+  "tag": "H1",
+  "text": "Conclusion and Insights",
+  "translation": "结论与见解"
+}, {
+  "tag": "P",
+  "text": "The weakness of technical analysis: In the world of finance, technical analysis (using historical stock prices to predict future stock prices) has been proven to be futile. Additional features could be considered in further analysis:",
+  "translation": "技术分析的弱点：在金融界，技术分析（使用历史股价预测未来股价）已被证明是徒劳的。 可以在进一步分析中考虑其他功能："
+}, {
+  "tag": "OL",
+  "texts": ["Tweets Scrapping: sentiment analysis on tweets", "Earnings Call Transcripts: analyze tones of executives during earnings calls; evaluate topics the executives/analysts are discussing", "Satellite data (satellite images on oil wells can potentially be used to predict oil prices)"],
+  "translations": ["推文废弃：对推文的情绪分析", "收益电话会议记录：分析收益电话会议中高管的语气； 评估主管/分析师正在讨论的主题", "卫星数据（油井上的卫星图像可用于预测油价）"]
+}, {
+  "tag": "P",
+  "text": "The only true way to beat the stock market is to have additional information, such as having access to future data or knowing quarterly earnings results ahead of time, leading to impossibility or illegality. Using the technical indicators can tell you part of the story, but predicting next day stock direction is too random and influenced by outside factors to create a strong model.",
+  "translation": "击败股市的唯一真实方法就是拥有更多信息，例如访问未来数据或提前知道季度收益结果，从而导致不可能或违法行为。 使用技术指标可以告诉您部分情况，但预测第二天的库存方向过于随机，并且受外界因素的影响，无法创建一个可靠的模型。"
+}, {
+  "tag": "P",
+  "text": "Key Takeaway: Machine learning projects are only useful and effective if the data used to train the model and the data the model encounters in the future come from the same distribution, which is not the case when using in the independent and volatile stock market daily returns as the label.",
+  "translation": "关键要点：机器学习项目只有在用于训练模型的数据和模型将来遇到的数据来自同一分布的情况下才有用且有效，而在独立且动荡的股市每日收益中使用则不是这种情况 作为标签。"
+}, {
+  "tag": "H1",
+  "text": "Contributors",
+  "translation": "贡献者"
+}, {
+  "tag": "P",
+  "text": "Joseph Chin, UT Austin MSITM ’20: joseph.chin@utexas.edu",
+  "translation": "约瑟夫·钦（Joseph Chin），犹他州奥斯汀MSITM ’20：joseph.chin@utexas.edu"
+}, {
+  "tag": "P",
+  "text": "Hao Lun Colin Chu, UT Austin MSITM ’20: colinchu@utexas.edu",
+  "translation": "郝伦Colin Chu，UT奥斯汀MSITM ’20：colinchu@utexas.edu"
+}, {
+  "tag": "P",
+  "text": "Wilshire Liu, UT Austin MSITM ’20: wilshire.liu@utexas.edu",
+  "translation": "犹他州威尔希尔·刘（Wilshire Liu），奥斯汀MSITM二十：wilshire.liu@utexas.edu"
+}, {
+  "tag": "P",
+  "text": "Brian Smith-Eitches, UT Austin MSITM ’20: smitheitches@gmail.com",
+  "translation": "布莱恩·史密斯（Brian Smith-Eitches），犹他州奥斯汀MSITM ’20：smitheitches@gmail.com"
+}, {
+  "tag": "P",
+  "text": "Zhuo Wen, UT Austin MSITM ’20: wenzhuo@utexas.edu",
+  "translation": "卓文，犹他州奥斯汀MSITM ’20：wenzhuo@utexas.edu"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Wilshire Liu的文章《Can Machine Learning Predict The Stock Market?》，参考：https://towardsdatascience.com/can-machine-learning-predict-the-stock-market-8562be3b3d05)",
+  "translation": "（本文翻译自Wilshire Liu的文章《机器学习可以预测股市吗？》，参考：https：//towardsdatascience.com/can-machine-learning-predict-the-stock-market-8562be3b3d05）"
+}]
