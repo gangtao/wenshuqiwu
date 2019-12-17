@@ -1,0 +1,318 @@
+[{
+  "tag": "H2",
+  "text": "Peter Nistrup - Medium",
+  "translation": "彼得·尼斯特鲁普（Peter Nistrup）-中"
+}, {
+  "tag": "H3",
+  "text": "Read writing from Peter Nistrup on Medium. DATA SCIENCE, STATISTICS & AI ... Stay up to date on Twitter ☞ @PeterNistrup…",
+  "translation": "阅读Peter Nistrup在Medium上的文章。 数据科学，统计与人工智能...在Twitter上保持最新状态☞@PeterNistrup ..."
+}, {
+  "tag": "H1",
+  "text": "Closing thoughts",
+  "translation": "总结思想"
+}, {
+  "tag": "P",
+  "text": "This was just a quick list I threw together to give you an impression on some of the great things that Python can do. Please leave any feedback you have and also if you want me to explain something specific or if you feel like I made a mistake!",
+  "translation": "这只是我汇总的快速清单，目的是让您对Python可以做的一些很棒的事情有一个印象。 如果您想让我解释一些具体的问题，或者您觉得我做错了，请留下您的任何反馈意见！"
+}, {
+  "tag": "P",
+  "text": "Thanks for reading. Hopefully, you found this useful! If you enjoyed this article and want to see more, be sure to follow my profile!",
+  "translation": "谢谢阅读。 希望您发现这很有用！ 如果您喜欢这篇文章并希望了解更多内容，请务必关注我的个人资料！"
+}, {
+  "tag": "H2",
+  "text": "Peter Nistrup - Medium",
+  "translation": "彼得·尼斯特鲁普（Peter Nistrup）-中"
+}, {
+  "tag": "H3",
+  "text": "Read writing from Peter Nistrup on Medium. DATA SCIENCE, STATISTICS & AI ... Stay up to date on Twitter ☞ @PeterNistrup…",
+  "translation": "阅读Peter Nistrup在Medium上的文章。 数据科学，统计与人工智能...在Twitter上保持最新状态☞@PeterNistrup ..."
+}, {
+  "tag": "H2",
+  "text": "7 things to quickly improve your Data Analysis in Python",
+  "translation": "快速改善Python数据分析的7件事"
+}, {
+  "tag": "H3",
+  "text": "Take your Data Analysis to the next level!",
+  "translation": "使您的数据分析更上一层楼！"
+}, {
+  "tag": "H1",
+  "text": "More like this",
+  "translation": "更像这样"
+}, {
+  "tag": "P",
+  "text": "Take a look at my new article if you like these kinds of easily applicable things to improve your Python workflows:",
+  "translation": "如果您喜欢这些易于使用的东西来改善Python工作流程，请看一下我的新文章："
+}, {
+  "tag": "H2",
+  "text": "7 things to quickly improve your Data Analysis in Python",
+  "translation": "快速改善Python数据分析的7件事"
+}, {
+  "tag": "H3",
+  "text": "Take your Data Analysis to the next level!",
+  "translation": "使您的数据分析更上一层楼！"
+}, {
+  "tag": "H1",
+  "text": "# 5: zip()",
+  "translation": "＃5：zip（）"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*ZSQcPozin9P1YZtt.jpg?q=20",
+  "type": "image",
+  "file": "0*ZSQcPozin9P1YZtt.jpg"
+}, {
+  "tag": "P",
+  "text": "Remember the example from the “map()” section about applying something in parallel between two lists? zip() makes this even easier.",
+  "translation": "还记得“ map（）”部分中有关在两个列表之间并行应用某些内容的示例吗？ zip（）使此操作更加容易。"
+}, {
+  "tag": "P",
+  "text": "Lets say we have two lists, one containing first-names and one containing last-names, how do we merge these in an orderly fashion? Using zip()!:",
+  "translation": "假设我们有两个列表，一个包含名字，一个包含姓氏，我们如何以有序方式合并它们？ 使用zip（）!:"
+}, {
+  "tag": "PRE",
+  "text": ">>> first_names = [\"Peter\", \"Christian\", \"Klaus\"]>>> last_names = [\"Jensen\", \"Smith\", \"Nistrup\"]>>> print([' '.join(x) for x in zip(first_names, last_names)])['Peter Jensen', 'Christian Smith', 'Klaus Nistrup']",
+  "translation": ">>> first_names = [“ Peter”，“ Christian”，“ Klaus”] >>> last_names = [“ Jensen”，“ Smith”，“ Nistrup”] >>> print（[''.join（x）为 x in zip（first_names，last_names）]）['Peter Jensen'，'Christian Smith'，'Klaus Nistrup']"
+}, {
+  "tag": "P",
+  "text": "Woops! Mistake where made, my name isn’t Peter Jensen.. But we know how to fix this easily!:",
+  "translation": "哇！ 犯错的地方是我，我叫Peter Jensen。但是我们知道如何轻松解决这个问题！："
+}, {
+  "tag": "PRE",
+  "text": ">>> print([' '.join(x) for x in zip(first_names, last_names[::-1])])['Peter Nistrup', 'Christian Smith', 'Klaus Jensen']",
+  "translation": ">>> print（[['.join（x）for zip中的x（first_names，last_names [::-1]）]）['Peter Nistrup'，'Christian Smith'，'Klaus Jensen']"
+}, {
+  "tag": "H2",
+  "text": "Exploring your data with just 1 line of Python",
+  "translation": "仅使用1行Python即可浏览数据"
+}, {
+  "tag": "H3",
+  "text": "Getting all your standard data analysis done in less than 30 seconds. The wonders of Pandas Profiling.",
+  "translation": "在不到30秒的时间内完成所有标准数据分析。 熊猫分析的奇迹。"
+}, {
+  "tag": "H1",
+  "text": "# 4: if, elif and else condition one-liners",
+  "translation": "＃4：如果，否则，如果条件一线"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*8WuSDfscbkTHZPIL.jpg?q=20",
+  "type": "image",
+  "file": "0*8WuSDfscbkTHZPIL.jpg"
+}, {
+  "tag": "P",
+  "text": "Somewhere in your code you’ll probably have something like:",
+  "translation": "在代码中的某处，您可能会遇到类似以下内容的情况："
+}, {
+  "tag": "PRE",
+  "text": ">>> x = int(input())>>> if x >= 10:>>>     print(\"Horse\")>>> elif 1 < x < 10:>>>     print(\"Duck\")>>> else:>>>     print(\"Baguette\")",
+  "translation": ">>> x = int（input（））>>>如果x> = 10：>>> print（“ Horse”）>>> elif 1 <x <10：>>> print（“ Duck”）>> >否则：>>>打印（“长棍面包”）"
+}, {
+  "tag": "P",
+  "text": "When you run this you’re prompted an input from the input() function, let’s say we enter 5, we’ll get Duck . But we can also write the whole thing in a one-liner like this:",
+  "translation": "运行此命令时，系统会提示您从input（）函数输入内容，假设我们输入5，我们将得到Duck。 但是我们也可以像下面这样写整个内容："
+}, {
+  "tag": "PRE",
+  "text": "print(\"Horse\" if x >= 10 else \"Duck\" if 1 < x < 10 else \"Baguette\")",
+  "translation": "print（如果x> = 10，则为“马”；否则，如果x <= 10，则为“鸭子”；否则，则为“长棍面包”）"
+}, {
+  "tag": "P",
+  "text": "It’s really that easy! Going through your old code you’ll find tons of places where a simple conditional if / else statement can be simplified to a one-liner.",
+  "translation": "真的很简单！ 仔细阅读旧代码，您会发现无数地方可以将简单的条件if / else语句简化为单行代码。"
+}, {
+  "tag": "P",
+  "text": "Speaking of one-liners, want to get an overview of your entire dataset just using one line of code? Check this out:",
+  "translation": "说到单行代码，是否只需要使用一行代码就能获得整个数据集的概览？ 看一下这个："
+}, {
+  "tag": "H2",
+  "text": "Exploring your data with just 1 line of Python",
+  "translation": "仅使用1行Python即可浏览数据"
+}, {
+  "tag": "H3",
+  "text": "Getting all your standard data analysis done in less than 30 seconds. The wonders of Pandas Profiling.",
+  "translation": "在不到30秒的时间内完成所有标准数据分析。 熊猫分析的奇迹。"
+}, {
+  "tag": "H1",
+  "text": "# 3: Lambda & Map",
+  "translation": "＃3：Lambda和地图"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*LISir-PIysH-xmtx.png?q=20",
+  "caption": "Crazy paint skills coming in from the right",
+  "type": "image",
+  "file": "0*LISir-PIysH-xmtx.png"
+}, {
+  "tag": "H2",
+  "text": "Lambda",
+  "translation": "拉姆达"
+}, {
+  "tag": "P",
+  "text": "Lambda is a bit weird, but like everything else on this list, it’s really powerful and quite intuitive once you catch on.",
+  "translation": "Lambda有点怪异，但与该列表中的所有其他内容一样，它一经发布，便非常强大且直观。"
+}, {
+  "tag": "P",
+  "text": "Basically a Lambda function is a small, anonymous function. Why anonymous? Simply because Lambdas are most often used to perform small / simple operations which don’t require a formal function definition like def my_function() .",
+  "translation": "Lambda函数基本上是一个小的匿名函数。 为什么要匿名？ 仅仅是因为Lambda最常用于执行小型/简单操作，而这些操作不需要像def my_function（）这样的正式函数定义。"
+}, {
+  "tag": "P",
+  "text": "Let’s take the example above of squaring a number and adding 5. Above we made a formal function definition with def stupid_func(x) , now let’s recreate it with a lambda function:",
+  "translation": "让我们以上面的例子为例，对一个数字进行平方并加5。在上面，我们使用def stupid_func（x）定义了一个正式的函数定义，现在让我们使用lambda函数重新创建它："
+}, {
+  "tag": "PRE",
+  "text": ">>> stupid_func = (lambda x : x ** 2 + 5)>>> print([stupid_func(1), stupid_func(3), stupid_func(5)])[6, 14, 30]",
+  "translation": ">>> stupid_func =（lambda x：x ** 2 + 5）>>> print（[stupid_func（1），stupid_func（3），stupid_func（5）]）[6，14，30]"
+}, {
+  "tag": "P",
+  "text": "So why bother using this weird syntax? Well this becomes useful when you want to performe some simple operation without defining an actual function. Take the case of a list of number, how do we sort such a list in Python? One way is to use the sorted() method:",
+  "translation": "那么，为什么还要使用这种奇怪的语法呢？ 当您想执行一些简单的操作而不定义实际功能时，这很有用。 以数字列表为例，我们如何在Python中对这样的列表进行排序？ 一种方法是使用sorted（）方法："
+}, {
+  "tag": "PRE",
+  "text": ">>> my_list = [2, 1, 0, -1, -2]>>> print(sorted(my_list))[-2, -1, 0, 1, 2]",
+  "translation": ">>> my_list = [2，1，0，-1，-2] >>> print（sorted（my_list））[-2，-1，0，1，2]"
+}, {
+  "tag": "P",
+  "text": "That did the trick, but let’s say we want to sort by the lowest squared number, we can use a lambda function to define the key, which is what the sorted() method uses to determine how to sort.",
+  "translation": "确实达到了目的，但假设我们要按最小平方数排序，我们可以使用lambda函数定义键，这就是sorted（）方法用来确定如何排序的键。"
+}, {
+  "tag": "PRE",
+  "text": ">>> print(sorted(my_list, key = lambda x : x ** 2))[0, -1, 1, -2, 2]",
+  "translation": ">>> print（sorted（my_list，key = lambda x：x ** 2））[0，-1，1，-2，2]"
+}, {
+  "tag": "H2",
+  "text": "Map",
+  "translation": "地图"
+}, {
+  "tag": "P",
+  "text": "Map is simply a function used to apply a function to some sequence of elements like a list. Let’s say we have to list where we want to multiply each element in one list with the corresponding element in the other, how do we do this? Using a lambda function and map!:",
+  "translation": "映射只是一个函数，用于将函数应用于列表等元素序列。 假设我们必须列出要在一个列表中将每个元素与另一个列表中的对应元素相乘的位置，我们该怎么做？ 使用lambda函数进行映射！："
+}, {
+  "tag": "PRE",
+  "text": ">>> print(list(map(lambda x, y : x * y, [1, 2, 3], [4, 5, 6])))[4, 10, 18]",
+  "translation": ">>> print（list（map（lambda x，y：x * y，[1，2，3]，[4，5，6]））））[4，10，18]"
+}, {
+  "tag": "P",
+  "text": "This is simple and elegant compared to this monstrocity:",
+  "translation": "与这种怪诞相比，这是简单而优雅的："
+}, {
+  "tag": "PRE",
+  "text": ">>> x, y = [1, 2, 3], [4, 5, 6]>>> z = []>>> for i in range(len(x)):>>>     z.append(x[i] * y[i])>>> print(z)[4, 10, 18]",
+  "translation": ">>> x，y = [1、2、3]，[4、5、6] >>> z = [] >>>对于范围（len（x））中的i：>>> z.append（ x [i] * y [i]）>>> print（z）[4，10，18]"
+}, {
+  "tag": "H1",
+  "text": "# 2: List comprehensions",
+  "translation": "＃2：列表理解"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*aLxluAYQy7mgIvS3.jpg?q=20",
+  "type": "image",
+  "file": "0*aLxluAYQy7mgIvS3.jpg"
+}, {
+  "tag": "P",
+  "text": "Oh boy, once I learned about these my whole world changed (not really, but close enough). This is a really powerful, intuitive and readable way for making quick operations on a list.",
+  "translation": "哦，天哪，一旦我了解了这些，我的整个世界都发生了变化（不是真的，但是足够亲密）。 这是在列表上进行快速操作的一种真正强大，直观且易读的方法。"
+}, {
+  "tag": "P",
+  "text": "Let’s say we have a random function of squaring a number and adding 5:",
+  "translation": "假设我们有一个随机的函数，对数字进行平方并加5："
+}, {
+  "tag": "PRE",
+  "text": ">>> def stupid_func(x):>>>     return x**2 + 5",
+  "translation": ">>> def stupid_func（x）：>>>返回x ** 2 + 5"
+}, {
+  "tag": "P",
+  "text": "Now let’s say we want to apply this function to all odd numbers in a list, this is probably the way you would do if you don’t know of list comprehensions:",
+  "translation": "现在假设我们要将此函数应用于列表中的所有奇数，这可能是您不了解列表推导方法的处理方式："
+}, {
+  "tag": "PRE",
+  "text": ">>> my_list = [1, 2, 3, 4, 5]>>> new_list = []>>> for x in my_list:>>>     if x % 2 != 0:>>>         new_list.append(stupid_func(x))>>> print(new_list)[6, 14, 30]",
+  "translation": ">>> my_list = [1、2、3、4、5] >>> new_list = [] >>> for my_list中的x：>>>如果x％2！= 0：>>> new_list.append（stupid_func （x））>>> print（new_list）[6，14，30]"
+}, {
+  "tag": "P",
+  "text": "But there’s an easier way!:",
+  "translation": "但是有一种更简单的方法！："
+}, {
+  "tag": "PRE",
+  "text": ">>> my_list = [1, 2, 3, 4, 5]>>> print([stupid_func(x) for x in my_list if x % 2 != 0])[6, 14, 30]",
+  "translation": ">>> my_list = [1、2、3、4、5] >>> print（[如果x％2！= 0，则my_list中x的愚蠢功能（x）]）[6、14、30]"
+}, {
+  "tag": "P",
+  "text": "List comprehensions works with the syntax [ expression for item in list ] and if you’re feeling fancy with an additional Boolean condition like the “odd” condition above: [ expression for item in list if conditional ] this is the exact same as:",
+  "translation": "列表推导适用于[列表中项目的表达式]语法，如果您喜欢其他布尔条件，例如上述“奇数”条件：[列表中项目的表达式，如果有条件]，则与以下内容完全相同："
+}, {
+  "tag": "PRE",
+  "text": ">>> for item in list:>>>     if conditional:>>>         expression",
+  "translation": ">>>对于列表中的项目：>>>如果有条件：>>>表达式"
+}, {
+  "tag": "P",
+  "text": "Very cool! We can still do a bit better though, because we don’t really need that “stupid_func”:",
+  "translation": "很酷！ 不过，我们仍然可以做得更好，因为我们确实不需要“ stupid_func”："
+}, {
+  "tag": "PRE",
+  "text": ">>> print([x ** 2 + 5 for x in my_list if x % 2 != 0])[6, 14, 30]",
+  "translation": ">>>打印（[x ** 2 + 5，如果x％2！= 0]，则my_list中的x）[6，14，30]"
+}, {
+  "tag": "P",
+  "text": "Boom!",
+  "translation": "繁荣！"
+}, {
+  "tag": "H1",
+  "text": "# 1: String manipulation",
+  "translation": "＃1：字符串操作"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*8iTbkVwBIaVbzWei.jpg?q=20",
+  "caption": "Pun definitely intended",
+  "type": "image",
+  "file": "0*8iTbkVwBIaVbzWei.jpg"
+}, {
+  "tag": "P",
+  "text": "Python is great at determinering what you want to do with a string using mathematical operator like + and * :",
+  "translation": "Python非常擅长使用+和*之类的数学运算符确定要对字符串进行的处理："
+}, {
+  "tag": "PRE",
+  "text": ">>> my_string = \"Hi Medium..!\">>> print(my_string * 2)Hi Medium..!Hi Medium..!>>> print(my_string + \" I love Python\" * 2)Hi Medium..! I love Python I love Python",
+  "translation": ">>> my_string =“ Hi Medium ..！” >>> print（my_string * 2）Hi Medium .. !! Hi Medium ..！>>> print（my_string +“ I love Python” * 2）Hi Medium .. ！ 我爱Python我爱Python"
+}, {
+  "tag": "P",
+  "text": "We can reverse a string easily as well, using [::-1] and this isn’t limited to strings!:",
+  "translation": "我们也可以使用[::-1]轻松地反转字符串，这不仅限于字符串！："
+}, {
+  "tag": "PRE",
+  "text": ">>> print(my_string[::-1])!..muideM iH>>> my_list = [1,2,3,4,5]>>> print(my_list[::-1])[5, 4, 3, 2, 1]",
+  "translation": ">>> print（my_string [::-1]）!. muideM iH >>> my_list = [1,2,3,4,5] >>> print（my_list [::-1]）[5， 4，3，2，1]"
+}, {
+  "tag": "P",
+  "text": "What about a list of words? We can make a Yoda-translator!:",
+  "translation": "单词列表呢？ 我们可以做一个尤达翻译！"
+}, {
+  "tag": "PRE",
+  "text": ">>> word_list = [\"awesome\", \"is\", \"this\"]>>> print(' '.join(word_list[::-1]) + '!')this is awesome!",
+  "translation": ">>> word_list = [“ awesome”，“ is”，“ this”] >>> print（''.join（word_list [::-1]）+'！'）这太棒了！"
+}, {
+  "tag": "P",
+  "text": "Above we make use of the .join() method, joining all elements in the reversed list with ' ' (space) and adding on an exclamation point.",
+  "translation": "上面我们使用.join（）方法，将反向列表中的所有元素与''（空格）连接在一起，并添加感叹号。"
+}, {
+  "tag": "H1",
+  "text": "Python tricks 101, what every new programmer should know.",
+  "translation": "Python欺骗了101，这是每个新程序员都应该知道的。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*hqkwlI8IPPRIN9NKKGzJ8g.jpeg?q=20",
+  "caption": "A pretty picture to catch your eye.",
+  "type": "image",
+  "file": "1*hqkwlI8IPPRIN9NKKGzJ8g.jpeg"
+}, {
+  "tag": "P",
+  "text": "Python is more popular than ever and people are proving on a daily basis that Python is a very powerful and easy-to-pick-up language.",
+  "translation": "Python比以往任何时候都更加流行，并且人们每天都在证明Python是一种非常强大且易于使用的语言。"
+}, {
+  "tag": "P",
+  "text": "I’ve been coding in Python for a few years, the last 6 months professionally, and here’s some of the things I wish I knew when I first started out:",
+  "translation": "我从事Python编程已经有几年了，最近6个月是专业的，以下是我刚开始时希望知道的一些事情："
+}, {
+  "tag": "OL",
+  "texts": ["String manipulation", "List comprehension", "lambda & map()", "if, elif and else condition one-liners", "zip()"],
+  "translations": ["字符串操作", "清单理解", "lambda和map（）", "如果，否则，条件是单线", "压缩（）"]
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Peter Nistrup的文章《Python tricks 101, what every new programmer should know.》，参考：https://towardsdatascience.com/python-tricks-101-what-every-new-programmer-should-know-c512a9787022)",
+  "translation": "（本文翻译自Peter Nistrup的文章《 Python的技巧101，每个新程序员都应该知道的。》，参考：https：//towardsdatascience.com/python-tricks-101-what-every-new-programmer-should-know- c512a9787022）"
+}]
