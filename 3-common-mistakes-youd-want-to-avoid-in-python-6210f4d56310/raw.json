@@ -1,0 +1,195 @@
+[{
+  "tag": "H1",
+  "text": "The Problem and Solution: Naming Your file",
+  "translation": "问题和解决方案：命名文件"
+}, {
+  "tag": "P",
+  "text": "Never name your python file with the libraries you are going to use.",
+  "translation": "切勿使用要使用的库命名python文件。"
+}, {
+  "tag": "P",
+  "text": "For instance, if you name your file random.py, your program will get confused about what you’re trying to do.",
+  "translation": "例如，如果您将文件命名为random.py，则程序将对您要执行的操作感到困惑。"
+}, {
+  "tag": "PRE",
+  "text": "import randomprint(random.random())",
+  "translation": "导入randomprint（random.random（））"
+}, {
+  "tag": "P",
+  "text": "The output:",
+  "translation": "输出："
+}, {
+  "tag": "P",
+  "text": "File \"C:\\Users\\HalilibrahimYıldırım\\Desktop\\medium\\Python\\random.py\", line 3, in <module> print(random.random())TypeError: 'module' object is not callable",
+  "translation": "<module> print（random.random（））中第3行的文件“ C：\\ Users \\HalilibrahimYıldırım\\ Desktop \\ medium \\ Python \\ random.py” TypeError：'module'对象不可调用"
+}, {
+  "tag": "P",
+  "text": "Check my GitHub respiratory and star it. you can find useful python codes which I update as much as I can.",
+  "translation": "检查我的GitHub呼吸并对其进行标记。 您会找到有用的python代码，我会尽可能地对其进行更新。"
+}, {
+  "tag": "H1",
+  "text": "The Solution: Copy",
+  "translation": "解决方案：复制"
+}, {
+  "tag": "P",
+  "text": "When you say b = a, you basically say b and a are pointing the same object. If both are pointing the same object, it doesn’t matter if you do some operations with b or a. Both will affect this {'a': 5, 'b': 4, 'c': 8} object.",
+  "translation": "当您说b = a时，您基本上说b和a指向同一个对象。 如果两者都指向同一个对象，则对b或a进行某些操作都没关系。 两者都会影响这个{'a'：5，'b'：4，'c'：8}对象。"
+}, {
+  "tag": "P",
+  "text": "A solution:",
+  "translation": "一个办法："
+}, {
+  "tag": "PRE",
+  "text": "import copya = {'a': 5, 'b': 4, 'c': 8}b = copy.copy(a)del b['a']print(b)print(a)",
+  "translation": "import copya = {'a'：5，'b'：4，'c'：8} b = copy.copy（a）del b ['a'] print（b）print（a）"
+}, {
+  "tag": "P",
+  "text": "The output:",
+  "translation": "输出："
+}, {
+  "tag": "P",
+  "text": "{'b': 4, 'c': 8}{'a': 5, 'b': 4, 'c': 8}",
+  "translation": "{'b'：4，'c'：8} {'a'：5，'b'：4，'c'：8}"
+}, {
+  "tag": "H1",
+  "text": "The Problem: Copy",
+  "translation": "问题：复制"
+}, {
+  "tag": "P",
+  "text": "Let’s create a dictionary in Python.",
+  "translation": "让我们用Python创建一个字典。"
+}, {
+  "tag": "PRE",
+  "text": "a = {'a': 5, 'b': 4, 'c': 8}",
+  "translation": "a = {'a'：5，'b'：4，'c'：8}"
+}, {
+  "tag": "P",
+  "text": "Let’s set b to a:",
+  "translation": "让我们将b设置为a："
+}, {
+  "tag": "PRE",
+  "text": "a = {'a': 5, 'b': 4, 'c': 8}b = a",
+  "translation": "a = {'a'：5，'b'：4，'c'：8} b = a"
+}, {
+  "tag": "P",
+  "text": "Let’s delete the first element with the key a.",
+  "translation": "让我们用键a删除第一个元素。"
+}, {
+  "tag": "PRE",
+  "text": "del b['a']",
+  "translation": "del b ['a']"
+}, {
+  "tag": "P",
+  "text": "Let’s write a, b and see what’s going on.",
+  "translation": "让我们写a，b看看发生了什么。"
+}, {
+  "tag": "PRE",
+  "text": "a = {'a': 5, 'b': 4, 'c': 8}b = adel b['a']print(b)print(a)",
+  "translation": "a = {'a'：5，'b'：4，'c'：8} b = adel b ['a'] print（b）print（a）"
+}, {
+  "tag": "P",
+  "text": "The output:",
+  "translation": "输出："
+}, {
+  "tag": "P",
+  "text": "{'b': 4, 'c': 8}{'b': 4, 'c': 8}",
+  "translation": "{'b'：4，'c'：8} {'b'：4，'c'：8}"
+}, {
+  "tag": "P",
+  "text": "What is going on here? We just intended to delete the first element of b, not a …",
+  "translation": "这里发生了什么？ 我们只是打算删除b的第一个元素，而不是a…"
+}, {
+  "tag": "H1",
+  "text": "The Solution: Default Mutable Object",
+  "translation": "解决方案：默认可变对象"
+}, {
+  "tag": "P",
+  "text": "Instead of passing mutable object as a default argument, you should pass None. The example:",
+  "translation": "而不是将可变对象作为默认参数传递，而应传递None。 这个例子："
+}, {
+  "tag": "PRE",
+  "text": "def add(x, y=None):    if y is None:        y = list()        y.append(x)    else:        y.append(x)    return yprint(add('halil'))print(add('yıldırım'))",
+  "translation": "def add（x，y = None）：如果y为None：y = list（）y.append（x）else：y.append（x）return yprint（add（'halil'））print（add（'yıldırım '））"
+}, {
+  "tag": "P",
+  "text": "The output:",
+  "translation": "输出："
+}, {
+  "tag": "P",
+  "text": "['halil']['yıldırım']",
+  "translation": "['halil'] ['yıldırım']"
+}, {
+  "tag": "H1",
+  "text": "The Problem: Default Mutable Object",
+  "translation": "问题：默认可变对象"
+}, {
+  "tag": "P",
+  "text": "Hey, wait—what is a mutable object in Python? Mutable objects are objects you can change. List, set, and dict are examples of mutable objects.",
+  "translation": "嘿，等等-Python中的可变对象是什么？ 可变对象是可以更改的对象。 列表，集合和字典是可变对象的示例。"
+}, {
+  "tag": "P",
+  "text": "For the sake of argument, I will define a very simple and useless function.",
+  "translation": "为了论证，我将定义一个非常简单且无用的函数。"
+}, {
+  "tag": "PRE",
+  "text": "def add(x, y=[]):    y.append(x)    return y",
+  "translation": "def add（x，y = []）：y.append（x）返回y"
+}, {
+  "tag": "P",
+  "text": "In this add function, we set the y variable to a list(mutable object) as a default. Let’s use this function.",
+  "translation": "在此add函数中，我们将y变量默认设置为列表（可变对象）。 让我们使用此功能。"
+}, {
+  "tag": "PRE",
+  "text": "def add(x, y=[]):    y.append(x)    return yprint(add('halil'))print(add('yıldırım'))",
+  "translation": "def add（x，y = []）：y.append（x）返回yprint（add（'halil'））print（add（'yıldırım'））"
+}, {
+  "tag": "P",
+  "text": "The output is :",
+  "translation": "输出为："
+}, {
+  "tag": "P",
+  "text": "['halil']['halil', 'yıldırım']",
+  "translation": "['halil'] ['halil'，'yıldırım']"
+}, {
+  "tag": "P",
+  "text": "What is going on here? It’s overwriting the same list. When we first called add('halil'), the default argument became y=['halil'] and started overwriting the same list. Let’s see:",
+  "translation": "这里发生了什么？ 它会覆盖相同的列表。 当我们第一次调用add（'halil'）时，默认参数变为y = ['halil']并开始覆盖相同的列表。 让我们来看看："
+}, {
+  "tag": "PRE",
+  "text": "def add(x, y=[]):    y.append(x)    return yadd('halil')print(add.__defaults__)add('yıldırım')print(add.__defaults__)",
+  "translation": "def add（x，y = []）：y.append（x）返回yadd（'halil'）print（add .__ defaults __）add（'yıldırım'）print（add .__ defaults__）"
+}, {
+  "tag": "P",
+  "text": "The output is:",
+  "translation": "输出为："
+}, {
+  "tag": "P",
+  "text": "(['halil'],)(['halil', 'yıldırım'],)",
+  "translation": "（['halil']，）（[['halil'，'yıldırım']，）"
+}, {
+  "tag": "P",
+  "text": "As you can see, we are overwriting the default list.",
+  "translation": "如您所见，我们正在覆盖默认列表。"
+}, {
+  "tag": "H1",
+  "text": "3 Common Mistakes You’d Want to Avoid in Python",
+  "translation": "您想在Python中避免的3个常见错误"
+}, {
+  "tag": "H2",
+  "text": "Three problems and their solutions",
+  "translation": "三个问题及其解决方案"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*OOwsHdyxZq49PKXF?q=20",
+  "caption": "Photo by NeONBRAND on Unsplash",
+  "type": "image",
+  "file": "0*OOwsHdyxZq49PKXF"
+}, {
+  "tag": "P",
+  "text": "In this piece, I will talk about three common mistakes you wouldn’t want to do!",
+  "translation": "在本文中，我将讨论您不想做的三个常见错误！"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Halil Yıldırım的文章《3 Common Mistakes You’d Want to Avoid in Python》，参考：https://medium.com/better-programming/3-common-mistakes-youd-want-to-avoid-in-python-6210f4d56310)",
+  "translation": "（本文翻译自HalilYıldırım的文章《在Python中要避免的3个常见错误》，参考：https：//medium.com/better-programming/3-common-mistakes-youd-want-to-avoid- in-python-6210f4d56310）"
+}]
