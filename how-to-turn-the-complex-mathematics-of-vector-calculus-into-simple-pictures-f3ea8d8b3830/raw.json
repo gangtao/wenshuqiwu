@@ -1,0 +1,26 @@
+[{
+  "tag": "H1",
+  "text": "How to Turn the Complex Mathematics of Vector Calculus Into Simple Pictures",
+  "translation": "如何将向量微积分的复杂数学转换为简单图片"
+}, {
+  "tag": "H2",
+  "text": "Feynman diagrams revolutionized particle physics. Now mathematicians want to do the same for vector calculus.",
+  "translation": "费曼图彻底改变了粒子物理学。 现在，数学家希望对矢量微积分做同样的事情。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*kk88uiSgAma3ZOxZzKLsBw.jpeg?q=20",
+  "type": "image",
+  "file": "1*kk88uiSgAma3ZOxZzKLsBw.jpeg"
+}, {
+  "tag": "P",
+  "text": "By Emerging Technology from the arXiv",
+  "translation": "来自arXiv的新兴技术"
+}, {
+  "tag": "P",
+  "text": "Back in 1948, the journal Physical Review published a paper entitled “Space-Time Approach…",
+  "translation": "早在1948年，《物理评论》杂志就发表了一篇题为《时空方法》的论文。"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自MIT Technology Review的文章《How to Turn the Complex Mathematics of Vector Calculus Into Simple Pictures》，参考：https://medium.com/mit-technology-review/how-to-turn-the-complex-mathematics-of-vector-calculus-into-simple-pictures-f3ea8d8b3830)",
+  "translation": "（本文翻译自《 MIT技术评论》的文章《如何将向量微积分的复杂数学转变为简单图片》，参考：https：//medium.com/mit-technology-review/how-to-turn-the-complex- 向量演算的数学到简单图片中（f3ea8d8b3830）"
+}]
