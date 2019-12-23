@@ -1,0 +1,155 @@
+[{
+  "tag": "H1",
+  "text": "What I learned studying Enterprise Architecture",
+  "translation": "我在学习企业架构时学到的东西"
+}, {
+  "tag": "P",
+  "text": "“We think of enterprise architecture as the process for fully describing business functionality and business requirements and relate them to information systems requirements.”",
+  "translation": "“我们认为企业体系结构是充分描述业务功能和业务需求并将它们与信息系统需求联系起来的过程。”"
+}, {
+  "tag": "P",
+  "text": "Advancing in my career as a developer, I became increasingly curious about the concept of architecture in software. We often develop the idea of architecture as a cohesive design of our domain of interest. The more I delved into the topic the more I connected it with software architecture patterns and the latest technology. Whenever I thought of architecture, the keywords that came to mind were service-oriented-architecture, pull vs push, AQMP vs RPC, Cloud vs On-premise, etc.",
+  "translation": "在作为开发人员的职业生涯中前进，我对软件体系结构的概念越来越好奇。 我们经常将建筑的概念发展为我们感兴趣领域的内聚设计。 我越深入研究该主题，就越能将其与软件体系结构模式和最新技术联系起来。 每当我想到架构时，想到的关键字都是面向服务的架构，pull vs push，AQMP vs RPC，Cloud vs内部部署等。"
+}, {
+  "tag": "P",
+  "text": "I had only heard about the term of Enterprise Architecture. At first, I assumed I was dealing with the same concept of architecture applied to an enterprise. I was expecting concerns about scalability, architecture patterns and so on. To understand more on the subject, I studied resources provided by the “The Open Group”. They provide a framework for applying an Enterprise Architecture to an organization “The Open Group Architecture Framework” (TOGAF).",
+  "translation": "我只听说过企业架构一词。 最初，我以为我要处理应用于企业的同一体系结构概念。 我期待有关可伸缩性，体系结构模式等的担忧。 为了进一步了解该主题，我研究了“开放团体”提供的资源。 它们提供了将企业体系结构应用于组织“开放团体体系结构框架”（TOGAF）的框架。"
+}, {
+  "tag": "P",
+  "text": "To my surprise, during the study material, I rarely encountered IT guidelines or patterns. Instead, I found tools and methodologies aimed to provide a business change to an organization, including IT. I saw my vision was only one small part of a bigger picture — a picture I started to appreciate. To grasp more of the big picture, I picked the study path for TOGAF certification.",
+  "translation": "令我惊讶的是，在学习材料期间，我很少遇到IT准则或模式。 相反，我发现了旨在向包括IT在内的组织提供业务变更的工具和方法。 我看到自己的视野只是一幅大画的一小部分-我开始欣赏的一幅画。 为了掌握更多信息，我选择了TOGAF认证的学习途径。"
+}, {
+  "tag": "P",
+  "text": "Here I will outline some of the main differences from my previous perspective as a developer.",
+  "translation": "在这里，我将概述从以前作为开发人员的角度来看的一些主要差异。"
+}, {
+  "tag": "H1",
+  "text": "Description",
+  "translation": "描述"
+}, {
+  "tag": "P",
+  "text": "Enterprise architecture (EA) is “a well-defined practice for conducting enterprise analysis, design, planning, and implementation, using a holistic approach at all times, for the successful development and execution of strategy. Enterprise architecture applies architecture principles and practices to guide organizations through the business, information, process, and technology changes necessary to execute their strategies.” — OpenGroup",
+  "translation": "企业架构（EA）是“一种定义明确的实践，用于始终使用整体方法进行企业分析，设计，规划和实施，以成功地制定和执行策略。 企业体系结构采用体系结构原理和实践来指导组织进行执行其战略所必需的业务，信息，流程和技术更改。” — OpenGroup"
+}, {
+  "tag": "P",
+  "text": "The definition already gives a good hint — business-driven implementation and planning. The Open Group suggests a method for applying EA called Architecture Development Method (ADM).",
+  "translation": "该定义已经给出了很好的提示-业务驱动的实施和计划。 开放小组建议一种应用EA的方法，称为架构开发方法（ADM）。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/50/0*wOMgLvFAU4q9N4SM.jpg?q=20",
+  "caption": "TOGAF ADM Phases",
+  "type": "image",
+  "file": "0*wOMgLvFAU4q9N4SM.jpg"
+}, {
+  "tag": "P",
+  "text": "This method defines the architecture development in phases, outlined in order:",
+  "translation": "此方法分阶段概述了体系结构开发，依次概述："
+}, {
+  "tag": "UL",
+  "texts": ["Architecture Vision -> Focus on understanding requirements and stakeholders’ concerns. Display a draft of the final architecture and how it will impact the enterprise.", "Business -> Design a business architecture and approve it with the stakeholders.", "Information Systems -> Design Data and Application architecture with domain experts based on previous business architecture.", "Technology -> Design the technology platform architecture that will support the application and data.", "Planning -> Group all the required work analyzed in the previous phases into work packages. Integrate with portfolio management to plan the work packages into the organization roadmap.", "Implementation -> Follow the implementation executed by the teams.", "Change Management -> Continuous process to ensure the architecture keeps satisfying requirements, and keep track of new opportunities."],
+  "translations": ["建筑愿景->着重于理解需求和利益相关者的关注。 显示最终体系结构的草案及其对企业的影响。", "业务->设计业务架构，并得到利益相关者的批准。", "信息系统->根据以前的业务架构，由领域专家设计数据和应用程序架构。", "技术->设计将支持应用程序和数据的技术平台体系结构。", "计划->将先前阶段中分析的所有必需工作分组为工作包。 与项目组合管理集成，以将工作包计划到组织路线图中。", "实施->遵循团队执行的实施。", "变更管理->连续过程，以确保体系结构满足要求，并跟踪新机会。"]
+}, {
+  "tag": "P",
+  "text": "Basically, the result of the ADM is",
+  "translation": "基本上，ADM的结果是"
+}, {
+  "tag": "UL",
+  "texts": ["The implementation of the systems based on designed architectures", "The governance processes to keep the implementation valid in continuity."],
+  "translations": ["基于设计架构的系统实施", "治理流程可确保实施连续有效。"]
+}, {
+  "tag": "P",
+  "text": "I have simplified the description and phases to give a general idea about the methodology. If you want to understand the ADM more in detail I suggest the TOGAF documentation on “The Open Group” website.",
+  "translation": "我简化了描述和阶段，以大致了解该方法。 如果您想更详细地了解ADM，建议您在“ The Open Group”网站上找到TOGAF文档。"
+}, {
+  "tag": "P",
+  "text": "This method is abstract — thought to be tailored for a specific organization. Any phase can be changed, removed or reordered. Despite this, the ADM does apply certain concepts regardless of the enterprise.",
+  "translation": "此方法是抽象的-认为是针对特定组织量身定制的。 任何阶段都可以更改，删除或重新排序。 尽管如此，ADM确实适用某些概念，而与企业无关。"
+}, {
+  "tag": "H1",
+  "text": "Business first",
+  "translation": "企业至上"
+}, {
+  "tag": "P",
+  "text": "Recognizing the need is the primary condition for design.",
+  "translation": "认识到需求是设计的主要条件。"
+}, {
+  "tag": "P",
+  "text": "Architecture development starts with “Business Architecture” (Phase B), which will provide the basis for application, data, and technology architectures. This ensures a focus on business outcomes while designing the solution.",
+  "translation": "架构开发始于“业务架构”（B阶段），它将为应用程序，数据和技术架构提供基础。 这样可以确保在设计解决方案时将重点放在业务成果上。"
+}, {
+  "tag": "P",
+  "text": "It might seem simple at first, but how many times have we been driven into technical excellence train of thought with little attention to specific requirements. Developers and IT architects are smart people. They like smart solutions and often get excited about how they will solve the problem. Using “the next big thing” or “finding the perfect tool” can easily become our focus. If not properly managed, this can shift our attention away from thoroughly understanding requirements to build a specific system for it.",
+  "translation": "乍一看似乎很简单，但是有多少次我们被吸引到技术卓越的思路中，而很少关注特定需求。 开发人员和IT架构师都是聪明的人。 他们喜欢智能解决方案，并且常常对如何解决问题感到兴奋。 使用“下一件大事”或“找到完美的工具”很容易成为我们关注的焦点。 如果管理不当，则可能使我们的注意力从完全理解需求转移到为其构建特定的系统。"
+}, {
+  "tag": "P",
+  "text": "TOGAF emphasizes focus on business outcomes first. This does not mean we disregard technological excellence, on the contrary, we focus more precisely on that topic during the respective phases and may even provide feedback on the business architecture. Which brings me to the next topic.",
+  "translation": "TOGAF强调首先关注业务成果。 这并不意味着我们会忽略技术卓越，相反，我们会在各个阶段更加专注于该主题，甚至可能会提供有关业务体系结构的反馈。 这将我带入下一个主题。"
+}, {
+  "tag": "H1",
+  "text": "Opportunities in Iterations",
+  "translation": "迭代中的机会"
+}, {
+  "tag": "P",
+  "text": "Good design is good business.",
+  "translation": "好的设计就是好的生意。"
+}, {
+  "tag": "P",
+  "text": "TOGAF advises an iteration approach to architecture development. That is more impactful than it sounds. As a consequence, it allows a feedback loop through all phases.",
+  "translation": "TOGAF建议采用迭代方法进行体系结构开发。 那比听起来更具有影响力。 结果，它允许所有阶段的反馈回路。"
+}, {
+  "tag": "P",
+  "text": "For instance, when we are evaluating technology architecture, we can advise about new technology (or lack thereof) that impacts business action. This way, IT may give a meaningful impact on business requirements. For example, some business activity may be simplified or removed thanks to technology such as “we can share this information using the cloud, no need for manual sending” or “we could also sell this online with x cost instead of a door-to-door salesman” etc.",
+  "translation": "例如，当我们评估技术体系结构时，我们可以就影响业务活动的新技术（或缺乏新技术）提供建议。 这样，IT可能会对业务需求产生有意义的影响。 例如，由于“例如，我们可以使用云共享此信息，而无需手动发送”或“我们也可以以x成本而不是上门交易的价格在线出售”等技术，可以简化或取消某些业务活动。 门推销员”等"
+}, {
+  "tag": "P",
+  "text": "This understanding is realized through the use of a common language: “business architecture”. By interacting with the business architecture, solutions architects/domain experts can communicate opportunities that arise from IT/technology to the business. Business architects and stakeholders may decide to take advantage of this opportunity, changing the business architecture, starting the iteration of designing business, application, and technology. This framework allows a consistent way to provide feedback from IT to the business that allows focussing on outcomes and technical excellence.",
+  "translation": "通过使用通用语言“业务体系结构”来实现这种理解。 通过与业务体系结构进行交互，解决方案架构师/领域专家可以将IT /技术产生的机会传达给业务。 业务架构师和利益相关者可能会决定利用此机会，更改业务体系结构，开始迭代设计业务，应用程序和技术。 该框架提供了一种一致的方式，可以从IT向业务提供反馈，从而可以专注于结果和卓越的技术。"
+}, {
+  "tag": "P",
+  "text": "Note that the business architecture should be decoupled from technological concerns, but given the rate of technological and product advancement in some fields, they may impact business activity in ways not previously expected.",
+  "translation": "请注意，业务体系结构应该与技术关注点分离开来，但是鉴于某些领域的技术和产品进步速度，它们可能会以以前无法预期的方式影响业务活动。"
+}, {
+  "tag": "H1",
+  "text": "Architecture is about continuity",
+  "translation": "建筑是关于连续性的"
+}, {
+  "tag": "P",
+  "text": "Change is the only constant. Hanging on is the only wrong.",
+  "translation": "变化是唯一不变的。 坚持下去是唯一的错误。"
+}, {
+  "tag": "P",
+  "text": "The architecture process is not over with the implementation. Enterprise Architecture involves “Change Management” as a continuous process. During this process, we monitor the current state of the architecture. This means we monitor whether original requirements are still satisfied in time and we track new opportunities that may have arisen (e.g new products, new technology, etc).",
+  "translation": "架构过程尚未完成。 企业体系结构涉及“变更管理”作为一个连续的过程。 在此过程中，我们监视体系结构的当前状态。 这意味着我们会及时监控原始需求是否仍然得到满足，并跟踪可能出现的新机会（例如新产品，新技术等）。"
+}, {
+  "tag": "P",
+  "text": "This approach is interesting, as it treats the architecture itself as an artifact to be maintained — an artifact that involves people, IT and business changes. As a developer, I have encountered situations where to implement new logic, I had to tread lightly and keep track of previous requirements to avoid conflict. This often happens when changing aspects of the software that manage several business processes. This had to be done during the implementation. Having a framework that specifically monitors this, allows for safer changes, better requirements management, and a healthier system.",
+  "translation": "这种方法很有趣，因为它将架构本身视为要维护的工件-涉及人员，IT和业务变更的工件。 作为开发人员，我遇到了实施新逻辑的情况，因此我必须轻描淡写并跟踪以前的要求，以避免冲突。 当更改管理多个业务流程的软件方面时，通常会发生这种情况。 这必须在实施过程中完成。 拥有专门监视此框架的框架，可以进行更安全的更改，更好的需求管理和更健康的系统。"
+}, {
+  "tag": "H1",
+  "text": "Architecture is about people",
+  "translation": "建筑是关于人的"
+}, {
+  "tag": "P",
+  "text": "A design isn’t finished until someone is using it.",
+  "translation": "设计只有在有人使用时才能完成。"
+}, {
+  "tag": "P",
+  "text": "Enterprise Architecture is about restructuring the enterprise itself around the business strategy. It is less about specific IT system design and more about people and processes. It is tailored for each enterprise to achieve change and a set of continuous activity. In most organizations, the architecture will impact people at the business, IT and portfolio management levels. In fact, one of the main points of TOGAF is the organization’s “architecture capability” — which is the ability of the enterprise to consume the desired architecture changes. In practical terms, this usually means ‘training people’, making sure the changes are well received and understood. You may have the most effectively designed architecture to date, but if people are not able to use it, you are bound to fail.",
+  "translation": "企业体系结构是围绕业务战略重组企业本身。 它与特定的IT系统设计无关，而与人员和流程有关。 它是为每个企业量身定制的，以实现变化和一系列连续活动。 在大多数组织中，该体系结构将影响业务，IT和项目组合管理级别的人员。 实际上，TOGAF的主要要点之一就是组织的“架构能力”，即企业使用所需架构变更的能力。 实际上，这通常意味着对人员进行“培训”，以确保对变更的正确理解和理解。 您可能拥有迄今为止设计最有效的体系结构，但是如果人们无法使用它，那么您肯定会失败。"
+}, {
+  "tag": "P",
+  "text": "This is a powerful and down to earth concept to keep in mind. It is the job of the enterprise architect to align all actors into a cohesive process that will bring the desired change and maintain continuity.",
+  "translation": "要牢记这是一个强大而扎根的概念。 企业架构师的工作是使所有参与者协调一致，从而带来所需的更改并保持连续性。"
+}, {
+  "tag": "H1",
+  "text": "Conclusions",
+  "translation": "结论"
+}, {
+  "tag": "P",
+  "text": "Studying Enterprise Architecture provided an interesting point of view for me. As developers, we are problem solvers. Viewing the desired change from the perspective of the entire organization considers a new set of problems and solutions that involve business, IT, people and processes. Understanding these problems is a different type of challenge, one that may initially seem distant from us, but that affects our work and environment. This broadens our vision on how to manage a change beyond its implementation.",
+  "translation": "学习企业架构为我提供了一个有趣的观点。 作为开发人员，我们是解决问题的人。 从整个组织的角度查看所需的更改将考虑涉及业务，IT，人员和流程的一系列新问题和解决方案。 理解这些问题是另一种挑战，最初看起来似乎与我们很遥远，但会影响我们的工作和环境。 这拓宽了我们在变更实施之外如何管理变更的视野。"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Elman Hasa的文章《What I learned studying Enterprise Architecture》，参考：https://medium.com/swlh/what-i-learned-studying-enterprise-architecture-cafbde9e6dc2)",
+  "translation": "（本文翻译自Elman Hasa的文章《我在学习企业架构时学到的东西》，参考：https：//medium.com/swlh/what-i-learned-studying-enterprise-architecture-cafbde9e6dc2）"
+}]
