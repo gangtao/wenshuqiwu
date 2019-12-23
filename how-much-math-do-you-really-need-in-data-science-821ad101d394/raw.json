@@ -1,0 +1,158 @@
+[{
+  "tag": "H1",
+  "text": "Before you go",
+  "translation": "你走之前"
+}, {
+  "tag": "P",
+  "text": "I just want to say one more time that this article wasn’t meant for some trash talk about math majors or Ph.D.s. As I stated earlier, I have the highest respect for them.",
+  "translation": "我只想再说一遍，这篇文章不是要对数学专业或博士学位进行垃圾讨论。 如前所述，我对他们表示最高敬意。"
+}, {
+  "tag": "P",
+  "text": "It’s just that when it comes to the real world, and an average data science job role, there are more important things than knowing everything about math. Math is just a tool you use to obtain needed results, and for most of the things having a good intuitive approach is enough.",
+  "translation": "只是说到现实世界和一般的数据科学工作角色，比了解数学知识要重要得多。 数学只是用于获取所需结果的工具，对于大多数事情而言，拥有一个良好的直观方法就足够了。"
+}, {
+  "tag": "P",
+  "text": "Thanks for reading. Take care.",
+  "translation": "谢谢阅读。 照顾自己。"
+}, {
+  "tag": "H1",
+  "text": "Golden Rule",
+  "translation": "黄金法则"
+}, {
+  "tag": "P",
+  "text": "You’ve most likely heard this one before, but I feel like it needs to be repeated again and again:",
+  "translation": "您很可能以前曾听过这首歌，但我觉得需要一遍又一遍："
+}, {
+  "tag": "P",
+  "text": "Be better at programming than an average mathematician.",
+  "translation": "比普通的数学家更擅长编程。"
+}, {
+  "tag": "P",
+  "text": "Be better at math than an average programmer.",
+  "translation": "比普通程序员更擅长数学。"
+}, {
+  "tag": "P",
+  "text": "It’s that simple. Data science is a mixture of fields. You shouldn’t be the best at any of them individually but instead should strive to be good enough in everything. Keep the big picture in mind.",
+  "translation": "就这么简单。 数据科学是各个领域的混合体。 在每个人中，您都不应该是最擅长的，而应该在所有方面都做到足够出色。 牢记全局。"
+}, {
+  "tag": "H1",
+  "text": "So, You’re Saying I Don’t Need a Math Degree?",
+  "translation": "所以，您是说我不需要数学学位吗？"
+}, {
+  "tag": "P",
+  "text": "That’s absolutely right.",
+  "translation": "完全正确"
+}, {
+  "tag": "P",
+  "text": "Don’t get me wrong though, I think that math or math-heavy degrees are a great way to break into data science, but it’s not necessary to know everything about everything.",
+  "translation": "不过请不要误会我的意思，我认为数学或重数学学位是进入数据科学的好方法，但是不必了解所有知识。"
+}, {
+  "tag": "P",
+  "text": "This comes with a gotcha, however.",
+  "translation": "但是，这带有陷阱。"
+}, {
+  "tag": "FIGURE",
+  "type": "code"
+}, {
+  "tag": "P",
+  "text": "If you’re at an interview for a potential data science position, and the interviewer is this guy who knows more math than you, there’s a possibility that he will give you a hard time. You should be prepared for that case. It doesn’t mean it will happen every time, but be prepared.",
+  "translation": "如果您正在面试潜在的数据科学职位，而面试官就是这个比您了解更多数学的人，那么他可能会给您带来困难。 您应该为这种情况做好准备。 这并不意味着每次都会发生，但要做好准备。"
+}, {
+  "tag": "P",
+  "text": "This has nothing to do with you not knowing what you should know (probably), it rather has to do with your interviewer being a di*khead. He’ll want to appear smart by making you look small. Ask yourself, is that an environment you want to work in?",
+  "translation": "这与您不知道（可能）不知道应该做什么无关，而与您的面试官是个傻瓜有关系。 他希望通过使您看起来更小来显得聪明。 问问自己，这是您要工作的环境吗？"
+}, {
+  "tag": "H1",
+  "text": "Doing Stuff by Hand is Pointless",
+  "translation": "用手做东西毫无意义"
+}, {
+  "tag": "P",
+  "text": "You’ve heard it right. Real-life isn’t school, and on your job, it’s most likely that only the end result will matter, ergo what you can produce with your current knowledge.",
+  "translation": "您没听错。 现实生活不是学校，在您的工作中，很可能只有最终结果才重要，因此您无法根据当前的知识来生产什么。"
+}, {
+  "tag": "P",
+  "text": "Your boss most likely won't care you’ve implemented gradient descent on pen and paper first, and in Python second. And in those rare cases where he/she would care, it will probably be targeted towards you spending more time than you should on solving trivial tasks.",
+  "translation": "您的老板很可能不会在意您先在笔和纸上实现梯度下降，然后在Python中实现梯度下降。 而且在他/她会关心的极少数情况下，这可能是针对您花费比您在解决琐碎任务上更多的时间。"
+}, {
+  "tag": "P",
+  "text": "If you get a boner or something on writing equations, leave it for your personal time.",
+  "translation": "如果您在编写方程式时遇到问题，请留出自己的时间。"
+}, {
+  "tag": "FIGURE",
+  "type": "code"
+}, {
+  "tag": "H1",
+  "text": "Learn the Intuition First",
+  "translation": "首先学习直觉"
+}, {
+  "tag": "P",
+  "text": "Humans aren’t meant to do advanced calculations manually, and I’m eager to know why so many universities force this approach. Like you’ll remember it two weeks after the exam.",
+  "translation": "人类并不意味着要手动进行高级计算，而且我很想知道为什么这么多大学采用这种方法。 就像您会在考试后两周记住它一样。"
+}, {
+  "tag": "P",
+  "text": "And why do I have the gut to say this? Well, it’s because we’re in the 21st century and we have the damn computers. Those aren’t just meant for sending emails and gaming, but for heavy-duty math stuff also. It’s needless to say how much faster and errorless it is.",
+  "translation": "为什么我有话要说？ 好吧，这是因为我们处在21世纪，并且拥有该死的计算机。 这些不仅仅用于发送电子邮件和游戏，还用于重型数学知识。 不用说它有多快和没有错误。"
+}, {
+  "tag": "P",
+  "text": "You, as a human, should focus on developing the intuition behind every major math topic, and knowing in which situations the topic is applicable to your data science project. Nothing more, nothing less, but this brings me to the next point."
+}, {
+  "tag": "FIGURE",
+  "type": "code"
+}, {
+  "tag": "H1",
+  "text": "How much Math do you really need in Data Science?",
+  "translation": "您在数据科学领域真正需要多少数学？"
+}, {
+  "tag": "P",
+  "text": "If you’re currently studying data science, I’m sure that everything seems way more complicated than it actually needs to be. Just a quick Google search about the prerequisites of the field will uncover something that gets you anxious — and that’s math.",
+  "translation": "如果您目前正在研究数据科学，我敢肯定，一切似乎都比实际需要的要复杂得多。 Google只需快速搜索该领域的先决条件，就会发现令您着急的事情-这是数学。"
+}, {
+  "tag": "P",
+  "text": "But how much math do data scientists use in reality? Keep reading to find out.",
+  "translation": "但是，数据科学家实际上使用了多少数学运算？ 继续阅读以找出答案。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*CLyTlakaQOhoNsx5?q=20",
+  "caption": "Photo by Doug Maloney on Unsplash",
+  "type": "image",
+  "file": "0*CLyTlakaQOhoNsx5"
+}, {
+  "tag": "P",
+  "text": "If you were to do a quick Google search about math in data science, you’d probably end up with a Quora post to which some math Ph.D., 180 IQ brainiac responded to in the following manner:",
+  "translation": "如果您要在Google上快速搜索有关数据科学中的数学，您可能最终会看到Quora帖子，一些数学博士，180 IQ智囊团对此做出了回应："
+}, {
+  "tag": "P",
+  "text": "“Well, kiddo, you’ll need to master:",
+  "translation": "“好吧，孩子，您需要精通："
+}, {
+  "tag": "P",
+  "text": "- Advanced linear algebra, Multivariate calculus, Vector calculus, String theory, General relativity, Quantum field theory, The meaning of life, Kung fu",
+  "translation": "-高级线性代数，多元演算，向量演算，弦论，广义相对论，量子场论，生命的意义，功夫"
+}, {
+  "tag": "P",
+  "text": "And only then you can consider learning some basic programming and analytics.”",
+  "translation": "只有这样，您才可以考虑学习一些基本的编程和分析。”"
+}, {
+  "tag": "P",
+  "text": "Okay, maybe, just maybe I’ve exaggerated a bit. But you get the point. A lot of “resources” state so many prerequisites you should know in your sleep before even considering off-world abstractions of Python and machine learning.",
+  "translation": "好吧，也许吧，也许我有点夸张了。 但是你明白了。 很多“资源”都说明了很多前提条件，甚至在考虑Python和机器学习的抽象世界之前，您都应该在睡眠中知道这些前提条件。"
+}, {
+  "tag": "FIGURE",
+  "type": "code"
+}, {
+  "tag": "P",
+  "text": "Yeah, like that makes sense.",
+  "translation": "是的，这样很有意义。"
+}, {
+  "tag": "P",
+  "text": "It doesn’t, and it pisses me off because while I deeply respect anyone with an advanced degree in math or a similar field, not all data science jobs are reserved for them.",
+  "translation": "事实并非如此，这让我很生气，因为尽管我深深尊敬数学或类似领域的高级学位的人，但并不是所有的数据科学工作都为他们保留。"
+}, {
+  "tag": "P",
+  "text": "In the following sections, I’ll break down the stuff I found most relevant when first getting into the field, in a hope they’ll also suit you well.",
+  "translation": "在以下各节中，我将分解我第一次进入该领域时发现最相关的内容，希望它们也能适合您。"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Dario Radečić的文章《How much Math do you really need in Data Science?》，参考：https://towardsdatascience.com/how-much-math-do-you-really-need-in-data-science-821ad101d394)",
+  "translation": "（本文翻译自DarioRadečić的文章《您在数据科学中真正需要多少数学？》，参考：https：//towardsdatascience.com/how-much-math-do-you-really-need-in-data- science-821ad101d394）"
+}]
