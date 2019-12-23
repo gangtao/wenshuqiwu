@@ -1,0 +1,275 @@
+[{
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*X6KlguPdgZOMGtrx29DfxQ.png?q=20",
+  "type": "image",
+  "file": "1*X6KlguPdgZOMGtrx29DfxQ.png"
+}, {
+  "tag": "H1",
+  "text": "‘Scrum is an awful project management methodology’",
+  "translation": "“ Scrum是一种糟糕的项目管理方法”"
+}, {
+  "tag": "H2",
+  "text": "A tale with a twist",
+  "translation": "一个曲折的故事"
+}, {
+  "tag": "P",
+  "text": "We were a shadow of ourselves, drained. It’d been a month since we launched our latest payment product and it had only brought catastrophe. The product was super unstable and users hated it. And this didn’t surprise us either.",
+  "translation": "我们是自己的影子，精疲力尽。 自我们推出最新的付款产品以来已经过去了一个月，它仅带来了灾难。 该产品非常不稳定，用户讨厌它。 这也不会让我们感到惊讶。"
+}, {
+  "tag": "P",
+  "text": "To make matters worse: we serviced the entire globe. The incidents would also flow in at nighttime, requiring immediate resolution. The lack of sleep and the stress were unsustainable. At one point — during the retro — Carl shouted: “We can’t work this way anymore! Who are we fooling?”",
+  "translation": "更糟的是：我们为全球服务。 这些事件也将在夜间蔓延，需要立即解决。 缺乏睡眠和压力是不可持续的。 在回顾期间的某一时刻，卡尔大喊：“我们不能再这样工作了！ 我们在骗谁？”"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*BukAkRpq8L9hZ-YR.jpg?q=20",
+  "caption": "Burned down by AngelaL",
+  "type": "image",
+  "file": "0*BukAkRpq8L9hZ-YR.jpg"
+}, {
+  "tag": "H2",
+  "text": "The decision",
+  "translation": "决定"
+}, {
+  "tag": "P",
+  "text": "Carl was right. We needed to do something. So we decided to stop using Scrum as project management methodology. It changed everything for us and I recommend all of you to do the same.",
+  "translation": "卡尔是对的。 我们需要做点什么。 因此，我们决定停止使用Scrum作为项目管理方法。 它为我们改变了一切，我建议大家都做同样的事情。"
+}, {
+  "tag": "P",
+  "text": "Scrum comes with a lot of promises, like “[…] twice the work in half the time” (Jeff Sutherland — one of the creators of Scrum). But our work did grind to a halt with Scrum. High time to dismantle this Scrum project management methodology!",
+  "translation": "Scrum带来了许多希望，例如“ [...]两倍完成工作的一半”（Jeff Sutherland-Scrum的创建者之一）。 但是我们的工作确实使Scrum停顿了下来。 现在该拆卸Scrum项目管理方法了！"
+}, {
+  "tag": "P",
+  "text": "A warning before you proceed: brace yourself. It’s getting really ugly.",
+  "translation": "在继续操作之前，请先提出警告：做好准备。 真的很难看。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*IDuSAB-p44MU34--.jpg?q=20",
+  "caption": "Danger zone by 2allmankind",
+  "type": "image",
+  "file": "0*IDuSAB-p44MU34--.jpg"
+}, {
+  "tag": "H2",
+  "text": "Sprint Planning",
+  "translation": "冲刺计划"
+}, {
+  "tag": "P",
+  "text": "Let’s start with the Sprint Planning, taking the example of the 8th Sprint of our project. I could have picked any other Sprint development phase of the project — the plannings were all the same anyway. Our Scrum Master presented the work that was laid out for us, directly copied from the Gantt chart created by the Project Manager.",
+  "translation": "让我们从Sprint计划开始，以我们项目的第8个Sprint为例。 我可以选择该项目的其他任何Sprint开发阶段-无论如何，计划都是相同的。 我们的Scrum Master展示了为我们安排的工作，这些工作直接从项目经理创建的甘特图复制而来。"
+}, {
+  "tag": "P",
+  "text": "Sure, originally it was us who came up with all the work that was required to complete this project, but that was months ago. Since then it had become clear that we didn’t have a clue about the complexity of the work when we did that planning. It was all far more difficult than expected. So at the 8th Sprint we were way behind schedule and had to step up to “win back time”.",
+  "translation": "当然，最初是我们提出了完成该项目所需的所有工作，但那是几个月前。 从那时起，很明显，当我们进行计划时，我们对工作的复杂性一无所知。 这比预期的要困难得多。 因此，在第八届Sprint中，我们落后于进度，不得不加紧努力以“赢得时间”。"
+}, {
+  "tag": "P",
+  "text": "On top of that, our initial assessment of what needed to be done felt outdated at this point. When time progressed we came to understand there were other needs from the users, based on input from Sales. But these had to wait for phase 2 of the project. If this would ever come. Meanwhile we were still stuck in phase 1 with the realisation we probably would not deliver the value we wanted to achieve. Which wasn’t very motivating.",
+  "translation": "最重要的是，目前我们对需要完成的工作的初步评估已经过时。 随着时间的推移，我们根据销售人员的输入来了解用户的其他需求。 但是这些必须等待项目的第二阶段。 如果这会过去。 同时，我们仍停留在第一阶段的实现中，我们可能无法提供我们想要实现的价值。 这不是很积极。"
+}, {
+  "tag": "P",
+  "text": "There’s wasn’t much we could do though. We had committed to a plan. And we had to follow that plan, because changing it was too hard to do. The steering committee would never accept it.",
+  "translation": "我们没有什么可以做的。 我们已经承诺了一项计划。 而且我们必须遵循该计划，因为更改它太难了。 指导委员会永远不会接受。"
+}, {
+  "tag": "P",
+  "text": "To tell you the truth: we were lucky as we had only one project. The reporting team had to deal with four projects at the same time. The priorities there were determined by escalations and influencing powers of the (project) managers. This could also happen mid-Sprint. That team really had it bad.",
+  "translation": "实话实说：我们很幸运，因为我们只有一个项目。 报告团队必须同时处理四个项目。 优先级由（项目）经理的升级和影响力决定。 这也可能发生在Sprint中期。 那支球队真的很糟糕。"
+}, {
+  "tag": "P",
+  "text": "The good thing about the planning sessions was that they were very short. How long does it take to receive instructions for the coming two weeks?",
+  "translation": "计划会议的好处是时间很短。 在接下来的两个星期内，需要多长时间才能收到说明？"
+}, {
+  "tag": "H2",
+  "text": "Stand-up",
+  "translation": "站起来"
+}, {
+  "tag": "P",
+  "text": "This was the shortest meeting, but the most draining one. Even if they were finished within 5 minutes. We were ripped out of our coding routine and had to say what we did the day before and what we would do on that day.",
+  "translation": "这是最短的会议，但最耗力的会议。 即使他们在5分钟内完成。 我们被淘汰了编码例程，不得不说我们前一天做了什么，以及那天将要做什么。"
+}, {
+  "tag": "P",
+  "text": "And then we had to bring forward our impediments. As if they would ever be resolved. Let’s take an example of something that I constantly had to deal with.",
+  "translation": "然后我们必须提出我们的障碍。 好像他们将得到解决。 让我们举一个我经常需要处理的事情的例子。"
+}, {
+  "tag": "P",
+  "text": "I worked on code as I was told during the planning, but constantly got disturbed by Jane from the QA Scrum Team. Saying that she found bugs that I needed resolve. I couldn’t, as I had to work on the new code. Still it bothered me that my coding from the previous Sprint had errors.",
+  "translation": "正如我在计划过程中所告知的那样，我从事代码工作，但一直受到QA Scrum团队的Jane的打扰。 说她发现了需要解决的错误。 我不能，因为我必须处理新代码。 仍然令我困扰的是，我以前的Sprint中的编码有错误。"
+}, {
+  "tag": "P",
+  "text": "What to do except for raising the impediment? Which was then put on the impediment lane, with no-one ever looking at it anymore until I would raise it again. At a certain point I would not raise impediments anymore.",
+  "translation": "除了增加障碍外该怎么办？ 然后将其放置在障碍通道上，没有人再看它，直到我再次提出为止。 在某个时候，我不再提出障碍。"
+}, {
+  "tag": "P",
+  "text": "Every one of us basically had the same line during the stand-up and after 5 minutes we could return to coding. Except that we had to get back into the zone, losing an additional 30 minutes of productivity.",
+  "translation": "在站起来的过程中，我们每个人基本上都有同一行，而5分钟后，我们可以返回编码。 除非我们必须返回该区域，否则会损失30分钟的生产力。"
+}, {
+  "tag": "P",
+  "text": "The reporting team though had stand-ups that lasted for an hour. Every day. This was because they had to deal with all these changes during the Sprint and constantly had to juggle how to avoid further escalations. Which was basically a mission impossible.",
+  "translation": "报告团队的站立训练持续了一个小时。 每天。 这是因为他们必须在Sprint期间应对所有这些更改，并不断地努力应对如何避免进一步升级。 这基本上是不可能完成的任务。"
+}, {
+  "tag": "H2",
+  "text": "The demo",
+  "translation": "演示"
+}, {
+  "tag": "P",
+  "text": "Demos. Another futile exercise. Typically we had nothing to show, so we would cancel the demo. Sometimes we had interesting working code and at these occasions we showed this to the project manager. You could wonder why though. He was were merely interested in the percentage of completion of the project and was often put off by how little we achieved in two weeks. As stated already: the demos were totally worthless.",
+  "translation": "演示 另一项徒劳的运动。 通常，我们没有什么可显示的，因此我们将取消该演示。 有时我们有有趣的工作代码，在这些情况下，我们将其展示给项目经理。 您可能想知道为什么。 他只是对项目的完成百分比感兴趣，常常被我们在两周内所取得的成就所拖延。 如前所述：演示完全一文不值。"
+}, {
+  "tag": "H2",
+  "text": "The Retro",
+  "translation": "复古"
+}, {
+  "tag": "P",
+  "text": "The retro was the funnest event as it allowed us to blow off steam. We could get things off our chest, unless the project manager was attending the session. But that rarely happened. Only when he had to blow off steam too, at our expense. The bad thing was that the retros became repetitive. We discussed the same things over and over again and nothing changed.",
+  "translation": "追溯是最有趣的事件，它使我们得以腾飞。 除非项目经理参加会议，否则我们可以从事情中脱颖而出。 但这很少发生。 只有在他也不得不吹牛的时候，我们才要付出代价。 不好的是，复古唱片不断重复。 我们一遍又一遍地讨论了同样的事情，没有任何改变。"
+}, {
+  "tag": "H2",
+  "text": "Crunch time",
+  "translation": "紧要关头"
+}, {
+  "tag": "P",
+  "text": "Every project has a crunch time: the weeks or months where you have to deliver the project and deal with the backlash of unstable software and user complaints. These were the weeks where we more or less threw Scrum out of the window. We often skipped the rituals in those weeks where we easily worked 80+ hours. This is where we said that enough is enough.",
+  "translation": "每个项目都有一个关键时间：您必须交付项目并处理不稳定的软件和用户投诉的强烈反应的几周或几个月。 在这些周里，我们或多或少地将Scrum扔出了窗外。 在我们轻松工作80多个小时的那几周中，我们经常跳过这些习惯。 这就是我们所说的足够了。"
+}, {
+  "tag": "P",
+  "text": "We said: “let’s stop with Scrum project management!”",
+  "translation": "我们说：“让我们停止Scrum项目管理！”"
+}, {
+  "tag": "P",
+  "text": "As I said before the situation was unsustainable. We had to do something about it. We needed to implement radical changes. And stop using Scrum to manage our projects. This was the best decision ever. Here’s why.",
+  "translation": "正如我之前所说的那样，局势是不可持续的。 我们必须对此做些事情。 我们需要实施根本性的变革。 并停止使用Scrum管理我们的项目。 这是有史以来最好的决定。 这就是为什么。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*Xa72uFVb0vqmh6Ex.jpg?q=20",
+  "caption": "We took the red pill Septimiu",
+  "type": "image",
+  "file": "0*Xa72uFVb0vqmh6Ex.jpg"
+}, {
+  "tag": "H1",
+  "text": "Our new way of working",
+  "translation": "我们的新工作方式"
+}, {
+  "tag": "P",
+  "text": "We knew that we had to change to survive. The company literally stopped growing. We were in trouble. We started with assessing the nature of our environment to determine what would be the best course of action.",
+  "translation": "我们知道我们必须改变才能生存。 该公司实际上停止了增长。 我们遇到了麻烦。 我们首先评估环境的性质，以确定什么是最好的行动方案。"
+}, {
+  "tag": "H2",
+  "text": "Nature of our product environment",
+  "translation": "我们产品环境的性质"
+}, {
+  "tag": "P",
+  "text": "We came to understand that our product environment wasn’t predictable at all. We clearly were not able to create detailed plans months ahead, because constantly things changed along the way. For example: new insights in how to solve as certain topic, what we learn from software that already had been built, market developments… We acknowledged that our product environment was complex.",
+  "translation": "我们了解到，我们的产品环境根本无法预测。 显然，我们无法在未来几个月内制定详细的计划，因为在此过程中，事情总是在变化。 例如：关于如何解决特定主题的新见解，我们从已经构建的软件中学到的知识，市场发展……我们承认我们的产品环境很复杂。"
+}, {
+  "tag": "H2",
+  "text": "Small steps",
+  "translation": "小步"
+}, {
+  "tag": "P",
+  "text": "Now that we understood that our product environment was complex, we decided that we only should take small steps, assess what we did and then determine what to do next. We chose an iterative approach. The iterations could be everything between a day and a month, depending on what was deemed best by a team.",
+  "translation": "现在我们知道我们的产品环境很复杂，因此我们决定只应该采取一些小步骤，评估我们做了什么，然后确定下一步要做的事情。 我们选择了一种迭代方法。 迭代可能是一天到一个月之间的所有事情，具体取决于团队认为最好的事情。"
+}, {
+  "tag": "H2",
+  "text": "From project to product",
+  "translation": "从项目到产品"
+}, {
+  "tag": "P",
+  "text": "We let go of the idea of projects with a determined scope, budget and duration. Instead we moved to embracing a product vision and embarked on an iterative journey to reach this vision. With that, certain roles and meetings became obsolete like the the project manager and the steering committee. Often we could find other roles for the people involved. But they had to adapt to the new way of working and the change in culture.",
+  "translation": "我们放弃具有确定范围，预算和期限的项目的想法。 取而代之的是，我们开始拥抱产品愿景，并开始了迭代过程以实现这一愿景。 这样，某些角色和会议就变得过时了，例如项目经理和指导委员会。 通常，我们可以为参与人员找到其他角色。 但是他们必须适应新的工作方式和文化的变化。"
+}, {
+  "tag": "H2",
+  "text": "All capabilities to build a working product in one team",
+  "translation": "在一个团队中构建工作产品的所有功能"
+}, {
+  "tag": "P",
+  "text": "We decided that we needed to have all capabilities to build a working product in one team. We moved away from having specific Business Analysis teams, Coding teams and QA teams. These capabilities would all be in one team, depending on what was required to build the product iteration.",
+  "translation": "我们认为我们需要具备所有能力来在一个团队中构建有效的产品。 我们不再拥有特定的业务分析团队，编码团队和质量检查团队。 这些能力全部集中在一个团队中，具体取决于构建产品迭代所需的条件。"
+}, {
+  "tag": "H2",
+  "text": "One person responsible for priority of the stories in the backlog",
+  "translation": "一个人负责待办事项中的故事优先级"
+}, {
+  "tag": "P",
+  "text": "Our team was lucky with the one project manager, but other teams weren’t. We decided to extend the idea of only one person being responsible for the product backlog, owning it. This would help to shield the teams from being totally disoriented and help them to regain focus.",
+  "translation": "我们的团队很幸运有一位项目经理，但其他团队却没有。 我们决定扩展想法，只有一个人负责产品积压，并拥有它。 这将有助于防止团队完全迷失方向，并帮助他们重新获得关注。"
+}, {
+  "tag": "H2",
+  "text": "Every iteration has a goal",
+  "translation": "每次迭代都有一个目标"
+}, {
+  "tag": "P",
+  "text": "We decided that every iteration should have a goal and that stories that would be added to the iteration plan would be selected to help reach the goal. By having a goal the team was empowered to have focus on what to do, which would also help collaboration within the team. An example of a goal could be: “Let’s build our first full end-to-end piece of functionality to learn from it and show our stakeholders what it entails”.",
+  "translation": "我们决定，每个迭代都应该有一个目标，并且选择要添加到迭代计划中的故事来帮助实现该目标。 通过设定目标，团队可以专注于要做的事情，这也将有助于团队内部的协作。 目标的一个示例可能是：“让我们构建我们的第一个完整的端到端功能，以从中学习并向利益相关者展示它所包含的内容”。"
+}, {
+  "tag": "H2",
+  "text": "Teams predict how much work they can pick up and determine how they work",
+  "translation": "团队预测他们可以承担多少工作，并确定他们的工作方式"
+}, {
+  "tag": "P",
+  "text": "We also stepped away from the situation where others told the team how much they should do. We came to the conclusion that the people in the team know very well themselves how much work they can pick up. They could best predict what they could achieve as they were the experts. We also determined that teams could find their own way to reach the iteration goal. No-one would tell them how anymore.",
+  "translation": "我们还避免了其他人告诉团队他们应该做什么的情况。 我们得出的结论是，团队中的人们非常了解自己可以承担多少工作。 作为专家，他们可以最好地预测自己可以实现的目标。 我们还确定团队可以找到自己的方式来实现迭代目标。 没有人会告诉他们如何。"
+}, {
+  "tag": "H2",
+  "text": "Daily discussion about the goal",
+  "translation": "关于目标的每日讨论"
+}, {
+  "tag": "P",
+  "text": "We also changed our stand-ups. First of all: teams could determine themselves if they wished to stand or not. More importantly though: the stand-ups were about the progress towards the iteration goal and with that changed to a true team thing. With everyone committed to that goal all of a sudden the stories weren’t set in stone either. They couldn’t be! New insights could lead to changes to the backlog, removing obsolete stories and adding other ones that helped to reach the goal.",
+  "translation": "我们也改变了站立姿势。 首先：团队可以确定自己是否愿意站起来。 不过，更重要的是：站起来是关于实现迭代目标的进展，并且将其变为真正的团队合作。 每个人都致力于实现这一目标，故事也不是一成不变的。 他们不可能！ 新的见解可能会导致积压的更改，删除过时的故事并添加其他有助于达成目标的故事。"
+}, {
+  "tag": "H2",
+  "text": "Demos: more than demoing the software",
+  "translation": "演示：不仅仅是演示软件"
+}, {
+  "tag": "P",
+  "text": "The demos changed too. They turned into interactive sessions in which we still showed what we built, but also discussed what goal we had for the iteration and what we did to meet this goal. We also did start to have discussions with the stakeholders on what to do next. Because that wasn’t predetermined anymore. The demo turned into the meeting where strategic discussions took place. All kinds of new insights could lead to a new order of the backlog, impacting the next iteration.",
+  "translation": "演示也改变了。 他们变成了交互式会议，我们在其中仍然展示了我们构建的内容，还讨论了迭代的目标以及为实现该目标所做的工作。 我们也确实开始与利益相关者讨论下一步该怎么做。 因为那不是预先确定的。 该演示变成了进行战略讨论的会议。 各种新的见解都可能导致积压的新顺序，从而影响下一次迭代。"
+}, {
+  "tag": "H2",
+  "text": "Retros resulted in improvements",
+  "translation": "回顾带来了进步"
+}, {
+  "tag": "P",
+  "text": "Our retros changed too. We didn’t use them as complaining sessions anymore. Instead we discussed how we could improve the way the team worked and all kinds of facets would be covered. From team interaction to company culture impacting the team, from coding standards on team level to company rules and regulations. Anything that could help to improve the team would be discussed and the most pressing topics would be actioned.",
+  "translation": "我们的回顾也发生了变化。 我们不再将它们用作抱怨会话。 相反，我们讨论了如何改善团队的工作方式并涵盖所有方面。 从团队互动到影响团队的公司文化，从团队级别的编码标准到公司规则和法规。 将讨论任何可能有助于改善团队的事情，并将采取最紧迫的话题。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*q2jQHF01bxZwiRl9.jpg?q=20",
+  "caption": "Freedom by Fotorech",
+  "type": "image",
+  "file": "0*q2jQHF01bxZwiRl9.jpg"
+}, {
+  "tag": "H1",
+  "text": "Major results",
+  "translation": "主要成果"
+}, {
+  "tag": "P",
+  "text": "By abandoning our old way of working and embracing an iterative approach we moved away from the standstill. We were able to deliver more features than before and those proved to be far more valuable to our stakeholders than what we delivered before. We mastered the art of doing twice the work in half the time.",
+  "translation": "通过放弃我们过去的工作方式并采用迭代方法，我们摆脱了停滞。 我们能够提供比以前更多的功能，事实证明这些功能对我们的利益相关者比我们以前提供的功能更有价值。 我们掌握了一半时间完成两倍工作的艺术。"
+}, {
+  "tag": "P",
+  "text": "Our users are happier, our teams are happier and management is happier. We are back in the game!",
+  "translation": "我们的用户更快乐，我们的团队更快乐，管理更快乐。 我们又回来了！"
+}, {
+  "tag": "P",
+  "text": "My advise to all of you is to do the same as we did: assess your product environment and then determine if you need to change your product delivery approach. I guarantee that if you do this you will be amazed by what you will achieve!",
+  "translation": "我对所有人的建议是做与我们相同的事情：评估您的产品环境，然后确定是否需要更改产品交付方式。 我保证，如果您这样做，您将会为自己的成就感到惊讶！"
+}, {
+  "tag": "H1",
+  "text": "End Note",
+  "translation": "尾注"
+}, {
+  "tag": "P",
+  "text": "I admit it. We called our previous way of working ‘Scrum’. We thought that we had a business process that was suited for it. But our business process didn’t fit at all. On top of that we didn’t know what Scrum was about. We then moved to a different way of working which was adhering to the spirit of Scrum.",
+  "translation": "我承认。 我们将以前的工作方式称为“ Scrum”。 我们认为我们拥有适合自己的业务流程。 但是我们的业务流程根本不合适。 最重要的是，我们不知道Scrum是什么。 然后，我们转向了秉承Scrum精神的另一种工作方式。"
+}, {
+  "tag": "P",
+  "text": "We went from a type of Zombie Scrum to true Scrum. And we are happier than ever.",
+  "translation": "我们从一种僵尸Scrum变成了真正的Scrum。 而且我们比以往任何时候都更加快乐。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/proxy/1*qsg-zjcnz5A8B1xmBbdIfw.png",
+  "caption": "Do you want to write for Serious Scrum or seriously discuss Scrum?",
+  "type": "image"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Willem-Jan Ageling的文章《‘Scrum is an awful project management methodology’》，参考：https://medium.com/serious-scrum/scrum-is-an-awful-project-management-methodology-37ff90e350)",
+  "translation": "（本文翻译自Willem-Jan Ageling的文章，“ Scrum是一种糟糕的项目管理方法”，参考：https：//medium.com/serious-scrum/scrum-is-an-awful-project-management-methodology- 37ff90e350）"
+}]
