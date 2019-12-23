@@ -1,0 +1,477 @@
+[{
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*waznApGKL0XENm0UbkCo_A.png?q=20",
+  "caption": "(GitHub / Twitter)",
+  "type": "image",
+  "file": "1*waznApGKL0XENm0UbkCo_A.png"
+}, {
+  "tag": "H2",
+  "text": "Anatomy of Modules in Go",
+  "translation": "Go中的模块剖析"
+}, {
+  "tag": "H3",
+  "text": "Modules are a new way to manage dependencies of your project. Modules enable us to incorporate different versions of…",
+  "translation": "模块是管理项目依赖关系的新方法。 模块使我们能够合并不同版本的……"
+}, {
+  "tag": "H1",
+  "text": "Migrate to Go Modules",
+  "translation": "迁移到模块"
+}, {
+  "tag": "P",
+  "text": "Go provides a new feature called Modules which provides flexibility to manage your project and dependencies with ease. If you are working on Go packages, then you should consider relocating your project to Go Modules.",
+  "translation": "Go提供了一个称为模块的新功能，该功能提供了轻松管理项目和依赖项的灵活性。 如果您正在使用Go软件包，则应考虑将项目重新定位到Go Modules。"
+}, {
+  "tag": "H2",
+  "text": "Anatomy of Modules in Go",
+  "translation": "Go中的模块剖析"
+}, {
+  "tag": "H3",
+  "text": "Modules are a new way to manage dependencies of your project. Modules enable us to incorporate different versions of…",
+  "translation": "模块是管理项目依赖关系的新方法。 模块使我们能够合并不同版本的……"
+}, {
+  "tag": "H1",
+  "text": "Installing 3rd party package",
+  "translation": "安装第三方包"
+}, {
+  "tag": "P",
+  "text": "Installing a 3rd party package is nothing but cloning the remote code into a local src/<package> directory. Unfortunately, Go does not support package version or provide package manager but a proposal is waiting here.",
+  "translation": "安装第三方软件包只不过是将远程代码克隆到本地src / <package>目录中。 不幸的是，Go不支持程序包版本或不提供程序包管理器，但正在这里等待提案。"
+}, {
+  "tag": "P",
+  "text": "Since Go does not have a centralize official package registry, it asks you to provide hostname and path to the package.",
+  "translation": "由于Go没有统一的正式软件包注册中心，因此它会要求您提供软件包的主机名和路径。"
+}, {
+  "tag": "PRE",
+  "text": "$ go get -u github.com/jinzhu/gorm",
+  "translation": "$去获取-u github.com/jinzhu/gorm"
+}, {
+  "tag": "P",
+  "text": "Above command imports files from http://github.com/jinzhu/gorm URL and saves it inside src/github.com/jinzhu/gorm directory. As discussed in nested packages, you can import gorm package like below.",
+  "translation": "上面的命令从http://github.com/jinzhu/gorm URL导入文件，并将其保存在src / github.com / jinzhu / gorm目录中。 如嵌套软件包中所述，您可以像下面那样导入gorm软件包。"
+}, {
+  "tag": "PRE",
+  "text": "package mainimport \"github.com/jinzhu/gorm\"// use ==> gorm.SomeExportedMember",
+  "translation": "包mainimport“ github.com/jinzhu/gorm\"//使用==> gorm.SomeExportedMember"
+}, {
+  "tag": "P",
+  "text": "So, if you made a package and want people to use it, just publish it on GitHub and you are good to go. If your package is executable, people can use it as a command-line tool else they can import it in a program and use it as a utility module. The only thing they need to do is use the below command.",
+  "translation": "因此，如果您制作了一个程序包并希望人们使用它，只需将其发布在GitHub上就可以了。 如果您的程序包是可执行的，则人们可以将其用作命令行工具，也可以将其导入程序中并将其用作实用程序模块。 他们唯一需要做的就是使用以下命令。"
+}, {
+  "tag": "PRE",
+  "text": "$ go get github.com/your-username/repo-name",
+  "translation": "$去获取github.com/your-username/repo-name"
+}, {
+  "tag": "H1",
+  "text": "Program execution order",
+  "translation": "程序执行顺序"
+}, {
+  "tag": "P",
+  "text": "So far, we understood everything there is about packages. Now, let’s combine our understanding of how a program initializes in Go.",
+  "translation": "到目前为止，我们已经了解了有关软件包的所有内容。 现在，让我们结合对程序如何在Go中初始化的理解。"
+}, {
+  "tag": "PRE",
+  "text": "go run *.go├── Main package is executed├── All imported packages are initialized|  ├── All imported packages are initialized (recursive definition)|  ├── All global variables are initialized |  └── init functions are called in lexical file name order└── Main package is initialized   ├── All global variables are initialized   └── init functions are called in lexical file name order",
+  "translation": "go run *.go├──执行主包├──初始化所有导入的包| ├──初始化所有导入的包（递归定义）| ├──所有全局变量都已初始化| ──初始化函数按词法文件名顺序调用└──初始化主包├──初始化所有全局变量└──初始化函数按词法文件名顺序调用"
+}, {
+  "tag": "P",
+  "text": "Here is a small example to prove it.",
+  "translation": "这是一个证明这一点的小例子。"
+}, {
+  "tag": "PRE",
+  "text": "// version/get-version.gopackage versionimport \"fmt\"func init() { fmt.Println(\"version/get-version.go ==> init()\")}func getVersion() string { fmt.Println(\"version/get-version.go ==> getVersion()\") return \"1.0.0\"}/***************************/// version/entry.gopackage versionimport \"fmt\"func init() { fmt.Println(\"version/entry.go ==> init()\")}var Version = getLocalVersion()func getLocalVersion() string { fmt.Println(\"version/entry.go ==> getLocalVersion()\") return getVersion()}/***************************/// app/fetch-version.gopackage mainimport ( \"fmt\" \"version\")func init() { fmt.Println(\"app/fetch-version.go ==> init()\")}func fetchVersion() string { fmt.Println(\"app/fetch-version.go ==> fetchVersion()\") return version.Version}/***************************/// app/entry.gopackage mainimport \"fmt\"func init() { fmt.Println(\"app/entry.go ==> init()\")}var myVersion = fetchVersion()func main() { fmt.Println(\"app/fetch-version.go ==> fetchVersion()\") fmt.Println(\"version ===> \", myVersion)}",
+  "translation": "// version / get-version.gopackage版本导入“ fmt” func init（）{fmt.Println（“ version / get-version.go ==> init（）”）} func getVersion（）字符串{fmt.Println（“ 版本/get-version.go ==> getVersion（）“）返回” 1.0.0“} / ******************************* /// version / entry.gopackage版本导入“ fmt” func init（）{fmt.Println（“ version / entry.go ==> init（）”）} var Version = getLocalVersion（）func getLocalVersion（）string {fmt。 Println（“ version / entry.go ==> getLocalVersion（）”）return getVersion（）} / ******************************* / // app / fetch-version.gopackage mainimport（“ fmt”“ version”）func init（）{fmt.Println（“ app / fetch-version.go ==> init（）”）} func fetchVersion（）字符串{ fmt.Println（“ app / fetch-version.go ==> fetchVersion（）”）返回版本。Version} / ************************ *** /// app / entry.gopackage mainimport“ fmt” func init（）{fmt.Println（“ app / entry.go ==> init（）”）} var myVersion = fetchVersion（）func main（）{ fmt.Println（“ app / fetch-version.go ==> fetchVersion（）”）fmt.Println（“ version ===>”，myVersion）}"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*Mr6HV7siTTp_Vmf3jjysLA.png?q=20",
+  "type": "image",
+  "file": "1*Mr6HV7siTTp_Vmf3jjysLA.png"
+}, {
+  "tag": "H1",
+  "text": "Package initialization",
+  "translation": "包初始化"
+}, {
+  "tag": "P",
+  "text": "When we run a Go program, Go compiler follows a certain execution order for packages, files in a package and variable declaration in the package.",
+  "translation": "当我们运行Go程序时，Go编译器会按照一定的执行顺序执行程序包，程序包中的文件以及程序包中的变量声明。"
+}, {
+  "tag": "H2",
+  "text": "Package scope",
+  "translation": "包装范围"
+}, {
+  "tag": "P",
+  "text": "A scope is a region in code block where a defined variable is accessible. A package scope is a region within a package where a declared variable is accessible from within a package (across all files in the package). This region is the top-most block of any file in the package.",
+  "translation": "范围是代码块中可访问定义变量的区域。 包作用域是包中的一个区域，在该区域中可从包内（包中的所有文件）访问声明的变量。 此区域是软件包中任何文件的最上面的块。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*wgXZOSz73eYtzxi5Ysd4mQ.png?q=20",
+  "type": "image",
+  "file": "1*wgXZOSz73eYtzxi5Ysd4mQ.png"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*5z2ws2w_bJiGOLrbwIOpyQ.png?q=20",
+  "type": "image",
+  "file": "1*5z2ws2w_bJiGOLrbwIOpyQ.png"
+}, {
+  "tag": "P",
+  "text": "Take a look at go run command. This time, instead of executing one file, we have a glob pattern to include all files inside app package for execution. Go is smart enough to figure out an entry point of the application which is entry.go because it has main function. We can also use a command like below (file name order doesn’t matter).",
+  "translation": "看一下go run命令。 这次，我们不再使用一个文件，而是使用一种全局模式将所有文件都包含在应用程序包中以便执行。 Go具有足够的智能，可以找出应用程序的entry.go入口点，因为它具有主要功能。 我们还可以使用如下所示的命令（文件名顺序无关紧要）。"
+}, {
+  "tag": "PRE",
+  "text": "go run src/app/version.go src/app/entry.go",
+  "translation": "去运行src / app / version.go src / app / entry.go"
+}, {
+  "tag": "P",
+  "text": "go install or go build command requires a package name, which includes all the files inside a package, so we don’t have to specify them like above.",
+  "translation": "go install或go build命令需要一个软件包名称，其中包括软件包中的所有文件，因此我们不必像上面那样指定它们。"
+}, {
+  "tag": "P",
+  "text": "Coming back to our main issue, we can use variable version declared in version.go file from anywhere in the package even though it is not exported (like Version), because it is declared in package scope. If version variable would have been declared in a function, it wouldn’t have been in package scope and above program would have failed to compile.",
+  "translation": "回到我们的主要问题，我们可以在包的任何地方使用在version.go文件中声明的变量version，即使它没有导出（如Version），因为它是在包范围内声明的。 如果在函数中声明了版本变量，则说明该版本变量不在包范围内，并且上述程序无法编译。"
+}, {
+  "tag": "P",
+  "text": "You are not allowed to re-declare global variable with the same name in the same package. Hence, once version variable is declared, it can not be re-declared in the package scope. But you are free to re-declare elsewhere.",
+  "translation": "不允许在同一包中重新声明具有相同名称的全局变量。 因此，一旦声明了版本变量，就不能在程序包范围内对其进行重新声明。 但是您可以随意在其他地方重新声明。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*MkeLqeyTgm-lgDKkSUG-_w.png?q=20",
+  "type": "image",
+  "file": "1*MkeLqeyTgm-lgDKkSUG-_w.png"
+}, {
+  "tag": "H2",
+  "text": "Variable initialization",
+  "translation": "变量初始化"
+}, {
+  "tag": "P",
+  "text": "When a variable a depends on another variable b, b should be defined beforehand, else program won’t compile. Go follows this rule inside functions.",
+  "translation": "当变量a依赖于另一个变量b时，应事先定义b，否则程序将无法编译。 Go在函数内部遵循此规则。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*RY-43HY_xNSL0XKb__X7_Q.png?q=20",
+  "type": "image",
+  "file": "1*RY-43HY_xNSL0XKb__X7_Q.png"
+}, {
+  "tag": "P",
+  "text": "But when these variables are defined in package scope, they are declared in initialization cycles. Let’s have a look at the simple example below.",
+  "translation": "但是，当这些变量在包范围内定义时，它们将在初始化周期中声明。 让我们看看下面的简单示例。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*XG6GzH8LDDAlEMMRraDoTg.png?q=20",
+  "type": "image",
+  "file": "1*XG6GzH8LDDAlEMMRraDoTg.png"
+}, {
+  "tag": "P",
+  "text": "In the above example, first c is declared because its value is already declared. In later initialization cycle, b is declared, because it depends on c and value of c is already declared. In the final initialization cycle, a is declared and assigned to the value of b. Go can handle complex initialization cycles like below.",
+  "translation": "在上面的示例中，第一个c被声明，因为它的值已经被声明。 在以后的初始化周期中，声明了b，因为它取决于c并且已经声明了c的值。 在最后的初始化周期中，声明a并将其分配给b的值。 Go可以处理如下所示的复杂初始化周期。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*J2mPK9rNQl3td4ehQGw3mg.png?q=20",
+  "type": "image",
+  "file": "1*J2mPK9rNQl3td4ehQGw3mg.png"
+}, {
+  "tag": "P",
+  "text": "In the above example, first c will be declared and then b as it’s value depends on c and finally a as its value depends on b. You should avoid any initialization loop like below where initialization gets into a recursive loop.",
+  "translation": "在上面的示例中，将首先声明c，然后声明b，因为其值取决于c，最后是a，因为其值取决于b。 您应该避免像下面这样的初始化循环进入初始化循环。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*o37taeuBhrY5J3dNuSm-sg.png?q=20",
+  "type": "image",
+  "file": "1*o37taeuBhrY5J3dNuSm-sg.png"
+}, {
+  "tag": "P",
+  "text": "Another example of package scope would be, having a function f in a separate file which references variable c from the main file.",
+  "translation": "包范围的另一个示例是，在单独文件中具有函数f，该函数从主文件引用变量c。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*L0v9SiAKWopNELfyNIHUAQ.png?q=20",
+  "type": "image",
+  "file": "1*L0v9SiAKWopNELfyNIHUAQ.png"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*_Vk2ggc4NYJ5wnqjuxqVlw.png?q=20",
+  "type": "image",
+  "file": "1*_Vk2ggc4NYJ5wnqjuxqVlw.png"
+}, {
+  "tag": "H2",
+  "text": "Init function",
+  "translation": "初始化功能"
+}, {
+  "tag": "P",
+  "text": "Like main function, init function is called by Go when a package is initialized. It does not take any arguments and doesn’t return any value. init function is implicitly declared by Go, hence you can not reference it from anywhere (or call it like init()). You can have multiple init functions in a file or a package. Order of the execution of init function in a file will be according to the order of their appearances.",
+  "translation": "像main函数一样，初始化包时，Go会调用init函数。 它不带任何参数，也不返回任何值。 Go隐式声明了init函数，因此您无法从任何地方引用它（或像init（）一样调用它）。 您可以在文件或包中具有多个init函数。 文件中init函数的执行顺序将根据它们出现的顺序。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*7opoqANNzsqLyHViQaK-tg.png?q=20",
+  "type": "image",
+  "file": "1*7opoqANNzsqLyHViQaK-tg.png"
+}, {
+  "tag": "P",
+  "text": "You can have init function anywhere in the package. These init functions are called in lexical file name order (alphabetical order).",
+  "translation": "您可以在包中的任何位置都具有init函数。 这些初始化函数以词汇文件名顺序（字母顺序）调用。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*v_M5sIeoZ8W49oMs96Z7qQ.png?q=20",
+  "type": "image",
+  "file": "1*v_M5sIeoZ8W49oMs96Z7qQ.png"
+}, {
+  "tag": "P",
+  "text": "After all, init functions are executed, main function is called. Hence, the main job of init function is to initialize global variables that cannot be initialized in the global context. For example, initialization of an array.",
+  "translation": "毕竟，要执行init函数，然后才能调用main函数。 因此，init函数的主要工作是初始化无法在全局上下文中初始化的全局变量。 例如，数组的初始化。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*UswvbXJpnMDT-kkeAqnzZw.png?q=20",
+  "type": "image",
+  "file": "1*UswvbXJpnMDT-kkeAqnzZw.png"
+}, {
+  "tag": "P",
+  "text": "Since, for syntax is not valid in package scope, we can initialize the array integers of size 10 using for loop inside init function.",
+  "translation": "由于for语法在包范围内无效，因此我们可以在init函数内部使用for循环来初始化大小为10的数组整数。"
+}, {
+  "tag": "H2",
+  "text": "Package alias",
+  "translation": "包别名"
+}, {
+  "tag": "P",
+  "text": "When you import a package, Go create a variable using the package declaration of the package. If you are importing multiple packages with the same name, this will lead to a conflict.",
+  "translation": "导入包时，请使用包的包声明创建一个变量。 如果要导入多个具有相同名称的软件包，则将导致冲突。"
+}, {
+  "tag": "PRE",
+  "text": "// parent.gopackage greetvar Message = \"Hey there. I am parent.\"// child.gopackage greetvar Message = \"Hey there. I am child.\"",
+  "translation": "// // parent.gopackage greetvar Message =“嘿，我是父母。” // child.gopackage greetvar Message =“嘿，我是孩子。”"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*jcIZqvdcS5kdHNtlsYmfSQ.png?q=20",
+  "type": "image",
+  "file": "1*jcIZqvdcS5kdHNtlsYmfSQ.png"
+}, {
+  "tag": "P",
+  "text": "Hence, we use package alias. We state a variable name in between import keyword and package name which becomes the new variable to reference the package.",
+  "translation": "因此，我们使用包别名。 我们在import关键字和程序包名称之间声明一个变量名，该变量名成为引用该程序包的新变量。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*xc5a7RQCtxbvZ-M8UZCrWw.png?q=20",
+  "type": "image",
+  "file": "1*xc5a7RQCtxbvZ-M8UZCrWw.png"
+}, {
+  "tag": "P",
+  "text": "In the above example, greet/greet package now is referenced by child variable. If you notice, we aliased greet package with an underscore. Underscore is a special character in Go which acts as null container. Since we are importing greet package but not using it, Go compiler will complain about it. To avoid that, we are storing reference of that package into _ and Go compiler will simply ignore it.",
+  "translation": "在上面的示例中，greet / greet包现在由子变量引用。 如果您注意到的话，我们在greet包中使用下划线作为别名。 下划线是Go中的一个特殊字符，用作空容器。 由于我们导入的是greet包，但未使用它，因此Go编译器会抱怨它。 为了避免这种情况，我们将对该包的引用存储到_中，而Go编译器只会忽略它。"
+}, {
+  "tag": "P",
+  "text": "Aliasing a package with an underscore which seems to do nothing is quite useful sometimes when you want to initialize a package but not use it.",
+  "translation": "有时，如果要初始化一个包但不使用它，则用下划线来给一个包起别名似乎什么也没做是很有用的。"
+}, {
+  "tag": "PRE",
+  "text": "// parent.gopackage greetimport \"fmt\"var Message = \"Hey there. I am parent.\"func init() {  fmt.Println(\"greet/parent.go ==> init()\")}// child.gopackage greetimport \"fmt\"var Message = \"Hey there. I am child.\"func init() {  fmt.Println(\"greet/greet/child.go ==> init()\")}",
+  "translation": "// // parent.gopackage greetimport“ fmt” var Message =“嘿，我是父母。” func init（）{fmt.Println（“ greet / parent.go ==> init（）”）} // child.gopackage greetimport“ fmt” var消息=“嘿。我是孩子。” func init（）{fmt.Println（“ greet / greet / child.go ==> init（）”）}"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*RhDn0T7hbV_Fy8VmG2fUZw.png?q=20",
+  "type": "image",
+  "file": "1*RhDn0T7hbV_Fy8VmG2fUZw.png"
+}, {
+  "tag": "P",
+  "text": "The main thing to remember is, an imported package is initialized only once per package. Hence if you have any import statements in a package, an imported package is going to be initialized only once in the lifetime of main package execution.",
+  "translation": "要记住的主要事情是，每个包只对导入的包初始化一次。 因此，如果包中有任何import语句，则导入的包将在主包执行的生命周期中仅初始化一次。"
+}, {
+  "tag": "P",
+  "text": "If we use . (dot) as an alias like import . \"greet/greet\" then all the export members of greet package will be available in the local file block scope and we can reference Message without using qualifier child. Hence, fmt.Println(Message) would work just fine. This type of import is called as Dot Import and Go community is not very fond of it as it can cause some issues.",
+  "translation": "如果我们使用。 （点）作为类似import的别名。 “ greet / greet”，那么greet包的所有导出成员将在本地文件块作用域中可用，我们可以在不使用限定符子代的情况下引用Message。 因此，fmt.Println（Message）可以正常工作。 这种类型的导入被称为“点导入并转到”社区，因为它可能会引起一些问题，因此他们对此不太满意。"
+}, {
+  "tag": "H1",
+  "text": "Creating a package",
+  "translation": "创建一个包"
+}, {
+  "tag": "P",
+  "text": "As we discussed, there are two types of packages. An executable package and a utility package. An executable package is your main application since you will be running it. A utility package is not self-executable, instead, it enhances the functionality of an executable package by providing utility functions and other important assets.",
+  "translation": "正如我们所讨论的，有两种类型的软件包。 可执行程序包和实用程序包。 可执行包是您的主要应用程序，因为您将在运行它。 实用程序包不是自可执行的，相反，它通过提供实用程序功能和其他重要资产来增强可执行程序包的功能。"
+}, {
+  "tag": "P",
+  "text": "As we know, a package nothing but a directory, let’s create greet directory inside src and create few files in it. This time, we will write package greet a declaration on the top of each file to state that this is a utility package.",
+  "translation": "众所周知，一个包只不过是一个目录，让我们在src中创建greet目录，并在其中创建几个文件。 这次，我们将在每个文件的顶部编写一个包greeting声明，以声明这是一个实用程序包。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*1wgU2Ct5JcMWCs32cPB2VQ.png?q=20",
+  "type": "image",
+  "file": "1*1wgU2Ct5JcMWCs32cPB2VQ.png"
+}, {
+  "tag": "H2",
+  "text": "Export members",
+  "translation": "出口会员"
+}, {
+  "tag": "P",
+  "text": "A utility package is supposed to provide some variables to a package who imports it. Like export syntax in JavaScript, Go exports a variable if a variable name starts with Uppercase. All other variables not starting with an uppercase letter is private to the package.",
+  "translation": "实用程序包应该为导入它的包提供一些变量。 与JavaScript中的导出语法一样，如果变量名称以大写字母开头，则Go会导出变量。 所有其他不以大写字母开头的变量对程序包都是私有的。"
+}, {
+  "tag": "P",
+  "text": "I am going to use variable word from now on in this article, to describe an export member but export members can be of any type like constant, map, function, struct, array, slice etc.",
+  "translation": "从现在开始，我将使用可变词来描述导出成员，但是导出成员可以是常量，映射，函数，结构，数组，切片等任何类型。"
+}, {
+  "tag": "P",
+  "text": "Let’s export a greeting variable from day.go file.",
+  "translation": "让我们从day.go文件中导出一个问候变量。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*9VB1IQhAU4AHHwzbSDq3Fw.png?q=20",
+  "type": "image",
+  "file": "1*9VB1IQhAU4AHHwzbSDq3Fw.png"
+}, {
+  "tag": "P",
+  "text": "In the above program, Morning variable will be exported from the package but morning variable won’t be since it starts with a lowercase letter.",
+  "translation": "在上面的程序中，Morning变量将从包中导出，但是Morning变量不会以小写字母开头，因此不会。"
+}, {
+  "tag": "H2",
+  "text": "Importing a package",
+  "translation": "导入包裹"
+}, {
+  "tag": "P",
+  "text": "Now, we need an executable package which will consume our greet package. Let’s create an app directory inside src and create entry.go file with main package declaration and main function. Note here, Go packages do not have an entry file naming system like index.js in Node. For an executable package, a file with main function is the entry file for execution.",
+  "translation": "现在，我们需要一个可执行包，它将使用我们的greet包。 让我们在src内创建一个应用程序目录，并创建带有主包声明和主函数的entry.go文件。 请注意，Go包在Node中没有像index.js这样的入口文件命名系统。 对于可执行程序包，具有主要功能的文件是要执行的入口文件。"
+}, {
+  "tag": "P",
+  "text": "To import a package, we use import syntax followed by the package name.",
+  "translation": "要导入软件包，我们使用导入语法，后跟软件包名称。"
+}, {
+  "tag": "P",
+  "text": "Unlike other programming languages, a package name can also be a subpath like some-dir/greet and Go will automatically resolve the path to the greet package for us as seen in the nested package topic ahead.",
+  "translation": "与其他编程语言不同，包名称也可以是诸如some-dir / greet的子路径，而Go会自动为我们解析到greet包的路径，如前面的嵌套包主题所示。"
+}, {
+  "tag": "P",
+  "text": "Go first searches for package directory inside GOROOT/src directory and if it doesn’t find the package, then it looks for GOPATH/src. Since, fmt package is part of Go’s standard library which is located in GOROOT/src, it is imported from there. Since Go cannot find greet package inside GOROOT, it will lookup inside GOPATH/src and we have it there.",
+  "translation": "首先转到GOROOT / src目录中的包目录，如果找不到包，则查找GOPATH / src。 由于fmt软件包是Go的标准库（位于GOROOT / src中）的一部分，因此从那里导入。 由于Go无法在GOROOT中找到问候包，因此它将在GOPATH / src中进行查找，并且我们已经在其中了。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*XgTMJf4_pwybisPZ0Mp_ow.png?q=20",
+  "type": "image",
+  "file": "1*XgTMJf4_pwybisPZ0Mp_ow.png"
+}, {
+  "tag": "P",
+  "text": "Above program throws compilation error, as morning variable is not visible from the package greet. As you can see, we use . (dot) notation to access exported members from a package. When you import a package, Go creates a global variable using the package declaration of the package. In the above case, greet is the global variable created by Go because we used package greet declaration in programs contained in greet package.",
+  "translation": "上面的程序抛出编译错误，因为从包中看不到morning变量。 如您所见，我们使用。 （点）表示法，用于从包中访问导出的成员。 导入程序包时，Go使用程序包的程序包声明创建一个全局变量。 在上述情况下，greet是Go创建的全局变量，因为我们在greet软件包中包含的程序中使用了package greet声明。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*Bt4SpUehHROj5QG5jfPaUw.png?q=20",
+  "type": "image",
+  "file": "1*Bt4SpUehHROj5QG5jfPaUw.png"
+}, {
+  "tag": "P",
+  "text": "We can group fmt and greet package imports together using grouping syntax (parentheses). This time, our program will compile just fine, because Morning variable is available from outside the package.",
+  "translation": "我们可以使用分组语法（括号）将fmt和greet包导入分组在一起。 这次，我们的程序将编译得很好，因为可以从包外部获得Morning变量。"
+}, {
+  "tag": "H2",
+  "text": "Nested package",
+  "translation": "嵌套包装"
+}, {
+  "tag": "P",
+  "text": "We can nest a package inside a package. Since for Go, a package is just a directory, it’s like creating a subdirectory inside an already existing package. All we have to do is provide a relative path of the nested package.",
+  "translation": "我们可以将包嵌套在包中。 由于对于Go，包只是目录，就像在现有包中创建子目录一样。 我们要做的就是提供嵌套包的相对路径。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*dP6i-ytGrWi05JiJ9xZK7g.png?q=20",
+  "type": "image",
+  "file": "1*dP6i-ytGrWi05JiJ9xZK7g.png"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*xR6fSgxL9p19JpZTasVgRw.png?q=20",
+  "type": "image",
+  "file": "1*xR6fSgxL9p19JpZTasVgRw.png"
+}, {
+  "tag": "H2",
+  "text": "Package compilation",
+  "translation": "包编译"
+}, {
+  "tag": "P",
+  "text": "As discussed in the previous lesson, go run command compiles and executes a program. We know, go install command compiles packages and creates binary executable files or package archive files. This is to avoid compilation of package(s) every single time a (program where these packages are imported) is compiled . go install pre-compiles a package and Go refers to .a files.",
+  "translation": "如上一课所述，go run命令编译并执行程序。 我们知道，go install命令可以编译软件包并创建二进制可执行文件或软件包归档文件。 这是为了避免每次编译（导入这些程序包的程序）每次都编译程序包。 go install会预编译一个软件包，而Go则引用.a文件。"
+}, {
+  "tag": "P",
+  "text": "Generally, when you install a 3rd party package, Go compiles the package and create package archive file. If you have written package locally, then your IDE might create package archive as soon as you save the file in the package or when package gets modified. VSCode compiles the package when you save it if you have Go plugin installed.",
+  "translation": "通常，当您安装第三方软件包时，Go会编译该软件包并创建软件包存档文件。 如果您在本地编写软件包，则IDE可能会在将文件保存在软件包中或在软件包被修改后立即创建软件包归档文件。 如果已安装Go插件，则VSCode在保存时会编译该软件包。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*okjhp3rUQGKAyMvKj6NTvw.png?q=20",
+  "type": "image",
+  "file": "1*okjhp3rUQGKAyMvKj6NTvw.png"
+}, {
+  "tag": "H1",
+  "text": "Everything you need to know about Packages in Go",
+  "translation": "您需要了解有关Go中软件包的所有信息"
+}, {
+  "tag": "H2",
+  "text": "A complete overview of package management and deployment in Go programming language",
+  "translation": "Go编程语言的软件包管理和部署的完整概述"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*Sw7x7OARGlbRpbY9PN2csA.png?q=20",
+  "type": "image",
+  "file": "1*Sw7x7OARGlbRpbY9PN2csA.png"
+}, {
+  "tag": "P",
+  "text": "If you are familiar to languages like Java or NodeJS, then you might be quite familiar with packages. A package is nothing but a directory with some code files, which exposes different variables (features) from a single point of reference. Let me explain, what that means.",
+  "translation": "如果您熟悉Java或NodeJS之类的语言，那么您可能非常熟悉软件包。 包不过是带有一些代码文件的目录，该目录从单个引用点公开了不同的变量（功能）。 让我解释一下，这意味着什么。"
+}, {
+  "tag": "P",
+  "text": "Imagine you have more than a thousand functions which you need constantly while working on any project. Some of these functions have common behavior. For example, toUpperCase and toLowerCase function transforms case of a string, so you write them in a single file (probably case.go). There are other functions which do some other operations on string data type, so you write them in a separate file as well.",
+  "translation": "想象一下，在任何项目中进行工作时，您都需要不断地使用上千种功能。 其中一些功能具有共同的行为。 例如，toUpperCase和toLowerCase函数可转换字符串的大小写，因此您可以将它们写入单个文件（可能为case.go）。 还有其他函数对字符串数据类型执行其他一些操作，因此您也将它们写在单独的文件中。"
+}, {
+  "tag": "P",
+  "text": "Since you have many files which do something with string data type, so you created a directory named string and put all string related files into it. Finally, you put all of these directories in one parent directory which will be your package. The whole package structure looks like below.",
+  "translation": "由于您有许多文件可以处理字符串数据类型，因此您创建了一个名为string的目录，并将所有与字符串相关的文件放入其中。 最后，将所有这些目录放在一个父目录中，该目录将成为您的软件包。 整个程序包结构如下所示。"
+}, {
+  "tag": "PRE",
+  "text": "package-name├── string|  ├── case.go|  ├── trim.go|  └── misc.go└── number   ├── arithmetics.go   └── primes.go",
+  "translation": "软件包名称├──字符串| ├──case.go | ├──trim.go | └──misc.go└──数字├──算术go──primes.go"
+}, {
+  "tag": "P",
+  "text": "I will explain thoroughly, how we can import functions and variables from a package and how everything blends together to form a package, but for now, imagine your package as a directory containing .go files.",
+  "translation": "我将详细解释如何从包中导入函数和变量，以及如何将所有内容融合在一起形成一个包，但是现在，将您的包想象成一个包含.go文件的目录。"
+}, {
+  "tag": "P",
+  "text": "Every Go program must be a part of some package. As discussed in Getting started with Go lesson, a standalone executable Go program must have package main declaration. If a program is part of the main package, then go install will create a binary file; which upon execution calls main function of the program. If a program is part of package other than main, then a package archive file is created with go install command. Don’t worry, I will explain all this in upcoming topics.",
+  "translation": "每个Go程序都必须是某些程序包的一部分。 如Go入门课程中所述，独立的可执行Go程序必须具有包main声明。 如果程序是主软件包的一部分，则go install将创建一个二进制文件； 在执行时调用程序的主要功能。 如果程序不是main包的一部分，则使用go install命令创建包归档文件。 不用担心，我将在以后的主题中解释所有这些内容。"
+}, {
+  "tag": "P",
+  "text": "Let’s create an executable package. As we know, to create a binary executable file, we need our program to be a part of main package and it must have main function which is the entry point of execution.",
+  "translation": "让我们创建一个可执行程序包。 众所周知，要创建一个二进制可执行文件，我们需要程序成为主程序包的一部分，并且它必须具有主函数，该函数是执行的入口点。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*kGqfcToU5hD5yx5JEDdRZA.png?q=20",
+  "type": "image",
+  "file": "1*kGqfcToU5hD5yx5JEDdRZA.png"
+}, {
+  "tag": "P",
+  "text": "A package name is the name of the directory contained in src directory. In the above case, app is the package since app is the child directory of src directory. Hence, go install app command looked for app sub-directory inside src directory of GOPATH. Then it compiled the package and created app binary executable file inside bin directory which should be executable from the terminal since bin directory in the PATH.",
+  "translation": "软件包名称是src目录中包含的目录的名称。 在上述情况下，因为app是src目录的子目录，所以app是软件包。 因此，执行go install app命令在GOPATH的src目录中查找app子目录。 然后，它编译了程序包，并在bin目录中创建了应用二进制可执行文件，该文件应可从终端执行，因为PATH中的bin目录。"
+}, {
+  "tag": "P",
+  "text": "Package declaration which should be first line of code like package main in above example, can be different than package name. Hence, you might find some packages where package name (name of the directory) is different than package declaration. When you import a package, package declaration is used to create package reference variable, explained later in the article.",
+  "translation": "像上面示例中的package main这样的应该是代码的第一行的包声明可以与包名称不同。 因此，您可能会发现某些软件包，其中软件包名称（目录名称）与软件包声明不同。 导入程序包时，程序包声明用于创建程序包引用变量，如本文稍后所述。"
+}, {
+  "tag": "P",
+  "text": "go install <package> command looks for any file with main package declaration inside given package directory. If it finds a file, then Go knows this is an executable program and it needs to create a binary file. A package can have many files but only one file with main function, since that file will be the entry point of the execution.",
+  "translation": "go install <package>命令在给定的软件包目录中查找具有主软件包声明的任何文件。 如果找到文件，则Go知道这是一个可执行程序，因此需要创建一个二进制文件。 一个包可以有许多文件，但只有一个具有主要功能的文件，因为该文件将是执行的入口。"
+}, {
+  "tag": "P",
+  "text": "If a package does not contain a file with main package declaration, then Go creates a package archive (.a) file inside pkg directory.",
+  "translation": "如果软件包不包含带有主软件包声明的文件，则Go会在pkg目录中创建一个软件包归档（.a）文件。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*h0UgUlvX-hBflTCiGg9LCA.png?q=20",
+  "type": "image",
+  "file": "1*h0UgUlvX-hBflTCiGg9LCA.png"
+}, {
+  "tag": "P",
+  "text": "Since, app is not an executable package, it created app.a file inside pkg directory. We can not execute this file as it’s not a binary file.",
+  "translation": "由于app不是可执行程序包，因此它在pkg目录中创建了app.a文件。 该文件不是二进制文件，因此无法执行。"
+}, {
+  "tag": "H2",
+  "text": "Package naming convention",
+  "translation": "包命名约定"
+}, {
+  "tag": "P",
+  "text": "Go community recommends to use plain and simple names for packages. For example, strutils for string utility functions or http for HTTP requests related functions. A package names with under_scores, hy-phens or mixedCaps should be avoided.",
+  "translation": "Go社区建议对软件包使用简单的名称。 例如，用于字符串实用程序功能的strutils或用于HTTP请求相关功能的http。 应该避免使用under_scores，连字符或mixedCaps的软件包名称。"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Uday Hiwarale的文章《Everything you need to know about Packages in Go》，参考：https://medium.com/rungo/everything-you-need-to-know-about-packages-in-go-b8bac62b74cc)",
+  "translation": "（本文翻译自Uday Hiwarale的文章，关于Go中的软件包，您需要了解的所有内容，参考：https：//medium.com/rungo/everything-you-need-to-know-about-packages-in-go- b8bac62b74cc）"
+}]
