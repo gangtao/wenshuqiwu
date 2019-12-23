@@ -1,0 +1,259 @@
+[{
+  "tag": "H2",
+  "text": "The Go Programming Language",
+  "translation": "Go编程语言"
+}, {
+  "tag": "H3",
+  "text": "Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.",
+  "translation": "Go是一种开源编程语言，可轻松构建简单，可靠和高效的软件。"
+}, {
+  "tag": "H2",
+  "text": "Go vs Python 3 - Which programs are fastest? | Computer Language Benchmarks Game",
+  "translation": "Go vs Python 3-哪些程序最快？ | 计算机语言基准游戏"
+}, {
+  "tag": "H3",
+  "text": "Back in April 2010, Russ Cox charitably suggested that only fannkuch-redux, fasta, k-nucleotide, mandlebrot, nbody…",
+  "translation": "早在2010年4月，拉斯·考克斯（Russ Cox）慈善地建议，只有fannkuch-redux，fasta，k-核苷酸，mandlebrot，nbody…"
+}, {
+  "tag": "H1",
+  "text": "Want to Learn a New Programming Language? Consider Go (Golang).",
+  "translation": "想学习一种新的编程语言吗？ 考虑Go（Golang）。"
+}, {
+  "tag": "H2",
+  "text": "Fast Runtime, Efficient Concurrency, and Simplistic, Easy-to-Learn Syntax are among the most enticing features.",
+  "translation": "快速的运行时，高效的并发性以及简单易学的语法是最诱人的功能。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*Mx0csaFA9hBKCIFfU6JASg.png?q=20",
+  "caption": "The Gopher Mascot.",
+  "type": "image",
+  "file": "1*Mx0csaFA9hBKCIFfU6JASg.png"
+}, {
+  "tag": "H2",
+  "text": "I was surprised by how easy it was to pick up.",
+  "translation": "我对拿起这么容易感到惊讶。"
+}, {
+  "tag": "P",
+  "text": "When I first started learning Go, I started working on a personal project that would force me to get to grips with the new syntax (I always come up with a project when learning a new language).",
+  "translation": "刚开始学习Go时，我开始从事一个个人项目，这迫使我不得不掌握新的语法（在学习新语言时，我总是想出一个项目）。"
+}, {
+  "tag": "P",
+  "text": "I decided that I would create a command-line application that enumerates subdomains to help with asset discovery for bug bounty programs. Therefore, it had to make multiple HTTP requests in parallel, similar to gobuster, but I wanted to reinvent that particular wheel with some added features such as scraping the HTML responses for interesting security-related information.",
+  "translation": "我决定创建一个枚举子域的命令行应用程序，以帮助发现漏洞赏金计划的资产。 因此，类似于gobuster，它必须并行发出多个HTTP请求，但我想通过一些附加功能（例如，刮擦HTML响应以获取有趣的与安全相关的信息）来重塑特定的车轮。"
+}, {
+  "tag": "P",
+  "text": "It was a problem that I wanted to solve using Go-routines. It would be challenging given the unknown number of HTTP requests it would make, so it would require learning how to handle them effectively.",
+  "translation": "我想使用Go-routines解决这个问题。 考虑到发出的HTTP请求数量未知，这将是一个挑战，因此需要学习如何有效地处理它们。"
+}, {
+  "tag": "H2",
+  "text": "First Impressions",
+  "translation": "第一印象"
+}, {
+  "tag": "P",
+  "text": "Immediately, I found the syntax strangely familiar, even though I hadn’t read the documentation before. The concepts seemed intuitive to me (others might disagree). Using defer made sense straight away. The fmt package for formatting strings seemed like it solved a problem I didn’t know I had. I began to see the intentions behind the development of Go as yet another programming language. So I decided to delve deeper into the original purpose of Go to determine whether it was a language worth spending time learning.",
+  "translation": "立刻，我发现语法非常陌生，即使我以前从未阅读过该文档。 这些概念对我来说似乎很直观（其他人可能会不同意）。 立即使用defer很有意义。 用于格式化字符串的fmt软件包似乎解决了我不知道的问题。 我开始看到Go作为另一种编程语言的开发意图。 因此，我决定更深入地研究Go的初衷，以确定它是否值得花时间学习。"
+}, {
+  "tag": "H1",
+  "text": "Why Go was developed",
+  "translation": "为什么开发Go"
+}, {
+  "tag": "H2",
+  "text": "The aim",
+  "translation": "目的"
+}, {
+  "tag": "P",
+  "text": "Go was developed by Google to make the development of multiprocessing more efficient and safe, to improve server software maintainability, reliability & validity over time. For Google, it was an answer to the problems that they faced in regards to painfully long compile times & issues surrounding the processing of large-scale data, which is one of their most prevalent uses in production today. They wanted a language that focuses on scalability, readability, and concurrency. It was born out of frustration with other languages. They took the most desirable concepts from existing languages and attempted to improve on and combine them to form Go. For example the fmt package, an efficient library for handling strings:",
+  "translation": "Go由Google开发，旨在使多处理的开发更加高效和安全，从而随着时间的推移提高服务器软件的可维护性，可靠性和有效性。 对于Google而言，这是对他们痛苦的长时间编译时间所面临的问题的解答，以及围绕大规模数据处理的问题的答案，这是当今生产中最普遍的用途之一。 他们想要一种专注于可伸缩性，可读性和并发性的语言。 它是由于对其他语言的沮丧而诞生的。 他们从现有语言中获得了最理想的概念，并尝试对其进行改进并将其结合起来以形成Go。 例如fmt软件包，这是一个用于处理字符串的高效库："
+}, {
+  "tag": "P",
+  "text": "“Package fmt implements formatted I/O with functions analogous to C’s printf and scanf. The format ‘verbs’ are derived from C’s but are simpler.”",
+  "translation": "“软件包fmt使用与C的printf和scanf类似的功能实现格式化的I / O。 格式“动词”源自C，但更简单。”"
+}, {
+  "tag": "P",
+  "text": "This is an example of taking features from a successful and popular language, in this case, C, and improving it.",
+  "translation": "这是从成功且流行的语言（在本例中为C）中获取功能并对其进行改进的示例。"
+}, {
+  "tag": "P",
+  "text": "Go’s concurrency was modeled of CSP; with the use of channels, avoiding the synchronization of shared data. They thought this would be a simpler and safer method of communicating.",
+  "translation": "Go的并发是基于CSP建模的； 使用通道，避免共享数据的同步。 他们认为这将是一种更简单，更安全的通信方式。"
+}, {
+  "tag": "P",
+  "text": "Another focus was on simplicity. There was a need for an opinionated code style, which the Go community formed, with a recognized go style. One that is kept consistent across projects, which would reduce time spent configuring linting rules and learning different approaches to code style during development; an important factor when working in a team.",
+  "translation": "另一个重点是简单性。 需要一种自觉的代码风格，它是Go社区形成的，具有公认的go风格。 在整个项目中保持一致的方法之一，这将减少在开发过程中配置lint规则和学习不同的代码风格方法所花费的时间； 团队合作中的一个重要因素。"
+}, {
+  "tag": "P",
+  "text": "This would theoretically reduce variance between developers when it comes to code styles and approaches, seen a language like JavaScript (Many many Eslint rules).",
+  "translation": "从理论上讲，这将减少开发人员之间在代码样式和方法方面的差异，就像JavaScript这样的语言（许多Eslint规则）一样。"
+}, {
+  "tag": "H2",
+  "text": "The approach",
+  "translation": "该方法"
+}, {
+  "tag": "P",
+  "text": "The approach taken combined the ease of programming from an interpreted, dynamically typed language with the efficiency and safety of a statically typed, compiled language. It has primitive types like int, byte and string with built-in maps . There are pointers. The principle of orthogonality was one that was important in the development of Go and is the basis for the functional approach.",
+  "translation": "所采用的方法将解释型动态类型语言的编程简便性与静态类型编译语言的效率和安全性相结合。 它具有基本类型，如int，byte和带有内置map的string。 有指针。 正交性原理是在Go的开发中很重要的原理，并且是功能方法的基础。"
+}, {
+  "tag": "P",
+  "text": "Go uses structures (structs) to represent data, and user interfaces to represent abstraction. There is a continuous debate on whether Go is object-oriented. If you are a Java developer, you would struggle to see the object-oriented side of the argument at first. Struggling to see the object-orientation in Go could be because you are looking for type hierarchy, whereas in Go there isn’t type hierarchy. There are structs which you cannot inherit, but do conform to an Object style. Go just prefers composition over inheritance. You can achieve polymorphism through accepting interfaces. An interface is accepted by any type of object that satisfies that interface.",
+  "translation": "Go使用结构（结构）表示数据，并使用用户界面表示抽象。 关于Go是否是面向对象的，一直存在争论。 如果您是Java开发人员，则一开始就很难看到参数的面向对象方面。 难以在Go中查看面向对象的原因可能是因为您正在寻找类型层次结构，而在Go中却没有类型层次结构。 有些结构不能继承，但确实符合对象样式。 Go只喜欢组合而不是继承。 您可以通过接受接口来实现多态。 接口被满足该接口的任何类型的对象所接受。"
+}, {
+  "tag": "P",
+  "text": "In addition to these core concepts, Go realized the modern need for concurrency due to multi-core processing. Strong concurrency came in the shape of goroutines and channels. In a large concurrent program, automatic garbage collection was also important as effective memory management. Unit testing was made as simple as using the prefix _test.go , declared in the same directory as the source file.",
+  "translation": "除了这些核心概念，Go还意识到了由于多核处理而导致的现代并发需求。 强大的并发以goroutine和通道的形式出现。 在大型并发程序中，自动垃圾回收作为有效的内存管理也很重要。 就像使用前缀_test.go一样简单地进行单元测试，该前缀在与源文件相同的目录中声明。"
+}, {
+  "tag": "H1",
+  "text": "Why should I learn it?",
+  "translation": "我为什么要学习它？"
+}, {
+  "tag": "H2",
+  "text": "Concurrency",
+  "translation": "并发"
+}, {
+  "tag": "P",
+  "text": "In Go, concurrency is heavily engrained. It is a first-class citizen and as easy as prefixing a function with the go keyword. Goroutines are cheap, lightweight threads of execution. It is unbelievably easy to implement concurrency in Go. Using the go keyword will spawn a new thread which is shared across multiple cores on a set of threads. Goroutines are just a few kilobytes and are handled by the Go runtime, which moves the go-routines onto different runnable threads to avoid becoming blocked. This makes execution asynchronous and FAST; nearly as fast as C/C++. You can control the number of goroutines with the use of channels which, despite having a synchronous feel, are asynchronous.",
+  "translation": "在Go中，并发已根深蒂固。 它是一等公民，就像使用go关键字为函数添加前缀一样容易。 Goroutines是廉价，轻量的执行线程。 在Go中实现并发非常容易。 使用go关键字将产生一个新线程，该线程在一组线程的多个内核之间共享。 Goroutine仅有几千字节，由Go运行时处理，Go运行时将go例程移到不同的可运行线程上，以避免被阻塞。 这使得执行异步和快速。 几乎与C / C ++一样快。 您可以使用通道来控制goroutine的数量，尽管它们具有同步感觉，但它们是异步的。"
+}, {
+  "tag": "P",
+  "text": "Go’s runtime uses resizable, bounded stacks which makes the stacks smaller. The runtime changes memory size for storing the stack automatically. Hundreds of thousands of goroutines can run in the same address space.",
+  "translation": "Go的运行时使用可调整大小的有界堆栈，从而使堆栈变小。 运行时会更改内存大小以自动存储堆栈。 数十万个goroutine可以在同一地址空间中运行。"
+}, {
+  "tag": "H2",
+  "text": "Simplicity",
+  "translation": "简单"
+}, {
+  "tag": "P",
+  "text": "The go language was developed with a minimalistic approach. There are no classes or inheritance. These features that are part of popular languages such as Java & Python are replaced with structs. Go is strongly and statically typed. The use of interfaces is encouraged and ubiquitous. Static typing aims to reduce compile-time errors. It also makes it easier to learn.",
+  "translation": "围棋语言是采用简约方法开发的。 没有类或继承。 这些流行功能（例如Java和Python）中的功能已被结构替换。 Go是强类型和静态类型的。 鼓励使用接口，并且无处不在。 静态类型化的目的是减少编译时错误。 它还使学习变得更容易。"
+}, {
+  "tag": "P",
+  "text": "Whereas in other languages such as JavaScript, you are torn between multiple opinionated approaches, paradigms and conventions, with Go there is one approach that is universally accepted as the style guide to follow. This makes it easier to analyze and reason with your code as a team, and makes integration smoother.",
+  "translation": "在其他语言（例如JavaScript）中，您会陷入多种观点，方法和约定之间，而Go却是一种被普遍接受的样式指南。 这样可以更轻松地对团队代码进行分析和推理，并使集成更加顺畅。"
+}, {
+  "tag": "P",
+  "text": "Despite the fact that there are no implicit conversions, but the syntactic overhead is still surprisingly small. It produces more readable, less complex code.",
+  "translation": "尽管没有隐式转换，但是语法开销仍然非常小。 它产生更易读，更简单的代码。"
+}, {
+  "tag": "H2",
+  "text": "It’s FAST",
+  "translation": "它很快"
+}, {
+  "tag": "P",
+  "text": "The compiler is statically linked. This results in a binary executable through compilation without dealing with external dependencies. The executable binary, which has been compiled to native machine code without the use of a Virtual Machine, makes it faster and more portable, despite the increase in size.",
+  "translation": "编译器是静态链接的。 这样就可以通过编译生成二进制可执行文件，而无需处理外部依赖项。 尽管增大了体积，但可执行二进制文件已被编译为本机代码，而无需使用虚拟机，它使二进制程序更快，更可移植。"
+}, {
+  "tag": "H2",
+  "text": "Go vs Python 3 - Which programs are fastest? | Computer Language Benchmarks Game",
+  "translation": "Go vs Python 3-哪些程序最快？ | 计算机语言基准游戏"
+}, {
+  "tag": "H3",
+  "text": "Back in April 2010, Russ Cox charitably suggested that only fannkuch-redux, fasta, k-nucleotide, mandlebrot, nbody…",
+  "translation": "早在2010年4月，拉斯·考克斯（Russ Cox）慈善地建议，只有fannkuch-redux，fasta，k-核苷酸，mandlebrot，nbody…"
+}, {
+  "tag": "P",
+  "text": "Also, other areas of Go that are FAST: compile times as mentioned, and time to production. With Go, there is a focus on developer productivity, which is primarily as a result of its simplicity. This makes it faster to go from initial concept/idea to production.",
+  "translation": "另外，Go的其他快速方面是：如上所述的编译时间和生产时间。 借助Go，开发人员的工作效率得到了关注，这主要是因为其简单性。 这样可以更快地从最初的概念/想法过渡到生产。"
+}, {
+  "tag": "H1",
+  "text": "What’s wrong with it?",
+  "translation": "它出什么问题了？"
+}, {
+  "tag": "H2",
+  "text": "No Generics",
+  "translation": "没有泛型"
+}, {
+  "tag": "P",
+  "text": "This is a debatable one. The use of generics is languages such as Java improve the reusability of code whilst ensuring type safety. The go community has raised this ‘issue’ and it has been considered. You can follow the proposal here. However, their current stance is that the benefits of generics do not outweigh the benefits of simplicity and readability (without generics).",
+  "translation": "这是值得商one的。 使用泛型是Java之类的语言，可在确保类型安全的同时提高代码的可重用性。 围棋社区提出了这个“问题”，并已予以考虑。 您可以在此处遵循建议。 但是，他们目前的立场是，泛型的好处不会超过简单性和可读性的好处（没有泛型）。"
+}, {
+  "tag": "H2",
+  "text": "Race conditions",
+  "translation": "比赛条件"
+}, {
+  "tag": "P",
+  "text": "“Do not communicate by sharing memory; instead, share memory by communicating”",
+  "translation": "“不要通过共享内存进行交流； 而是通过交流共享内存”"
+}, {
+  "tag": "P",
+  "text": "The benefits that this mantra brings, also makes Go susceptible to race conditions.",
+  "translation": "这种口头禅带来的好处也使Go容易受到比赛条件的影响。"
+}, {
+  "tag": "P",
+  "text": "Due to the mutability of go structures (and lack of immutable data structures), you are forced to share mutable data across multiple concurrent processes. An example of this is sending a pointer down a channel without a deep copy and an intrinsically mutable nature opens the door to race conditions. Channels may improve concurrent programming, but there is a real risk of race conditions, in which channels do nothing to prevent.",
+  "translation": "由于go结构的可变性（并且缺少不变的数据结构），您被迫跨多个并发进程共享可变数据。 这样的一个示例是在没有深层复制的情况下沿通道发送指针，并且本质上可变的性质为竞争条件打开了大门。 通道可以改善并发编程，但是存在竞争条件的实际风险，其中通道无济于事。"
+}, {
+  "tag": "P",
+  "text": "There is a race detector built into the Go CLI to help detect race conditions however.",
+  "translation": "但是，Go CLI中内置了一个竞赛检测器，以帮助检测竞赛条件。"
+}, {
+  "tag": "H2",
+  "text": "Error Checking",
+  "translation": "错误检查"
+}, {
+  "tag": "P",
+  "text": "Checking for errors is very explicit. There is no try…catch statements. You have to alter your approach and mindset when it comes to error handling. Especially if you are used to other languages. They believe that the lack of exceptions prevents convoluted code and overloading the return value. This ties in with its need for simplicity. You can handle exceptions with panic and recover however, in truly exceptional circumstances. There is also a canonical error interface type which returns an error string with Error().",
+  "translation": "检查错误非常明确。 没有try ... catch语句。 在错误处理方面，您必须改变方法和思维方式。 特别是如果您习惯于其他语言。 他们认为，缺少异常可以防止卷积代码并使返回值过载。 这与其对简单性的需求联系在一起。 您可以在异常情况下紧急处理异常并进行恢复。 还有一种规范的错误接口类型，该类型返回带有Error（）的错误字符串。"
+}, {
+  "tag": "P",
+  "text": "Go developers approach errors by using the multi-value return to check for an error value. You can return an error from functions in which you pre-determine are capable of producing an error. Usually polluting you codebase with if err != nil .",
+  "translation": "Go开发人员通过使用多值返回检查错误值来处理错误。 您可以从预定的能够产生错误的函数中返回错误。 通常使用err！= nil污染您的代码库。"
+}, {
+  "tag": "H2",
+  "text": "Too Simplistic For Some?",
+  "translation": "太简单了一些？"
+}, {
+  "tag": "P",
+  "text": "This simplicity comes at a cost. Go is not as expressive as JavaScript. There are no default values. The lack of abstraction and generics makes implementing DRY principles harder and more intricate, less intuitive.",
+  "translation": "这种简单性是有代价的。 Go不如JavaScript富有表现力。 没有默认值。 缺少抽象和泛型使得实现DRY原理变得更加困难，更加复杂，更加不直观。"
+}, {
+  "tag": "P",
+  "text": "The important thing to remember is that Go is still young. Generics are being considered and, as Go has matured, they have stated that there is room for consideration. The community work very hard continuously developing and improving the language. Just like any language, Go has its strong points and it’s weak points. I’m sure that if enough Gophers (Go programmers) feel the need for a certain language feature, then it will be implemented.",
+  "translation": "要记住的重要一点是Go还很年轻。 正在考虑使用泛型，并且随着Go的成熟，他们表示仍有考虑的空间。 社区非常努力地不断开发和改进语言。 就像任何一种语言一样，Go也有其长处和短处。 我敢肯定，如果足够多的Gophers（Go程序员）觉得需要某种语言功能，那么它将得以实现。"
+}, {
+  "tag": "P",
+  "text": "However, although it may seem that certain features are missing, sometimes it requires looking at it from a different angle to see how you can achieve it in Go.",
+  "translation": "但是，尽管看起来某些功能似乎缺失了，但是有时它需要从另一个角度来看待它，以了解如何在Go中实现它。"
+}, {
+  "tag": "P",
+  "text": "There are usually ways to achieve the same thing with a different approach, a more Go-friendly approach.",
+  "translation": "通常，可以通过不同的方法（更友好的Go方式）来实现同一件事。"
+}, {
+  "tag": "H1",
+  "text": "When to use it",
+  "translation": "什么时候使用"
+}, {
+  "tag": "P",
+  "text": "It’s safe to say that, at this stage, Go cannot solve all problems; especially related to GUIs and complex systems that require heavy abstraction.",
+  "translation": "可以肯定地说，在此阶段，Go并不能解决所有问题。 特别是与需要大量抽象的GUI和复杂系统有关。"
+}, {
+  "tag": "P",
+  "text": "But, which language can solve everything?",
+  "translation": "但是，哪种语言可以解决所有问题？"
+}, {
+  "tag": "P",
+  "text": "Use Go to its advantages. If you think the language is too simplistic and find it hard to add complexity in a clean way, use it to build simple micro-services rather than complex systems. Use Go for building networking tools and system tools, rather than replacing a language that is a better fit for the task at hand.",
+  "translation": "使用转到它的优点。 如果您认为该语言过于简单，并且发现很难以一种干净的方式增加复杂性，请使用它来构建简单的微服务而不是复杂的系统。 使用Go构建网络工具和系统工具，而不是替换更适合当前任务的语言。"
+}, {
+  "tag": "P",
+  "text": "So most importantly, use the right tool for the job. If that tool is Go, then it should be because solving that problem is what Go is good at.",
+  "translation": "因此，最重要的是，使用正确的工具完成工作。 如果该工具是Go，那应该是因为解决该问题是Go擅长的。"
+}, {
+  "tag": "H1",
+  "text": "So get started.",
+  "translation": "所以开始吧。"
+}, {
+  "tag": "H2",
+  "text": "The Go Programming Language",
+  "translation": "Go编程语言"
+}, {
+  "tag": "H3",
+  "text": "Go is an open source programming language that makes it easy to build simple, reliable, and efficient software.",
+  "translation": "Go是一种开源编程语言，可轻松构建简单，可靠和高效的软件。"
+}, {
+  "tag": "P",
+  "text": "I’m interested in hearing what you think of Go; whether it’s something you use, or are interested in, or have strong opinions about.",
+  "translation": "我想听听您对Go的看法； 无论是您使用的产品，感兴趣的产品还是有强烈的见解的产品。"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Lewis Fairweather的文章《Want to Learn a New Programming Language? Consider Go (Golang).》，参考：https://medium.com/swlh/want-to-learn-a-new-programming-language-consider-go-golang-1c32dc3788ba)",
+  "translation": "（本文翻译自刘易斯·费尔威瑟的文章《想学习一种新的编程语言？请考虑使用Go语言（Golang）。》，参考：https：//medium.com/swlh/want-to-learn-a-new-programming-language -consider-go-golang-1c32dc3788ba）"
+}]
