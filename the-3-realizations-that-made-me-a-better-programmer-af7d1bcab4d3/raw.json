@@ -1,0 +1,180 @@
+[{
+  "tag": "H2",
+  "text": "It has been a year since I began studying JavaScript and Ruby.",
+  "translation": "自从我开始学习JavaScript和Ruby已有一年了。"
+}, {
+  "tag": "P",
+  "text": "Now, I work as a technical writer. I read code more often than I write it. When I do write it, it’s usually a small snippet for a specific purpose. I don’t often build entire apps the way I did when I was developing my portfolio.",
+  "translation": "现在，我是一名技术作家。 我阅读代码的频率要高于编写代码的频率。 当我写的时候，通常是一个特定目的的小片段。 我通常不会像开发投资组合时那样构建整个应用程序。"
+}, {
+  "tag": "P",
+  "text": "But now, I use code to solve problems. I know exactly what I’m trying to accomplish with each line of code that I write. When I get stuck on something, I pseudocode it until I find a solution that makes sense.",
+  "translation": "但是现在，我使用代码来解决问题。 我完全知道我要编写的每一行代码要完成的工作。 当我卡在某个东西上时，我会对其进行伪编码，直到找到一个有意义的解决方案为止。"
+}, {
+  "tag": "P",
+  "text": "I continue to learn each day. While I focus most of my efforts on technical writing, I’m confident that these realizations will help me grow as a developer.",
+  "translation": "我每天继续学习。 尽管我将大部分精力集中在技术写作上，但我有信心这些认识将有助于我成长为一名开发人员。"
+}, {
+  "tag": "H1",
+  "text": "3. Pseudocode Helps With Algorithmic Thinking",
+  "translation": "3.伪代码有助于算法思考"
+}, {
+  "tag": "P",
+  "text": "I used to spend a lot of time in trial-and-error mode. If something didn’t work, I just tried it a bunch of different ways until (a) it finally worked, somehow, or (b) it didn’t work, and I ended up on Stack Overflow.",
+  "translation": "我过去经常在试错模式下花费大量时间。 如果某件事不起作用，我只是尝试了多种方法，直到（a）它终于以某种方式起作用，或者（b）它不起作用，最后我遇到了Stack Overflow。"
+}, {
+  "tag": "P",
+  "text": "I always assumed it was my lack of understanding of the language I was using. In retrospect, it was actually a problem with algorithmic thinking. I wanted to get X from Y and put it in Z. I wrote code that gets Z from nowhere and tries to put it in X.",
+  "translation": "我一直以为这是我对所用语言的不了解。 回想起来，这实际上是算法思维的问题。 我想从Y获得X并将其放入Z。我编写了从任何地方获得Z并尝试将其放入X的代码。"
+}, {
+  "tag": "P",
+  "text": "I realized that pseudocode is a great way to jump-start the process of thinking algorithmically. Brayden Copley provides a solid example of pseudocode with his FizzBuzz solution.",
+  "translation": "我意识到伪代码是一种快速启动算法思维过程的好方法。 Brayden Copley的FizzBuzz解决方案提供了可靠的伪代码示例。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*Gx9QANgAVNvXf1iV.jpeg?q=20",
+  "type": "image",
+  "file": "0*Gx9QANgAVNvXf1iV.jpeg"
+}, {
+  "tag": "P",
+  "text": "The first time I tried FizzBuzz, I sat there thinking about the syntax of Ruby before I even thought about how to order the statements I’d eventually write. I Googled things like “how to write conditional statements in Ruby” and “Ruby divisible by,” but I was focusing on the part that didn’t really matter. The part that DID matter was how to get from point A to point B in a way that actually worked.",
+  "translation": "第一次尝试FizzBuzz时，我坐在那儿是在考虑Ruby的语法，然后才考虑如何对最终编写的语句进行排序。 我用Google搜索了“如何在Ruby中编写条件语句”和“可以被Ruby整除”之类的内容，但我专注于真正无关紧要的部分。 DID重要的部分是如何以一种有效的方式从A点到达B点。"
+}, {
+  "tag": "P",
+  "text": "FizzBuzz is easy. Many real-world problems are not.",
+  "translation": "FizzBuzz很容易。 现实世界中的许多问题并非如此。"
+}, {
+  "tag": "P",
+  "text": "Pseudocoding is a great way to think through complex problems without worrying about the language you’re using.",
+  "translation": "伪编码是一种思考复杂问题的好方法，而不必担心您使用的语言。"
+}, {
+  "tag": "P",
+  "text": "My initial inability to think algorithmically was easily overcome. I stopped focusing on which language to learn next, and I started focusing on how to think my way out of a problem.",
+  "translation": "我最初无法通过算法思考的问题很容易克服。 我不再关注接下来要学习哪种语言，而是开始关注如何思考解决问题的方法。"
+}, {
+  "tag": "H1",
+  "text": "2. We Write Code to Solve Problems",
+  "translation": "2.我们编写代码来解决问题"
+}, {
+  "tag": "P",
+  "text": "Of course, it’s hard to learn when you’re doing a prescriptive tutorial. You’re not solving a real problem. You’re following a set of instructions that, when followed correctly, produce a certain outcome. By design.",
+  "translation": "当然，在编写说明性教程时很难学习。 您没有解决真正的问题。 您正在遵循一组说明，如果正确遵循这些说明，将会产生一定的结果。 通过设计。"
+}, {
+  "tag": "P",
+  "text": "A nondeveloper could follow a well-written tutorial and produce a simple app, but if you were solving a problem that hadn’t been solved yet, there wouldn’t be any instructions to follow.",
+  "translation": "非开发人员可以遵循编写良好的教程并制作一个简单的应用程序，但是如果您要解决尚未解决的问题，则没有任何要遵循的说明。"
+}, {
+  "tag": "P",
+  "text": "You might be doing something fun. Hopefully, you’ll create problems that need to be solved. But if you’re just doing guided tutorials, and you’re not sure how you would apply these exercises to actual problems, it’s going to take you awhile to grow.",
+  "translation": "您可能正在做一些有趣的事情。 希望您会创建需要解决的问题。 但是，如果您只是在进行指导性教程，并且不确定如何将这些练习应用于实际问题，那将需要花费一些时间才能发展。"
+}, {
+  "tag": "P",
+  "text": "The skills you learn should be transferrable. There’s no point in doing a tutorial if you can’t apply the same skills you’re practicing to a different scenario.",
+  "translation": "您所学的技能应该可以转移。 如果您无法将正在练习的相同技能应用到不同的情况下，那么进行本教程就毫无意义。"
+}, {
+  "tag": "P",
+  "text": "For that reason, all of the examples above should include the word because.",
+  "translation": "因此，以上所有示例均应包含单词“因为”。"
+}, {
+  "tag": "UL",
+  "texts": ["Do X to Y because …", "Get X from Y because …", "Get X from Y, and put it in Z because …", "Create X in Y because …", "Create X in Y, and make it do Z because …"],
+  "translations": ["X到Y，因为…", "从…获得X，因为……", "从Y获得X，然后将其放入Z，因为……", "在Y中创建X，因为…", "在Y中创建X，并使其成为Z，因为…"]
+}, {
+  "tag": "P",
+  "text": "Let’s say you learn to make a to-do list app. I did that once. What did I learn? I learned how to make a to-do list app. I didn’t learn how to use the same concepts to make apps that function in a similar way.",
+  "translation": "假设您学会了制作待办事项清单应用。 我做了一次。 我学到了什么？ 我学习了如何制作待办事项清单应用程序。 我没有学习如何使用相同的概念来使应用以相似的方式运行。"
+}, {
+  "tag": "H1",
+  "text": "1. Programming Is Not Really About Telling the Computer to Do X",
+  "translation": "1.编程并不是真的要告诉计算机去做X"
+}, {
+  "tag": "P",
+  "text": "This was a pretty big misunderstanding when I began learning. In my mind, I just needed to write a command, like do X, and everything would work out.",
+  "translation": "当我开始学习时，这是一个很大的误解。 在我看来，我只需要编写一个命令（如do X），一切都会顺利进行。"
+}, {
+  "tag": "P",
+  "text": "Of course, that’s not how we do it.",
+  "translation": "当然，这不是我们的方法。"
+}, {
+  "tag": "P",
+  "text": "Instead, I need to:",
+  "translation": "相反，我需要："
+}, {
+  "tag": "UL",
+  "texts": ["Do X to Y", "Get X from Y", "Get X from Y, and put it in Z", "Create X in Y", "Create X in Y, and make it do Z"],
+  "translations": ["从X到Y", "从Y获得X", "从Y获得X，然后将其放入Z", "在Y中创建X", "在Y中创建X，然后使其成为Z"]
+}, {
+  "tag": "P",
+  "text": "… and so on.",
+  "translation": "… 等等。"
+}, {
+  "tag": "P",
+  "text": "I didn’t realize this until I started using code to solve actual problems.",
+  "translation": "直到我开始使用代码解决实际问题时，我才意识到这一点。"
+}, {
+  "tag": "P",
+  "text": "Example: I pull a bunch of data from BigQuery and connect it to Data Studio. I make a nice bar graph with that data. Now, I need to do a custom sort of the parameters on the X axis, which are tied to dimensions in BigQuery. I could sort by ascending or descending with the click of a button, but that won’t fit my use case. I need to code my way out of this one.",
+  "translation": "示例：我从BigQuery中提取了一堆数据并将其连接到Data Studio。 我用这些数据制作了一个漂亮的条形图。 现在，我需要对X轴上的参数进行自定义排序，这些参数与BigQuery中的尺寸相关。 我可以通过单击按钮来进行升序或降序排序，但这不适合我的用例。 我需要用我的方式编写代码。"
+}, {
+  "tag": "P",
+  "text": "In my mind, I’m thinking: sort order on x axis: A, D, E, B, C, F.",
+  "translation": "我在想：x轴上的排序顺序：A，D，E，B，C，F。"
+}, {
+  "tag": "P",
+  "text": "Then I think to myself … that’s not enough. What do those X-axis values represent, and where do they come from? Let’s say they come from the location dimension on table001.",
+  "translation": "然后，我对自己想……这还不够。 这些X轴值代表什么，它们来自何处？ 假设它们来自table001上的位置维度。"
+}, {
+  "tag": "P",
+  "text": "I come up with something like:",
+  "translation": "我想出了类似的东西："
+}, {
+  "tag": "PRE",
+  "text": "SELECT *,CASE  WHEN location = 'A' then 1  WHEN location = 'D' then 2  WHEN location = 'E' then 3  WHEN location = 'B' then 4  WHEN location = 'C' then 5  WHEN location = 'F' then 6 ELSE 0 END as SortOrderFROM `table001`",
+  "translation": "SELECT *，CASE，当location ='A'时，然后是1当位置='D'时，然后是2当位置='E'时，然后是3当位置='B'时，然后是4当位置='C'时，然后是5当位置='F'时 然后6 ELSE 0 END作为SortOrderFROM`table001`"
+}, {
+  "tag": "P",
+  "text": "Now I can sort by SortOrder, which I defined, instead of by ascending or descending.",
+  "translation": "现在，我可以按定义的SortOrder进行排序，而不是按升序或降序排序。"
+}, {
+  "tag": "P",
+  "text": "Other than the initial CASE and END, this piece of SQL is exactly what my brain imagined it should be. But it wasn’t as simple as sort it like this: ADEBCF. Sort what like this? Which dimension? Which table?",
+  "translation": "除了最初的CASE和END外，这条SQL正是我的大脑所想象的。 但这并不像这样简单：ADEBCF。 像这样排序吗？ 哪个尺寸？ 哪张桌子"
+}, {
+  "tag": "P",
+  "text": "My first JavaScript project helped me come to a similar realization. I was pulling stats about Pokémon from the PokéAPI. Great — I got the stats. Now what? They’re not showing up anywhere except for in the console. Obviously. Because I didn’t put them where I thought I was putting them. I only programmed half of what I intended to program.",
+  "translation": "我的第一个JavaScript项目帮助我实现了类似的实现。 我从PokéAPI中获取了关于Pokémon的统计信息。 太好了-我得到了统计数据。 怎么办？ 它们没有出现在控制台中的任何地方。 明显。 因为我没有把它们放在我以为我在放置它们的地方。 我只编程了我打算编程的一半。"
+}, {
+  "tag": "P",
+  "text": "It sounds like common sense, but it’s only common sense if you understand exactly what you’re trying to accomplish. When you’re new to programming, it might take awhile to have a conceptual understanding of the problems you’re trying to solve.",
+  "translation": "这听起来像是常识，但只有在您完全了解要完成的工作时，才是常识。 如果您是编程的新手，可能需要一段时间才能从概念上了解要解决的问题。"
+}, {
+  "tag": "H1",
+  "text": "The 3 Realizations That Made Me a Better Programmer",
+  "translation": "使我成为更好的程序员的3种认识"
+}, {
+  "tag": "H2",
+  "text": "It didn’t happen overnight",
+  "translation": "这不是一夜之间发生的"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*R9sITLhxqZ8U-zMkvl32NA.jpeg?q=20",
+  "caption": "Photo by eberhard grossgasteiger on Unsplash",
+  "type": "image",
+  "file": "1*R9sITLhxqZ8U-zMkvl32NA.jpeg"
+}, {
+  "tag": "P",
+  "text": "I developed an interest in programming when I was a child — before I knew what programming really was. I learned HTML as a kid and built the most stereotypical ‘90s websites. I learned SQL as a teenager when I had a summer job in IT. After going to college and grad school way too many times, and after working for a few years, I went to a coding boot camp and learned some JavaScript and Ruby.",
+  "translation": "我小时候就对编程产生了兴趣-在我不知道编程真正是什么之前。 我从小就学习HTML，并建立了最典型的90年代网站。 我在IT部门从事暑期工作时，从小就学习SQL。 上了很多次大学和研究生后，工作了几年之后，我去了编码训练营，学习了一些JavaScript和Ruby。"
+}, {
+  "tag": "P",
+  "text": "It took a few months for me to conceptualize what I had learned. It took over a year before I could build things independently.",
+  "translation": "我花了几个月的时间来概念化我所学到的东西。 我花了一年多的时间才能独立构建事物。"
+}, {
+  "tag": "P",
+  "text": "I had a few helpful realizations along the way.",
+  "translation": "在此过程中，我有一些有益的认识。"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Keri Savoca的文章《The 3 Realizations That Made Me a Better Programmer》，参考：https://medium.com/better-programming/the-3-realizations-that-made-me-a-better-programmer-af7d1bcab4d3)",
+  "translation": "（本文翻译自Keri Savoca的文章《使我成为更好的程序员的三种实现》，参考：https：//medium.com/better-programming/the-3-realizations-that-made-me-a-better- 程序员-af7d1bcab4d3）"
+}]
