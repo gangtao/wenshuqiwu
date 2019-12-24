@@ -1,0 +1,242 @@
+[{
+  "tag": "H1",
+  "text": "Understanding Monte Carlo Simulation",
+  "translation": "了解蒙特卡洛模拟"
+}, {
+  "tag": "H2",
+  "text": "Implementing a powerful statistical tool from scratch",
+  "translation": "从头开始实施功能强大的统计工具"
+}, {
+  "tag": "P",
+  "text": "Monte Carlo simulation is a powerful tool for approximating a distribution when deriving the exact one is difficult. This situation can arise when a complicated transformation is applied to a random variable (RV), of which we know its distribution. It has a multitude of applications; from options pricing to narrowing the geographic focus of Coast Guard search and rescue efforts. But how does it work?",
+  "translation": "蒙特卡洛模拟是一个强大的工具，可以在难以推导精确分布时对其进行近似估算。 当将复杂的变换应用于随机变量（RV）（我们知道其分布）时，就会出现这种情况。 它具有多种应用。 从期权定价到缩小海岸警卫队搜救工作的地理范围。 但是它是如何工作的呢？"
+}, {
+  "tag": "H2",
+  "text": "Probability Distributions",
+  "translation": "概率分布"
+}, {
+  "tag": "P",
+  "text": "Every RV is uniquely characterized by its distribution. For continuous RVs, the probability density function (PDF) shows the density of a continuous RV at a given value. The probability of any given value occurring is zero, so you must integrate over a range of values to find the probability that the RV falls within the specified range. For discrete RVs, this function is called a probability mass function (PMF) and it returns the probability of a specific value occurring. They describe the pattern and frequency of which we observe a random variable.",
+  "translation": "每个RV的独特之处在于其分布。 对于连续RV，概率密度函数（PDF）显示给定值下连续RV的密度。 任何给定值出现的概率为零，因此您必须对一系列值进行积分才能找到RV落在指定范围内的概率。 对于离散的RV，此函数称为概率质量函数（PMF），它返回出现特定值的概率。 他们描述了观察随机变量的模式和频率。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*-A-GBoHsmqf9M_4ujbkKXw.png?q=20",
+  "type": "image",
+  "file": "1*-A-GBoHsmqf9M_4ujbkKXw.png"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*wJQjLJXqEnWEOYR6Tw-VVw.png?q=20",
+  "type": "image",
+  "file": "1*wJQjLJXqEnWEOYR6Tw-VVw.png"
+}, {
+  "tag": "P",
+  "text": "The CDF is simply the cumulative value of the PDF or PMF. It is the probability that the random variable takes on a value less than or equal to the value directly beneath the curve/step-function. Probabilities must be between 0 and 1, so the CDF ranges between 0 and 1. It is denoted by F.",
+  "translation": "CDF只是PDF或PMF的累积值。 随机变量取小于或等于曲线/阶跃函数正下方的值的概率。 概率必须在0到1之间，因此CDF的范围在0到1之间。用F表示。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*VQOuOYUqDf-4skLdwuYYOg.png?q=20",
+  "type": "image",
+  "file": "1*VQOuOYUqDf-4skLdwuYYOg.png"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*4Xibw-2HOt4KLfDiXKhTow.png?q=20",
+  "type": "image",
+  "file": "1*4Xibw-2HOt4KLfDiXKhTow.png"
+}, {
+  "tag": "H2",
+  "text": "Inverse Transform Sampling",
+  "translation": "逆变换采样"
+}, {
+  "tag": "P",
+  "text": "How do these relate to Monte Carlo simulation, besides being fundamental knowledge of probability theory? By the following proposition (Note: capital letters denote RVs and lowercase letters denote realizations of an RV).",
+  "translation": "除了是概率论的基础知识以外，它们还与蒙特卡洛模拟有什么关系？ 通过以下命题（注意：大写字母表示RV，小写字母表示RV的实现）。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*yK8sQkNOSZobVHAzMzlWJQ.png?q=20",
+  "type": "image",
+  "file": "1*yK8sQkNOSZobVHAzMzlWJQ.png"
+}, {
+  "tag": "P",
+  "text": "This means we can feed random variables from the uniform distribution with minimum value 0 and maximum value 1 into the inverse CDF of X to generate random values of X.",
+  "translation": "这意味着我们可以将均匀分布的最小值为0和最大值为1的随机变量馈入X的逆CDF中，以生成X的随机值。"
+}, {
+  "tag": "P",
+  "text": "Let’s take the CDF of an Exponential distribution. It is below.",
+  "translation": "让我们以指数分布的CDF为例。 在下面。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*VMtKv_ihCKolbkXTKJD3tQ.png?q=20",
+  "caption": "CDF of an Exponential(lambda) Distribution",
+  "type": "image",
+  "file": "1*VMtKv_ihCKolbkXTKJD3tQ.png"
+}, {
+  "tag": "P",
+  "text": "By defining U as F(X) and solving for X, we can find the inverse CDF.",
+  "translation": "通过将U定义为F（X）并求解X，我们可以找到逆CDF。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*7JI69fAF5vXd8muv_SNl-w.png?q=20",
+  "caption": "Inverse CDF of an Exponential(lambda) Distribution",
+  "type": "image",
+  "file": "1*7JI69fAF5vXd8muv_SNl-w.png"
+}, {
+  "tag": "P",
+  "text": "We can now feed U~Uniform(0, 1) RVs into this inverse CDF to generate random draws from an Exponential distribution. I chose 1 as my lambda parameter. The code I used is below. (Note: It is inefficient and could be sped up by vectorization, or even quicker using scipy.stats modules. I did it this way to clearly demonstrate the basics of how inverse transform sampling works).",
+  "translation": "现在，我们可以将U〜Uniform（0，1）RV馈入此逆CDF，以根据指数分布生成随机抽取。 我选择1作为我的lambda参数。 我使用的代码如下。 （注意：它效率低下，可以通过矢量化加快速度，甚至可以使用scipy.stats模块更快。我这样做是为了清楚地展示逆变换采样工作原理的基础。）"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*VsdtNsRbeleKIIu6FsHOQw.png?q=20",
+  "caption": "The code used to generate Exponential(lambda) RVs",
+  "type": "image",
+  "file": "1*VsdtNsRbeleKIIu6FsHOQw.png"
+}, {
+  "tag": "P",
+  "text": "At 10,000 simulated random variables, the simulation is good approximation to the theoretical distribution.",
+  "translation": "在10,000个模拟随机变量下，该模拟非常接近理论分布。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*2UR376znL06Ma_dgG6-4dw.png?q=20",
+  "type": "image",
+  "file": "1*2UR376znL06Ma_dgG6-4dw.png"
+}, {
+  "tag": "P",
+  "text": "Now let’s try a transformation.",
+  "translation": "现在，让我们尝试一下转换。"
+}, {
+  "tag": "H2",
+  "text": "Approximating the Transformation of a RV",
+  "translation": "近似于RV的变换"
+}, {
+  "tag": "P",
+  "text": "Now let’s generate squared standard normal random variables. This is actually a Chi-Square(1) RV, which allows us to easily check how good our approximation is by checking the exact distribution.",
+  "translation": "现在，我们生成平方标准普通随机变量。 这实际上是一个Chi-Square（1）RV，它使我们可以通过检查精确分布来轻松地检查近似值的好坏。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*K7uxHrXaUYkFlvzgtR91dw.png?q=20",
+  "caption": "The code used to generate Chi-Square(1) RVs by squaring standard normal RVs",
+  "type": "image",
+  "file": "1*K7uxHrXaUYkFlvzgtR91dw.png"
+}, {
+  "tag": "P",
+  "text": "As you can see, the approximation is reasonably good.",
+  "translation": "如您所见，该近似值相当合理。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*dEq1swPI0d8nwEu15Q1yKw.png?q=20",
+  "type": "image",
+  "file": "1*dEq1swPI0d8nwEu15Q1yKw.png"
+}, {
+  "tag": "P",
+  "text": "After plotting these RVs, I calculated the proportion (approximated probability) below 1 as 0.6857. I then compared this to the exact probability by using the Chi-Square(1) CDF evaluated at 1. The exact probability is 0.6826894921370859. This approximation performed really well at 10,000 simulations",
+  "translation": "在绘制了这些RV之后，我计算出低于1的比例（近似概率）为0.6857。 然后，我通过使用评估为1的Chi-Square（1）CDF将其与确切概率进行比较。确切概率为0.6826894921370859。 在10,000次模拟中，这种近似效果非常好"
+}, {
+  "tag": "P",
+  "text": "Now let’s use this to approximate the distribution of an RV, whose exact distribution would require a bit of solving.",
+  "translation": "现在，我们用它来近似估算RV的分布，而其确切分布将需要一些求解。"
+}, {
+  "tag": "H2",
+  "text": "Approximating my Arbitrary RV",
+  "translation": "近似我的任意RV"
+}, {
+  "tag": "P",
+  "text": "I’ve defined some arbitrary RV. Let’s call it A and define it below.",
+  "translation": "我定义了一些任意的RV。 让我们将其称为A并在下面进行定义。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*xEySIQay3AbfLZvzmZoxLQ.png?q=20",
+  "type": "image",
+  "file": "1*xEySIQay3AbfLZvzmZoxLQ.png"
+}, {
+  "tag": "P",
+  "text": "Finding an exact distribution would take some work and I don’t like doing work. Luckily I can write a function to approximate the distribution of A.",
+  "translation": "找到确切的发行版本需要一些工作，而我不喜欢工作。 幸运的是，我可以编写一个函数来近似A的分布。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*ztVSlZvbNxXq7l2yZBBwFg.png?q=20",
+  "type": "image",
+  "file": "1*ztVSlZvbNxXq7l2yZBBwFg.png"
+}, {
+  "tag": "P",
+  "text": "Now we have an approximation of the distribution of A and can find approximate probabilities for the purposes for inference.",
+  "translation": "现在我们有了A的分布的近似值，并且可以找到用于推断目的的近似概率。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*wteJmRF76TWBcisIpoms-A.png?q=20",
+  "type": "image",
+  "file": "1*wteJmRF76TWBcisIpoms-A.png"
+}, {
+  "tag": "P",
+  "text": "Now that we are done approximating my arbitrary RV, let’s see a hypothetical use case.",
+  "translation": "现在，我们已经完成了对任意RV的近似处理，让我们看一个假设的用例。"
+}, {
+  "tag": "H2",
+  "text": "Probability of Positive Returns",
+  "translation": "正回报的可能性"
+}, {
+  "tag": "P",
+  "text": "Suppose we know the returns of some security are distributed 𝐿𝑎𝑝𝑙𝑎𝑐𝑒(0.05,0.07) and returns next period are not dependent on returns this period (this is an example of a random walk). What’s the probability that our return on investment at period 5 is positive?",
+  "translation": "假设我们知道某些证券的收益是分布𝐿𝑎𝑝𝑙𝑎𝑐𝑒（0.05,0.07），而下一个周期的收益并不取决于该周期的收益（这是一个随机游动的例子）。 在第5期，我们的投资回报率是正的概率是多少？"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*ESgM7jZThv3YBNwIFCpK4Q.png?q=20",
+  "caption": "The code I used to generate simulated returns and the spaghetti plot (make sure to load in stats from scipy)",
+  "type": "image",
+  "file": "1*ESgM7jZThv3YBNwIFCpK4Q.png"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*Sl21FiFi8fLM98Dmhvexjw.png?q=20",
+  "type": "image",
+  "file": "1*Sl21FiFi8fLM98Dmhvexjw.png"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*nPc2AikAfpRG6hTBLPOXuQ.png?q=20",
+  "caption": "5000 Random Walks of our hypothetical security and the distribution of final returns",
+  "type": "image",
+  "file": "1*nPc2AikAfpRG6hTBLPOXuQ.png"
+}, {
+  "tag": "P",
+  "text": "By counting the proportion of final returns greater than 0 and dividing by the number of simulations, we find the probability that the security has increased in value at the end of 5 periods is about 0.85. That is useful information when constructing a portfolio (although we never get a clean case like this in real life).",
+  "translation": "通过计算最终收益大于0的比例并除以模拟次数，我们发现在5个周期结束时证券价值增加的可能性约为0.85。 在构建投资组合时，这是有用的信息（尽管在现实生活中我们从来没有像这样干净的案例）。"
+}, {
+  "tag": "H2",
+  "text": "Bonus Application: Monte Carlo Integration",
+  "translation": "奖金申请：蒙特卡洛积分"
+}, {
+  "tag": "P",
+  "text": "In addition to approximating a distribution, Monte Carlo simulation can be used to numerically approximate a definite integral that is difficult or impossible to solve analytically. This is called Monte Carlo Integration. It is performed by evaluating the function at realizations of random variables generated from 𝑈𝑛𝑖𝑓𝑜𝑟𝑚(𝑎, 𝑏), where a is the lower bound of the definite integral and b is the upper bound. These results are then averaged and multiplied by 𝑏−𝑎 to get an approximation of the integral from 𝑎 to 𝑏.",
+  "translation": "除了近似分布外，还可以使用蒙特卡洛模拟法对难以解析或无法解析的定积分进行数值近似。 这称为蒙特卡洛积分。 它是通过评估从𝑈𝑛𝑖𝑓𝑜𝑟𝑚（𝑎，𝑏）生成的随机变量实现时的函数来执行的，其中a是定积分的下限，b是上限。 然后将这些结果取平均值，然后乘以𝑏-𝑎即可得到从𝑎到𝑏的积分的近似值。"
+}, {
+  "tag": "P",
+  "text": "Take the function below:",
+  "translation": "使用以下功能："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*2VfE1_iJcwuWAw0sjLpRxQ.png?q=20",
+  "type": "image",
+  "file": "1*2VfE1_iJcwuWAw0sjLpRxQ.png"
+}, {
+  "tag": "P",
+  "text": "It’s integral cannot be derived analytically, so let’s approximate it on the interval 0 to 1.",
+  "translation": "它的积分无法通过分析得出，因此让我们在0到1的区间内对其进行近似。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*kmqCR3WBrPgzU9AkSvUbXg.png?q=20",
+  "type": "image",
+  "file": "1*kmqCR3WBrPgzU9AkSvUbXg.png"
+}, {
+  "tag": "P",
+  "text": "Running 10,000 simulations gave me the approximation of about 0.244, which is pretty close to the approximation given by Wolfram of about 0.244, so the function is working as intended.",
+  "translation": "运行10,000次仿真得出的近似值约为0.244，这与Wolfram给出的近似值0.244十分接近，因此该函数按预期工作。"
+}, {
+  "tag": "H2",
+  "text": "Conclusion",
+  "translation": "结论"
+}, {
+  "tag": "P",
+  "text": "If you stuck around this long, thanks for reading. I hope you learned a bit about how Monte Carlo simulation works under the hood. Hopefully, this knowledge will help you as you move on to studying applications of Monte Carlo simulation, like Markov Chain Monte Carlo. Just another reminder to use the optimized .rvs() method from scipy.stats for whatever distribution you are interested in sampling from. It is an order of magnitudes faster than repeatedly appending to a list.",
+  "translation": "如果您坚持了这么长时间，谢谢阅读。 我希望您能学到一些有关蒙特卡洛模拟如何在后台进行的知识。 希望这些知识将在您继续学习蒙特卡洛模拟的应用程序（例如Markov Chain Monte Carlo）时为您提供帮助。 再次提醒您使用scipy.stats中优化的.rvs（）方法进行采样，以获取感兴趣的分布。 它比重复追加到列表要快一个数量级。"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自John Clements的文章《Understanding Monte Carlo Simulation》，参考：https://towardsdatascience.com/understanding-monte-carlo-simulation-eceb4c9cad4)",
+  "translation": "（本文翻译自John Clements的文章，《了解蒙特卡洛模拟》，参考：https：//towardsdatascience.com/understanding-monte-carlo-simulation-eceb4c9cad4）"
+}]
