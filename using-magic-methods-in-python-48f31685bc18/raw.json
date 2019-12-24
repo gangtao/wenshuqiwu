@@ -1,0 +1,264 @@
+[{
+  "tag": "H1",
+  "text": "Quick-Fire Magic Methods",
+  "translation": "快速射击魔术方法"
+}, {
+  "tag": "H2",
+  "text": "Examples using Mathematical Operators",
+  "translation": "使用数学运算符的示例"
+}, {
+  "tag": "H2",
+  "text": "__sub__, __add__, and __mul__ (with a custom __repr__)",
+  "translation": "__sub __，__ add__和__mul __（带有自定义__repr__）"
+}, {
+  "tag": "P",
+  "text": "We can also take advantage of the mathematical operators in Python with magic methods. Lets see how we can use magic methods, like __add__, __sub__, and __mul__ in our own custom object that we create.",
+  "translation": "我们还可以通过魔术方法利用Python中的数学运算符。 让我们看看如何在自己创建的自定义对象中使用魔术方法，例如__add __，__ sub__和__mul__。"
+}, {
+  "tag": "P",
+  "text": "Operators, like +, -, /, and * are polymorphic methods. As can be shown below in the Python prompt, the plus sign (+), is polymorphic, and can be used to concatenate strings, sum up integers, and combined lists together. This is possible, because all these types, str, list, and int have an add method in their respective classes. Python simply converts the + sign to an __add__ method call on the object that called it (see examples below).",
+  "translation": "像+，-，/和*这样的运算符是多态方法。 如下面的Python提示符所示，加号（+）是多态的，可用于连接字符串，对整数求和并将列表组合在一起。 这是可能的，因为所有这些类型，str，list和int在各自的类中都有一个add方法。 Python只是将+符号转换为对调用它的对象的__add__方法调用（请参见下面的示例）。"
+}, {
+  "tag": "P",
+  "text": "This means we can take advantage of the + sign in our own objects if we include a __add__ method in our class.",
+  "translation": "这意味着，如果我们在类中包含__add__方法，则可以利用我们自己的对象中的+号。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/27/1*rfC-XOoYl2ooGt409hZROQ.png?q=20",
+  "type": "image",
+  "file": "1*rfC-XOoYl2ooGt409hZROQ.png"
+}, {
+  "tag": "H2",
+  "text": "Magic Method Operator Methods in Our Class",
+  "translation": "我们班上的魔术方法算子方法"
+}, {
+  "tag": "P",
+  "text": "Here, we are creating a class called NumOperations. This class creates NumOperations objects. When a user of this class, passes a list to the arguments list of the __init__, that list is set as an attribute in the NumOperations object and named, .math_list.",
+  "translation": "在这里，我们正在创建一个名为NumOperations的类。 此类创建NumOperations对象。 当此类的用户将列表传递到__init__的参数列表时，该列表将设置为NumOperations对象中的属性，并命名为.math_list。"
+}, {
+  "tag": "P",
+  "text": "When the NumOperations object(s) have been constructed, we can conveniently utilize the magic methods to work with these custom objects and broadcast a mathematical operation.",
+  "translation": "构造NumOperations对象后，我们可以方便地利用魔术方法来处理这些自定义对象并广播数学运算。"
+}, {
+  "tag": "P",
+  "text": "To illustrate, the magic method __sub__ takes 2 NumOperations objects, zips their lists together and iterates other their corresponding list of tuples. The second element in the tuple is subtracted from the first and that value is appended to a new list, called minuslst, and passed as the argument to the NumOperations constructor.",
+  "translation": "为了说明这一点，魔术方法__sub__接受2个NumOperations对象，将它们的列表压缩在一起，并迭代其他对应的元组列表。 从第一个元组中减去第二个元素，并将该值附加到名为minuslst的新列表中，并将其作为参数传递给NumOperations构造函数。"
+}, {
+  "tag": "P",
+  "text": "This now returns a new NumOperations object.",
+  "translation": "现在，这将返回一个新的NumOperations对象。"
+}, {
+  "tag": "P",
+  "text": "This broadcasting is being performed under the __sub__ method. This means that we can take advantage of the minus (-) operator.",
+  "translation": "正在使用__sub__方法执行此广播。 这意味着我们可以利用减号（-）运算符。"
+}, {
+  "tag": "P",
+  "text": "The magic method, __repr__ has been re-implemented to return a string representation of the list set in the new object. This has been modified, so that when a user prints the output of two NumOperations objects, the user will see something which they might expect.",
+  "translation": "重新实现了魔术方法__repr__，以返回新对象中列表集的字符串表示形式。 对此进行了修改，以便当用户打印两个NumOperations对象的输出时，用户将看到他们可能期望的内容。"
+}, {
+  "tag": "P",
+  "text": "Here a list where the elements have been subtracted from one another;",
+  "translation": "这是一个列表，其中的元素已被相互减去；"
+}, {
+  "tag": "P",
+  "text": "[90, 81, 72, 63, 54].",
+  "translation": "[90，81，72，63，54]。"
+}, {
+  "tag": "P",
+  "text": "Both __add__, and __mul__ have a similar method implementation as __sub__, but use a list comprehension to cut down on the number of lines of code that are needed.",
+  "translation": "__add__和__mul__都具有与__sub__类似的方法实现，但是使用列表推导来减少所需的代码行数。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*TY4yA5-8yLrd0yO7eQOWwA.png?q=20",
+  "caption": "The subtraction, addition and multiplication magic methods have been defined in order to work with the custom NumOperation objects.",
+  "type": "image",
+  "file": "1*TY4yA5-8yLrd0yO7eQOWwA.png"
+}, {
+  "tag": "P",
+  "text": "This broadcasting behavior is similar to that found in data analysis packages, such as Pandas and Numpy.",
+  "translation": "这种广播行为类似于数据分析包（例如Pandas和Numpy）中的广播行为。"
+}, {
+  "tag": "P",
+  "text": "The __add__ and __mul__ methods are also made to work with two NumOperations objects. This means the user can take advantage of the plus operator, + and the multiplication operator *. As can be seen, in the example below, q is the result of x * y, which returns a new NumOperations object. When we print q, we get a string representation of the boradcasting operation as a list.",
+  "translation": "__add__和__mul__方法也可以与两个NumOperations对象一起使用。 这意味着用户可以利用加号运算符+和乘法运算符*。 可以看出，在下面的示例中，q是x * y的结果，它返回一个新的NumOperations对象。 当我们打印q时，我们将boradcasting操作的字符串表示形式作为列表。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*c7mQuy5QvJhGUcNPWURpBw.png?q=20",
+  "type": "image",
+  "file": "1*c7mQuy5QvJhGUcNPWURpBw.png"
+}, {
+  "tag": "P",
+  "text": "For interested parties, the source code is available by following the link to my GitHub gist.",
+  "translation": "对于感兴趣的人士，可通过以下链接获得我的GitHub gist的源代码。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/StephenFordham/d62b97ac0ffb5af552579391287e8570/raw/afa4b660aecd51036898e16d54a8d5d881890690/class_NumOperations.py",
+  "code": "class NumOperations(object):\n    def __init__(self, math_list):\n        self.math_list = math_list\n\n    def __sub__(self, other):\n        minuslst = []\n        zipped = zip(self.math_list, other.math_list)\n        for tup in zipped:\n            minuslst.append(tup[0] - tup[1])\n\n        return NumOperations(minuslst)\n\n    def __add__(self, other):\n        addlst = [x + y for x, y in zip(self.math_list, other.math_list)]\n        return NumOperations(addlst)\n\n    def __mul__(self, other):\n        mullst = [x * y for x, y in zip(self.math_list, other.math_list)]\n        return NumOperations(mullst)\n\n    def __repr__(self):\n        return str(self.math_list)\n\n\nx = NumOperations([100, 90, 80, 70, 60])\ny = NumOperations([10, 9, 8, 7, 6])\n\np = x - y\nz = x + y\nq = x * y\n\nprint('Subtraction: ' + str(p))\nprint('Addition: ' + str(z))\nprint('Multiplication: ' + str(q))\n"
+}, {
+  "tag": "H1",
+  "text": "Summary",
+  "translation": "摘要"
+}, {
+  "tag": "P",
+  "text": "We can make our custom designed objects work with Python operators, like the plus, minus and multiplication signs. This is very powerful functionality, and part of the power comes from the ability to communicate very easily what the object does. The user does not need to learn any new methods, they can simply add, subtract or multiply the NumOperations objects together and when they print the resultant object, they will see output that they might expect.",
+  "translation": "我们可以使自定义设计的对象与Python运算符一起使用，例如加号，减号和乘法符号。 这是非常强大的功能，部分功能来自能够非常轻松地传达对象的行为的能力。 用户不需要学习任何新方法，他们只需将NumOperations对象加，减或乘在一起，当他们打印结果对象时，他们将看到他们期望的输出。"
+}, {
+  "tag": "H1",
+  "text": "Using Magic Methods in Python",
+  "translation": "在Python中使用魔术方法"
+}, {
+  "tag": "H2",
+  "text": "How Magic Methods Can Enhance our Python Code",
+  "translation": "魔术方法如何增强您的Python代码"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*a56PlvOChAAwROtmVcXHEw.png?q=20",
+  "caption": "Image Courtesy of Vox.com",
+  "type": "image",
+  "file": "1*a56PlvOChAAwROtmVcXHEw.png"
+}, {
+  "tag": "H2",
+  "text": "What are magic methods?",
+  "translation": "什么是魔术方法？"
+}, {
+  "tag": "P",
+  "text": "They’re everything in object-oriented Python. They’re special methods that you can define to add “magic” to your classes. They’re always surrounded by double underscores, for example__init__. They're also not as well documented as they need to be. All of the magic methods for Python appear in the same section in the Python docs, but they're scattered about and only loosely organized. There's hardly an example to be found in that section.",
+  "translation": "它们就是面向对象的Python中的一切。 您可以定义它们的特殊方法，以将“魔术”添加到您的课程中。 它们总是被双下划线包围，例如__init__。 它们也没有得到足够的记录。 Python的所有魔术方法都出现在Python文档的同一部分中，但它们分散且组织松散。 在该部分几乎找不到示例。"
+}, {
+  "tag": "P",
+  "text": "To rectify a perceived lack of documentation on magic methods, I have complied some plain-English examples of how to use Python’s magic methods.",
+  "translation": "为了纠正人们认为缺乏魔术方法的文档，我整理了一些有关如何使用Python魔术方法的简单英语示例。"
+}, {
+  "tag": "H2",
+  "text": "Creating a dict object that can only accept integers and floats as its values",
+  "translation": "创建一个只接受整数和浮点数作为其值的dict对象"
+}, {
+  "tag": "P",
+  "text": "To begin, lets create a fictitious use case. In this scenario, I would like to create a class that creates dictionary objects, that only accept either integers or floats as their values.",
+  "translation": "首先，让我们创建一个虚拟的用例。 在这种情况下，我想创建一个创建字典对象的类，该对象仅接受整数或浮点数作为它们的值。"
+}, {
+  "tag": "P",
+  "text": "If any other data types, for example; strings, lists, tuples are added as a value to our custom dictionary object, an exception will be raised, specifying to the user that this custom dict object can only accept integers and floats as it’s values.",
+  "translation": "例如是否有其他数据类型； 字符串，列表，元组作为值添加到我们的自定义字典对象中，将引发异常，向用户指定此自定义dict对象只能接受整数并以浮点数作为其值。"
+}, {
+  "tag": "P",
+  "text": "In order to implement this, we will make use of the following magic methods:",
+  "translation": "为了实现这一点，我们将使用以下魔术方法："
+}, {
+  "tag": "H2",
+  "text": "__int__, __setitem__, and __str__",
+  "translation": "__int __，__ setitem__和__str__"
+}, {
+  "tag": "P",
+  "text": "To begin, I first create a custom class called CustomIntFloat, and I pass dict into the argument inheritance list. This means, that the object that we create will behave exactly like a dictionary, except in the places where we choose to selectively modify this behavior.",
+  "translation": "首先，我首先创建一个名为CustomIntFloat的自定义类，然后将dict传递到参数继承列表中。 这意味着，除了在我们选择有选择地修改此行为的地方之外，我们创建的对象的行为将完全像字典。"
+}, {
+  "tag": "P",
+  "text": "I then create an __init__ method to construct my CustomIntFloat dict object. This object takes a key and value in it’s argument list, which I have set to the None type by default. The reason for this being, is that, if a user creates an object of the CustomIntFloat class, without passing a key or value, an empty dict will be created. I create a simple conditional which says: if the key is not passed, the key parameter is assigned the argument None by default, and an empty dict is created by referencing the CustomIntFloat object, with the class attribute empty_dict.",
+  "translation": "然后，我创建一个__init__方法来构造CustomIntFloat dict对象。 该对象的参数列表中包含键和值，默认情况下，我将其设置为“无”类型。 原因是，如果用户创建CustomIntFloat类的对象而没有传递键或值，则将创建一个空的dict。 我创建了一个简单的条件，该条件是：如果未传递键，则默认情况下会将键参数分配给参数None，并通过使用类属性empty_dict引用CustomIntFloat对象来创建一个空dict。"
+}, {
+  "tag": "P",
+  "text": "Following on, if the user specifies a key of length one, and a corresponding value that is an instance of the int or float class, the key and the value will be set in the object.",
+  "translation": "接下来，如果用户指定了长度为1的键以及作为int或float类实例的相应值，则将在对象中设置键和值。"
+}, {
+  "tag": "P",
+  "text": "Finally, in the else statement, if the user specifies multiple keys and values as an iterable, the iterables will be zipped by the zip function and assigned the variable name zipped. I loop over zipped, and check that the value is of type int or float. If it is not, a custom CustomIntFloatError exception is raised.",
+  "translation": "最后，在else语句中，如果用户将多个键和值指定为一个可迭代对象，则这些可迭代对象将由zip函数压缩并为变量名指定zipper。 我遍历压缩后的值，并检查该值是int还是float类型。 如果不是，则会引发自定义CustomIntFloatError异常。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*fvdw5fUzz-Z62t3wU346Ag.png?q=20",
+  "type": "image",
+  "file": "1*fvdw5fUzz-Z62t3wU346Ag.png"
+}, {
+  "tag": "H2",
+  "text": "The CustomIntFloatError Exception class and the __str__ magic method",
+  "translation": "CustomIntFloatError Exception类和__str__魔术方法"
+}, {
+  "tag": "P",
+  "text": "When we raise a CustomIntFloatError exception, we are really creating an instance of the CustomIntFloatError class and printing it at the same time.",
+  "translation": "当我们引发CustomIntFloatError异常时，我们实际上是在创建CustomIntFloatError类的实例并同时打印它。"
+}, {
+  "tag": "P",
+  "text": "As such, this custom error class needs __init__ and __str__ magic methods. The instance we create takes the value passed, and sets it as an attribute value in the CustomIntFloatError class.",
+  "translation": "因此，此自定义错误类需要__init__和__str__魔术方法。 我们创建的实例采用传递的值，并将其设置为CustomIntFloatError类中的属性值。"
+}, {
+  "tag": "P",
+  "text": "This means, when an error message is raised, the value passed to the __init__ of CustomIntFloat can be set as an attribute (self.value)in the CustomIntFloatError class and easily inspected.",
+  "translation": "这意味着，当出现错误消息时，可以将传递到CustomIntFloat的__init__的值设置为CustomIntFloatError类中的属性（self.value），并易于检查。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*qvHuWg81WSngcUeqza7Q1g.png?q=20",
+  "type": "image",
+  "file": "1*qvHuWg81WSngcUeqza7Q1g.png"
+}, {
+  "tag": "P",
+  "text": "When invalid input is specified, the CustomIntFloatError exception is raised and the object is not constructed. A useful error message informs the user that only integers and floats are valid values.",
+  "translation": "如果指定了无效输入，则会引发CustomIntFloatError异常，并且不会构造该对象。 一条有用的错误消息通知用户，只有整数和浮点数是有效值。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*1egnEW8nipPwP1Ogw8vD4g.png?q=20",
+  "type": "image",
+  "file": "1*1egnEW8nipPwP1Ogw8vD4g.png"
+}, {
+  "tag": "P",
+  "text": "Similarly, when you attempt to instantiate the object z (that has been commented out), with multiple keys and values, the same exception will be raised, informing the user that ‘three’ is not valid input.",
+  "translation": "同样，当您尝试实例化具有多个键和值的对象z（已注释掉）时，将引发相同的异常，通知用户“三个”无效输入。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/StephenFordham/b1be5c3278b4a98b0b6513408112521f/raw/463b6ed3c074f19d3dbb5f3a3c58585f53a169e4/CustomIntFloat_objects.py",
+  "code": "# z = CustomIntFloat(key=['a', 'b', 'c'], value=[1, 2, 'three'])\nz = CustomIntFloat(key=['a', 'b', 'c'], value=[1, 2, 3])"
+}, {
+  "tag": "H2",
+  "text": "The __setitem__ Magic Method",
+  "translation": "__setitem__魔术方法"
+}, {
+  "tag": "P",
+  "text": "__setitem__ is a magic method that is invoked when we set a key and a value in the dictionary. Once the CustomIntFloat object has been constructed, if the user attempts to add a value that is not of type int or float, the same CustomIntFloatError exception will be raised. I have included a code snippet below that shows how to set a key and a value as intended.",
+  "translation": "__setitem__是一种魔术方法，当我们在字典中设置键和值时会调用该方法。 一旦构造了CustomIntFloat对象，如果用户尝试添加非int或float类型的值，则将引发相同的CustomIntFloatError异常。 我在下面添加了一个代码段，该代码段显示了如何按预期设置键和值。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/StephenFordham/b9bed989f3c1673199924770ea77083e/raw/e4175e49cff8d7202ffbc3bb7ad0a3244b6c64e2/testing_CustomIntFloat.py",
+  "code": "x = CustomIntFloat('a', 1)\nprint(type(x))\n\nx['b'] = 2.1\nprint(x)\n# x['c'] = 'Three'"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*6GVWHytWon9X1Ysw4Jzbmw.png?q=20",
+  "type": "image",
+  "file": "1*6GVWHytWon9X1Ysw4Jzbmw.png"
+}, {
+  "tag": "P",
+  "text": "Invalid input results in a CustomIntFloatError exception being raised as shown below.",
+  "translation": "无效的输入会导致引发CustomIntFloatError异常，如下所示。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*1OVCPcnitGtTe8M7iB2Rlw.png?q=20",
+  "type": "image",
+  "file": "1*1OVCPcnitGtTe8M7iB2Rlw.png"
+}, {
+  "tag": "P",
+  "text": "For those interested, the source code for the code presented can be found on my GitHub page here:",
+  "translation": "对于那些感兴趣的人，可以在我的GitHub页面上找到呈现的代码的源代码："
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/StephenFordham/f60293df9c2c3471c6f08b36b66d24c6/raw/4a98362c8a73b25d744f2e88985a92013c212b5a/CustomIntFloatDict.py",
+  "code": "class CustomIntFloatError(Exception):\n    def __init__(self, value):\n        self.value = value\n\n    def __str__(self):\n        return self.value + ' is not valid\\nOnly Integers and floats are valid values \\nin CustomIntFloat(dict) '\n\n\nclass CustomIntFloat(dict):\n\n    empty_dict = {}\n\n    def __init__(self, key=None, value=None):\n        if key is None:\n            CustomIntFloat.empty_dict = {}\n\n        elif len(key) == 1 and isinstance(value, (int, float)):\n            dict.__setitem__(self, key, value)\n        else:\n            zipped = zip(key, value)\n            for tup in zipped:\n                if isinstance(tup[1], (int, float)):\n                    dict.__setitem__(self, tup[0], tup[1])\n                else:\n                    raise CustomIntFloatError(tup[1])\n\n    def __setitem__(self, key, value):\n        if not isinstance(value, (int, float)):\n            raise CustomIntFloatError(value)\n        return dict.__setitem__(self, key, value)\n"
+}, {
+  "tag": "H2",
+  "text": "Summary of the CustomIntFloat Class",
+  "translation": "CustomIntFloat类的摘要"
+}, {
+  "tag": "P",
+  "text": "By inheriting through built-in classes like the dict, we can customize our behavior through the re-implementation of magic methods. This has many benefits.",
+  "translation": "通过像dict这样的内置类继承，我们可以通过重新实现魔术方法来自定义行为。 这有很多好处。"
+}, {
+  "tag": "P",
+  "text": "Importantly, the user does not need to learn any new syntax. When the user wants to add a key and a value to the CustomIntFloat dict object, they just add it in the usual way. The only difference is that we have selectively chosen to allow only values of type int and float. If the user specifies any other type, a custom error message usefully instructs them where they went wrong, and what type of values are expected.",
+  "translation": "重要的是，用户不需要学习任何新语法。 当用户想要向CustomIntFloat dict对象添加键和值时，他们只是以通常的方式添加键和值。 唯一的区别是我们选择了只允许int和float类型的值。 如果用户指定了其他任何类型，则自定义错误消息会有效地指示他们哪里出错了，以及期望使用哪种类型的值。"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Stephen Fordham的文章《Using Magic Methods in Python》，参考：https://towardsdatascience.com/using-magic-methods-in-python-48f31685bc18)",
+  "translation": "（本文翻译自Stephen Fordham的文章，《在Python中使用魔术方法》，参考：https：//towardsdatascience.com/using-magic-methods-in-python-48f31685bc18）"
+}]
