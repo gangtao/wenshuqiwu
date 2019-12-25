@@ -1,0 +1,225 @@
+[{
+  "tag": "H2",
+  "text": "GraphQL: The Big Picture",
+  "translation": "GraphQL：大图"
+}, {
+  "tag": "H3",
+  "text": "In this course, you will learn about GraphQL, it's core concepts, and why you should choose GraphQL to build your APIs…",
+  "translation": "在本课程中，您将学习GraphQL，它的核心概念以及为什么要选择GraphQL来构建API。"
+}, {
+  "tag": "H1",
+  "text": "Why Developers Like GraphQL?",
+  "translation": "为什么开发人员喜欢GraphQL？"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*X0vdBiNmh4bcw7Y4nTN0jA.jpeg?q=20",
+  "type": "image",
+  "file": "1*X0vdBiNmh4bcw7Y4nTN0jA.jpeg"
+}, {
+  "tag": "P",
+  "text": "Have you heard of GraphQL and wondering if it would be a good fit for your next project? In this post, we are going to understand what GraphQL is, and its benefits.",
+  "translation": "您是否听说过GraphQL并想知道它是否适合您的下一个项目？ 在本文中，我们将了解什么是GraphQL及其好处。"
+}, {
+  "tag": "H1",
+  "text": "Introduction to GraphQL",
+  "translation": "GraphQL简介"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*_oXhjWTl5PZA8DfY?q=20",
+  "type": "image",
+  "file": "0*_oXhjWTl5PZA8DfY"
+}, {
+  "tag": "P",
+  "text": "If you are new to GraphQL, here is the long story short. GraphQL is the new specification that you can use for your API. It is an alternative to writing APIs using REST.",
+  "translation": "如果您是GraphQL的新手，那么这里总而言之就是简短的故事。 GraphQL是可用于API的新规范。 它是使用REST编写API的替代方法。"
+}, {
+  "tag": "P",
+  "text": "It was developed by Facebook as an internal solution for their mobile apps, and was later open sourced to the community. Ever since then, it has been widely popular among developers and has become a favorite solution for building services.",
+  "translation": "它是由Facebook开发的，作为其移动应用程序的内部解决方案，后来被开源给社区。 从那时起，它就在开发人员中广泛流行，并已成为构建服务的首选解决方案。"
+}, {
+  "tag": "P",
+  "text": "GraphQL is a query language and is agnostic of the language you use. It is just a specification. The client can query for the data they need from the server. And the server responds back with a JSON response to the query. The interesting thing to note here is that, the client can ask for exactly what they need, and they receive only that. Yes!",
+  "translation": "GraphQL是一种查询语言，与您使用的语言无关。 这只是一个规范。 客户端可以从服务器查询所需的数据。 然后服务器以对查询的JSON响应进行响应。 这里要注意的有趣的事情是，客户可以确切地要求他们所需要的东西，而他们只能收到。 是!"
+}, {
+  "tag": "H1",
+  "text": "Why GraphQL?",
+  "translation": "为什么选择GraphQL？"
+}, {
+  "tag": "P",
+  "text": "Before picking any technology, we need to understand the reason behind choosing it. Let’s dive right it and understand why GraphQL can fit your development needs.",
+  "translation": "在选择任何技术之前，我们需要了解选择它的原因。 让我们深入研究一下，了解GraphQL为什么可以满足您的开发需求。"
+}, {
+  "tag": "H1",
+  "text": "1. Superior Developer Experience",
+  "translation": "1.出色的开发人员经验"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*9KaUNlSkAP78bqlv?q=20",
+  "type": "image",
+  "file": "0*9KaUNlSkAP78bqlv"
+}, {
+  "tag": "P",
+  "text": "The biggest benefit of using GraphQL, is the superior developer experience that it provides in comparison to alternatives like REST. An interesting thing to note is that with GraphQL, frontend developers stand to benefit a ton. The client driven approach provides a lot of power to the clients to query for what they like by creating custom queries.",
+  "translation": "与REST之类的替代方案相比，使用GraphQL的最大好处是它提供了卓越的开发人员体验。 值得注意的是，使用GraphQL，前端开发人员将受益匪浅。 客户端驱动的方法为客户端提供了强大的功能，可通过创建自定义查询来查询他们喜欢的内容。"
+}, {
+  "tag": "H1",
+  "text": "No versioning of APIs",
+  "translation": "没有API版本"
+}, {
+  "tag": "P",
+  "text": "This may come as a surprise to some developers. GraphQL has introduced developers to a whole new era in API design and development. Since the client only asks for the data that it needs, it has made API design using GraphQL very flexible. There is no versioning of APIs and adding new fields has no effect on the current client’s call to the APIs. What does this mean? Well, developers do not have to deal with the huge headache of maintaining multiple versions of the API.",
+  "translation": "这可能会使某些开发人员感到惊讶。 GraphQL已将开发人员引入API设计和开发的全新时代。 由于客户端仅要求提供所需的数据，因此使用GraphQL的API设计非常灵活。 没有API的版本控制，添加新字段不会影响当前客户端对API的调用。 这是什么意思？ 好吧，开发人员不必面对维护多个API版本的巨大麻烦。"
+}, {
+  "tag": "P",
+  "text": "The APIs can be continuously evolved without changing versions.",
+  "translation": "这些API可以不断发展而无需更改版本。"
+}, {
+  "tag": "P",
+  "text": "Modifications to GraphQL APIs are non-breaking changes. This principle is very desirable to developers, so that they can continue with their work with no hassle. GraphQL provides a higher level of flexibility in API development that developers have not seen before.",
+  "translation": "对GraphQL API的修改是不间断的更改。 开发人员非常希望使用此原理，以便他们可以轻松进行工作。 GraphQL在API开发中提供了开发人员从未见过的更高级别的灵活性。"
+}, {
+  "tag": "H1",
+  "text": "Teams work independently",
+  "translation": "团队独立工作"
+}, {
+  "tag": "P",
+  "text": "With GraphQL, multiple teams can work independently in parallel. Have you been in a situation where the frontend team stalls their development, because they are waiting on the backend team to release the latest version of their API or finalize it? It is very common to run into situations where, the frontend/client teams are stalled while they wait on the final version of the API. This causes delays in development and leads to frustration.",
+  "translation": "借助GraphQL，多个团队可以并行独立工作。 您是否曾经因为前端团队正在等待后端团队发布最新版本的API或最终确定API而停止开发的情况？ 遇到前端/客户端团队在等待API最终版本时停滞不前的情况非常普遍。 这导致开发延误并导致挫败感。"
+}, {
+  "tag": "P",
+  "text": "With GraphQL, the front-end and back-end teams can work independently. With the strictly typed schema that GraphQL has, the teams can work in parallel. The front-end team can continue working with just a mock version of the API. They can also test the code with it. This gives the developers a pleasant experience without stalling their development work.",
+  "translation": "使用GraphQL，前端团队和后端团队可以独立工作。 使用GraphQL具有的严格类型化架构，团队可以并行工作。 前端团队可以继续使用该API的模拟版本。 他们还可以使用它来测试代码。 这为开发人员提供了愉快的体验，而不会停止他们的开发工作。"
+}, {
+  "tag": "H1",
+  "text": "2. Declarative Data Fetching",
+  "translation": "2.声明式数据获取"
+}, {
+  "tag": "P",
+  "text": "One of the biggest perks of using GraphQL is its declarative data fetching approach.",
+  "translation": "使用GraphQL的最大好处之一就是其声明式数据获取方法。"
+}, {
+  "tag": "P",
+  "text": "GraphQL: No multiple rounds trips to server, no over-fetching and no under-fetching of data",
+  "translation": "GraphQL：不会多次往返服务器，不会超量提取，也不会数据不足"
+}, {
+  "tag": "P",
+  "text": "Queries can be aggregated to ask for exactly what you want in one trip. With this approach, you can eliminate any over-fetching or under-fetching of data. You ask for what exactly you need and GraphQL gives you back what you asked for.",
+  "translation": "可以汇总查询以单次询问您到底想要什么。 使用这种方法，您可以消除数据的任何过度获取或不足。 您询问您到底需要什么，而GraphQL会给您您所要求的东西。"
+}, {
+  "tag": "H1",
+  "text": "GraphQL Query in Action",
+  "translation": "进行中的GraphQL查询"
+}, {
+  "tag": "P",
+  "text": "Let’s try to understand this better with an example below. Let’s assume that we want to access the data on a blog. I want to build an app, that displays the blog author information. I want it to display the name of the author, the blog posts written by the author and the three most recent blog topics written by the author.",
+  "translation": "让我们尝试通过下面的示例更好地理解这一点。 假设我们要访问博客上的数据。 我想构建一个显示博客作者信息的应用程序。 我希望它显示作者的姓名，作者撰写的博客文章以及作者撰写的三个最新博客主题。"
+}, {
+  "tag": "P",
+  "text": "GraphQL Query Request",
+  "translation": "GraphQL查询请求"
+}, {
+  "tag": "P",
+  "text": "Our query will look like below:",
+  "translation": "我们的查询如下所示："
+}, {
+  "tag": "PRE",
+  "text": "{  author (id: 6) {    name     posts (last: 3) {      title    }    topics (last : 3) {     name    }  }}",
+  "translation": "{作者（id：6）{姓名（最后：3）{标题}主题（最后：3）{名称}}}"
+}, {
+  "tag": "P",
+  "text": "We pass in the fields that we need response for. We are looking for the author’s name, last three blog posts written, and the last three topics they wrote. The query is structured to ask for exactly what we need.",
+  "translation": "我们传递需要响应的字段。 我们正在寻找作者的姓名，最近写的三篇博客文章以及最近写的三篇主题。 查询的结构旨在准确地询问我们需要什么。"
+}, {
+  "tag": "P",
+  "text": "GraphQL Query Response",
+  "translation": "GraphQL查询响应"
+}, {
+  "tag": "P",
+  "text": "Here is what we get back from the server in the form of a JSON response.",
+  "translation": "这是我们从服务器获得的JSON响应形式。"
+}, {
+  "tag": "PRE",
+  "text": "{  \"data\" : {    \"author\" : {      \"name\" : \"Adhithi Ravichandran\",      \"posts\" : [        { title: \"Why Developers Like GraphQL?\"},        { title: \"Web Accessibility And Why You Should Care\"},        { title: \"Becoming A Better Developer\"}      ],      \"topics\" : [        { name: \"GraphQL\"},        { name: \"Web\"},        { name: \"General\"}      ]    }  }}",
+  "translation": "{“ data”：{“ author”：{“ name”：“ Adhithi Ravichandran”，“ posts”：[{标题：“为什么开发人员喜欢GraphQL？”}，{标题：“ Web可访问性以及您为什么要关心”} ，{标题：“成为更好的开发人员”}}，“主题”：[{名称：“ GraphQL”}，{名称：“ Web”}，{名称：“常规”}]}}}"
+}, {
+  "tag": "P",
+  "text": "We got a JSON response back from the server that has exactly what we asked for. It has returned the author name, the last three posts written by the author and the last three topics authored by author. Nothing more, nothing less and everything in a single trip to the server. Isn’t this amazing?!",
+  "translation": "我们从服务器返回了一个JSON响应，它完全符合我们的要求。 它返回了作者姓名，作者撰写的最后三篇帖子以及作者撰写的最后三个主题。 仅此而已，仅需一次访问服务器即可完成所有操作。 这不是很神奇吗？"
+}, {
+  "tag": "H1",
+  "text": "3. Strongly Typed Schema",
+  "translation": "3.强类型架构"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*vfBUb98P33GP-bGUBn1YgA.jpeg?q=20",
+  "type": "image",
+  "file": "1*vfBUb98P33GP-bGUBn1YgA.jpeg"
+}, {
+  "tag": "P",
+  "text": "Another reason why you should use GraphQL is because of its strongly typed schema. We know that GraphQL is essentially a query language, and it is strongly typed. What this means is that the GraphQL schema should have types for all the objects that it uses. Thus, the schema acts as a contract between the client and the server. The example below shows how types are defined in a GraphQL schema.",
+  "translation": "您应该使用GraphQL的另一个原因是由于它的类型强。 我们知道GraphQL本质上是一种查询语言，并且它是强类型的。 这意味着GraphQL模式应具有其使用的所有对象的类型。 因此，该模式充当客户端和服务器之间的契约。 以下示例显示了如何在GraphQL模式中定义类型。"
+}, {
+  "tag": "PRE",
+  "text": "type Person { id : ID name: String age: Int gender: String}",
+  "translation": "类型Person {id：ID名称：String年龄：Int性别：String}"
+}, {
+  "tag": "P",
+  "text": "We have defined a complex object Person of type Person. The object comprises of several fields, each with its own type.",
+  "translation": "我们定义了类型为Person的复杂对象Person。 该对象包含几个字段，每个字段都有自己的类型。"
+}, {
+  "tag": "P",
+  "text": "The strongly typed GraphQL schema has several advantages.",
+  "translation": "强类型的GraphQL模式具有多个优点。"
+}, {
+  "tag": "UL",
+  "texts": ["Code is predictable", "Schema acts as contract between client and server", "Teams can work independently", "Can detect errors early"],
+  "translations": ["代码是可预测的", "模式充当客户端和服务器之间的契约", "团队可以独立工作", "可以及早发现错误"]
+}, {
+  "tag": "H1",
+  "text": "Conclusion",
+  "translation": "结论"
+}, {
+  "tag": "P",
+  "text": "This post was originally posted in https://programmingwithmosh.com/",
+  "translation": "该帖子最初发布在https://programmingwithmosh.com/"
+}, {
+  "tag": "P",
+  "text": "I hope you enjoyed learning about why GraphQL is a good fit for your next project. If you are looking to learn a big picture overview of GraphQL, checkout my course on Pluralsight titled GraphQL : The Big Picture",
+  "translation": "希望您喜欢GraphQL为什么非常适合您的下一个项目。 如果您想了解GraphQL的概况，请查看我在Pluralsight上名为GraphQL：The Big Picture的课程"
+}, {
+  "tag": "H2",
+  "text": "GraphQL: The Big Picture",
+  "translation": "GraphQL：大图"
+}, {
+  "tag": "H3",
+  "text": "In this course, you will learn about GraphQL, it's core concepts, and why you should choose GraphQL to build your APIs…",
+  "translation": "在本课程中，您将学习GraphQL，它的核心概念以及为什么要选择GraphQL来构建API。"
+}, {
+  "tag": "P",
+  "text": "Here are some other resources that will help you get started with GraphQL.",
+  "translation": "这里还有一些其他资源，可以帮助您开始使用GraphQL。"
+}, {
+  "tag": "P",
+  "text": "Other Resources:",
+  "translation": "其他资源："
+}, {
+  "tag": "P",
+  "text": "https://graphql.org/",
+  "translation": "https://graphql.org/"
+}, {
+  "tag": "P",
+  "text": "https://graphql.org/learn/",
+  "translation": "https://graphql.org/learn/"
+}, {
+  "tag": "P",
+  "text": "https://www.graphql.com/",
+  "translation": "https://www.graphql.com/"
+}, {
+  "tag": "P",
+  "text": "If you have any comments, please post your comments below and share this post with your team and friends. To keep in touch, you can follow me on twitter @AdhithiRavi",
+  "translation": "如果您有任何意见，请在下面发表您的意见，并与您的团队和朋友分享这篇文章。 要保持联系，您可以在Twitter上关注我@AdhithiRavi"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Adhithi Ravichandran的文章《Why Developers Like GraphQL?》，参考：https://medium.com/@adhithiravi/why-developers-like-graphql-f90fcd48c872)",
+  "translation": "（本文翻译自Adhithi Ravichandran的文章，《为什么开发人员喜欢GraphQL？》，参考：https：//medium.com/@adhithiravi/why-developers-like-graphql-f90fcd48c872）"
+}]
