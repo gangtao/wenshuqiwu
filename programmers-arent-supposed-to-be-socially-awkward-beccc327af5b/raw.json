@@ -1,0 +1,412 @@
+[{
+  "tag": "H1",
+  "text": "Programmers Aren’t Supposed to Be Socially Awkward",
+  "translation": "程序员不应该在社交上感到尴尬"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*nyX05IGXNtKnOdqThkfCZw.jpeg?q=20",
+  "caption": "Credit: sickchirpse.com",
+  "type": "image",
+  "file": "1*nyX05IGXNtKnOdqThkfCZw.jpeg"
+}, {
+  "tag": "P",
+  "text": "If you work as a software developer, most of your workday is spent dealing with people.",
+  "translation": "如果您是软件开发人员，则大部分工作时间都花在与人打交道上。"
+}, {
+  "tag": "P",
+  "text": "Immediately when you start your work for the day, you probably check email, Skype, or Slack, as you are interested in seeing if your work colleagues have something important to tell you.",
+  "translation": "当您开始一天的工作时，您可能会立即查看电子邮件，Skype或Slack，因为您有兴趣查看工作同事是否有重要的事情要告诉您。"
+}, {
+  "tag": "P",
+  "text": "Then, when you write a response, the destination for your words is another person, not just another computer.",
+  "translation": "然后，当您编写答复时，您的单词的目的地是另一个人，而不仅仅是另一台计算机。"
+}, {
+  "tag": "P",
+  "text": "Your main priority at work is to solve problems, which is done while collaborating on projects and hanging out with other people as part of a software development team.",
+  "translation": "工作的主要重点是解决问题，这是在与项目进行协作并作为软件开发团队的一部分与其他人闲逛时完成的。"
+}, {
+  "tag": "P",
+  "text": "You attend meetings during the day and get the implementation requirements from other people.",
+  "translation": "您白天参加会议，并从其他人那里获得实施要求。"
+}, {
+  "tag": "P",
+  "text": "When you are finally ready to do one of the most enjoyable activities for a software developer, which is writing code, you are supposed to write a code which is primarily readable for humans. You do not write your software projects in binary codes, but instead in a programming language that is supposed to be easier for both you and teammates to understand.",
+  "translation": "当您最终准备对软件开发人员进行最有趣的活动之一（即编写代码）时，您应该编写的代码对于人类来说主要是可读的。 您不会以二进制代码编写软件项目，而是以一种您和团队成员都更容易理解的编程语言来编写。"
+}, {
+  "tag": "P",
+  "text": "Even if you are working at a small company, or are a freelancer, you still have to deal with the non-technical people in the project that you are working on.",
+  "translation": "即使您是在小型公司工作，还是自由职业者，您仍必须与您正在从事的项目中的非技术人员打交道。"
+}, {
+  "tag": "P",
+  "text": "We spend a lot of our waking hours with our work colleagues. It is even possible that we spend more time with them than with our close family members.",
+  "translation": "我们与同事一起度过很多清醒时光。 甚至有可能我们与他们在一起的时间比与我们的亲密家人在一起的时间更多。"
+}, {
+  "tag": "P",
+  "text": "Becoming aware of this will help you realize the importance of having good relationships with others, especially your co-workers.",
+  "translation": "意识到这一点将帮助您认识到与他人，特别是与您的同事保持良好关系的重要性。"
+}, {
+  "tag": "P",
+  "text": "In this article, you can read some general tips that can help you improve your relationships at work, but that can be applied elsewhere as well.",
+  "translation": "在本文中，您可以阅读一些常规技巧，这些技巧可以帮助您改善工作关系，但也可以在其他地方应用。"
+}, {
+  "tag": "P",
+  "text": "They are simpler to follow than the frameworks used to develop your applications, but these tips have a huge potential for return over investment.",
+  "translation": "它们比用于开发应用程序的框架更易于遵循，但是这些技巧具有巨大的投资回报潜力。"
+}, {
+  "tag": "H1",
+  "text": "1. Be very kind",
+  "translation": "1.非常友善"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*-4dWGC_4RI1FCEOC?q=20",
+  "caption": "Photo by Austin Distel on Unsplash",
+  "type": "image",
+  "file": "0*-4dWGC_4RI1FCEOC"
+}, {
+  "tag": "P",
+  "text": "You can be the smartest and the hardest-working person you know, but when you do not have good manners or lack kindness, others in your workplace might hate collaborating with you. Not because you lack the skills and the ability to write clean and maintainable code, but because of your attitude.",
+  "translation": "您可能是您认识的最聪明和最努力的人，但是如果您没有良好的举止或缺乏友善，工作场所中的其他人可能会讨厌与您合作。 不是因为您缺乏编写干净且可维护的代码的技能和能力，而是因为您的态度。"
+}, {
+  "tag": "P",
+  "text": "No matter how frustrating a bug is, do not pout, whine, or yell toward your colleagues. Those bad manners will not be able to fix your bug. It can even harm your personal and professional relationships and make it very difficult to get back on track later on.",
+  "translation": "不管错误多么令人沮丧，都不要向同事，嘴，抱怨或大喊大叫。 那些不良的举止将无法修复您的错误。 它甚至可能损害您的个人和专业关系，并且使以后很难重回正轨。"
+}, {
+  "tag": "P",
+  "text": "When you are kind, you are more likely to make a good impression on others as a human being in general.",
+  "translation": "当您友善时，您通常更可能给他人留下良好的印象。"
+}, {
+  "tag": "P",
+  "text": "Simple acts of kindness, such as giving someone a ride to or from work, mentioning someone’s favor in front of others, cleaning up a colleague’s space that’s not your job to keep clean, etc., should be done repeatedly, despite knowing your colleagues for a long time.",
+  "translation": "尽管了解您的同事，但应该反复进行一些简单的善举，例如，让某人上班或下班，在某人面前提一个人的好感，清理不是您要打扫的工作的同事的空间等。 很长时间。"
+}, {
+  "tag": "P",
+  "text": "Your kindness will trigger, at least, a basic human decency from your colleagues as well.",
+  "translation": "您的好心也将至少触发您同事的基本人格尊严。"
+}, {
+  "tag": "H1",
+  "text": "2. Always be genuinely interested in your colleagues",
+  "translation": "2.始终对您的同事真正感兴趣"
+}, {
+  "tag": "P",
+  "text": "Try to understand if they need your help, and do not hesitate to kindly help them. When you see that they are stressed, anxious, or going through tough times, talk to them and show readiness to brainstorm solutions about the problems they are involved in.",
+  "translation": "尝试了解他们是否需要您的帮助，不要犹豫，请友好地帮助他们。 当您看到他们感到压力大，焦虑或经历艰难时，请与他们交谈，并准备就他们所涉及的问题进行集体讨论。"
+}, {
+  "tag": "P",
+  "text": "Even if you cannot help them with their current task, try to encourage them with motivational phrases that can uplift them emotionally. Make them feel that they are important to the team and capable of overcoming the obstacles they’re facing and the down times they might be in.",
+  "translation": "即使您不能帮助他们完成当前的任务，也要尝试通过激励性的短语鼓励他们，使他们在情感上得到提升。 让他们觉得他们对团队很重要，并且能够克服他们面临的障碍和可能遇到的困难。"
+}, {
+  "tag": "P",
+  "text": "Your words alone can magically improve the mood of your colleagues.",
+  "translation": "仅您的一句话便可以神奇地改善您同事的情绪。"
+}, {
+  "tag": "H1",
+  "text": "3. Smile often",
+  "translation": "3.经常微笑"
+}, {
+  "tag": "P",
+  "text": "Even printing a ‘Hello world’ statement takes more time and effort than smiling and sending smiley emoticons. It may seem trivial, but smiling can lighten up the tension.",
+  "translation": "甚至打印“ Hello world”声明都比微笑和发送笑脸图释花费更多的时间和精力。 看起来微不足道，但微笑可以减轻紧张感。"
+}, {
+  "tag": "P",
+  "text": "A scientific study conducted in 2011 at the Face Research Laboratory at the University of Aberdeen in Scotland found that smiling makes you feel more attractive, relaxed, sincere, and confident.",
+  "translation": "2011年，在苏格兰阿伯丁大学人脸研究实验室进行的一项科学研究发现，微笑使您感到更有吸引力，放松，真诚和自信。"
+}, {
+  "tag": "P",
+  "text": "Moreover, one Swedish study published in the Scandinavian Journal of Psychology found that humans have an automatic reaction that mimics the facial expressions of those they interact with.",
+  "translation": "此外，瑞典在《斯堪的纳维亚心理学杂志》上发表的一项研究发现，人类具有一种自动反应，可以模仿与之互动的人的面部表情。"
+}, {
+  "tag": "P",
+  "text": "In other words, when you smile often, chances are that others will smile back to you as well. This will not only make you feel better, but it also helps others that you interact with.",
+  "translation": "换句话说，当您经常微笑时，其他人也很可能也会对您微笑。 这不仅会让您感觉更好，而且还可以帮助您与他人互动。"
+}, {
+  "tag": "H1",
+  "text": "4. Say ‘thank you’ and ‘please’ a lot.",
+  "translation": "4.说很多“谢谢”和“请”。"
+}, {
+  "tag": "P",
+  "text": "No matter how small a favor is, do not hesitate to say thank you.",
+  "translation": "不管帮忙有多小，都不要犹豫，谢谢。"
+}, {
+  "tag": "P",
+  "text": "People appreciate when you are polite and grateful, and are aware of their contribution and significance in your life.",
+  "translation": "人们会在您礼貌而感恩时欣赏，并意识到他们在您生活中的贡献和意义。"
+}, {
+  "tag": "P",
+  "text": "This will not only make your colleagues feel better, but it will make you feel better as well, as you will know that other colleagues care about you and are willing to help you.",
+  "translation": "这不仅会使您的同事感觉更好，而且也会使您感觉更好，因为您会知道其他同事在乎您，并愿意为您提供帮助。"
+}, {
+  "tag": "P",
+  "text": "Gratitude can improve your physical health, mental strength, self-esteem, the quality of your sleep, and can even reduce your stress levels.",
+  "translation": "感恩可以改善您的身体健康，精神力量，自尊，睡眠质量，甚至可以减轻压力。"
+}, {
+  "tag": "P",
+  "text": "Another word that you should frequently use in your communication with your colleagues is please.",
+  "translation": "请您在与同事交流时经常使用的另一个词是。"
+}, {
+  "tag": "P",
+  "text": "When you use the word please, you are reminding the other team member that he is not forced to do something, but it would be kind, generous, and helpful of him to assist with the task that you are working on.",
+  "translation": "当您使用“请”一词时，您是在提醒其他团队成员，他不是被迫做某事，但是他会很友善，慷慨并且乐于助人来完成您正在执行的任务。"
+}, {
+  "tag": "P",
+  "text": "These simple words, no matter how insignificant they may sound, can make a huge difference once you start using them.",
+  "translation": "一旦您开始使用这些简单的单词，无论它们听起来多么微不足道，都可以带来巨大的改变。"
+}, {
+  "tag": "H1",
+  "text": "5. Praise other people’s efforts and stay positive",
+  "translation": "5.赞扬别人的努力并保持积极"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/20/0*gbMqAQW9_uIJYIcj?q=20",
+  "caption": "Photo by Tyler Nix on Unsplash",
+  "type": "image",
+  "file": "0*gbMqAQW9_uIJYIcj"
+}, {
+  "tag": "P",
+  "text": "Become aware of other people’s accomplishments and praise every improvement, large or small.",
+  "translation": "意识到他人的成就并赞扬每一个改进，无论大小。"
+}, {
+  "tag": "P",
+  "text": "Praising someone isn’t complicated. Common phrases like “Great job,” “Well done,” or “You did great” can be sufficient.",
+  "translation": "称赞某人并不复杂。 像“出色的工作”，“做得好”或“您做得很好”这样的常用词就足够了。"
+}, {
+  "tag": "P",
+  "text": "It may have taken a lot of effort and strong willpower to get to the solution of a frustrating problem.",
+  "translation": "为了解决一个令人沮丧的问题，可能需要花费大量的精力和强大的意志力。"
+}, {
+  "tag": "P",
+  "text": "When you praise others on their accomplishments, you make them feel important and that they are involved in something that has grabbed your attention.",
+  "translation": "当您称赞他人的成就时，就会使他们感到重要，并让他们参与到引起您注意的事情中。"
+}, {
+  "tag": "P",
+  "text": "As software developers, we tend to forget about the privilege of the skills we possess.",
+  "translation": "作为软件开发人员，我们往往会忘记拥有的技能的特权。"
+}, {
+  "tag": "P",
+  "text": "There are times when a small bug or an urgent task can bother you or your colleague for a few moments, but you should not let that distract you from the big picture.",
+  "translation": "有时候，小错误或紧急任务可能会困扰您或您的同事一小会儿，但您不应该让那分散您的注意力。"
+}, {
+  "tag": "P",
+  "text": "You should regularly remind yourself and your colleagues about the joyful moments that you and your team have been through, and not let an occasional difficulty or a stressful situation make you feel disappointed."
+}, {
+  "tag": "P",
+  "text": "Start the habit of regularly recognizing the efforts of your teammates and giving credit to them whenever the opportunity arises.",
+  "translation": "开始养成定期认识队友的努力并在机会出现时给予他们赞赏的习惯。"
+}, {
+  "tag": "H1",
+  "text": "6. Do not hesitate to apologize",
+  "translation": "6.不要犹豫道歉"
+}, {
+  "tag": "P",
+  "text": "Nobody is perfect, and no matter how hard you try, you will always make a mistake here and there.",
+  "translation": "没有人是完美的，无论您多么努力，都会在这里和那里犯错。"
+}, {
+  "tag": "P",
+  "text": "No matter how small your mistake is, do not hesitate to apologize about it.",
+  "translation": "无论您的错误有多小，都不要犹豫，对此表示歉意。"
+}, {
+  "tag": "P",
+  "text": "Even though it might threaten your ego to apologize sometimes, it is a crucial way to keep good relationships with your colleagues.",
+  "translation": "即使这可能会威胁到您的自我有时道歉，这也是与同事保持良好关系的一种关键方法。"
+}, {
+  "tag": "P",
+  "text": "Although you may think it will damage your reputation, by causing you to appear less confident, apologizing has the opposite effect.",
+  "translation": "尽管您可能认为这会损害您的声誉，但通过使您显得不太自信，道歉却相反。"
+}, {
+  "tag": "P",
+  "text": "It will remind others that you are aware of your shortcomings and that you are humble enough to admit to them.",
+  "translation": "它会提醒其他人，您已经意识到自己的缺点，并且谦虚得足以承认他们的缺点。"
+}, {
+  "tag": "P",
+  "text": "Short phrases like “I am sorry” or “I apologize” can strengthen your ties with your colleagues, even during unpleasant moments.",
+  "translation": "即使在不愉快的时刻，诸如“我很抱歉”或“我道歉”之类的短语也可以加强您与同事的联系。"
+}, {
+  "tag": "H1",
+  "text": "7. Do not criticize",
+  "translation": "7.不要批评"
+}, {
+  "tag": "P",
+  "text": "Criticizing is often perceived as a personal threat towards an individual’s ego, though you may not have intended to do that.",
+  "translation": "批评通常被视为对个人自我的个人威胁，尽管您可能没有这样做的意图。"
+}, {
+  "tag": "P",
+  "text": "As a result, it is likely that he or she may get emotional and feel offended.",
+  "translation": "结果，他或她可能会情绪激动并感到生气。"
+}, {
+  "tag": "P",
+  "text": "A better way of pointing out your colleague’s mistake is by giving them a polite critique: Call attention to people’s mistakes without demeaning them or making it personal.",
+  "translation": "指出同事的错误的一种更好的方法是对他们进行有礼貌的批评：引起人们对他们的错误的关注，而又不贬低他们或使其成为个人。"
+}, {
+  "tag": "P",
+  "text": "Put yourself in their shoes and observe the issue from their perspective. Politely inform the other person about their mistake.",
+  "translation": "穿上鞋子，从他们的角度观察问题。 礼貌地告知对方他们的错误。"
+}, {
+  "tag": "P",
+  "text": "Do not point out a mistake in front of everybody; instead, do it privately.",
+  "translation": "不要在所有人面前指出一个错误。 而是私下进行。"
+}, {
+  "tag": "P",
+  "text": "If you want to inform everybody else about a mistake that they should not be doing, do not point fingers toward people, but toward the problem.",
+  "translation": "如果您想告知其他人他们不应该做的错误，请不要将矛头指向人，而要指向问题所在。"
+}, {
+  "tag": "P",
+  "text": "Try to focus on possible ways of solving the problem rather than on blame.",
+  "translation": "尝试着重于解决问题的可能方法，而不是怪罪于人。"
+}, {
+  "tag": "P",
+  "text": "Become the person who helps people, rather than someone who belittles them.",
+  "translation": "成为帮助别人的人，而不是贬低别人的人。"
+}, {
+  "tag": "P",
+  "text": "When you help someone, you are going to feel your own sense of contributing and your own significance as well. Moreover, you can learn for yourself, and can also open doors to receiving help in future from the same colleagues that you have helped in the past.",
+  "translation": "当您帮助某人时，您将感受到自己的贡献意识和意义。 此外，您可以自己学习，也可以为将来从以前曾经帮助过的同一位同事那里获得帮助打开大门。"
+}, {
+  "tag": "H1",
+  "text": "8. Avoid arguments",
+  "translation": "8.避免争论"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*QVGYyz8F3j1Lq3kG?q=20",
+  "caption": "Photo by Jason Rosewell on Unsplash",
+  "type": "image",
+  "file": "0*QVGYyz8F3j1Lq3kG"
+}, {
+  "tag": "P",
+  "text": "We tend to think of ourselves as rational human beings, but in reality, we are emotionally driven creatures that can easily get angry.",
+  "translation": "我们倾向于将自己视为理性的人，但实际上，我们是情绪驱动的生物，很容易生气。"
+}, {
+  "tag": "P",
+  "text": "Those few moments of anger can lead to some unpleasant arguments, no matter whether you are right or wrong.",
+  "translation": "愤怒的那一刻可能会导致一些不愉快的争论，无论您是对还是错。"
+}, {
+  "tag": "P",
+  "text": "Although you may be right, and protecting your opinion sounds like a good idea, arguing furiously with others is something that can dramatically ruin your relationships.",
+  "translation": "尽管您可能是对的，并且保护自己的意见听起来像是一个好主意，但与他人激烈争吵可能会严重破坏您的人际关系。"
+}, {
+  "tag": "P",
+  "text": "As Dale Carnegie mentions in his book How to Win Friends and Influence People:",
+  "translation": "正如戴尔·卡耐基（Dale Carnegie）在他的著作《如何赢得朋友并影响人们》中所提到的："
+}, {
+  "tag": "P",
+  "text": "“I have come to the conclusion that there is only one way under high heaven to get the best of an argument — and that is to avoid it. Avoid it as you would avoid rattlesnakes and earthquakes.”",
+  "translation": "“我得出的结论是，在高高的天堂下，只有一种方法可以充分利用一个论点，那就是避免它。 避免这种情况，因为会避免响尾蛇和地震。”"
+}, {
+  "tag": "P",
+  "text": "The best thing to do about arguments is to try your best to avoid them at all costs. It is not as easy as it sounds, but it can become easier with practice.",
+  "translation": "关于争论的最好的事情是尽力避免不惜一切代价避免争论。 它听起来并不像听起来那么容易，但是通过实践它可以变得更加容易。"
+}, {
+  "tag": "P",
+  "text": "Reminding yourself that most of the time there is almost no benefit from arguing, especially with your work colleagues, can reinforce the desire to keep yourself away from arguments.",
+  "translation": "提醒自己，在大多数情况下，尤其是与同事合作时，争吵几乎没有好处，这可以增强使自己远离争论的欲望。"
+}, {
+  "tag": "H1",
+  "text": "9. Ask questions instead of giving direct orders",
+  "translation": "9.问问题而不是直接下达命令"
+}, {
+  "tag": "P",
+  "text": "This is something that is more relevant to team leaders or managers, but it can apply to anyone else as well.",
+  "translation": "这与团队负责人或经理更相关，但也可以适用于其他任何人。"
+}, {
+  "tag": "P",
+  "text": "People tend to be more inspired to work when they are challenged to do something, rather than ordered around.",
+  "translation": "当人们面临挑战去做某事而不是四处奔走时，人们往往会更有工作灵感。"
+}, {
+  "tag": "P",
+  "text": "When you command someone to do something, their ego may come out and make the individual think that he is being oppressed or that his autonomy is being threatened.",
+  "translation": "当您命令某人做某事时，他们的自我可能会出来，并使个人认为自己被压迫或他的自主权受到威胁。"
+}, {
+  "tag": "P",
+  "text": "Rather than giving a direct order, ask whether a colleague would like to work on a particular task.",
+  "translation": "而不是直接下达命令，而是询问同事是否愿意从事特定任务。"
+}, {
+  "tag": "P",
+  "text": "If there is no other available developer who can work on a particular task, and you are afraid that they may not like working on the front-end side, tell them you are worried that the team might look bad in front of the client if this feature is not present in the next meeting.",
+  "translation": "如果没有其他可用的开发人员可以执行特定任务，并且您担心他们可能不喜欢在前端方面工作，请告诉他们您担心如果在这种情况下团队可能在客户面前看起来很糟糕。 下次会议不提供该功能。"
+}, {
+  "tag": "P",
+  "text": "Questions like “Would you mind working overtime and finishing off this task, knowing that this is critical for our project?” are better than commands like “You cannot go home unless you get this task done.”",
+  "translation": "诸如“您是否愿意加班并完成此任务，知道这对我们的项目至关重要？”之类的问题比诸如“除非您完成此任务就不能回家”之类的命令更好。"
+}, {
+  "tag": "P",
+  "text": "Mention to them that they are an important part of the team, and they can help the team prove to the client that they are reliable for future projects as well, with questions such as, “Could I possibly assign this task to you, knowing that you are already experienced with these types of work?”",
+  "translation": "提及他们，他们是团队的重要组成部分，他们可以帮助团队向客户证明它们对于未来项目也是可靠的，并提出诸如“我是否可以将这项任务分配给您，知道这一点？ 您已经对这类工作有经验吗？”"
+}, {
+  "tag": "H1",
+  "text": "10. Avoid dealing with ‘toxic’ people",
+  "translation": "10.避免与“有毒”的人打交道"
+}, {
+  "tag": "P",
+  "text": "Even though working as a software developer might be your dream job, there may nevertheless be toxic people at your workplace.",
+  "translation": "即使作为软件开发人员工作可能是您梦job以求的工作，但在您的工作场所中仍然可能会有有毒的人。"
+}, {
+  "tag": "P",
+  "text": "You thought you left those types of people behind at your high school, but it turns out that life is filled with so many of them.",
+  "translation": "您以为您在高中时就把这些人留在了后面，但事实证明，生活中充满了很多人。"
+}, {
+  "tag": "P",
+  "text": "These people are simply looking for opportunities to bring others down and may generally possess a negative perspective on everything in life.",
+  "translation": "这些人只是在寻找使他人失望的机会，他们通常对生活中的一切都持负面看法。"
+}, {
+  "tag": "P",
+  "text": "You can try to change them with your well-intentioned influence, but often it is very difficult for a person to change (for a lot of reasons).",
+  "translation": "您可以尝试用自己的意图去改变它们，但是一个人通常很难改变（由于许多原因）。"
+}, {
+  "tag": "P",
+  "text": "If you see that you are not having any positive influence, and associating with them is only causing you trouble, then you should avoid dealing with them.",
+  "translation": "如果您发现自己没有任何积极影响，而与他们交往只会给您带来麻烦，那么您应该避免与他们打交道。"
+}, {
+  "tag": "P",
+  "text": "You might be in a situation, however, where this person is your manager or a colleague in your office.",
+  "translation": "但是，您可能处于这种情况，即此人是您的经理或您办公室中的同事。"
+}, {
+  "tag": "P",
+  "text": "In these cases, your alternatives are very limited. You may consider changing your department, or start looking for a new job.",
+  "translation": "在这些情况下，您的选择非常有限。 您可以考虑更换部门，或开始寻找新工作。"
+}, {
+  "tag": "P",
+  "text": "In cases when you do not have any other alternative but to deal with them, prepare yourself mentally ahead of time regarding their bad attitude, and tell yourself that you should not let them influence your mood and ruin your whole day.",
+  "translation": "如果您别无选择，只能与他们打交道，请对他们的不良态度提前做好心理准备，并告诉自己，不要让他们影响您的心情并破坏您的一整天。"
+}, {
+  "tag": "P",
+  "text": "Their attitude is not something that should surprise you.",
+  "translation": "他们的态度并不会让您感到惊讶。"
+}, {
+  "tag": "P",
+  "text": "Try to interact with them as little as possible.",
+  "translation": "尽量少与他们互动。"
+}, {
+  "tag": "H1",
+  "text": "Conclusion",
+  "translation": "结论"
+}, {
+  "tag": "P",
+  "text": "There is a lot more to the life of a software developer than just writing code. Dealing with people is one of the key factors.",
+  "translation": "对于软件开发人员而言，不仅仅是编写代码，还有很多工作要做。 与人打交道是关键因素之一。"
+}, {
+  "tag": "P",
+  "text": "Although they do not get mentioned or emphasized that much, social skills are among those few seemingly unimportant skills that can actually accelerate growth in your career.",
+  "translation": "尽管没有太多提及或强调他们，但社交技能只是少数几个看似不重要的技能，这些技能实际上可以促进您职业的发展。"
+}, {
+  "tag": "P",
+  "text": "And they are much simpler to understand and put into practice than inverting a binary tree on a whiteboard.",
+  "translation": "与将白板上的二叉树反转相比，它们更易于理解和付诸实践。"
+}, {
+  "tag": "P",
+  "text": "While I agree that some of these things are easier said than done, it is important to practice applying them in our lives.",
+  "translation": "虽然我同意其中有些事情说起来容易做起来难，但重要的是练习将其应用到我们的生活中。"
+}, {
+  "tag": "P",
+  "text": "Before you leave, let me kindly remind you about one more thing: Do not expect to always be able to apply these things all of the time.",
+  "translation": "在您离开之前，请允许我提醒您另一件事：不要指望总是能够始终应用这些东西。"
+}, {
+  "tag": "P",
+  "text": "We are human beings and we have our own difficult times, too.",
+  "translation": "我们是人类，我们也有自己的困难时期。"
+}, {
+  "tag": "P",
+  "text": "However, we must not let those few moments of frustration and anger ruin our whole professional and non-professional lives.",
+  "translation": "但是，我们绝不能让沮丧和愤怒的那一刻破坏我们的整个职业和非职业生活。"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Fatos Morina的文章《Programmers Aren’t Supposed to Be Socially Awkward》，参考：https://towardsdatascience.com/programmers-arent-supposed-to-be-socially-awkward-beccc327af5b)",
+  "translation": "（本文翻译自Fatos Morina的文章，《程序员不应该变得社交尴尬》，参考：https：//towardsdatascience.com/programmers-arent-supposed-to-be-socially-awkward-beccc327af5b）"
+}]
