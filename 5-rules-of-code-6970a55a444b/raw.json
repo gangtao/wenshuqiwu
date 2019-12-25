@@ -1,0 +1,207 @@
+[{
+  "tag": "H1",
+  "text": "Conclusion",
+  "translation": "结论"
+}, {
+  "tag": "P",
+  "text": "Know of anything I missed? Have ideas for more rules? Let me know in the comments below! I love to see your feedback and engage with everyone’s thoughts on the articles.",
+  "translation": "知道我错过了什么吗？ 有更多规则的想法吗？ 在下面的评论中让我知道！ 我很乐意看到您的反馈，并参与大家对文章的想法。"
+}, {
+  "tag": "H1",
+  "text": "5. Use the Best Tool for the Job (Unless Its Java)",
+  "translation": "5.使用最佳工具完成工作（除非使用Java）"
+}, {
+  "tag": "P",
+  "text": "I’m probably going to get a lot of hate for saying this, but I don’t see a reason to be using Java in today’s industry.",
+  "translation": "我可能会很讨厌这样说，但是我看不出在当今行业中使用Java的理由。"
+}, {
+  "tag": "P",
+  "text": "Java does have some differentiators against its competition, I won’t deny that, but those differentiators don’t really apply to today’s engineering environments. Here are some pros for using Java:",
+  "translation": "Java确实有一些与之抗衡的优势，我不会否认，但是这些差异并不真正适用于当今的工程环境。 以下是使用Java的一些优点："
+}, {
+  "tag": "UL",
+  "texts": ["It can run anywhere.", "Automatic memory management (with its garbage collector).", "Extensive community and frameworks/libraries/plugins for the JVM stack."],
+  "translations": ["它可以在任何地方运行。", "自动内存管理（及其垃圾回收器）。", "JVM堆栈的广泛社区和框架/库/插件。"]
+}, {
+  "tag": "P",
+  "text": "Let’s talk reality for a minute: how many software shops that use Java do you see writing a single codebase with the intent of running it on multiple architectures, operating systems, etc.? Not the majority, at least.",
+  "translation": "让我们聊一会现实：您看到有多少个使用Java的软件商店编写一个代码库，目的是在多个体系结构，操作系统等上运行它？ 至少不是大多数。"
+}, {
+  "tag": "P",
+  "text": "And today, Java isn’t nearly as unique in the memory management space, either. Both Go and Rust have some sort of garbage collection, Python uses reference counting, and many other languages do as well.",
+  "translation": "如今，Java在内存管理领域也不是那么独特。 Go和Rust都具有某种垃圾回收，Python使用引用计数，许多其他语言也是如此。"
+}, {
+  "tag": "P",
+  "text": "And Java is by far not the only language with large active communities around it. Rust and Python have incredibly active and helpful communities, with Go’s community ramping every day.",
+  "translation": "到目前为止，Java并不是唯一一个拥有大量活跃社区的语言。 Rust和Python拥有非常活跃和有用的社区，Go的社区每天都在增加。"
+}, {
+  "tag": "P",
+  "text": "But the other trade-offs you make with Java, at least in my opinion, aren’t worth it. Because Java relies on the JVM, there is an automatic size cost incurred with every Java application.",
+  "translation": "但是，至少在我看来，使用Java进行的其他权衡是不值得的。 因为Java依赖JVM，所以每个Java应用程序都会产生自动大小调整的成本。"
+}, {
+  "tag": "P",
+  "text": "This might not be much of a consideration when talking about servers that have gigabytes of free space — a couple of hundred MB’s aren’t much — but in a highly containerized world a few hundred MB is astronomical. (Note that Python suffers from this downside as well.)",
+  "translation": "在谈论具有千兆字节可用空间（几百MB的空间不多）的服务器时，这可能不是一个要考虑的问题，但是在高度容器化的世界中，几百MB是天文数字。 （请注意，Python也会遭受此不利影响。）"
+}, {
+  "tag": "P",
+  "text": "With compiled, statically-linked languages like Go and Rust (and others), you can have very small, very lean containers that often have a single binary in them, with sizes as small as 4 MB.",
+  "translation": "使用Go和Rust（及其他）之类的经过编译的静态链接语言，您可以拥有非常小，非常精简的容器，这些容器中通常只有一个二进制文件，大小只有4 MB。"
+}, {
+  "tag": "P",
+  "text": "This is important especially for large organizations where network throughput is a premium, downloading a new container that’s 400 MB or 5 MB is an easy choice to make.",
+  "translation": "这对于网络吞吐量非常重要的大型组织尤其重要，下载400 MB或5 MB的新容器很容易。"
+}, {
+  "tag": "P",
+  "text": "Also, because of the JVM and that Java is JIT-compiled, there is a performance cost to running Java code.",
+  "translation": "同样，由于JVM和Java是JIT编译的，因此运行Java代码会降低性能。"
+}, {
+  "tag": "P",
+  "text": "For low-latency, high-throughput applications, or scenarios where bin packing a server is extremely important, losing performance to the overhead of translating bytecode to system calls just isn’t worth it.",
+  "translation": "对于低延迟，高吞吐量的应用程序，或对服务器进行装箱打包非常重要的情况，将字节码转换为系统调用而导致的性能损失是不值得的。"
+}, {
+  "tag": "P",
+  "text": "All of this is why it’s important to use the right tool for the job at hand.",
+  "translation": "所有这些就是为什么使用正确的工具来完成当前工作很重要的原因。"
+}, {
+  "tag": "P",
+  "text": "You don’t want to use BASIC for landing someone on the moon, and you don’t want to use Java for high-performance computing — find the solution that matches the problem you’re trying to solve.",
+  "translation": "您不想使用BASIC来使某人登月，也不想使用Java进行高性能计算-找到与您要解决的问题相匹配的解决方案。"
+}, {
+  "tag": "H1",
+  "text": "4. Square Pegs Don’t Go in Round Holes",
+  "translation": "4.方钉不要进入圆孔"
+}, {
+  "tag": "P",
+  "text": "Like a lot of good things — making love, team chemistry, precision-threaded machine screws — when it’s good it feels effortless. Our lives are filled with feedback, explicit or not.",
+  "translation": "就像很多美好的事物-做爱，团队合作精神，精密螺纹的机器螺丝钉-好的时候，一切都会轻松自在。 我们的生活充满反馈，无论是否明确。"
+}, {
+  "tag": "P",
+  "text": "The way your keyboard feels under your fingers as you type, the little vibration “click” your phone does when you press a flat imaginary button, the way my lactose-intolerant stomach revolts every time I decide that having ice cream is 100% worth it; these are all forms of feedback.",
+  "translation": "键入时键盘在手指下的感觉，按下扁平的假想按钮时手机会产生轻微的“咔嗒”声，这是我每次决定吃冰淇淋100％值得我的不耐乳糖的胃部反抗的方式 ; 这些都是反馈形式。"
+}, {
+  "tag": "P",
+  "text": "They let us know when something is going well, normal, or going very, very badly, and it’s the same for literally everything. We’ve all been there before, working on a project, that nagging feeling in the pit of our stomach that keeps telling us that we should change databases to better support our data model.",
+  "translation": "他们会告诉我们什么时候进展顺利，正常或非常非常糟糕，实际上一切都是一样的。 之前我们都去过那里，从事一个项目，那种胃stomach的感觉一直告诉我们应该更改数据库以更好地支持我们的数据模型。"
+}, {
+  "tag": "P",
+  "text": "That, instead of writing a lot of fragile data transformation code, you could do a lot of this in-database if you just used a relational database and an ORM. Or, after finding yourself on a new team or in a new job and you just don’t get along with your peers for some reason.",
+  "translation": "那就是，如果您只是使用关系数据库和ORM，则可以编写大量此类数据库内数据，而不用编写大量易碎的数据转换代码。 或者，在找到自己的新团队或新工作后，由于某种原因，您与同事之间不再相处。"
+}, {
+  "tag": "P",
+  "text": "It’s not that you don’t like them or they don’t like you, some personalities just work better together than others. Don’t force it. Find the better solution and go with that.",
+  "translation": "不是因为您不喜欢他们，也不是他们不喜欢您，有些人在一起工作比其他人更好。 不要强迫它。 找到更好的解决方案，然后继续。"
+}, {
+  "tag": "P",
+  "text": "Talk to your manager about changing teams. Find an ORM and get to work. Stop what you’re doing and do the thing that’s going to make it effortless. Leave the square-peg/round-hole problems to the NASA nerds.",
+  "translation": "与您的经理谈谈更换团队。 找到一个ORM并开始工作。 停止您正在做的事情，然后做会变得轻松的事情。 将方形钉/圆孔问题留给NASA书呆子。"
+}, {
+  "tag": "H1",
+  "text": "3. Ask Questions",
+  "translation": "3.提出问题"
+}, {
+  "tag": "P",
+  "text": "It sounds so easy. So simple. So childish. Yet, so hard. Don’t understand something? Ask questions. Want to know why something is the way it is? Ask questions. Want to know where the project is headed? Ask questions.",
+  "translation": "听起来很简单。 很简单。 好幼稚 但是，很难。 什么都不懂 问问题。 想知道为什么是这样吗？ 问问题。 想知道项目的方向吗？ 问问题。"
+}, {
+  "tag": "P",
+  "text": "Just because you ask doesn’t mean you are going to get the answer you want, or any answer at all, but if you don’t ask questions then you’ll never find out.",
+  "translation": "仅仅因为您提出问题并不意味着您将得到想要的答案，或者根本没有任何答案，但是如果您不提出问题，那么您将永远找不到答案。"
+}, {
+  "tag": "P",
+  "text": "One of the best things to do after coming to a new team or starting a new job is to ask all the questions. Pulling the FNG card is like having a “get out of looking stupid” card for the first little while.",
+  "translation": "进入新团队或开始新工作后，最好的事情之一就是问所有问题。 拔出FNG卡就像是头一会儿就拥有“摆脱愚蠢的外观”卡一样。"
+}, {
+  "tag": "P",
+  "text": "Asking questions that start with: “Hey, I’m new to all of this, so let me ask what might be a dumb question…” is an awesome way to find out things you want to know but also challenge the status quo.",
+  "translation": "提出以以下内容开头的问题：“嘿，我是这一切的新手，所以让我问什么可能是一个愚蠢的问题……”是一种很棒的方式，可以找出您想知道的事情，同时也挑战现状。"
+}, {
+  "tag": "P",
+  "text": "You’d be surprised to find out how many organizations are doing things a certain way “because reasons”. Usually, it’s because someone set it up that way a while ago and no one bothered to go back and fix it.",
+  "translation": "您会惊讶地发现有多少组织“以某种原因”以某种方式做事。 通常是因为有人在不久前以这种方式进行了设置，没有人愿意回去修复它。"
+}, {
+  "tag": "P",
+  "text": "By asking questions, challenging assumptions, and digging for information, we make our teams, our groups, ourselves, and our lives better. I’ve been able to cut out entire layers from infrastructures from asking questions like this.",
+  "translation": "通过提出问题，挑战性假设和挖掘信息，我们使我们的团队，团队，我们自己以及我们的生活变得更好。 通过这样的问题，我已经能够从基础架构中切出整个层次。"
+}, {
+  "tag": "P",
+  "text": "Who knows what you’ll be able to trim out.",
+  "translation": "谁知道您将能够进行哪些修剪。"
+}, {
+  "tag": "H1",
+  "text": "2. Problem First, Then Solution.",
+  "translation": "2.首先是问题，然后是解决方案。"
+}, {
+  "tag": "P",
+  "text": "Everyone has their go-to things they like to use: Redis, MySQL, etc. And that’s OK, having preferences is healthy and normal.",
+  "translation": "每个人都喜欢使用他们喜欢的东西：Redis，MySQL等。没关系，有偏好是正常的。"
+}, {
+  "tag": "P",
+  "text": "But we run into trouble when those preferences become requirements; a lens through which every problem is viewed that cannot be deviated from. And let’s not be deceived, this is more than just an individual vice, organizations are guilty of this too.",
+  "translation": "但是，当这些偏好成为要求时，我们就会遇到麻烦； 透过它可以观察到每个问题的透镜。 而且，别被欺骗了，这不仅仅是个人的罪恶，组织也为此感到内。"
+}, {
+  "tag": "P",
+  "text": "Lots of companies mandate certain technologies, libraries, or tools, often with little thought or input from the “boots on the ground”, developers and operations engineers who have to actually use or implement these technologies.",
+  "translation": "许多公司要求使用某些技术，库或工具，而往往没有来自“地面上的靴子”，开发人员和运营工程师的思考或投入，而这些人实际上必须使用或实施这些技术。"
+}, {
+  "tag": "P",
+  "text": "This is part of my long-standing gripe with enterprise architecture groups and their God-like powers over the mere mortals who actually write the code.",
+  "translation": "这是我长期以来对企业体系结构团队及其对真正编写代码的凡人的类神力量的不懈追求的一部分。"
+}, {
+  "tag": "P",
+  "text": "Oftentimes, it’s the architecture group that decides that the company is going to use a certain technology or product — Kubernetes, OpenShift, AWS, etc. — without fully understanding the problems inside the organization and what these technologies were designed to solve.",
+  "translation": "通常，架构小组决定公司将使用某种技术或产品（Kubernetes，OpenShift，AWS等），而没有完全了解组织内部的问题以及这些技术旨在解决什么问题。"
+}, {
+  "tag": "P",
+  "text": "I saw this personally during my time at Capital One where our architecture group decided that we were going to be a Kubernetes company but didn’t have any real sense of what that meant to those of us who had to actually develop and implement the systems and tooling around it, or the applications that would run on it.",
+  "translation": "我在Capital One期间亲眼看到了这一点，当时我们的架构团队决定我们将成为Kubernetes公司，但对那些必须实际开发和实施系统的人并没有真正的意义。 工具或将在其上运行的应用程序。"
+}, {
+  "tag": "P",
+  "text": "And it was often architecture (or their malnourished stepbrothers, enterprise security) that were the cause of a lot of the roadblocks to them getting what they wanted.",
+  "translation": "通常，架构（或其营养不良的继兄弟，企业安全性）是导致他们获得所需东西的许多障碍的原因。"
+}, {
+  "tag": "P",
+  "text": "Had they — both architecture and security — understood the problems that needed to be solved first before deciding what tools to use second, then things might have gone very differently and most likely a whole lot smoother.",
+  "translation": "如果他们（体系结构和安全性）都先了解了需要先解决的问题，然后再决定使用哪种工具，那么事情可能会大相径庭，并且很有可能变得更加顺畅。"
+}, {
+  "tag": "H1",
+  "text": "1. Monorepos: Just Don’t",
+  "translation": "1. Monorepos：只是不要"
+}, {
+  "tag": "P",
+  "text": "If you’re not familiar with the concept of a monorepo (I envy you) then let me explain: instead of having multiple source-code repositories for your applications, the monorepo concept places everything in a single repository.",
+  "translation": "如果您不熟悉monorepo的概念（我很羡慕），请让我解释一下：monorepo概念不是将多个源代码存储库用于您的应用程序，而是将所有内容都放在一个存储库中。"
+}, {
+  "tag": "P",
+  "text": "This can make contributing to multiple projects easier, but it comes at a cost: you must use subversion, you cannot use Git. Git, for all its strengths, does not support sparse checkouts like subversion.",
+  "translation": "这可以使为多个项目做出贡献变得容易，但这要付出一定的代价：您必须使用Subversion，而不能使用Git。 尽管Git具有所有优点，但它不支持像Subversion这样的稀疏签出。"
+}, {
+  "tag": "P",
+  "text": "Sparse checkouts allow you to check out individual directories of a larger tree instead of the whole tree as Git does. This means you can have multiple people or teams work on individual parts of a tree without overlap.",
+  "translation": "稀疏检出允许您检出较大树的单个目录，而不是Git检出整个树。 这意味着您可以让多个人或团队在树的各个部分上工作而不会重叠。"
+}, {
+  "tag": "P",
+  "text": "You cannot to this with Git and therefore should use individual repositories for discrete applications when using Git as your source control.",
+  "translation": "使用Git不能做到这一点，因此在将Git用作源代码控件时，应该为离散的应用程序使用单独的存储库。"
+}, {
+  "tag": "H1",
+  "text": "5 Rules of Code",
+  "translation": "5代码规则"
+}, {
+  "tag": "H2",
+  "text": "Rules for maintaining your code and your sanity as a modern developer",
+  "translation": "维护代码和成为现代开发人员的理智的规则"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*C9crJHi4uDnLl-Nzb2Nxbg.jpeg?q=20",
+  "caption": "Photo by Efe Kurnaz on Unsplash",
+  "type": "image",
+  "file": "1*C9crJHi4uDnLl-Nzb2Nxbg.jpeg"
+}, {
+  "tag": "P",
+  "text": "Over the past little while, I’ve compiled a list of “commandments”: things you must and must not do as a modern developer. Let’s walk through five of them and discuss why you should adopt them for yourself and your teams too.",
+  "translation": "在过去的一段时间里，我整理了一份“命令”清单：作为现代开发人员，您必须做和不应该做的事情。 让我们浏览其中的五个，并讨论为什么您应该为自己和您的团队采用它们。"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Peter Christian Fraedrich的文章《5 Rules of Code》，参考：https://medium.com/better-programming/5-rules-of-code-6970a55a444b)",
+  "translation": "（本文翻译自Peter Christian Fraedrich的文章，《 5条规则规则》，参考：https：//medium.com/better-programming/5-rules-of-code-6970a55a444b）"
+}]
