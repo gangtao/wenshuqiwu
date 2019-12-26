@@ -1,0 +1,418 @@
+[{
+  "tag": "P",
+  "text": "Authored by Zhenzhong Xu on behalf of Real-time Data Infrastructure and Mantis teams:",
+  "translation": "由徐振中代表实时数据基础架构和螳螂团队撰写："
+}, {
+  "tag": "P",
+  "text": "Andrew Nguonly, Allen Wang, Cody Rioux, Gim Mahasintunan, Indrajit Roy Choudhury, Jaebin Yoon, Jeff Chao, Jigish Patel, Kunal Kundaje, Manas Alekar, Mark Cho, Monal Daxini, Neeraj Joshi, Nick Mahilani, Piyush Goyal, Prashanth Ramdas, Steven Wu, Zhenzhong Xu",
+  "translation": "Andrew Nguonly，Allen Wang，Cody Rioux，Gim Mahasintunan，Indrajit Roy Choudhury，Jaebin Yoon，Jeff Jeff，Jigish Patel，Kunal Kundaje，Manas Alekar，Mark Cho，Monal Daxini，Neeraj Joshi，Nick Mahilani，Piyush Goyal，Prashanth Ramdas，Steven 吴振旭"
+}, {
+  "tag": "H1",
+  "text": "Now and Future",
+  "translation": "现在和未来"
+}, {
+  "tag": "P",
+  "text": "In the past year and half, the Keystone stream processing platform has proven itself beyond the trillion events per day scale. Our partner teams have built and productionized various analytical streaming use cases. Furthermore, we are starting to see higher level platforms being built on top.",
+  "translation": "在过去的一年半中，Keystone流处理平台已证明其自身已经超越了每天数万亿事件的规模。 我们的合作伙伴团队已经建立并生产了各种分析流用例。 此外，我们开始看到在其之上构建更高级别的平台。"
+}, {
+  "tag": "P",
+  "text": "However, our story does not end here. We still have a long journey ahead of us to fulfill our platform vision. Below are some of the interesting items we are looking into:",
+  "translation": "但是，我们的故事并没有到此结束。 为了实现平台愿景，我们还有很长的路要走。 以下是我们正在研究的一些有趣的项目："
+}, {
+  "tag": "UL",
+  "texts": ["Schema", "Service layer to enable more flexible platform interaction", "Provide streaming SQL and other higher level abstractions to unlock values for different audiences", "Analytics & Machine Learning use cases", "Microservices event sourcing architectural pattern"],
+  "translations": ["架构图", "服务层可实现更灵活的平台交互", "提供流式SQL和其他更高级别的抽象以为不同的受众解锁值", "分析与机器学习用例", "微服务事件采购架构模式"]
+}, {
+  "tag": "P",
+  "text": "This post presented a high level view of Keystone platform. In the future, we will follow up with more detailed drill downs into use cases, component features, and implementations. Please stay tuned.",
+  "translation": "这篇文章介绍了Keystone平台的高级视图。 将来，我们将对用例，组件功能和实现进行更详细的深入研究。 敬请期待。"
+}, {
+  "tag": "H1",
+  "text": "Our Approach",
+  "translation": "我们的方法"
+}, {
+  "tag": "P",
+  "text": "With considerations to aforementioned challenges and design principles, we closed on a declarative reconciliation architecture to drive a self-servable platform. On a high level, this architecture allows user to come to the UI to declare desired job attributes, the platform will orchestrate and coordinate subservices to ensure goal states are met as quickly as possible, even in face of failures.",
+  "translation": "考虑到上述挑战和设计原则，我们关闭了声明性对帐体系结构以驱动可自助服务的平台。 在较高的层次上，此体系结构允许用户进入UI来声明所需的作业属性，该平台将协调和协调子服务以确保即使遇到故障也能尽快达到目标状态。"
+}, {
+  "tag": "P",
+  "text": "This following section covers the high level architecture and lightly touches various areas of the design. We’ll share more in depth technical details and use cases in future follow up posts.",
+  "translation": "以下部分涵盖了高层架构，并轻轻触及了设计的各个领域。 在以后的后续帖子中，我们将分享更深入的技术细节和用例。"
+}, {
+  "tag": "H2",
+  "text": "1. Declarative Reconciliation",
+  "translation": "1.声明式对帐"
+}, {
+  "tag": "P",
+  "text": "The declarative reconciliation protocol is used across the entire architectural stack, from control plane to data plane. The logical conclusion for taking advantage of this protocol is to store a single copy of user declared goal states as durable source of truth, where all other services will reconcile from. When state conflict arises, either due to transient failures or normal user trigger actions, the source of truth should always be treated as authoritative, all other versions of the states should be considered as the current view of the world. The entire system is expected to eventually reconcile towards the source of truth.",
+  "translation": "声明性协调协议用于从控制平面到数据平面的整个体系结构堆栈。 利用此协议的逻辑结论是将用户声明的目标状态的单个副本存储为持久的真实来源，所有其他服务都将在此进行协调。 当由于暂时性故障或正常的用户触发操作而发生状态冲突时，应始终将真理的来源视为权威，将所有其他版本的状态视为当前的世界观。 整个系统有望最终与真相协调。"
+}, {
+  "tag": "P",
+  "text": "Source of Truth Store is a durable, persistent storage that keeps all the desired state information. We currently use AWS RDS. It is the single source of truth for the entire system. For example, if a Kafka cluster blows away because of corrupted ZK states, we can always recreate the entire cluster solely based off the source of truth. Same principles apply to the stream processing layer, to correct any processing layer’s current states that deviates from its desired goal states. This makes continuous self healing, and automated operations possible.",
+  "translation": "真相存储源是一种持久的持久性存储，可保留所有所需的状态信息。 我们目前使用AWS RDS。 它是整个系统的唯一事实来源。 例如，如果一个Kafka集群由于ZK状态损坏而崩溃，我们总是可以仅基于事实来源来重新创建整个集群。 相同的原则适用于流处理层，以纠正任何处理层偏离其期望目标状态的当前状态。 这使得连续自我修复和自动化操作成为可能。"
+}, {
+  "tag": "P",
+  "text": "Another advantage we can take from this protocol design is that operations are encouraged to be idempotent. This means control instructions passed from user to control plane and then to the job cluster, inevitable failure conditions will not result in prolonged adversary effect. The services would just eventually reconcile on its own. This also in term brings operational agility.",
+  "translation": "我们可以从该协议设计中获得的另一个优势是，鼓励操作是幂等的。 这意味着控制指令从用户传递到控制平面，再传递到作业群，不可避免的故障情况不会导致长期的敌意。 这些服务最终只会自己进行协调。 这也带来了操作敏捷性。"
+}, {
+  "tag": "H2",
+  "text": "2. Deployment Orchestration",
+  "translation": "2.部署流程"
+}, {
+  "tag": "P",
+  "text": "Control plane facilitates orchestration workflow through interactions with Netflix internal continuous deployment engine Spinnaker. Spinnaker internally abstracts integration with Titus container runtime, which would allow control plane to orchestrates deployment with different tradeoffs.",
+  "translation": "控制平面通过与Netflix内部连续部署引擎Spinnaker的交互来促进编排工作流。 Spinnaker在内部抽象了与Titus容器运行时的集成，这将允许控制平面以不同的权衡来协调部署。"
+}, {
+  "tag": "P",
+  "text": "A flink cluster is composed of job managers and task managers. Today, we enforce complete job instance level isolation by creating independent Flink cluster for each job. The only shared service is ZooKeeper for consensus coordination and S3 backend for storing checkpoint states.",
+  "translation": "一个flink集群由作业管理器和任务管理器组成。 今天，我们通过为每个作业创建独立的Flink群集来实施完全的作业实例级别隔离。 唯一的共享服务是ZooKeeper，用于达成共识协调； S3后端，用于存储检查点状态。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*nr0lI9oH9_zHivbT?q=20",
+  "type": "image",
+  "file": "0*nr0lI9oH9_zHivbT"
+}, {
+  "tag": "P",
+  "text": "During redeployment, stateless application may choose between latency or duplicate trade-offs, corresponding deployment workflow will be used to satisfy the requirement. For stateful application user can choose to resume from a checkpoint/savepoint or start from fresh state.",
+  "translation": "在重新部署期间，无状态应用程序可以在延迟或重复权衡之间进行选择，将使用相应的部署工作流程来满足需求。 对于有状态应用程序，用户可以选择从检查点/保存点恢复或从新状态开始。"
+}, {
+  "tag": "H2",
+  "text": "3. Self-service Tooling",
+  "translation": "3.自助工具"
+}, {
+  "tag": "P",
+  "text": "For routing jobs: through self service, a user can request a stream to produce events to, optionally declare filtering / projection and then route events to managed sink, such as Elasticsearch, Hive or made available for downstream real-time consuming. Self service UI is able to take these inputs from user and translate into concrete eventual desired system states. This allows us to build a decoupled orchestration layer that drives the goal states, it also allows us to abstract out certain information that user may not care, for example which Kafka cluster to produce to, or certain container configurations, and gives us the flexibility when it’s needed.",
+  "translation": "对于路由作业：通过自助服务，用户可以请求流以生成事件以发送给事件，可以选择声明过滤/投影，然后将事件路由到受管理的接收器，例如Elasticsearch，Hive或可用于下游实时消费。 自助服务UI能够从用户那里获取这些输入并将其转换为具体的最终所需的系统状态。 这使我们能够构建一个分离的业务流程层来驱动目标状态，它还使我们能够抽象出用户可能不在乎的某些信息，例如，要向哪个Kafka集群生成的信息或某些容器配置，并为我们提供了灵活性 这是必需的。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*dHzKqNbXITJ6-d8e?q=20",
+  "type": "image",
+  "file": "0*dHzKqNbXITJ6-d8e"
+}, {
+  "tag": "P",
+  "text": "For custom SPaaS jobs, we provide command line tooling to generate flink code template repository and CI integration etc.",
+  "translation": "对于自定义SPaaS作业，我们提供命令行工具来生成flink代码模板存储库和CI集成等。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*Rv4BIjoF4raqzgyk?q=20",
+  "type": "image",
+  "file": "0*Rv4BIjoF4raqzgyk"
+}, {
+  "tag": "P",
+  "text": "Once user customizes and checks in the code, the CI automation will be kicked off to build docker image, register the image and configurations with platform backend, and allow user to perform deployment and other administrative operations.",
+  "translation": "用户自定义并签入代码后，CI自动化将启动以构建docker映像，在平台后端注册该映像和配置，并允许用户执行部署和其他管理操作。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*JBTOh-tqZZon3lP7?q=20",
+  "type": "image",
+  "file": "0*JBTOh-tqZZon3lP7"
+}, {
+  "tag": "H2",
+  "text": "4. Stream Processing Engines",
+  "translation": "4.流处理引擎"
+}, {
+  "tag": "P",
+  "text": "We are currently focusing on leveraging Apache Flink and build an ecosystem around it for Keystone analytic use cases. Moving forward, we have plans to integrate and extend Mantis stream processing engine for operational use cases.",
+  "translation": "当前，我们专注于利用Apache Flink并围绕Keystone分析用例在其周围构建生态系统。 展望未来，我们计划为操作用例集成和扩展Mantis流处理引擎。"
+}, {
+  "tag": "H2",
+  "text": "5. Connectors, Managed Operators and Application Abstraction",
+  "translation": "5.连接器，托管运算符和应用程序抽象"
+}, {
+  "tag": "P",
+  "text": "To help our users to increase development agility and innovations, we offer a full range of abstractions that includes managed connectors, operators for users to plug in to the processing DAG, as well as integration with various platform services.",
+  "translation": "为了帮助我们的用户提高开发敏捷性和创新能力，我们提供了全方位的抽象，包括托管连接器，供用户插入处理DAG的操作员，以及与各种平台服务的集成。"
+}, {
+  "tag": "P",
+  "text": "We provide managed connectors to Kafka, Elasticsearch, Hive, etc. The connectors abstract away underlying complexity around custom wire format, serialization (so we can keep track of different format of payload to optimize on storage and transport), batching/throttling behaviors, and is easy to plug into processing DAG. We also provide dynamic source/sink operator that allows user to switch between different sources or sinks at runtime without having to rebuild.",
+  "translation": "我们提供了与Kafka，Elasticsearch，Hive等相关的托管连接器。这些连接器消除了围绕自定义线路格式，序列化（因此我们可以跟踪不同格式的有效负载以优化存储和传输），批处理/限制行为以及 易于插入处理DAG。 我们还提供动态的源/接收器运算符，使用户可以在运行时在不同的源或接收器之间进行切换，而无需重建。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*5opg0Sx_HKFzZlK_?q=20",
+  "type": "image",
+  "file": "0*5opg0Sx_HKFzZlK_"
+}, {
+  "tag": "P",
+  "text": "Other managed operators includes filter, projector, data hygiene with easy to understand custom DSL. We continue to work with our users to contribute proven operators to the collection and make them accessible to more teams.",
+  "translation": "其他管理的运营商包括过滤器，投影仪，易于理解的自定义DSL数据卫生。 我们将继续与用户合作，为集合提供可靠的操作员，并使更多的团队可以使用它们。"
+}, {
+  "tag": "H2",
+  "text": "6. Configuration & Immutable Deployment",
+  "translation": "6.配置和不变部署"
+}, {
+  "tag": "P",
+  "text": "Multi-tenancy configuration management is challenging. We want to make configuration experience dynamic (so users do not have to rebuild/reship code), and at the same time easily manageable.",
+  "translation": "多租户配置管理具有挑战性。 我们希望使配置体验动态化（因此用户不必重建/重新发送代码），并且同时易于管理。"
+}, {
+  "tag": "P",
+  "text": "Both default managed and user defined configurations are stored along with application properties files, we’ve done the plumbing to allow these configurations to be overriable by environment variable and can be further overridden through self-service UI. This approach fits with the reconciliation architecture, which allows user to come to our UI to declare the intended configs and deployment orchestration will ensure eventual consistency at runtime.",
+  "translation": "默认的托管配置和用户定义的配置都与应用程序属性文件一起存储，我们已经进行了深入的研究，以使这些配置可以被环境变量覆盖，并可以通过自助服务用户界面进一步覆盖。 这种方法与协调架构相吻合，该架构允许用户进入我们的UI来声明预期的配置，并且部署流程将确保最终在运行时保持一致。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*kvMUwGMjuAiKVMGe?q=20",
+  "type": "image",
+  "file": "0*kvMUwGMjuAiKVMGe"
+}, {
+  "tag": "H2",
+  "text": "7. Self-healing",
+  "translation": "7.自我修复"
+}, {
+  "tag": "P",
+  "text": "Failures are inevitable in distributed systems. We fully expect it can happen at any time, and designed our system to self heal so we don’t have to be woken up in the middle of night for incident mitigations.",
+  "translation": "在分布式系统中，故障是不可避免的。 我们完全希望这种情况随时可能发生，因此我们设计了可自我修复的系统，因此不必为了缓解事件而在半夜醒来。"
+}, {
+  "tag": "P",
+  "text": "Architecturally, platform component services are isolated to reduce blast radius when failure arises. The reconciliation architecture also ensures system level self-recovery by continuous reconciling away from drift behavior.",
+  "translation": "在架构上，平台组件服务是隔离的，以在发生故障时减小爆炸半径。 协调架构还通过持续协调漂移行为来确保系统级的自我恢复。"
+}, {
+  "tag": "P",
+  "text": "On individual job level, the same isolation pattern is followed to reduce failure impact. However, to deal and recover from such failures, each managed streaming job comes with a health monitor. The health monitor is an internal component runs on in Flink cluster which is responsible for detecting failure scenarios and perform self-healing:",
+  "translation": "在单个作业级别，遵循相同的隔离模式以减少故障影响。 但是，为了处理此类故障并从中恢复，每个托管的流作业均附带运行状况监视器。 运行状况监控器是在Flink群集中运行的内部组件，负责检测故障情况并执行自我修复："
+}, {
+  "tag": "UL",
+  "texts": ["Cluster Task Manager drift: if Flink’s view of the container resources persistently unmatched with container runtime’s view. The drift will be automatically corrected by proactive termination of affected containers.", "Stall Job Manager leader: if leader fails to be elected, the cluster becomes brainless. Corrective action will be performed on the job manager.", "Unstable container resources: if certain task manager shows unstable pattern such as periodical restart/failure, it will be replaced.", "Network partition: if any container experiences network connectivity issues, it will be automatically terminated."],
+  "translations": ["集群任务管理器的漂移：如果Flink的容器资源视图与容器运行时视图始终不匹配。 主动终止受影响的容器将自动纠正漂移。", "失速工作经理领导者：如果无法选举领导者，集群将变得毫无头脑。 纠正措施将在作业管理器上执行。", "容器资源不稳定：如果某些任务管理器显示不稳定的模式（例如定期重新启动/失败），它将被替换。", "网络分区：如果任何容器遇到网络连接问题，它将自动终止。"]
+}, {
+  "tag": "H2",
+  "text": "8. Backfill & Rewind",
+  "translation": "8.回填和倒带"
+}, {
+  "tag": "P",
+  "text": "Again, failures are inevitable, sometimes user may be required to backfill or rewind the processing job.",
+  "translation": "同样，失败是不可避免的，有时可能需要用户回填或倒回处理作业。"
+}, {
+  "tag": "P",
+  "text": "For source data that is backed up into data warehouse, we have built functionality into the platform to allow dynamically switching source without having to modify and rebuild code. This approach comes with certain limitations and is only recommended for stateless jobs.",
+  "translation": "对于备份到数据仓库中的源数据，我们在平台中内置了功能，以允许动态切换源，而无需修改和重建代码。 这种方法有一定的局限性，仅建议用于无状态工作。"
+}, {
+  "tag": "P",
+  "text": "Alternatively, user can choose to rewind processing to a previous automatically taken checkpoint.",
+  "translation": "或者，用户可以选择将处理倒回至先前自动获取的检查点。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*UCNRaireQmeFcxHU?q=20",
+  "type": "image",
+  "file": "0*UCNRaireQmeFcxHU"
+}, {
+  "tag": "H2",
+  "text": "9. Monitoring & Alerting",
+  "translation": "9.监控和警报"
+}, {
+  "tag": "P",
+  "text": "All individual streaming jobs comes with a personalized monitor and alert dashboard. This helps both platform/infrastructure team and application team to diagnose and monitor for issues.",
+  "translation": "所有单独的流作业均带有个性化的监视器和警报仪表板。 这有助于平台/基础架构团队和应用程序团队诊断和监视问题。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*kdhbLe0H88tWFXaI?q=20",
+  "type": "image",
+  "file": "0*kdhbLe0H88tWFXaI"
+}, {
+  "tag": "H2",
+  "text": "10. Reliability & Testing",
+  "translation": "10.可靠性与测试"
+}, {
+  "tag": "P",
+  "text": "As platform and underlying infrastructure services innovate to provide new features and improvements, the pressure to quickly adopt the changes comes from bottom up (architecturally).",
+  "translation": "随着平台和底层基础设施服务的创新以提供新功能和改进，快速采用变更的压力来自自下而上（从体系结构上）。"
+}, {
+  "tag": "P",
+  "text": "As applications being developed and productionized, the pressure for reliability comes from top down.",
+  "translation": "随着应用程序的开发和生产，可靠性的压力来自上而下。"
+}, {
+  "tag": "P",
+  "text": "The pressure meets in the middle. In order for us to provide and gain trust, we need to enable both platform and users to efficiently test the entire stack.",
+  "translation": "压力在中间汇合。 为了使我们能够提供并获得信任，我们需要使平台和用户都能够有效地测试整个堆栈。"
+}, {
+  "tag": "P",
+  "text": "We are big believers in making unit tests, integration tests, operational canary and data parity canary accessible for all our users, and easy to adopt for the stream processing paradigm. We are making progress on this front, and still seeing lots of challenges to solve.",
+  "translation": "我们坚信使我们的所有用户都可以使用单元测试，集成测试，操作Canary和数据奇偶校验Canary，并且易于采用其作为流处理范例。 我们正在这方面取得进展，并且仍然看到许多挑战需要解决。"
+}, {
+  "tag": "H1",
+  "text": "Platform Mindset & Design Principles",
+  "translation": "平台思想与设计原则"
+}, {
+  "tag": "H2",
+  "text": "1. Enablement",
+  "translation": "1.启用"
+}, {
+  "tag": "P",
+  "text": "One of the primary goals of the platform is to enable other teams to focus on business logic, making experimentation, implementation, operation of stream processing jobs easy. By having a platform to abstract the “hard stuff”, removing complexities away from users, this would unleash broader team agility and product innovations.",
+  "translation": "该平台的主要目标之一是使其他团队能够专注于业务逻辑，从而使流处理作业的实验，实现，操作变得容易。 通过拥有一个抽象“硬东西”的平台，消除用户的复杂性，这将释放更大的团队敏捷性和产品创新能力。"
+}, {
+  "tag": "P",
+  "text": "On a high level, we strive to enable our user to:",
+  "translation": "在较高的层次上，我们努力使我们的用户能够："
+}, {
+  "tag": "UL",
+  "texts": ["Quickly discover and experiment with data, enable data driven innovations to drive product", "Fast prototyping of stream processing solutions", "Productionize and operationalize services with confidence", "Gain insight into performance, cost, job lifecycle states etc to be able to make informed local decisions", "Provide tooling to enable users to self-serve"],
+  "translations": ["快速发现数据并进行数据试验，以数据驱动的创新来驱动产品", "流处理解决方案的快速原型制作", "充满信心地生产和运营服务", "深入了解性能，成本，工作生命周期状态等，以便能够做出明智的本地决策", "提供工具以使用户能够自助"]
+}, {
+  "tag": "H2",
+  "text": "2. Building Blocks",
+  "translation": "2.积木"
+}, {
+  "tag": "P",
+  "text": "To enable user to focus on business logic without having to worry about the complexity involved in a distributed system or mundane details of some pre-existed solution, it is our goal to provide a rich set of composable operators that can be easily plugged into a streaming job DAG.",
+  "translation": "为了使用户能够专注于业务逻辑而不必担心分布式系统涉及的复杂性或某些现有解决方案的世俗细节，我们的目标是提供一组可轻松插入流中的可组合运算符 工作DAG。"
+}, {
+  "tag": "P",
+  "text": "Furthermore, streaming jobs themselves can become building blocks for other downstream services as well. We work with some of our partner teams to build “Managed Datasets” and other domain specific platforms.",
+  "translation": "此外，流作业本身也可以成为其他下游服务的构建块。 我们与一些合作伙伴团队一起构建“托管数据集”和其他特定于域的平台。"
+}, {
+  "tag": "P",
+  "text": "From our platform downwards, we also strive to integrate deeply with Netflix software ecosystem by leveraging other building blocks such as container runtime services, platform dynamic configuration, common injection framework, etc. This does not just help us to build a service based on other existing solutions, it also make development & operation environment familiar to our users.",
+  "translation": "从平台向下，我们还努力通过利用其他构建模块（例如容器运行时服务，平台动态配置，通用注入框架等）与Netflix软件生态系统进行深度集成。这不仅帮助我们基于其他现有基础构建服务， 解决方案，也使我们的用户熟悉开发和运营环境。"
+}, {
+  "tag": "H2",
+  "text": "3. Tuneable Tradeoffs",
+  "translation": "3.合理的权衡"
+}, {
+  "tag": "P",
+  "text": "Any complex distributed system inherently comes with certain limitations, thus designings of such system should take considerations of various tradeoffs, i.e. latency vs duplicates, consistency vs availability, strict ordering vs random ordering etc. Certain use cases may require different combinations of these tradeoffs, so it’s essential that platform should expose the knobs and allow individual user to customize and declare the needs to the system.",
+  "translation": "任何复杂的分布式系统都固有地具有一定的局限性，因此，这种系统的设计应考虑各种折衷，即等待时间与重复项，一致性与可用性，严格排序与随机排序等。某些用例可能需要这些折衷的不同组合，因此 平台必须露出旋钮，并允许个人用户自定义和声明对系统的需求，这一点至关重要。"
+}, {
+  "tag": "H2",
+  "text": "4. Failure as a First Class Citizen",
+  "translation": "4.作为头等公民的失败"
+}, {
+  "tag": "P",
+  "text": "Failure is a norm in any large scale distributed system, especially in the cloud environment. Any properly designed cloud-native system should treat failures as a first class citizen.",
+  "translation": "在任何大型分布式系统中，故障都是正常现象，尤其是在云环境中。 任何设计合理的云原生系统都应将故障视为头等公民。"
+}, {
+  "tag": "P",
+  "text": "Here are some important aspects that impacted our design:",
+  "translation": "以下是一些影响我们设计的重要方面："
+}, {
+  "tag": "UL",
+  "texts": ["Assume unreliable network", "Trust underlying runtime infrastructure, but design automatic healing capabilities", "Enforce job level isolation for multi-tenants support", "Reduce blast radius when failure arise", "Design for automatic reconciliation if any components drifts from desired state or even if disaster failure occurs", "Handle & propagate back pressure correctly"],
+  "translations": ["假设网络不可靠", "信任底层的运行时基础结构，但设计自动修复功能", "加强工作级别隔离以支持多租户", "发生故障时减小爆炸半径", "如果任何组件偏离所需状态或发生灾难故障，则进行自动调节的设计", "正确处理和传播背压"]
+}, {
+  "tag": "H2",
+  "text": "5. Separation of Concerns",
+  "translation": "5.关注点分离"
+}, {
+  "tag": "P",
+  "text": "Between users and platform: user should be able to declare the “goal state” via platform UI or API. The goal states are stored in a single source of truth store, the actual execution to move from “current state” towards the “goal state” is handled by the platform workflow without interaction with users.",
+  "translation": "在用户和平台之间：用户应该能够通过平台UI或API声明“目标状态”。 目标状态存储在单个事实存储库中，从“当前状态”向“目标状态”移动的实际执行由平台工作流处理，而无需与用户进行交互。"
+}, {
+  "tag": "P",
+  "text": "Between control plane and data plane: Control plane is responsible for workflow orchestration/coordination while data plane does the heavy lifting to make sure things happens and stay in desired state.",
+  "translation": "在控制平面和数据平面之间：控制平面负责工作流程的编排/协调，而数据平面则进行繁重的工作以确保事情发生并保持在所需的状态。"
+}, {
+  "tag": "P",
+  "text": "Between different subcomponents: Each component is responsible for their own work and states. Each component lifecycle is independent.",
+  "translation": "在不同的子组件之间：每个组件负责各自的工作和状态。 每个组件的生命周期都是独立的。"
+}, {
+  "tag": "P",
+  "text": "Runtime infrastructure: stream processing jobs are deployed on open sourced Netflix Titus Container runtime service, this service provides provisioning, scheduling, resource level isolations (CPU, Network, Memory), advanced networking etc.",
+  "translation": "运行时基础架构：流处理作业部署在开源Netflix Titus Container运行时服务上，此服务提供配置，调度，资源级别隔离（CPU，网络，内存），高级联网等。"
+}, {
+  "tag": "H1",
+  "text": "Challenges",
+  "translation": "挑战性"
+}, {
+  "tag": "H2",
+  "text": "1. Scale",
+  "translation": "1.规模"
+}, {
+  "tag": "P",
+  "text": "Netflix services 130 million subscribers from 190+ countries. The streaming platform processes trillions of events and petabytes worth of data per day to support day to day business needs. This platform is expected to scale out as subscribers continues to grow.",
+  "translation": "Netflix为来自190多个国家的1.3亿订户提供服务。 流平台每天处理数万亿个事件和数PB的数据，以支持日常业务需求。 随着用户的持续增长，该平台有望扩展。"
+}, {
+  "tag": "H2",
+  "text": "2. Diverse Use-cases",
+  "translation": "2.各种用例"
+}, {
+  "tag": "P",
+  "text": "Keystone Routing Service: this service is responsible for routing any events to managed sink per user configuration. Each delivery route is realized by an embarrassingly parallel stream processing job. Users may define optional filter and/or projection aggregations. Events are eventually delivered to a storage sink for further batch/stream processing with at-least-once delivery semantics. Users may choose different latency and duplicate tradeoffs.",
+  "translation": "Keystone路由服务：此服务负责根据用户配置将任何事件路由到托管接收器。 每个传递路径都是通过一个令人尴尬的并行流处理作业来实现的。 用户可以定义可选的过滤器和/或投影聚合。 事件最终被传递到存储接收器，以使用至少一次的传递语义进行进一步的批处理/流处理。 用户可以选择不同的延迟和重复的权衡。"
+}, {
+  "tag": "P",
+  "text": "Stream Processing as a Service: SPaaS platform has only been in production for about a year, yet we have seen tremendous engineering interests, as well as a wide variety of requirements. Below is a summary of some common asks and tradeoffs.",
+  "translation": "流处理即服务：SPaaS平台仅投入生产大约一年，但我们已经看到了巨大的工程兴趣以及各种各样的要求。 以下是一些常见要求和折衷的摘要。"
+}, {
+  "tag": "UL",
+  "texts": ["Job State: ranging from complete stateless parallel processing to jobs requiring 10s of TB large local states.", "Job Complexity: ranging from embarrassingly parallel jobs with all operators chained together to very complex job DAG with multiple shuffling stages and complex sessionization logic.", "Windows/Sessions: window size ranging from within a few second (i.e. to capture transaction start/end event) to hours long custom user behavior session windows.", "Traffic pattern: traffic pattern varies significantly depending on each use case. Traffic can be bursty or consistent at GB/sec level.", "Failure recovery: some use cases require low failure recovery latency at seconds level, this becomes much more challenging when job both holds large state and involves shuffling.", "Backfill & rewind: some jobs require replay of data either from a batch source or rewind from a previous checkpoint.", "Resource contention: jobs may be bottlenecked on any physical resources: CPU, network bandwidth, or memory, etc. User relies on the platform to provide insights and guidance to tune application performance.", "Duplicates vs latency: application may have different tradeoff preference in terms of duplicates vs latency.", "Ordering of events: most use cases do not rely on strict ordering assumptions, however some do require it.", "Delivery/Processing semantics: some use case is ok with losing some events in the pipeline, while other ones may require much higher durability guarantees. Some stateful streaming job also expects exactly-once processing guarantee where the computed states should always be consistent.", "Audience: our user ranges from very technical distributed system engineers to casual business analysts. Some team may also choose to build a domain specific platform service on our platform offerings."],
+  "translations": ["作业状态：从完整的无状态并行处理到需要10 TB大型本地状态的作业。", "作业复杂性：从令人尴尬的并行操作（将所有操作员链接在一起）到非常复杂的作业DAG（具有多个改组阶段和复杂的会话化逻辑）。", "Windows /会话：窗口大小范围从几秒钟之内（即捕获事务开始/结束事件）到长达数小时的自定义用户行为会话窗口。", "流量模式：流量模式根据每个用例而有很大不同。 流量可以是突发性的，也可以是GB /秒级别的一致性。", "故障恢复：某些用例需要几秒钟的低故障恢复延迟，而当作业同时处于较大状态并涉及改组时，这将变得更具挑战性。", "回填和倒带：某些作业需要从批处理源或从先前的检查点倒带重放数据。", "资源争用：作业可能会遇到任何物理资源（CPU，网络带宽或内存等）的瓶颈。用户依靠平台来提供见解和指导，以调整应用程序性能。", "重复与延迟：就重复与延迟而言，应用程序可能会有不同的权衡偏好。", "事件的顺序：大多数用例并不依赖严格的顺序假设，但是有些情况确实需要。", "交付/处理语义：某些用例可以避免丢失管道中的某些事件，而其他用例可能需要更高的持久性保证。 一些有状态的流作业还期望一次精确的处理保证，其中计算的状态应始终保持一致。", "受众：我们的用户范围从技术娴熟的分布式系统工程师到休闲业务分析师。 一些团队可能还会选择在我们的平台产品上构建特定于域的平台服务。"]
+}, {
+  "tag": "H2",
+  "text": "3. Multi-tenancy",
+  "translation": "3.多租户"
+}, {
+  "tag": "P",
+  "text": "Keystone supports thousands of streaming jobs, targeting wide problem spaces ranging from data delivery, data analytics, all the way to enabling microservices architectural patterns. Due to the diverse nature of the the streaming jobs, in order to provide meaningful service level guarantees to each user, the infrastructure need to provide runtime & operational isolation, while at the same time, minimizing shared platform overhead.",
+  "translation": "Keystone支持数以千计的流作业，其目标范围广泛，从数据交付，数据分析到实现微服务架构模式的问题空间。 由于流作业的多样性，为了向每个用户提供有意义的服务水平保证，基础架构需要提供运行时和操作隔离，同时将共享平台的开销降至最低。"
+}, {
+  "tag": "H2",
+  "text": "4. Elasticity",
+  "translation": "4.弹性"
+}, {
+  "tag": "P",
+  "text": "Although majority of the streams have fixed traffic pattern, we have to design the system to prepare for sudden changes (i.e. spikes due to a popular show coming online or unexpected failure scenarios), and be able to adapt and react to them in an automated fashion.",
+  "translation": "尽管大多数流具有固定的流量模式，但我们必须设计系统来为突然的变化做准备（即，由于受欢迎的节目进入在线状态或意外故障场景而导致的峰值），并能够以自动方式适应并做出反应 。"
+}, {
+  "tag": "H2",
+  "text": "5. Cloud Native Resiliency",
+  "translation": "5.云原生弹性"
+}, {
+  "tag": "P",
+  "text": "Netflix operates its microservices fully in the cloud. Due to the elastic, constant changing, higher failure probability characteristics of the cloud. We need to design the system to be able to monitor, detect and tolerate failures all the way from network blips, instance failure, zone failure, cluster failure, inter-service congestion/backpressure, to regional disaster failures, etc."
+}, {
+  "tag": "H2",
+  "text": "6. Operation overhead",
+  "translation": "6.运营费用"
+}, {
+  "tag": "P",
+  "text": "The platform currently services thousands of routing jobs and streaming applications. It’s cost prohibitive to rely on platform team to manually manage all of the streams. Instead, the user should be responsible to declare the lifecycle details of the jobs, and the infrastructure should automate as much as possible.",
+  "translation": "该平台目前为数千个路由作业和流应用程序提供服务。 依靠平台团队手动管理所有流的成本高昂。 相反，用户应负责声明作业的生命周期详细信息，并且基础架构应尽可能自动化。"
+}, {
+  "tag": "H2",
+  "text": "7. Agility",
+  "translation": "7.敏捷性"
+}, {
+  "tag": "P",
+  "text": "We’d like to be able to develop and deploy changes quickly, multiple times a day. We’d also like to allow our users to confidently use the service with the same level of agility.",
+  "translation": "我们希望能够每天多次快速开发和部署更改。 我们还希望允许我们的用户以相同的敏捷度放心地使用该服务。"
+}, {
+  "tag": "H1",
+  "text": "Keystone Real-time Stream Processing Platform",
+  "translation": "Keystone实时流处理平台"
+}, {
+  "tag": "P",
+  "text": "Keystone Stream Processing Platform is Netflix’s data backbone and an essential piece of infrastructure that enables engineering data-driven culture. While Keystone focuses on data analytics, it is worth mentioning there is another Netflix homegrown reactive stream processing platform called Mantis that targets operational use cases. We’ll discuss Mantis and its important role in the Netflix ecosystem in a future post.",
+  "translation": "Keystone流处理平台是Netflix的数据骨干，是实现工程数据驱动文化的重要基础架构。 虽然Keystone专注于数据分析，但值得一提的是，还有另一个Netflix自主研发的反应流处理平台Mantis，该平台针对运营用例。 我们将在以后的文章中讨论螳螂及其在Netflix生态系统中的重要作用。"
+}, {
+  "tag": "P",
+  "text": "Today, the Keystone platform offers two production services:",
+  "translation": "如今，Keystone平台提供两种生产服务："
+}, {
+  "tag": "UL",
+  "texts": ["Data Pipeline: streaming enabled Routing Service and Kafka enabled Messaging Service, together is responsible for producing, collecting, processing, aggregating, and moving all microservice events in near real-time.", "Stream Processing as a Service (SPaaS): enables users to build & operate custom managed stream processing applications, allowing them to focus on business application logic while platform provides the scale, operations, and domain expertise."],
+  "translations": ["数据管道：启用了流传输的路由服务和启用了Kafka的消息服务，共同负责几乎实时地生成，收集，处理，聚合和移动所有微服务事件。", "流处理即服务（SPaaS）：使用户能够构建和运行自定义的托管流处理应用程序，从而使他们能够专注于业务应用程序逻辑，而平台则提供了规模，运营和领域专业知识。"]
+}, {
+  "tag": "P",
+  "text": "In this post, we’ll go over some of the challenges, design principles, our platform mindset, high level architecture, and finally our visions and core values the platform offers to Netflix.",
+  "translation": "在本文中，我们将探讨一些挑战，设计原则，平台思维方式，高级架构，最后是平台为Netflix提供的愿景和核心价值。"
+}, {
+  "tag": "P",
+  "text": "Anatomy of a single streaming job:",
+  "translation": "单个流作业的剖析："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*UtEIiV5HlOUvCCgT?q=20",
+  "type": "image",
+  "file": "0*UtEIiV5HlOUvCCgT"
+}, {
+  "tag": "P",
+  "text": "…and the platform manages these jobs:",
+  "translation": "…并且平台管理以下工作："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*IPlVeq8BVU0aoUY0?q=20",
+  "type": "image",
+  "file": "0*IPlVeq8BVU0aoUY0"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Netflix Technology Blog的文章《Keystone Real-time Stream Processing Platform》，参考：https://medium.com/netflix-techblog/keystone-real-time-stream-processing-platform-a3ee651812a)",
+  "translation": "（本文翻译自Netflix Technology Blog的文章《 Keystone实时流处理平台》，参考：https：//medium.com/netflix-techblog/keystone-real-time-stream-processing-platform-a3ee651812a）"
+}]
