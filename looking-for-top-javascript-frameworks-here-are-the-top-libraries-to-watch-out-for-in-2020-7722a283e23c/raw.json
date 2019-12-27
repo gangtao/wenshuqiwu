@@ -1,0 +1,229 @@
+[{
+  "tag": "H1",
+  "text": "Looking for Top JavaScript Frameworks? Here are the top Libraries to watch out for in 2020!",
+  "translation": "寻找顶级JavaScript框架？ 以下是2020年值得关注的顶级图书馆！"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*XgdZwspLsglBaizZ?q=20",
+  "type": "image",
+  "file": "0*XgdZwspLsglBaizZ"
+}, {
+  "tag": "P",
+  "text": "“Java is to JavaScript as ham is to hamster.”― Jeremy Keith",
+  "translation": "“ Java是JavaScript，就像火腿是仓鼠。”-Jeremy Keith"
+}, {
+  "tag": "P",
+  "text": "The javascript world is moving fast, and not just normal fast but blazing fast. As the trend and technology in web application development is escalating, the dominance of javascript framework continue to ascend further. More and more developers worldwide have started adopting this language, and thus it is easily constituted as one of the most efficient programming languages.",
+  "translation": "JavaScript世界正在快速发展，不仅是正常的发展，而且发展迅速。 随着Web应用程序开发的趋势和技术的不断发展，javascript框架的主导地位继续进一步提高。 全球越来越多的开发人员开始采用这种语言，因此很容易将其构成为最有效的编程语言之一。"
+}, {
+  "tag": "P",
+  "text": "One of the main reasons why javascript is becoming popular and demanding these days is because of the fact that the ecosystem of this language is becoming rich and much better now.",
+  "translation": "如今javascript变得流行和苛刻的主要原因之一是因为该语言的生态系统现在变得越来越丰富并且变得更好。"
+}, {
+  "tag": "P",
+  "text": "Yes! By ecosystem i’m clearly pointing towards",
+  "translation": "是! 就生态系统而言，我明确指出"
+}, {
+  "tag": "P",
+  "text": "Javascript framework is nothing but a Javascript library that tends to render interactive and data driven interfaces.",
+  "translation": "Javascript框架不过是一个倾向于呈现交互式和数据驱动接口的Javascript库。"
+}, {
+  "tag": "P",
+  "text": "Whenever a user triggers an interaction on the interface or on the application the user is supplied with data. A large number of web development framework have started joining hands with javascript in the past few years, and thus the year 2020 looks bright for javascript framework.",
+  "translation": "每当用户在界面或应用程序上触发交互时，都会向用户提供数据。 在过去的几年中，大量的Web开发框架已经开始与javascript联手，因此2020年对于javascript框架来说是光明的。"
+}, {
+  "tag": "P",
+  "text": "Thus, to help you become frontend master in 2020 we have made javascript frameworks list of all the javascript developers Before making a choice you can weigh in the pros and cons of each of the JS framework.",
+  "translation": "因此，为帮助您在2020年成为前端大师，我们列出了所有javascript开发人员的javascript框架列表。在做出选择之前，您可以权衡每个JS框架的优缺点。"
+}, {
+  "tag": "H2",
+  "text": "Let’s begin!",
+  "translation": "让我们开始！"
+}, {
+  "tag": "H1",
+  "text": "Top Javascript Frameworks in 2020",
+  "translation": "2020年顶级Javascript框架"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*O7XHY62rvN34V7WEknyWKQ.png?q=20",
+  "type": "image",
+  "file": "1*O7XHY62rvN34V7WEknyWKQ.png"
+}, {
+  "tag": "P",
+  "text": "Keeping yourself updated with best javascript libraries 2020 that you can consider in future is a profitable decision. This would not only prevent you for investing in a JS framework that no longer is popular in the market, but it would also help you to pick up a choice that would affect your business’s ROI and end result.",
+  "translation": "不断更新最好的javascript库2020，这是您将来可以考虑的决策。 这不仅会阻止您投资在市场上不再流行的JS框架，而且还可以帮助您选择会影响企业的投资回报率和最终结果的选择。"
+}, {
+  "tag": "H1",
+  "text": "1. AngularJS",
+  "translation": "1. AngularJS"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*TVZXjYmSJ5fZeV7qXD09rQ.png?q=20",
+  "type": "image",
+  "file": "1*TVZXjYmSJ5fZeV7qXD09rQ.png"
+}, {
+  "tag": "P",
+  "text": "AngularJS is one of those most popular javascript frameworks 2020 or in other words it is one of the most reliable front-end frameworks that has been ruling the market for quite sometime now. Not only this, but it seems as if it would continue to do so in the coming years too. Yes the popularity of angular scaled new heights soon after the release of Angular 5 and with the new version of Angular 6.",
+  "translation": "AngularJS是2020年最受欢迎的JavaScript框架之一，换句话说，它是最可靠的前端框架之一，该框架已经在市场上占据了相当一段时间。 不仅如此，而且似乎在未来几年内还将继续这样做。 是的，在Angular 5发行后以及新版本的Angular 6中，角度缩放的新高度很快流行起来。"
+}, {
+  "tag": "P",
+  "text": "AngularJS is termed as MVW (Model-View-whatever) framework, and thereby it is ideally suitable to fit the needs of startups and mid-size business. The structural framework is based on HTML which is based on the needs of the components in the application. This allows the developers to easily write, edit and modify the syntax.",
+  "translation": "AngularJS被称为MVW（无论模型如何查看）框架，因此非常适合满足初创企业和中型企业的需求。 结构框架基于HTML，HTML基于应用程序中组件的需求。 这使开发人员可以轻松地编写，编辑和修改语法。"
+}, {
+  "tag": "H1",
+  "text": "Reason to choose AngularJS in the year 2020",
+  "translation": "在2020年选择AngularJS的原因"
+}, {
+  "tag": "UL",
+  "texts": ["AngularJS would provide two way data binding to the users and the developers. If there are any kind of changes in the user interface then it would immediately be influence in terms of object application and vice versa", "The declarative paradigm that are there in this framework is utilized for constructing patterns in Angularjs. It creates the code to be more lightweight", "AngularJS is a pattern language it utilizes HTML thus it tends to expand with the directives that then add into the code information for the vital behavior.", "AngularJS has a strong and a long lasting support from Google, and thus it is really beneficial for many outsourcing software companies.", "Angularjs is constructed and operated by dedicated and skilled experts. It involves both members of the core development team, as well as the other professionals."],
+  "translations": ["AngularJS将提供两种方式将数据绑定到用户和开发人员。 如果用户界面发生任何类型的更改，那么它将立即对对象应用产生影响，反之亦然", "该框架中的声明式范式用于在Angularjs中构建模式。 它创建的代码更加轻量", "AngularJS是一种使用HTML的模式语言，因此它倾向于使用指令扩展，然后将这些指令添加到重要行为的代码信息中。", "AngularJS得到了Google长期的强大支持，因此对许多外包软件公司来说确实是有益的。", "Angularjs由专业的技术专家构建和操作。 它涉及核心开发团队的成员以及其他专业人员。"]
+}, {
+  "tag": "H1",
+  "text": "2. ReactJS",
+  "translation": "2. ReactJS"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*3qgTs8BNMamT0eNh7w1OQA.png?q=20",
+  "type": "image",
+  "file": "1*3qgTs8BNMamT0eNh7w1OQA.png"
+}, {
+  "tag": "P",
+  "text": "ReactJS was developed by Facebook, and thus is constituted as one of the widest employed Javascript library for construction of the user interface. It helps in the construction of interactive and reusable UI components. According to the latest data on various resources this language is being considered as one of the highest quality setup adopted by web development company.",
+  "translation": "ReactJS由Facebook开发，因此被构造为构造用户界面使用最广泛的Javascript库之一。 它有助于构建交互式和可重用的UI组件。 根据有关各种资源的最新数据，该语言被认为是Web开发公司采用的最高质量的设置之一。"
+}, {
+  "tag": "P",
+  "text": "In fact there are developers that believe that it is faster than angularJS. This framework is a perfect choice for people that want a simple, scalable and fast framework. This framework is used by 38% of the developers worldwide compared to other javascript frameworks and has become the number 1 choice of enterprises like Netflix, Paypal, BBC and many other organizations.",
+  "translation": "实际上，有些开发人员认为它比angularJS更快。 对于需要简单，可扩展和快速的框架的人来说，此框架是理想的选择。 与其他javascript框架相比，该框架被全球38％的开发人员使用，并且已成为Netflix，Paypal，BBC和许多其他组织等企业的第一选择。"
+}, {
+  "tag": "H1",
+  "text": "Reason to choose ReactJS in the year 2020",
+  "translation": "在2020年选择ReactJS的原因"
+}, {
+  "tag": "UL",
+  "texts": ["It provides the user with a good set of documentation as well as online resources, and thus provide stable code due to one direction flow of the data or information.", "There is a possibility of server side rendering, thus it tends to fit well with any framework as it is only view layers.", "It has an easy learning curve, thus it is a fast, efficient, flexible and small sized framework, thus it is used by many mobile app development company.", "Virtual DOM offers the user with better user experience and thus also helps in improving the performance.", "Open-source library encourages contributions"],
+  "translations": ["它为用户提供了一套很好的文档以及在线资源，因此由于数据或信息的单向流动而提供了稳定的代码。", "服务器端渲染是有可能的，因此它仅是视图层，因此很适合任何框架。", "它具有易于学习的曲线，因此它是一种快速，高效，灵活和小巧的框架，因此被许多移动应用程序开发公司所使用。", "虚拟DOM为用户提供了更好的用户体验，因此也有助于提高性能。", "开源库鼓励贡献"]
+}, {
+  "tag": "H1",
+  "text": "3. Vue.JS",
+  "translation": "3. Vue.JS"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*Ag9cYLzvv96NSw4y5QwiqA.png?q=20",
+  "type": "image",
+  "file": "1*Ag9cYLzvv96NSw4y5QwiqA.png"
+}, {
+  "tag": "P",
+  "text": "Vue is the javascript library for view layer that is similar to ReactJS. The virtual DOM is seen here to that tends to improve the performance. The framework is the combination of Angular and ReactJS. It was introduced in the market with this concept itself. When it comes down to similarity with the React JS, then Vue.js also verifies and ask the developers as well as the expert to store the component logic and layout besides the style-sheets in one file or the folder. Not only this but the framework also consists of the likeness with React JS, and thus it uses props and state objects.",
+  "translation": "Vue是用于视图层的javascript库，类似于ReactJS。 在这里可以看到虚拟DOM倾向于提高性能。 该框架是Angular和ReactJS的组合。 此概念本身已在市场中引入。 当归结为与React JS的相似性时，Vue.js还会验证并要求开发人员和专家将样式表之外的组件逻辑和布局存储在一个文件或文件夹中。 不仅如此，框架还包括与React JS的相似之处，因此它使用道具和状态对象。"
+}, {
+  "tag": "P",
+  "text": "There is no doubt to the fact that if the user is familiar with Angular and ReactJS framework, then they would have no issues in operating this framework too. Thus, if you want to hire web developers that uses Vue.js as your project framework, it would be a good decision. However, there is one more reason why Vue.JS is gaining the spotlight. The idea is that this framework has Redux library, which helps in developing the complex and large-scale application.",
+  "translation": "毫无疑问，如果用户熟悉Angular和ReactJS框架，那么他们在操作该框架时也不会遇到任何问题。 因此，如果您想雇用使用Vue.js作为项目框架的Web开发人员，那将是一个不错的决定。 但是，还有另一个原因使Vue.JS受到关注。 想法是该框架具有Redux库，该库有助于开发复杂的大规模应用程序。"
+}, {
+  "tag": "H2",
+  "text": "Read More: Look Why These Top Web Development Trends & Technologies Will Rule 2020",
+  "translation": "阅读更多：看看为什么这些主要的Web开发趋势和技术将统治2020年"
+}, {
+  "tag": "H1",
+  "text": "Reason to choose VueJS in the year 2020",
+  "translation": "在2020年选择VueJS的原因"
+}, {
+  "tag": "UL",
+  "texts": ["The framework consists of light files, in other words Vue.js have files that are in smaller size", "It is one of those frameworks that are easy to understand, develop and comprehend, thus making the task of the user easy.", "The framework consists of a straightforward integration and comprehensive documentation", "The framework is known for its flexibility; thus, it allows the user to be flexible in any platform.", "It is useful in facilitating two-way communication, thus while you rent a coder you would have a clear idea on what you would need in your project.", "It provides the developer with rapid adoption. The user should know that it is in only a few years since its launch; thus there are several businesses that have started making Vue as a part of their tech stack, and the future looks bright for this framework", "The framework is easier when it comes to integration and thus with HTML Elements it is even more affordable"],
+  "translations": ["该框架由轻量文件组成，换句话说，Vue.js的文件尺寸较小", "它是易于理解，开发和理解的那些框架之一，因此使用户的任务变得容易。", "该框架包括一个简单的集成和全面的文档", "该框架以其灵活性着称。 因此，它允许用户在任何平台上都变得灵活。", "这对促进双向通信很有用，因此，在租用编码器时，您会清楚地知道项目中需要什么。", "它为开发人员提供了快速的采用。 用户应该知道它自发布以来仅几年时间； 因此，有几家企业已开始将Vue纳入其技术堆栈，并且该框架的前景一片光明", "该框架在集成方面更容易，因此使用HTML元素更实惠"]
+}, {
+  "tag": "H1",
+  "text": "4. Ember.Js",
+  "translation": "4. Ember.Js"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*jBSh53LgMpLOywiUQKPB6Q.png?q=20",
+  "type": "image",
+  "file": "1*jBSh53LgMpLOywiUQKPB6Q.png"
+}, {
+  "tag": "P",
+  "text": "An open-source, client-side javascript framework that is genuinely based on MVVM pattern, it is used to build a scalable single web page with the help of code idiom and other classifications that are best gratified for only web applications.",
+  "translation": "这是一个真正基于MVVM模式的开源客户端javascript框架，它用于借助代码惯用法和其他仅适用于Web应用程序的分类来构建可伸缩的单个网页。"
+}, {
+  "tag": "P",
+  "text": "The Ember.js makes use of HTML and CSS as the primary model of development purpose, and its routes and features are used for the management of the URL. The architecture of the framework consists of parts like: adapters, components, controllers, routes, models, helpers and addons, and thus that’s the reason it is adopted by many software development companies. One of the best features of this framework is its command line interface tool. This helps the front-end developers to be highly productive and allows them to complete the project with ready setups.",
+  "translation": "Ember.js将HTML和CSS用作开发目的的主要模型，其路由和功能用于URL的管理。 该框架的体系结构由以下部分组成：适配器，组件，控制器，路由，模型，帮助程序和插件，因此这就是许多软件开发公司采用该框架的原因。 该框架的最佳功能之一是其命令行界面工具。 这可以帮助前端开发人员提高生产力，并允许他们通过准备就绪的设置来完成项目。"
+}, {
+  "tag": "H1",
+  "text": "Reasons to choose Ember.js in 2020",
+  "translation": "在2020年选择Ember.js的原因"
+}, {
+  "tag": "UL",
+  "texts": ["The command line interface of ember helps in rapid prototyping, and helps in managing dependencies.", "The server helps in constructing a framework for the development of the apps, and provide adequate services for mobile app development solutions", "The user would be granted with Ember js library and Ember data for data management.", "It provides the user with inspector development tool for chrome and firefox browser.", "The developer is provided with Qunit testing"],
+  "translations": ["ember的命令行界面有助于快速制作原型，并有助于管理依赖性。", "服务器有助于构建用于应用程序开发的框架，并为移动应用程序开发解决方案提供适当的服务", "将授予用户Ember js库和Ember数据用于数据管理。", "它为用户提供了适用于chrome和firefox浏览器的检查器开发工具。", "为开发人员提供了Qunit测试"]
+}, {
+  "tag": "H1",
+  "text": "5. Backbone.js",
+  "translation": "5. Backbone.js"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*9jJHr8Ksi8ofE653hXlqog.png?q=20",
+  "type": "image",
+  "file": "1*9jJHr8Ksi8ofE653hXlqog.png"
+}, {
+  "tag": "P",
+  "text": "Before you hire software developers, and start with your work there is one more framework that has been making quite a stir in the market. Backbone.js is the framework that is based on MVC architecture. The framework helps in implementation of component logic that is same as the controller. It uses the engine such as mustache and underscore.js",
+  "translation": "在雇用软件开发人员并开始工作之前，还有一个框架在市场上引起了不小的轰动。 Backbone.js是基于MVC架构的框架。 该框架有助于实现与控制器相同的组件逻辑。 它使用诸如mustache和underscore.js之类的引擎"
+}, {
+  "tag": "P",
+  "text": "It is one of the most flexible frameworks that allows quick development of single page application. To utilize this framework to the fullest the user has to choose tools: Chaplin, Thorax, handlebars and many such tools. If the user needs to design an app that has different types of audience backbone collection can be used to separate the models.",
+  "translation": "它是允许快速开发单页应用程序的最灵活的框架之一。 为了充分利用此框架，用户必须选择工具：卓别林，胸部，车把和许多此类工具。 如果用户需要设计具有不同类型的受众群体的应用程序，则可以使用骨干集合来分离模型。"
+}, {
+  "tag": "H1",
+  "text": "Reasons to use Backbone.js in 2020",
+  "translation": "2020年使用Backbone.js的原因"
+}, {
+  "tag": "UL",
+  "texts": ["The backbone library consists of events, models, views, collection, routers and what not", "The user can use templates engines such as mustache and jQUery tmpl", "Provides the users with backbone generator CLI for building a backbone app", "Backplug online repository CLI for building up the backbone apps", "It is one of the perfect choices for front-end and back-end development, and the framework supports REST APIs that are utilized to synchronize the front-end as well as back-end.", "When you would hire mobile app developers for your project, this framework would make their work easy."],
+  "translations": ["骨干库由事件，模型，视图，集合，路由器和其他内容组成", "用户可以使用模板引擎，例如mustache和jQUery tmpl", "为用户提供用于构建骨干应用程序的骨干生成器CLI", "Backplug在线存储库CLI，用于构建主干应用程序", "它是前端和后端开发的理想选择之一，并且该框架支持REST API，这些REST API用于同步前端和后端。", "当您为项目雇用移动应用程序开发人员时，此框架将使他们的工作变得容易。"]
+}, {
+  "tag": "H1",
+  "text": "Comparing the Five Frameworks: Which one would Suit your Project?",
+  "translation": "比较五个框架：哪个适合您的项目？"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*3-RMS3U6QLalcdNdGL2hjA.png?q=20",
+  "type": "image",
+  "file": "1*3-RMS3U6QLalcdNdGL2hjA.png"
+}, {
+  "tag": "P",
+  "text": "Not every javascript-based framework is a framework, but if you club it up with several libraries to the pack and construct those not quite framework scenario like the real ones.",
+  "translation": "并非每个基于javascript的框架都是一个框架，但是如果您将其与几个库组合在一起，并构建那些不像真正的框架那样的框架场景。"
+}, {
+  "tag": "P",
+  "text": "Thus, whichever framework you choose make sure that they are according to the project, and the ones that can do justice with it. Java app development company that are on the verge of making their decision should consider the above factors first.",
+  "translation": "因此，无论您选择哪种框架，都要确保它们与项目相符，并且可以与项目相称。 即将做出决定的Java应用程序开发公司应首先考虑上述因素。"
+}, {
+  "tag": "H2",
+  "text": "Read More: Java vs JavaScript: Which Is The Best Choice For 2019?",
+  "translation": "阅读更多：Java vs JavaScript：2019年最佳选择是什么？"
+}, {
+  "tag": "H1",
+  "text": "Conclusion",
+  "translation": "结论"
+}, {
+  "tag": "P",
+  "text": "You might still be in the dilemma where you would have questions like: Which one should I choose?",
+  "translation": "您可能仍处在困境中，您将遇到以下问题：我应该选择哪一个？"
+}, {
+  "tag": "P",
+  "text": "Well, there is no exact answer to it; first of all, it depends on the results. It is essential to consider the additional tools that you want to plan and use. After all, some framework performs better with the help of integration others can have a full set of their components and less suitable for secondary solutions.",
+  "translation": "好吧，没有确切的答案。 首先，这取决于结果。 必须考虑要计划和使用的其他工具。 毕竟，某些框架在集成的帮助下表现更好，而其他框架则可以拥有完整的组件，而不太适合辅助解决方案。"
+}, {
+  "tag": "P",
+  "text": "When you hire java app developers, make sure that they are well versed with the frameworks.",
+  "translation": "雇用Java应用程序开发人员时，请确保他们精通框架。"
+}, {
+  "tag": "P",
+  "text": "We hope that this article provided you with every possible answer to the questions that you had in mind. If you have any queries related to a similar topic, then you can write to us in the comment section below. The professionals and experts would try to solve it and provide you with necessary aid.",
+  "translation": "我们希望本文为您想到的问题提供所有可能的答案。 如果您有与类似主题相关的任何疑问，则可以在下面的评论部分中给我们写信。 专业人士和专家将尝试解决问题，并为您提供必要的帮助。"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Sophia Martin的文章《Looking for Top JavaScript Frameworks? Here are the top Libraries to watch out for in 2020!》，参考：https://medium.com/dataseries/looking-for-top-javascript-frameworks-here-are-the-top-libraries-to-watch-out-for-in-2020-7722a283e23c)",
+  "translation": "（本文翻译自Sophia Martin的文章《正在寻找顶级JavaScript框架？这是2020年值得关注的顶级图书馆！》，参考：https：//medium.com/dataseries/looking-for-top-javascript-frameworks 这是要在2020-7722a283e23c中注意的顶级图书馆）"
+}]
