@@ -1,0 +1,201 @@
+[{
+  "tag": "H1",
+  "text": "References",
+  "translation": "参考文献"
+}, {
+  "tag": "P",
+  "text": "[1] Doyen Sahoo et al, “Online Deep Learning: Learning Deep Neural Networks on the Fly” (2017), 1711.03705",
+  "translation": "[1] Doyen Sahoo等人，“在线深度学习：动态学习深度神经网络”（2017），1711.03705"
+}, {
+  "tag": "P",
+  "text": "[2] Jesse Read et al, “Batch-incremental Versus Instance-incremental Learning in Dynamic and Evolving Data” (2012), 978–3–642–34156–4_29",
+  "translation": "[2] Jesse Read等人，“动态和不断发展的数据中的批次增量与实例增量学习”（2012），978–3–642–34156–4_29"
+}, {
+  "tag": "P",
+  "text": "[3] Pedro Domingos and Geoff Hulten, “Mining High-speed Data Streams” (2000), 347090.347107",
+  "translation": "[3] Pedro Domingos和Geoff Hulten，“挖掘高速数据流”（2000年），347090.347107"
+}, {
+  "tag": "P",
+  "text": "[4] Maayan Harel et al, “Concept Drift Detection Through Resampling” (2014), citation.cfm",
+  "translation": "[4] Maayan Harel等人，“通过重采样进行概念漂移检测”（2014年），citation.cfm"
+}, {
+  "tag": "H1",
+  "text": "Conclusion",
+  "translation": "结论"
+}, {
+  "tag": "P",
+  "text": "Hopefully, this tutorial has helped you understand the basics of incremental learning. Moreover, I hope that you now grasp how to use scikit-multiflow for basic data-stream learning tasks.",
+  "translation": "希望本教程可以帮助您了解增量学习的基础。 此外，我希望您现在掌握如何将scikit-multiflow用于基本的数据流学习任务。"
+}, {
+  "tag": "H1",
+  "text": "Simple Online Classifier",
+  "translation": "简单的在线分类器"
+}, {
+  "tag": "P",
+  "text": "Now, let’s create a simple classifier for the SEA data stream. There are many incremental models available with scikit-multiflow, one of the most popular being Hoeffding Trees.",
+  "translation": "现在，让我们为SEA数据流创建一个简单的分类器。 scikit-multiflow提供了许多增量模型，其中最流行的一种是霍夫丁树。"
+}, {
+  "tag": "H2",
+  "text": "Hoeffding Trees",
+  "translation": "霍夫丁树"
+}, {
+  "tag": "P",
+  "text": "Hoeffding trees³ are built using the Very Fast Decision Tree Learner (VFDT), an anytime system that builds decision trees using constant memory and constant time per example. Introduced in 2000 by Pedro Domingos and Geoff Hulten, it makes use of a well known statistical result, the Hoeffding bound, in order to guarantee that its output is asymptotically identical to that of a traditional learner.",
+  "translation": "Hoeffding树³是使用甚快决策树学习器（VFDT）构建的，VFDT是一个随时可用的系统，每个示例均使用恒定内存和恒定时间来构建决策树。 它由Pedro Domingos和Geoff Hulten于2000年引入，它利用众所周知的统计结果Hoeffding界线，以确保其输出与传统学习器的输出渐近相同。"
+}, {
+  "tag": "P",
+  "text": "In scikit-multiflow, creating a Hoeffding Tree is done as follows",
+  "translation": "在scikit-multiflow中，创建Hoeffding树的步骤如下"
+}, {
+  "tag": "PRE",
+  "text": "from skmultiflow.trees import HoeffdingTreetree = HoeffdingTree()",
+  "translation": "从skmultiflow.trees导入HoeffdingTreetree = HoeffdingTree（）"
+}, {
+  "tag": "H2",
+  "text": "Training a Hoeffding Tree for Classification",
+  "translation": "训练Hoeffding树进行分类"
+}, {
+  "tag": "P",
+  "text": "If we want to train the tree on the SEA data stream, we can just loop through however many data points we want.",
+  "translation": "如果我们想在SEA数据流上训练树，则可以遍历想要的许多数据点。"
+}, {
+  "tag": "PRE",
+  "text": "correctness_dist = []for i in range(nb_iters):   X, Y = stream.next_sample()        # get the next sample   prediction = tree.predict(X)       # predict Y using the tree        if Y == prediction:                # check the prediction     correctness_dist.append(1)   else:     correctness_dist.append(0)         tree.partial_fit(X, Y)             # update the tree",
+  "translation": "correctness_dist = []对于范围内的i（nb_iters）：X，Y = stream.next_sample（）＃获取下一个样本预测= tree.predict（X）＃如果Y ==预测，则使用树预测Y：＃检查预测 correctness_dist.append（1）否则：correctness_dist.append（0）tree.partial_fit（X，Y）＃更新树"
+}, {
+  "tag": "P",
+  "text": "Using “correctness_dist”, an array of ones and zeros depending on whether the learner accurately classified the incoming sample, we can plot the accuracy over time",
+  "translation": "使用“ correctness_dist”，由一和零组成的数组，取决于学习者是否对输入的样本进行了准确分类，我们可以绘制随时间变化的准确性"
+}, {
+  "tag": "PRE",
+  "text": "import matplotlib.pyplot as plttime = [i for i in range(1, nb_iters)]accuracy = [sum(correctness_dist[:i])/len(correctness_dist[:i]) for i in range(1, nb_iters)]plt.plot(time, accuracy)",
+  "translation": "将matplotlib.pyplot导入为plttime = [i对于范围（1，nb_iters）中的i]]精度= [对于i（范围（1，nb_iters））中的len（correctness_dist [：i]）/ len（correctness_dist [：i]）] plt .plot（时间，精度）"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*wXsooLyp_bqWFLKX.png?q=20",
+  "caption": "Accuracy over time for a Hoeffding tree modeling the SEA generator",
+  "type": "image",
+  "file": "0*wXsooLyp_bqWFLKX.png"
+}, {
+  "tag": "H2",
+  "text": "Alternative Approach with Scikit-Multiflow",
+  "translation": "Scikit-Multiflow的替代方法"
+}, {
+  "tag": "P",
+  "text": "In scikit-multiflow, there is a built-in way to do the exact same thing with less code. What we can do is import the EvaluatePrequential class:",
+  "translation": "在scikit-multiflow中，有一种内置的方法可以用更少的代码完成完全相同的事情。 我们可以做的是导入EvaluatePrequential类："
+}, {
+  "tag": "P",
+  "text": "We can then set up an “evaluator” as follows",
+  "translation": "然后，我们可以如下设置“评估者”"
+}, {
+  "tag": "PRE",
+  "text": "evaluator=EvaluatePrequential(show_plot=True,max_samples=nb_iters)",
+  "translation": "evaluator = EvaluatePrequential（show_plot = True，max_samples = nb_iters）"
+}, {
+  "tag": "P",
+  "text": "Setting the show_plot=True option will allow a pop up to appear with a real time plot of the classification accuracy.",
+  "translation": "设置show_plot = True选项将允许弹出窗口显示分类精度的实时图。"
+}, {
+  "tag": "P",
+  "text": "Now that the evaluator is set up, we can use it to incrementally train our Hoeffding Tree on the SEA data stream, in the same way as before:",
+  "translation": "现在已经设置了评估程序，我们可以使用它以与以前相同的方式在SEA数据流上增量训练Hoeffding树："
+}, {
+  "tag": "PRE",
+  "text": "evaluator.evaluate(stream=stream, model=tree)",
+  "translation": "evaluator.evaluate（stream = stream，model = tree）"
+}, {
+  "tag": "H1",
+  "text": "Working with Data-Streams in Python",
+  "translation": "在Python中使用数据流"
+}, {
+  "tag": "P",
+  "text": "Now that we’ve talked about what incremental learning is, let’s work out a simple example in Scikit-Multiflow, a free Python framework for data-stream learning.",
+  "translation": "现在，我们已经讨论了增量学习是什么，让我们在Scikit-Multiflow（一个用于数据流学习的免费Python框架）中创建一个简单的例子。"
+}, {
+  "tag": "P",
+  "text": "The first thing that we want to do is to install scikit-multiflow.",
+  "translation": "我们要做的第一件事是安装scikit-multiflow。"
+}, {
+  "tag": "PRE",
+  "text": "pip install -U scikit-multiflow",
+  "translation": "点安装-U scikit-multiflow"
+}, {
+  "tag": "P",
+  "text": "Importing a data generator is easy and can be done with the following command:",
+  "translation": "导入数据生成器很容易，可以使用以下命令完成："
+}, {
+  "tag": "PRE",
+  "text": "from skmultiflow.data import SEAGenerator",
+  "translation": "从skmultiflow.data导入SEAGenerator"
+}, {
+  "tag": "P",
+  "text": "Here, we’re going to work with the SEA generator, but there are many other available options (see the documentation for details: https://scikit-multiflow.github.io/scikit-multiflow/ ). The SEA generator allows you to generate an infinite data stream with 6 inputs and 2 outputs. This particular data stream contains frequent, abrupt concept drift.",
+  "translation": "在这里，我们将使用SEA生成器，但还有许多其他可用的选项（有关详细信息，请参见文档：https://scikit-multiflow.github.io/scikit-multiflow/）。 SEA生成器允许您生成具有6个输入和2个输出的无限数据流。 这个特定的数据流包含频繁，突然的概念漂移。"
+}, {
+  "tag": "P",
+  "text": "Using the generator is quite easy. The first thing we need to do is initialize it as follows:",
+  "translation": "使用发电机非常容易。 我们需要做的第一件事是将其初始化如下："
+}, {
+  "tag": "PRE",
+  "text": "stream = SEAGenerator()      # create a streamstream.prepare_for_use()     # prepare the stream for use",
+  "translation": "stream = SEA Generator（）＃创建一个流stream.prepare_for_use（）＃准备要使用的流"
+}, {
+  "tag": "P",
+  "text": "Then, if we wish to obtain a data sample, all we need to do is",
+  "translation": "然后，如果我们希望获得数据样本，我们要做的就是"
+}, {
+  "tag": "PRE",
+  "text": "X,Y = stream.next_sample()",
+  "translation": "X，Y = stream.next_sample（）"
+}, {
+  "tag": "P",
+  "text": "where X , the input, is a 6 dimensional np.array and Y, the output, is a 2 dimensional np.array.",
+  "translation": "其中X是输入，是6维np.array，而Y是输出，是2维np.array。"
+}, {
+  "tag": "H1",
+  "text": "What is Incremental Learning?",
+  "translation": "什么是增量学习？"
+}, {
+  "tag": "P",
+  "text": "At every iteration, the model predicts a class label, reveals the true label, and is then updated",
+  "translation": "在每次迭代中，模型都会预测一个类标签，显示出真实的标签，然后进行更新"
+}, {
+  "tag": "P",
+  "text": "Incremental learning refers to a family of scalable algorithms that learn to sequentially update models from infinite data streams¹. Whereas in “traditional” machine learning, we’re given a complete dataset consisting of (input, output) pairs, in incremental learning, we don’t have all of the data available when creating the model. Instead, the data points arrive one at a time and we have to build a “living” model, one that learns and adapts as the data comes. An incremental model has the following characteristics²:",
+  "translation": "增量学习指的是一系列可扩展算法，可以学习从无限数据流中顺序更新模型¹。 在“传统”机器学习中，我们获得了由（输入，输出）对组成的完整数据集，而在增量学习中，创建模型时并没有所有可用数据。 取而代之的是，数据点一次到达一个，我们必须建立一个“生命”模型，该模型可以随着数据的到来而学习和适应。 增量模型具有以下特征²："
+}, {
+  "tag": "UL",
+  "texts": ["It can predict at any time", "It can adapt to concept drift — i.e. changes in the data distribution⁴. To give a concrete example, if we’re interested in building a model that predicts how much money a bank should loan, a financial crisis might alter the amounts or the factors that need to be considered. In this case, the model needs to re-learn a lot of information.", "It is able to process an infinite data stream with finite resources (time and memory). This means that it cannot store all of the training data as in typical machine learning approaches."],
+  "translations": ["它可以随时预测", "它可以适应概念漂移-即数据分布的变化changes。 举一个具体的例子，如果我们有兴趣建立一个模型来预测银行应该借多少钱，那么金融危机可能会改变金额或需要考虑的因素。 在这种情况下，模型需要重新学习很多信息。", "它能够处理具有有限资源（时间和内存）的无限数据流。 这意味着它无法像典型的机器学习方法那样存储所有训练数据。"]
+}, {
+  "tag": "H1",
+  "text": "Introduction",
+  "translation": "介绍"
+}, {
+  "tag": "P",
+  "text": "Data is all around us. Whether it’s profile pictures, tweets, sensor applications, credit card transactions, emails, or news feeds, data is here…and it’s being generated at incredibly fast speeds. With these seemingly infinite streams of data, one of the key challenges is to create lightweight models that are always ready to predict and adaptive to changes in the data distribution. The limitations of traditional machine learning methods in this setting has led to the development of online learning (also called incremental learning) methods.",
+  "translation": "数据无处不在。 无论是个人资料图片，tweet，传感器应用程序，信用卡交易，电子邮件还是新闻提要，数据都在这里……而且它以惊人的速度生成。 利用这些看似无限的数据流，关键挑战之一就是创建轻量级模型，这些模型随时可以预测并适应数据分布的变化。 在这种情况下，传统机器学习方法的局限性导致了在线学习（也称为增量学习）方法的发展。"
+}, {
+  "tag": "P",
+  "text": "In this post, we will gently introduce incremental learning through a practical implementation of a simple online classifier with scikit-multiflow, a Python framework for data stream learning.",
+  "translation": "在这篇文章中，我们将通过使用scikit-multiflow（一个用于数据流学习的Python框架）的简单在线分类器的实际实现，来逐步介绍增量学习。"
+}, {
+  "tag": "H1",
+  "text": "Incremental (Online) Learning with Scikit-Multiflow",
+  "translation": "使用Scikit-Multiflow进行增量（在线）学习"
+}, {
+  "tag": "H2",
+  "text": "A practical introduction to incremental learning in Python using scikit-multiflow",
+  "translation": "使用scikit-multiflow在Python中进行增量学习的实用介绍"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/freeze/max/30/1*jG-S8-VulDjA4dmuej90LQ.gif?q=20",
+  "caption": "Source: https://scikit-multiflow.github.io",
+  "type": "image",
+  "file": "1*jG-S8-VulDjA4dmuej90LQ.gif"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Louis de Benoist的文章《Incremental (Online) Learning with Scikit-Multiflow》，参考：https://towardsdatascience.com/incremental-online-learning-with-scikit-multiflow-6b846913a50b)",
+  "translation": "（本文翻译自Louis de Benoist的文章，《使用Scikit-Multiflow进行增量（在线）学习》，参考：https：//towardsdatascience.com/incremental-online-learning-with-scikit-multiflow-6b846913a50b）"
+}]
