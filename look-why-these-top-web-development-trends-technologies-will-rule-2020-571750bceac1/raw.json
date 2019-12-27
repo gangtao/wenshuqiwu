@@ -1,0 +1,331 @@
+[{
+  "tag": "H1",
+  "text": "Look Why These Top Web Development Trends & Technologies Will Rule 2020",
+  "translation": "看看为什么这些顶级Web开发趋势和技术将统治2020年"
+}, {
+  "tag": "H2",
+  "text": "The ever growing digital world has over 1.8 B web applications and 200 million active websites till date. Each day thousands of new websites are added in the world wide web to intensify the competition.",
+  "translation": "迄今为止，不断发展的数字世界拥有超过1.8 B个Web应用程序和2亿个活跃网站。 每天，互联网上都会增加成千上万个新网站，以加剧竞争。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*_BMA2UMVkgpNXP4o?q=20",
+  "type": "image",
+  "file": "0*_BMA2UMVkgpNXP4o"
+}, {
+  "tag": "P",
+  "text": "Successful businesses and smart developers always look ahead for creative ways to adapt in this ever changing digital world. As latest trends emerge, new opportunities will arise. Staying on top of the latest web app development technologies could eventually help developers and businesses alike.",
+  "translation": "成功的企业和精明的开发人员始终在寻求创新方法，以适应这个瞬息万变的数字世界。 随着最新趋势的出现，新的机会将会出现。 掌握最新的Web应用程序开发技术可能最终可以帮助开发人员和企业。"
+}, {
+  "tag": "P",
+  "text": "Every new year promises to bring modern innovations, new ideas, and new web development initiatives that is deserved; from current developments in artificial intelligence to machine learning, Blockchain and cryptocurrency influencing the global economy. In terms of software technology, everything is so unpredictable and variable.",
+  "translation": "每个新的一年都将带来应有的现代创新，新思想和新的Web开发计划； 从人工智能的最新发展到机器学习，影响全球经济的区块链和加密货币。 就软件技术而言，一切都是不可预测且可变的。"
+}, {
+  "tag": "P",
+  "text": "From time to time, progress surprise and change our world. The digital revolution continues to define trends and seduce us with new technologies that will appeal to developers and programmers around the world. People are always excited about the most popular languages ​​/ frameworks, as well as the latest updates on web design and software applications.",
+  "translation": "时不时，进步会带来惊喜并改变我们的世界。 数字革命继续定义趋势，并用新技术吸引我们，这些新技术将吸引全球的开发人员和程序员。 人们总是对最流行的语言/框架以及网页设计和软件应用程序的最新更新感到兴奋。"
+}, {
+  "tag": "P",
+  "text": "To give you an idea, here are the top 13 web development trends in 2019 that will dominate the web industry:",
+  "translation": "为了给您一个想法，以下是2019年将主导网络行业的13大网络开发趋势："
+}, {
+  "tag": "H1",
+  "text": "1. Machine learning",
+  "translation": "1.机器学习"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*K_OGkwP5sPw6Wl0L?q=20",
+  "type": "image",
+  "file": "0*K_OGkwP5sPw6Wl0L"
+}, {
+  "tag": "P",
+  "text": "Image source",
+  "translation": "图片来源"
+}, {
+  "tag": "P",
+  "text": "Artificial intelligence and machine learning affects our daily activities on the Internet without even realizing it. This is the main point of machine learning: to provide enhanced experiences natively.",
+  "translation": "人工智能和机器学习甚至影响了我们在Internet上的日常活动，甚至没有意识到它。 这是机器学习的重点：本机提供增强的体验。"
+}, {
+  "tag": "P",
+  "text": "Machine learning is the ability of software to improve performance without the direct intervention of software developers. Basically, the software analyzes the incoming data, makes decisions, detects trends, and improves its work.",
+  "translation": "机器学习是软件提高性能的能力，而无需软件开发人员的直接干预。 基本上，该软件会分析传入的数据，做出决策，检测趋势并改善其工作。"
+}, {
+  "tag": "P",
+  "text": "For example, Airbnb used machine learning in order to customize guest search results to enhance their chances of accepting their request. An automatic machine learning algorithm analyzes the acceptance decisions of each requests of hosts. On the basis of it, search results in lists that are more likely to be accepted have a higher rank. A/ B testing showed a 3.75% increment in conversion. As a result of this, all users of Airbnb are now treated according to this algorithm, which increases revenue and improves customer satisfaction.",
+  "translation": "例如，Airbnb使用机器学习来定制访客搜索结果，以增加他们接受其请求的机会。 自动机器学习算法分析主机每个请求的接受决策。 基于此，列表中更可能被接受的搜索结果具有较高的排名。 A / B测试显示转化率提高了3.75％。 结果，现在已经根据该算法对Airbnb的所有用户进行了处理，从而增加了收入并提高了客户满意度。"
+}, {
+  "tag": "P",
+  "text": "A good example, isn’t it? But, there is so much more on this! Image recognition and natural language activation can improve the user experience. Perception of the machine learning allows the computer to interpret the information and make informed decisions on the basis of this. Machine learning is widely used in web applications from different sectors, such as finance, health, education, agriculture, to name a few. This latest technology offers significant improvements that would be quite difficult to achieve without artificial intelligence.",
+  "translation": "很好的例子，不是吗？ 但是，还有更多的东西！ 图像识别和自然语言激活可以改善用户体验。 机器学习的感知使计算机可以解释信息并据此做出明智的决策。 机器学习已广泛应用于金融，卫生，教育，农业等不同领域的Web应用程序中。 这项最新技术提供了重大改进，如果没有人工智能，这将是很难实现的。"
+}, {
+  "tag": "P",
+  "text": "Machine learning becomes an important part of any web service. It is important to integrate it in your web app development services! Analyze the behavior of visitors to your website and adjust their content.",
+  "translation": "机器学习成为任何Web服务的重要组成部分。 将其集成到您的Web应用程序开发服务中非常重要！ 分析网站访问者的行为并调整他们的内容。"
+}, {
+  "tag": "P",
+  "text": "Your visitors will never discover that you are using an algorithm, but their satisfaction will translate into increased engagement and conversion!",
+  "translation": "您的访客永远不会发现您正在使用算法，但是他们的满意将转化为更多的参与和转换！"
+}, {
+  "tag": "P",
+  "text": "Machine learning can be your secret weapon to surpass your competitors!",
+  "translation": "机器学习可以成为超越竞争对手的秘密武器！"
+}, {
+  "tag": "H1",
+  "text": "2. WebAssembly",
+  "translation": "2. WebAssembly"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*FAxpTakDyUjiplTX?q=20",
+  "type": "image",
+  "file": "0*FAxpTakDyUjiplTX"
+}, {
+  "tag": "P",
+  "text": "While creating a web application, performance is generally compromised. JS limitations slow down heavy calculations, which affects user performance dramatically. That is why the most popular gaming applications and other heavy applications are only available as a native desktop application.",
+  "translation": "创建Web应用程序时，通常会降低性能。 JS限制会减慢繁重的计算速度，从而极大地影响用户性能。 这就是为什么最受欢迎的游戏应用程序和其他繁重的应用程序只能作为本机桌面应用程序使用的原因。"
+}, {
+  "tag": "P",
+  "text": "Now WebAssembly is here to change this scenario. This new format aims at performances similar to those of web applications. With the help of WebAssembly, the code of any programming language can be compiled into bytecode that runs in a browser.",
+  "translation": "现在，WebAssembly在这里可以更改这种情况。 这种新格式旨在实现类似于Web应用程序的性能。 借助WebAssembly，可以将任何编程语言的代码编译为在浏览器中运行的字节码。"
+}, {
+  "tag": "P",
+  "text": "The WebAssembly code is executed faster than JS. As a result of this, you can write the critical parts of the web application’s performance with the most appropriate language (C/ C ++/ C #/ Rust/ Kotlin, etc.). Then, WebAssembly will take over the execution in the browser. Native mobile applications can be run immediately in the browser. This means access to more users while offering comparable performance on the web app without additional cost of development costs.",
+  "translation": "WebAssembly代码的执行速度比JS快。 因此，您可以使用最合适的语言（C / C ++ / C＃/ Rust / Kotlin等）编写Web应用程序性能的关键部分。 然后，WebAssembly将接管浏览器中的执行。 本地移动应用程序可以立即在浏览器中运行。 这意味着可以访问更多用户，同时在Web应用程序上提供可比的性能而无需额外的开发成本。"
+}, {
+  "tag": "P",
+  "text": "The major problem with WebAssembly is that some web browsers do not support it yet. However, that will be changed soon. Web applications are gaining immense strength with WebAssembly. This latest technology is really worth trying.",
+  "translation": "WebAssembly的主要问题是某些Web浏览器尚不支持它。 但是，这将很快改变。 Web应用程序通过WebAssembly获得了巨大的优势。 这项最新技术确实值得尝试。"
+}, {
+  "tag": "H2",
+  "text": "Read More: Vue.Js Vs Angular.Js.: Which is the Best Performing JavaScript Framework for Web Development?",
+  "translation": "阅读更多：Vue.Js与Angular.Js .：哪种Web开发是性能最佳的JavaScript框架？"
+}, {
+  "tag": "H1",
+  "text": "3. Voice search",
+  "translation": "3.语音搜索"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*YAvdNJEhsIn6-6hP?q=20",
+  "type": "image",
+  "file": "0*YAvdNJEhsIn6-6hP"
+}, {
+  "tag": "P",
+  "text": "At present, we are experiencing the beginning of the era of voice search. Each smartphone is already equipped with a digital voice assistant (Google Assistant for Android phones & Siri for iPhone). In addition to this, smart speakers with artificial intelligence are gaining immense popularity. Let’s find out the reason for this transition to voice interfaces:",
+  "translation": "目前，我们正在经历语音搜索时代的开始。 每个智能手机已经配备了数字语音助手（Android手机的Google Assistant和iPhone的Siri）。 除此之外，具有人工智能的智能扬声器正变得越来越受欢迎。 让我们找出过渡到语音界面的原因："
+}, {
+  "tag": "H2",
+  "text": "Ease of use",
+  "translation": "使用方便"
+}, {
+  "tag": "P",
+  "text": "Communication is something we do not have to learn. As a result, seniors and children can interact with voice interfaces without any learning curve.",
+  "translation": "交流是我们不必学习的东西。 结果，老年人和儿童可以与语音界面进行交互，而无需任何学习过程。"
+}, {
+  "tag": "H2",
+  "text": "Affordability",
+  "translation": "负担能力"
+}, {
+  "tag": "P",
+  "text": "Digital voice assistants are a common feature of smartphones. Smart speakers are not yet common, but a price tag starting from $ 50 is an excellent prerequisite for expansion.",
+  "translation": "数字语音助手是智能手机的常见功能。 智能扬声器还不是很普遍，但是价格从50美元起是扩展的绝佳前提。"
+}, {
+  "tag": "P",
+  "text": "Voice search is one of the major trends in e-commerce website development. However, it is also applicable to all website businesses. If you want your web application to be found in the search engines, optimize it for voice search as soon as possible.",
+  "translation": "语音搜索是电子商务网站发展的主要趋势之一。 但是，它也适用于所有网站业务。 如果要在搜索引擎中找到Web应用程序，请尽快对其进行优化以进行语音搜索。"
+}, {
+  "tag": "H1",
+  "text": "4. Chat Bots",
+  "translation": "4.聊天机器人"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*w4-_fj6NdovfjKHK?q=20",
+  "type": "image",
+  "file": "0*w4-_fj6NdovfjKHK"
+}, {
+  "tag": "P",
+  "text": "Chatbots are created using machine learning and artificial intelligence (AI). AI is widely used to imitate human intelligence and perform simple as well as complex functions like the ability to learn and analyze information, collect all the crucial data, understand emotions of humans, or to solve complex business challenges and problems. The need for",
+  "translation": "聊天机器人是使用机器学习和人工智能（AI）创建的。 人工智能被广泛用来模仿人类的智能，并执行简单和复杂的功能，例如学习和分析信息，收集所有关键数据，理解人类情感或解决复杂的业务挑战和问题的能力。 需要"
+}, {
+  "tag": "P",
+  "text": "The need for chatbots in the web application will become widespread in the year 2020 and beyond. At present, we can easily see how chatbots, virtual assistants (like Amazon, Alexa, Microsoft’s Cortana and Apple’s Siri) and voicemail robots have helped small businesses as well as big enterprises to engage and transform social interactions.",
+  "translation": "Web应用程序中对聊天机器人的需求在2020年及以后将变得越来越普遍。 目前，我们可以轻松地看到聊天机器人，虚拟助手（例如Amazon，Alexa，微软的Cortana和Apple的Siri）和语音邮件机器人如何帮助小型企业和大型企业参与并转变社交互动。"
+}, {
+  "tag": "P",
+  "text": "Their evolution has allowed the omnichannel to build a digital customer experience and ensure consistency between chat, voice, messaging and web applications. You should definitely integrate chatbots and other AI features in your project while availing software development services.",
+  "translation": "他们的发展使全渠道可以建立数字客户体验，并确保聊天，语音，消息传递和Web应用程序之间的一致性。 在使用软件开发服务的同时，您绝对应该在项目中集成聊天机器人和其他AI功能。"
+}, {
+  "tag": "H1",
+  "text": "5. Progressive Web Applications",
+  "translation": "5.渐进式Web应用程序"
+}, {
+  "tag": "P",
+  "text": "Progressive Web applications also known as PWAs are among the hottest web app development trends in 2020 and beyond. These modern web applications load like regular web app pages that have a high level of functionality. Let us take the example of Whatsapp on your smartphone.",
+  "translation": "渐进式Web应用程序（也称为PWA）是2020年及以后最热门的Web应用程序开发趋势之一。 这些现代的Web应用程序的加载类似于具有高功能级别的常规Web应用程序页面。 让我们以您的智能手机上的Whatsapp为例。"
+}, {
+  "tag": "P",
+  "text": "When there is no network, still you can open that application, check your past messages and even reply to the messages. When the phone gets the net connection, these messages are being sent in the background automatically.",
+  "translation": "当没有网络时，您仍然可以打开该应用程序，检查您过去的消息，甚至回复这些消息。 当电话建立网络连接时，这些消息将在后台自动发送。"
+}, {
+  "tag": "P",
+  "text": "This is what PWA promises to provide in web applications. It enables websites to load when there is no network, and it syncs in the background and seamlessly do different things while providing a native mobile app like experience for your users.",
+  "translation": "这就是PWA承诺在Web应用程序中提供的内容。 它使网站可以在没有网络的情况下进行加载，并在后台同步并无缝地执行不同的操作，同时为用户提供本地移动应用（如体验）。"
+}, {
+  "tag": "H1",
+  "text": "6. Single Page Applications",
+  "translation": "6.单页应用程序"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*Mw82vIfGVgEPaf73?q=20",
+  "type": "image",
+  "file": "0*Mw82vIfGVgEPaf73"
+}, {
+  "tag": "P",
+  "text": "Image source",
+  "translation": "图片来源"
+}, {
+  "tag": "P",
+  "text": "A single-page web application works inside a web browser and does not need the webpage reloading during the usage. You are using this type of web apps every day. These are, for instance: Google Maps, Gmail, Facebook or GitHub.",
+  "translation": "单页Web应用程序可在Web浏览器中运行，并且在使用过程中不需要重新加载网页。 您每天都在使用这种类型的Web应用程序。 例如，这些是：Google Maps，Gmail，Facebook或GitHub。"
+}, {
+  "tag": "P",
+  "text": "SPAs are all about serving an outstanding user experience by trying to imitate the “natural” environment in web browser — no extra wait time as there is no page reload. It is just one web page that is being visited by you which then loads all other content using JS — which they heavily depend on.",
+  "translation": "SPA旨在通过模仿Web浏览器中的“自然”环境来提供出色的用户体验-无需额外的等待时间，因为无需重新加载页面。 您访问的只是一个网页，然后使用JS加载所有其他内容，而JS正是这些内容。"
+}, {
+  "tag": "P",
+  "text": "It is a great choice when creating responsive websites, supporting mobile applications, tablets and desktops. The latest developments in single-page application are based on Angular and React frameworks that make it practical and suitable for hybrid mobile applications.",
+  "translation": "当创建响应式网站，支持移动应用程序，平板电脑和台式机时，这是一个不错的选择。 单页应用程序的最新发展基于Angular和React框架，使其实用并适合于混合移动应用程序。"
+}, {
+  "tag": "H2",
+  "text": "Read More: How Artificial Intelligence (AI) Will Impact Web Developers life in 2020?",
+  "translation": "阅读更多：人工智能（AI）将如何影响2020年Web开发人员的生活？"
+}, {
+  "tag": "H1",
+  "text": "7. Thriving Push Notifications",
+  "translation": "7.蓬勃发展的推送通知"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*rdPjRGhxV7jqPeHf?q=20",
+  "type": "image",
+  "file": "0*rdPjRGhxV7jqPeHf"
+}, {
+  "tag": "P",
+  "text": "In the same way, as in mobile applications, a web app with push notifications can bring you to a large number of viewers. In addition to this, you can take advantage of it in the online marketing business. Push notifications are proving to be one of the most influential services in order to attract the attention of customers and visitors. Although, you must avoid using too much. They allow you to inform clients about attractive discounts, their beneficial activities and many more.",
+  "translation": "与移动应用程序一样，具有推送通知的Web应用程序可以将您带到大量的观看者。 除此之外，您还可以在在线营销业务中利用它。 事实证明，推送通知是最有影响力的服务之一，可以吸引客户和访客的注意。 虽然，您必须避免使用过多。 它们使您可以告知客户诱人的折扣，其有益的活动等等。"
+}, {
+  "tag": "H1",
+  "text": "8. AMP prevails",
+  "translation": "8. AMP为准"
+}, {
+  "tag": "P",
+  "text": "Since Google has increased the importance of mobile-enabled websites, the method of designing responsive web applications has become a dominant method. It seems to be a promising trend in the web app design.",
+  "translation": "由于Google增强了移动网站的重要性，因此设计响应式Web应用程序的方法已成为一种主要方法。 在Web应用程序设计中，这似乎是一个有希望的趋势。"
+}, {
+  "tag": "P",
+  "text": "According to the February 2017 report of Adobe, Accelerated Mobile Pages (AMP) accounts for 7% of all website traffic of the best publishers in the United States.",
+  "translation": "根据Adobe 2017年2月的报告，加速移动页面（AMP）占美国最佳发行商的所有网站流量的7％。"
+}, {
+  "tag": "P",
+  "text": "AMP is specifically designed to dramatically enhance the performance of website content and ads as you work on website user experience and speed. The fluid working method makes it a favourite among people. It promises a place and a reputation intact in the long run.",
+  "translation": "AMP专门设计用于在您处理网站用户体验和速度时显着提高网站内容和广告的性能。 流畅的工作方法使其成为人们的最爱。 从长远来看，它保证了一个位置和声誉。"
+}, {
+  "tag": "H1",
+  "text": "9. The Promising Concept of RAIL",
+  "translation": "9.有前途的铁路概念"
+}, {
+  "tag": "P",
+  "text": "The latest design concept Response Animation Idle Load (RAIL) should be in demand in the future. This concept is linked to a faster loading time (less than one second) and the exceptional performance of ant web applications.",
+  "translation": "将来应该会需求最新的设计概念Response Animation空闲负载（RAIL）。 该概念与更快的加载时间（不到一秒钟）和ant Web应用程序的出色性能有关。"
+}, {
+  "tag": "P",
+  "text": "The main benefit of this concept is it provides a convenient and pleasant user experience. According to Smashing Magazine, RAIL divides the user experience into actions of tapping, dragging, scrolling, etc., and sets performance goals with a useful structure for even better performance.",
+  "translation": "这个概念的主要好处是它提供了方便而愉快的用户体验。 根据Smashing Magazine的介绍，RAIL将用户体验分为轻击，拖动，滚动等操作，并通过有用的结构设置性能目标，从而获得更好的性能。"
+}, {
+  "tag": "P",
+  "text": "In a nutshell, the Response Animation Idle Load concept is valuable to a web designer following the user-centric method.",
+  "translation": "简而言之，响应动画空闲负载概念对于遵循用户中心方法的Web设计人员来说非常有价值。"
+}, {
+  "tag": "H1",
+  "text": "10. Blockchain",
+  "translation": "10.区块链"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*H_NUxm8_NtxZpNmH?q=20",
+  "type": "image",
+  "file": "0*H_NUxm8_NtxZpNmH"
+}, {
+  "tag": "P",
+  "text": "The blockchain technology is undeniably one of the best inventions of this digital era — the masterpiece of a person known by the pseudonym, Satoshi Nakamoto. Since its invention, it has been evolved into something greater, and one of the main questions every single person is asking is: What is Blockchain?",
+  "translation": "不可否认，区块链技术是该数字时代的最佳发明之一-笔名中本聪（Satoshi Nakamoto）的杰作。 自发明以来，它已经发展成为更大的东西，每个人都在问的主要问题之一是：什么是区块链？"
+}, {
+  "tag": "P",
+  "text": "Blockchain is a distributed and open registry known for its decentralized consensus, secure design, and modified resistance blocks. It is carefully designed to reduce the frequency of settlement of transactions, reduce financial costs, and improve cash flows backed up by transparent records/ data.",
+  "translation": "区块链是一个分布式的开放式注册表，以其分散的共识，安全的设计和改进的抵抗力块而闻名。 它经过精心设计，以减少交易的结算频率，降低财务成本，并改善由透明记录/数据支持的现金流量。"
+}, {
+  "tag": "P",
+  "text": "As a peer-to-peer network, this technology has a strict protocol for inter-node communication and a new validation process for block that has earned it the title of “First and most trusted cryptosystem- global currency “.",
+  "translation": "作为点对点网络，该技术具有用于节点间通信的严格协议和用于块的新验证过程，从而赢得了“第一和最受信任的密码系统-全球货币”的称号。"
+}, {
+  "tag": "H1",
+  "text": "11. Browser Extensions",
+  "translation": "11.浏览器扩展"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*DAfOtoSVK4ctT5CY?q=20",
+  "type": "image",
+  "file": "0*DAfOtoSVK4ctT5CY"
+}, {
+  "tag": "P",
+  "text": "Google Chrome browser and its long list of extensions have become the favorites of most of the people. However, there are some people consider browser extensions to be harmful to their privacy. Some people do this because such extensions are able to read the online activities of their users with various permissions.",
+  "translation": "Google Chrome浏览器及其扩展程序的长列表已成为大多数人的最爱。 但是，有些人认为浏览器扩展对其隐私有害。 之所以有人这样做，是因为此类扩展程序能够读取具有各种权限的用户的在线活动。"
+}, {
+  "tag": "P",
+  "text": "If you plan to adopt the most useful extension for your browser, do not forget the importance of protecting privacy. You can also hire best web app developers for customizing an extension as per your business needs.",
+  "translation": "如果您打算为您的浏览器采用最有用的扩展程序，请不要忘记保护隐私的重要性。 您还可以聘请最佳的Web应用程序开发人员来根据您的业务需求自定义扩展。"
+}, {
+  "tag": "H1",
+  "text": "12. Motion UI",
+  "translation": "12.运动界面"
+}, {
+  "tag": "P",
+  "text": "A good web design is a necessary component of a successful website. These are crucial as it helps to design a good UI thereby providing them with a better UX. This, in turn, helps you to enhance your reach to more number of users because they can navigate easily on your web app. A good website comprises of different elements like fonts, colors, space, and icons. In the earlier days, the static design of the website was used but nowadays motion UI design is quite in trend. Motion UI design can help bring digital products to life.",
+  "translation": "好的网页设计是成功网站的必要组成部分。 这些至关重要，因为它有助于设计一个好的UI，从而为他们提供更好的UX。 反过来，这可以帮助您扩大与更多用户的联系，因为他们可以在您的Web应用程序上轻松导航。 一个好的网站包含字体，颜色，空格和图标之类的不同元素。 在早期，使用网站的静态设计，但如今，运动UI设计已成为一种趋势。 Motion UI设计可以帮助使数字产品栩栩如生。"
+}, {
+  "tag": "P",
+  "text": "It is a durable library that offers seamless transition effects on the UI. This is one of the fastest-growing libraries because it allows web app developers to animate content as easily as possible, even without a solid foundation in JS or jQuery library.",
+  "translation": "它是一个耐用的库，可在UI上提供无缝的过渡效果。 这是增长最快的库之一，因为即使没有JS或jQuery库的坚实基础，Web应用程序开发人员也可以尽可能轻松地为内容设置动画。"
+}, {
+  "tag": "H1",
+  "text": "13. Virtual Reality (VR) and Augmented Reality (AR)",
+  "translation": "13.虚拟现实（VR）和增强现实（AR）"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*l5GRCq74-QE8Dhh3?q=20",
+  "type": "image",
+  "file": "0*l5GRCq74-QE8Dhh3"
+}, {
+  "tag": "P",
+  "text": "Augmented reality (AR) and Virtual reality (VR) technologies look promising in the future due to their potential to change the way interactions occur among the websites. There are various well-known companies like Google, Samsung, and Microsoft are spending a lot of their revenue on these latest technologies.",
+  "translation": "增强现实（AR）和虚拟现实（VR）技术在未来看起来很有希望，因为它们有可能改变网站之间交互的方式。 有许多知名公司，例如Google，Samsung和Microsoft，都在这些最新技术上花费了大量收入。"
+}, {
+  "tag": "P",
+  "text": "You can immerse your users in the virtual world with the help of virtual reality technology. On the other hand, Augmented Reality (AR) shows the vision of a virtual world in this real-world while dramatically improving the user experience.",
+  "translation": "您可以借助虚拟现实技术将用户沉浸在虚拟世界中。 另一方面，增强现实（AR）展示了该现实世界中虚拟世界的愿景，同时极大地改善了用户体验。"
+}, {
+  "tag": "P",
+  "text": "VR and AR have exceeded the limits of mobile applications. Their collective market is estimated to total about US $ 215 billion by the year 2021.",
+  "translation": "VR和AR已经超出了移动应用程序的限制。 到2021年，他们的集体市场总额估计约为2150亿美元。"
+}, {
+  "tag": "P",
+  "text": "Wrapping Up:",
+  "translation": "包起来："
+}, {
+  "tag": "P",
+  "text": "I hope you will be able to get the idea of emerging technologies for web app development. Now a days, more and more software development companies in India are using these technologies to make the best out of their web app development project.",
+  "translation": "希望您能够了解用于Web应用程序开发的新兴技术。 如今，印度越来越多的软件开发公司正在使用这些技术来充分利用其Web应用程序开发项目。"
+}, {
+  "tag": "P",
+  "text": "If you are a business and looking for web app development solutions, you should go for those companies which are implementing these technologies in their project. These technologies and trends will definitely make your web applications out of the box and you can stay ahead in this competition. Please let me know in the comment box about your views for this blog.",
+  "translation": "如果您是一家企业，并且正在寻找Web应用程序开发解决方案，则应选择在其项目中实施这些技术的那些公司。 这些技术和趋势肯定会使您的Web应用程序开箱即用，并且您可以在竞争中保持领先地位。 请在评论框中让我知道您对此博客的看法。"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Sophia Martin的文章《Look Why These Top Web Development Trends & Technologies Will Rule 2020》，参考：https://medium.com/dataseries/look-why-these-top-web-development-trends-technologies-will-rule-2020-571750bceac1)",
+  "translation": "（本文翻译自Sophia Martin的文章《看看为什么这些顶级Web开发趋势和技术将统治2020年》，参考：https：//medium.com/dataseries/look-why-these-top-web-development-trends-technologies -will-rule-2020-571750bceac1）"
+}]
