@@ -1,0 +1,606 @@
+[{
+  "tag": "H2",
+  "text": "mrsegev/MovieNight",
+  "translation": "mrsegev /电影之夜"
+}, {
+  "tag": "H3",
+  "text": "MovieNight is a sample Android application that uses the clean architecture approach and is written in Kotlin.",
+  "translation": "MovieNight是使用干净架构方法的示例Android应用程序，由Kotlin编写。"
+}, {
+  "tag": "H1",
+  "text": "A Guided Tour inside a clean architecture code base.",
+  "translation": "干净的体系结构代码库内的导览。"
+}, {
+  "tag": "P",
+  "text": "Recently, I released an open-source sample project called MovieNight.In the past couple of weeks, I got lots of questions regarding the application architecture, so I’ve decided to write this blog post. I’ll describe the different components at play and the relationships between them as well as talk about some of the architecture decisions I’ve made along the way.",
+  "translation": "最近，我发布了一个名为MovieNight的开源示例项目。在过去的几周中，我对应用程序体系结构有很多疑问，因此，我决定撰写此博客文章。 我将描述正在使用的不同组件以及它们之间的关系，并讨论我在此过程中做出的一些架构决策。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*EmLGzlmVEpy2wHroiE5ZbA.jpeg?q=20",
+  "caption": "Photo by Chris Lawton on Unsplash",
+  "type": "image",
+  "file": "1*EmLGzlmVEpy2wHroiE5ZbA.jpeg"
+}, {
+  "tag": "P",
+  "text": "I’ll do my best to highlight the more interesting parts of the code base, but there’s so much I can write about in a single post. If you find the topic interesting, I recommend that you’ll clone the project and explore the code base by yourself.",
+  "translation": "我会尽力突出代码库中更有趣的部分，但是我可以在一篇文章中写很多东西。 如果您发现有趣的主题，建议您克隆项目并亲自探索代码库。"
+}, {
+  "tag": "P",
+  "text": "You can find the source code of MovieNight right here:",
+  "translation": "您可以在此处找到MovieNight的源代码："
+}, {
+  "tag": "H2",
+  "text": "mrsegev/MovieNight",
+  "translation": "mrsegev /电影之夜"
+}, {
+  "tag": "H3",
+  "text": "MovieNight is a sample Android application that uses the clean architecture approach and is written in Kotlin.",
+  "translation": "MovieNight是使用干净架构方法的示例Android应用程序，由Kotlin编写。"
+}, {
+  "tag": "H2",
+  "text": "Before we begin #1",
+  "translation": "在开始＃1之前"
+}, {
+  "tag": "P",
+  "text": "This blog post assumes knowledge on the following topics: Kotlin, RxJava, dependency injection, and testing. I did my best to add links for further reading throughout the post. If you come across a subject you’re not familiar with I encourage you to take a pause and read about it a bit. So we could stay on the same page.",
+  "translation": "该博客文章假定您具有以下主题的知识：Kotlin，RxJava，依赖项注入和测试。 我尽力添加链接，以便在整个帖子中进一步阅读。 如果您不熟悉某个主题，建议您稍作休息，然后再读一读。 因此我们可以留在同一页面上。"
+}, {
+  "tag": "H2",
+  "text": "Before we begin #2",
+  "translation": "在开始＃2之前"
+}, {
+  "tag": "P",
+  "text": "Take everything you’re going to read with a grain of salt. Architecture, by its nature, is dynamic and ever-evolving. There is no such thing as “the perfect architecture”, there are always several solutions to every problem. Keep in mind that every architecture decision is a trade-off.",
+  "translation": "一丁点钱带走您要阅读的所有内容。 从本质上讲，建筑是动态的并且不断发展。 没有“完美的体系结构”之类的东西，对于每个问题总是有几种解决方案。 请记住，每个架构决策都是一个权衡。"
+}, {
+  "tag": "P",
+  "text": "Now, grab yourself a cup of coffee/tea/beer(?), make sure you’ve got the source code in front of you, and let us begin.",
+  "translation": "现在，为自己喝杯咖啡/茶/啤酒（？），确保您已经掌握了源代码，然后让我们开始吧。"
+}, {
+  "tag": "H1",
+  "text": "A Clean approach",
+  "translation": "干净的方法"
+}, {
+  "tag": "P",
+  "text": "MovieNight architecture is heavily influenced by Uncle Bob’s clean architecture. Understanding the principles behind the clean approach is key for our guided tour.",
+  "translation": "MovieNight的架构在很大程度上受到Bob叔叔的简洁架构的影响。 理解清洁方法背后的原理是我们导游的关键。"
+}, {
+  "tag": "P",
+  "text": "Although clean architecture can be a bit overwhelming at first look, it’s pretty simple to comprehend once you understand what’s it all about.",
+  "translation": "尽管乍一看，干净的架构可能有点让人不知所措，但是一旦您了解了所有内容，就很容易理解。"
+}, {
+  "tag": "P",
+  "text": "The core principles of the clean approach can be summarized as followed:",
+  "translation": "清洁方法的核心原则可总结如下："
+}, {
+  "tag": "UL",
+  "texts": ["The application code is separated into layers.These layers define the separation of concerns inside the code base.", "The layers follow a strict dependency rule.Each layer can only interact with the layers below it.", "As we move toward the bottom layer — the code becomes generic.The bottom layers dictate policies and rules, and the upper layers dictate implementation details such as the database, networking manager, and UI."],
+  "translations": ["应用程序代码分为几层，这些层定义了代码库内部关注点的分离。", "这些层遵循严格的依赖关系规则，每个层只能与其下面的层进行交互。", "随着我们进入底层，代码变得通用。底层指示策略和规则，高层指示实现细节，例如数据库，网络管理器和UI。"]
+}, {
+  "tag": "P",
+  "text": "Consider the following abstract example:",
+  "translation": "考虑以下抽象示例："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*1PMsHT9L_fQeLmoX_qb9Lw.jpeg?q=20",
+  "caption": "Dependencies flow between the layers.",
+  "type": "image",
+  "file": "1*1PMsHT9L_fQeLmoX_qb9Lw.jpeg"
+}, {
+  "tag": "UL",
+  "texts": ["Layer C has access to layers B and A.", "Layer B has access to everything inside layer A but is unaware of anything inside layer C. In fact, layer B doesn’t even know that layer C exists.", "Layer A is at the very bottom, she’s unaware of anything outside of her scope, and as we’ll see soon enough, her ignorance truly is a bliss."],
+  "translations": ["C层可以访问B层和A层。", "B层可以访问A层中的所有内容，但不知道C层中的任何内容。实际上，B层甚至不知道C层存在。", "A层位于最底层，她没有意识到自己范围以外的任何事物，而且我们很快就会发现，她的无知确实是一种幸福。"]
+}, {
+  "tag": "P",
+  "text": "That’s it. Every other architectural detail exists only to serve these core principles.",
+  "translation": "而已。 其他所有架构细节都仅用于服务这些核心原则。"
+}, {
+  "tag": "H2",
+  "text": "Why use the clean approach?",
+  "translation": "为什么要使用干净的方法？"
+}, {
+  "tag": "P",
+  "text": "Did you ever had the “pleasure” of replacing in-memory, synchronized data store with an asynchronous, fully-fledged database? 😰",
+  "translation": "您是否曾经有过用内置的异步数据库替换内存中同步数据存储的“乐趣”？ 😰"
+}, {
+  "tag": "P",
+  "text": "Requirements will change. The design will change. Basically, all the implementation details are heavily prone to change.By dividing the code into layers we can “push” these details into the upper layers, and by following the dependency rule, we’re able to isolate them from the core functionality of our application.",
+  "translation": "要求将改变。 设计将改变。 基本上，所有实现细节都非常容易发生更改。通过将代码分成几层，我们可以将这些细节“推”到上层，并且通过遵循依赖关系规则，我们可以将它们与我们的核心功能隔离开来。 应用。"
+}, {
+  "tag": "P",
+  "text": "This isolation allows us to write code that is more testable and independent of any external factors, so when a change “hits” we can react to it quickly and efficiently without breaking too many walls.",
+  "translation": "这种隔离使我们能够编写可测试性更高的代码，并且不受任何外部因素的影响，因此，当发生更改“命中”时，我们可以快速，有效地对它做出反应，而不会破坏太多壁垒。"
+}, {
+  "tag": "P",
+  "text": "Now that we’re on the same page, we can take a look at MovieNight actual architecture layers.",
+  "translation": "现在我们在同一页上，我们可以看一下MovieNight的实际体系结构层。"
+}, {
+  "tag": "H1",
+  "text": "MovieNight architecture layers",
+  "translation": "MovieNight体系结构层"
+}, {
+  "tag": "P",
+  "text": "The application consists of three layers: The domain layer, the data layer, and the presentation layer.",
+  "translation": "该应用程序包括三层：域层，数据层和表示层。"
+}, {
+  "tag": "P",
+  "text": "Looking at MovieNight’s high-level project structure, you’ll see that each layer is represented by a module in the project.",
+  "translation": "查看MovieNight的高级项目结构，您会看到每个层都由项目中的模块表示。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*sUBTlhq9UfKJgykT8oKbDw.png?q=20",
+  "caption": "MovieNight high-level project structure.",
+  "type": "image",
+  "file": "1*sUBTlhq9UfKJgykT8oKbDw.png"
+}, {
+  "tag": "P",
+  "text": "Like everything in this article, this project structure is just one way of doing things. I like it because it helps me avoid accidentals “leaks” between the layers as I must specify in each module build.gradle file which other modules (i.e., layers) it depends on.",
+  "translation": "就像本文中的所有内容一样，这种项目结构只是做事的一种方式。 我喜欢它是因为它可以帮助我避免各层之间的意外“泄漏”，因为我必须在每个模块build.gradle文件中指定它依赖于其他模块（即各层）。"
+}, {
+  "tag": "P",
+  "text": "Here’s a high-level chart of the layers and what they hold:",
+  "translation": "以下是各层及其用途的高级图表："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*3smlPZenpAtICXdgcjuHSg.jpeg?q=20",
+  "caption": "MovieNight architecture layers.",
+  "type": "image",
+  "file": "1*3smlPZenpAtICXdgcjuHSg.jpeg"
+}, {
+  "tag": "P",
+  "text": "If this chart looks a bit overwhelming right now — don’t sweat it! 😄We’ll explore each layer implementation details, and soon enough, everything will (hopefully) make sense.",
+  "translation": "如果这张图表现在看起来有点令人不知所措-请不要大汗淋漓！ ll我们将探索每层实施的详细信息，很快，一切都会（希望）有意义。"
+}, {
+  "tag": "P",
+  "text": "Let’s dive into each layer, starting from the very bottom — The domain layer.",
+  "translation": "让我们从最底层开始深入研究每一层-域层。"
+}, {
+  "tag": "H1",
+  "text": "The Domain layer",
+  "translation": "域层"
+}, {
+  "tag": "P",
+  "text": "The domain layer is the baseline of the application. Its purpose is to describe what the application is and what it can do (soon we’ll see concrete examples to this statement). Remember the third clean approach principle we discussed? As we move toward the bottom layer — the code becomes generic.",
+  "translation": "域层是应用程序的基准。 其目的是描述应用程序是什么以及它可以做什么（很快我们将看到此语句的具体示例）。 还记得我们讨论的第三个干净方法原则吗？ 随着我们走向底层，代码变得通用。"
+}, {
+  "tag": "P",
+  "text": "Every piece of code here is as generic as code can be. Concrete implementations and details belong to the upper layers.Being at the bottom, the domain layer is unaware of anything else in the application to the point that the code here has nothing to do with the Android framework, it’s just “pure” Kotlin. Why? Because it’s irrelevant to the purpose of the domain layer.",
+  "translation": "这里的每一段代码都是通用的。 具体的实现和细节属于上层。在底层，域层没有意识到应用程序中的任何其他内容，以致此处的代码与Android框架无关，只是“纯”的Kotlin。 为什么？ 因为它与域层的目的无关。"
+}, {
+  "tag": "P",
+  "text": "This layer holds mostly domain entities, interfaces and special classes called use cases.",
+  "translation": "该层主要包含域实体，接口和称为用例的特殊类。"
+}, {
+  "tag": "H2",
+  "text": "Domain entities",
+  "translation": "域实体"
+}, {
+  "tag": "P",
+  "text": "These are the basic building blocks of our application and the ones that are least likely to change when something external changes. In the case of MovieNight, you’ll find here classes such as MovieEntity and VideoEntity that describe the basic data structures we work with. Here’s the entities package:",
+  "translation": "这些是我们应用程序的基本构建块，并且是在外部发生某些更改时最不可能更改的构建块。 对于MovieNight，您会在此处找到描述我们使用的基本数据结构的类，例如MovieEntity和VideoEntity。 这是实体包装："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*qZOZUZjVAX-I-5EORSwzOA.png?q=20",
+  "caption": "MovieNight domain entities.",
+  "type": "image",
+  "file": "1*qZOZUZjVAX-I-5EORSwzOA.png"
+}, {
+  "tag": "P",
+  "text": "This is part of what I meant when I wrote that the domain layer describes what the application is and what it can do: Looking at the entities package it’s pretty clear what kind of data MovieNight is dealing with — movies, movies reviews, etc.",
+  "translation": "这是我写领域层描述应用程序是什么以及它可以做什么的意思的一部分：查看实体包，很清楚MovieNight处理的是哪种数据-电影，电影评论等。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/mrsegev/a4f7cb4be77c0137911805b7906b89fd/raw/1e628cc3aca23aee38231ebd24be79bb6ec01728/movienight-MovieEntity.kt",
+  "code": "data class MovieEntity(\n\n        var id: Int = 0,\n        var title: String,\n        var overview: String? = null,\n        var voteCount: Int = 0\n        // ...\n)"
+}, {
+  "tag": "P",
+  "text": "In our application case there is nothing fancy here, these classes just act as data containers, so I choose to create them as Kotlin data classes.",
+  "translation": "在我们的应用程序案例中，这里没有什么幻想，这些类仅充当数据容器，因此我选择将它们创建为Kotlin数据类。"
+}, {
+  "tag": "H2",
+  "text": "Use cases",
+  "translation": "用例"
+}, {
+  "tag": "P",
+  "text": "Also known as interactors, a use case encapsulates a single, very specific task that can be performed. These use cases will later be used by the upper layers. Take a look at the use cases package:",
+  "translation": "用例也称为交互器，它封装了可以执行的单个非常特定的任务。 这些用例稍后将由上层使用。 看一下用例包："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*nNYYtpoOntU-uT5xitHt_Q.png?q=20",
+  "caption": "MovieNight use cases.",
+  "type": "image",
+  "file": "1*nNYYtpoOntU-uT5xitHt_Q.png"
+}, {
+  "tag": "P",
+  "text": "Again, we describe the application. Just by looking at the files names its becomes obvious what the application can do: We can browse popular movies, we can manage favorite movies list, and we can search for movies.",
+  "translation": "同样，我们描述应用程序。 只需查看文件名，就可以很明显地看出应用程序可以执行的操作：我们可以浏览热门电影，可以管理收藏的电影列表，还可以搜索电影。"
+}, {
+  "tag": "P",
+  "text": "All the use cases extend the abstract UseCase class:",
+  "translation": "所有用例都扩展了抽象用例类："
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/mrsegev/50b8ad5d3c5d1220a315ed2bf85164bb/raw/5930c62dcd665dd1e357d34610ffc101a4ebf8f0/movienight-base-usecase.kt",
+  "code": "abstract class UseCase<T>(private val transformer: Transformer<T>) {\n\n    abstract fun createObservable(data: Map<String, Any>? = null): Observable<T>\n\n    fun observable(withData: Map<String, Any>? = null): Observable<T> {\n        return createObservable(withData).compose(transformer)\n    }\n}"
+}, {
+  "tag": "P",
+  "text": "And here is a more concrete use case that fetches popular movies:",
+  "translation": "这是获取流行电影的更具体的用例："
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/mrsegev/cff36f6a0316b864da6e95b94afc37e6/raw/fd25f5d858b71373a97251bddd1c070f2b7eec73/movienight-GetPopularMovies.kt",
+  "code": "class GetPopularMovies(transformer: Transformer<List<MovieEntity>>,\n                       private val moviesRepository: MoviesRepository) : UseCase<List<MovieEntity>>(transformer) {\n  \n    override fun createObservable(data: Map<String, Any>?): Observable<List<MovieEntity>> {\n        return moviesRepository.getMovies()\n    }\n}"
+}, {
+  "tag": "P",
+  "text": "There are few things worth mentioning here:",
+  "translation": "这里有几件事值得一提："
+}, {
+  "tag": "UL",
+  "texts": ["The output of all use cases is an Observable.Not much else to say here. Observables allow us to write code in a more functional and reactive way, which I like.", "All use cases must receive a Transformer object in their constructor. The Transformer class is just a simple ObservableTransformer. Using a Transformer allows us to dynamically control on which threads the use case “runs.” Which makes it especially useful when writing tests, for example: when we fetch the list of popular movies we want it to run a worker thread and not clog the main thread, but when testing we want the code to run synchronously. It worth noting that other then for testing purposes, I can’t think of any good reason to run the use cases on the main thread.", "We can pass optional data into the use case.Sometimes, we need some data passed into the use case, Kotlin optional and default values are useful here as we don’t have to specify null values when the data is not needed."],
+  "translations": ["所有用例的输出都是可观察的，这里没有太多要说的了。 可观察变量使我们能够以一种更具功能性和反应性的方式编写代码，这是我喜欢的。", "所有用例必须在其构造函数中接收一个Transformer对象。 Transformer类只是一个简单的ObservableTransformer。 使用Transformer可以使我们动态控制用例在哪个线程上运行。这在编写测试时尤其有用，例如：当我们获取流行电影的列表时，我们希望它运行工作线程而不是阻塞线程。 主线程，但是在测试时，我们希望代码同步运行。 值得注意的是，出于测试目的，我想不出有什么充分的理由在主线程上运行用例。", "我们可以将可选数据传递到用例中。有时，我们需要将一些数据传递到用例中，Kotlin可选值和默认值在这里很有用，因为在不需要数据时不必指定空值。"]
+}, {
+  "tag": "P",
+  "text": "As you can see, GetPopularMovies use case received a MoviesRepository object when created, and that leads us to the next type of residents of the domain layer — interfaces.",
+  "translation": "如您所见，GetPopularMovies用例在创建时收到了MoviesRepository对象，这将我们带到域层的下一种驻留类型-接口。"
+}, {
+  "tag": "H2",
+  "text": "Interfaces",
+  "translation": "介面"
+}, {
+  "tag": "P",
+  "text": "The domain layer interfaces dictate the contract the upper layers must follow. These abstractions ensure that the application core functionality will hold true, regardless of any implementation details changes. Let’s take a look at GetPopularMovies use case again: when invoked, the use case returns an Observable that gets data from MoviesRepository.",
+  "translation": "域层接口规定了上层必须遵循的契约。 这些抽象确保应用程序核心功能将保持正确，而不管任何实现细节更改如何。 让我们再次看一下GetPopularMovies用例：调用时，用例返回一个Observable，该Observable从MoviesRepository获取数据。"
+}, {
+  "tag": "P",
+  "text": "Here’s MovieRepository implementation:",
+  "translation": "这是MovieRepository的实现："
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/mrsegev/21560871dd415ede62077802348feb88/raw/35ac24a0f14569cc7752f140d1c5bd420171514d/movienight-moviesrepository.kt",
+  "code": "interface MoviesRepository {\n    fun getMovies(): Observable<List<MovieEntity>>\n    fun search(query: String): Observable<List<MovieEntity>>\n    fun getMovie(movieId: Int): Observable<Optional<MovieEntity>>\n}"
+}, {
+  "tag": "P",
+  "text": "It’s just an interface. Why? Because the implementation details of the repository are not relevant to the functionality of GetPopularMovies use case.",
+  "translation": "这只是一个界面。 为什么？ 因为存储库的实现细节与GetPopularMovies用例的功能无关。"
+}, {
+  "tag": "P",
+  "text": "Take a look at GetPopularMovies code at line 5: does it matter if moviesRepository.getMovies() returns data from remote API or a local database? No, as long as the actual implementation implements the MoviesRepoitory interface — GetPopularMovies will work just fine!",
+  "translation": "看一下第5行的GetPopularMovies代码：movieRepository.getMovies（）从远程API或本地数据库返回数据是否重要？ 不，只要实际的实现实现了MoviesRepoitory接口，GetPopularMovies就可以正常工作！"
+}, {
+  "tag": "P",
+  "text": "Before we continue with our tour, let’s take a moment to talk about testing.",
+  "translation": "在继续游览之前，让我们花一点时间谈论测试。"
+}, {
+  "tag": "H2",
+  "text": "Unit testing the use cases",
+  "translation": "单元测试用例"
+}, {
+  "tag": "P",
+  "text": "The “ignorance” of the domain layer allows us to test our use cases easily.Here’s GetPopularMovies unit test:",
+  "translation": "域层的“无知”使我们能够轻松测试用例。这里是GetPopularMovies单元测试："
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/mrsegev/e12b72dc118a3358f7fcb84eee322a1f/raw/f7411a181662791051a6e3faa2917c9c339966fc/movienight-testgetpopularmovies.kt",
+  "code": "@Test\nfun testGetPopularMovies() {\n    val movieRepository = Mockito.mock(MoviesRepository::class.java)\n    Mockito.`when`(movieRepository.getMovies()).thenReturn(Observable.just(generateMovieEntityList()))\n    val getPopularMovies = GetPopularMovies(TestTransformer(), movieRepository)\n    getPopularMovies.observable().test()\n            .assertValue { results -> results.size == 5 }\n            .assertComplete()\n}"
+}, {
+  "tag": "P",
+  "text": "Look at line 4: Since MoviesRepository is just an interface, I can easily mock its behavior using Mockito and return Observable with stub data when getMovies() is called.",
+  "translation": "看第4行：由于MoviesRepository只是一个接口，我可以轻松地使用Mockito模拟其行为，并在调用getMovies（）时返回带有存根数据的Observable。"
+}, {
+  "tag": "P",
+  "text": "Remember, use cases receives a Transformer when created? At line 5 I’m using TestTransformer to ensure synchronous execution of the use case so I can test more easily.",
+  "translation": "记住，用例在创建时会收到一个Transformer吗？ 在第5行，我正在使用TestTransformer来确保用例的同步执行，以便我可以更轻松地进行测试。"
+}, {
+  "tag": "P",
+  "text": "At Lines 7, 8 I’m completing the test by evaluating the data emitted by the use case and making sure it’s the same data I mocked on line 4.",
+  "translation": "在第7行，第8行，我将通过评估用例发出的数据并确保它与我在第4行中模拟的数据相同来完成测试。"
+}, {
+  "tag": "H2",
+  "text": "Summarizing the domain layer",
+  "translation": "总结领域层"
+}, {
+  "tag": "P",
+  "text": "The domain layer sits at the very bottom of our code base. Here, we define our domain entities, interfaces and use cases for the upper layers to use. We keep things generic as much as we could to protect the core functionality from changes, leaving the hassle of dealing with implementations details to the upper layers.",
+  "translation": "域层位于我们代码库的最底层。 在这里，我们定义了上层要使用的域实体，接口和用例。 我们尽可能保持通用性，以保护核心功能不受更改，从而将处理实现细节的麻烦留给了上层。"
+}, {
+  "tag": "P",
+  "text": "Ok. let’s move up to the data layer. 🆙",
+  "translation": "好。 让我们进入数据层。 🆙"
+}, {
+  "tag": "H1",
+  "text": "The data layer",
+  "translation": "数据层"
+}, {
+  "tag": "P",
+  "text": "Just above the domain layer, we can find the data layer. Its purpose is to provide all the data the application needs to function.",
+  "translation": "在域层之上，我们可以找到数据层。 其目的是提供应用程序需要运行的所有数据。"
+}, {
+  "tag": "P",
+  "text": "We’re no longer at the generic wonderland of the domain layer. Here, we’ll find concrete implementations of the different data providers MovieNight is using. We can also see a new special type of classes in here — Mappers, but we’ll get to them later.",
+  "translation": "我们不再是域层的通用仙境。 在这里，我们将找到MovieNight使用的不同数据提供者的具体实现。 我们还可以在这里看到一种新的特殊类型的类-映射器，但稍后我们将介绍它们。"
+}, {
+  "tag": "P",
+  "text": "Keep in mind that the presentation layer is above the data layer, so the data providers have no knowledge regarding how and when they are invoked, which is a good thing.",
+  "translation": "请记住，表示层在数据层之上，因此数据提供者不知道如何以及何时调用它们，这是一件好事。"
+}, {
+  "tag": "H2",
+  "text": "Data providers implementation details",
+  "translation": "数据提供者实施细节"
+}, {
+  "tag": "P",
+  "text": "The implementation details of the data providers such as the caching mechanism, the database, and the networking manager are all here, so you’ll find references to libraries such as Retrofit and Room. Of course, these libraries are wrapped by classes that correspond to the interfaces defined by the domain layer to hide their existence.",
+  "translation": "数据提供程序的实现详细信息（例如缓存机制，数据库和网络管理器）都在这里，因此您可以找到对诸如Retrofit和Room之类的库的引用。 当然，这些库由与领域层定义的接口相对应的类包装，以隐藏它们的存在。"
+}, {
+  "tag": "P",
+  "text": "Here’s one example: The MoviesRepository interface from the domain layer becomes MoviesRepositoryImpl (what an awful name!) in the data layer.",
+  "translation": "这是一个示例：域层的MoviesRepository接口在数据层中变为MoviesRepositoryImpl（真是个糟糕的名字！）。"
+}, {
+  "tag": "P",
+  "text": "Let’s take a look at MoviesRepositoryImpl class:",
+  "translation": "让我们看一下MoviesRepositoryImpl类："
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/mrsegev/df564226610ee1939b3f83687efd4c25/raw/457a435557272feec1cab6c591d9bc3e71bd50f5/movienight-MoviesRepositoryImpl.kt",
+  "code": "class MoviesRepositoryImpl(api: Api,\n                           private val cache: MoviesCache,\n                           movieDataMapper: Mapper<MovieData, MovieEntity>,\n                           detailedDataMapper: Mapper<DetailsData, MovieEntity>) : MoviesRepository {\n\n    private val memoryDataStore: MoviesDataStore\n    private val remoteDataStore: MoviesDataStore\n\n    init {\n        memoryDataStore = CachedMoviesDataStore(cache)\n        remoteDataStore = RemoteMoviesDataStore(api, movieDataMapper, detailedDataMapper)\n    }\n\n    override fun getMovies(): Observable<List<MovieEntity>> {\n        return if (!cache.isEmpty()) {\n            return memoryDataStore.getMovies()\n        } else {\n            remoteDataStore.getMovies().doOnNext { cache.saveAll(it) }\n        }\n    }\n\n    override fun search(query: String): Observable<List<MovieEntity>> {\n        return remoteDataStore.search(query)\n    }\n\n    override fun getMovie(movieId: Int): Observable<Optional<MovieEntity>> {\n        return remoteDataStore.getMovieById(movieId)\n    }\n}"
+}, {
+  "tag": "P",
+  "text": "Things that worth mentioning here are:",
+  "translation": "这里值得一提的是："
+}, {
+  "tag": "UL",
+  "texts": ["MoviesRepositoryImpl implements the MoviesRepository interface.So it can be used by the domain use cases.", "This class acts as a factory that can “juggle” between the remote data store and the local data store. getMovies() implementation checks for the presence of cached data before accessing the API. Other methods such as search() invoke the API directly.", "The data sources implementation is abstractedEven though they belong on the same layer with MoviesRepositoryImpl, and technically we won’t break the dependencies rule by revealing their implementation, the knowledge of any details regarding the data sources is irrelevant for the functionality of MoviesRepositoryImpl, so we abstract them behind MoviesDataStore interfaces. (and of course, MoviesDataStore is defined inside the domain layer)", "Mappers are being usedI mentioned the mappers at the beginning of the section, and now it’s time to talk about them."],
+  "translations": ["MoviesRepositoryImpl实现了MoviesRepository接口，因此可以在域用例中使用。", "此类充当工厂，可以在远程数据存储和本地数据存储之间“变戏法”。 getMovies（）实现在访问API之前检查缓存数据的存在。 其他方法（例如search（））直接调用API。", "数据源实现是抽象的，即使它们与MoviesRepositoryImpl属于同一层，从技术上讲，我们也不会通过揭示它们的实现来打破依赖关系规则，有关数据源的任何详细信息的知识与MoviesRepositoryImpl的功能无关。 在MoviesDataStore接口后面抽象它们。 （当然，MoviesDataStore是在域层内部定义的）", "我正在本节的开头提到映射器，现在是时候讨论它们了。"]
+}, {
+  "tag": "H2",
+  "text": "Mappers",
+  "translation": "映射器"
+}, {
+  "tag": "P",
+  "text": "Mappers, as their name suggests, are classes who “knows” how to map class A to class B. All the mappers in MovieNight extends the Mapper abstract class:",
+  "translation": "顾名思义，映射器是“知道”如何将类A映射到类B的类。MovieNight中的所有映射器都扩展了Mapper抽象类："
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/mrsegev/fcf47f7c6b509169b19ff038feb6d4d4/raw/f0057a4661c0f53ebb19076a20bda9ea4a1e50d5/movienight-mapper.kt",
+  "code": "abstract class Mapper<in E, T> {\n    \n    abstract fun mapFrom(from: E): T\n\n    fun mapOptional(from: Optional<E>): Optional<T> {\n        from.value?.let {\n            return Optional.of(mapFrom(it))\n        } ?: return Optional.empty()\n    }\n\n    fun observable(from: E): Observable<T> {\n        return Observable.fromCallable { mapFrom(from) }\n    }\n\n    fun observable(from: List<E>): Observable<List<T>> {\n        return Observable.fromCallable { from.map { mapFrom(it) } }\n    }\n}"
+}, {
+  "tag": "P",
+  "text": "There’s a whole bunch of convenience methods in here, but the core functionality is pretty straightforward (line 3): Insert class A from one side, get class B from the other side.",
+  "translation": "这里有很多便利方法，但是核心功能非常简单（第3行）：从一侧插入A类，从另一侧插入B类。"
+}, {
+  "tag": "H2",
+  "text": "Why do we need mappers?",
+  "translation": "为什么我们需要映射器？"
+}, {
+  "tag": "P",
+  "text": "The domain entities, which are the base data structure for our application are defined in the domain layer. They shouldn’t have any knowledge of the “outside world” or their “purity” would be compromised (I hope that you understand why this is a bad thing by now).",
+  "translation": "域实体是我们应用程序的基本数据结构，在域层中定义。 他们不应该对“外部世界”有任何了解，否则他们的“纯度”会受到损害（我希望您现在明白为什么这是一件坏事）。"
+}, {
+  "tag": "P",
+  "text": "The problem is that the data layer contains specific implementations and specific implementation tends to have specific needs. Retrofit is an obvious example: to allow Retrofit to parse network responses we often use libraries such as GSON. To make the parsing work GSON have a set of annotations we can use to instruct the parser. No annotations mean no parsing but we can’t possibly annotate the domain entities with GSON annotations. The domain layer has no idea what GSON is.",
+  "translation": "问题在于数据层包含特定的实现，并且特定的实现往往具有特定的需求。 改造就是一个明显的例子：为了使改造能够解析网络响应，我们经常使用诸如GSON之类的库。 为了使解析工作更加有条理，我们可以使用GSON注释来指示解析器。 没有注释意味着没有解析，但我们可能无法使用GSON注释来注释域实体。 域层不知道什么是GSON。"
+}, {
+  "tag": "P",
+  "text": "What can we do? We can create a new set of entities, entities that can be annotated and work with Retrofit. These entities will live inside the data layer, far away from the domain entities. One such class is MovieData:",
+  "translation": "我们可以做什么？ 我们可以创建一组新的实体，这些实体可以添加注释并可以与Retrofit一起使用。 这些实体将位于数据层内部，与域实体相距很远。 这样的类就是MovieData："
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/mrsegev/3c450fa2ec1ad2fc12c173c043114d10/raw/c16ffb8c9a857af87a525705569dcd1233378d90/movienight-moviedata.kt",
+  "code": "@Entity(tableName = \"movies\")\ndata class MovieData(\n\n        @SerializedName(\"id\")\n        @PrimaryKey\n        var id: Int = -1,\n\n        @SerializedName(\"vote_count\")\n        var voteCount: Int = 0,\n\n        @SerializedName(\"vote_average\")\n        var voteAverage: Double = 0.0\n        \n        // ...\n}"
+}, {
+  "tag": "P",
+  "text": "It’s hard to tell by the gist but MovieData is very similar to the domain entity, MovieEntity, the only difference between them is that MovieData contains specific implementation code (Retrofit and Room libraries annotations).",
+  "translation": "要点很难说，但是MovieData与域实体MovieEntity非常相似，它们之间的唯一区别是MovieData包含特定的实现代码（Retrofit和Room库注释）。"
+}, {
+  "tag": "P",
+  "text": "So if Retrofit response holds a list of movies, they are now represented by an array of MovieData objects instead of MovieEntity objects. Problem solved? Nope. 😟",
+  "translation": "因此，如果Retrofit响应包含电影列表，则它们现在由MovieData对象数组而不是MovieEntity对象表示。 问题解决了？ 不。 😟"
+}, {
+  "tag": "P",
+  "text": "There’s another problem: the use cases (domain layer residents) have no idea what MovieData is, they only familiar with MovieEntity! What can we do? We can map MovieData to MovieEntity everytime we cross the boundary between the data layer to the domain layer —> Enter mappers.",
+  "translation": "还有一个问题：用例（域层居民）不知道MovieData是什么，只熟悉MovieEntity！ 我们可以做什么？ 每当我们跨越数据层与域层之间的边界时，我们就可以将MovieData映射到MovieEntity －>输入映射器。"
+}, {
+  "tag": "H2",
+  "text": "Testing the data layer",
+  "translation": "测试数据层"
+}, {
+  "tag": "P",
+  "text": "Most of the tests here are unit tests (Room depends on the Android framework, so I test it using instrumentation), and since we abstract most of the implementations even between residents of the data layer, it’s pretty easy to test the core functionality. Let’s take a look at a small part of MoviesRepositoryImpl tests suit:",
+  "translation": "这里的大多数测试都是单元测试（Room取决于Android框架，因此我使用工具对其进行测试），并且由于我们对大多数实现进行了抽象，即使是在数据层的居民之间，因此测试核心功能也非常容易。 让我们看一下MoviesRepositoryImpl测试套装的一小部分："
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/mrsegev/82cbac0c67394ae72f0ae9ec02086964/raw/601668f4941c78ae013183b5ef7b23d3f3fccb68/movienight-moviesRepositoryImplTests.kt",
+  "code": "@Before\nfun before() {\n    api = mock(Api::class.java)\n    movieCache = TestMoviesCache()\n    movieRepository = MoviesRepositoryImpl(api, movieCache, movieDataMapper, detailsDataMapper)\n}\n\n@Test\nfun testWhenCacheIsNotEmptyGetMoviesReturnsCachedMovies() {\n\n    movieCache.saveAll(generateMovieEntityList())\n    movieRepository.getMovies().test()\n            .assertComplete()\n            .assertValue { movies -> movies.size == 5 }\n\n    verifyZeroInteractions(api)\n}\n\n@Test\nfun testWhenCacheIsEmptyGetMoviesReturnsMoviesFromApi() {\n   val movieListResult = MovieListResult()\n   movieListResult.movies = TestsUtils.generateMovieDataList()\n   `when`(api.getPopularMovies()).thenReturn(Observable.just(movieListResult))\n    movieRepository.getMovies().test()\n            .assertComplete()\n            .assertValue { movies -> movies.size == 5 }\n}"
+}, {
+  "tag": "P",
+  "text": "As we can see, all the data sources used by MoviesRepositoryImpl are abstracted by interfaces, so we easily mock them using Mockito or create a simple implementations for testing purposes to test the caching mechanism without too much of a hassle.",
+  "translation": "如我们所见，MoviesRepositoryImpl使用的所有数据源都是通过接口抽象的，因此我们可以轻松地使用Mockito对其进行模拟，也可以创建一个简单的实现用于测试目的，以测试缓存机制而不会产生太多麻烦。"
+}, {
+  "tag": "H2",
+  "text": "Summarizing the data layer",
+  "translation": "总结数据层"
+}, {
+  "tag": "P",
+  "text": "The data layer sits between the domain layer and the presentation layer. Here, we define our data providers implementation details. We still try to abstract the different components and hide their implementation from one to another to support changes and easily test the core functionality.",
+  "translation": "数据层位于域层和表示层之间。 在这里，我们定义了数据提供程序的实现细节。 我们仍然尝试抽象不同的组件，并将它们的实现彼此隐藏起来，以支持更改并轻松测试核心功能。"
+}, {
+  "tag": "P",
+  "text": "Next up — the presentation layer.",
+  "translation": "接下来-表示层。"
+}, {
+  "tag": "H1",
+  "text": "The presentation layer",
+  "translation": "表示层"
+}, {
+  "tag": "P",
+  "text": "We’ve made it to the top! The presentation layer connects all the different pieces into a single, functioning unit that is the application. Here, we’ll find Activities and Fragments, the UI and presenters under (sort of) an MVP architecture, mappers, and dependency injection framework that’s wires everything across the application.",
+  "translation": "我们已经登顶！ 表示层将所有不同部分连接到一个单独的功能单元中，即应用程序。 在这里，我们将在MVP架构，映射器和依赖项注入框架（某种程度上）下找到活动和片段，UI和演示者，这些框架将整个应用程序关联在一起。"
+}, {
+  "tag": "H1",
+  "text": "Presentation layer architecture",
+  "translation": "表示层架构"
+}, {
+  "tag": "P",
+  "text": "Notice the big headline? Yeah, that’s because this section can easily be its own blog post, but I’m assuming (hoping?) that you’ve got MovieNight source code in front of you. I’ll try to keep this part short and to the point and let you figure out all the different details by yourself. *fist bump* 🤜 🤛",
+  "translation": "注意大标题吗？ 是的，因为这部分很容易成为其自己的博客文章，但是我假设（希望吗？）您已经掌握了MovieNight源代码。 我会尽量精简这一部分，让您自己找出所有不同的细节。 *拳头**"
+}, {
+  "tag": "P",
+  "text": "The presentation layer is organized by something that resembles MVP architecture. It’s actually a hybrid between several architecture ideas I’m currently experimenting with 👽.",
+  "translation": "表示层是由类似于MVP架构的东西组织的。 实际上，这是我目前正在尝试👽的几种架构思想之间的混合体。"
+}, {
+  "tag": "H2",
+  "text": "Views and ViewStates",
+  "translation": "视图和视图状态"
+}, {
+  "tag": "P",
+  "text": "Unlike in MVP, the views aren’t implementing an interface that’s get invoked by the presenter. Instead, the view is observing changes in a ViewState objects. These ViewStates are delivered by LiveData objects. The LiveData objects being updated, and are part of, a presenter. It’s worth mentioning that a presenter can hold more than one LiveData objects, and the view will register to all of them.",
+  "translation": "与MVP中的视图不同，视图并没有实现演示者调用的接口。 相反，该视图正在观察ViewState对象中的更改。 这些ViewState由LiveData对象传递。 LiveData对象正在更新，并且是演示者的一部分。 值得一提的是，演示者可以容纳多个LiveData对象，并且视图将注册到所有这些对象。"
+}, {
+  "tag": "P",
+  "text": "A ViewState is just a data container, holding all the information the view needs to render himself. Let’s look at a simple example; This is the ViewState for the popular movies screen:",
+  "translation": "ViewState只是一个数据容器，其中包含视图需要呈现的所有信息。 让我们看一个简单的例子； 这是流行电影屏幕的ViewState："
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/mrsegev/af9aba06c74869c1382d0bbc9529d924/raw/ff720c6b4698e8c6170ec1788412467e40c17df6/movienight-popularmovies-viewstate.kt",
+  "code": "data class PopularMoviesViewState(\n        var showLoading: Boolean = true,\n        var movies: List<Movie>? = null\n)"
+}, {
+  "tag": "P",
+  "text": "Simple isn’t it? by “reading” the ViewState the view knows if the loading indicator should be displayed or what Movie objects to show. (Yes, There’s a new Movie object in here).",
+  "translation": "是不是很简单？ 通过“读取” ViewState，视图可以知道是否应该显示加载指示器或要显示哪些Movie对象。 （是的，这里有一个新的电影对象）。"
+}, {
+  "tag": "P",
+  "text": "Here’s how the view, PopularMoviesFragment, handles the ViewState:",
+  "translation": "这是ViewPopularMoviesFragment处理ViewState的方法："
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/mrsegev/4c35a58e2504e0fb8f345c7b6505f60a/raw/9cee45ba7d9f1b0b6e10736fb3001978e5d37551/movienight-handling-ViewState.kt",
+  "code": "private lateinit var progressBar: ProgressBar\nprivate lateinit var popularMoviesAdapter: PopularMoviesAdapter\n\n// ...\n\nprivate fun handleViewState(state: PopularMoviesViewState) {\n        progressBar.visibility = if (state.showLoading) View.VISIBLE else View.GONE\n        state.movies?.let { popularMoviesAdapter.addMovies(it) }\n}"
+}, {
+  "tag": "P",
+  "text": "And as I already mentioned, the ViewState object is being updated by the presenter.",
+  "translation": "正如我已经提到的，演示者正在更新ViewState对象。"
+}, {
+  "tag": "H2",
+  "text": "The presenters",
+  "translation": "主持人"
+}, {
+  "tag": "P",
+  "text": "The presenters in MovieNight are Android’s ViewModel objects. I know, it’s a bit confusing. If someone is keeping score add +1 to Google under the “annoying naming conventions” category. But enough ranting, let’s continue. It’s worth noting that the presenters model are actually the domain layer use cases.",
+  "translation": "MovieNight中的演示者是Android的ViewModel对象。 我知道，这有点令人困惑。 如果有人保持得分，请在“讨厌的命名约定”类别下向Google +1。 但是足够的咆哮，让我们继续。 值得注意的是，主持人模型实际上是域层用例。"
+}, {
+  "tag": "H2",
+  "text": "Why using ViewModels?",
+  "translation": "为什么要使用ViewModels？"
+}, {
+  "tag": "P",
+  "text": "Some will correctly point out that the presenters should stay away from the Android framework. By using ViewModels, I’m “telling” the presenters about Android lifecycle events, and this is not ideal. So why did I choose to do this?",
+  "translation": "有些人会正确指出，主持人应该远离Android框架。 通过使用ViewModels，我可以“告诉”演示者有关Android生命周期事件的信息，但这并不理想。 那我为什么选择这样做呢？"
+}, {
+  "tag": "P",
+  "text": "Because everything is a trade-off. I choose to sacrifice a certain degree of abstraction and gain seamless, “battle tested”, lifecycle events handling. It is simple as that.",
+  "translation": "因为一切都是权衡的。 我选择牺牲某种程度的抽象并获得无缝的，经过“战斗测试”的生命周期事件处理。 就这么简单。"
+}, {
+  "tag": "P",
+  "text": "Let’s take a look at presenter example. Here’s PopularMoviesViewModel:",
+  "translation": "让我们看一下演示者示例。 这是PopularMoviesViewModel："
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/mrsegev/9cc6cd790bd649ffde33390c233824ee/raw/347f250f6850a991bc91f0f318d8a9f4f4741a91/movienight-PopularMoviesViewModel.kt",
+  "code": "class PopularMoviesViewModel(private val getPopularMovies: GetPopularMovies,\n                             private val movieEntityMovieMapper: Mapper<MovieEntity, Movie>):\n        BaseViewModel() {\n\n    var viewState: MutableLiveData<PopularMoviesViewState> = MutableLiveData()\n    var errorState: SingleLiveEvent<Throwable?> = SingleLiveEvent()\n\n    init {\n        viewState.value = PopularMoviesViewState()\n    }\n\n    fun getPopularMovies() {\n        addDisposable(getPopularMovies.observable()\n                .flatMap { movieEntityMovieMapper.observable(it) }\n                .subscribe({ movies ->\n                    viewState.value?.let {\n                        val newState = this.viewState.value?.copy(showLoading = false, movies = movies)\n                        this.viewState.value = newState\n                        this.errorState.value = null\n                    }\n                }, {\n                    viewState.value = viewState.value?.copy(showLoading = false)\n                    errorState.value = it\n                }))\n    }\n}"
+}, {
+  "tag": "P",
+  "text": "Many interesting stuff are going on in here, let’s tackle them “in order of appearance”:",
+  "translation": "这里发生了许多有趣的事情，让我们“按出现顺序”解决它们："
+}, {
+  "tag": "P",
+  "text": "Lines 5, 6: These are the LiveData objects the view will observe. One of them is carrying the ViewState object, the other is carrying an optional Throwable. Notice that errorState is a special type of LiveData called SingleLiveEvent, it’s purpose is to send update events only one time, this is really useful during configuration change.",
+  "translation": "第5、6行：这些是视图将观察的LiveData对象。 其中一个带有ViewState对象，另一个带有可选的Throwable。 请注意，errorState是LiveData的一种特殊类型，称为SingleLiveEvent，其目的是仅发送一次更新事件，这在配置更改期间非常有用。"
+}, {
+  "tag": "P",
+  "text": "Line 13: addDisposable() is BaseViewModel method that registers a RxJava subscription to CompositeSubscription. The BaseViewModel calls compositeDisposable.clear() when the ViewModel onCleared() is called.",
+  "translation": "第13行：addDisposable（）是BaseViewModel方法，该方法将RxJava订阅注册到CompositeSubscription。 调用ViewModel onCleared（）时，BaseViewModel调用CompositeDisposable.clear（）。"
+}, {
+  "tag": "P",
+  "text": "Lines 13–19: Here we can see how the presenter is using the use case as a model:",
+  "translation": "第13-19行：在这里我们可以看到演示者如何将用例用作模型："
+}, {
+  "tag": "UL",
+  "texts": ["Line 13: The presenter subscribes to the use case observable.", "Line 14: Using a mapper the domain layer entities are mapped into presentation layer entities.", "Lines 16–19: The LiveData value is updated with a new ViewState object. Notice the usage of the copy() method that copies the object parameters into a brand new object, allowing us to keep the ViewStates immutable. We get the copy() method “for free” by using Kotlin data class for the ViewState."],
+  "translations": ["第13行：演示者订阅了可观察的用例。", "第14行：使用映射器将域层实体映射到表示层实体。", "第16-19行：使用新的ViewState对象更新LiveData值。 请注意copy（）方法的用法，该方法将对象参数复制到全新的对象中，使我们能够保持ViewStates不可变。 通过将Kotlin数据类用于ViewState，我们可以“免费”获得copy（）方法。"]
+}, {
+  "tag": "P",
+  "text": "And this wraps up the presenter section. It’s time to talk about another part of the presentation layer — the dependencies injection.",
+  "translation": "这就完成了演讲者部分。 现在该讨论表示层的另一部分-依赖项注入。"
+}, {
+  "tag": "H2",
+  "text": "Dependency injection",
+  "translation": "依赖注入"
+}, {
+  "tag": "P",
+  "text": "As I previously mentioned, the dependency injection (I’ll refer to it as DI from now on) wires everything across the application. The DI is responsible for providing concrete implementations in a code base ruled by abstractions.",
+  "translation": "如前所述，依赖项注入（从现在开始将其称为DI）将整个应用程序连接起来。 DI负责在由抽象控制的代码库中提供具体的实现。"
+}, {
+  "tag": "P",
+  "text": "MovieNight DI is based on the Dagger2 library. If you’re familiar with Dagger2, it’s worth mentioning that I’m using SubComponents with custom Scopes to control the scoping of different injections. This allows screen-specific injected objects such as use cases and ViewModel factories to be released from memory when they are no longer needed.",
+  "translation": "MovieNight DI基于Dagger2库。 如果您熟悉Dagger2，值得一提的是，我正在使用具有自定义范围的子组件来控制不同进样的范围。 这样就可以在不再需要特定于屏幕的注入对象（例如用例和ViewModel工厂）时从内存中释放它们。"
+}, {
+  "tag": "P",
+  "text": "That’s it. DI in general and Dagger2, in particular, are huge subjects that really deserve their own blog post (or two) so I’ll leave it at that.",
+  "translation": "而已。 总体而言，DI尤其是Dagger2是真正值得拥有自己的博客文章（或两篇）的庞大主题，因此我将其保留。"
+}, {
+  "tag": "P",
+  "text": "Time to talk about testing again.",
+  "translation": "是时候再谈论测试了。"
+}, {
+  "tag": "H2",
+  "text": "Testing the presenters",
+  "translation": "测试演示者"
+}, {
+  "tag": "P",
+  "text": "Testing the presenters is as simple as invoking an action, and asserting that the ViewState updates match our expectations.",
+  "translation": "测试演示者就像调用一个动作一样简单，并且断言ViewState更新符合我们的期望。"
+}, {
+  "tag": "P",
+  "text": "Here’s a small part of PopularMoviesViewModel tests suit:",
+  "translation": "这是PopularMoviesViewModel测试套装的一小部分："
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/mrsegev/74ceb56a8f6590cfdf90a87068bf62ac/raw/a4d85ecd366b74a9bf17f482416fbe235fc74842/movienight-popularMovies-tests.kt",
+  "code": "@Before\n@UiThreadTest\nfun before() {\n    moviesRepository = Mockito.mock(MoviesRepository::class.java)\n    val getPopularMoviesUseCase = GetPopularMovies(TestTransformer(), moviesRepository)\n    popularMoviesViewModel = PopularMoviesViewModel(getPopularMoviesUseCase, movieEntityMovieMapper)\n    viewObserver = mock(Observer::class.java) as Observer<PopularMoviesViewState>\n    errorObserver = mock(Observer::class.java) as Observer<Throwable?>\n    popularMoviesViewModel.viewState.observeForever(viewObserver)\n    popularMoviesViewModel.errorState.observeForever(errorObserver)\n}\n\n@Test\n@UiThreadTest\nfun testShowingMoviesAsExpectedAndStopsLoading() {\n    val movieEntities = DomainTestUtils.generateMovieEntityList()\n    `when`(moviesRepository.getMovies()).thenReturn(Observable.just(movieEntities))\n    popularMoviesViewModel.getPopularMovies()\n    val movies = movieEntities.map { movieEntityMovieMapper.mapFrom(it) }\n\n    verify(viewObserver).onChanged(PopularMoviesViewState(showLoading = false, movies = movies))\n    verify(errorObserver).onChanged(null)\n}"
+}, {
+  "tag": "P",
+  "text": "In the example above I’m mocking all the dependencies using Mockito, calling getPopularMovies() method, and finally — verifying my mock observer got invoked with updated ViewState with specific parameters.",
+  "translation": "在上面的示例中，我使用Mockito模拟所有依赖项，调用getPopularMovies（）方法，最后-验证我的模拟观察器是否已使用具有特定参数的更新ViewState进行了调用。"
+}, {
+  "tag": "H1",
+  "text": "And… That’s it!",
+  "translation": "而且...就是这样！"
+}, {
+  "tag": "P",
+  "text": "Phew! That was a long post but, I’m pretty sure that by now, I’ve covered all the things I wanted to write about. This blog post aimed to highlight some of the interesting parts of MovieNight code base and some of the decisions I’ve made.",
+  "translation": "！ 那是一篇很长的文章，但是，我很确定，到目前为止，我已经涵盖了所有我想写的东西。 这篇博客文章旨在重点介绍MovieNight代码库中一些有趣的部分以及我做出的一些决定。"
+}, {
+  "tag": "P",
+  "text": "I hope you found the topics and ideas mentioned here interesting and educating.",
+  "translation": "我希望您发现此处提到的主题和思想有趣且具有教育意义。"
+}, {
+  "tag": "P",
+  "text": "Thank you for reading. 😄",
+  "translation": "感谢您的阅读。 😄"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Yossi Segev的文章《A Guided Tour inside a clean architecture code base.》，参考：https://proandroiddev.com/a-guided-tour-inside-a-clean-architecture-code-base-48bb5cc9fc97)",
+  "translation": "（本文翻译自Yossi Segev的文章，“在干净的建筑代码库中进行的导览。”，参考：https：//proandroiddev.com/a-guided-tour-inside-a-clean-architecture-code-base-48bb5cc9fc97 ）"
+}]
