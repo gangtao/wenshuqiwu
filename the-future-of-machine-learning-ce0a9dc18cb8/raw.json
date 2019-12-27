@@ -1,0 +1,206 @@
+[{
+  "tag": "H2",
+  "text": "How To “Ultralearn” Data Science — Part 1",
+  "translation": "如何“普及”数据科学-第1部分"
+}, {
+  "tag": "H3",
+  "text": "This is a short guide, based on the book “Ultralearning”, applied to data science",
+  "translation": "这是一本简短的指南，以“ Ultralearning”一书为基础，适用于数据科学"
+}, {
+  "tag": "P",
+  "text": "Check out my ultralearning data science series!",
+  "translation": "查看我的超学习数据科学系列！"
+}, {
+  "tag": "H2",
+  "text": "How To “Ultralearn” Data Science — Part 1",
+  "translation": "如何“普及”数据科学-第1部分"
+}, {
+  "tag": "H3",
+  "text": "This is a short guide, based on the book “Ultralearning”, applied to data science",
+  "translation": "这是一本简短的指南，以“ Ultralearning”一书为基础，适用于数据科学"
+}, {
+  "tag": "P",
+  "text": "Follow me on LinkedIn and Twitter for updates.",
+  "translation": "在LinkedIn和Twitter上关注我以获取更新。"
+}, {
+  "tag": "P",
+  "text": "Thanks for reading my excerpt on the future of ML and my synopsis of Jeff Dean’s keynote. I hope you got a glimpse of what is to come in Machine Learning and AI.",
+  "translation": "感谢您阅读我关于ML未来的摘录以及Jeff Dean主题演讲的摘要。 希望您能一窥机器学习和AI的未来。"
+}, {
+  "tag": "P",
+  "text": "Watch the full video here.",
+  "translation": "在此处观看完整视频。"
+}, {
+  "tag": "H1",
+  "text": "Epitome",
+  "translation": "缩影"
+}, {
+  "tag": "P",
+  "text": "Computer vision and NLP will continue to play a significant role in our lives. But there are adverse implications to this advancement as well, such as China using facial recognition to implement a rating system on the people (straight out of an episode from the TV show black mirror) and the proliferation of fake news. We must progress in Machine Learning while taking into account of algorithmic biases and ethics that remind us of our place, a creation of God and not creators.",
+  "translation": "计算机视觉和NLP将继续在我们的生活中发挥重要作用。 但是，这种进步也会带来不利影响，例如中国利用面部识别技术来对人们实施评级系统（电视节目黑镜中的一集直接出现）以及假新闻的泛滥。 我们必须在机器学习方面取得进步，同时要考虑到算法偏见和道德规范，这些偏见和道德规范使我们想起了我们的位置，即上帝的创造而非创造者。"
+}, {
+  "tag": "P",
+  "text": "As for the uber model, there is much evidence proving we are inching closer and closer towards it. For example, transfer learning — a way of reusing the model for a different purpose achieves good results with fewer data and multi-task learning — a model that operates at small scales of five or six related things all tend to make things work well.",
+  "translation": "对于超级模型，有很多证据证明我们正在逐步接近它。 例如，转移学习-一种用于不同目的的模型重用方法，可以用更少的数据和多任务学习来获得良好的结果-这种模型在五到六种相关事物的小规模上运行，都倾向于使事物运行良好。"
+}, {
+  "tag": "P",
+  "text": "Thus, it’s logical to say that the realization of an uber model is plausible by extending those ideas — transfer learning and multi-task learning — out and developing on them, it’s only a matter of when and not how.",
+  "translation": "因此，可以说通过扩展这些思想（转移学习和多任务学习）并在其上加以发展来实现超级模型是合理的，这仅取决于何时而非如何。"
+}, {
+  "tag": "H1",
+  "text": "The Holy Grail of ML",
+  "translation": "ML的圣杯"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*tc2tyMldY23OZOhL?q=20",
+  "caption": "Photo by Marius Masalar on Unsplash",
+  "type": "image",
+  "file": "0*tc2tyMldY23OZOhL"
+}, {
+  "tag": "P",
+  "text": "Jeff believes the future of ML lies in a great big model, a multi-functioning model that can do plenty of things. This uber model will eliminate the need to create models that do specific tasks and instead train this one large model with different pieces of expertise. Imagine a computer vision model that can diagnose diabetic retinopathy, classify different species of dogs, recognize your face and be used in self-driving cars and drones at the same time.",
+  "translation": "Jeff相信ML的未来在于一个伟大的大型模型，这个多功能模型可以完成很多事情。 这种超级模型将不需要创建执行特定任务的模型，而是使用不同的专业知识来训练这一大型模型。 想象一下一个计算机视觉模型，该模型可以诊断糖尿病性视网膜病变，对不同种类的狗进行分类，识别您的脸并可以同时用于自动驾驶汽车和无人机。"
+}, {
+  "tag": "P",
+  "text": "He also proclaimed that the model operates by sparsely activating different pieces of the model that is required. The model will be 99% idle most of the time and you only have to call upon the right fragment of expertise when needed.",
+  "translation": "他还宣称该模型通过稀疏激活所需的模型的不同部分来运行。 该模型在大多数情况下将处于闲置状态的99％，您只需要在需要时调用适当的专业知识即可。"
+}, {
+  "tag": "H2",
+  "text": "Challenges",
+  "translation": "挑战性"
+}, {
+  "tag": "P",
+  "text": "Dean believes this uber model is a promising direction for ML and the engineering challenges are very interesting. To build a model like this would engender lots of interesting computer systems and machine learning problems such as scalability and the structure of the model.",
+  "translation": "Dean认为，该超级模型是ML的一个有前途的方向，工程挑战非常有趣。 建立这样的模型会引起很多有趣的计算机系统和机器学习问题，例如可伸缩性和模型结构。"
+}, {
+  "tag": "P",
+  "text": "The main question posed is:",
+  "translation": "提出的主要问题是："
+}, {
+  "tag": "P",
+  "text": "How will the model learn how to route the different pieces of the model that is most appropriate?",
+  "translation": "模型将如何学习如何路由模型中最合适的部分？"
+}, {
+  "tag": "P",
+  "text": "To achieve a breakthrough like this will require more advancements in machine learning research as well as in mathematics.",
+  "translation": "为了实现这样的突破，将需要在机器学习研究和数学上取得更大的进步。"
+}, {
+  "tag": "H1",
+  "text": "The problem with ML today",
+  "translation": "今天的ML问题"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*iRyBgRykEopEWdnG?q=20",
+  "caption": "Photo by Charles on Unsplash",
+  "type": "image",
+  "file": "0*iRyBgRykEopEWdnG"
+}, {
+  "tag": "P",
+  "text": "In the keynote, the Google Senior Fellow mentioned atomic models that Machine Learning developers use today to perform all kinds of unit tasks. He believes these models are inefficient and computationally expensive, and more effort is required to achieve good results in those tasks.",
+  "translation": "Google资深研究员在主题演讲中提到了机器学习开发人员今天用来执行各种单元任务的原子模型。 他认为这些模型效率低下，计算量大，要在这些任务中取得良好的结果需要付出更多的努力。"
+}, {
+  "tag": "P",
+  "text": "To elaborate, in the ML world today, experts find a problem that they want to solve and they focus on finding the right dataset to train the model and perform that particular task. Dean argues that by doing so, they basically start from zero — they initialize the parameter of the model with random floating points and then try to learn about everything that tasks from the dataset.",
+  "translation": "详细说来，在当今的机器学习世界中，专家们发现了他们想解决的问题，他们专注于寻找合适的数据集来训练模型并执行特定任务。 Dean认为，这样做基本上是从零开始的-他们使用随机浮点数初始化模型的参数，然后尝试从数据集中了解任务的所有内容。"
+}, {
+  "tag": "P",
+  "text": "To elaborate on this matter, he gives an excellent comparison that goes like this:",
+  "translation": "为了详细说明这个问题，他给出了一个很好的比较，如下所示："
+}, {
+  "tag": "P",
+  "text": "“It’s akin to when you want to learn something new, you forget all your education and you go back to being an infant, and now you try to learn everything about this task”",
+  "translation": "“就像您想学习新知识一样，您忘了所有学业，回到婴儿时代，现在您尝试学习有关此任务的所有知识”"
+}, {
+  "tag": "P",
+  "text": "He compares this methodology with humans becoming infants every time we want to learn something new and taking a brain out and putting in a different one in. Not only is this method computationally expensive, but more effort is also required to achieve good outcomes in those tasks. And Jeff Dean proposes a solution.",
+  "translation": "他将这种方法与每次我们要学习新知识并动脑筋投入另一种人类的婴儿都比较。这种方法不仅计算上昂贵，而且在这些任务中要取得良好的结果还需要付出更多的努力。 。 Jeff Dean提出了一个解决方案。"
+}, {
+  "tag": "H1",
+  "text": "NLP and Transformers",
+  "translation": "NLP和变压器"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*927AYdLW8EKFD8GE?q=20",
+  "caption": "Photo by VanveenJF on Unsplash",
+  "type": "image",
+  "file": "0*927AYdLW8EKFD8GE"
+}, {
+  "tag": "P",
+  "text": "Language models are algorithms that help machines understand the text and perform all kinds of operations such as translating text. According to Jeff Dean, a lot of progress has been made in language models.",
+  "translation": "语言模型是帮助机器理解文本并执行各种操作（例如翻译文本）的算法。 杰夫·迪恩（Jeff Dean）认为，语言模型已经取得了很大进步。"
+}, {
+  "tag": "P",
+  "text": "Today, computers can understand paragraphs of text at a much deeper level than they could before. Even though they aren’t at the level of reading an entire book and understanding it the way we humans do, the ability to understand a few paragraphs of text is fundamental to things such as improving the Google search system.",
+  "translation": "如今，计算机可以比以前更深入地理解文本段落。 即使他们不具备阅读整本书并以人类的方式理解本书的能力，但是理解几段文字的能力对于诸如改进Google搜索系统之类的事情来说还是至关重要的。"
+}, {
+  "tag": "P",
+  "text": "The BERT model, the latest Natural Language Processing (NLP) model that Google announced has been put to use in their search ranking algorithms, This helped enhance the search results for myriads of different kinds of queries that were previously very difficult. In other words, the search system can now better understand different kinds of searches done by users and help provide better and more accurate answers.",
+  "translation": "BERT模型是Google宣布的最新自然语言处理（NLP）模型，已在其搜索排名算法中使用，这有助于增强以前非常困难的各种不同查询的搜索结果。 换句话说，搜索系统现在可以更好地了解用户进行的各种搜索，并帮助提供更好，更准确的答案。"
+}, {
+  "tag": "P",
+  "text": "“Deep learning and machine learning architectures are going to change a lot in the next few years. You can see a lot of this already, where now with NLP, the only game in town basically is Transformer networks,” — Yann LeCun",
+  "translation": "未来几年，深度学习和机器学习架构将发生很大变化。 您已经看到了很多这样的东西，现在有了NLP，镇上唯一的游戏基本上就是Transformer网络。” — Yann LeCun"
+}, {
+  "tag": "P",
+  "text": "These Transformer-based models for translation are showing spectacular gains in the BLEU score, which is a measurement of translation quality. So, Machine Learning architectures that utilize transformers such as BERT are increasing in popularity and functionality.",
+  "translation": "这些基于Transformer的翻译模型显示出BLEU得分的惊人提高，BLEU得分是翻译质量的衡量标准。 因此，利用诸如BERT之类的变压器的机器学习架构正日益普及。"
+}, {
+  "tag": "H1",
+  "text": "Computer vision",
+  "translation": "计算机视觉"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*Xs1I5nsKVclVi5gv?q=20",
+  "caption": "Photo by Alex Knight on Unsplash",
+  "type": "image",
+  "file": "0*Xs1I5nsKVclVi5gv"
+}, {
+  "tag": "P",
+  "text": "The field of Machine learning is experiencing exponential growth today, especially in the subject of computer vision. Today, the error rate in humans is only 3% in computer vision. This means computers are already better at recognizing and analyzing images than humans. What an amazing feat! Decades ago, computers were hunks of machinery the size of a room; today, they can perceive the world around us in ways that we never thought possible.",
+  "translation": "如今，机器学习领域正经历着指数级增长，尤其是在计算机视觉领域。 如今，计算机视觉中人类的错误率仅为3％。 这意味着计算机在识别和分析图像方面已经比人类更好。 多么了不起的壮举！ 几十年前，计算机就像房间一样大小的机械。 今天，他们可以用我们从未想到过的方式感知我们周围的世界。"
+}, {
+  "tag": "P",
+  "text": "The progress we’ve made from 26% error in 2011 to 3% error in 2016 is hugely impactful. The way I like to think is, computers have now evolved eyes that work. — Jeff Dean",
+  "translation": "从2011年的26％错误到2016年的3％错误，我们取得了巨大的进步。 我想思考的方式是，计算机已经进化出可以正常工作的眼睛。 —杰夫·迪恩"
+}, {
+  "tag": "P",
+  "text": "Now this achievement — made possible with advancements in machine learning — isn’t just a celebration for computer geeks and AI experts, it has real-world applications that save lives and make the world a better place. Before I blab about a life-saving application of computer vision, let me illustrate to you the power of computer vision.",
+  "translation": "如今，这项成就（随着机器学习的进步而成为可能）不仅是计算机爱好者和AI专家的庆祝活动，它还具有可拯救生命并让世界变得更美好的现实应用程序。 在我开始讨论挽救生命的计算机视觉应用程序之前，让我向您说明计算机视觉的力量。"
+}, {
+  "tag": "P",
+  "text": "Let’s say I give you 10,000 pictures of dogs and I ask you to classify them into their respective species, are you able to do that? Well, you can, but you have to be a dog expert and it’ll take days by the time you’re done. But for a computer (with a GPU), this takes mere minutes. This incredible capability of computer vision opens up a profusion of applications.",
+  "translation": "假设我给您10,000张狗的图片，请您将它们分类为各自的种类，您能做到吗？ 可以，但是您必须成为狗专家，完成后需要几天的时间。 但是对于一台计算机（带有GPU），这只需要几分钟。 这种无与伦比的计算机视觉功能打开了众多应用程序。"
+}, {
+  "tag": "H2",
+  "text": "Application of computer vision",
+  "translation": "计算机视觉的应用"
+}, {
+  "tag": "P",
+  "text": "One quintessential application for computer vision given by Jeff Dean is in diabetic retinopathy — which is a diabetes complication that affects the eye. Now to diagnose it, an extensive eye exam is required. In third-world countries and rural villages where there is a paucity of doctors, a machine learning model that uses computer vision to make a diagnosis will be extremely beneficial. As with all medical imaging fields, this computer vision can also be a second opinion for the domain experts, ensuring the credibility of their diagnosis. Generally, the purpose of computer vision in the medical field is to replicate the expertise of specialists and deploy it in places where people need it the most.",
+  "translation": "杰夫·迪恩（Jeff Dean）提供的计算机视觉的一种典型应用是糖尿病性视网膜病变-这是一种会影响眼睛的糖尿病并发症。 现在要进行诊断，需要进行广泛的眼科检查。 在医生稀少的第三世界国家和乡村，使用计算机视觉进行诊断的机器学习模型将非常有益。 与所有医学成像领域一样，这种计算机视觉也可以成为领域专家的第二意见，以确保其诊断的可信度。 通常，医学领域中计算机视觉的目的是复制专家的专业知识，并将其部署在人们最需要的地方。"
+}, {
+  "tag": "H1",
+  "text": "The future of Machine Learning",
+  "translation": "机器学习的未来"
+}, {
+  "tag": "H2",
+  "text": "A look into the future of ML with Jeff Dean",
+  "translation": "与Jeff Dean一起探讨ML的未来"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*lTOorr9m1CT413t5?q=20",
+  "caption": "Photo by Arseny Togulev on Unsplash",
+  "type": "image",
+  "file": "0*lTOorr9m1CT413t5"
+}, {
+  "tag": "P",
+  "text": "Machine learning is a trendy topic in this age of Artificial Intelligence. The fields of computer vision and Natural Language Processing (NLP) are making breakthroughs that no one could’ve predicted. We see both of them in our lives more and more, facial recognition in your smartphones, language translation software, self-driving cars and so on. What might seem sci-fi is becoming a reality, and it is only a matter of time before we attain Artificial General Intelligence.",
+  "translation": "机器学习是人工智能时代的一个热门话题。 计算机视觉和自然语言处理（NLP）领域正在取得前所未有的突破。 我们在生活中越来越看到这两个方面，在您的智能手机，语言翻译软件，自动驾驶汽车等中也能看到面部识别。 看起来科幻小说已经成为现实，而获得人工通用情报只是时间问题。"
+}, {
+  "tag": "P",
+  "text": "In this article, I will be covering Jeff Dean’s keynote on the advancements of computer vision and language models and how ML will progress towards the future from the perspective of model building.",
+  "translation": "在本文中，我将介绍Jeff Dean关于计算机视觉和语言模型的发展以及ML将如何从模型构建的角度向未来发展的主题演讲。"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Benedict Neo的文章《The future of Machine Learning》，参考：https://towardsdatascience.com/the-future-of-machine-learning-ce0a9dc18cb8)"
+}]
