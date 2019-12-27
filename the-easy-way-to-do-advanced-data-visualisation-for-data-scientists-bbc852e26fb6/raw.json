@@ -1,0 +1,231 @@
+[{
+  "tag": "H1",
+  "text": "Like to learn?",
+  "translation": "喜欢学习吗？"
+}, {
+  "tag": "P",
+  "text": "Follow me on twitter where I post all about the latest and greatest AI, Technology, and Science! Connect with me on LinkedIn too!",
+  "translation": "在Twitter上关注我，在其中发布有关最新，最出色的AI，技术和科学的所有信息！ 也在LinkedIn上与我联系！"
+}, {
+  "tag": "H1",
+  "text": "Recommended Reading",
+  "translation": "推荐读物"
+}, {
+  "tag": "P",
+  "text": "Want to learn more about Data Science? The Python Data Science Handbook book is the best resource out there for learning how to do real Data Science with Python!",
+  "translation": "想更多地了解数据科学？ 《 Python数据科学手册》一书是学习如何使用Python进行真正的数据科学的最佳资源！"
+}, {
+  "tag": "P",
+  "text": "And just a heads up, I support this blog with Amazon affiliate links to great books, because sharing great books helps everyone! As an Amazon Associate I earn from qualifying purchases.",
+  "translation": "提醒一下，我支持此博客，其中包含指向优秀书籍的亚马逊会员链接，因为共享优秀书籍对所有人都有帮助！ 作为亚马逊合作伙伴，我从符合条件的购买中赚钱。"
+}, {
+  "tag": "H1",
+  "text": "The Easy Way to Do Advanced Data Visualisation for Data Scientists",
+  "translation": "为数据科学家提供高级数据可视化的简便方法"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*AhyUG_TNnqkbIPVLee7CIA.jpeg?q=20",
+  "caption": "Show off your data’s true colors!",
+  "type": "image",
+  "file": "1*AhyUG_TNnqkbIPVLee7CIA.jpeg"
+}, {
+  "tag": "P",
+  "text": "Creating effective data visualizations is one of the most valuable skills a Data Scientist can posses.",
+  "translation": "创建有效的数据可视化是数据科学家可以拥有的最有价值的技能之一。"
+}, {
+  "tag": "P",
+  "text": "More than just making fancy charts, visualization is a way of communicating a dataset’s information in a way that’s easy for people to understand. With a good visualisation, one can most clearly see the patterns and information that often lie hidden within the data.",
+  "translation": "可视化不只是制作精美的图表，还使人们易于理解的方式传达数据集信息。 通过良好的可视化，可以最清楚地看到通常隐藏在数据中的模式和信息。"
+}, {
+  "tag": "P",
+  "text": "In the early stages of a project, you’ll often be doing an Exploratory Data Analysis (EDA) to gain some insights into your data. Creating visualisations will help you along the way to speed up your analysis.",
+  "translation": "在项目的早期阶段，您通常会进行探索性数据分析（EDA），以获得对数据的一些见解。 创建可视化效果将帮助您加快分析速度。"
+}, {
+  "tag": "P",
+  "text": "Towards the end of your project, it’s important to be able to present your final results in a clear, concise, and compelling manner that your audience, who are often non-technical stakeholders, can understand.",
+  "translation": "在项目快要结束时，重要的是要以清晰，简洁，令人信服的方式呈现最终结果，以使听众（通常是非技术利益相关者）能够理解。"
+}, {
+  "tag": "P",
+  "text": "There’s no doubt: taking your visualizations to the next level will turbocharge your analysis — and help you knock your next presentation out of the park.",
+  "translation": "毫无疑问：将您的可视化效果提升到一个新的水平将使您的分析工作更加充实，并帮助您将下一个演示文稿带出公园。"
+}, {
+  "tag": "P",
+  "text": "This article will be a tutorial on how to create fancy, advanced data visualizations — easily! We’ll be using plotly, a Python library for creating interactive visualisations!",
+  "translation": "本文将是有关如何轻松创建精美的高级数据可视化的教程！ 我们将使用plotly（一个Python库）来创建交互式可视化！"
+}, {
+  "tag": "H1",
+  "text": "Introducing plotly",
+  "translation": "情节介绍"
+}, {
+  "tag": "P",
+  "text": "Plotly is an interactive, open-source, and browser-based graphing library for Python! It’s built on top of D3.js, making its visualization capabilities much more far-ranging and flexible than the standard Matplotlib.",
+  "translation": "Plotly是用于Python的交互式，开源和基于浏览器的图形库！ 它建立在D3.js之上，使其可视化功能比标准Matplotlib更加广泛和灵活。"
+}, {
+  "tag": "P",
+  "text": "There are 2 main advantages to using Plotly over other Python libraries capable of plotting such as Matplotlib, Seaborn, and Pandas. These are:",
+  "translation": "与其他能够进行绘图的Python库（例如Matplotlib，Seaborn和Pandas）相比，使用Plotly有2个主要优点。 这些是："
+}, {
+  "tag": "P",
+  "text": "(1) Ease of use — Creating interactive plots, 3D plots, and other complex graphics is just a few lines away. Doing the same thing in the other plotting libraries takes a lot more work.",
+  "translation": "（1）易于使用-只需几行之遥即可创建交互式绘图，3D绘图和其他复杂图形。 在其他绘图库中做同样的事情需要做很多工作。"
+}, {
+  "tag": "P",
+  "text": "(2) More capabilities — Since Plotly is built from D3.js, its plotting capabilities are much greater than other plotting libraries. Sunburst charts, candlestick charts, maps, and more are all possible with Plotly. See a full list here.",
+  "translation": "（2）更多功能-由于Plotly是从D3.js构建的，因此其绘图功能比其他绘图库要强大得多。 使用Plotly可以实现朝阳图，烛台图，地图等。 在此处查看完整列表。"
+}, {
+  "tag": "P",
+  "text": "We can install Plotly with a single pip command:",
+  "translation": "我们可以使用一个pip命令安装Plotly："
+}, {
+  "tag": "PRE",
+  "text": "pip install plotly==4.0.0",
+  "translation": "pip install plotly == 4.0.0"
+}, {
+  "tag": "P",
+  "text": "For the rest of this tutorial, we’re going to be creating visualizations of the House Prices dataset which you can grab from Kaggle.",
+  "translation": "在本教程的其余部分，我们将创建可视化的房价数据集，您可以从Kaggle那里获取。"
+}, {
+  "tag": "H1",
+  "text": "Making Fancy Plots with Plotly",
+  "translation": "使用Plotly制作花式图"
+}, {
+  "tag": "P",
+  "text": "We can create some pretty fancy plots with Plotly!",
+  "translation": "我们可以使用Plotly创建一些漂亮的情节！"
+}, {
+  "tag": "P",
+  "text": "To start off, let’s import plotly and its internal graph objects component. We’ll also import pandas for loading up our dataset",
+  "translation": "首先，让我们导入plotly及其内部图形对象组件。 我们还将导入熊猫以加载数据集"
+}, {
+  "tag": "PRE",
+  "text": "import plotlyimport plotly.graph_objs as goimport pandas as pd",
+  "translation": "导入plotly导入plotly.graph_objs作为goimport熊猫作为PD"
+}, {
+  "tag": "P",
+  "text": "Reading in our dataset is of course just a one-liner in pandas:",
+  "translation": "当然，在我们的数据集中阅读只是熊猫的一线话："
+}, {
+  "tag": "PRE",
+  "text": "data = pd.read_csv('train.csv')",
+  "translation": "数据= pd.read_csv（'train.csv'）"
+}, {
+  "tag": "H1",
+  "text": "Scatter Plots",
+  "translation": "散点图"
+}, {
+  "tag": "P",
+  "text": "For this exercise, we’re going to plot the SalesPrice vs. YearBuilt in a scatter plot. To do so, we’ll create a plotly Scatter graph object and put it into a trace .",
+  "translation": "在本练习中，我们将在散点图中绘制销售价格与建造年份的关系。 为此，我们将创建一个散点图散点图对象，并将其放入跟踪中。"
+}, {
+  "tag": "PRE",
+  "text": "trace = go.Scatter(    x = data['YearBuilt'],    y = data['SalePrice'],    mode = 'markers',    showlegend = True)plot_data = [trace]",
+  "translation": "trace = go.Scatter（x = data ['YearBuilt']，y = data ['SalePrice']，mode ='markers'，showlegend = True）plot_data = [trace]"
+}, {
+  "tag": "P",
+  "text": "Then, plotting is just a single line away!",
+  "translation": "然后，绘图仅需一行！"
+}, {
+  "tag": "PRE",
+  "text": "plotly.offline.plot(plot_data, filename='basic-scatter')",
+  "translation": "plotly.offline.plot（plot_data，filename ='basic-scatter'）"
+}, {
+  "tag": "P",
+  "text": "The above command will open a new tab in your browser with the plot.",
+  "translation": "上面的命令将在您的浏览器中打开一个带有图表的新选项卡。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*Rs6CbLU8TxmRfPqY529T0g.png?q=20",
+  "type": "image",
+  "file": "1*Rs6CbLU8TxmRfPqY529T0g.png"
+}, {
+  "tag": "P",
+  "text": "Nothing fancy yet…. but just you wait!",
+  "translation": "还没有幻想...。 但是等你！"
+}, {
+  "tag": "P",
+  "text": "Graph interactivity comes automatically built-in with Plotly. Check out the gif below to see what it can do! All of the commands are in the top-right of the browser:",
+  "translation": "图形交互功能是Plotly自动内置的。 看看下面的gif图片，看看它能做什么！ 所有命令都在浏览器的右上方："
+}, {
+  "tag": "UL",
+  "texts": ["Hovering over each point shows the point’s x-y coordinates", "You can zoom in on a certain box of the data", "You can select and highlight certain points, either with a box or with Lasso", "You can pan around the entire plot to get a better look at things", "You can download the plot as an image file!"],
+  "translations": ["将鼠标悬停在每个点上会显示该点的x-y坐标", "您可以放大数据的特定框", "您可以使用方框或套索选择并突出显示某些点", "您可以平移整个情节以更好地了解事物", "您可以将绘图作为图像文件下载！"]
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/freeze/max/30/1*HcPLh7-KDTj-NeiNbgQiwg.gif?q=20",
+  "type": "image",
+  "file": "1*HcPLh7-KDTj-NeiNbgQiwg.gif"
+}, {
+  "tag": "H1",
+  "text": "Box Plots",
+  "translation": "箱形图"
+}, {
+  "tag": "P",
+  "text": "This time we’ll do a box plot.",
+  "translation": "这次，我们将进行箱形图绘制。"
+}, {
+  "tag": "P",
+  "text": "The process is about the same. We’ll create a graph object, put it into a trace, and then plot it in the browser:",
+  "translation": "过程大致相同。 我们将创建一个图形对象，将其放入轨迹中，然后在浏览器中进行绘制："
+}, {
+  "tag": "PRE",
+  "text": "import plotlyimport plotly.graph_objs as goimport pandas as pddata = pd.read_csv('train.csv')trace = go.Box(    x = data['YearBuilt'],    y = data['SalePrice'],    marker = {'color': 'green'},    showlegend = True,)plot_data = [trace]plotly.offline.plot(plot_data, filename='basic-box')",
+  "translation": "导入plotly导入plotly.graph_objs作为goimport熊猫作为pddata = pd.read_csv（'train.csv'）trace = go.Box（x = data ['YearBuilt']，y = data ['SalePrice']，marker = {'color '：'green'}，showlegend = True，）plot_data = [trace] plotly.offline.plot（plot_data，filename ='basic-box'）"
+}, {
+  "tag": "P",
+  "text": "Check out the gif below to see some of the fancy Plotly features with box plots!",
+  "translation": "查看下面的gif，以查看一些带有箱形图的精美Plotly功能！"
+}, {
+  "tag": "P",
+  "text": "By default, we get the same panning, zooming, and point selection. Since we now have a box plot, hovering over each box will show:",
+  "translation": "默认情况下，我们获得相同的平移，缩放和点选择。 由于我们现在有一个箱形图，将鼠标悬停在每个箱形上将显示："
+}, {
+  "tag": "UL",
+  "texts": ["Median", "1st and 3rd quartiles", "Min and Max values of the data range", "The upper and / or lower fences if there are outliers"],
+  "translations": ["中位数", "第一和第三四分位数", "数据范围的最小值和最大值", "上围栏和/或下围栏（如果有异常值）"]
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/freeze/max/30/1*fwL8tBtDvTG-1muNTQJxjg.gif?q=20",
+  "type": "image",
+  "file": "1*fwL8tBtDvTG-1muNTQJxjg.gif"
+}, {
+  "tag": "H1",
+  "text": "Heat Maps",
+  "translation": "热图"
+}, {
+  "tag": "P",
+  "text": "Heat Maps are another powerful tool in any great Data Scientist’s toolbox. They’re especially effective for showing the relationships between multiple feature variables in one graph as well as the relative importance of each relationship.",
+  "translation": "热图是任何出色的数据科学家工具箱中的另一个强大工具。 它们对于在一张图中显示多个要素变量之间的关系以及每种关系的相对重要性特别有效。"
+}, {
+  "tag": "P",
+  "text": "To really show how your Heat Maps can be enhanced by using Plotly, we’re going to plot the correlation matrix of the House Prices dataset as a heat map. Plotting the correlation matrix of a dataset is a quick an easy way to get an overview of how your feature variables are influencing the target.",
+  "translation": "为了真正展示如何通过使用Plotly来增强您的热图，我们将绘制房屋数据集的相关矩阵作为热图。 绘制数据集的相关矩阵是一种快速简便的方法，可以概述特征变量如何影响目标。"
+}, {
+  "tag": "P",
+  "text": "For plotly, we set the x and y to be the names of the columns, and the z to be the values in the matrix.",
+  "translation": "对于plotly，我们将x和y设置为列的名称，将z设置为矩阵中的值。"
+}, {
+  "tag": "P",
+  "text": "Plotting it all in our browser is, once again, a walk in the park.",
+  "translation": "在浏览器中绘制所有内容，再次是在公园散步。"
+}, {
+  "tag": "PRE",
+  "text": "import plotlyimport plotly.graph_objs as goimport pandas as pddata = pd.read_csv('train.csv')corrmat = data.corr()trace = go.Heatmap(z=corrmat, x=corrmat.columns.tolist(), y=corrmat.columns.tolist())plot_data = [trace]plotly.offline.plot(plot_data, filename='basic-heatmap')",
+  "translation": "import plotly.graph_objs作为goimport pandas作为pddata = pd.read_csv（'train.csv'）corrmat = data.corr（）trace = go.Heatmap（z = corrmat，x = corrmat.columns.tolist（），y = corrmat.columns.tolist（））plot_data = [trace] plotly.offline.plot（plot_data，filename ='basic-heatmap'）"
+}, {
+  "tag": "P",
+  "text": "Heatmaps in Matplotlib can be a bit tricky since you can’t see the exact value of each cell — you can only sort-of kind-of tell from the color. You could write code to make it interactive, but that’s quite the hassle in Matplotlib.",
+  "translation": "Matplotlib中的热图可能有点棘手，因为您看不到每个单元格的确切值-您只能从颜色中分辨出某种类型。 您可以编写代码使其具有交互性，但这在Matplotlib中颇为麻烦。"
+}, {
+  "tag": "P",
+  "text": "Plotly gives us interactivity out of the box, so when we plot a heat map we get a nice intuitive overview, but also have the option to check exact values if needed. The pan-and-zoom functionality of Plotly is also super clean, allowing for an easy way to do more detailed exploration, all from a visual point of view!",
+  "translation": "Plotly提供了开箱即用的交互性，因此当我们绘制热图时，我们会得到一个很好的直观概览，但是如果需要，还可以选择检查确切的值。 Plotly的全景和缩放功能也非常干净，从视觉的角度来看，这是一种进行更详细探索的简便方法！"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/freeze/max/30/1*5PLe7EoJgLXdRo_Z5KnnFA.gif?q=20",
+  "type": "image",
+  "file": "1*5PLe7EoJgLXdRo_Z5KnnFA.gif"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自George Seif的文章《The Easy Way to Do Advanced Data Visualisation for Data Scientists》，参考：https://towardsdatascience.com/the-easy-way-to-do-advanced-data-visualisation-for-data-scientists-bbc852e26fb6)",
+  "translation": "（本文翻译自George Seif的文章《为数据科学家提供高级数据可视化的简便方法》，参考：https：//towardsdatascience.com/the-easy-way-to-do-advanced-data-visualisation-for- 数据科学家-bbc852e26fb6）"
+}]
