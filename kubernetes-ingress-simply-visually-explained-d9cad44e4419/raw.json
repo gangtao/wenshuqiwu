@@ -1,0 +1,431 @@
+[{
+  "tag": "H1",
+  "text": "Kubernetes Ingress simply visually explained",
+  "translation": "Kubernetes Ingress只需直观地说明"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*yT3uLJ5Z5VJif-nBvQ8hDA.jpeg?q=20",
+  "type": "image",
+  "file": "1*yT3uLJ5Z5VJif-nBvQ8hDA.jpeg"
+}, {
+  "tag": "P",
+  "text": "Make sure you understand Kubernetes Services from Part 1:",
+  "translation": "确保您了解第1部分中的Kubernetes服务："
+}, {
+  "tag": "UL",
+  "texts": ["Part 1: Kubernetes Services simply visually explained", "Part 2: this article"],
+  "translations": ["第1部分：Kubernetes服务在视觉上简单地说明", "第2部分：本文"]
+}, {
+  "tag": "H1",
+  "text": "TL;DR",
+  "translation": "TL; DR"
+}, {
+  "tag": "P",
+  "text": "Kubernetes Ingress is not a Kubernetes Service. Very simplified its just a Nginx Pod which redirects requests to other internal (ClusterIP) services. This Pod itself is made reachable through a Kubernetes Service, most commonly a LoadBalancer.",
+  "translation": "Kubernetes Ingress不是Kubernetes服务。 非常简化的只是一个Nginx Pod，它将请求重定向到其他内部（ClusterIP）服务。 该Pod本身可以通过Kubernetes服务（通常是LoadBalancer）来访问。"
+}, {
+  "tag": "H1",
+  "text": "Should you even read this?",
+  "translation": "你甚至应该读这个吗？"
+}, {
+  "tag": "P",
+  "text": "First I hope I can give you a clear and simple overview of what is behind this mysterious Kubernetes Ingress which then makes it easier for you to understand what you’re actually implementing or even if you should.",
+  "translation": "首先，我希望我能为您提供这个神秘的Kubernetes Ingress背后的内容的简单明了的概述，然后使您更容易理解您实际上正在实施的内容或什至应该这样做。"
+}, {
+  "tag": "P",
+  "text": "Later I show some example configuration based on the example we use throughout this article.",
+  "translation": "稍后，我将基于本文中使用的示例展示一些示例配置。"
+}, {
+  "tag": "H1",
+  "text": "Why to use Ingress?",
+  "translation": "为什么要使用Ingress？"
+}, {
+  "tag": "P",
+  "text": "You use it to make internal services reachable from outside your cluster. It saves you precious static IPs, as you won’t need to declare multiple LoadBalancer services. Also it allows for much more configuration and easier setup as we’ll see.",
+  "translation": "您可以使用它来从群集外部访问内部服务。 它省去了宝贵的静态IP，因为您无需声明多个LoadBalancer服务。 而且，如我们所见，它还允许进行更多的配置和更容易的设置。"
+}, {
+  "tag": "H1",
+  "text": "What will we do here?",
+  "translation": "我们在这里做什么？"
+}, {
+  "tag": "UL",
+  "texts": ["First we do a really short excursion into how http servers, especially Nginx, work and what they can do.", "Then we’ll show how an Ingress could be setup manually, so without using the fancy Kubernetes Ingress resource at all.", "Next we’ll see that Kubernetes Ingress is nothing more than a pre-configured Nginx server."],
+  "translations": ["首先，我们对HTTP服务器（尤其是Nginx）如何工作以及它们可以做什么进行了非常简短的考察。", "然后，我们将说明如何手动设置Ingress，从而完全不用花哨的Kubernetes Ingress资源。", "接下来，我们将看到Kubernetes Ingress只是预配置的Nginx服务器。"]
+}, {
+  "tag": "P",
+  "text": "Sounds confusing? Just follow me through here.",
+  "translation": "听起来令人困惑？ 只要在这里跟随我。"
+}, {
+  "tag": "H1",
+  "text": "Short dive into the world of a simple HTTP server",
+  "translation": "简要了解简单HTTP服务器的世界"
+}, {
+  "tag": "P",
+  "text": "Here we step back into times before containers, Kubernetes and the modern world of Cloud. Stay with me, it’ll be short.",
+  "translation": "在这里，我们回到容器，Kubernetes和现代云世界之前的时代。 和我在一起，时间会很短。"
+}, {
+  "tag": "H2",
+  "text": "What can a (Nginx) HTTP server do?",
+  "translation": "（Nginx）HTTP服务器可以做什么？"
+}, {
+  "tag": "P",
+  "text": "It can receive a request over the HTTP protocol for a specific filepath, check that filepath on the attached filesystem and return it if that file exists:",
+  "translation": "它可以通过HTTP协议接收针对特定文件路径的请求，检查附加文件系统上的文件路径，如果该文件存在，则将其返回："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*SUicvV80aX-ytzYxUTfDLA.png?q=20",
+  "type": "image",
+  "file": "1*SUicvV80aX-ytzYxUTfDLA.png"
+}, {
+  "tag": "P",
+  "text": "In Nginx this could be for example done with something like:",
+  "translation": "在Nginx中，例如可以通过以下方式完成此操作："
+}, {
+  "tag": "PRE",
+  "text": "location /folder {    root /var/www/;    index index.html;}",
+  "translation": "位置/文件夹{根目录/ var / www /; index index.html;}"
+}, {
+  "tag": "H2",
+  "text": "What can a (Nginx) HTTP server also do?",
+  "translation": "（Nginx）HTTP服务器还能做什么？"
+}, {
+  "tag": "P",
+  "text": "It can receive a request for a specific filepath, redirect that request to another server (which means it acts as proxy) and then redirects the response of that server to back to the client. For the client nothing changes, the received result is still the requested file (if it exists).",
+  "translation": "它可以接收对特定文件路径的请求，将该请求重定向到另一台服务器（这意味着它充当代理），然后将该服务器的响应重定向回客户端。 对于客户端，没有任何变化，接收到的结果仍然是请求的文件（如果存在）。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*2wlHmuF_leK_W1RyWxTmLA.png?q=20",
+  "type": "image",
+  "file": "1*2wlHmuF_leK_W1RyWxTmLA.png"
+}, {
+  "tag": "P",
+  "text": "We won’t dive deep into this but in Nginx a proxy redirect could for example be configured like:",
+  "translation": "我们不会深入探讨这一点，但是在Nginx中，例如可以将代理重定向配置为："
+}, {
+  "tag": "PRE",
+  "text": "location /folder {    proxy_pass http://second-nginx-server:8000;}",
+  "translation": "位置/ folder {proxy_pass http：// second-nginx-server：8000;}"
+}, {
+  "tag": "P",
+  "text": "This means Nginx can serve files from a filesystem or redirect responses to other servers and return their responses, by acting as a proxy.",
+  "translation": "这意味着Nginx可以充当代理来从文件系统提供文件或将响应重定向到其他服务器并返回其响应。"
+}, {
+  "tag": "H1",
+  "text": "A simple Kubernetes example:",
+  "translation": "一个简单的Kubernetes示例："
+}, {
+  "tag": "H2",
+  "text": "Use ClusterIP services",
+  "translation": "使用ClusterIP服务"
+}, {
+  "tag": "P",
+  "text": "Again, from this point on you should understand Kubernetes Services. We have two worker nodes, we ignore master nodes here. We have two services service-nginx and service-python which point to various pods.",
+  "translation": "同样，从这一点开始，您应该了解Kubernetes Services。 我们有两个工作节点，这里我们忽略主节点。 我们有两个服务service-nginx和service-python指向不同的容器。"
+}, {
+  "tag": "P",
+  "text": "Services are not scheduled on any specific Node, lets just say they are “available everywhere in the cluster”.",
+  "translation": "服务不是在任何特定的节点上调度的，只能说它们“在群集中的任何地方都可用”。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*kcjjTCeWLUgdKV4JQvDrsQ.png?q=20",
+  "type": "image",
+  "file": "1*kcjjTCeWLUgdKV4JQvDrsQ.png"
+}, {
+  "tag": "P",
+  "text": "You should understand whats happening here. Internally in our cluster we can reach the Nginx pods and the Python pods through their services. Next we would like to make those available from outside the cluster as well. So we convert those into LoadBalancer services:",
+  "translation": "您应该了解这里发生了什么。 在我们集群的内部，我们可以通过它们的服务访问Nginx pod和Python pod。 接下来，我们还要从集群外部提供这些资源。 因此，我们将它们转换为LoadBalancer服务："
+}, {
+  "tag": "H2",
+  "text": "Use LoadBalancer Services",
+  "translation": "使用LoadBalancer服务"
+}, {
+  "tag": "P",
+  "text": "You can see that we converted the ClusterIP services into LoadBalancer services. Because we have our Kubernetes Cluster hosted with a Cloud Provider which can handle this (Gcloud, AWS, DigitalOcean…), it creates two external load-balancers which redirect requests to our external Node IPs which then redirect to the internal ClusterIP services.",
+  "translation": "您可以看到我们将ClusterIP服务转换为LoadBalancer服务。 因为我们的Kubernetes集群托管有可以处理此问题的云提供商（Gcloud，AWS，DigitalOcean…），所以它创建了两个外部负载均衡器，可将请求重定向到我们的外部节点IP，再将其重定向到内部ClusterIP服务。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*Ym3ixn-D4xNS2LICA0q9WQ.png?q=20",
+  "type": "image",
+  "file": "1*Ym3ixn-D4xNS2LICA0q9WQ.png"
+}, {
+  "tag": "P",
+  "text": "We see two LoadBalancers, each having its own IP. If we send a request to LoadBalancer 22.33.44.55 it gets redirected to our internal service-nginx. If we send the request to 77.66.55.44 it gets redirected to our internal service-python.",
+  "translation": "我们看到两个LoadBalancers，每个都有自己的IP。 如果我们向LoadBalancer 22.33.44.55发送请求，它将被重定向到我们的内部服务nginx。 如果我们将请求发送到77.66.55.44，它将被重定向到内部服务python。"
+}, {
+  "tag": "P",
+  "text": "This works great! But IP addresses are rare and LoadBalancer pricing depends on the cloud providers. Now imagine we don’t have just two but many more internal services for which we would like to create LoadBalancers, costs would scale up.",
+  "translation": "这很棒！ 但是IP地址很少，LoadBalancer的定价取决于云提供商。 现在想象一下，我们要创建LoadBalancers的不仅仅是内部服务，而是更多的内部服务，成本将会增加。"
+}, {
+  "tag": "P",
+  "text": "Might there be another solution which allows us to only use one LoadBalancer (with one IP) but still reach both of our internal services directly? Let’s explore this first by implementing a manual (non Kubernetes) approach.",
+  "translation": "可能会有另一种解决方案，使我们仅使用一个LoadBalancer（具有一个IP），但仍可以直接访问我们的两个内部服务吗？ 首先，我们通过实施手动（非Kubernetes）方法来对此进行探讨。"
+}, {
+  "tag": "H2",
+  "text": "Manually configure a Nginx Service as proxy",
+  "translation": "手动将Nginx服务配置为代理"
+}, {
+  "tag": "P",
+  "text": "As described earlier, Nginx can act as a proxy. In the following image we see a new service called service-nginx-proxy which is actually our only LoadBalancer service. The service-nginx-proxy would still point to one or multiple Nginx-pod-endpoints, but for simplicity I didn’t include this in the graphic. The other two services from before are converted back to simple ClusterIP ones:",
+  "translation": "如前所述，Nginx可以充当代理。 在下图中，我们看到一个名为service-nginx-proxy的新服务，它实际上是我们唯一的LoadBalancer服务。 service-nginx-proxy仍将指向一个或多个Nginx-pod端点，但是为简单起见，我未在图形中包括该端点。 之前的其他两项服务将转换回简单的ClusterIP服务："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/24/1*o_R_ZAUpTPRRPKw87LgTMQ.png?q=20",
+  "type": "image",
+  "file": "1*o_R_ZAUpTPRRPKw87LgTMQ.png"
+}, {
+  "tag": "P",
+  "text": "We can see that we only hit one LoadBalancer (11.22.33.44) but with different http urls, the requests are displayed in yellow as its the same target and just contains different content (request urls).",
+  "translation": "我们可以看到，我们只打了一个LoadBalancer（11.22.33.44），但是使用了不同的http URL，这些请求以黄色显示为相同的目标，并且只包含不同的内容（请求url）。"
+}, {
+  "tag": "P",
+  "text": "The service service-nginx-proxy decides (by using Nginx proxy passes and locations), depending on the passed urls, to which service he should redirect the request.",
+  "translation": "服务service-nginx-proxy根据所传递的URL决定（通过使用Nginx代理传递和位置），他应将请求重定向到哪个服务。"
+}, {
+  "tag": "P",
+  "text": "In this case we have two choices, red and blue. Red redirects to service-nginx where blue redirects to service-python.",
+  "translation": "在这种情况下，我们有两个选择，红色和蓝色。 红色重定向到service-nginx，蓝色重定向到service-python。"
+}, {
+  "tag": "PRE",
+  "text": "# very simplified Nginx config examplelocation /folder {    proxy_pass http://service-nginx:3001;}location /other {    proxy_pass http://service-python:3002;}",
+  "translation": "＃非常简化的Nginx配置示例location / folder {proxy_pass http：// service-nginx：3001;} location / other {proxy_pass http：// service-python：3002;}"
+}, {
+  "tag": "P",
+  "text": "Currently we would need to configure the service-nginx-proxy manually. Like creating the proper Nginx configuration files pointing to our ClusterIP services. This is very much a possible, working and common solution.",
+  "translation": "当前，我们需要手动配置service-nginx-proxy。 就像创建指向我们的ClusterIP服务的正确的Nginx配置文件一样。 这是一个可能的，可行的且通用的解决方案。"
+}, {
+  "tag": "P",
+  "text": "And because this was/is a common solution, Kubernetes Ingress was created to make the configuration easier and more manageable.",
+  "translation": "并且由于这是/是常见的解决方案，因此创建了Kubernetes Ingress以使配置更容易且更易于管理。"
+}, {
+  "tag": "P",
+  "text": "From this point on you should understand the advantage of the above example shown in the image. If you don’t, feel free to add a comment below to discuss.",
+  "translation": "从这一点开始，您应该了解图像中显示的上述示例的优势。 如果您不愿意，请随时在下面添加评论以进行讨论。"
+}, {
+  "tag": "H1",
+  "text": "Use Kubernetes Ingress in our example",
+  "translation": "在我们的示例中使用Kubernetes Ingress"
+}, {
+  "tag": "P",
+  "text": "Compare the following image to the previous one. Really not much changed. We just used a pre-configured Nginx (Kubernetes Ingress) which does already all proxy redirection for us which saves us a lot of manually configuration work:",
+  "translation": "将以下图像与上一张图像进行比较。 真的没多大变化。 我们只使用了预先配置的Nginx（Kubernetes Ingress），它已经为我们完成了所有代理重定向，从而节省了很多手动配置工作："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/24/1*7YSAAZcC4X2iDJfM8OE7AA.png?q=20",
+  "type": "image",
+  "file": "1*7YSAAZcC4X2iDJfM8OE7AA.png"
+}, {
+  "tag": "P",
+  "text": "That’s all there is to understanding what Kubernetes Ingress is. Now let’s move to some example configuration.",
+  "translation": "这就是了解Kubernetes Ingress是什么的全部。 现在，让我们转到一些示例配置。"
+}, {
+  "tag": "H1",
+  "text": "Install Kubernetes Ingress Controller",
+  "translation": "安装Kubernetes入口控制器"
+}, {
+  "tag": "P",
+  "text": "Kubernetes Ingress is an additional Kubernetes Resources which can be installed by:",
+  "translation": "Kubernetes Ingress是额外的Kubernetes资源，可以通过以下方式安装："
+}, {
+  "tag": "PRE",
+  "text": "kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/nginx-0.24.1/deploy/mandatory.yamlkubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/nginx-0.24.1/deploy/provider/cloud-generic.yaml",
+  "translation": "kubectl适用-f https://raw.githubusercontent.com/kubernetes/ingress-nginx/nginx-0.24.1/deploy/mandatory.yamlkubectl适用-f https://raw.githubusercontent.com/kubernetes/ingress-nginx/ nginx-0.24.1 / deploy / provider / cloud-generic.yaml"
+}, {
+  "tag": "P",
+  "text": "Using the following command you’ll see the k8s resources which get installed in the namespace ingress-nginx:",
+  "translation": "使用以下命令，您将看到k8s资源已安装在名称空间ingress-nginx中："
+}, {
+  "tag": "PRE",
+  "text": "kubectl get svc,pod --namespace=ingress-nginx",
+  "translation": "kubectl获取svc，pod --namespace = ingress-nginx"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*NV4HknTA1LCoL7B0KSFgDA.png?q=20",
+  "type": "image",
+  "file": "1*NV4HknTA1LCoL7B0KSFgDA.png"
+}, {
+  "tag": "P",
+  "text": "You see a normal LoadBalancer service with an External IP and a belonging pod. You can even kubectl exec into that pod to see it contains a pre-configured Nginx server:",
+  "translation": "您会看到带有外部IP和附属Pod的常规LoadBalancer服务。 您甚至可以将kubectl exec放入该pod中，以查看其中包含预先配置的Nginx服务器："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*lpckG2-HqEZ_3ildoSBh9g.png?q=20",
+  "type": "image",
+  "file": "1*lpckG2-HqEZ_3ildoSBh9g.png"
+}, {
+  "tag": "P",
+  "text": "Inside the nginx.conf you would see the various proxy redirects settings and other related configuration.",
+  "translation": "在nginx.conf中，您会看到各种代理重定向设置和其他相关配置。"
+}, {
+  "tag": "H1",
+  "text": "Example Kubernetes Ingress Config",
+  "translation": "示例Kubernetes入口配置"
+}, {
+  "tag": "P",
+  "text": "An example Ingress yaml for the example we’ve been using could look like this:",
+  "translation": "我们一直在使用的示例Ingress yaml可能如下所示："
+}, {
+  "tag": "PRE",
+  "text": "# just example, not testedapiVersion: networking.k8s.io/v1beta1kind: Ingressmetadata:  annotations:    kubernetes.io/ingress.class: nginx  namespace: default  name: test-ingressspec:  rules:  - http:      paths:      - path: /folder        backend:          serviceName: service-nginx          servicePort: 3001  - http:      paths:      - path: /other        backend:          serviceName: service-python          servicePort: 3002",
+  "translation": "＃只是示例，未经测试 ：serviceName：service-nginx servicePort：3001-http：路径：-路径：/其他后端：serviceName：service-python servicePort：3002"
+}, {
+  "tag": "P",
+  "text": "We would need to create this yaml like any other resource through kubectl create -f ingress.yaml. This yaml will then be converted by the previously installed Ingress Controller into Nginx configuration.",
+  "translation": "我们需要像通过kubectl create -f ingress.yaml来创建其他任何资源一样的yaml。 然后，该Yaml将由先前安装的Ingress Controller转换为Nginx配置。"
+}, {
+  "tag": "H1",
+  "text": "Example Kubernetes Ingress / Different Namespaces",
+  "translation": "示例Kubernetes入口/不同的命名空间"
+}, {
+  "tag": "P",
+  "text": "Now what if one of your internal services, to which the Ingress should redirect to, is in a different namespace? Because an Ingress Resource you define is namespaced. Inside your Ingress configuration you can only redirect to services in the same namespace.",
+  "translation": "现在，如果Ingress应该重定向到的内部服务之一在另一个名称空间中，该怎么办？ 因为您定义的入口资源是命名空间。 在Ingress配置中，您只能重定向到相同名称空间中的服务。"
+}, {
+  "tag": "P",
+  "text": "If you define multiple Ingress yaml configurations, then those are merged together into one Nginx configuration by the one single Ingress Controller. Meaning: all are using the same LoadBalancer IP as well.",
+  "translation": "如果定义了多个Ingress yaml配置，则这些配置将由一个Ingress Controller合并到一个Nginx配置中。 含义：所有人也都使用相同的LoadBalancer IP。"
+}, {
+  "tag": "P",
+  "text": "So let’s consider service-nginx is in namespace default:",
+  "translation": "因此，我们考虑将service-nginx设置为默认名称空间："
+}, {
+  "tag": "PRE",
+  "text": "# just example, not testedapiVersion: networking.k8s.io/v1beta1kind: Ingressmetadata:  annotations:    kubernetes.io/ingress.class: nginx  namespace: default  name: ingress1spec:  rules:  - http:      paths:      - path: /folder        backend:          serviceName: service-nginx          servicePort: 3001",
+  "translation": "＃只是示例，未经测试 ：service-nginx service端口：3001"
+}, {
+  "tag": "P",
+  "text": "And then service-python is in namespace namespace2:",
+  "translation": "然后service-python在命名空间namespace2中："
+}, {
+  "tag": "PRE",
+  "text": "# just example, not testedapiVersion: networking.k8s.io/v1beta1kind: Ingressmetadata:  annotations:    kubernetes.io/ingress.class: nginx  namespace: namespace2  name: ingress2spec:  rules:  - http:      paths:      - path: /other        backend:          serviceName: service-python          servicePort: 3002",
+  "translation": "＃只是示例，未经测试 ：服务Python服务端口：3002"
+}, {
+  "tag": "P",
+  "text": "Hence we create two Ingress yaml resources.",
+  "translation": "因此，我们创建了两个Ingress yaml资源。"
+}, {
+  "tag": "H1",
+  "text": "How to fine tune the Ingress Nginx configuration?",
+  "translation": "如何微调Ingress Nginx配置？"
+}, {
+  "tag": "P",
+  "text": "You can do this by annotations on the Inhgress Kubernetes Resource. For example you can configure various options you could normally configure directly in Nginx:",
+  "translation": "您可以通过Inhgress Kubernetes资源上的注释来做到这一点。 例如，您可以配置通常可以直接在Nginx中配置的各种选项："
+}, {
+  "tag": "PRE",
+  "text": "kind: Ingressmetadata:  name: ingress  annotations:      kubernetes.io/ingress.class: nginx      nginx.ingress.kubernetes.io/proxy-connect-timeout: '30'      nginx.ingress.kubernetes.io/proxy-send-timeout: '500'      nginx.ingress.kubernetes.io/proxy-read-timeout: '500'      nginx.ingress.kubernetes.io/send-timeout: \"500\"      nginx.ingress.kubernetes.io/enable-cors: \"true\"      nginx.ingress.kubernetes.io/cors-allow-methods: \"*\"      nginx.ingress.kubernetes.io/cors-allow-origin: \"*\"...",
+  "translation": "种类：Ingressmetadata：名称：Ingress批注：kubernetes.io/ingress.class：nginx nginx.ingress.kubernetes.io/proxy-connect-timeout：'30'nginx.ingress.kubernetes.io/proxy-send-timeout：' 500'nginx.ingress.kubernetes.io/代理读取超时：“ 500” nginx.ingress.kubernetes.io/发送超时：“ 500” nginx.ingress.kubernetes.io/enable-cors：“true” nginx .ingress.kubernetes.io / cors-allow-methods：“ *” nginx.ingress.kubernetes.io/cors-allow-origin：“ *” ..."
+}, {
+  "tag": "P",
+  "text": "You can even do very specific rules like:",
+  "translation": "您甚至可以执行非常具体的规则，例如："
+}, {
+  "tag": "PRE",
+  "text": "nginx.ingress.kubernetes.io/configuration-snippet: |  if ($host = 'www.wuestkamp.com' ) {    rewrite ^ https://wuestkamp.com$request_uri permanent;  }",
+  "translation": "nginx.ingress.kubernetes.io/configuration-snippet：| 如果（$ host ='www.wuestkamp.com'）{重写^ https：//wuestkamp.com$request_uri永久； }"
+}, {
+  "tag": "P",
+  "text": "Using www. is “so 2008” !",
+  "translation": "使用www。 是“ so 2008”！"
+}, {
+  "tag": "P",
+  "text": "These annotations will then be translated into Nginx configuration. You can always check these by manually connecting (kubectl exec) into the ingress Nginx pod and look at the config.",
+  "translation": "然后，这些注释将转换为Nginx配置。 您始终可以通过手动将（kubectl exec）连接到Ingress Nginx pod并查看配置来进行检查。"
+}, {
+  "tag": "P",
+  "text": "There are various configuration examples:",
+  "translation": "有各种配置示例："
+}, {
+  "tag": "P",
+  "text": "https://github.com/kubernetes/ingress-nginx/tree/master/docs/user-guide/nginx-configuration",
+  "translation": "https://github.com/kubernetes/ingress-nginx/tree/master/docs/user-guide/nginx-configuration"
+}, {
+  "tag": "P",
+  "text": "https://github.com/kubernetes/ingress-nginx/blob/master/docs/user-guide/nginx-configuration/annotations.md#lua-resty-waf",
+  "translation": "https://github.com/kubernetes/ingress-nginx/blob/master/docs/user-guide/nginx-configuration/annotations.md#lua-resty-waf"
+}, {
+  "tag": "H1",
+  "text": "Check the Ingress / Nginx Logs",
+  "translation": "检查入口/ Nginx日志"
+}, {
+  "tag": "P",
+  "text": "Figuring out issues or errors it’s also helpful to look at the Ingress logs:",
+  "translation": "找出问题或错误，查看Ingress日志也很有帮助："
+}, {
+  "tag": "PRE",
+  "text": "kubectl logs -n ingress-nginx ingress-nginx-controller-6cfd5b6544-k2r4n",
+  "translation": "kubectl日志-n ingress-nginx ingress-nginx-controller-6cfd5b6544-k2r4n"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*72EW9YWQPwqV0YBEdaJibA.png?q=20",
+  "type": "image",
+  "file": "1*72EW9YWQPwqV0YBEdaJibA.png"
+}, {
+  "tag": "H1",
+  "text": "Use Curl for testing your settings",
+  "translation": "使用Curl测试设置"
+}, {
+  "tag": "P",
+  "text": "If you want to test your Ingress/Nginx redirection rules it might be a good idea to use curl -v yourhost.com instead of your browser to avoid caching etc.",
+  "translation": "如果要测试您的Ingress / Nginx重定向规则，则最好使用curl -v yourhost.com而不是浏览器，以避免缓存等。"
+}, {
+  "tag": "H1",
+  "text": "Ways of redirection / Ingress Rules",
+  "translation": "重定向方式/入口规则"
+}, {
+  "tag": "P",
+  "text": "In the examples in this article we used paths like /folder or /other/directory to redirect to different services. This is called “A list of paths”.",
+  "translation": "在本文的示例中，我们使用了/ folder或/ other / directory之类的路径来重定向到其他服务。 这称为“路径列表”。"
+}, {
+  "tag": "P",
+  "text": "It’s also possible to distinguish requests by their hostname to for example redirect api.myurl.com and website.myurl.com to different internal ClusterIP services. This could look like this:",
+  "translation": "还可以通过请求的主机名来区分请求，例如将api.myurl.com和website.myurl.com重定向到其他内部ClusterIP服务。 可能看起来像这样："
+}, {
+  "tag": "PRE",
+  "text": "apiVersion: networking.k8s.io/v1beta1kind: Ingressmetadata:  name: simple-fanout-examplespec:  rules:  - host: api.myurl.com    http:      paths:      - path: /foo        backend:          serviceName: service1          servicePort: 4200      - path: /bar        backend:          serviceName: service2          servicePort: 8080  - host: website.myurl.com    http:      paths:      - path: /        backend:          serviceName: service3          servicePort: 3333",
+  "translation": "apiVersion：网络.k8s.io / v1beta1类型：Ingressmetadata：名称：simple-fanout-examplespec：规则：-主机：api.myurl.com http：路径：-路径：/ foo后端：serviceName：service1 servicePort：4200-路径： / bar后端：serviceName：service2 servicePort：8080-主机：website.myurl.com http：路径：-路径：/后端：serviceName：service3 servicePort：3333"
+}, {
+  "tag": "P",
+  "text": "In this example we see that for a specific hostname we redirect different http paths to different internal services.",
+  "translation": "在此示例中，我们看到对于特定的主机名，我们将不同的http路径重定向到不同的内部服务。"
+}, {
+  "tag": "H1",
+  "text": "SSL / HTTPS",
+  "translation": "SSL / HTTPS"
+}, {
+  "tag": "P",
+  "text": "SSL. Have you heard of it? :) You probably want to make your website reachable via secure https. Kubernetes Ingress provides quite easy “TLS Termination”, which means that it handles all SSL communication, decrypts/terminates the SSL request and then sends those decrypted to your internal services.",
+  "translation": "SSL。 你听说过吗？ :)您可能希望通过安全的https访问您的网站。 Kubernetes Ingress提供了非常简单的“ TLS终止”，这意味着它可以处理所有SSL通信，解密/终止SSL请求，然后将解密后的请求发送到您的内部服务。"
+}, {
+  "tag": "P",
+  "text": "This is great if multiple of your internal services are using the same (maybe even wildcard) SSL certificate, because then you only have to configure it once on your Ingress and not on all of your other internal services. The Ingress can use the SSL certificate from a configured TLS Kubernetes Secret.",
+  "translation": "如果您的多个内部服务使用的是相同（甚至是通配符）SSL证书，那就非常好，因为这样一来，您只需在Ingress上配置一次即可，而不必在所有其他内部服务上进行配置。 入口可以使用已配置的TLS Kubernetes Secret中的SSL证书。"
+}, {
+  "tag": "PRE",
+  "text": "apiVersion: networking.k8s.io/v1beta1kind: Ingressmetadata:  name: tls-example-ingressspec:  tls:  - hosts:    - sslexample.foo.com    secretName: testsecret-tls  rules:    - host: sslexample.foo.com      http:        paths:        - path: /          backend:            serviceName: service1            servicePort: 80",
+  "translation": "apiVersion：networking.k8s.io/v1beta1kind：Ingressmetadata：名称：tls-example-ingressspec：tls：-主机：-sslexample.foo.com secretName：testsecret-tls规则：-主机：sslexample.foo.comhttp：路径： -路径：/后端：serviceName：service1 servicePort：80"
+}, {
+  "tag": "P",
+  "text": "You just have to make sure that if you have multiple Ingress resources in different namespaces, your TLS secret also needs to be available in all namespaces where you defined an Ingress resource using it.",
+  "translation": "您只需要确保如果在不同的名称空间中有多个Ingress资源，则TLS秘密也必须在使用它定义了Ingress资源的所有名称空间中都可用。"
+}, {
+  "tag": "H1",
+  "text": "Recap",
+  "translation": "概括"
+}, {
+  "tag": "P",
+  "text": "I just wanted to give you a broad overview over whats behind the mysterious Kubernetes Ingress. Simplified: its nothing more than a way to easily configure a Nginx server which redirects requests to other internal services.",
+  "translation": "我只是想为您提供有关神秘的Kubernetes Ingress背后的内容的广泛概述。 简化：无非是一种轻松配置Nginx服务器的方法，该服务器会将请求重定向到其他内部服务。"
+}, {
+  "tag": "P",
+  "text": "This saves you precious static IPs and LoadBalancers. But Kubernetes Ingress shouldn’t be considered as one of the Kubernetes Services. Ingress itself isn’t a Kubernetes Services, but it normally uses one, mainly the LoadBalancer.",
+  "translation": "这为您节省了宝贵的静态IP和LoadBalancers。 但是，不应将Kubernetes Ingress视为Kubernetes服务之一。 Ingress本身不是Kubernetes服务，但通常使用一个，主要是LoadBalancer。"
+}, {
+  "tag": "P",
+  "text": "Notice that there are also other Kubernetes Ingress types which don’t internally setup an Nginx service but might use other proxy technologies.",
+  "translation": "请注意，还有其他Kubernetes Ingress类型不在内部设置Nginx服务，但可能使用其他代理技术。"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Kim Wuestkamp的文章《Kubernetes Ingress simply visually explained》，参考：https://codeburst.io/kubernetes-ingress-simply-visually-explained-d9cad44e4419)",
+  "translation": "（本文翻译自Kim Wuestkamp的文章，《 Kubernetes Ingress只是在视觉上进行了解释》，参考：https：//codeburst.io/kubernetes-ingress-simply-visually-explained-d9cad44e4419）"
+}]
