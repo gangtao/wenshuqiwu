@@ -1,0 +1,210 @@
+[{
+  "tag": "H1",
+  "text": "Why is Python Programming a perfect fit for Big Data?",
+  "translation": "为什么Python编程非常适合大数据？"
+}, {
+  "tag": "H2",
+  "text": "We’ll discuss in the blog the major benefits of using Python for big data.",
+  "translation": "我们将在博客中讨论使用Python处理大数据的主要好处。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*855_OsZ_WvcEaEnSl8cU-A.jpeg?q=20",
+  "caption": "Source",
+  "type": "image",
+  "file": "1*855_OsZ_WvcEaEnSl8cU-A.jpeg"
+}, {
+  "tag": "H2",
+  "text": "Python is everywhere!",
+  "translation": "Python无处不在！"
+}, {
+  "tag": "P",
+  "text": "With the widespread use of Python across major industry verticals, Python has become a hot topic of discussion in the town. Python has been acknowledged as the fastest-growing programming language, as per Stack Overflow Trends.",
+  "translation": "随着Python在各个主要行业中的广泛使用，Python已成为该镇讨论的热门话题。 根据堆栈溢出趋势，Python被公认为增长最快的编程语言。"
+}, {
+  "tag": "P",
+  "text": "According to Stack Overflow Developers’ Survey 2019, Python is the second “most loved” language with 73% of the developers choosing it above other languages prevailing in the market.",
+  "translation": "根据2019年Stack Overflow开发人员调查，Python是第二种“最受欢迎的”语言，有73％的开发人员选择Python胜过市场上其他流行的语言。"
+}, {
+  "tag": "P",
+  "text": "Python is a general-purpose and open-source programming language used by big names such as Reddit, Instagram, and Venmo says a press release.",
+  "translation": "Python是Reddit，Instagram和Venmo等知名公司使用的通用开放源代码编程语言。"
+}, {
+  "tag": "H2",
+  "text": "Why choose Python for Big Data?",
+  "translation": "为什么选择Python处理大数据？"
+}, {
+  "tag": "P",
+  "text": "Python and Big Data is the new combination invading the market space NOW. Python is in great demand among Big Data companies. In this blog, we will discuss the major benefits of using Python and why Python for big data has become a preferred choice among businesses these days.",
+  "translation": "Python和大数据是现在入侵市场空间的新组合。 大数据公司对Python的需求很大。 在这个博客中，我们将讨论使用Python的主要好处，以及为什么Python在大数据领域已经成为当今企业的首选。"
+}, {
+  "tag": "H2",
+  "text": "Simple Coding",
+  "translation": "简单编码"
+}, {
+  "tag": "P",
+  "text": "Python programming involves fewer lines of codes as compared to other languages available for programming. It is able to execute programs in the least lines of code. Moreover, Python automatically offers assistance to identify and associate data types.",
+  "translation": "与其他可用于编程的语言相比，Python编程涉及更少的代码行。 它能够以最少的代码行执行程序。 而且，Python自动提供帮助来识别和关联数据类型。"
+}, {
+  "tag": "P",
+  "text": "“Python is a truly wonderful language. When somebody comes up with a good idea it takes about 1 minute and five lines to program something that almost does what you want.” — Jack Jansen",
+  "translation": "“ Python是一种真正出色的语言。 当有人提出一个好主意时，大约需要一分钟零五行来编写几乎可以完成您想要的内容的程序。” —杰克·詹森（Jack Jansen）"
+}, {
+  "tag": "P",
+  "text": "Python programming follows an indentation based nesting structure. The language can process lengthy tasks within a short span of time. As there is no limitation to data processing, you can compute data in commodity machines, laptop, cloud, and desktop.",
+  "translation": "Python编程遵循基于缩进的嵌套结构。 该语言可以在短时间内处理冗长的任务。 由于对数据处理没有限制，因此您可以在商用机器，便携式计算机，云和台式机中计算数据。"
+}, {
+  "tag": "P",
+  "text": "Earlier, Python was considered to be a slower language in comparison to some of its counterparts like Java and Scala but the scenario has changed now.",
+  "translation": "之前，与Java和Scala等相对语言相比，Python被认为是一种较慢的语言，但是现在情况发生了变化。"
+}, {
+  "tag": "P",
+  "text": "The advent of the Anaconda platform has offered a great speed to the language. This is why Python for big data has become one of the most popular options in the industry. You can also hire Python Developer who can implement these Python benefits in your business.",
+  "translation": "Anaconda平台的出现为该语言提供了极大的速度。 这就是为什么用于大数据的Python成为业内最受欢迎的选项之一的原因。 您还可以聘请可以在您的企业中实现这些Python优势的Python开发人员。"
+}, {
+  "tag": "H2",
+  "text": "Open-Source",
+  "translation": "开源"
+}, {
+  "tag": "P",
+  "text": "Developed with the help of a community-based model, Python is an open-source programming language. Being an open-source language, Python supports multiple platforms. Also, it can be run in various environments such as Windows and Linux.",
+  "translation": "Python是在基于社区的模型的帮助下开发的，是一种开源编程语言。 作为一种开源语言，Python支持多种平台。 而且，它可以在Windows和Linux等各种环境中运行。"
+}, {
+  "tag": "P",
+  "text": "“My favorite language for maintainability is Python. It has simple, clean syntax, object encapsulation, good library support, and optional named parameters”, said Bram Cohen.",
+  "translation": "“我最喜欢的可维护性语言是Python。 它具有简单，简洁的语法，对象封装，良好的库支持以及可选的命名参数。” Bram Cohen说。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*xZXLUbjYxhprREih?q=20",
+  "type": "image",
+  "file": "0*xZXLUbjYxhprREih"
+}, {
+  "tag": "P",
+  "text": "Source",
+  "translation": "资源"
+}, {
+  "tag": "H2",
+  "text": "Library Support",
+  "translation": "图书馆支持"
+}, {
+  "tag": "P",
+  "text": "Python programming offers the use of multiple libraries. This makes it a famous programming language in fields like scientific computing. As Big Data involves a lot of data analysis and scientific computing, Python and Big Data serve as great companions.",
+  "translation": "Python编程提供了多个库的使用。 这使其成为科学计算等领域的著名编程语言。 由于大数据涉及大量数据分析和科学计算，因此Python和大数据是很好的伴侣。"
+}, {
+  "tag": "P",
+  "text": "Python offers a number of well-tested analytics libraries. These libraries consist of packages such as,",
+  "translation": "Python提供了许多经过测试的分析库。 这些库包含以下软件包："
+}, {
+  "tag": "UL",
+  "texts": ["Numerical computing", "Data analysis", "Statistical analysis", "Visualization", "Machine learning"],
+  "translations": ["数值计算", "数据分析", "统计分析", "可视化", "机器学习"]
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*-p_GPMXTjBbz420X?q=20",
+  "type": "image",
+  "file": "0*-p_GPMXTjBbz420X"
+}, {
+  "tag": "P",
+  "text": "Source",
+  "translation": "资源"
+}, {
+  "tag": "H2",
+  "text": "Python’s Compatibility with Hadoop",
+  "translation": "Python与Hadoop的兼容性"
+}, {
+  "tag": "P",
+  "text": "Both Python and Hadoop are open-source big data platforms. This is the reason why Python is more compatible with Hadoop than other programming languages. You can incorporate these Python features in your business. To do this, you need to hire Python developers from a reputed Python development company.",
+  "translation": "Python和Hadoop都是开源大数据平台。 这就是为什么Python比其他编程语言更兼容Hadoop的原因。 您可以将这些Python功能纳入您的业务。 为此，您需要聘请知名的Python开发公司的Python开发人员。"
+}, {
+  "tag": "H2",
+  "text": "What are the benefits of using the Pydoop Package?",
+  "translation": "使用Pydoop软件包有什么好处？"
+}, {
+  "tag": "P",
+  "text": "1. Access to HDFS API",
+  "translation": "1.访问HDFS API"
+}, {
+  "tag": "P",
+  "text": "The Pydoop package( Python and Hadoop) provides you access to the HDFS API for Hadoop which allows you to write Hadoop MapReduce programs and applications.How is the HDFS API beneficial for you? So, here you go. The HDFS API lets you read and write information easily on files, directories, and global file system properties without facing any hurdles.",
+  "translation": "Pydoop软件包（Python和Hadoop）使您可以访问Hadoop的HDFS API，从而可以编写Hadoop MapReduce程序和应用程序。HDFSAPI对您有何好处？ 所以，你去。 HDFS API使您可以轻松地在文件，目录和全局文件系统属性上读写信息，而不会遇到任何障碍。"
+}, {
+  "tag": "P",
+  "text": "2. Offers MapReduce API",
+  "translation": "2.提供MapReduce API"
+}, {
+  "tag": "P",
+  "text": "Pydoop offers MapReduce API for solving complex problems with minimal programming efforts. This API can be used to implement advanced data science concepts like ‘Counters’ and ‘Record Readers’ which makes Python programming the best choice for Big Data.",
+  "translation": "Pydoop提供了MapReduce API，以最少的编程工作即可解决复杂的问题。 该API可用于实现“计数器”和“记录读取器”等高级数据科学概念，这使Python编程成为大数据的最佳选择。"
+}, {
+  "tag": "P",
+  "text": "Also, Read — “Is Python for Financial App Development the Right fit?”",
+  "translation": "另外，请阅读-“用于金融应用程序开发的Python是否合适？”"
+}, {
+  "tag": "H2",
+  "text": "Speed",
+  "translation": "速度"
+}, {
+  "tag": "P",
+  "text": "Python is considered to be one of the most popular languages for software development because of its high speed and performance. As it accelerates the code well, Python is an apt choice for big data.",
+  "translation": "由于Python的高速和高性能，它被认为是最流行的软件开发语言之一。 由于可以很好地加速代码，Python是大数据的合适选择。"
+}, {
+  "tag": "P",
+  "text": "Python programming supports prototyping ideas which help in making the code run fast. Moreover, while doing so, Python also sustains the transparency between the code and the process.",
+  "translation": "Python编程支持原型构想，这些构想有助于使代码快速运行。 而且，在这样做的同时，Python还保持了代码和过程之间的透明性。"
+}, {
+  "tag": "P",
+  "text": "Python programming contributes to making code readable and transparent thus rendering great assistance in the maintenance of the code.",
+  "translation": "Python编程有助于使代码具有可读性和透明性，从而为代码的维护提供了极大的帮助。"
+}, {
+  "tag": "P",
+  "text": "Also, Read — “Using Python for Big Data and Analytics”",
+  "translation": "另外，请阅读-“将Python用于大数据和分析”"
+}, {
+  "tag": "H2",
+  "text": "Scope",
+  "translation": "范围"
+}, {
+  "tag": "P",
+  "text": "Python allows users in simplifying data operations. As Python is an object-oriented language, it supports advanced data structures. Some of the data structures that Python manages include lists, sets, tuples, dictionaries and many more.",
+  "translation": "Python允许用户简化数据操作。 由于Python是一种面向对象的语言，因此它支持高级数据结构。 Python管理的一些数据结构包括列表，集合，元组，字典等。"
+}, {
+  "tag": "P",
+  "text": "Besides this, Python helps in supporting scientific computing operations such as matrix operations, data frames, etc. These incredible features of Python help to enhance the scope of the language thus enabling it to speed up data operations. This is what makes Python and Big Data a deadly combination.",
+  "translation": "除此之外，Python还有助于支持科学计算操作，例如矩阵运算，数据框等。Python的这些令人难以置信的功能有助于扩大语言的范围，从而使其能够加快数据运算的速度。 这就是使Python和大数据成为致命组合的原因。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*ei_SXJLQ7zmpRU1Q?q=20",
+  "type": "image",
+  "file": "0*ei_SXJLQ7zmpRU1Q"
+}, {
+  "tag": "P",
+  "text": "Source",
+  "translation": "资源"
+}, {
+  "tag": "H2",
+  "text": "Data Processing Support",
+  "translation": "数据处理支持"
+}, {
+  "tag": "P",
+  "text": "Python has an inbuilt feature of supporting data processing. You can use this feature to support data processing for unstructured and unconventional data. This is the reason why big data companies prefer to choose Python as it is considered to be one of the most important requirements in big data. So, hire offshore Python programmers and avail the advantages of using Python in your business.",
+  "translation": "Python具有支持数据处理的内置功能。 您可以使用此功能来支持对非结构化和非常规数据的数据处理。 这就是大数据公司偏爱选择Python的原因，因为Python被认为是大数据中最重要的要求之一。 因此，聘请离岸Python程序员，并在您的企业中利用使用Python的优势。"
+}, {
+  "tag": "H2",
+  "text": "Final words",
+  "translation": "最后的话"
+}, {
+  "tag": "P",
+  "text": "These were some of the benefits of using Python. So by now, you would have got a clear idea of why Python for big data is considered the best fit. Python is a simple and open-source language possessing high speed and robust Library support.",
+  "translation": "这些是使用Python的一些好处。 因此，到现在为止，您将清楚地知道为什么将用于大数据的Python认为是最合适的。 Python是一种简单且开源的语言，具有高速且强大的库支持。"
+}, {
+  "tag": "P",
+  "text": "“Big data is at the foundation of all the megatrends that are happening.” –Chris Lynch",
+  "translation": "“大数据是正在发生的所有大趋势的基础。” –克里斯·林奇"
+}, {
+  "tag": "P",
+  "text": "With the use of big data technology spreading across the globe, meeting the requirements of this industry is surely a daunting task. But, with its incredible benefits, Python has become a suitable choice for Big Data. You can also leverage Python in your business for availing its advantages.",
+  "translation": "随着大数据技术在全球范围内的普及，满足该行业的要求无疑是一项艰巨的任务。 但是，凭借其令人难以置信的优势，Python已成为大数据的合适选择。 您还可以在企业中利用Python来利用其优势。"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Scarlett Rose的文章《Why is Python Programming a perfect fit for Big Data?》，参考：https://towardsdatascience.com/why-is-python-programming-a-perfect-fit-for-big-data-5ac54ee8f95e)",
+  "translation": "（本文翻译自Scarlett Rose的文章，《为什么Python编程非常适合大数据？》，参考：https：//towardsdatascience.com/why-is-python-programming-a-perfect-fit-for-big- 数据-5ac54ee8f95e）"
+}]
