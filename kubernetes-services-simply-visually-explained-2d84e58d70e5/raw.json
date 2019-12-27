@@ -1,0 +1,282 @@
+[{
+  "tag": "H1",
+  "text": "Kubernetes Services simply visually explained",
+  "translation": "Kubernetes Services只需直观地说明"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*Va7aNo7mOtr4nsqBoktA9g.jpeg?q=20",
+  "caption": "https://unsplash.com/photos/OKOOGO578eo",
+  "type": "image",
+  "file": "1*Va7aNo7mOtr4nsqBoktA9g.jpeg"
+}, {
+  "tag": "H2",
+  "text": "Parts",
+  "translation": "部分"
+}, {
+  "tag": "UL",
+  "texts": ["Part 1: this article", "Part 2: Kubernetes Ingress simply visually explained"],
+  "translations": ["第1部分：本文", "第2部分：简单地从视觉上解释了Kubernetes Ingress"]
+}, {
+  "tag": "H2",
+  "text": "TL;DR",
+  "translation": "TL; DR"
+}, {
+  "tag": "P",
+  "text": "There are four main services, with ClusterIP being the holy grail:",
+  "translation": "有四个主要服务，其中ClusterIP是圣杯："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*ekgvFgwKake3C781GA8NJw.png?q=20",
+  "type": "image",
+  "file": "1*ekgvFgwKake3C781GA8NJw.png"
+}, {
+  "tag": "P",
+  "text": "I would like you to imagine that if you create a NodePort service it also creates a ClusterIP one. And if you create a LoadBalancer it creates a NodePort which then creates a ClusterIP. If you do this, k8s services will be easy. We will walk through this in this article.",
+  "translation": "我想让您想象一下，如果您创建一个NodePort服务，它也会创建一个ClusterIP服务。 如果创建LoadBalancer，它会创建一个NodePort，然后再创建ClusterIP。 如果这样做，k8s服务将很容易。 我们将在本文中逐步解决。"
+}, {
+  "tag": "H2",
+  "text": "Services and Pods",
+  "translation": "服务和豆荚"
+}, {
+  "tag": "P",
+  "text": "Services point to pods. Services do not point to deployments or replicasets. Services point to pods directly using labels. This gives great flexibility because it doesn’t matter through which various (maybe even customized) ways pods have been created.",
+  "translation": "服务指向吊舱。 服务不指向部署或副本集。 服务直接使用标签指向吊舱。 这提供了极大的灵活性，因为创建Pod的方式多种多样（甚至是自定义的）无关紧要。"
+}, {
+  "tag": "P",
+  "text": "We’ll start with a simple example which we extend step by step with different service types to see how those are build on top of each other.",
+  "translation": "我们将从一个简单的示例开始，我们将逐步扩展不同的服务类型，以了解它们是如何在彼此之上构建的。"
+}, {
+  "tag": "H1",
+  "text": "No Services",
+  "translation": "没有服务"
+}, {
+  "tag": "P",
+  "text": "We start without any services.",
+  "translation": "我们从没有任何服务开始。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*NyZViBuEjg2xlw_PnvMEwg.png?q=20",
+  "type": "image",
+  "file": "1*NyZViBuEjg2xlw_PnvMEwg.png"
+}, {
+  "tag": "P",
+  "text": "We have two nodes, one pod. Nodes have external (4.4.4.1, 4.4.4.2) and internal (1.1.1.1, 1.1.1.2) IP addresses. The pod pod-python has only an internal one.",
+  "translation": "我们有两个节点，一个吊舱。 节点具有外部（4.4.4.1、4.4.4.2）和内部（1.1.1.1、1.1.1.2）IP地址。 pod pod-python只有一个内部的。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*NdEDZWeXeIgK8UaBSJwPXw.png?q=20",
+  "type": "image",
+  "file": "1*NdEDZWeXeIgK8UaBSJwPXw.png"
+}, {
+  "tag": "P",
+  "text": "Now we add a second pod pod-nginx which got scheduled on node-1. This wouldn’t have to be the case and doesn’t matter for connectivity. In Kubernetes, all pods can reach all pods on their internal IP addresses, no matter on which nodes they are running.",
+  "translation": "现在，我们添加第二个pod pod-nginx，它已安排在节点1上。 情况不一定如此，对于连接也没关系。 在Kubernetes中，无论它们在哪个节点上运行，所有Pod都可以访问其内部IP地址上的所有Pod。"
+}, {
+  "tag": "P",
+  "text": "This means pod-nginx can ping and connect to pod-python using its internal IP 1.1.1.3.",
+  "translation": "这意味着pod-nginx可以使用其内部IP 1.1.1.3 ping并连接到pod-python。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*SRbYX5IXKRZT5y0Eg9XhXQ.png?q=20",
+  "type": "image",
+  "file": "1*SRbYX5IXKRZT5y0Eg9XhXQ.png"
+}, {
+  "tag": "P",
+  "text": "Now let’s consider the pod-python dies and a new one is created. (We don’t handle how pods might be managed and controlled in this article.) Suddenly pod-nginx cannot reach 1.1.1.3 any longer, and suddenly the world bursts into horrific flames… but to prevent this we create our first service!",
+  "translation": "现在考虑一下pod-python模具，然后创建一个新模具。 （本文不介绍如何管理和控制Pod。）pod-nginx突然无法再达到1.1.1.3，世界突然间爆发出可怕的火焰……但是为了防止这种情况，我们创建了我们的第一项服务！"
+}, {
+  "tag": "H1",
+  "text": "ClusterIP",
+  "translation": "集群IP"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*NtvOGi6xjAPA63kftsvtmA.png?q=20",
+  "type": "image",
+  "file": "1*NtvOGi6xjAPA63kftsvtmA.png"
+}, {
+  "tag": "P",
+  "text": "Same scenario, but we configured a ClusterIP service. A service is not scheduled on a specific node like pods. For this article it is enough to assume a service is just available in memory inside the whole cluster.",
+  "translation": "相同的情况，但是我们配置了ClusterIP服务。 没有在Pod之类的特定节点上调度服务。 对于本文而言，假设服务仅在整个集群的内存中可用就足够了。"
+}, {
+  "tag": "P",
+  "text": "Pod-nginx can always safely connect to 1.1.10.1 or the dns name service-python and gets redirected to a living python pod. Beautiful. No flames. Sunshine.",
+  "translation": "Pod-nginx始终可以安全地连接到1.1.10.1或dns名称service-python，并重定向到活动的python pod。 美丽。 没有火焰。 阳光。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*S-7leSdjSGGgZO3TS1-cPA.png?q=20",
+  "type": "image",
+  "file": "1*S-7leSdjSGGgZO3TS1-cPA.png"
+}, {
+  "tag": "P",
+  "text": "We extend the example, spin up 3 instances of python and we now display the ports of the internal IP addresses of all pods and services.",
+  "translation": "我们扩展示例，启动3个python实例，现在我们显示所有Pod和服务的内部IP地址的端口。"
+}, {
+  "tag": "P",
+  "text": "All pods inside the cluster can reach the python pods on their port 443 via http://1.1.10.1:3000 or http://service-python:3000. The ClusterIP service-python distributes the requests based on a random or round-robin approach. That’s what a ClusterIP service does, it makes pods available inside the cluster via a name and an IP.",
+  "translation": "集群中的所有Pod都可以通过http://1.1.10.1:3000或http：// service-python：3000到达其端口443上的python pod。 ClusterIP服务python基于随机或轮询方法分发请求。 这就是ClusterIP服务的工作，它通过名称和IP使Pod在群集内可用。"
+}, {
+  "tag": "P",
+  "text": "The service-python in the above image could for have this yaml:",
+  "translation": "上图中的service-python可能具有以下yaml："
+}, {
+  "tag": "PRE",
+  "text": "apiVersion: v1kind: Servicemetadata:  name: service-pythonspec:  ports:  - port: 3000    protocol: TCP    targetPort: 443  selector:    run: pod-python  type: ClusterIP",
+  "translation": "apiVersion：v1kind：Servicemetadata：名称：service-pythonspec：端口：-端口：3000协议：TCP targetPort：443选择器：运行：pod-python类型：ClusterIP"
+}, {
+  "tag": "P",
+  "text": "Running kubectl get svc :",
+  "translation": "运行kubectl get svc："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*XJAXEMHaszF-l_3PZAWZKA.png?q=20",
+  "type": "image",
+  "file": "1*XJAXEMHaszF-l_3PZAWZKA.png"
+}, {
+  "tag": "H1",
+  "text": "NodePort",
+  "translation": "节点端口"
+}, {
+  "tag": "P",
+  "text": "Now we would like to make the ClusterIP service available from the outside and for this we convert it into a NodePort one. In our example we convert the service-python with just two simple yaml changes:",
+  "translation": "现在，我们想从外部使用ClusterIP服务，为此，我们将其转换为NodePort。 在我们的示例中，我们仅通过两个简单的yaml更改即可转换service-python："
+}, {
+  "tag": "PRE",
+  "text": "apiVersion: v1kind: Servicemetadata:  name: service-pythonspec:  ports:  - port: 3000    protocol: TCP    targetPort: 443    nodePort: 30080  selector:    run: pod-python  type: NodePort",
+  "translation": "apiVersion：v1kind：Servicemetadata：名称：service-pythonspec：端口：-端口：3000协议：TCP targetPort：443 nodePort：30080选择器：运行：pod-python类型：NodePort"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*P2hiyjUmAE_gus5O_WK3-w.png?q=20",
+  "caption": "external request over node-2",
+  "type": "image",
+  "file": "1*P2hiyjUmAE_gus5O_WK3-w.png"
+}, {
+  "tag": "P",
+  "text": "This means our internal service-python will now also be reachable from every nodes internal and external IP address on port 30080.",
+  "translation": "这意味着我们现在也可以从端口30080上的每个节点内部和外部IP地址访问我们的内部服务python。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*RTLmSau-MoDGbgMnZxMi1w.png?q=20",
+  "caption": "external request over node-1",
+  "type": "image",
+  "file": "1*RTLmSau-MoDGbgMnZxMi1w.png"
+}, {
+  "tag": "P",
+  "text": "A pod inside the cluster could also connect to an internal node IP on port 30080.",
+  "translation": "群集中的Pod也可以连接到端口30080上的内部节点IP。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*5zPEQlba9w8IWgE0C52Xew.png?q=20",
+  "type": "image",
+  "file": "1*5zPEQlba9w8IWgE0C52Xew.png"
+}, {
+  "tag": "P",
+  "text": "Running kubectl get svc shows the same cluster ip. Just the different type and additional node port:",
+  "translation": "运行kubectl get svc显示相同的集群ip。 只是不同的类型和其他节点端口："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*Qtf6Wlo2_8utnC9f24qUyw.png?q=20",
+  "type": "image",
+  "file": "1*Qtf6Wlo2_8utnC9f24qUyw.png"
+}, {
+  "tag": "P",
+  "text": "Internally the NodePort service still acts as the ClusterIP service before. It helps to imagine that a NodePort service creates a ClusterIP service, even though there is no extra ClusterIP object any more.",
+  "translation": "在内部，NodePort服务以前仍充当ClusterIP服务。 可以想像，即使不再有多余的ClusterIP对象，NodePort服务也会创建ClusterIP服务。"
+}, {
+  "tag": "H1",
+  "text": "LoadBalancer",
+  "translation": "负载均衡器"
+}, {
+  "tag": "P",
+  "text": "We use a LoadBalancer service if we would like to have a single IP which distributes requests (using some method like round robin) to all our external nodes IPs. So it is built on top of a NodePort service:",
+  "translation": "如果我们希望有一个IP（使用诸如轮询等方法将请求分发到所有外部节点IP），则可以使用LoadBalancer服务。 因此，它是基于NodePort服务构建的："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*PDZvaDYKSUgrre_KM_N0Gw.png?q=20",
+  "type": "image",
+  "file": "1*PDZvaDYKSUgrre_KM_N0Gw.png"
+}, {
+  "tag": "P",
+  "text": "Imagine that a LoadBalancer service creates a NodePort service which creates a ClusterIP service. The changed yaml for LoadBalancer as opposed to the NodePort before is simply:",
+  "translation": "想象一下，LoadBalancer服务创建了一个NodePort服务，该服务创建了ClusterIP服务。 与之前的NodePort相比，针对LoadBalancer更改的yaml很简单："
+}, {
+  "tag": "PRE",
+  "text": "apiVersion: v1kind: Servicemetadata:  name: service-pythonspec:  ports:  - port: 3000    protocol: TCP    targetPort: 443    nodePort: 30080  selector:    run: pod-python  type: LoadBalancer",
+  "translation": "apiVersion：v1kind：Servicemetadata：名称：service-pythonspec：端口：-端口：3000协议：TCP targetPort：443节点端口：30080选择器：运行：pod-python类型：LoadBalancer"
+}, {
+  "tag": "P",
+  "text": "All a LoadBalancer service does is it creates a NodePort service. In addition it sends a message to the provider who hosts the Kubernetes cluster asking for a loadbalancer to be setup pointing to all external node IPs and specific nodePort. If the provider doesn’t support the request message, well then nothing happens and the LoadBalancer would be equal to a NodePort service.",
+  "translation": "LoadBalancer服务要做的只是创建一个NodePort服务。 此外，它还会向托管Kubernetes集群的提供商发送一条消息，要求设置指向所有外部节点IP和特定nodePort的负载均衡器。 如果提供者不支持请求消息，那么什么也不会发生，并且LoadBalancer等同于NodePort服务。"
+}, {
+  "tag": "P",
+  "text": "Running kubectl get svc shows just the addition of the EXTERNAL-IP and different type:",
+  "translation": "运行kubectl get svc只会显示EXTERNAL-IP和其他类型的添加："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*_rU7HX-B0yDpbGQt8BVe-w.png?q=20",
+  "type": "image",
+  "file": "1*_rU7HX-B0yDpbGQt8BVe-w.png"
+}, {
+  "tag": "P",
+  "text": "The LoadBalancer service still opens port 30080 on the nodes internal and external IPs as before. And it still acts like a ClusterIP service.",
+  "translation": "与以前一样，LoadBalancer服务仍在内部和外部IP节点上打开端口30080。 而且它仍然像ClusterIP服务一样。"
+}, {
+  "tag": "H1",
+  "text": "ExternalName",
+  "translation": "外部名称"
+}, {
+  "tag": "P",
+  "text": "Finally the ExternalName service, which could be considered a bit separated and not on the same stack as the 3 we handled before. In short: it creates an internal service with an endpoint pointing to a DNS name.",
+  "translation": "最后，ExternalName服务可以被认为是有点分开的，并且与我们之前处理过的3不在同一堆栈上。 简而言之：它创建一个内部服务，其端点指向DNS名称。"
+}, {
+  "tag": "P",
+  "text": "Taking our early example we now assume that the pod-nginx is already in our shiny new Kubernetes cluster. But the python api is still outside:",
+  "translation": "以我们早期的示例为例，我们现在假设pod-nginx已经在我们闪亮的新Kubernetes集群中。 但是python api仍然在外面："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*_JHtjOXzGF0jJ33jRDx7Ug.png?q=20",
+  "type": "image",
+  "file": "1*_JHtjOXzGF0jJ33jRDx7Ug.png"
+}, {
+  "tag": "P",
+  "text": "Here pod-nginx has to connect to http://remote.server.url.com , which works, for sure. But soon we would like to integrate that python api into the cluster and till then, we can create an ExternalName service:",
+  "translation": "在这里，pod-nginx必须连接到http://remote.server.url.com，它肯定可以工作。 但是不久之后，我们希望将python api集成到集群中，直到那时，我们可以创建一个ExternalName服务："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*PLeF0f7ES8jWSgLBXLTKeg.png?q=20",
+  "type": "image",
+  "file": "1*PLeF0f7ES8jWSgLBXLTKeg.png"
+}, {
+  "tag": "P",
+  "text": "This could be done using this yaml:",
+  "translation": "可以使用以下yaml完成此操作："
+}, {
+  "tag": "PRE",
+  "text": "kind: ServiceapiVersion: v1metadata:  name: service-pythonspec:  ports:  - port: 3000    protocol: TCP    targetPort: 443  type: ExternalName  externalName: remote.server.url.com",
+  "translation": "种类：ServiceapiVersion：v1metadata：名称：service-pythonspec：端口：-端口：3000协议：TCP targetPort：443类型：ExternalName externalName：remote.server.url.com"
+}, {
+  "tag": "P",
+  "text": "Now pod-nginx can simply connect to http://service-python:3000, just like with a ClusterIP service. When we finally decide to migrate the python api as well in our beautiful stunning Kubernetes cluster, we only have to change the service to a ClusterIP one with the correct labels set:",
+  "translation": "现在pod-nginx可以简单地连接到http：// service-python：3000，就像使用ClusterIP服务一样。 当我们最终决定在美丽的Kubernetes集群中迁移python api时，我们只需要将服务更改为具有正确标签集的ClusterIP即可："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*1-IpvAQMTqOvg0McLMTiMw.png?q=20",
+  "caption": "Python api still reachable at http://service-python",
+  "type": "image",
+  "file": "1*1-IpvAQMTqOvg0McLMTiMw.png"
+}, {
+  "tag": "P",
+  "text": "The big advantage when using ExternalName services is that you can already create your complete Kubernetes infrastructure and also already apply rules and restrictions based on services and IPs, even though some services might still be outside.",
+  "translation": "使用ExternalName服务的最大优势在于，即使某些服务可能仍在外部，您也已经可以创建完整的Kubernetes基础结构，并且已经基于服务和IP应用了规则和限制。"
+}, {
+  "tag": "H1",
+  "text": "Recap",
+  "translation": "概括"
+}, {
+  "tag": "P",
+  "text": "Today is not the day for much of a recap, I do fear so fellow reader.",
+  "translation": "今天不是很多回顾的日子，我确实害怕其他读者。"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Kim Wuestkamp的文章《Kubernetes Services simply visually explained》，参考：https://medium.com/swlh/kubernetes-services-simply-visually-explained-2d84e58d70e5)",
+  "translation": "（本文翻译自Kim Wuestkamp的文章《 Kubernetes Services只是在视觉上解释》，参考：https：//medium.com/swlh/kubernetes-services-simply-visually-explained-2d84e58d70e5）"
+}]
