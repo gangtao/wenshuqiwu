@@ -1,0 +1,297 @@
+[{
+  "tag": "H1",
+  "text": "AI for Web Development: Everything You Need To Know",
+  "translation": "用于Web开发的AI：您需要知道的一切"
+}, {
+  "tag": "H2",
+  "text": "In this digital era, web app development is growing at an unprecedented rate. Everyone wants secure, scalable and feature-packed web applications. The desire of users for enhanced experiences along with customized content is ever-growing. This means the user is searching for smart and feature-packed web applications with highly personalized UX.",
+  "translation": "在这个数字时代，Web应用程序开发正以前所未有的速度增长。 每个人都需要安全，可扩展且功能丰富的Web应用程序。 用户对增强体验以及自定义内容的需求与日俱增。 这意味着用户正在搜索具有高度个性化UX的智能且功能丰富的Web应用程序。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*gYThPzb0xq8Wk1de?q=20",
+  "type": "image",
+  "file": "0*gYThPzb0xq8Wk1de"
+}, {
+  "tag": "P",
+  "text": "Back in the year 1993, the introduction of the Mosaic graphical web browser touched off a revolution in the way the public experience the content of the website. Ever since web app designers all across the world have worked continuously so as to establish and refine what solid user experience means online.",
+  "translation": "早在1993年，Mosaic图形Web浏览器的引入就引发了公众体验网站内容的方式的一场革命。 自从世界各地的Web应用程序设计师以来，就一直持续工作以建立和完善可靠的用户体验对在线的意义。"
+}, {
+  "tag": "P",
+  "text": "Some of these evolutions are due to the result of advancing technology like the rise of broadband internet enabling the multimedia content, or the development of HTML5 standard. Others have come from various data-driven studies of what works and what does not work and an iterative process in order to reach perfection.",
+  "translation": "其中一些演变是由于技术的进步，例如支持多媒体内容的宽带互联网的兴起或HTML5标准的发展。 其他人则来自各种数据驱动的研究，这些研究对什么有效和什么无效以及为了达到完美的迭代过程进行了研究。"
+}, {
+  "tag": "P",
+  "text": "So, with the changing needs of the users, who are expecting more customized content and experience of the website visitors. That’s why web development companies need to think of out-of-the-box ideas rather than sticking to traditional strategies to succeed.",
+  "translation": "因此，随着用户需求的变化，他们期望网站访问者获得更多定制的内容和体验。 因此，网络开发公司需要考虑开箱即用的想法，而不是遵循传统的策略才能成功。"
+}, {
+  "tag": "P",
+  "text": "This is where artificial intelligence comes into the bigger picture, redefining all the conventional web app development concepts and taking it to a different level where the UX is the only focus. But, before we learn more about how AI is beneficial for web application development, it is crucial to know what exactly is AI.",
+  "translation": "这是人工智能进入更大视野的地方，重新定义了所有常规的Web应用程序开发概念，并将其带入了UX是唯一关注点的不同层次。 但是，在我们进一步了解AI对Web应用程序开发的好处之前，了解AI到底是什么至关重要。"
+}, {
+  "tag": "H2",
+  "text": "What is Artificial Intelligence (AI)?",
+  "translation": "什么是人工智能（AI）？"
+}, {
+  "tag": "P",
+  "text": "Artificial intelligence is a section of computer science which deals with creating intelligent machines that are designed to work and react like actual human beings. Some of these human-like activities comprise learning, planning, voice recognition and problem solving. Also, AI is the ability of a machine or computer program to learn and think. It is a field of study which tries to make all the computers smart. As machines become more and more capable, mental facilities that were once thought to need intelligence are removed from this definition.",
+  "translation": "人工智能是计算机科学的一部分，致力于创建旨在像实际人类一样工作和做出反应的智能机器。 这些类似于人的活动包括学习，计划，语音识别和解决问题。 同样，人工智能是机器或计算机程序学习和思考的能力。 这是一个试图使所有计算机变得智能的研究领域。 随着机器变得越来越强大，从该定义中删除了曾经被认为需要智能的心理设施。"
+}, {
+  "tag": "H2",
+  "text": "Why is AI important?",
+  "translation": "AI为什么重要？"
+}, {
+  "tag": "P",
+  "text": "Artificial Intelligence is the machines that are specifically designed in such a manner that they think and act like a human being. Artificial Intelligence becomes a crucial part of our daily life. Our life will be completely changed by artificial Intelligence because this technology is widely used in different areas of day to day services.",
+  "translation": "人工智能是经过专门设计的机器，其思维方式和行为类似于人类。 人工智能已成为我们日常生活的重要组成部分。 人工智能将彻底改变我们的生活，因为该技术已广泛应用于日常服务的不同领域。"
+}, {
+  "tag": "P",
+  "text": "Have a look at some stats and facts showing importance of AI in this digital era:",
+  "translation": "查看一些数据和事实，这些数据和事实表明了AI在此数字时代的重要性："
+}, {
+  "tag": "P",
+  "text": "By the year 2025, the global artificial intelligence market is expected to be almost $60 billion; in the year 2016 it was $1.4 billion (Source: Accenture)",
+  "translation": "到2025年，全球人工智能市场预计将达到近600亿美元。 在2016年为14亿美元（来源：埃森哲）"
+}, {
+  "tag": "P",
+  "text": "Global GDP will grow by $15.7 trillion by the year 2030 thanks to artificial intelligence. (Source: MIT)"
+}, {
+  "tag": "P",
+  "text": "Artificial intelligence can also increase business productivity by up to 40%. (Source: MIT)",
+  "translation": "人工智能还可将业务生产力提高多达40％。 （来源：麻省理工学院）"
+}, {
+  "tag": "P",
+  "text": "Artificial intelligence startups grew up to 14 times over the last two decades. (Source: Accenture)",
+  "translation": "在过去的二十年中，人工智能初创公司增长了14倍。 （来源：埃森哲）"
+}, {
+  "tag": "P",
+  "text": "Investment in artificial intelligence startups grew 6 times since the year 2000. (Source: MIT)",
+  "translation": "自2000年以来，对人工智能初创公司的投资增长了6倍。（来源：麻省理工学院）"
+}, {
+  "tag": "P",
+  "text": "Already about 77 percent of the smart devices we use feature one form of artificial intelligence or another. (Source: Accenture)",
+  "translation": "我们使用的智能设备中已有约77％具有一种或多种形式的人工智能。 （来源：埃森哲）"
+}, {
+  "tag": "P",
+  "text": "Cyborg technology will help us overcome physical & cognitive impairments. (Source: MIT)"
+}, {
+  "tag": "P",
+  "text": "Google analysts also believe that next year, 2020, robots will be smart enough so that mimic complex behavior of humans like flirting and jokes. (Source: Accenture)",
+  "translation": "谷歌分析师还认为，到2020年，机器人将变得足够聪明，可以模仿人类的复杂行为，例如调情和笑话。 （来源：埃森哲）"
+}, {
+  "tag": "H1",
+  "text": "Why Implement AI in Website Development?",
+  "translation": "为什么在网站开发中实施AI？"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*TpbCHoFG-9xNwb6O?q=20",
+  "caption": "Why Implement AI in Website Development?",
+  "type": "image",
+  "file": "0*TpbCHoFG-9xNwb6O"
+}, {
+  "tag": "P",
+  "text": "More and more users prefer to search for products directly through the Amazon website instead of searching. Large e-commerce firms are changing our attitude towards online shopping, as a result of web app development. Successful e-commerce firms actively implement innovative web development technologies in their work, such as voice searches, chatbots, and other artificial intelligence solutions.",
+  "translation": "越来越多的用户更喜欢直接通过亚马逊网站搜索产品，而不是搜索。 Web应用程序开发的结果是，大型电子商务公司正在改变我们对在线购物的态度。 成功的电子商务公司在其工作中积极采用创新的Web开发技术，例如语音搜索，聊天机器人和其他人工智能解决方案。"
+}, {
+  "tag": "P",
+  "text": "These are some advantages of the implementation of AI for the development of websites.",
+  "translation": "这些是在网站开发中实施AI的一些优势。"
+}, {
+  "tag": "P",
+  "text": "Make search even faster",
+  "translation": "使搜索更快"
+}, {
+  "tag": "P",
+  "text": "Provide more relevant customer interaction and experience",
+  "translation": "提供更多相关的客户互动和经验"
+}, {
+  "tag": "P",
+  "text": "Even more effective digital marketing to targeted consumers",
+  "translation": "面向目标消费者的数字营销更加有效"
+}, {
+  "tag": "P",
+  "text": "Make interactions with the website visitors even better",
+  "translation": "更好地与网站访问者互动"
+}, {
+  "tag": "P",
+  "text": "Provide a personalized experience of the store",
+  "translation": "提供个性化的商店体验"
+}, {
+  "tag": "P",
+  "text": "You can even find many more details in this article.",
+  "translation": "您甚至可以在本文中找到更多详细信息。"
+}, {
+  "tag": "H2",
+  "text": "Artificial Intelligence can also be widely used in Web Design & Development",
+  "translation": "人工智能还可以广泛用于Web设计和开发中"
+}, {
+  "tag": "P",
+  "text": "The user interface design process includes a lot of creativity and often begins on a blackboard where website designers share their ideas. Once a design is drawn, it is usually captured within a photograph and translated manually into an HTML structure in order to begin the web development process. This requires lots of effort and often delays the design process (and errors may appear). Instead of this, one could capture the website contents of the board on a photo and then upload it to an AI routine in order to generate the prototype web app.",
+  "translation": "用户界面设计过程包括很多创造力，并且通常始于网站设计师分享其想法的黑板上。 绘制设计后，通常会将其捕获在照片中，然后手动将其翻译为HTML结构，以开始网络开发过程。 这需要大量的工作，并且通常会延迟设计过程（并且可能会出现错误）。 取而代之的是，可以在照片上捕获板子的网站内容，然后将其上载到AI例程中，以生成原型Web应用程序。"
+}, {
+  "tag": "P",
+  "text": "Sketch2Code, a web-based solution, has recently been introduced. It relies on artificial intelligence in order to transform a handwritten UI design from an image to a valid HTML markup code.",
+  "translation": "最近引入了基于Web的解决方案Sketch2Code。 它依靠人工智能来将手写UI设计从图像转换为有效的HTML标记代码。"
+}, {
+  "tag": "H2",
+  "text": "AI is being used in various other ways, such as Adobe Sensei.",
+  "translation": "AI正在以各种其他方式使用，例如Adobe Sensei。"
+}, {
+  "tag": "P",
+  "text": "Adobe Sensei uses artificial intelligence and machine learning in order to accelerate tedious processes, help you discover hidden opportunities, and offer relevant experiences to each customer, Adobe Sensei helps you work smarter, better, and faster. Artificial intelligence makes the company smarter. Adobe brought together business leaders from different industries to share their opportunities and opinions and challenges for artificial intelligence in the company. Adobe Sensei places AI at the center of incredible customer experiences.",
+  "translation": "Adobe Sensei使用人工智能和机器学习来加速繁琐的过程，帮助您发现隐藏的机会，并为每个客户提供相关的体验，Adobe Sensei可以帮助您更智能，更好和更快地工作。 人工智能使公司更智能。 Adobe汇集了来自不同行业的商业领袖，以分享他们在公司人工智能方面的机遇，看法和挑战。 Adobe Sensei将AI置于令人难以置信的客户体验的中心。"
+}, {
+  "tag": "P",
+  "text": "You can find more about this approach (along with the introductory videos) at this site.",
+  "translation": "您可以在此站点上找到有关此方法的更多信息（以及介绍视频）。"
+}, {
+  "tag": "H2",
+  "text": "Read More: Look Why These Top Web Development Trends & Technologies Will Rule 2020",
+  "translation": "阅读更多：看看为什么这些主要的Web开发趋势和技术将统治2020年"
+}, {
+  "tag": "H1",
+  "text": "Pros and Cons of AI in Website Development",
+  "translation": "AI在网站开发中的利与弊"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*K-FIZOr-l95c-tLx?q=20",
+  "type": "image",
+  "file": "0*K-FIZOr-l95c-tLx"
+}, {
+  "tag": "P",
+  "text": "In the digital age, AI is permeating all the industries and web design is no different. For small businesses with limited capabilities of a human, AI allows quick interactions with customers to provide relevant information. artificial intelligence in web development can benefit both the user and the organization.",
+  "translation": "在数字时代，人工智能正在渗透所有行业，网页设计也是如此。 对于人类能力有限的小型企业，AI允许与客户进行快速交互以提供相关信息。 Web开发中的人工智能可以使用户和组织都受益。"
+}, {
+  "tag": "P",
+  "text": "In order to better understand the role that artificial intelligence plays in web development, we must consider the impact.",
+  "translation": "为了更好地理解人工智能在Web开发中的作用，我们必须考虑其影响。"
+}, {
+  "tag": "H1",
+  "text": "Pros of using AI",
+  "translation": "使用AI的优点"
+}, {
+  "tag": "H2",
+  "text": "User Experience:",
+  "translation": "用户体验："
+}, {
+  "tag": "P",
+  "text": "This is the most crucial aspect of website design. If a visitor to your website cannot use it efficiently and effectively, they will go elsewhere. As we know, users of a website are visitors (and will share their experiences). It is crucial to ensure that your products are easy to find and that clients can easily buy them. Many customer-centric web applications are starting to rely on AI in order to improve customer experience.",
+  "translation": "这是网站设计的最关键方面。 如果您网站的访问者不能有效地使用它，那么他们会去其他地方。 众所周知，网站的用户是访问者（并将分享他们的经验）。 确保您的产品容易找到并且客户可以轻松购买它们至关重要。 许多以客户为中心的Web应用程序开始依赖AI来改善客户体验。"
+}, {
+  "tag": "H2",
+  "text": "Personalized Content:",
+  "translation": "个性化内容："
+}, {
+  "tag": "P",
+  "text": "Content rules (whether blogs, videos, or articles). By implementing artificial intelligence on your website, you can show the audience certain content that is designed for them. AI can also suggest new videos, music, and other relevant content for users based on their past behaviours. Users can also feel comfortable discovering new content and trusting that they’ll find it relevant.",
+  "translation": "内容规则（博客，视频或文章）。 通过在您的网站上实施人工智能，您可以向受众展示针对他们的某些内容。 人工智能还可以根据用户过去的行为为他们推荐新的视频，音乐和其他相关内容。 用户还可以轻松发现新内容并相信自己会找到相关内容。"
+}, {
+  "tag": "H2",
+  "text": "Voice search optimization",
+  "translation": "语音搜索优化"
+}, {
+  "tag": "P",
+  "text": "One of the fastest-growing trends for web development is voice search optimization. Since most of your potential customers use their mobile devices more than their desktop computers, websites often have to optimize for different mobile devices. In this regard, artificial intelligence can also help.",
+  "translation": "Web开发增长最快的趋势之一是语音搜索优化。 由于您的大多数潜在客户比台式计算机更多地使用移动设备，因此网站通常必须针对不同的移动设备进行优化。 在这方面，人工智能也可以提供帮助。"
+}, {
+  "tag": "H2",
+  "text": "AI as a UX element",
+  "translation": "AI作为UX元素"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*C38dhVFvpp2L59NP?q=20",
+  "caption": "AI as a UX element",
+  "type": "image",
+  "file": "0*C38dhVFvpp2L59NP"
+}, {
+  "tag": "P",
+  "text": "The first and most obvious way in which artificial intelligence is changing the face of modern website design is in the countless artificial intelligence tools that are becoming standard parts of modern design. The most obvious example of this is the explosion of chatbots that became a fixed element in almost all website properties in recent years. In theory, they are meant to close this gap in a completely new type of website interface, one driven by conversation instead of touching or clicking.",
+  "translation": "人工智能改变现代网站设计面貌的第一个也是最明显的方法是，无数的人工智能工具正在成为现代设计的标准部分。 最明显的例子是聊天机器人的爆炸式增长，这已成为近年来几乎所有网站属性中的固定要素。 从理论上讲，它们的目的是在一种全新的网站界面中缩小这种差距，该界面由对话而非触摸或点击驱动。"
+}, {
+  "tag": "P",
+  "text": "At first, chatbots were based on little more than simple preprogrammed conversation paths that determined the scope of their usefulness. That leads to some rather disappointing results, but the latest chatbots now use sophisticated natural language processing (NLP) systems to create meaningful conversations with visitors who don’t follow a guided path. Now that these new artificial intelligence chatbots are reaching maturity, they will almost certainly enjoy a resurgence in the very near future.",
+  "translation": "最初，聊天机器人仅基于简单的预编程对话路径来确定其用途范围。 这导致了一些令人失望的结果，但是最新的聊天机器人现在使用复杂的自然语言处理（NLP）系统与未遵循指南的访问者进行有意义的对话。 现在，这些新型的人工智能聊天机器人已经成熟，几乎可以肯定的是，它们在不久的将来将会复苏。"
+}, {
+  "tag": "H2",
+  "text": "Artificial Intelligence as the designer",
+  "translation": "人工智能作为设计师"
+}, {
+  "tag": "P",
+  "text": "A much larger and consistent way that artificial intelligence is changing web design is by beginning to supplant the designers themselves. A growing field of artificial design intelligence (ADI) tools is doing exactly that and fostering a fundamental change in the way websites are created. Again, however, the first examples of ADI systems have been disappointing, as have the first chatbots.",
+  "translation": "人工智能正在改变网页设计的一种更大且一致的方式是开始取代设计师自己。 越来越多的人工设计智能（ADI）工具领域正在做到这一点，并促进了网站创建方式的根本变化。 但是，ADI系统的第一个示例再次令人失望，第一个聊天机器人也是如此。"
+}, {
+  "tag": "P",
+  "text": "The best-known example is The Grid, which was intended to be the first single window in AI web design with its automated web creator named Molly. After making a spectacular debut, his technology did not live up to the initial exaggeration. Since then, however, several ADI systems have evolved into transforming tools. The Wix and Bookmark offer now do a credible job of creating websites in just a few moments, with many options for later customization. In a few years, it is easy to see them take a growing share of the overall web design market.",
+  "translation": "最著名的示例是The Grid，它旨在以其自动化的网络创建者Molly成为AI网站设计中的第一个单一窗口。 在首次亮相之后，他的技术并没有达到最初的夸张。 但是从那以后，数个ADI系统已经发展成为转换工具。 现在，Wix和Bookmark产品在创建网站方面做得很可靠，并且提供了许多用于以后自定义的选项。 几年之内，不难看出它们在整个Web设计市场中所占的份额越来越大。"
+}, {
+  "tag": "H2",
+  "text": "AI information results",
+  "translation": "AI信息结果"
+}, {
+  "tag": "P",
+  "text": "AI is not only used to create elements and designs; It is also taking advantage of the important process of discovering which designs work best and how to refine them. To that end, a variety of analysis tools based on artificial intelligence have appeared to help web developers obtain real information on how their designs work in real-time.",
+  "translation": "AI不仅用于创建元素和设计； 它还利用了重要的过程来发现哪些设计最有效以及如何对其进行优化。 为此，出现了多种基于人工智能的分析工具，可帮助Web开发人员实时获取有关其设计如何实时工作的信息。"
+}, {
+  "tag": "P",
+  "text": "This knowledge allows companies like Convincely to provide data-centric CRO services that help web properties maximize their impact with consumers. In the process, AI is supplanting long-standing iterative design practices such as A/B tests, which used to be the primary method to improve site design to generate results. It is also important to realize that this is an area that adapts perfectly to AI since it is pure data and analysis. That should mean that it is also an area where we can expect to see more developments and more important advances in the short term."
+}, {
+  "tag": "H2",
+  "text": "Read More: Looking for Top JavaScript Frameworks? Here are the top Libraries to watch out for in 2020!",
+  "translation": "阅读更多：寻找顶级JavaScript框架？ 以下是2020年值得关注的顶级图书馆！"
+}, {
+  "tag": "H1",
+  "text": "Cons of using AI",
+  "translation": "使用AI的缺点"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*aIkgR5WLhU3LARmf?q=20",
+  "type": "image",
+  "file": "0*aIkgR5WLhU3LARmf"
+}, {
+  "tag": "H2",
+  "text": "A Place for Humans",
+  "translation": "人类的地方"
+}, {
+  "tag": "P",
+  "text": "According to a study conducted by the year 2030, up to 90% of all jobs will be in danger of being replaced by smart machines. This may include web design, graphic design, and mobile application design. Since AI has proven to be more efficient in terms of content formation to adapt to various devices, will we need to know how to code?",
+  "translation": "根据到2030年的一项研究，多达90％的工作将面临被智能机器取代的危险。 这可能包括网页设计，图形设计和移动应用程序设计。 由于事实证明，AI在适应各种设备的内容形成方面效率更高，我们是否需要知道如何编码？"
+}, {
+  "tag": "H2",
+  "text": "Privacy Issues",
+  "translation": "隐私问题"
+}, {
+  "tag": "P",
+  "text": "Since artificial intelligence and machine learning can be built to monitor consumer behaviors and online interactions, many consumers often feel uncomfortable. Software such as analysis, when combined with artificial intelligence, has unlimited potential to extract data and ideas from customers. Therefore, it could be scary for consumers because 94% of them want to do business with a company with full transparency.",
+  "translation": "由于可以构建人工智能和机器学习来监视消费者的行为和在线互动，因此许多消费者通常会感到不舒服。 与人工智能相结合的分析等软件具有从客户提取数据和想法的无限潜力。 因此，这对于消费者而言可能是可怕的，因为其中94％的消费者希望与一家完全透明的公司开展业务。"
+}, {
+  "tag": "H2",
+  "text": "Impersonal Interactions",
+  "translation": "非人际互动"
+}, {
+  "tag": "P",
+  "text": "Despite how well you have created your chatbots and automatic responses, customers can still realize that it was sent by artificial intelligence. In the digital age, many users still want personal responses; therefore, by implementing artificial intelligence we are moving away from those much needed personal interactions.",
+  "translation": "尽管您创建了聊天机器人和自动响应的程度很高，但是客户仍然可以意识到它是由人工智能发送的。 在数字时代，许多用户仍然希望获得个人回应。 因此，通过实施人工智能，我们正在摆脱那些急需的人际互动。"
+}, {
+  "tag": "P",
+  "text": "While there are advantages and disadvantages of using artificial intelligence in web design and development, we predict a positive future. By implementing artificial intelligence in web design and development, we as humans can have more time for creativity and to perform other important tasks.",
+  "translation": "虽然在网站设计和开发中使用人工智能有其优点和缺点，但我们预测未来会是一个积极的时刻。 通过在网页设计和开发中实施人工智能，我们作为人类可以有更多的时间进行创造和执行其他重要任务。"
+}, {
+  "tag": "P",
+  "text": "Instead of focusing on the negative, we should think about what AI can do for us and how it can improve our interactions. Artificial intelligence is happening (and its use is evolving). For example, some are discussing the integration of blockchain and AI.",
+  "translation": "除了关注负面影响，我们还应该考虑AI可以为我们做些什么以及它如何改善我们的互动。 人工智能正在发生（它的使用正在发展）。 例如，一些人正在讨论区块链和AI的集成。"
+}, {
+  "tag": "H1",
+  "text": "Let’s Wrap Up:",
+  "translation": "总结一下："
+}, {
+  "tag": "P",
+  "text": "Looking at the positive side of using artificial intelligence in technology, Adobe CEO Shantanu Narayen said that “Microsoft and Adobe together are leveraging artificial intelligence to deepen customer relationship management and create a new category and industry. Azure, Microsoft’s cloud platform, allows companies to process data at the pace they want and Adobe business solutions allow businesses to attract customers to the platform and engage it.”",
+  "translation": "从在技术中使用人工智能的积极方面来看，Adobe首席执行官Shantanu Narayen表示：“微软和Adobe一起利用人工智能来深化客户关系管理，并创建一个新的类别和行业。 微软的云平台Azure使公司能够以他们想要的速度处理数据，而Adobe业务解决方案则使企业能够吸引客户使用该平台并参与其中。”"
+}, {
+  "tag": "P",
+  "text": "No doubt, AI is transforming the way present-day websites are being developed. That’s why many software development companies are using AI power to create smart web applications for increasing engagement, scalability, interaction, viability, experience and overall feel of the website. You can also get software development services from these companies to get an AI-driven web application for yourself.",
+  "translation": "毫无疑问，人工智能正在改变当今网站的开发方式。 因此，许多软件开发公司都使用AI功能来创建智能Web应用程序，以提高网站的参与度，可伸缩性，交互性，生存能力，体验和整体感觉。 您还可以从这些公司获得软件开发服务，以亲自获得AI驱动的Web应用程序。"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Sophia Martin的文章《AI for Web Development: Everything You Need To Know》，参考：https://towardsdatascience.com/ai-for-web-development-everything-you-need-to-know-caa3b31be59a)",
+  "translation": "（本文翻译自Sophia Martin的文章《 Web开发的AI：您需要知道的一切》，参考：https：//towardsdatascience.com/ai-for-web-development-everything-you-need-to-know-caa3b31be59a ）"
+}]
