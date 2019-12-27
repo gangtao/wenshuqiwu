@@ -1,0 +1,178 @@
+[{
+  "tag": "H1",
+  "text": "Conclusion",
+  "translation": "结论"
+}, {
+  "tag": "P",
+  "text": "As we grow more and more towards Agile-based development, we need to adopt techniques like this so we’re more efficient and agile in our architectural documentation as well.",
+  "translation": "随着我们越来越多地朝着基于敏捷的开发方向发展，我们需要采用这种技术，以便我们在架构文档中也变得更加高效和敏捷。"
+}, {
+  "tag": "P",
+  "text": "Thanks for reading! If you have suggestions on documenting architectural decisions, leave a comment.",
+  "translation": "谢谢阅读！ 如果您有关于记录体系结构决策的建议，请发表评论。"
+}, {
+  "tag": "H2",
+  "text": "joelparkerhenderson/architecture_decision_record",
+  "translation": "joelparkerhenderson / architecture_decision_record"
+}, {
+  "tag": "H3",
+  "text": "Architecture decision record (ADR) examples for software planning, IT leadership, and template documentation …",
+  "translation": "用于软件规划，IT领导和模板文档的体系结构决策记录（ADR）示例…"
+}, {
+  "tag": "H2",
+  "text": "ADR Templates",
+  "translation": "ADR模板"
+}, {
+  "tag": "P",
+  "text": "This is not the only ADR template you can use. Many teams are using their own templates. You can find additional collections of ADR templates on GitHub.",
+  "translation": "这不是您可以使用的唯一ADR模板。 许多团队正在使用自己的模板。 您可以在GitHub上找到其他ADR模板集合。"
+}, {
+  "tag": "H2",
+  "text": "joelparkerhenderson/architecture_decision_record",
+  "translation": "joelparkerhenderson / architecture_decision_record"
+}, {
+  "tag": "H3",
+  "text": "Architecture decision record (ADR) examples for software planning, IT leadership, and template documentation …",
+  "translation": "用于软件规划，IT领导和模板文档的体系结构决策记录（ADR）示例…"
+}, {
+  "tag": "H1",
+  "text": "Sample ADR",
+  "translation": "样本ADR"
+}, {
+  "tag": "P",
+  "text": "Here is a sample ADR that you can use for your reference.",
+  "translation": "这是一个示例ADR，您可以将其用作参考。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*bA1YGWM5DK4MeS9gx4urfw.png?q=20",
+  "type": "image",
+  "file": "1*bA1YGWM5DK4MeS9gx4urfw.png"
+}, {
+  "tag": "P",
+  "text": "GitHub has more examples of ADRs for your reference.",
+  "translation": "GitHub上有更多ADR的示例供您参考。"
+}, {
+  "tag": "H1",
+  "text": "Content of the ADR",
+  "translation": "ADR的内容"
+}, {
+  "tag": "P",
+  "text": "The content of the ADR can have the following sections:",
+  "translation": "ADR的内容可以包括以下部分："
+}, {
+  "tag": "OL",
+  "texts": ["Title — Title of the decision record.", "Decision — The decision that was made. For instance, use Elasticsearch for an enterprise-wide search API.", "Status — Status can be proposed, accepted or superseded. If you make any decisions and you need to change them later, you can simply add a new record with the changed status.", "Context — What is the context of this decision? It is important to capture the full context of the decision so that the reader knows the reasons behind it.", "Consequences — In this section, you can add what would happen if this decision is made. It is important to list all consequences, both positive and negative."],
+  "translations": ["标题-决策记录的标题。", "决策-做出的决策。 例如，对企业范围内的搜索API使用Elasticsearch。", "状态-可以提出，接受或取代状态。 如果您做出任何决定并且以后需要更改它们，则只需添加状态已更改的新记录。", "上下文-此决定的上下文是什么？ 重要的是要抓住决策的全部内容，以使读者了解决策背后的原因。", "后果-在本节中，您可以添加如果做出此决定将发生的情况。 重要的是列出所有正面和负面的后果。"]
+}, {
+  "tag": "P",
+  "text": "The whole document needs to be one or two pages and not more than that. The idea here is to keep it light so people can read it.",
+  "translation": "整个文档需要一页或两页，并且不能超过两页。 这里的想法是保持轻便，以便人们可以阅读。"
+}, {
+  "tag": "P",
+  "text": "Developers need to see the ADRs all the time as they should be aware of the reasons why they are building something.",
+  "translation": "开发人员需要始终看到ADR，因为他们应该知道构建某些东西的原因。"
+}, {
+  "tag": "H1",
+  "text": "Git Friendly",
+  "translation": "Git友好"
+}, {
+  "tag": "P",
+  "text": "ADRs can be documented in the source code repository itself. You can simply create ADRs as part of the Git repository.",
+  "translation": "可以在源代码存储库本身中记录ADR。 您可以简单地将ADR创建为Git存储库的一部分。"
+}, {
+  "tag": "P",
+  "text": "For example, you can create this folder:",
+  "translation": "例如，您可以创建以下文件夹："
+}, {
+  "tag": "PRE",
+  "text": "/doc/adr/",
+  "translation": "/ doc / adr /"
+}, {
+  "tag": "P",
+  "text": "And add decisions to it as shown in the diagram below.",
+  "translation": "并如下图所示添加决策。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*deUQ5cNZ9wUDbBn9__p7lg.png?q=20",
+  "caption": "ADR in GIT Repo",
+  "type": "image",
+  "file": "1*deUQ5cNZ9wUDbBn9__p7lg.png"
+}, {
+  "tag": "H1",
+  "text": "History of LADR",
+  "translation": "LADR的历史"
+}, {
+  "tag": "P",
+  "text": "While researching LADR, I came across a very interesting article written by Michael Nygard. The article talks about having a technique to embed architecture documentation as part of code itself.",
+  "translation": "在研究LADR时，我遇到了Michael Nygard撰写的非常有趣的文章。 本文讨论了一种将体系结构文档嵌入代码本身的技术。"
+}, {
+  "tag": "P",
+  "text": "Quoting from the article:",
+  "translation": "从文章引用："
+}, {
+  "tag": "P",
+  "text": "Architecture for Agile projects has to be described and defined differently. Not all decisions will be made at once, nor will all of them be done when the project begins. — Michael Nygard",
+  "translation": "敏捷项目的架构必须以不同的方式描述和定义。 并非所有决定都会一次做出，也不会在项目开始时全部做出。 —迈克尔·尼加德（Michael Nygard）"
+}, {
+  "tag": "P",
+  "text": "This is true. Agile is widely used, and there needs to be a defined process to capture all architectural decisions. Often, we end up creating large amounts of documentation which nobody likes to read.",
+  "translation": "这是真的。 敏捷已被广泛使用，并且需要一个定义好的过程来捕获所有架构决策。 通常，我们最终会创建大量的文档，没人喜欢阅读。"
+}, {
+  "tag": "P",
+  "text": "As I read more, I found a better way to document your decisions.",
+  "translation": "当我阅读更多内容时，我发现了一种更好的方法来记录您的决定。"
+}, {
+  "tag": "H1",
+  "text": "ThoughtWorks Technology Radar",
+  "translation": "ThoughtWorks技术雷达"
+}, {
+  "tag": "P",
+  "text": "Whilst trying to solve this dilemma, I came across the latest edition of ThoughtWorks Technology Radar.",
+  "translation": "在试图解决这个难题的同时，我遇到了最新版的ThoughtWorks Technology Radar。"
+}, {
+  "tag": "P",
+  "text": "“We are a software company and a community of passionate, purpose-led individuals. We think disruptively to deliver technology to address our clients’ toughest challenges, all while seeking to revolutionize the IT industry and create positive social change.” — ThoughtWorks",
+  "translation": "“我们是一家软件公司，是一个以目标为导向的热情社区。 在寻求革新IT行业并创造积极的社会变革的同时，我们具有颠覆性的思维来提供技术以解决客户最严峻的挑战。” — ThoughtWorks"
+}, {
+  "tag": "P",
+  "text": "In the Technology Radar, ThoughtWorks publishes news on what you should use, what you should keep doing, and what you could try.",
+  "translation": "ThoughtWorks在Technology Radar中发布了有关您应该使用什么，应该继续做什么以及可以尝试的内容的新闻。"
+}, {
+  "tag": "P",
+  "text": "ThoughtWorks talks about various:",
+  "translation": "ThoughtWorks讨论了各种："
+}, {
+  "tag": "OL",
+  "texts": ["Techniques", "Platforms", "Tools", "Languages & Frameworks"],
+  "translations": ["技术技巧", "平台类", "工具类", "语言和框架"]
+}, {
+  "tag": "P",
+  "text": "While reading the techniques section, I noticed that ThoughtWorks recommends adoption of Lightweight Architecture Decision Records(LADR).",
+  "translation": "在阅读技术部分时，我注意到ThoughtWorks建议采用轻型体系结构决策记录（LADR）。"
+}, {
+  "tag": "P",
+  "text": "I didn’t know about LADR, so I started researching.",
+  "translation": "我不了解LADR，所以我开始研究。"
+}, {
+  "tag": "H1",
+  "text": "A Simple but Powerful Tool to Record Your Architectural Decisions",
+  "translation": "一个简单而强大的工具来记录您的架构决策"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*oVmVbim_-Ogm9zs7SW6hBw.jpeg?q=20",
+  "caption": "Photo by Brooke Cagle on Unsplash",
+  "type": "image",
+  "file": "1*oVmVbim_-Ogm9zs7SW6hBw.jpeg"
+}, {
+  "tag": "P",
+  "text": "From the moment I took over the role of technology architect, I’ve been wondering why certain decisions were made instead of other options.",
+  "translation": "从我担任技术架构师的那一刻起，我一直想知道为什么要做出某些决定而不是其他选择。"
+}, {
+  "tag": "P",
+  "text": "Visio diagrams are great, but they’re nothing but pictures. They don’t tell you the story behind why certain arrows go a certain way and not the other way round.",
+  "translation": "Visio图表很棒，但它们不过是图片而已。 他们没有告诉您为什么某些箭头以某种方式而不是相反地旋转的故事。"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Tanmay Deshpande的文章《A Simple but Powerful Tool to Record Your Architectural Decisions》，参考：https://medium.com/better-programming/here-is-a-simple-yet-powerful-tool-to-record-your-architectural-decisions-5fb31367a7da)",
+  "translation": "（本文翻译自Tanmay Deshpande的文章，《记录架构决策的简单但功能强大的工具》，参考：https：//medium.com/better-programming/here-is-a-simple-yet-powerful-tool-to -记录您的建筑决策5fb31367a7da）"
+}]
