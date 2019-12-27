@@ -1,0 +1,111 @@
+[{
+  "tag": "H1",
+  "text": "Conclusion",
+  "translation": "结论"
+}, {
+  "tag": "P",
+  "text": "Hopefully, you now have a better understanding of what Larry Wall’s virtues mean.",
+  "translation": "希望您现在对Larry Wall的美德含义有了更好的了解。"
+}, {
+  "tag": "P",
+  "text": "These virtues are actually different aspects of the desire to work effectively. Being effective often means knowing what the right thing to work on is, rather than just accepting an inefficient or flawed way of working.",
+  "translation": "这些美德实际上是有效工作愿望的不同方面。 有效地工作通常意味着知道正确的工作是什么，而不是仅仅接受效率低下或有缺陷的工作方式。"
+}, {
+  "tag": "P",
+  "text": "I wouldn’t recommend incorporating laziness, impatience, or hubris into every aspect of your daily life — like cleaning the house or doing the dishes — but it works well as a motivator for writing better programs!",
+  "translation": "我不建议您将懒惰，急躁或自负纳入日常生活的各个方面，例如打扫房屋或洗碗，但它可以很好地激励您编写更好的程序！"
+}, {
+  "tag": "H1",
+  "text": "Virtue #3: Hubris",
+  "translation": "美德＃3：傲慢"
+}, {
+  "tag": "P",
+  "text": "Have you ever been frustrated trying to figure out how to do something in a programming language and thought to yourself, “I could write a better language than this”? That’s the exact thought process that has given birth to every programming language.",
+  "translation": "您是否曾经因为试图弄清楚如何用编程语言做某件事而沮丧，然后对自己说：“我可以写出比这更好的语言”？ 正是这种思维过程催生了每种编程语言。"
+}, {
+  "tag": "P",
+  "text": "The idea of throwing away an entire programming language and writing a new one from scratch is the creative hubris that inspires programmers to create new solutions.",
+  "translation": "抛弃一种完整的编程语言并从头开始编写一种新的语言的想法是激发程序员创建新解决方案的创造性狂妄。"
+}, {
+  "tag": "P",
+  "text": "It’s also the idea that we could not only fix a widely used piece of open-source software, but actually write a replacement that works better. Without that impulse, we would be stuck working with old proprietary languages and frameworks forever. The open-source community is fueled by virtuous hubris.",
+  "translation": "还有一个想法是，我们不仅可以修复广泛使用的开源软件，而且可以编写出效果更好的替代软件。 没有这种冲动，我们将永远无法使用旧的专有语言和框架。 开源社区受到良善狂妄的刺激。"
+}, {
+  "tag": "H1",
+  "text": "Virtue #2: Impatience",
+  "translation": "美德2：急躁"
+}, {
+  "tag": "P",
+  "text": "Impatience doesn’t help when you’re stuck in traffic, but it can be useful in programming.",
+  "translation": "当您遇到交通拥堵时，不耐烦没有帮助，但在编程时会很有用。"
+}, {
+  "tag": "P",
+  "text": "It’s the reason we build faster compilers, browsers, and operating systems. We want everything to load quickly, to be efficient, and for interfaces to be responsive. A good programmer cannot tolerate slow systems — our impatience does not allow it!",
+  "translation": "这就是我们构建更快的编译器，浏览器和操作系统的原因。 我们希望所有内容都能快速加载，高效并且接口能够响应。 一个好的程序员不能容忍慢的系统-我们的耐心是不允许的！"
+}, {
+  "tag": "P",
+  "text": "Nothing is more satisfying for a programmer than making a significant performance improvement. I once increased the throughput of a data pipeline by a factor of ten and I still bring it up in interviews as my finest moment in that role.",
+  "translation": "对于程序员而言，没有什么比大幅改进性能更令人满意了。 我曾经将数据管道的吞吐量提高了10倍，但我仍然在面试中提到它，这是我担任该职务的最佳时机。"
+}, {
+  "tag": "P",
+  "text": "There’s just something about saving time that sets programmers’ hearts aflutter!",
+  "translation": "节省时间只会让程序员心动不已！"
+}, {
+  "tag": "H1",
+  "text": "Virtue #1: Laziness",
+  "translation": "美德＃1：懒惰"
+}, {
+  "tag": "P",
+  "text": "It’s telling that computer science is the only field where “lazy” is a technical term.",
+  "translation": "这说明计算机科学是“懒惰”是技术术语的唯一领域。"
+}, {
+  "tag": "P",
+  "text": "Programmers have a lot of work to get done. Logically, the best way to address a large set of work tasks is to get rid of any of them that you don’t really need to do.",
+  "translation": "程序员有很多工作要做。 从逻辑上讲，解决大量工作任务的最佳方法是摆脱您根本不需要做的任何工作。"
+}, {
+  "tag": "P",
+  "text": "Next, try to get rid of any repetitive tasks. If there’s one thing we hate, it’s routine. We don’t want to repeat the same keystrokes if it’s possible to write a script to do it for us.",
+  "translation": "接下来，尝试摆脱任何重复性的任务。 如果我们讨厌一件事，那是例行公事。 如果可以编写脚本来帮助我们，我们不想重复相同的按键操作。"
+}, {
+  "tag": "P",
+  "text": "Why? Because we’re lazy — and that’s a good thing. Laziness is a result of our desire for efficiency.",
+  "translation": "为什么？ 因为我们很懒惰-那是一件好事。 懒惰是我们渴望效率的结果。"
+}, {
+  "tag": "P",
+  "text": "In some cases, this can be a bit of a cultural miscommunication. Sometimes programmers are judged for how much code we produce. For managers from non-technical backgrounds, a programmer who works really hard to produce an enormous amount of code might be seen as the hardest worker in the office.",
+  "translation": "在某些情况下，这可能是一种文化误解。 有时，程序员会判断我们产生多少代码。 对于非技术背景的经理来说，一个非常努力工作以产生大量代码的程序员可能被视为办公室中最努力的工人。"
+}, {
+  "tag": "P",
+  "text": "But a clever programmer knows that producing a lot of code might just mean you’re being inefficient. It’s much better to come up with a clever, low-effort solution, rather than reinventing the wheel or over-engineering something. Why spend hours writing code you don’t need?",
+  "translation": "但是聪明的程序员知道，产生大量代码可能只意味着您效率低下。 提出一个明智的，省力的解决方案要好得多，而不是重新设计轮子或过度设计某些东西。 为什么要花几个小时编写不需要的代码？"
+}, {
+  "tag": "H1",
+  "text": "The 3 Virtues of Good Programmers",
+  "translation": "优秀程序员的三大美德"
+}, {
+  "tag": "H2",
+  "text": "Just don’t take them literally",
+  "translation": "只是不要把它们从字面上看"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*WARKl9-_uIvV-PF1joaKRg.jpeg?q=20",
+  "caption": "Photo by Charles on Unsplash",
+  "type": "image",
+  "file": "1*WARKl9-_uIvV-PF1joaKRg.jpeg"
+}, {
+  "tag": "P",
+  "text": "Long ago, Perl creator Larry Wall named three tongue-in-cheek virtues of programmers: laziness, impatience, and hubris.",
+  "translation": "很久以前，Perl的创建者拉里·沃尔（Larry Wall）指出了程序员的三种嘲讽美德：懒惰，急躁和自大。"
+}, {
+  "tag": "P",
+  "text": "Before you go trying to learn the latest programming languages and trendy frameworks to improve your craft, take a look at these three “virtues” and try to incorporate them in your daily work.",
+  "translation": "在尝试学习最新的编程语言和流行的框架以提高自己的技能之前，请看一下这三个“技巧”，并尝试将其纳入您的日常工作中。"
+}, {
+  "tag": "P",
+  "text": "Just don’t take them literally!",
+  "translation": "只是不要从字面上接受它们！"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Robert Quinlivan的文章《The 3 Virtues of Good Programmers》，参考：https://medium.com/better-programming/here-are-the-three-virtues-of-good-programmers-e561e061ea19)",
+  "translation": "（本文译自Robert Quinlivan的文章《优秀程序员的3种美德》，参考：https：//medium.com/better-programming/here-are-the-three-thethre-three-virtues-of-good-programmers-e561e061ea19）"
+}]
