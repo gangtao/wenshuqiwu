@@ -1,0 +1,276 @@
+[{
+  "tag": "H1",
+  "text": "Conclusion",
+  "translation": "结论"
+}, {
+  "tag": "P",
+  "text": "Whether you chose to use microservices, serverless functions, or stick with monolith services; at the end of the day you have to chose what is best for your platform and your team. You have to take into consideration if there is a technical standard or language your company works within, or a technical direction the company wants to move in. I firmly believe microservices should become the standard for building services for the modern web.",
+  "translation": "您是选择使用微服务，无服务器功能还是坚持使用整体服务； 最终，您必须选择最适合您的平台和团队的内容。 您必须考虑到公司采用的技术标准或语言，或者公司希望采用的技术指导。我坚信微服务应该成为构建现代Web服务的标准。"
+}, {
+  "tag": "P",
+  "text": "There are many ways to take walk down the microservice path, and many folks have very strong opinions on the matter. Do not be afraid to slowly iterate down a pattern and see what works and what doesn’t. And if it starts to not fit into your goals, pivot. No shame, this how we learn and make existing patterns better!",
+  "translation": "有许多方法可以沿着微服务道路走，许多人对此事有很强的见解。 不要害怕慢慢地遍历一个模式，看看什么有效，什么无效。 如果它开始不适合您的目标，请进行调整。 不用遗憾，这是我们学习和改进现有模式的方法！"
+}, {
+  "tag": "P",
+  "text": "As I learn more and more about serverless functions, there is definitely a place where this can fill in the gaps in microservices. But also, in some cases replace it entirely, such as handling web-hooks from third party services such as Twilio. The fire and forget pattern is an absolutely perfect way to learn serverless and keep your micro-services from doing too much. But that is something we should dig into in another article.",
+  "translation": "随着我对无服务器功能的了解越来越多，肯定有一个地方可以填补微服务的空白。 但是，在某些情况下，也可以完全取代它，例如处理来自第三方服务（例如Twilio）的Web挂钩。 即弃即用模式是学习无服务器并防止微服务执行过多操作的绝对完美方法。 但这是我们应该在另一篇文章中探讨的内容。"
+}, {
+  "tag": "H1",
+  "text": "OK, Microservices are for me, what now?",
+  "translation": "好的，微服务适合我，现在呢？"
+}, {
+  "tag": "P",
+  "text": "There are numerous strategies for breaking down a monolith into microservices which I will cover in depth in another article. But until then, let’s cover some high level points of interest. There are four main points to address, and I will cover them in order of adoption.",
+  "translation": "有很多策略可以将整体拆分为微服务，我将在另一篇文章中深入介绍。 但是在此之前，让我们介绍一些高层次的兴趣点。 有四个要点要解决，我将按照采用的顺序进行介绍。"
+}, {
+  "tag": "P",
+  "text": "1 — Breaking out infrastructure Services: Breaking out base level functional areas into services that your entire cluster can consume is an important first step of breaking up a monolith.",
+  "translation": "1-突破基础架构服务：将基础级别的功能区域分解为整个集群可以使用的服务，这是打破整体的重要的第一步。"
+}, {
+  "tag": "P",
+  "text": "A great example of this may be an Email Microservice. You could easily reference the Sendgrid nuget package and start sending email. But what if you want to apply logic to every email, (such as wrapping it in a template)? You should stand up a microservice that takes a common data contract for sending emails, have it encapsulate the template logic within the service, and have it do the work of sending emails. This also gives you the ability to change email providers/mechanisms and deploy only the microservice.",
+  "translation": "电子邮件微服务就是一个很好的例子。 您可以轻松引用Sendgrid nuget包并开始发送电子邮件。 但是，如果您想对每封电子邮件应用逻辑（例如将其包装在模板中），该怎么办？ 您应该站起来一个微服务，该微服务采用通用的数据合同来发送电子邮件，将其封装在服务内的模板逻辑，并使其完成发送电子邮件的工作。 这也使您能够更改电子邮件提供商/机制并仅部署微服务。"
+}, {
+  "tag": "P",
+  "text": "2 — Moving re-usable items into Package References: These are the same as above but do not require extension or tenant-based customization.",
+  "translation": "2 —将可重复使用的项目移至“包引用”中：与上面的相同，但不需要扩展名或基于租户的自定义。"
+}, {
+  "tag": "P",
+  "text": "An example would be a Durable Queue connector that talks to a RabbitMQ instance. It doesn't make sense to wrap this functionality in a service. Merely creating a nuget package and allowing services to reference it and call the queue is plenty fine.",
+  "translation": "一个示例是与RabbitMQ实例对话的持久队列连接器。 将此功能包装在服务中没有任何意义。 仅创建一个nuget包并允许服务引用它并调用队列就可以了。"
+}, {
+  "tag": "P",
+  "text": "3 — Identifying Domain Services: Identifying domains is probably the most challenging part of breaking out into microservices. Developers often wrestle with chunks of business logic that may (on the surface) live between two logical domains. Never should you duplicate this logic, if you cannot decide, I recommend you stick to one question you should often ask yourself: What is the root data type of this record or what domain would request this most often.",
+  "translation": "3-识别域服务：识别域可能是进入微服务领域最具挑战性的部分。 开发人员经常为可能（表面上）存在于两个逻辑域之间的业务逻辑块而苦恼。 永远不要重复这种逻辑，如果不能决定，我建议您坚持一个经常问自己的问题：该记录的根数据类型是什么，或者最经常请求哪个域。"
+}, {
+  "tag": "P",
+  "text": "An example would be a call like “GetRecentOrders” in reference to our above example of a shopping cart. The root of this data is history records, but by a customer. What I would do is put this call in the History service, and require a CustomerId to get the data.",
+  "translation": "参考上面的购物车示例，例如“ GetRecentOrders”之类的调用。 这些数据的根源是历史记录，但由客户提供。 我要做的就是将此呼叫放入“历史记录”服务中，并需要一个CustomerId来获取数据。"
+}, {
+  "tag": "P",
+  "text": "4 — Identify Gateway Services: The last real task until you have defined your service topology is identifying your gateways. This one can be tough because its a great place to group domains and dictate how your frontend (or 3rd party consumers) navigate your services. However, you don’t want too many gateways.",
+  "translation": "4 —识别网关服务：在定义服务拓扑之前，最后一项真正的任务是识别网关。 这可能很困难，因为它是对域进行分组并确定前端（或第三方消费者）如何导航服务的好地方。 但是，您不需要太多的网关。"
+}, {
+  "tag": "P",
+  "text": "An example of this would be logically grouping your administration services behind a “Admin Gateway” and enforcing stronger authentication requirements and role management. You can even use gateways to whitelist what IP addresses or applications are allowed to use this gateway.",
+  "translation": "这样的一个例子是在逻辑上将您的管理服务分组在“ Admin Gateway”后面，并实施更严格的身份验证要求和角色管理。 您甚至可以使用网关将允许使用此网关的IP地址或应用程序列入白名单。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/freeze/max/60/1*4z2VNWDtzdSAh8eg9G2-tg.gif?q=20",
+  "type": "image",
+  "file": "1*4z2VNWDtzdSAh8eg9G2-tg.gif"
+}, {
+  "tag": "P",
+  "text": "It is hard to give a blueprint for breaking down monoliths into microservices because each solution is different. But I hope you now have a foundation to develop your own strategy.",
+  "translation": "由于每种解决方案都不相同，因此很难给出将整体分解为微服务的蓝图。 但我希望您现在有一个制定自己的策略的基础。"
+}, {
+  "tag": "H1",
+  "text": "Are microservices for me?",
+  "translation": "微服务适合我吗？"
+}, {
+  "tag": "P",
+  "text": "Microservices are not for everyone. Taking the next step also means being prepared… to succeed and to fail. It’s about picking the right tool for the job. Sometimes that means you don’t get to choose the “hot” technology. There is no shame in being excited, but being impartial is important.",
+  "translation": "微服务并非适合所有人。 迈出下一步还意味着要做好准备……成功和失败。 这是为工作选择合适的工具。 有时，这意味着您不必选择“热门”技术。 兴奋并没有羞耻，但保持公正很重要。"
+}, {
+  "tag": "P",
+  "text": "If you cant build a monolith, what makes you think microservices are the answer?- Simon Brown",
+  "translation": "如果您无法构建整体，那么为什么您认为微服务才是答案？-西蒙·布朗"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/freeze/max/60/1*RSYbI2xgNBmvXLerxQurNQ.gif?q=20",
+  "type": "image",
+  "file": "1*RSYbI2xgNBmvXLerxQurNQ.gif"
+}, {
+  "tag": "P",
+  "text": "Adopting microservices is all about maturity and rigidity. You have to be prepared to introduce a little bit more pain into your deployment and pipepine processes, because with microservices you can deploy smaller units of code independently and must be sure it doesn’t break anything existing once deployed.",
+  "translation": "采用微服务与成熟度和刚性有关。 您必须准备好在部署和Pipepine流程中引入一些麻烦，因为使用微服务，您可以独立部署较小的代码单元，并且必须确保一旦部署，它不会破坏现有的任何内容。"
+}, {
+  "tag": "P",
+  "text": "You must be prepared to fully adopt semantic versioning and package management. Package management and “bumping versions” is usually the first complaint from engineers I hear when introducing microservices. Yes, it can be cumbersome but a little bit of pain breeds a little bit of caution when deploying.",
+  "translation": "您必须准备好完全采用语义版本控制和包管理。 引入微服务时，我经常听到工程师对软件包管理和“转换版本”的抱怨。 是的，这可能很麻烦，但部署时会有些许痛苦，但会引起一些注意。"
+}, {
+  "tag": "H1",
+  "text": "DB Per service or Shared DB?",
+  "translation": "数据库每个服务还是共享数据库？"
+}, {
+  "tag": "P",
+  "text": "When breaking out into microservices, one of the first decisions you will have to make is whether you chose a single database per service, or a shared database across services. Personally, I prefer a database per service to decouple data and create easier deployment pipelines. If you chose to go this route, you will need to determine how you consolidate foreign keys or lookup data across databases. If you need to put this data back together for analytics or reporting, you would typically ETL this into a data-lake and flatten the data.",
+  "translation": "进入微服务时，您首先要做出的决定之一是选择每个服务使用一个数据库还是跨服务使用共享数据库。 就个人而言，我更喜欢每个服务使用一个数据库来解耦数据并创建更容易的部署管道。 如果选择这种方式，则需要确定如何跨数据库整合外键或查找数据。 如果您需要将这些数据放在一起进行分析或报告，通常可以将其ETL放入数据仓库并整理数据。"
+}, {
+  "tag": "P",
+  "text": "Example: If you have a microservice for customers, and a microservice for order history, you will need to store the CustomerId alongside the order history record. When the ETL runs for this history record, you will prefetch the customer record and flatten the data for storage in a table in your data-lake.",
+  "translation": "示例：如果您有一个用于客户的微服务和一个用于订单历史记录的微服务，则需要将CustomerId与订单历史记录一起存储。 当ETL运行此历史记录记录时，您将预取客户记录并将数据展平以存储在数据池中的表中。"
+}, {
+  "tag": "H1",
+  "text": "Advantages & Disadvantages",
+  "translation": "优点缺点"
+}, {
+  "tag": "P",
+  "text": "There are many advantages and disadvantages to choosing microservices, and you must identify what is best for your solution.",
+  "translation": "选择微服务有很多优点和缺点，您必须确定最适合您的解决方案的地方。"
+}, {
+  "tag": "P",
+  "text": "Now you have 100 problems: One result I have seen in the past of adopting microservices, is when developers try to make EVERYTHING a microservice. I believe that treads a little too close to abstraction for abstractions sake. This can be a slippery slope for some and becomes a possible disadvantage unless you have a mature team.",
+  "translation": "现在您有100个问题：在过去采用微服务时，我看到的一个结果是，开发人员试图使一切都成为微服务。 我认为，出于抽象的考虑，它离抽象有点太近了。 对于某些人来说这可能是个滑坡，除非您有成熟的团队，否则这可能成为不利条件。"
+}, {
+  "tag": "P",
+  "text": "Don’t even consider microservices unless you have a system that’s too complex to manage as a monolith. The majority of software systems should be built as a single monolithic application. Do pay attention to good modularity within that monolith, but don’t try to separate it into separate services.- Martin Fowler",
+  "translation": "除非您的系统过于复杂而无法作为一个整体进行管理，否则甚至不要考虑使用微服务。 大多数软件系统应构建为单个整体应用程序。 请务必注意该整体中的良好模块化，但不要尝试将其分为单独的服务。-Martin Fowler"
+}, {
+  "tag": "P",
+  "text": "Independent Deployments: One huge (somewhat obvious) advantage is deployments of individual services break up large “big bang” deployments. Once a feature is complete and integrated tested against the rest of the ecosystem, you can deploy it without having to deploy an entire stack.",
+  "translation": "独立部署：一个巨大的（有点明显）优势是单个服务的部署可以打破大型“爆炸式”部署。 一旦功能完成并针对生态系统的其余部分进行了集成测试，您就可以部署它，而不必部署整个堆栈。"
+}, {
+  "tag": "P",
+  "text": "Segregated Domains: One concept I like to introduce folks to is the Secure Domain concept. This should be taken in as a consideration when designing the topology of your microservices. Controlling access and where services live is a great way to keep services simple where they need to be, but robust and secure elsewhere. Controlling access in this way is also away to abstract super sensitive services to “authorized” engineers.",
+  "translation": "隔离域：我想向人们介绍的一个概念是安全域概念。 在设计微服务的拓扑时，应考虑这一点。 控制访问权限和服务的生存方式是使服务在需要的地方保持简单但在其他地方保持健壮和安全的一种很好的方法。 以这种方式控制访问也不再需要向“授权”工程师抽象超敏感服务。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/46/1*JprjBpcOQ6-0Hy0_Mc5EfQ.png?q=20",
+  "caption": "Secure Domains using Infrastructure as Security",
+  "type": "image",
+  "file": "1*JprjBpcOQ6-0Hy0_Mc5EfQ.png"
+}, {
+  "tag": "P",
+  "text": "Security through Infrastructure: One really awesome outcome from breaking out your application into microservices, is the ability to abstract sensitive or administrative services behind a firewall and white-list only your services access to it. This means, that email microservice for example, is not publicly accessible, but your public services are able to use it. This drastically reduces the public footprint of your application.",
+  "translation": "通过基础架构实现安全性：将应用程序划分为微服务的一个真正令人敬畏的结果是，能够将敏感或管理服务抽象到防火墙后，并且仅将对它的访问权限列入白名单。 这意味着，例如，电子邮件微服务不可公开访问，但是您的公共服务可以使用它。 这大大减少了应用程序的公共空间。"
+}, {
+  "tag": "P",
+  "text": "Sharing Infrastructure: Along with this pattern, you should assume, the farther you go down in the domain stack, the more “shared” the service can become. This is not always the case, but it is definitely the majority. A wonderful example of this would be a Email Service. As opposed to allowing each service to communicate to SendGrid (for example), I would build a microservice to own that responsibility. All services that require email functionality would need to talk to that service so I can control who has access. It also gives me a single location to handle branding or templating!",
+  "translation": "共享基础结构：沿着这种模式，您应该假设，您在域堆栈中越走越远，服务就可以变得越“共享”。 并非总是如此，但绝对是多数。 电子邮件服务就是一个很好的例子。 与允许每个服务与SendGrid通信（例如）相反，我将构建一个微服务来承担该责任。 所有需要电子邮件功能的服务都需要与该服务进行对话，以便我可以控制谁可以访问。 它还为我提供了一个处理品牌或模板的位置！"
+}, {
+  "tag": "H1",
+  "text": "Lets break an example down",
+  "translation": "让我们分解一个例子"
+}, {
+  "tag": "P",
+  "text": "Buckle up, this may take a moment. Let’s go a bit deeper and design a theoretical architecture. Without going -too- far into the weeds, let’s define a very simple commerce application that crosses a few important boundaries.",
+  "translation": "系好安全带，这可能需要一点时间。 让我们更深入一点，设计一个理论架构。 在不深入研究杂草的情况下，让我们定义一个跨越几个重要边界的非常简单的商务应用程序。"
+}, {
+  "tag": "P",
+  "text": "The Problem: We would like to build a public API that tracks Customers, allows Orders to be placed, and keeps a History of the orders. We want to allow this API to support a modern front-end, a mobile app, and third party integrations. We also know that users browse Products 100 times at peak more often than they place orders. When a user create an Order, we want to send them an Email.",
+  "translation": "问题：我们想构建一个公共API来跟踪客户，允许下订单并保留订单的历史记录。 我们希望允许该API支持现代的前端，移动应用程序和第三方集成。 我们还知道，用户在高峰时段浏览产品的频率要比下订单的频率高100倍。 用户创建订单时，我们要向他们发送电子邮件。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*nfhvdDbyJemjfH62CqxEdw.png?q=20",
+  "caption": "An example microservice architecture to support a commerce application.",
+  "type": "image",
+  "file": "1*nfhvdDbyJemjfH62CqxEdw.png"
+}, {
+  "tag": "P",
+  "text": "The Solution: The above solution may look complicated at first, but bare with me. My first step was to define my domains, in this case Product, Order, History, and Customer. I don’t want integrations of my services to have to deal with each service individually, that can cause some drift in business logic among other serious issues.",
+  "translation": "解决方案：上面的解决方案乍看之下似乎很复杂，但对我来说几乎没有。 我的第一步是定义我的域，在本例中是产品，订单，历史记录和客户。 我不希望我的服务集成必须单独处理每个服务，否则可能会导致业务逻辑出现一些其他严重问题。"
+}, {
+  "tag": "P",
+  "text": "But why two gateways? It is two fold; I want to keep my gateways from doing too much, but it also allows integrations to optionally implement features. This also allows me to deploy updates around shopping without having to also deploy customer related updates. We want to avoid gateways becoming monoliths.",
+  "translation": "但是为什么要有两个网关？ 这是两倍。 我想避免网关做太多事情，但是它也允许集成有选择地实现功能。 这也使我可以在购物周围部署更新，而不必部署与客户相关的更新。 我们要避免网关变得单一。"
+}, {
+  "tag": "P",
+  "text": "Each service should be self contained and should not cross domain barriers. This also includes the data storage. If you need to consolidate logic between two services, tie the calls together in the gateway. “Don’t cross the streams!”",
+  "translation": "每个服务都应该是自包含的，并且不应跨越域壁垒。 这也包括数据存储。 如果需要合并两个服务之间的逻辑，请在网关中将调用绑定在一起。 “不要越过溪流！”"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/freeze/max/60/1*lDCvNMPCKLtAOfYXHlu_Cw.gif?q=20",
+  "type": "image",
+  "file": "1*lDCvNMPCKLtAOfYXHlu_Cw.gif"
+}, {
+  "tag": "P",
+  "text": "One thing to mention is the email integration. This one is an example of the argument: Service or Package Reference. I personally feel an Email integration such as SendGrid should be wrapped in an infrastructure service so you can standardize how emails are handled. There are a lot of factors of an email integration that complicate a simple package reference. Lets name a few…",
+  "translation": "要提到的一件事是电子邮件集成。 这是参数的一个示例：服务或包引用。 我个人认为，应该将诸如SendGrid之类的电子邮件集成包装在基础结构服务中，以便您可以标准化处理电子邮件的方式。 电子邮件集成的很多因素使简单的软件包参考变得复杂。 让我们举几个……"
+}, {
+  "tag": "UL",
+  "texts": ["Bulk Emailing?", "Delivery Schedule?", "Cached email templates?", "Customer Branding?", "Email History?"],
+  "translations": ["批量发送电子邮件？", "交货时间表？", "缓存的电子邮件模板？", "客户品牌？", "电子邮件记录？"]
+}, {
+  "tag": "P",
+  "text": "If you have any of those, you may want to consider wrapping it in a service, and storing the metadata in a database for that service.",
+  "translation": "如果有这些，则可能需要考虑将其包装在服务中，并将元数据存储在该服务的数据库中。"
+}, {
+  "tag": "P",
+  "text": "Alright, last item… The data is in a bunch of different databases, what about reporting!? I have a recommendation for you; Each independent database should have its own ETL process that de-normalizes data and stores it in a data lake. I also recommend any BI tool should query directly from the data lake. There are many ways to skin that cat, but I love to see the creative solutions folks come up with.",
+  "translation": "好了，最后一项…数据位于一堆不同的数据库中，那么报告呢？ 我有一个建议给你； 每个独立的数据库都应具有自己的ETL过程，该过程可以对数据进行非规范化并将其存储在数据湖中。 我还建议任何BI工具都应直接从数据湖查询。 有很多方法可以给猫咪贴皮，但是我喜欢看到人们提出的创新解决方案。"
+}, {
+  "tag": "H1",
+  "text": "Mixed code? Uh Wut?",
+  "translation": "混合代码？ 嗯？"
+}, {
+  "tag": "P",
+  "text": "One cool aspect of microservice architecture is that your overall infrastructure does not have to be all the same structure or even the same language! Breaking down logical domains of your application into microservices gains you the ability to use the right tool for the right job. If your code base is .net but you really would prefer to write a thread intensive part of your infrastructure in Elixir, you can! This has its own issues as well, but I really encourage a mixed proficiency team make-up. Different platforms and languages have their own unique pros and cons. If done right, this can create some a big benefits though:",
+  "translation": "微服务架构的一个很酷的方面是，您的整个基础架构不必全部都是相同的结构甚至是相同的语言！ 将应用程序的逻辑域分解为微服务可以使您能够使用正确的工具来完成正确的工作。 如果您的代码库是.net，但您确实希望在Elixir中编写基础结构的线程密集型部分，则可以！ 这也有其自身的问题，但我确实鼓励混合水平的团队组成。 不同的平台和语言都有各自的优缺点。 如果做得对，这可以带来很多好处："
+}, {
+  "tag": "UL",
+  "texts": ["Cross pollinate patterns across teams", "Introduce your engineers to new technologies", "Allow interested engineers to break out of their norms and experiment in other languages"],
+  "translations": ["跨团队的交叉授粉模式", "向您的工程师介绍新技术", "允许感兴趣的工程师突破常规并使用其他语言进行实验"]
+}, {
+  "tag": "H1",
+  "text": "Gateways: You shall not pass",
+  "translation": "门户：您不得通过"
+}, {
+  "tag": "P",
+  "text": "One way you can control exposure to your infrastructure is gateways. Think of it as a way to either control the data/logic flow of your services or a way to wrap one or more domains together. I have even used a gateway to convert external OAuth authentication to a standard shared-key my internal infrastructure can understand to keep it light. For those who are familiar with Domain Driven Design, My best advice is to treat each microservice as a bounded context, and each gateway as a domain.",
+  "translation": "可以控制基础结构暴露的一种方法是网关。 可以将它视为控制服务的数据/逻辑流的一种方法，或者将一个或多个域包装在一起的一种方法。 我什至使用网关将外部OAuth身份验证转换为我的内部基础结构可以理解的标准共享密钥，以使其轻巧。 对于那些熟悉域驱动设计的人，我最好的建议是将每个微服务视为有界上下文，并将每个网关都视为域。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/freeze/max/60/1*0jwgMC4dfQG7jsOynHR1gw.gif?q=20",
+  "type": "image",
+  "file": "1*0jwgMC4dfQG7jsOynHR1gw.gif"
+}, {
+  "tag": "P",
+  "text": "Implementing gateways have many benefits:",
+  "translation": "实施网关有很多好处："
+}, {
+  "tag": "UL",
+  "texts": ["Use gateways to break up authentication types or access methods.", "Use gateways to break up domains.", "Use gateways to direct traffic by user type, region, or tenant.", "Use gateways to break up external traffic from administration traffic."],
+  "translations": ["使用网关来分解身份验证类型或访问方法。", "使用网关来拆分域。", "使用网关按用户类型，区域或租户指示流量。", "使用网关将外部流量与管理流量分开。"]
+}, {
+  "tag": "H1",
+  "text": "Microservice Architecture & Design",
+  "translation": "微服务架构与设计"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*bato6iN0c0bkF2jT.?q=20",
+  "caption": "Photo by Tatiana Latino on Unsplash",
+  "type": "image"
+}, {
+  "tag": "P",
+  "text": "Note: The contents of this article are my opinions, not the views or opinions of my employer or other entity.",
+  "translation": "注意：本文内容是我的见解，而不是我的雇主或其他实体的见解。"
+}, {
+  "tag": "H1",
+  "text": "What are microservices?",
+  "translation": "什么是微服务？"
+}, {
+  "tag": "P",
+  "text": "Microservice architecture in its simplest definition, is the act of developing software while breaking out logical domains into independent services. In the last 6 years, I have heard the microservice methodology grow in incredible popularity. Everybody is talking about microservices!",
+  "translation": "从最简单的定义来看，微服务架构是在将逻辑域划分为独立服务的同时开发软件的行为。 在过去的六年中，我听说微服务方法学以惊人的速度增长。 每个人都在谈论微服务！"
+}, {
+  "tag": "P",
+  "text": "There’s another shift coming, and that’s from cloud computing to microservices.~ Steve Singh (Concur)",
+  "translation": "还有另一个转变，那就是从云计算到微服务。〜Steve Singh（Concur）"
+}, {
+  "tag": "P",
+  "text": "Most engineers, that are not already in microservices, live in a monolithic code base. Living in a monolithic world is not all bad, and there are numerous established architectural patterns you can use to build your application. At the end of the day, you have to chose what is right for your application, not what’s popular. If you take microservices as an architectural pattern, there are some fundamental differences in how logic and data-flow are broken up and spread across services. Let’s take a quick look at the two examples below.",
+  "translation": "大多数尚未使用微服务的工程师都生活在整体代码库中。 生活在一个单一的世界中并不都是一件坏事，并且可以使用许多已建立的架构模式来构建应用程序。 归根结底，您必须选择最适合您的应用的应用，而不是流行的应用。 如果将微服务作为体系结构模式，则逻辑和数据流在服务之间的分解和分布方式之间存在一些根本差异。 让我们快速看一下下面的两个示例。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*TdACXfmDakTRsFKzzz-JOA.png?q=20",
+  "caption": "Microservices vs Monoliths",
+  "type": "image",
+  "file": "1*TdACXfmDakTRsFKzzz-JOA.png"
+}, {
+  "tag": "P",
+  "text": "By breaking down the monolith apart and segregating the layers, you gain the ability to interchange/update individual layers without the need to deploy the entire code base! That’s just the start though.",
+  "translation": "通过分解整体并分离层，您可以交换/更新单个层，而无需部署整个代码库！ 不过，这仅仅是开始。"
+}, {
+  "tag": "P",
+  "text": "You now can create physical abstraction layers to break up code and logic. Creating these domains allow engineers to easily find and fix functionality. This also allows independent deployments of domains. These abstractions can also share code via Package References such as nuget/npm/etc.",
+  "translation": "现在，您可以创建物理抽象层以分解代码和逻辑。 创建这些域可以使工程师轻松找到并修复功能。 这也允许独立部署域。 这些抽象也可以通过诸如nuget / npm / etc之类的Package References共享代码。"
+}, {
+  "tag": "P",
+  "text": "Another concept that microservices introduce is isolated data stores. There are two schools of thought for data storage in microservices: Isolated databases or a Shared Database. If its a shared database, I recommend breaking up the domains by schema. Although, if it’s an isolated database, you can decide if you want different kinds of data stores for different domains. Your customer domain may use a Sql Server database, while your Order History domain may use MongoDB. Again, use the right tool for the right job!",
+  "translation": "微服务引入的另一个概念是隔离的数据存储。 微服务中的数据存储有两种思路：隔离数据库或共享数据库。 如果它是共享数据库，则建议按架构拆分域。 虽然，如果它是一个隔离的数据库，您可以决定是否要为不同的域使用不同类型的数据存储。 您的客户域可能使用Sql Server数据库，而您的订单历史记录域可能使用MongoDB。 同样，使用正确的工具完成正确的工作！"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Chris Fryer的文章《Microservice Architecture & Design》，参考：https://medium.com/@cfryerdev/microservice-architecture-design-2ac7eaae532)",
+  "translation": "（本文翻译自克里斯·弗赖尔的文章《微服务架构与设计》，参考：https：//medium.com/@cfryerdev/microservice-architecture-design-2ac7eaae532）"
+}]
