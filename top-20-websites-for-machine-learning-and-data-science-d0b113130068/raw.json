@@ -1,0 +1,979 @@
+[{
+  "tag": "H2",
+  "text": "10 Data Science Competitions for you to hone your skills for 2020",
+  "translation": "10项数据科学竞赛，帮助您提高2020年的技能"
+}, {
+  "tag": "H3",
+  "text": "Here is a list of websites for you to practice your data science skills and take part in online hackathons and…",
+  "translation": "这是一个网站列表，供您练习数据科学技能并参加在线黑客马拉松和…"
+}, {
+  "tag": "P",
+  "text": "Thanks for reading and please do comment below your favorite websites below and share them with the world!",
+  "translation": "感谢您的阅读，请在下面您喜欢的网站下方做评论，并与世界分享！"
+}, {
+  "tag": "P",
+  "text": "For an even longer list of websites, check out this curated list on Github by Artem Golubin!",
+  "translation": "有关更长的网站列表，请查看Artem Golubin在Github上精选的列表！"
+}, {
+  "tag": "P",
+  "text": "Check out my article on Data Science competitions you can participate in 2020!",
+  "translation": "查看我关于数据科学竞赛的文章，您可以参加2020年！"
+}, {
+  "tag": "H2",
+  "text": "10 Data Science Competitions for you to hone your skills for 2020",
+  "translation": "10项数据科学竞赛，帮助您提高2020年的技能"
+}, {
+  "tag": "H3",
+  "text": "Here is a list of websites for you to practice your data science skills and take part in online hackathons and…",
+  "translation": "这是一个网站列表，供您练习数据科学技能并参加在线黑客马拉松和…"
+}, {
+  "tag": "H2",
+  "text": "Here is the list of the websites:",
+  "translation": "以下是网站列表："
+}, {
+  "tag": "OL",
+  "texts": ["Machine Learning Mastery", "Elite data science", "KDnuggets", "Kaggle", "Reddit — r/datascience", "Towards Data Science", "Analytics Vidhya", "Data Science Dojo", "Data Science 101", "Geeks for Geeks — Machine Learning", "Google News — Data Science", "Datafloq", "Domino Data Science Blog", "data36", "Revolutions", "Edwin Chen", "Pete Warden’s Blog", "InsideBIGDATA", "Google AI Blog", "Nature"],
+  "translations": ["机器学习精通", "精英数据科学", "掘金队", "卡格勒", "Reddit — r / datascience", "走向数据科学", "Analytics Vidhya", "数据科学道场", "数据科学101", "极客—机器学习", "Google新闻-数据科学", "数据流", "Domino数据科学博客", "资料36", "革命", "陈", "皮特·沃登的博客", "InsideBIGDATA", "Google AI博客", "性质"]
+}, {
+  "tag": "H2",
+  "text": "Nature Machine Intelligence",
+  "translation": "自然机器智能"
+}, {
+  "tag": "H3",
+  "text": "Current national cybersecurity and defense strategies of several governments mention explicitly the use of AI. However…",
+  "translation": "数个国家/地区的当前国家网络安全和防御策略明确提到了AI的使用。 然而…"
+}, {
+  "tag": "H1",
+  "text": "20. Nature Machine Intelligence",
+  "translation": "20.自然机器智能"
+}, {
+  "tag": "P",
+  "text": "Introduction: Nature is a weekly international journal publishing the finest peer-reviewed research in all fields of science and technology. Nature Machine Intelligence is interested in the best research from across the fields of artificial intelligence, machine learning, and robotics and provide rapid, authoritative, insightful and arresting news on said fields. All editorial decisions are made by a team of full-time professional editors.",
+  "translation": "简介：《自然》是每周刊的国际期刊，出版有关科学和技术所有领域的最好的同行评审研究。 Nature Machine Intelligence对人工智能，机器学习和机器人领域的最佳研究感兴趣，并提供有关上述领域的快速，权威，有见地和令人瞩目的新闻。 所有编辑决定均由一组全职的专业编辑人员做出。"
+}, {
+  "tag": "P",
+  "text": "Level: experts",
+  "translation": "级别：专家"
+}, {
+  "tag": "P",
+  "text": "Type: opinions, news, research papers",
+  "translation": "类型：观点，新闻，研究论文"
+}, {
+  "tag": "P",
+  "text": "Functionality: Read the latest news and advancement in Machine Intelligence.",
+  "translation": "功能：阅读有关机器智能的最新新闻和进展。"
+}, {
+  "tag": "P",
+  "text": "Best qualities: Nature has high-quality articles by top-notch researches and experts. Their sources are trustworthy and reliable.",
+  "translation": "最佳品质：自然界拥有一流研究人员和专家提供的高质量文章。 他们的来源是值得信赖和可靠的。"
+}, {
+  "tag": "P",
+  "text": "Best read: Taking robots shopping",
+  "translation": "最佳阅读：以机器人购物"
+}, {
+  "tag": "H2",
+  "text": "Nature Machine Intelligence",
+  "translation": "自然机器智能"
+}, {
+  "tag": "H3",
+  "text": "Current national cybersecurity and defense strategies of several governments mention explicitly the use of AI. However…",
+  "translation": "数个国家/地区的当前国家网络安全和防御策略明确提到了AI的使用。 然而…"
+}, {
+  "tag": "H2",
+  "text": "Google AI Blog",
+  "translation": "Google AI博客"
+}, {
+  "tag": "H3",
+  "text": "Taking pictures of outdoor scenes at night has so far been the domain of large cameras, such as DSLRs, which are able…",
+  "translation": "迄今为止，在夜间拍摄室外场景一直是大型相机的领域，例如单反相机，它们能够..."
+}, {
+  "tag": "H1",
+  "text": "19. Google AI Blog",
+  "translation": "19. Google AI博客"
+}, {
+  "tag": "P",
+  "text": "Introduction: Google AI is conducting research that advances the state-of-the-art in the field, applying AI to products and new domains, and developing tools to ensure that everyone can access AI. Their blog brings the latest news from Google AI.",
+  "translation": "简介：Google AI正在开展研究，以推动该领域的最新发展，将AI应用于产品和新领域，并开发工具以确保每个人都可以使用AI。 他们的博客带来了来自Google AI的最新消息。"
+}, {
+  "tag": "P",
+  "text": "Level: experts",
+  "translation": "级别：专家"
+}, {
+  "tag": "P",
+  "text": "Type: research papers",
+  "translation": "类型：研究论文"
+}, {
+  "tag": "P",
+  "text": "Functionality: Google AI blog is for AI experts to keep up with everything new about Google AI.",
+  "translation": "功能：Google AI博客供AI专家跟上有关Google AI的所有最新信息。"
+}, {
+  "tag": "P",
+  "text": "Best qualities: Informative papers on the latest advancements in AI.",
+  "translation": "最佳质量：有关AI最新进展的信息性论文。"
+}, {
+  "tag": "P",
+  "text": "Best read: Teachable Machine 2.0 makes AI easier for everyone",
+  "translation": "最佳阅读：Teachable Machine 2.0使每个人都更容易使用AI"
+}, {
+  "tag": "H2",
+  "text": "Google AI Blog",
+  "translation": "Google AI博客"
+}, {
+  "tag": "H3",
+  "text": "Taking pictures of outdoor scenes at night has so far been the domain of large cameras, such as DSLRs, which are able…",
+  "translation": "迄今为止，在夜间拍摄室外场景一直是大型相机的领域，例如单反相机，它们能够..."
+}, {
+  "tag": "H2",
+  "text": "insideBIGDATA — insideBIGDATA: Clear, Concise Insights on Big Data Strategies",
+  "translation": "insideBIGDATA — insideBIGDATA：关于大数据策略的清晰，简洁的见解"
+}, {
+  "tag": "H3",
+  "text": "insideBIGDATA: Clear, Concise Insights on Big Data Strategies",
+  "translation": "insideBIGDATA：关于大数据策略的清晰，简洁的见解"
+}, {
+  "tag": "H1",
+  "text": "18. InsideBIGDATA",
+  "translation": "18. InsideBIGDATA"
+}, {
+  "tag": "P",
+  "text": "Introduction: InsideBIGDATA is a news outlet that distills news, strategies, products, and services in the world of Big Data for data scientists as well as IT and business professionals.",
+  "translation": "简介：InsideBIGDATA是一个新闻媒体，为数据科学家以及IT和业务专业人士提炼大数据世界中的新闻，策略，产品和服务。"
+}, {
+  "tag": "P",
+  "text": "Level: intermediate, experts",
+  "translation": "级别：中级，专家"
+}, {
+  "tag": "P",
+  "text": "Type: blog",
+  "translation": "类型：博客"
+}, {
+  "tag": "P",
+  "text": "Functionality: For reading and catching up on the latest news.",
+  "translation": "功能：用于阅读和掌握最新消息。"
+}, {
+  "tag": "P",
+  "text": "Best qualities: Special sections with articles about Data Science, Developers, Use cases, interviews, etc.",
+  "translation": "最佳质量：特殊部分，包含有关数据科学，开发人员，用例，访谈等的文章。"
+}, {
+  "tag": "P",
+  "text": "Best read: Scaling a Small Data Team with the Power of Machine Learning",
+  "translation": "最佳阅读：利用机器学习的力量扩展小型数据团队"
+}, {
+  "tag": "H2",
+  "text": "insideBIGDATA — insideBIGDATA: Clear, Concise Insights on Big Data Strategies",
+  "translation": "insideBIGDATA — insideBIGDATA：关于大数据策略的清晰，简洁的见解"
+}, {
+  "tag": "H3",
+  "text": "insideBIGDATA: Clear, Concise Insights on Big Data Strategies",
+  "translation": "insideBIGDATA：关于大数据策略的清晰，简洁的见解"
+}, {
+  "tag": "H2",
+  "text": "Pete Warden’s blog",
+  "translation": "皮特·沃登（Pete Warden）的博客"
+}, {
+  "tag": "H3",
+  "text": "Ever tried. Ever failed. No matter. Try Again. Fail again. Fail better.",
+  "translation": "曾经尝试过。 曾经失败过。 不管。 再试一次。 再次失败。 失败了。"
+}, {
+  "tag": "H1",
+  "text": "17. Pete Warden’s Blog",
+  "translation": "17.皮特·沃登的博客"
+}, {
+  "tag": "P",
+  "text": "Introduction: Pete Warden an engineer, CTO of Jetpac Inc, author of The Public Data Handbook and The Big Data Glossary for O’Reilly, builder of OpenHeatMap and the Data Science Toolkit, and other open-source projects. His blog has amazing well-structured short articles that are informative and didactic.",
+  "translation": "简介：皮特·沃登（Pete Warden），工程师，Jetpac Inc的首席技术官，《公共数据手册》和O’Reilly的《大数据词汇》的作者，OpenHeatMap和Data Science Toolkit以及其他开源项目的构建者。 他的博客中有许多精彩且结构合理的简短文章，内容丰富且具有启发性。"
+}, {
+  "tag": "P",
+  "text": "Level: experts",
+  "translation": "级别：专家"
+}, {
+  "tag": "P",
+  "text": "Type: blog",
+  "translation": "类型：博客"
+}, {
+  "tag": "P",
+  "text": "Functionality: This blog is for avid readers of Data Science who want to dig deeper into everything data and discover.",
+  "translation": "功能性：此博客适用于希望深入研究数据并发现一切数据科学的狂热读者。"
+}, {
+  "tag": "P",
+  "text": "Best qualities: The blog is clean and nice to read.",
+  "translation": "最佳品质：该博客干净而且易于阅读。"
+}, {
+  "tag": "P",
+  "text": "Best read: What Machine Learning needs from Hardware",
+  "translation": "最佳阅读：硬件中机器学习需要什么"
+}, {
+  "tag": "H2",
+  "text": "Pete Warden’s blog",
+  "translation": "皮特·沃登（Pete Warden）的博客"
+}, {
+  "tag": "H3",
+  "text": "Ever tried. Ever failed. No matter. Try Again. Fail again. Fail better.",
+  "translation": "曾经尝试过。 曾经失败过。 不管。 再试一次。 再次失败。 失败了。"
+}, {
+  "tag": "H2",
+  "text": "Edwin Chen’s Blog",
+  "translation": "陈冠希的网志"
+}, {
+  "tag": "H3",
+  "text": "Let’s think about how our model updates its knowledge of the world. So far, we’ve placed no constraints on this update…",
+  "translation": "让我们考虑一下我们的模型如何更新其世界知识。 到目前为止，我们对该更新没有任何限制..."
+}, {
+  "tag": "H1",
+  "text": "16. Edwin Chen",
+  "translation": "16.陈冠希"
+}, {
+  "tag": "P",
+  "text": "Introduction: Edwin Chen — Math/CS/linguistics at MIT, speech recognition at MSR, quant trading at Clarium, ads at Twitter, data science at Dropbox, stats/ML at Google. He runs the blog and is great at explaining AI, stats, data science, human computation in his way.",
+  "translation": "简介：Edwin Chen — MIT的数学/ CS /语言学，MSR的语音识别，Clarium的定量交易，Twitter的广告，Dropbox的数据科学，Google的stats / ML。 他管理着博客，擅长以自己的方式解释AI，统计数据，数据科学和人类计算。"
+}, {
+  "tag": "P",
+  "text": "Level: experts",
+  "translation": "级别：专家"
+}, {
+  "tag": "P",
+  "text": "Type: blog",
+  "translation": "类型：博客"
+}, {
+  "tag": "P",
+  "text": "Functionality: Brush up your AI, stats, data science and ML knowledge.",
+  "translation": "功能：梳理您的AI，统计数据，数据科学和ML知识。"
+}, {
+  "tag": "P",
+  "text": "Best qualities: Nice website and clear presentation of code.",
+  "translation": "最好的质量：好的网站和清晰的代码表示。"
+}, {
+  "tag": "P",
+  "text": "Best read: Winning the Netflix Prize: A Summary",
+  "translation": "最佳阅读：赢得Netflix奖：摘要"
+}, {
+  "tag": "H2",
+  "text": "Edwin Chen’s Blog",
+  "translation": "陈冠希的网志"
+}, {
+  "tag": "H3",
+  "text": "Let’s think about how our model updates its knowledge of the world. So far, we’ve placed no constraints on this update…",
+  "translation": "让我们考虑一下我们的模型如何更新其世界知识。 到目前为止，我们对该更新没有任何限制..."
+}, {
+  "tag": "H2",
+  "text": "Revolutions",
+  "translation": "革命"
+}, {
+  "tag": "H3",
+  "text": "Milestones in AI, Machine Learning, Data Science, and visualization with R and Python since 2008",
+  "translation": "自2008年以来在AI，机器学习，数据科学以及使用R和Python进行可视化方面的里程碑"
+}, {
+  "tag": "H1",
+  "text": "15. Revolutions",
+  "translation": "15.革命"
+}, {
+  "tag": "P",
+  "text": "Introduction: Revolution is a round-up of news about Artificial Intelligence, Machine Learning, and Data Science. It has an eclectic collection of interesting blog posts, software announcements and data applications from Microsoft and elsewhere that Revolution Analytics (owner) has noted recently.",
+  "translation": "简介：革命是有关人工智能，机器学习和数据科学的新闻摘要。 它收集了折衷的，有趣的博客帖子，软件公告以及来自Microsoft和其他地方的数据应用程序，Revolution Analytics（所有者）最近注意到了这些信息。"
+}, {
+  "tag": "P",
+  "text": "Level: intermediate",
+  "translation": "级别：中级"
+}, {
+  "tag": "P",
+  "text": "Type: news",
+  "translation": "类型：新闻"
+}, {
+  "tag": "P",
+  "text": "Functionality: This blog is just a channel for the latest news so you can read up about Open Source AI, ML & Data Science, and the Industry News, which are updated monthly. This blog is also dedicated to news and information of interest to members of the R community. So it’s preferred that you are an R user.",
+  "translation": "功能：该博客只是获取最新新闻的渠道，因此您可以阅读有关开源AI，机器学习和数据科学以及行业新闻的信息，这些信息每月定期更新。 该博客还致力于R社区成员感兴趣的新闻和信息。 因此，最好您是R用户。"
+}, {
+  "tag": "P",
+  "text": "Best qualities: The website is clean and easy to navigate.",
+  "translation": "最佳质量：该网站干净且易于浏览。"
+}, {
+  "tag": "P",
+  "text": "Best read: data science news",
+  "translation": "最佳阅读：数据科学新闻"
+}, {
+  "tag": "H2",
+  "text": "Revolutions",
+  "translation": "革命"
+}, {
+  "tag": "H3",
+  "text": "Milestones in AI, Machine Learning, Data Science, and visualization with R and Python since 2008",
+  "translation": "自2008年以来在AI，机器学习，数据科学以及使用R和Python进行可视化方面的里程碑"
+}, {
+  "tag": "H2",
+  "text": "Data36",
+  "translation": "数据36"
+}, {
+  "tag": "H3",
+  "text": "I put together a ‘Python 3 for Data Science’ tutorial series starting from the very basics. It features 9 practical…",
+  "translation": "我从最基础的内容开始整理了一个“ Python 3 for Data Science”教程系列。 它具有9种实用的功能..."
+}, {
+  "tag": "H1",
+  "text": "14. data36",
+  "translation": "14.数据36"
+}, {
+  "tag": "P",
+  "text": "Introduction: Tomi Mester, the author of this blog, is a data analyst and researcher. In his blog, he gives you a sneak peek into online data analysts’ best practices. You will find articles and videos about data analysis, AB-testing, research, data science and more…",
+  "translation": "简介：本博客的作者Tomi Mester是一位数据分析师和研究员。 在他的博客中，他向您简要介绍了在线数据分析师的最佳做法。 您将找到有关数据分析，AB测试，研究，数据科学等的文章和视频。"
+}, {
+  "tag": "P",
+  "text": "Level: intermediate",
+  "translation": "级别：中级"
+}, {
+  "tag": "P",
+  "text": "Type: blog",
+  "translation": "类型：博客"
+}, {
+  "tag": "P",
+  "text": "Functionality: For reading about data science articles and following through great tutorials about DS tools.",
+  "translation": "功能性：用于阅读有关数据科学的文章，并通读有关DS工具的出色教程。"
+}, {
+  "tag": "P",
+  "text": "Best qualities: A 50min video course on How to become a data scientist.",
+  "translation": "最佳质量：有关如何成为数据科学家的50分钟视频课程。"
+}, {
+  "tag": "P",
+  "text": "Best read: Learning Data Science — 4 untold truths",
+  "translation": "最佳读物：学习数据科学-4个不可理解的真理"
+}, {
+  "tag": "H2",
+  "text": "Data36",
+  "translation": "数据36"
+}, {
+  "tag": "H3",
+  "text": "I put together a ‘Python 3 for Data Science’ tutorial series starting from the very basics. It features 9 practical…",
+  "translation": "我从最基础的内容开始整理了一个“ Python 3 for Data Science”教程系列。 它具有9种实用的功能..."
+}, {
+  "tag": "H2",
+  "text": "Data Science Blog by Domino",
+  "translation": "Domino的数据科学博客"
+}, {
+  "tag": "H3",
+  "text": "This article covers clustering including K-means and hierarchical clustering. A complementary Domino project is…",
+  "translation": "本文介绍了包括K-means的聚类和分层聚类。 一个补充性的Domino项目是…"
+}, {
+  "tag": "H2",
+  "text": "Datafloq — Big Data News and Information",
+  "translation": "Datafloq —大数据新闻和信息"
+}, {
+  "tag": "H3",
+  "text": "Datafloq collects for you the latest Big Data news and provides you with new Big Data information daily",
+  "translation": "Datafloq会为您收集最新的大数据新闻，并每天为您提供新的大数据信息"
+}, {
+  "tag": "H1",
+  "text": "12. Datafloq",
+  "translation": "12.数据流"
+}, {
+  "tag": "P",
+  "text": "Introduction: Datafloq is the one-stop source for big data, blockchain, and artificial intelligence. They offer information, insights, and opportunities to drive innovation with emerging technologies.",
+  "translation": "简介：Datafloq是大数据，区块链和人工智能的一站式来源。 他们提供信息，见解和机会，以推动新兴技术的创新。"
+}, {
+  "tag": "P",
+  "text": "Level: all",
+  "translation": "级别：全部"
+}, {
+  "tag": "P",
+  "text": "Type: blog",
+  "translation": "类型：博客"
+}, {
+  "tag": "P",
+  "text": "Functionality: Fun to read articles to catch up on the latest AI technology and Big Data news.",
+  "translation": "功能：有趣的文章阅读以赶上最新的AI技术和大数据新闻。"
+}, {
+  "tag": "P",
+  "text": "Best qualities: Very organized and well-built.",
+  "translation": "最佳品质：井井有条，结构精良。"
+}, {
+  "tag": "P",
+  "text": "Best read: How IoT and Machine Learning Can Make Our Roads Safer",
+  "translation": "最佳阅读：物联网和机器学习如何使我们的道路更安全"
+}, {
+  "tag": "H2",
+  "text": "Datafloq — Big Data News and Information",
+  "translation": "Datafloq —大数据新闻和信息"
+}, {
+  "tag": "H3",
+  "text": "Datafloq collects for you the latest Big Data news and provides you with new Big Data information daily",
+  "translation": "Datafloq会为您收集最新的大数据新闻，并每天为您提供新的大数据信息"
+}, {
+  "tag": "H1",
+  "text": "13. Domino Data Science Blog",
+  "translation": "13. Domino数据科学博客"
+}, {
+  "tag": "P",
+  "text": "Introduction: Domino Data Lab’s mission is to support data scientists fulfill their expectations for their work and their potential. They help accelerate the work of data scientists producing and curating content into the following pages and channels: Data Science, Code, Machine learning, Practical Techniques, Leaders at work, Model Management & Engineering.",
+  "translation": "简介：Domino Data Lab的任务是支持数据科学家实现对其工作和潜力的期望。 它们有助于加快数据科学家在以下页面和渠道中生成和整理内容的工作：数据科学，代码，机器学习，实用技术，工作中的领导者，模型管理和工程。"
+}, {
+  "tag": "P",
+  "text": "Level: intermediate",
+  "translation": "级别：中级"
+}, {
+  "tag": "P",
+  "text": "Type: blog",
+  "translation": "类型：博客"
+}, {
+  "tag": "P",
+  "text": "Functionality: This blog has great articles that are for intermediate data scientists as the things they cover are quite advanced.",
+  "translation": "功能性：此博客上有许多非常适合中级数据科学家的文章，因为它们涵盖的内容相当先进。"
+}, {
+  "tag": "P",
+  "text": "Best qualities: The website is very well-designed and easy to navigate. The articles are categorized well and organized.",
+  "translation": "最佳质量：该网站设计精良，易于浏览。 文章分类合理，井井有条。"
+}, {
+  "tag": "P",
+  "text": "Best read: Data Science at The New York Times",
+  "translation": "最佳阅读：《纽约时报》的数据科学"
+}, {
+  "tag": "H2",
+  "text": "Data Science Blog by Domino",
+  "translation": "Domino的数据科学博客"
+}, {
+  "tag": "H3",
+  "text": "This article covers clustering including K-means and hierarchical clustering. A complementary Domino project is…",
+  "translation": "本文介绍了包括K-means的聚类和分层聚类。 一个补充性的Domino项目是…"
+}, {
+  "tag": "H2",
+  "text": "Data science — Google News",
+  "translation": "数据科学-Google新闻"
+}, {
+  "tag": "H3",
+  "text": "Read full articles, watch videos, browse thousands of titles and more on the “Data science” topic with Google News.",
+  "translation": "阅读完整的文章，观看视频，浏览成千上万的标题以及有关Google新闻的“数据科学”主题的更多内容。"
+}, {
+  "tag": "H1",
+  "text": "11. Google News — Data Science",
+  "translation": "11. Google新闻-数据科学"
+}, {
+  "tag": "P",
+  "text": "Introduction: Google News — Data Science covers the latest news and updates on the field of data science. Ranging from tutorials and blogs to industry news and startups. You can read myriads of articles from Forbes, TechRepublic, Infoworld, etc.",
+  "translation": "简介：Google新闻-数据科学涵盖了数据科学领域的最新新闻和更新。 从教程和博客到行业新闻和创业公司不等。 您可以阅读《福布斯》，《技术共和》，《信息世界》等的大量文章。"
+}, {
+  "tag": "P",
+  "text": "Level: all",
+  "translation": "级别：全部"
+}, {
+  "tag": "P",
+  "text": "Type: news",
+  "translation": "类型：新闻"
+}, {
+  "tag": "P",
+  "text": "Functionality: Preferably read daily.",
+  "translation": "功能：最好每天阅读。"
+}, {
+  "tag": "P",
+  "text": "Best qualities: Google News has great UI and it has an android and IOS app too. So you can read it anywhere.",
+  "translation": "最佳品质：Google新闻具有出色的UI，并且还具有android和IOS应用。 因此您可以在任何地方阅读。"
+}, {
+  "tag": "P",
+  "text": "Best read: What Data Scientists Do And How To Work With Them",
+  "translation": "最佳阅读：数据科学家做什么以及如何与他们合作"
+}, {
+  "tag": "H2",
+  "text": "Data science — Google News",
+  "translation": "数据科学-Google新闻"
+}, {
+  "tag": "H3",
+  "text": "Read full articles, watch videos, browse thousands of titles and more on the “Data science” topic with Google News.",
+  "translation": "阅读完整的文章，观看视频，浏览成千上万的标题以及有关Google新闻的“数据科学”主题的更多内容。"
+}, {
+  "tag": "H2",
+  "text": "Machine Learning — GeeksforGeeks",
+  "translation": "机器学习— GeeksforGeeks"
+}, {
+  "tag": "H3",
+  "text": "Machine Learning is the field of study that gives computers the capability to learn without being explicitly…",
+  "translation": "机器学习是使计算机具有学习能力的学习领域，而无需明确..."
+}, {
+  "tag": "H1",
+  "text": "10. Geeks for Geeks — Machine Learning",
+  "translation": "10.极客换极客-机器学习"
+}, {
+  "tag": "P",
+  "text": "Introduction: Geeks for Geeks is another infamous blog for computer science geeks. There’s just about everything on this website — from algorithms and data structures to interviews and internships. Their ML section is phenomenal and it provides a learning pathway for beginners.",
+  "translation": "简介：Geeks for Geeks是另一个臭名昭著的计算机科学爱好者博客。 该网站上几乎所有内容-从算法和数据结构到访谈和实习。 他们的机器学习部分非常出色，为初学者提供了学习途径。"
+}, {
+  "tag": "P",
+  "text": "Level: all",
+  "translation": "级别：全部"
+}, {
+  "tag": "P",
+  "text": "Type: blog, tutorial, articles",
+  "translation": "类型：博客，教程，文章"
+}, {
+  "tag": "P",
+  "text": "Functionality: It’s a massive collection of articles that are well-categorized and a great place for beginners looking for free resources.",
+  "translation": "功能性：大量的文章经过精心分类，是初学者寻找免费资源的理想之地。"
+}, {
+  "tag": "P",
+  "text": "Best qualities: It has practice problems that help people master programming needed in ML and DS.",
+  "translation": "最佳质量：它存在一些实践问题，可以帮助人们掌握ML和DS中所需的编程。"
+}, {
+  "tag": "P",
+  "text": "Best read: Getting Started with Machine Learning",
+  "translation": "最佳阅读：机器学习入门"
+}, {
+  "tag": "H2",
+  "text": "Machine Learning — GeeksforGeeks",
+  "translation": "机器学习— GeeksforGeeks"
+}, {
+  "tag": "H3",
+  "text": "Machine Learning is the field of study that gives computers the capability to learn without being explicitly…",
+  "translation": "机器学习是使计算机具有学习能力的学习领域，而无需明确..."
+}, {
+  "tag": "H2",
+  "text": "Data Science 101",
+  "translation": "数据科学101"
+}, {
+  "tag": "H3",
+  "text": "Learning To Be A Data Scientist",
+  "translation": "学习成为一名数据科学家"
+}, {
+  "tag": "H1",
+  "text": "9. Data Science 101",
+  "translation": "9.数据科学101"
+}, {
+  "tag": "P",
+  "text": "Introduction: The creator of this blog — Ryan Swanstrom, is a thought-leader in big data and listed as one of the most influential people on the internet for data science.",
+  "translation": "简介：该博客的创建者Ryan Swanstrom是大数据领域的思想领袖，被列为互联网上数据科学领域最有影响力的人之一。"
+}, {
+  "tag": "P",
+  "text": "Level: all",
+  "translation": "级别：全部"
+}, {
+  "tag": "P",
+  "text": "Type: blog, news",
+  "translation": "类型：博客，新闻"
+}, {
+  "tag": "P",
+  "text": "Functionality: This is purely a blog and it is for reading about concepts or the latest news in Data Science.",
+  "translation": "功能：这纯粹是一个博客，用于阅读有关数据科学中的概念或最新新闻。"
+}, {
+  "tag": "P",
+  "text": "Best qualities: The website is simple and clean. There are also no ads, which means you can read articles peacefully and happily.",
+  "translation": "最佳质量：该网站简单而干净。 也没有广告，这意味着您可以和平愉快地阅读文章。"
+}, {
+  "tag": "P",
+  "text": "Best read: Top Companies to work for if you are a data scientist",
+  "translation": "最佳阅读：如果您是数据科学家，则可以工作的顶级公司"
+}, {
+  "tag": "H2",
+  "text": "Data Science 101",
+  "translation": "数据科学101"
+}, {
+  "tag": "H3",
+  "text": "Learning To Be A Data Scientist",
+  "translation": "学习成为一名数据科学家"
+}, {
+  "tag": "H2",
+  "text": "Data Science Blog | AI, ML, big data analytics",
+  "translation": "数据科学博客| 人工智能，机器学习，大数据分析"
+}, {
+  "tag": "H3",
+  "text": "Stay up to date on all things data science, AI, machine learning and big data",
+  "translation": "随时了解数据科学，人工智能，机器学习和大数据的所有信息"
+}, {
+  "tag": "H1",
+  "text": "8. Data Science Dojo",
+  "translation": "8.数据科学道场"
+}, {
+  "tag": "P",
+  "text": "Introduction: DSD is founded by Raja Iqbal and it started as a meetup group in Seattle. With the mission to make data science accessible to everyone, Raja left his then-current job at Microsoft to begin Data Science Dojo as a business (DSDaaB) teaching data science bootcamps around the world. In a nutshell, Data Science Dojo is all about is teaching everyone how to use data to discover new insights and make well-informed decisions.",
+  "translation": "简介：DSD由Raja Iqbal创立，最初是在西雅图的聚会组织。 为了使所有人都可以访问数据科学，Raja离开了他当时在微软的工作，开始了Data Science Dojo的业务（DSDaaB），在世界各地教授数据科学训练营。 简而言之，Data Science Dojo就是要教每个人如何使用数据来发现新见解并做出明智的决策。"
+}, {
+  "tag": "P",
+  "text": "Level: all",
+  "translation": "级别：全部"
+}, {
+  "tag": "P",
+  "text": "Type: blog, Video tutorials",
+  "translation": "类型：博客，视频教程"
+}, {
+  "tag": "P",
+  "text": "Functionality: This website is for those looking for tutorials and articles that talk about data science, data engineering, big data analytics, AI, and machine learning.",
+  "translation": "功能性：该网站适合那些正在寻找有关数据科学，数据工程，大数据分析，人工智能和机器学习的教程和文章的人。"
+}, {
+  "tag": "P",
+  "text": "Best qualities: The website is very intuitive and easy to use. The featured articles are explicitly highlighted at the top of the website and scrolling down you’ll see top tags such as #datascience and #Analytics etc.",
+  "translation": "最佳质量：该网站非常直观且易于使用。 精选文章在网站顶部明确突出显示，向下滚动您会看到诸如#datascience和#Analytics等顶级标签。"
+}, {
+  "tag": "P",
+  "text": "Best read: 101 Data Science Interview Questions, Answers, and Key Concepts",
+  "translation": "最佳阅读：101数据科学面试问题，答案和关键概念"
+}, {
+  "tag": "H2",
+  "text": "Data Science Blog | AI, ML, big data analytics",
+  "translation": "数据科学博客| 人工智能，机器学习，大数据分析"
+}, {
+  "tag": "H3",
+  "text": "Stay up to date on all things data science, AI, machine learning and big data",
+  "translation": "随时了解数据科学，人工智能，机器学习和大数据的所有信息"
+}, {
+  "tag": "H2",
+  "text": "Analytics Community | Analytics Discussions | Big Data Discussion",
+  "translation": "分析社区| 分析讨论| 大数据讨论"
+}, {
+  "tag": "H3",
+  "text": "Here at Analytics Vidhya, beginners or professionals feel free to ask any questions on business analytics, data…",
+  "translation": "在Analytics Vidhya的这里，初学者或专业人士可以随时询问有关业务分析，数据的任何问题…"
+}, {
+  "tag": "H1",
+  "text": "7. Analytics Vidhya",
+  "translation": "7. Analytics Vidhya"
+}, {
+  "tag": "P",
+  "text": "Introduction: Analytics Vidhya is managed by Team AV and provides a community-based knowledge portal for Analytics and Data Science professionals. Their goal is to become a complete portal serving all knowledge and career needs of Data Science Professionals.",
+  "translation": "简介：Analytics Vidhya由Team AV管理，并为Analytics和Data Science专业人员提供基于社区的知识门户。 他们的目标是成为一个完整的门户网站，可满足数据科学专业人员的所有知识和职业需求。"
+}, {
+  "tag": "P",
+  "text": "Level: all",
+  "translation": "级别：全部"
+}, {
+  "tag": "P",
+  "text": "Type: Blog, Courses, Hackathons, Bootcamp(paid)",
+  "translation": "类型：博客，课程，黑客马拉松，Bootcamp（付费）"
+}, {
+  "tag": "P",
+  "text": "Functionality: AV is suitable for those looking for a platform to compete in hackathons and to practice their DS skills. The blogs and articles are also informative and fun to read.",
+  "translation": "功能：AV适合那些正在寻找平台来参加黑客马拉松比赛并练习其DS技能的人。 博客和文章内容丰富，阅读有趣。"
+}, {
+  "tag": "P",
+  "text": "Best qualities: AV has learning paths that provide clear directions for an end-to-end journey on various tools and techniques and competitions. AV’s very own DS adaptive test, DSAT, is perfect for those looking to test their skills and practice daily. Some competitions are free to join and they occur quite frequently.",
+  "translation": "最佳品质：视音频具有学习路径，可为各种工具，技术和竞赛的端到端旅程提供清晰的方向。 AV自己的DS自适应测试DSAT，非常适合希望每天测试自己的技能和练习的人。 一些比赛是免费参加的，而且它们经常发生。"
+}, {
+  "tag": "P",
+  "text": "Best read: 6 Challenging Open Source Data Science Projects to Make you a Better Data Scientist",
+  "translation": "最佳阅读：6个具有挑战性的开源数据科学项目，使您成为更好的数据科学家"
+}, {
+  "tag": "H2",
+  "text": "Analytics Community | Analytics Discussions | Big Data Discussion",
+  "translation": "分析社区| 分析讨论| 大数据讨论"
+}, {
+  "tag": "H3",
+  "text": "Here at Analytics Vidhya, beginners or professionals feel free to ask any questions on business analytics, data…",
+  "translation": "在Analytics Vidhya的这里，初学者或专业人士可以随时询问有关业务分析，数据的任何问题…"
+}, {
+  "tag": "H2",
+  "text": "Machine Learning — Towards Data Science",
+  "translation": "机器学习-走向数据科学"
+}, {
+  "tag": "H3",
+  "text": "Read here our best posts on machine learning. Sharing concepts, ideas, and codes.",
+  "translation": "在这里阅读我们有关机器学习的最佳文章。 共享概念，想法和代码。"
+}, {
+  "tag": "H1",
+  "text": "6. Towards Data Science",
+  "translation": "6.走向数据科学"
+}, {
+  "tag": "P",
+  "text": "Introduction: TDS Team is an international team of 15 people who work on the content that gets released on Towards Data Science. Every day they review the submissions from writers across the world and offer feedback to a multitude of authors. Their goal is to present well-written, informative articles that our audience is excited to read.",
+  "translation": "简介：TDS团队是一个由15人组成的国际团队，致力于在Towards Data Science上发布的内容。 他们每天都会审查世界各地作家的来稿，并向众多作家提供反馈。 他们的目标是呈现听众很高兴阅读的写得井井有条的文章。"
+}, {
+  "tag": "P",
+  "text": "Level: all",
+  "translation": "级别：全部"
+}, {
+  "tag": "P",
+  "text": "Type: Data Science, Machine Learning, Programming, Visualization, AI",
+  "translation": "类型：数据科学，机器学习，编程，可视化，人工智能"
+}, {
+  "tag": "P",
+  "text": "Functionality: TDS is a reading and learning platform. If you’re a writer at Medium, then you can submit articles to their publication and if you’re lucky, you will have the chance to write for TDS. I read TDS when I’m commuting on the train and the articles on it are always top-notch and informative.",
+  "translation": "功能：TDS是一个阅读和学习平台。 如果您是Medium的作家，则可以将文章提交给他们的出版物，如果幸运的话，您将有机会为TDS撰写文章。 在火车上通勤时，我会阅读TDS，并且其中的文章始终是一流的，内容丰富。"
+}, {
+  "tag": "P",
+  "text": "Best qualities:",
+  "translation": "最佳品质："
+}, {
+  "tag": "OL",
+  "texts": ["Our picks — best articles hand-picked by TDS.", "Learn — concepts categorized into DS, ML, programming, and others for easy access to learning.", "Compilation and collection — An aggregation of articles that gathers exciting and diverse viewpoints on different aspects of Data Science"],
+  "translations": ["我们的选择-TDS精心挑选的最佳文章。", "学习-分类为DS，ML，编程和其他概念，以便于学习。", "编译和收集-汇总文章，收集有关数据科学不同方面的令人兴奋的多样观点"]
+}, {
+  "tag": "P",
+  "text": "Best read:",
+  "translation": "最佳阅读："
+}, {
+  "tag": "H2",
+  "text": "Machine Learning — Towards Data Science",
+  "translation": "机器学习-走向数据科学"
+}, {
+  "tag": "H3",
+  "text": "Read here our best posts on machine learning. Sharing concepts, ideas, and codes.",
+  "translation": "在这里阅读我们有关机器学习的最佳文章。 共享概念，想法和代码。"
+}, {
+  "tag": "H2",
+  "text": "r/datascience",
+  "translation": "r /数据科学"
+}, {
+  "tag": "H3",
+  "text": "r/datascience: A place for data science practitioners and professionals to discuss and debate data science career…",
+  "translation": "r / datascience：供数据科学从业人员和专业人士讨论和辩论数据科学事业的地方……"
+}, {
+  "tag": "H1",
+  "text": "5. Reddit — r/datascience",
+  "translation": "5. Reddit — r / datascience"
+}, {
+  "tag": "P",
+  "text": "Introduction: r/datascience is a place to talk about data, share data science experience, advice on becoming a data scientist, data munging, and more!",
+  "translation": "简介：r / datascience是一个讨论数据，分享数据科学经验，成为数据科学家的建议，数据处理等等的地方！"
+}, {
+  "tag": "P",
+  "text": "Level: all",
+  "translation": "级别：全部"
+}, {
+  "tag": "P",
+  "text": "Type: everything",
+  "translation": "类型：一切"
+}, {
+  "tag": "P",
+  "text": "Functionality: A platform to ask questions, share resources, talk, and many more.",
+  "translation": "功能性：一个提出问题，共享资源，交谈等等的平台。"
+}, {
+  "tag": "P",
+  "text": "Best qualities: This platform is especially great as experts and data scientists working in the field can talk about their experience and share their work-life with beginners and DS enthusiasts. Occasionally, the community also shares great resources for learning and mastering a skill.",
+  "translation": "最佳品质：该平台特别有用，因为该领域的专家和数据科学家可以谈论他们的经验，并与初学者和DS爱好者分享他们的工作生活。 有时，社区还会共享大量资源来学习和掌握技能。"
+}, {
+  "tag": "P",
+  "text": "Best reads:",
+  "translation": "最佳读物："
+}, {
+  "tag": "OL",
+  "texts": ["Some advice for young and aspiring Data Scientists", "How I went from no coding or machine learning experience to data scientist job offer in 20 months"],
+  "translations": ["给有抱负的年轻数据科学家的一些建议", "我如何在20个月内从没有编码或机器学习经验的工作变成了数据科学家的工作机会"]
+}, {
+  "tag": "H2",
+  "text": "r/datascience",
+  "translation": "r /数据科学"
+}, {
+  "tag": "H3",
+  "text": "r/datascience: A place for data science practitioners and professionals to discuss and debate data science career…",
+  "translation": "r / datascience：供数据科学从业人员和专业人士讨论和辩论数据科学事业的地方……"
+}, {
+  "tag": "H2",
+  "text": "Kaggle: Your Home for Data Science",
+  "translation": "Kaggle：您的数据科学之家"
+}, {
+  "tag": "H3",
+  "text": "Download Open Datasets on 1000s of Projects + Share Projects on One Platform. Explore Popular Topics Like Government…",
+  "translation": "下载上千个项目的开放数据集，并在一个平台上共享项目。 探索热门话题，例如政府…"
+}, {
+  "tag": "H1",
+  "text": "4. Kaggle",
+  "translation": "4. Kaggle"
+}, {
+  "tag": "P",
+  "text": "Introduction: Founded by Anthony Goldbloom and Ben Hamner, Kaggle is best known for its competitions and datasets. The new feature, notebooks are also the quintessential platform for anyone to start with data science.",
+  "translation": "简介：Kaggle由Anthony Goldbloom和Ben Hamner创立，以竞赛和数据集而闻名。 笔记本的新功能也是任何人从数据科学入手的典型平台。"
+}, {
+  "tag": "P",
+  "text": "Level: all",
+  "translation": "级别：全部"
+}, {
+  "tag": "P",
+  "text": "Type: Competitions, Datasets, Notebooks, Discussion, Courses",
+  "translation": "类型：竞赛，数据集，笔记本，讨论，课程"
+}, {
+  "tag": "P",
+  "text": "Functionality: Kaggle is best used for learning and participating in the competitions. It’s more of a learning platform where you can apply your skills and talent and compete with other data enthusiasts. You can also write code in Kaggle using its very own notebook which offers a no-setup, customizable, Jupyter Notebooks environment and it comes with free GPUs and a huge repository of the community published data & code.",
+  "translation": "功能：Kaggle最适合用于学习和参加比赛。 它更多是一个学习平台，您可以在其中运用自己的技能和才能，并与其他数据爱好者竞争。 您还可以使用其自己的笔记本在Kaggle中编写代码，该笔记本提供无设置，可自定义的Jupyter笔记本环境，并随附免费的GPU和社区发布的数据和代码的庞大存储库。"
+}, {
+  "tag": "P",
+  "text": "Best qualities: Kaggle Learn and competition are some of the best platforms in Machine Learning and Data Science. Ask any Data lovers and they would know what Kaggle is. The notebook is also great as it eliminates the need to install any software and you can jump into writing code with ease.",
+  "translation": "最佳质量：Kaggle学习和竞争是机器学习和数据科学中最好的平台。 询问任何数据爱好者，他们就会知道Kaggle是什么。 笔记本电脑也很棒，因为它不需要安装任何软件，并且您可以轻松地编写代码。"
+}, {
+  "tag": "P",
+  "text": "Best read: Kaggle Blog",
+  "translation": "最佳阅读：Kaggle博客"
+}, {
+  "tag": "H2",
+  "text": "Kaggle: Your Home for Data Science",
+  "translation": "Kaggle：您的数据科学之家"
+}, {
+  "tag": "H3",
+  "text": "Download Open Datasets on 1000s of Projects + Share Projects on One Platform. Explore Popular Topics Like Government…",
+  "translation": "下载上千个项目的开放数据集，并在一个平台上共享项目。 探索热门话题，例如政府…"
+}, {
+  "tag": "H2",
+  "text": "KDnuggets",
+  "translation": "掘金队"
+}, {
+  "tag": "H3",
+  "text": "Machine Learning, Data Science, Big Data, Analytics, AI",
+  "translation": "机器学习，数据科学，大数据，分析，人工智能"
+}, {
+  "tag": "H1",
+  "text": "3. KDnuggets",
+  "translation": "3. KDnuggets"
+}, {
+  "tag": "P",
+  "text": "Introduction: KDnuggets™ is a leading site on AI, Analytics, Big Data, Data Mining, Data Science, and Machine Learning and is edited by Gregory Piatetsky-Shapiro and Matthew Mayo.",
+  "translation": "简介：KDnuggets™是AI，分析，大数据，数据挖掘，数据科学和机器学习方面的领先网站，由Gregory Piatetsky-Shapiro和Matthew Mayo编辑。"
+}, {
+  "tag": "P",
+  "text": "Level: all",
+  "translation": "级别：全部"
+}, {
+  "tag": "P",
+  "text": "Type: News/Blog, Opinions, Tutorials, JOBS, Companies, Courses, Datasets",
+  "translation": "类型：新闻/博客，观点，教程，工作，公司，课程，数据集"
+}, {
+  "tag": "P",
+  "text": "Functionality: KDnuggets is a wonderful website filled with many useful resources and it should be checked daily at the latest news section and you can get started on learning at tutorials.",
+  "translation": "功能：KDnuggets是一个很棒的网站，其中包含许多有用的资源，应该每天在最新新闻部分中进行检查，您可以开始学习教程。"
+}, {
+  "tag": "P",
+  "text": "Best qualities: It has a section of top stories over the past 30 days that presents the top 7 most popular and most shared articles.",
+  "translation": "最佳品质：在过去30天内，它有一部分热门新闻，介绍了前7名最受欢迎和分享最多的文章。"
+}, {
+  "tag": "P",
+  "text": "Best read: The Future of Careers in Data Science & Analysis",
+  "translation": "最佳读物：数据科学与分析职业的未来"
+}, {
+  "tag": "H2",
+  "text": "KDnuggets",
+  "translation": "掘金队"
+}, {
+  "tag": "H3",
+  "text": "Machine Learning, Data Science, Big Data, Analytics, AI",
+  "translation": "机器学习，数据科学，大数据，分析，人工智能"
+}, {
+  "tag": "H2",
+  "text": "Launch Your Career in Data Science",
+  "translation": "启动您的数据科学职业"
+}, {
+  "tag": "H3",
+  "text": "How to Learn Data Science & Machine Learning, Land a High-Paying Job, and Future-Proof Your Career",
+  "translation": "如何学习数据科学和机器学习，获得高薪工作以及未来发展的职业"
+}, {
+  "tag": "H1",
+  "text": "2. Elite data science",
+  "translation": "2.精英数据科学"
+}, {
+  "tag": "P",
+  "text": "Introduction: Elite Data Science is for time-constrained professionals and beginners who are looking for a simple path to data science and learn only the most relevant, commercially-viable tools and best practices. They skip the non-essential theory and math and instead take you through the most direct path to applying DS and ML at a professional level.",
+  "translation": "简介：Elite Data Science适用于时间有限的专业人员和初学者，他们正在寻找一条通向数据科学的简单道路，并且仅学习最相关，商业可行的工具和最佳实践。 他们跳过了不必要的理论和数学，而是带您通过最直接的途径来专业地应用DS和ML。"
+}, {
+  "tag": "P",
+  "text": "Level: All",
+  "translation": "级别：全部"
+}, {
+  "tag": "P",
+  "text": "Type: Guides, Concept Explainers, Code Tutorials, Career Help, Tools & Resources",
+  "translation": "类型：指南，概念解释器，代码教程，职业帮助，工具和资源"
+}, {
+  "tag": "P",
+  "text": "Functionality: As seen above, this website is great for explaining concepts, learning code, getting help career-wise and find tools and resources needed for DS and ML",
+  "translation": "功能：如上所示，该网站非常适合用于解释概念，学习代码，在职业方面获得帮助以及查找DS和ML所需的工具和资源。"
+}, {
+  "tag": "P",
+  "text": "Best qualities: EDS features Data Science primer which is a mini-course that provides a brief introduction to data science and applied machine learning. According to them, If you’re a developer, analyst, manager, or aspiring data scientist looking to learn more about data science, then you’re in the right place.",
+  "translation": "最佳质量：EDS具有数据科学入门知识，这是一门迷你课程，它简要介绍了数据科学和应用机器学习。 根据他们的说法，如果您是想了解有关数据科学的更多知识的开发人员，分析师，经理或有抱负的数据科学家，那么您来对地方了。"
+}, {
+  "tag": "P",
+  "text": "Best read: How to Become a Data Scientist in 2019 (Hadouken!)",
+  "translation": "最佳阅读：如何在2019年成为数据科学家（Hadouken！）"
+}, {
+  "tag": "H2",
+  "text": "Launch Your Career in Data Science",
+  "translation": "启动您的数据科学职业"
+}, {
+  "tag": "H3",
+  "text": "How to Learn Data Science & Machine Learning, Land a High-Paying Job, and Future-Proof Your Career",
+  "translation": "如何学习数据科学和机器学习，获得高薪工作以及未来发展的职业"
+}, {
+  "tag": "H2",
+  "text": "Machine Learning Mastery",
+  "translation": "机器学习精通"
+}, {
+  "tag": "H3",
+  "text": "Making developers awesome at machine learning.",
+  "translation": "使开发人员精通机器学习。"
+}, {
+  "tag": "H1",
+  "text": "1. Machine Learning Mastery",
+  "translation": "1.精通机器学习"
+}, {
+  "tag": "P",
+  "text": "Introduction: Jason Brownlee, the owner of this website has a Master’s and a Ph.D. degree in Artificial Intelligence and he has worked on machine learning systems for defense, startups, and severe weather forecasting.",
+  "translation": "简介：该网站的所有者Jason Brownlee拥有硕士学位和博士学位。 他拥有人工智能专业的学位，并致力于国防，初创公司和恶劣天气预测的机器学习系统。"
+}, {
+  "tag": "P",
+  "text": "Level: all",
+  "translation": "级别：全部"
+}, {
+  "tag": "P",
+  "text": "Type: blog, tutorial",
+  "translation": "类型：博客，教程"
+}, {
+  "tag": "P",
+  "text": "Functionality: A top-down approach that focuses on working through a dataset end-to-end and getting a result with popular platforms like Scikit-learn, R and Keras.",
+  "translation": "功能性：一种自上而下的方法，着重于端到端地处理数据集，并通过流行的平台（例如Scikit-learn，R和Keras）获得结果。"
+}, {
+  "tag": "P",
+  "text": "Best qualities: This website is great for beginners because it helps you get straight to using programming to do ML instead of reading the heaps of concepts and theories.",
+  "translation": "最佳质量：该网站非常适合初学者，因为它可以帮助您直接使用编程进行ML，而不必阅读大量的概念和理论。"
+}, {
+  "tag": "P",
+  "text": "Best read: When I first started learning machine learning, his getting started guide was super helpful to me because it gave me a sense of what ML is and how I can get started.",
+  "translation": "最佳阅读：当我第一次开始学习机器学习时，他的入门指南对我非常有帮助，因为它使我对ML是什么以及如何入门有了一种了解。"
+}, {
+  "tag": "H2",
+  "text": "Machine Learning Mastery",
+  "translation": "机器学习精通"
+}, {
+  "tag": "H3",
+  "text": "Making developers awesome at machine learning.",
+  "translation": "使开发人员精通机器学习。"
+}, {
+  "tag": "H1",
+  "text": "The template I use to review the websites",
+  "translation": "我用来查看网站的模板"
+}, {
+  "tag": "P",
+  "text": "Introduction:Level: Beginners/intermediate/experts/allType: blog/tutorial/videos/opinions/news/research papers/etcFunctionality:Best qualities:Best read: link to the articlelink to website",
+  "translation": "简介：级别：初学者/中级/专家/所有类型：博客/教程/视频/意见/新闻/研究论文/等功能：最佳质量：最佳阅读：指向文章的链接到网站的链接"
+}, {
+  "tag": "H1",
+  "text": "Top 20 Websites for Machine Learning and Data Science in 2020",
+  "translation": "2020年排名前20位的机器学习和数据科学网站"
+}, {
+  "tag": "H2",
+  "text": "Here is my list of the best websites for ML and data science to follow for valuable resources and news.",
+  "translation": "这是我为机器学习和数据科学提供最佳资源和新闻的最佳网站列表。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*wLadJgJ8AbU-_ou0?q=20",
+  "caption": "Photo by Nikolay Tarashchenko on Unsplash",
+  "type": "image",
+  "file": "0*wLadJgJ8AbU-_ou0"
+}, {
+  "tag": "P",
+  "text": "Data science is booming exponentially in almost all parts of the world. Data scientists are highly sought after because they seem to have the “magical” ability to create value from data for data-driven companies and organizations.",
+  "translation": "数据科学在世界几乎所有地方都呈指数级增长。 数据科学家之所以受到高度追捧，是因为他们似乎具有“魔术”能力，可以为数据驱动的公司和组织从数据中创造价值。"
+}, {
+  "tag": "P",
+  "text": "Today, anyone can become data scientists because of the internet. Yes, you heard me. You don’t need a college degree in Computer Science or a Ph.D. in Deep Learning to be qualified as a data scientist. As long as you can do what companies want you to do — proffer valuable insight from data and help them grow their business and make decisions — you are a data scientist. Thus, the key to becoming one is with the equation:",
+  "translation": "如今，任何人都可以通过互联网成为数据科学家。 是的，你听到了我的声音。 您不需要计算机科学专业的博士学位或博士学位。 在深度学习方面有资格成为数据科学家。 只要您能做公司想要您做的事情-从数据中提供宝贵的见解，并帮助他们发展业务和制定决策，您就是数据科学家。 因此，成为一体的关键在于以下等式："
+}, {
+  "tag": "P",
+  "text": "Passion + knowledge + portfolio + luck + connections = a job in data science",
+  "translation": "激情+知识+档案袋+运气+连接=数据科学领域的工作"
+}, {
+  "tag": "P",
+  "text": "In this article, I will help you with the ingredient of acquiring the vast amount of prerequisite knowledge for Data Science.",
+  "translation": "在本文中，我将帮助您获得有关数据科学的大量先决知识。"
+}, {
+  "tag": "P",
+  "text": "The epidemic of data science is still in its early stages and this is the quintessential time to get into the field. If you’re a beginner looking for the right free resources to learn data science or just to update yourself on data science news, then you’re at the right place. It’s vital to know this field is changing rapidly and being updated is imperative so that you won’t get left behind in the wave of big data.",
+  "translation": "数据科学的流行还处于早期阶段，这是进入该领域的典型时间。 如果您是初学者，在寻找合适的免费资源来学习数据科学，或者只是为了了解最新的数据科学新闻，那么您来对地方了。 重要的是要知道这个领域正在迅速变化，并且必须进行更新，以确保您不会在大数据浪潮中落伍。"
+}, {
+  "tag": "P",
+  "text": "I’ve done the heavy lifting for you and compiled what I think is the top 20 website for data science and machine learning, which is a compilation of data science blogs, researchers, and news sites I read daily to keep tabs on the field. These channels cover a broad range of topics, from opinion to best practices, and include some of the top minds in the field.",
+  "translation": "我已经为您完成了繁重的工作，并整理了我认为是数据科学和机器学习排名前20位的网站，该网站是我每天阅读的数据科学博客，研究人员和新闻网站的摘要，以保持关注领域。 这些渠道涵盖了广泛的主题，从意见到最佳实践，还包括该领域的一些顶尖人才。"
+}, {
+  "tag": "P",
+  "text": "This list is not ranked in any order and all of them have their good qualities. So scroll down and read the list now!",
+  "translation": "此列表未按任何顺序排名，并且所有列表都有其良好的品质。 因此，向下滚动并立即阅读列表！"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Benedict Neo的文章《Top 20 Websites for Machine Learning and Data Science in 2020》，参考：https://medium.com/swlh/top-20-websites-for-machine-learning-and-data-science-d0b113130068)",
+  "translation": "（本文翻译自Benedict Neo的文章《 2020年机器学习和数据科学排名前20位的网站》，参考：https：//medium.com/swlh/top-20-websites-for-machine-learning-and-data- 科学-d0b113130068）"
+}]
