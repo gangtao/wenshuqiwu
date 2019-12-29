@@ -1,0 +1,274 @@
+[{
+  "tag": "H1",
+  "text": "Conclusion",
+  "translation": "结论"
+}, {
+  "tag": "P",
+  "text": "So there you have it! Your 5 advanced features of Pandas and how to use them!",
+  "translation": "所以你有它！ 您的Pandas的5种高级功能以及如何使用它们！"
+}, {
+  "tag": "P",
+  "text": "If you’re hungry for more, not to worry! There’s a whole more to learn about Pandas and Data Science. As recommended reading, the KDNuggets website is of course the best resource on the subject!",
+  "translation": "如果您渴望更多，请不用担心！ 还有更多有关熊猫和数据科学的知识。 作为推荐阅读，KDNuggets网站当然是该主题的最佳资源！"
+}, {
+  "tag": "H1",
+  "text": "Like to learn?",
+  "translation": "喜欢学习吗？"
+}, {
+  "tag": "P",
+  "text": "Follow me on Twitter, where I post all about the latest and greatest AI, Technology, and Science! Connect with me on LinkedIn too!",
+  "translation": "在Twitter上关注我，在其中发布有关最新，最出色的AI，技术和科学的所有信息！ 也在LinkedIn上与我联系！"
+}, {
+  "tag": "H1",
+  "text": "5 Advanced Features of Pandas and How to Use Them",
+  "translation": "5大熊猫的高级功能以及如何使用它们"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*DAU1i8-8GsyGqrC-rabuKg.jpeg?q=20",
+  "type": "image",
+  "file": "1*DAU1i8-8GsyGqrC-rabuKg.jpeg"
+}, {
+  "tag": "P",
+  "text": "Pandas is the gold standard library for all things data. With functionality to load, filter, manipulate, and explore data, it’s no wonder that it’s a favorite among Data Scientists.",
+  "translation": "熊猫是万物数据的黄金标准库。 拥有加载，过滤，操作和浏览数据的功能，因此毫无疑问它是数据科学家的最爱。"
+}, {
+  "tag": "P",
+  "text": "Most of us naturally stick to the very basics of Pandas. Load up data from a CSV file, filter a few columns, and then jump right into the data visualizations. Yet Pandas actually comes with many lesser-known but useful functions that can make handling data a whole lot easier and cleaner.",
+  "translation": "我们大多数人自然会坚持熊猫的基本知识。 从CSV文件加载数据，过滤几列，然后直接跳入数据可视化。 然而，Pandas实际上具有许多鲜为人知但有用的功能，这些功能可以使处理数据变得更加轻松和整洁。"
+}, {
+  "tag": "P",
+  "text": "This tutorial will guide you through 5 of those more advanced functions — what they do and how to use them. Even more fun with data!",
+  "translation": "本教程将指导您完成其中5个更高级的功能-它们的作用和使用方法。 数据带来更多乐趣！"
+}, {
+  "tag": "H1",
+  "text": "(1) Configuring Options and Settings",
+  "translation": "（1）配置选项和设置"
+}, {
+  "tag": "P",
+  "text": "Pandas comes with a set of user-configurable options and settings. They’re huge productivity boosters since they let you tailor your Pandas environment exactly to your liking.",
+  "translation": "熊猫带有一组用户可配置的选项和设置。 它们可以极大地提高生产力，因为它们使您可以根据自己的喜好定制熊猫环境。"
+}, {
+  "tag": "P",
+  "text": "We can, for example, change some of Pandas’s display settings to change how many rows and columns are shown and to what precision floating point numbers are displayed.",
+  "translation": "例如，我们可以更改某些Pandas的显示设置，以更改显示的行数和列数以及显示的精度浮点数。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/GeorgeSeif/d0c9031eb08bc376ab71c36a5519c2dd/raw/e48423029da583d3e3158a6b9e6a5fe456a35d74/pandas_tricks_1.py",
+  "code": "import pandas as pd\n\ndisplay_settings = {\n    'max_columns': 10,\n    'expand_frame_repr': True,  # Wrap to multiple pages\n    'max_rows': 10,\n    'precision': 2,\n    'show_dimensions': True\n}\n\nfor op, value in display_settings.items():\n    pd.set_option(\"display.{}\".format(op), value)"
+}, {
+  "tag": "P",
+  "text": "The code above insures that Pandas always displays 10 rows and 10 columns at a maximum, with floating-point values showing 2 decimal places at most. That way, our terminal or Jupyter Notebook won’t look like a mess when we try to print out a big DataFrame!",
+  "translation": "上面的代码确保Pandas始终最多显示10行和10列，浮点值最多显示2个小数位。 这样，当我们尝试打印大的DataFrame时，我们的终端机或Jupyter Notebook不会看起来一团糟！"
+}, {
+  "tag": "P",
+  "text": "That’s just a basic example. There’s a lot more to explore beyond the simple display settings. You can check out all the options in the official documentation.",
+  "translation": "那只是一个基本的例子。 除了简单的显示设置之外，还有很多其他可以探索的内容。 您可以查看官方文档中的所有选项。"
+}, {
+  "tag": "H1",
+  "text": "(2) Combining DataFrames",
+  "translation": "（2）合并数据框"
+}, {
+  "tag": "P",
+  "text": "A relatively unknown part of Pandas DataFrames is that there are actually 2 different ways to combine them. Each method produces a different result, so selecting the proper one based on what you want to achieve is very important. In addition, they contain many parameters that further customize the merging. Let’s check them out.",
+  "translation": "Pandas DataFrames的一个相对未知的部分是实际上有2种不同的方式来组合它们。 每种方法都会产生不同的结果，因此，根据您要实现的目标选择合适的方法非常重要。 此外，它们包含许多可进一步自定义合并的参数。 让我们检查一下。"
+}, {
+  "tag": "H2",
+  "text": "Concatenating",
+  "translation": "级联"
+}, {
+  "tag": "P",
+  "text": "Concatenating is the most well-known method of combining DataFrames and can be thought of intuitively as “stacking”. That stacking can be done either horizontally or vertically.",
+  "translation": "串联是组合DataFrame的最著名方法，可以直观地认为是“堆栈”。 该堆叠可以水平或垂直进行。"
+}, {
+  "tag": "P",
+  "text": "Imagine that you have a huge dataset in CSV format. It makes sense to split it up into multiple files for easier handling (this is common practice for large datasets, referred to as sharding).",
+  "translation": "假设您有一个庞大的CSV格式的数据集。 将其拆分为多个文件以便于处理是很有意义的（这是大型数据集的常见做法，称为分片）。"
+}, {
+  "tag": "P",
+  "text": "When you load it into pandas you can vertically stack the DataFrame of each CSV to create one big DataFrame for all of the data. For example, if we have 3 shards, each with 5 Million rows, then after we vertical stack them all, our final DataFrame will have 15 Million rows.",
+  "translation": "将其加载到熊猫中时，您可以垂直堆叠每个CSV的DataFrame来为所有数据创建一个大的DataFrame。 例如，如果我们有3个分片，每个分片有500万行，那么在垂直堆叠所有分片之后，最终的DataFrame将有1500万行。"
+}, {
+  "tag": "P",
+  "text": "The code below shows how to concatenate DataFrames in Pandas vertically.",
+  "translation": "下面的代码显示了如何在Pandas中垂直连接DataFrame。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/GeorgeSeif/fe260bb1f34d27908b8f0fa5f0641458/raw/9f7174d688155d7e93e425bfda006134e990a8ab/pd_concat.py",
+  "code": "# Vertical concat\npd.concat([october_df, november_df, december_df], axis=0)"
+}, {
+  "tag": "P",
+  "text": "You can do something similar by splitting up your dataset according to the columns instead of the rows — a few columns for each CSV file (with all the rows of the dataset). It’s like we’re dividing up the dataset’s features into different shards. You would then horizontally stack them to combine those columns / features.",
+  "translation": "您可以通过按列而不是行拆分数据集来执行类似的操作-每个CSV文件有几列（包含数据集的所有行）。 就像我们将数据集的功能划分为不同的碎片一样。 然后，您将水平堆叠它们以合并那些列/要素。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/GeorgeSeif/d9934b1e67fcff003555aeb44d543e9a/raw/9d87ab1feea217387a80ee7a85777e24f4b35944/pd_concat_2.py",
+  "code": "# Horizontal concat\npd.concat([features_1to5_df, features_6to10_df, features_11to15_df], axis=1)"
+}, {
+  "tag": "H2",
+  "text": "Merging",
+  "translation": "合并中"
+}, {
+  "tag": "P",
+  "text": "Merging is more complicated yet more powerful, combining Pandas DataFrames in an SQL-like style. I.e the DataFrames will be joined by some common attribute.",
+  "translation": "合并更复杂但功能更强大，以类似于SQL的样式合并Pandas DataFrame。 也就是说，DataFrames将通过一些公共属性加入。"
+}, {
+  "tag": "P",
+  "text": "Imagine that you have 2 DataFrames describing your YouTube channel. One of them contains a list of user IDs and how much time each user has spent on your channel in total. The other contains a similar list of user IDs and how many videos each user has seen. Merging allows us to combine the 2 DataFrames into a single one by matching up the user IDs and then putting the ID, time spent, and video count into a single row for each user.",
+  "translation": "想象一下，您有2个描述YouTube频道的数据框。 其中一个包含用户ID列表以及每个用户在您的频道上总共花费了多少时间。 另一个包含类似的用户ID列表以及每个用户观看过多少个视频。 合并使我们可以通过匹配用户ID，然后将ID，花费的时间和视频计数放在每个用户的一行中，将2个DataFrame组合为一个。"
+}, {
+  "tag": "P",
+  "text": "Merging two DataFrames in Pandas is done with the merge function. You can see an example of how it works in the code below. The left and right parameters refer to the 2 DataFrames you wish to merge, while on specifies the column to be used for the matching.",
+  "translation": "熊猫中的两个数据框的合并是通过合并功能完成的。 您可以在下面的代码中看到有关其工作方式的示例。 左右参数指的是您要合并的2个数据框，而on则指定要用于匹配的列。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/GeorgeSeif/30bba08ad086389e92297ad4d15a1b5e/raw/6f59f8883649169dc58f52119b33e97d00c9b47e/pd_merge.py",
+  "code": "pd.merge(left=ids_and_time_df,\n         right=ids_and_videos_df,\n         on=\"id\")"
+}, {
+  "tag": "P",
+  "text": "To go even further into emulating SQL joins, the how parameter allows you to select the type of SQL-style join you want to perform: inner, outer, left, or right. To learn more about SQL joins, see the W3Schools tutorial.",
+  "translation": "为了进一步模拟SQL联接，how参数可让您选择要执行的SQL样式联接的类型：内部，外部，左侧或右侧。 要了解有关SQL连接的更多信息，请参见W3Schools教程。"
+}, {
+  "tag": "H1",
+  "text": "(3) Reshaping DataFrames",
+  "translation": "（3）重塑数据帧"
+}, {
+  "tag": "P",
+  "text": "There are several ways to reshape and restructure Pandas DataFrames. These range from simple and easy to powerful and complex. Let’s check out the 3 most common ones. For all of the following examples, we’ll be using this Dataset of superheroes!",
+  "translation": "有几种方法可以重塑和重组Pandas DataFrame。 这些范围从简单易用到功能强大和复杂。 让我们看看最常见的3种。 对于以下所有示例，我们将使用此超级英雄数据集！"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/GeorgeSeif/9190f115442be811f8dfb415045eafd8/raw/f42d9abac916795d29d4996062e5279fb7ea1f7e/pd_super.py",
+  "code": "import pandas as pd\n\nplayers_data = {'Player': ['Superman', 'Batman', 'Thanos', 'Batman', 'Thanos',\n   'Superman', 'Batman', 'Thanos', 'Black Widow', 'Batman', 'Thanos', 'Superman'],\n   'Year': [2000,2000,2000,2001,2001,2002,2002,2002,2003,2004,2004,2005],\n   'Points':[23,43,45,65,76,34,23,78,89,76,92,87]}\n   \ndf = pd.DataFrame(players_data)\n\nprint(df)\n\n\"\"\"\n         Player  Year  Points\n0      Superman  2000      23\n1        Batman  2000      43\n2        Thanos  2000      45\n3        Batman  2001      65\n4        Thanos  2001      76\n5      Superman  2002      34\n6        Batman  2002      23\n7        Thanos  2002      78\n8   Black Widow  2003      89\n9        Batman  2004      76\n10       Thanos  2004      92\n11     Superman  2005      87\n\"\"\""
+}, {
+  "tag": "H2",
+  "text": "Transpose",
+  "translation": "转置"
+}, {
+  "tag": "P",
+  "text": "The easiest of them all. Transposing swaps a DataFrame’s rows with its columns. If you have 5000 rows and 10 columns, and then transpose your DataFrame, you’ll end up with 10 rows and 5000 columns.",
+  "translation": "所有这些中最简单的。 转置将DataFrame的行与其列交换。 如果您有5000行和10列，然后转置DataFrame，则最终将得到10行和5000列。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/GeorgeSeif/730a12b1e41b7f878fc3458681ab6890/raw/8db274957b4b2e69efe695c8a8b2a7fd95cf8bf5/pd_transpose.py",
+  "code": "df = df.T\n\nprint(df)\n\n\"\"\"\n              0       1       2       3       4         5       6       7            8       9       10        11\nPlayer  Superman  Batman  Thanos  Batman  Thanos  Superman  Batman  Thanos  Black Widow  Batman  Thanos  Superman\nYear        2000    2000    2000    2001    2001      2002    2002    2002         2003    2004    2004      2005\nPoints        23      43      45      65      76        34      23      78           89      76      92        87\n\n\"\"\""
+}, {
+  "tag": "H2",
+  "text": "Groupby",
+  "translation": "通过...分组"
+}, {
+  "tag": "P",
+  "text": "Groupby’s main usage is to split up DataFrames into multiple parts based on some keys. Once the DataFrame is split up into parts, you can loop through and apply some operations on each part independently.",
+  "translation": "Groupby的主要用途是根据某些键将DataFrame分为多个部分。 将DataFrame拆分为多个部分后，您可以循环浏览并在每个部分上独立应用一些操作。"
+}, {
+  "tag": "P",
+  "text": "For example, we can see how in the code below we created a DataFrame of Players with corresponding Years and Points. We then did a groupby to split up the DataFrame into multiple parts according to the player. Thus, each player gets its own group showing how many points that player got for each year they were active.",
+  "translation": "例如，我们可以看到在下面的代码中如何创建具有相应年份和积分的玩家数据框。 然后，我们根据播放器进行了分组，将DataFrame分为多个部分。 因此，每个玩家都有自己的群组，显示该玩家每年在活动中获得的积分。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/GeorgeSeif/dcb24b839c428bb88791c3b4b15ea74d/raw/bf0ca8dad36f1103e7291f3fefec79e6b5ce12dc/pd_groupby.py",
+  "code": "groups_df = df.groupby('Player')\n\nfor player, group in groups_df:\n   print(\"----- {} -----\".format(player))\n   print(group)\n   print(\"\")\n   \n### This prints out the following\n\"\"\"\n----- Batman -----\n   Player  Year  Points\n1  Batman  2000      43\n3  Batman  2001      65\n6  Batman  2002      23\n9  Batman  2004      76\n\n----- Black Widow -----\n        Player  Year  Points\n8  Black Widow  2003      89\n\n----- Superman -----\n      Player  Year  Points\n0   Superman  2000      23\n5   Superman  2002      34\n11  Superman  2005      87\n\n----- Thanos -----\n    Player  Year  Points\n2   Thanos  2000      45\n4   Thanos  2001      76\n7   Thanos  2002      78\n10  Thanos  2004      92\n\n\"\"\""
+}, {
+  "tag": "H2",
+  "text": "Stacking",
+  "translation": "堆码"
+}, {
+  "tag": "P",
+  "text": "Stacking transforms the DataFrame into having a multi-level index, i.e each row has multiple sub-parts. These sub-parts are created using the DataFrame’s columns, compressing them into the multi-index. Overall, stacking can be thought of as compressing columns into multi-index rows.",
+  "translation": "堆叠将DataFrame转换为具有多级索引，即每行具有多个子部分。 这些子部分是使用DataFrame的列创建的，并将其压缩为多索引。 总体而言，可以将堆栈视为将列压缩为多索引行。"
+}, {
+  "tag": "P",
+  "text": "This is best illustrated by an example, shown down below.",
+  "translation": "最好通过一个示例来说明，如下所示。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/GeorgeSeif/8d9bdecae6bbd2cd1183e51ac06e3e65/raw/122abb87d535af3f44239b3add2b4a7d702dba9d/pd_stack.py",
+  "code": "df = df.stack()\n\nprint(df)\n\n\"\"\"\n0   Player       Superman\n    Year             2000\n    Points             23\n1   Player         Batman\n    Year             2000\n    Points             43\n2   Player         Thanos\n    Year             2000\n    Points             45\n3   Player         Batman\n    Year             2001\n    Points             65\n4   Player         Thanos\n    Year             2001\n    Points             76\n5   Player       Superman\n    Year             2002\n    Points             34\n6   Player         Batman\n    Year             2002\n    Points             23\n7   Player         Thanos\n    Year             2002\n    Points             78\n8   Player    Black Widow\n    Year             2003\n    Points             89\n9   Player         Batman\n    Year             2004\n    Points             76\n10  Player         Thanos\n    Year             2004\n    Points             92\n11  Player       Superman\n    Year             2005\n    Points             87\n\n\"\"\""
+}, {
+  "tag": "H1",
+  "text": "(4) Working with time data",
+  "translation": "（4）处理时间数据"
+}, {
+  "tag": "P",
+  "text": "The Datetime library is a staple in Python. Whenever you’re dealing with anything related to real-world date and time information, it’s your go-to library. And lucky for us, Pandas also comes with functionality for using Datetime objects.",
+  "translation": "Datetime库是Python的主要组成部分。 每当您处理与现实世界中的日期和时间信息相关的任何内容时，它都是您的转库。 幸运的是，Pandas还具有使用Datetime对象的功能。"
+}, {
+  "tag": "P",
+  "text": "Let’s illustrate with an example. In the code below, we first create a DataFrame with 4 columns: Day, Month, Year, and data, and then sort it by year and month. As you can see, it’s quite messy; we’re using up 3 columns just to store the date, when in actuality we know that a calendar date is just 1 value.",
+  "translation": "让我们举例说明。 在下面的代码中，我们首先创建一个包含4列的DataFrame：Day，Month，Year和data，然后按年和月对它进行排序。 如您所见，这非常混乱。 我们只用3列来存储日期，而实际上我们知道日历日期只是1个值。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/GeorgeSeif/ed574789e8e1d8229861826c08b60b24/raw/47ef993000bb9df3d06df6cb9681b15c2ccf5da5/pd_dt_1.py",
+  "code": "from itertools import product\nimport pandas as pd\nimport numpy as np\n\ncol_names = [\"Day\", \"Month\", \"Year\"]\n\ndf = pd.DataFrame(list(product([10, 11, 12], [8, 9], [2018, 2019])),\n                   columns=col_names)\n\ndf['data'] = np.random.randn(len(df))\n\ndf = df.sort_values(['Year', 'Month'], ascending=[True, True])\n\nprint(df)\n\n\n\"\"\"\n    Day  Month  Year      data\n0    10      8  2018  1.685356\n4    11      8  2018  0.441383\n8    12      8  2018  1.276089\n2    10      9  2018 -0.260338\n6    11      9  2018  0.404769\n10   12      9  2018 -0.359598\n1    10      8  2019  0.145498\n5    11      8  2019 -0.731463\n9    12      8  2019 -1.451633\n3    10      9  2019 -0.988294\n7    11      9  2019 -0.687049\n11   12      9  2019 -0.067432\n\"\"\""
+}, {
+  "tag": "P",
+  "text": "We can clean things up with datetime.",
+  "translation": "我们可以用datetime清理事情。"
+}, {
+  "tag": "P",
+  "text": "Pandas conveniently comes with a function called to_datetime() that can compress and convert multiple DataFrame columns into a single Datetime object. Once it’s in that format, you have all the flexibility of the Datetime library at your disposal.",
+  "translation": "Pandas方便地附带了一个名为to_datetime（）的函数，该函数可以将多个DataFrame列压缩并将其转换为单个Datetime对象。 采用这种格式后，就可以使用Datetime库的所有灵活性。"
+}, {
+  "tag": "P",
+  "text": "To use the to_datetime() function, you’ll need to pass it all of the “date” data from the relevant columns. That’s the “Day”, “Month”, and “Year” columns. Once we have things in Datetime format, we no longer need the other columns and can simply drop them. Check out the code below to see how that all works!",
+  "translation": "要使用to_datetime（）函数，您需要将相关列中的所有“日期”数据传递给它。 那就是“日”，“月”和“年”列。 一旦有了Datetime格式的内容，我们就不再需要其他列，只需删除它们即可。 看看下面的代码，看看它们如何工作！"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/GeorgeSeif/eca27bf41c561b332c5e5eb6b15c893e/raw/16c0fe9dab942561f5b5a9eae898aeb08a212734/pd_dt_2.py",
+  "code": "from itertools import product\nimport pandas as pd\nimport numpy as np\n\ncol_names = [\"Day\", \"Month\", \"Year\"]\n\ndf = pd.DataFrame(list(product([10, 11, 12], [8, 9], [2018, 2019])),\n                   columns=col_names)\n\ndf['data'] = np.random.randn(len(df))\n\ndf = df.sort_values(['Year', 'Month'], ascending=[True, True])\n\ndf.insert(loc=0, column=\"date\", value=pd.to_datetime(df[col_names]))\ndf = df.drop(col_names, axis=1).squeeze()\n\nprint(df)\n\n\"\"\"\n         date      data\n0  2018-08-10 -0.328973\n4  2018-08-11 -0.670790\n8  2018-08-12 -1.360565\n2  2018-09-10 -0.401973\n6  2018-09-11 -1.238754\n10 2018-09-12  0.957695\n1  2019-08-10  0.571126\n5  2019-08-11 -1.320735\n9  2019-08-12  0.196036\n3  2019-09-10 -1.717800\n7  2019-09-11  0.074606\n11 2019-09-12 -0.643198\n\"\"\""
+}, {
+  "tag": "H1",
+  "text": "(5) Mapping Items into Groups",
+  "translation": "（5）将项目映射到组"
+}, {
+  "tag": "P",
+  "text": "Mapping is a neat trick that helps with organizing categorical data. Imagine for example, that we have a huge DataFrame with thousands of rows where one of the columns has items we wish to categorize. Doing so can greatly simplify both the training of Machine Learning models and visualizing the data effectively.",
+  "translation": "映射是一个巧妙的技巧，有助于组织分类数据。 例如，想象一下，我们有一个巨大的DataFrame，其中包含成千上万的行，其中一列包含我们要分类的项目。 这样做可以大大简化机器学习模型的训练和有效地可视化数据。"
+}, {
+  "tag": "P",
+  "text": "Check out the code below for a mini example where we have a list of foods that we want to categorize.",
+  "translation": "请查看下面的代码以获取一个迷你示例，其中有我们要分类的食品列表。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/GeorgeSeif/416ff9f4461b43505b03b9d4a6083898/raw/9bc3385baf162e86f3767f8f0dd29e25180c2ce3/pd_map.py",
+  "code": "import pandas as pd\n\nfoods = pd.Series([\"Bread\", \"Rice\", \"Steak\", \"Ham\", \"Chicken\",\n                       \"Apples\", \"Potatoes\", \"Mangoes\", \"Fish\",\n                       \"Bread\", \"Rice\", \"Steak\", \"Ham\", \"Chicken\",\n                       \"Apples\", \"Potatoes\", \"Mangoes\", \"Fish\",\n                       \"Apples\", \"Potatoes\", \"Mangoes\", \"Fish\",\n                       \"Apples\", \"Potatoes\", \"Mangoes\", \"Fish\",\n                       \"Bread\", \"Rice\", \"Steak\", \"Ham\", \"Chicken\",\n                       \"Bread\", \"Rice\", \"Steak\", \"Ham\", \"Chicken\",\n                       \"Bread\", \"Rice\", \"Steak\", \"Ham\", \"Chicken\",\n                       \"Apples\", \"Potatoes\", \"Mangoes\", \"Fish\",\n                       \"Apples\", \"Potatoes\", \"Mangoes\", \"Fish\",\n                       \"Apples\", \"Potatoes\", \"Mangoes\", \"Fish\",\n                       \"Bread\", \"Rice\", \"Steak\", \"Ham\", \"Chicken\",\n                       \"Bread\", \"Rice\", \"Steak\", \"Ham\", \"Chicken\",])\n\ngroups_dict = {\n    \"Protein\": [\"Steak\", \"Ham\", \"Chicken\", \"Fish\"],\n    \"Carbs\": [\"Bread\", \"Rice\", \"Apples\", \"Potatoes\", \"Mangoes\"]\n}"
+}, {
+  "tag": "P",
+  "text": "In the code above, we put our list into a pandas series. We’ve also created a dictionary showing the mapping we want, categorizing each food item as a “Protein” or a “Carb”. This is a toy example, but if this series were at a large scale, say a length of 1,000,000 items, then looping through it wouldn’t be practical at all.",
+  "translation": "在上面的代码中，我们将列表放入了pandas系列。 我们还创建了一个字典，其中显示了我们想要的映射，将每个食品分类为“蛋白质”或“碳水化合物”。 这是一个玩具的例子，但是如果这个系列是大规模的，比如说长度为1,000,000件，那么遍历它根本是不实际的。"
+}, {
+  "tag": "P",
+  "text": "Instead of the basic for-loop, we can write a function using Pandas’s built-in .map() function to perform the mapping in an optimized way. Check out the code below to see the function and how it’s applied.",
+  "translation": "除了基本的for循环，我们还可以使用Pandas内置的.map（）函数编写函数，以优化的方式执行映射。 请查看下面的代码，以查看该功能及其应用方式。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/GeorgeSeif/86261f089dace958999f73536da732cc/raw/dcd242eff6a9a6a22825459affb3dcc2622981cd/pd_map_2.py",
+  "code": "def membership_map(pandas_series, groups_dict):\n    groups = {x: k for k, v in groups_dict.items() for x in v}\n    mapped_series = pandas_series.map(groups)\n    return mapped_series\n    \nmapped_data = membership_map(foods, groups_dict)\nprint(list(mapped_data))"
+}, {
+  "tag": "P",
+  "text": "In the function, we first loop through our dictionary to create a new dictionary where the keys represent every possible item in the pandas series and the value represents the new mapped item, “Protein” or “Carbs”. Then, we simply apply Pandas’s built-in map function to map all of the values in the series",
+  "translation": "在函数中，我们首先遍历字典以创建一个新的字典，其中的键代表熊猫系列中每个可能的项目，其值代表新的映射项目“蛋白质”或“碳水化合物”。 然后，我们只需应用Pandas的内置map函数来映射系列中的所有值"
+}, {
+  "tag": "P",
+  "text": "Check out the output below to see the results!",
+  "translation": "查看下面的输出以查看结果！"
+}, {
+  "tag": "PRE",
+  "text": "['Carbs', 'Carbs', 'Protein', 'Protein', 'Protein', 'Carbs', 'Carbs', 'Carbs', 'Protein', 'Carbs', 'Carbs', 'Protein', 'Protein', 'Protein', 'Carbs', 'Carbs', 'Carbs', 'Protein', 'Carbs', 'Carbs', 'Carbs', 'Protein', 'Carbs', 'Carbs', 'Carbs', 'Protein', 'Carbs', 'Carbs', 'Protein', 'Protein', 'Protein', 'Carbs', 'Carbs', 'Protein', 'Protein', 'Protein', 'Carbs', 'Carbs', 'Protein', 'Protein', 'Protein', 'Carbs', 'Carbs', 'Carbs', 'Protein', 'Carbs', 'Carbs', 'Carbs', 'Protein', 'Carbs', 'Carbs', 'Carbs', 'Protein', 'Carbs', 'Carbs', 'Protein', 'Protein', 'Protein', 'Carbs', 'Carbs', 'Protein', 'Protein', 'Protein']",
+  "translation": "[“ Carbs”，“ Carbs”，“ Protein”，“ Protein”，“ Protein”，“ Carbs”，“ Carbs”，“ Carbs”，“ Protein”，“ Carbs”，“ Carbs”，“ Protein”，“ 蛋白质”，“蛋白质”，“碳水化合物”，“碳水化合物”，“碳水化合物”，“蛋白质”，“碳水化合物”，“碳水化合物”，“碳水化合物”，“蛋白质”，“碳水化合物”，“碳水化合物”，“碳水化合物” ，“蛋白质”，“碳水化合物”，“碳水化合物”，“蛋白质”，“蛋白质”，“蛋白质”，“碳水化合物”，“碳水化合物”，“蛋白质”，“蛋白质”，“蛋白质”，“碳水化合物”，“ Carbs”，“蛋白质”，“ Protein”，“ Protein”，“ Carbs”，“ Carbs”，“ Carbs”，“ Protein”，“ Carbs”，“ Carbs”，“ Carbs”，“ Protein”，“ Carbs” ，“ Carbs”，“ Carbs”，“ Protein”，“ Carbs”，“ Carbs”，“ Protein”，“ Protein”，“ Protein”，“ Carbs”，“ Carbs”，“ Protein”，“ Protein”，“ 蛋白']"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自George Seif的文章《5 Advanced Features of Pandas and How to Use Them》，参考：https://towardsdatascience.com/5-advanced-features-of-pandas-and-how-to-use-them-1f2e2585d83e)",
+  "translation": "（本文翻译自乔治·赛义夫的文章《 5种熊猫的高级功能及其使用方法》，参考：https：//towardsdatascience.com/5-advanced-features-of-pandas-and-how-to-to-use-m -1f2e2585d83e）"
+}]
