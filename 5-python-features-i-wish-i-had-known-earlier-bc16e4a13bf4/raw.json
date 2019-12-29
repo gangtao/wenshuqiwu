@@ -1,0 +1,210 @@
+[{
+  "tag": "H2",
+  "text": "Why Sample Variance is Divided by n-1",
+  "translation": "为什么样本方差被n-1除"
+}, {
+  "tag": "H3",
+  "text": "Explaining high school statistics that your teachers didn’t teach",
+  "translation": "解释您的老师没有教过的高中统计资料"
+}, {
+  "tag": "H2",
+  "text": "Visualizing Bike Mobility in London using Interactive Maps and Animations",
+  "translation": "使用交互式地图和动画可视化伦敦的自行车出行"
+}, {
+  "tag": "H3",
+  "text": "Exploring data visualization tools in Python",
+  "translation": "探索Python中的数据可视化工具"
+}, {
+  "tag": "H2",
+  "text": "Related Articles",
+  "translation": "相关文章"
+}, {
+  "tag": "P",
+  "text": "Thank you for reading. If you are interested in data science, the following articles might be useful:",
+  "translation": "感谢您的阅读。 如果您对数据科学感兴趣，则以下文章可能会有用："
+}, {
+  "tag": "H2",
+  "text": "Visualizing Bike Mobility in London using Interactive Maps and Animations",
+  "translation": "使用交互式地图和动画可视化伦敦的自行车出行"
+}, {
+  "tag": "H3",
+  "text": "Exploring data visualization tools in Python",
+  "translation": "探索Python中的数据可视化工具"
+}, {
+  "tag": "H2",
+  "text": "Why Sample Variance is Divided by n-1",
+  "translation": "为什么样本方差被n-1除"
+}, {
+  "tag": "H3",
+  "text": "Explaining high school statistics that your teachers didn’t teach",
+  "translation": "解释您的老师没有教过的高中统计资料"
+}, {
+  "tag": "P",
+  "text": "Originally published at edenau.github.io.",
+  "translation": "最初发布于edenau.github.io。"
+}, {
+  "tag": "H1",
+  "text": "5. Virtual environment — isolation",
+  "translation": "5.虚拟环境-隔离"
+}, {
+  "tag": "P",
+  "text": "If you could only remember one thing in this article, then it should be the use of virtual environments.",
+  "translation": "如果您只记得本文中的一件事，那么应该是使用虚拟环境。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*Uor0K35XCR88rGix?q=20",
+  "caption": "Photo by Matthew Kwong on Unsplash",
+  "type": "image",
+  "file": "0*Uor0K35XCR88rGix"
+}, {
+  "tag": "P",
+  "text": "Python applications often use many different packages from various developers with complex dependencies. Different applications are developed using a specific library setting, where results cannot be reproduced using other library versions. There does not exist a single installation that satisfies the requirements of all applications.",
+  "translation": "Python应用程序经常使用来自具有复杂依赖关系的各种开发人员的许多不同软件包。 使用特定的库设置开发了不同的应用程序，在该应用程序中，无法使用其他库版本来复制结果。 没有一个可以满足所有应用程序要求的安装。"
+}, {
+  "tag": "PRE",
+  "text": "conda create -n venv pip python=3.7  # select python versionsource activate venv...source deactivate",
+  "translation": "conda create -n venv pip python = 3.7＃选择python versionsource激活venv ... source停用"
+}, {
+  "tag": "P",
+  "text": "Therefore, it is vital to create separate self-contained virtual environments venv for each application, which can be done using pip or conda.",
+  "translation": "因此，为每个应用程序创建单独的独立虚拟环境至关重要，这可以使用pip或conda来完成。"
+}, {
+  "tag": "H1",
+  "text": "4. Generator — memory efficiency",
+  "translation": "4.生成器-内存效率"
+}, {
+  "tag": "P",
+  "text": "Generators are utilized when we intend to calculate a large set of results but would like to avoid allocating the memory needed for all results at the same time. In other words, they generate values on the fly and do not store previous values in memory, and thus we can only iterate over them once.",
+  "translation": "当我们打算计算大量结果但希望避免同时分配所有结果所需的内存时，将使用生成器。 换句话说，它们会即时生成值，并且不会将先前的值存储在内存中，因此我们只能对其进行一次迭代。"
+}, {
+  "tag": "P",
+  "text": "They are often used when reading large files or generating an infinite sequence using keyword yield. I often find it useful in most of my data science projects.",
+  "translation": "当读取大文件或使用关键字yield生成无限序列时，通常使用它们。 我经常在大多数数据科学项目中发现它很有用。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/edenau/d23b71ff473720ae19fd4514f2232bdb/raw/59a3640637be896a0ee490515da2fb1bebf2d188/python-generator.py",
+  "code": "def gen(n):    # an infinite sequence generator that generates integers >= n\n    while True:\n        yield n\n        n += 1\n        \nG = gen(3)     # starts at 3\nprint(next(G)) # 3\nprint(next(G)) # 4\nprint(next(G)) # 5\nprint(next(G)) # 6"
+}, {
+  "tag": "H1",
+  "text": "3. Zipping and enumerate — for-loops",
+  "translation": "3.压缩和枚举-for循环"
+}, {
+  "tag": "P",
+  "text": "Zip function creates an iterator that aggregates elements from multiple lists. It allows traversing lists in parallel in a for-loop and sorting in parallel. It can be unzipped using an asterisk.",
+  "translation": "Zip函数创建一个迭代器，该迭代器聚合来自多个列表的元素。 它允许在for循环中并行遍历列表并并行排序。 可以使用星号将其解压缩。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/edenau/f159058e3d1763ea2ec8cd792e4a8280/raw/9b156a648890059b7fd3ac25daba3d91f58a4f2f/python-zip-1.py",
+  "code": "numList = [0, 1, 2]\nengList = ['zero', 'one', 'two']\nespList = ['cero', 'uno', 'dos']\nprint(list(zip(numList, engList, espList)))\n# [(0, 'zero', 'cero'), (1, 'one', 'uno'), (2, 'two', 'dos')]\n\nfor num, eng, esp in zip(numList, engList, espList):\n    print(f'{num} is {eng} in English and {esp} in Spanish.')\n# 0 is zero in English and cero in Spanish.\n# 1 is one in English and uno in Spanish.\n# 2 is two in English and dos in Spanish."
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/edenau/4a2b984cf78daae9fc8ba57a3b0a843b/raw/65f4c08e69ce500dfafff5d2161ee9a030064de1/python-zip-2.py",
+  "code": "Eng = list(zip(engList, espList, numList))\nEng.sort() # sort by engList\na, b, c = zip(*Eng)\n\nprint(a)\nprint(b)\nprint(c)\n# ('one', 'two', 'zero')\n# ('uno', 'dos', 'cero')\n# (1, 2, 0)"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*Lo8gYJqEXB0wswOL?q=20",
+  "caption": "Photo by Erol Ahmed on Unsplash",
+  "type": "image",
+  "file": "0*Lo8gYJqEXB0wswOL"
+}, {
+  "tag": "P",
+  "text": "Enumerate might look a bit intimidating at first, but becomes very handy in many scenarios. It is an automatic counter that is often used in a for-loop, such that there is no need to create and initialise a counter variable anymore in a for-loop by counter = 0 and counter += 1. Enumerate and zip are two of the most powerful tools when constructing a for-loop.",
+  "translation": "枚举起初可能看起来有些吓人，但在许多情况下变得非常方便。 这是一个自动计数器，通常在for循环中使用，因此不再需要通过counter = 0和counter + = 1在for循环中创建和初始化计数器变量。枚举和zip是两个 构建for循环时最强大的工具。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/edenau/34fabb07f38dde6b186724f85bd1e7b8/raw/2bfe14585d13bb838e544b20cb986aff87847201/python-enumerate.py",
+  "code": "upperCase = ['A', 'B', 'C', 'D', 'E', 'F']\nlowerCase = ['a', 'b', 'c', 'd', 'e', 'f']\nfor i, (upper, lower) in enumerate(zip(upperCase, lowerCase), 1):\n    print(f'{i}: {upper} and {lower}.')\n# 1: A and a.\n# 2: B and b.\n# 3: C and c.\n# 4: D and d.\n# 5: E and e.\n# 6: F and f."
+}, {
+  "tag": "H1",
+  "text": "2. List manipulation — circular lists",
+  "translation": "2.列表操作-循环列表"
+}, {
+  "tag": "P",
+  "text": "Python allows negative indexing where aList[-1] == aList[len(aList)-1]. Therefore, we can get the second last element in a list by calling aList[-2] and so on.",
+  "translation": "Python允许负索引，其中aList [-1] == aList [len（aList）-1]。 因此，我们可以通过调用aList [-2]来获得列表中的倒数第二个元素。"
+}, {
+  "tag": "P",
+  "text": "We can also slice lists using the syntax aList[start:end:step], where the starting element is included but the ending element is not. Therefore, calling aList[2:5] gives [2, 3, 4]. We can also reverse a list simply by calling aList[::-1], and I find this technique very elegant.",
+  "translation": "我们还可以使用aList [start：end：step]语法对列表进行切片，其中包括开始元素，但没有结束元素。 因此，调用aList [2：5]会得到[2，3，4]。 我们也可以简单地通过调用aList [::-1]来反转列表，我发现这种技术非常优雅。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*zP9ed3vNtn75tBd6?q=20",
+  "caption": "Photo by Martin Shreder on Unsplash",
+  "type": "image",
+  "file": "0*zP9ed3vNtn75tBd6"
+}, {
+  "tag": "P",
+  "text": "A list can be also unpacked into separate elements, or a mix of elements and a sub-list using an asterisk.",
+  "translation": "列表也可以解包为单独的元素，或者使用星号将元素和子列表混合在一起。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/edenau/da1e354a509d4129db47545f44a5028d/raw/e3723ff210746afaed1d52f5a57c16e5f26061b1/python-unpacking.py",
+  "code": "a, b, c, d = aList[0:4]\nprint(f'a = {a}, b = {b}, c = {c}, d = {d}')\n# a = 0, b = 1, c = 2, d = 3\n\na, *b, c, d = aList\nprint(f'a = {a}, b = {b}, c = {c}, d = {d}')\n# a = 0, b = [1, 2, 3, 4, 5, 6, 7], c = 8, d = 9"
+}, {
+  "tag": "H1",
+  "text": "1. List comprehensions — compact codes",
+  "translation": "1.列表理解-紧凑代码"
+}, {
+  "tag": "P",
+  "text": "Many people would mention the lambda, map, and filter as Python ‘tricks’ that every beginner should learn. While I believe they are functions that we should be aware of, I find them not particularly useful most of the time as they lack flexibility.",
+  "translation": "很多人会把lambda，map和filter称为Python的“技巧”，这是每个初学者都应该学习的。 尽管我认为它们是我们应该意识到的功能，但由于它们缺乏灵活性，因此在大多数情况下它们并不是特别有用。"
+}, {
+  "tag": "P",
+  "text": "Lambda is a method to compose a function in one line for one-time use. Performance suffers if the functions are called multiple times. On the other hand, map applies a function to all elements in a list, whereas filter gets a subset of elements in a set that meets a user-defined condition.",
+  "translation": "Lambda是一种将功能组合在一行中以供一次性使用的方法。 如果多次调用函数，则会降低性能。 另一方面，映射将函数应用于列表中的所有元素，而过滤器获取集合中满足用户定义条件的元素子集。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/edenau/fb4c5a676309bdd01be47bbe1f81f376/raw/cf16ad8f8ca93681a08d5ff05f8b46f0fc72f498/python-lambda.py",
+  "code": "add_func = lambda z: z ** 2\nis_odd = lambda z: z%2 == 1\nmultiply = lambda x,y: x*y\n\naList = list(range(10))\nprint(aList)\n# [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*RfIH7u1HS0u3gWdl?q=20",
+  "caption": "Photo by Anastase Maragos on Unsplash",
+  "type": "image",
+  "file": "0*RfIH7u1HS0u3gWdl"
+}, {
+  "tag": "P",
+  "text": "List comprehension is a concise and flexible method to create lists from other lists with flexible expressions and conditions. It is constructed by a square bracket, with an expression or a function that is applied to every element in a list only if the element satisfies a certain condition. It can also be nested to handle nested lists, and is far more flexible than using map and filter.",
+  "translation": "列表理解是一种简洁而灵活的方法，可以从其他具有灵活表达式和条件的列表中创建列表。 它由方括号构造，带有表达式或函数，仅当元素满足特定条件时，该表达式或函数才应用于列表中的每个元素。 它也可以嵌套以处理嵌套列表，并且比使用地图和过滤器灵活得多。"
+}, {
+  "tag": "PRE",
+  "text": "# Syntax of list comprehension[ expression(x) for x in aList if optional_condition(x) ]",
+  "translation": "＃list comprehension [可选条件（x）的列表中x的expression（x）的语法]"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/edenau/148a56e624297addcbceb1805c2d4554/raw/ca5e5f216e7c7623c7906517e60a2f3b98fe15ae/python-list-comprehension.py",
+  "code": "print(list(map(add_func, aList)))\nprint([x ** 2 for x in aList])\n# [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]\n# [0, 1, 4, 9, 16, 25, 36, 49, 64, 81]\n\nprint(list(filter(is_odd, aList)))\nprint([x for x in aList if x%2 == 1])\n# [1, 3, 5, 7, 9]\n# [1, 3, 5, 7, 9]"
+}, {
+  "tag": "H1",
+  "text": "5 Python features I wish I had known earlier",
+  "translation": "我希望我早先知道的5个Python功能"
+}, {
+  "tag": "H2",
+  "text": "Python tricks beyond lambda, map, and filter",
+  "translation": "Python技巧超越了lambda，map和filter"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*JkIdrMMRaiMK2PH1?q=20",
+  "caption": "Photo by Kirill Sharkovski on Unsplash",
+  "type": "image",
+  "file": "0*JkIdrMMRaiMK2PH1"
+}, {
+  "tag": "P",
+  "text": "Python is arguably the rising programming language of the decade and is proven to be a very powerful language. I have built so many applications using Python from interactive maps to blockchains. There are so many features in Python, and it is very difficult for beginners to grasp everything at first.",
+  "translation": "Python可以说是十年来新兴的编程语言，并且被证明是一种非常强大的语言。 从交互式地图到区块链，我已经使用Python构建了许多应用程序。 Python有许多功能，对于初学者来说，一开始很难掌握所有功能。"
+}, {
+  "tag": "P",
+  "text": "Even if you are a programmer switching from other languages such as C or MATLAB, coding in Python with a higher level of abstraction is definitely a different experience. I wish I had known some Python features earlier, and have highlighted five of the most important ones.",
+  "translation": "即使您是从其他语言（例如C或MATLAB）切换来的程序员，使用Python进行更高级别抽象的编码绝对是另一种体验。 我希望我早先了解一些Python功能，并重点介绍了五个最重要的功能。"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Eden Au的文章《5 Python features I wish I had known earlier》，参考：https://towardsdatascience.com/5-python-features-i-wish-i-had-known-earlier-bc16e4a13bf4)",
+  "translation": "（本文翻译自《 Eden Au的文章》，《我希望我早些知道的5个Python功能》，参考：https：//towardsdatascience.com/5-python-features-i-wish-i-had-known-earlier-bc16e4a13bf4）"
+}]
