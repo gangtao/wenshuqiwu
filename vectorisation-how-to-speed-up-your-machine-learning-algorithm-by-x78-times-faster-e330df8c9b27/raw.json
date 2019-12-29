@@ -1,0 +1,282 @@
+[{
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*1jlzhVYdnBsd7ivGvD3aoA.png?q=20",
+  "type": "image",
+  "file": "1*1jlzhVYdnBsd7ivGvD3aoA.png"
+}, {
+  "tag": "H1",
+  "text": "Vectorization: How to speed up your Machine Learning algorithm by x78",
+  "translation": "向量化：如何通过x78加快您的机器学习算法"
+}, {
+  "tag": "H2",
+  "text": "Given an equation, we will see how step by step can achieve more efficient code not only x78 times in terms of speed, but using only 3 lines of code! Let’s dive into it…",
+  "translation": "给定一个方程式，我们将逐步了解如何才能不仅在速度上获得x78倍的效率更高的代码，而且仅使用3行代码！ 让我们开始吧……"
+}, {
+  "tag": "H1",
+  "text": "Introduction",
+  "translation": "介绍"
+}, {
+  "tag": "P",
+  "text": "As an interpreted language, Python for loops is inherently slower than their C counterpart. This is a big bottleneck for the infamous programming language, as Deep Learning and Machine Learning Algorithms depend heavily on matrix operations, which they are executed via for loops.",
+  "translation": "作为一种解释型语言，Python for loop本质上比C语言慢。 这对于臭名昭著的编程语言是一个很大的瓶颈，因为深度学习和机器学习算法严重依赖于矩阵运算，而矩阵运算是通过for循环执行的。"
+}, {
+  "tag": "P",
+  "text": "This is why developers developed packages, like numpy, which they offer vectorized actions on numpy arrays. Meaning that it pushes the for loop that is usually be done in Python down to the C level, which is much faster.",
+  "translation": "这就是开发人员开发软件包的原因，例如numpy，他们在numpy数组上提供矢量化操作。 这意味着它将通常在Python中完成的for循环下推到C级，这要快得多。"
+}, {
+  "tag": "P",
+  "text": "Python + C level speed = Paradise",
+  "translation": "Python + C级速度=天堂"
+}, {
+  "tag": "H1",
+  "text": "The Problem",
+  "translation": "问题"
+}, {
+  "tag": "P",
+  "text": "(you can skip the explanation parts if you are confutable with the EM algorithm)",
+  "translation": "（如果您对EM算法有疑问，可以跳过解释部分）"
+}, {
+  "tag": "P",
+  "text": "We want to use the Expectation-Maximization (EM) algorithm for an unsupervised learning task (say, for example, recognition of handwritten digits in the MNIST dataset) and our data are binary (e.g binary images). A natural way is to model our data as a Bernoulli mixture model; a weighted sum of Bernoulli distributions, were each distribution has its own scalar weight π and its own mean vector μ and represents a cluster of a data (e.g. if our data is images of digits 2, 3 & 4 and we use 3 Bernoulli to model them, one Bernoulli will be the digits 2, the other the digits 4, etc). Overall, that makes the former a vector and the latter a matrix.",
+  "translation": "我们想对无监督学习任务使用期望最大化（EM）算法（例如，在MNIST数据集中识别手写数字），并且我们的数据是二进制的（例如二进制图像）。 一种自然的方法是将我们的数据建模为伯努利混合模型。 伯努利分布的加权和，每个分布都有自己的标量权重π和自己的均值向量μ并表示数据的群集（例如，如果我们的数据是数字2、3和4的图像，并且我们使用3伯努利进行建模 它们中，一个伯努利将是数字2，另一个是数字4，依此类推）。 总的来说，这使得前者成为向量，而后者成为矩阵。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*SofYwCWMO52fZe3Lud9xdQ.png?q=20",
+  "caption": "Bernoulli mixture model (1)",
+  "type": "image",
+  "file": "1*SofYwCWMO52fZe3Lud9xdQ.png"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*qJcxpjX-JlB9ZtIaNRqqzw.png?q=20",
+  "caption": "Distribution of one observation x given the cluster k (2)",
+  "type": "image",
+  "file": "1*qJcxpjX-JlB9ZtIaNRqqzw.png"
+}, {
+  "tag": "P",
+  "text": "Let N=number of observations, D=dimensionality of one observation and K=number of clusters. Because it is important for our problem, the types of random variables that we have are:• X; our data a NxD matrix (N the number of images, D the dimensionality of them → 5 images that are 28*28 will make a 5x784 matrix X)• π; a vector K, a scalar for every distribution representing its weight.(e.g three Bernoulli can have π=[0.2, 0.75, 0.05] weighted vector)• μ; the mean KxD matrix for every cluster.(one image has dimensionality of D=28*28=784, where each one of them represents a pixel value. Taking the mean for every pixel of images that belong to the same cluster, say digit 2, we result in a mean vector of 784. Thus, μ would be a matrix of KxD)",
+  "translation": "令N =观测数，D =一个观测的维数，K =聚类数。 因为对于我们的问题很重要，所以我们拥有的随机变量的类型为：•X； 我们的数据是一个NxD矩阵（N个图像数量，D个维数→5张28 * 28的图像将形成5x784矩阵X）•π； 向量K，代表每个分布的权重的标量。（例如，三个伯努利可以具有π= [0.2，0.75，0.05]加权向量）•μ； 每个群集的平均KxD矩阵。（一个图像的维数为D = 28 * 28 = 784，其中每个图像代表一个像素值。取属于同一群集的图像的每个像素的平均值，例如数字2 ，我们得出的平均向量为784。因此，μ将是KxD的矩阵）"
+}, {
+  "tag": "P",
+  "text": "At the E-step, we are particularly interested in the expected value of the posterior of the latent variables, or so called responsibilities",
+  "translation": "在E步中，我们对潜在变量后验的期望值或所谓的责任特别感兴趣。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*Fc9rcssehDsGoh4pOLRGtQ.png?q=20",
+  "caption": "E-step of EM algorithm (3)",
+  "type": "image",
+  "file": "1*Fc9rcssehDsGoh4pOLRGtQ.png"
+}, {
+  "tag": "P",
+  "text": "γ actually returns the expected value of the observation (image) n belong to the cluster k. γ is an NxK matrix; for each observation, we assign a probability to belong to every cluster. The one with the maximum is the one that we assign to.",
+  "translation": "γ实际上返回属于聚类k的观测值（图像）n的期望值。 γ是NxK矩阵； 对于每个观察，我们分配属于每个聚类的概率。 具有最大值的一个就是我们分配给的那个。"
+}, {
+  "tag": "P",
+  "text": "Why I am telling all this?",
+  "translation": "为什么我要告诉所有这些？"
+}, {
+  "tag": "P",
+  "text": "“The most important thing in vectorization is to understand the dimensions of the variables.”",
+  "translation": "“向量化中最重要的事情是了解变量的维度。”"
+}, {
+  "tag": "P",
+  "text": "The calculation of responsibilities is the one that we are going to vectorise",
+  "translation": "责任的计算是我们要向量化的一项"
+}, {
+  "tag": "P",
+  "text": "To sum up:• X : NxD matrix• π : 1xK vector• μ : KxD matrix• γ : NxK matrix",
+  "translation": "总结：•X：NxD矩阵•π：1xK向量•μ：KxD矩阵•γ：NxK矩阵"
+}, {
+  "tag": "H1",
+  "text": "Pipeline",
+  "translation": "管道"
+}, {
+  "tag": "P",
+  "text": "We will create a function E_step to run calculate the above expression and test it with the following code",
+  "translation": "我们将创建一个函数E_step来运行计算上面的表达式并使用以下代码对其进行测试"
+}, {
+  "tag": "PRE",
+  "text": "observations = [5, 10, 20, 50, 100, 200, 500, 1000]for n in observations:    X_test = bin_train_data[:n]    D_test, K_test = X_test.shape[1], 10    mu_test = np.random.uniform(low=.25, high=.75,                                 size=(K_test,D_test))    pi_test = np.ones(K_test) / K_test    t0 = time.time()    gamma_test = E_step_1(X_test, mu_test, pi_test)    runtime = time.time() - t0    assert gamma_test.shape == (n, K_test)",
+  "translation": "对于n个观察值，观察值= [5、10、20、50、100、200、500、1000]：X_test = bin_train_data [：n] D_test，K_test = X_test.shape [1]，10 mu_test = np.random.uniform （low = .25，high = .75，size =（K_test，D_test））pi_test = np.ones（K_test）/ K_test t0 = time.time（）gamma_test = E_step_1（X_test，mu_test，pi_test）运行时间=时间。 time（）-t0断言gamma_test.shape ==（n，K_test）"
+}, {
+  "tag": "P",
+  "text": "Feel free to give it a try by yourself first!",
+  "translation": "随意先尝试一下！"
+}, {
+  "tag": "H1",
+  "text": "Attempt №1",
+  "translation": "尝试№1"
+}, {
+  "tag": "P",
+  "text": "On our first try, we will write everything with for loops; on vectors/matrix operations, only scalars.",
+  "translation": "第一次尝试时，我们将使用for循环编写所有内容； 在矢量/矩阵运算中，仅标量。"
+}, {
+  "tag": "P",
+  "text": "By looking at the equations, we can see that there are 3 loops; One for every example N, one for every cluster K and one for every dimension of every object D and we are going to loop in this order. So we are going to fill the matrix γ by one element at a time.",
+  "translation": "通过查看方程式，我们可以看到存在3个循环。 每个示例N一个，每个群集K一个，每个对象D每个维一个，我们将按此顺序循环。 因此，我们将一次用一个元素填充矩阵γ。"
+}, {
+  "tag": "PRE",
+  "text": "def E_step(X, mu, pi):    N, D = X.shape    K = pi.shape[0]    gamma = np.zeros((N, K))    for n in range(N):        for k in range(K):            m = 1            for i in range(D):                m *= mu[k][i]**X[n][i] * (1-mu[k][i])**(1-X[n][i])            gamma[n][k] = m * pi[k]        gamma[n] /= gamma[n].sum()    return gamma",
+  "translation": "def E_step（X，mu，pi）：N，D = X.shape K = pi.shape [0] gamma = np.zeros（（N，K））对于范围n中的n：对于范围k中的（ K）：对于范围（D）中的i，m = 1：m * = mu [k] [i] ** X [n] [i] *（1-mu [k] [i]）**（1- X [n] [i]）gamma [n] [k] = m * pi [k] gamma [n] / = gamma [n] .sum（）返回gamma"
+}, {
+  "tag": "P",
+  "text": "And our results are visible at the below plot.",
+  "translation": "下图显示了我们的结果。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*tg9vj_xv6amGOngE7qzT8A.png?q=20",
+  "type": "image",
+  "file": "1*tg9vj_xv6amGOngE7qzT8A.png"
+}, {
+  "tag": "P",
+  "text": "We can surely do better than that!",
+  "translation": "我们肯定可以做得更好！"
+}, {
+  "tag": "H1",
+  "text": "Attempt №2",
+  "translation": "尝试№2"
+}, {
+  "tag": "P",
+  "text": "It’s good to start from the inside loop and work your way to the outer ones. And this is exactly what we are going to do!",
+  "translation": "最好从内部循环开始，然后逐步发展到外部循环。 而这正是我们要做的！"
+}, {
+  "tag": "P",
+  "text": "We want to get rid of the for loop D . Thus every term that is dependent on D should now become a vector. Inside this for loop, we have two variables; μ and x (see eq.(2)). Thus x and μ → vectors. Problem; It’s μ**x , vector to the power of another vector and is difficult to calculate. If only we can get around this…",
+  "translation": "我们要摆脱for循环D。 因此，每个依赖于D的项现在都应成为向量。 在此for循环中，我们有两个变量； μ和x（请参阅等式（2））。 因此x和μ→向量。 问题; 它是μ** x，是另一个矢量的幂的矢量，很难计算。 如果我们能解决这个问题……"
+}, {
+  "tag": "P",
+  "text": "There is a function, that turns a power operation to multiplication. That’s right, it is the logarithm! So let’s logarithm our expression and then take the exponent if the result!",
+  "translation": "有一个函数可以将幂运算转换为乘法。 是的，是对数！ 因此，让我们对表达式取对数，然后得出结果的指数！"
+}, {
+  "tag": "P",
+  "text": "Operations on logarithm probabilities are preferred, as they offer numerical stability",
+  "translation": "首选对数概率运算，因为它们提供数值稳定性"
+}, {
+  "tag": "P",
+  "text": "Even though in our case it doen’t have any affect, every time that you are using logs, use a constant epsilon inside the expression for stability (to not go to zero, with is -inf).",
+  "translation": "即使在我们的情况下它没有任何影响，但是每次使用日志时，请在表达式内部使用常量epsilon以保持稳定性（使用-inf时不要为零）。"
+}, {
+  "tag": "P",
+  "text": "Thus, we will have to element-wise vector multiplications. Easy ;)",
+  "translation": "因此，我们将不得不逐元素矢量相乘。 简单 ;）"
+}, {
+  "tag": "PRE",
+  "text": "def E_step(X, mu, pi):    N, D = X.shape    K = pi.shape[0]    gamma = np.zeros((N, K))    for n in range(N):        for k in range(K):            log_gamma = np.log(pi[k]) + (X[n] * np.log(mu[k]) \\                        + (1 - X[n])*np.log(1 - mu[k])).sum()            gamma[n][k] = np.exp(log_gamma)        gamma[n] /= gamma[n].sum()    return gamma",
+  "translation": "def E_step（X，mu，pi）：N，D = X.shape K = pi.shape [0] gamma = np.zeros（（N，K））对于范围n中的n：对于范围k中的（ K）：log_gamma = np.log（pi [k]）+（X [n] * np.log（mu [k]）\\ +（1-X [n]）* np.log（1-mu [k ]））。sum（）gamma [n] [k] = np.exp（log_gamma）gamma [n] / = gamma [n] .sum（）返回gamma"
+}, {
+  "tag": "P",
+  "text": "And our results are…",
+  "translation": "我们的结果是……"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*ZxMf8RblQfmHO3q6sdX-fg.png?q=20",
+  "type": "image",
+  "file": "1*ZxMf8RblQfmHO3q6sdX-fg.png"
+}, {
+  "tag": "P",
+  "text": "That is a HUGE win! It is seems like the x axis compered to the Algor. 1 ! But, we can do better ;)",
+  "translation": "那是巨大的胜利！ 与Algor相比，x轴看起来更像。 1！ 但是，我们可以做得更好;）"
+}, {
+  "tag": "H1",
+  "text": "Attempt №3",
+  "translation": "尝试№3"
+}, {
+  "tag": "P",
+  "text": "One loop at a time: it’s K turn!",
+  "translation": "一次循环一圈：K圈！"
+}, {
+  "tag": "P",
+  "text": "In the process of vectorization, we are moving as follows:",
+  "translation": "在矢量化过程中，我们正在朝以下方向发展："
+}, {
+  "tag": "P",
+  "text": "scalar → vector → matrix",
+  "translation": "标量→向量→矩阵"
+}, {
+  "tag": "P",
+  "text": "As we are doing to replace more and more loops with numpy arrays, more and more code will run on C → faster & cleaner code.",
+  "translation": "随着我们用numpy数组替换越来越多的循环，越来越多的代码将在C→更快更干净的代码上运行。"
+}, {
+  "tag": "P",
+  "text": "We take our previous implementation and we want to remove the K for loop. Thus every scalar that depends on K will turn into a vector and every vector into a matrix. That means X will remain the same and μ, will turn into a matrix and π and γ into vectors. Pay attention to the last one; as γ field row by row, the outcome of our expression have now to be a vector! So the operation of μ and X has to result in a 1xK vector and quick indicators are (i) they have to sum with the vector π, which is also 1xK (ii) the outcome is a row of the matrix γ, also a 1xK vector.",
+  "translation": "我们采用之前的实现，并且想要删除K for循环。 因此，每个依赖于K的标量都将变成一个向量，而每个向量都将变成一个矩阵。 这意味着X将保持不变，而μ将变成矩阵，而π和γ将成为向量。 注意最后一个； 随着γ字段的逐行传播，我们表达式的结果现在必须是向量！ 因此，μ和X的运算必须产生1xK向量，快速指示符是（i）它们必须与向量π相加，这也是1xK（ii）结果是矩阵γ的一行，也是1xK 向量。"
+}, {
+  "tag": "P",
+  "text": "Coding out we result into:",
+  "translation": "得出的结果是："
+}, {
+  "tag": "PRE",
+  "text": "def E_step(X, mu, pi):    N, D = X.shape    K = pi.shape[0]    gamma = np.zeros((N, K))    for n in range(N):        log_gamma = np.log(pi) + np.log(mu) @ X[n] \\                    + np.log(1 - mu) @ (1 - X[n])        gamma[n] = np.exp(log_gamma)        gamma[n] /= gamma[n].sum()    return gamma",
+  "translation": "def E_step（X，mu，pi）：N，D = X.shape K = pi.shape [0] gamma = np.zeros（（N，K））对于范围（N）中的n：log_gamma = np.log （pi）+ np.log（mu）@ X [n] \\ + np.log（1- mu）@（1- X [n]）gamma [n] = np.exp（log_gamma）gamma [n] / = gamma [n] .sum（）返回gamma"
+}, {
+  "tag": "P",
+  "text": "And the results are:",
+  "translation": "结果是："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*kA6NJCkn1Yv-PhNa-S24Sg.png?q=20",
+  "type": "image",
+  "file": "1*kA6NJCkn1Yv-PhNa-S24Sg.png"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*v6zqQyix6X9jtm8GJLtdXg.png?q=20",
+  "type": "image",
+  "file": "1*v6zqQyix6X9jtm8GJLtdXg.png"
+}, {
+  "tag": "P",
+  "text": "Amazing! We’ve managed to half the time for n=1000! There is really no comparison with the Algor. 1 . But, can we do better?",
+  "translation": "惊人！ 在n = 1000的情况下，我们成功完成了一半的时间！ 与Algor确实没有可比性。 1。 但是，我们可以做得更好吗？"
+}, {
+  "tag": "H1",
+  "text": "Attempt №4",
+  "translation": "尝试№4"
+}, {
+  "tag": "P",
+  "text": "We still have one loop left. Can we have a calculation loop-python-free? N, your time is up!",
+  "translation": "我们还有一个循环。 我们可以有一个无Python的计算循环吗？ N，你的时间到了！"
+}, {
+  "tag": "P",
+  "text": "As we are going to transform a matrix * vector operations into a matrix @ matrix operation, we need to take the transportation matrix of the former (@ is the regular matrix multiplication). Keep in mind that now our output has to be the whole γ matrix. I think by now you got the idea of how it goes ;).",
+  "translation": "在将矩阵*向量运算转换为矩阵@矩阵运算时，我们需要采用前者的传输矩阵（@是常规矩阵乘法）。 请记住，现在我们的输出必须是整个γ矩阵。 我认为到现在为止，您对它的运行方式有了想法；）。"
+}, {
+  "tag": "P",
+  "text": "So our code would be",
+  "translation": "所以我们的代码是"
+}, {
+  "tag": "PRE",
+  "text": "def E_step(X, mu, pi):    gamma = np.exp(np.log(pi) + X @ np.log(mu.T) \\            + (1 - X) @ np.log(1 - mu.T))        gamma /= gamma.sum(axis=1)[:, np.newaxis]    return gamma",
+  "translation": "def E_step（X，mu，pi）：伽玛= np.exp（np.log（pi）+ X @ np.log（mu.T）\\ +（1-X）@ np.log（1-mu.T ））gamma / = gamma.sum（axis = 1）[:, np.newaxis]返回gamma"
+}, {
+  "tag": "P",
+  "text": "Not a single loop! The code looks elegant and it is only three lines long! And now for the results, drum roll…",
+  "translation": "没有一个循环！ 该代码看起来很优雅，只有三行！ 现在要获得结果，鼓辊…"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*Y89FX6szzxZZPTFnKrCs4Q.png?q=20",
+  "type": "image",
+  "file": "1*Y89FX6szzxZZPTFnKrCs4Q.png"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*ZtAFkuIcwIYZy9p95wtBrg.png?q=20",
+  "type": "image",
+  "file": "1*ZtAFkuIcwIYZy9p95wtBrg.png"
+}, {
+  "tag": "P",
+  "text": "And that’s it, can’t get any better from this! For n=1000, we have gone from a runtime of 11.688 → 0.012 by using only three lines of code!",
+  "translation": "就是这样，再也无法得到任何改善！ 对于n = 1000，我们仅使用三行代码就从11.688→0.012的运行时开始运行！"
+}, {
+  "tag": "H1",
+  "text": "Summary",
+  "translation": "摘要"
+}, {
+  "tag": "P",
+  "text": "So, what do you need to do when you want to vectorize an expression:",
+  "translation": "因此，当您要对表达式进行向量化时，您需要做什么："
+}, {
+  "tag": "P",
+  "text": "• Understand the dimensions of the matrixes.• Pen and Paper: write down the formula, go from summation to summation and turn it into an equivalent matrix operation• Mathematics is your friend; always reason about the number of the dimensions that any expression have to return; watch for neighbor summing operations as they have the same dimensions• Loop by loop, step by step: scalar → vector → matrix• Take the logarithm and make sure to introduce a normalization constant epsilon• Code your vectorized version of your approach and shine :D",
+  "translation": "•了解矩阵的尺寸。•笔和纸：写下公式，从求和到求和，然后将其转换为等效的矩阵运算。 总是要考虑任何表达式必须返回的维数； 观察邻居求和操作，因为它们的维数相同•逐个循环，逐步：标量→向量→矩阵•取对数并确保引入归一化常数epsilon•对方法的向量化版本进行编码，并进行光泽：D"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Ioannis Gatopoulos的文章《Vectorization: How to speed up your Machine Learning algorithm by x78》，参考：https://towardsdatascience.com/vectorisation-how-to-speed-up-your-machine-learning-algorithm-by-x78-times-faster-e330df8c9b27)",
+  "translation": "（本文翻译自Ioannis Gatopoulos的文章，《矢量化：如何通过x78加快机器学习算法》，参考：https：//towardsdatascience.com/vectorisation-how-to-speed-up-your-machine-learning-algorithm -x78倍更快e330df8c9b27）"
+}]
