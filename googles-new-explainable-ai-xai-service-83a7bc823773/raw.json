@@ -1,0 +1,294 @@
+[{
+  "tag": "H2",
+  "text": "Tirthajyoti Sarkar - Sr. Principal Engineer - Semiconductor, AI, Machine Learning - ON…",
+  "translation": "Tirthajyoti Sarkar-高级首席工程师-人工智能，人工智能，机器学习-ON…"
+}, {
+  "tag": "H3",
+  "text": "Making data science/ML concepts easy to understand through writing: https://medium.com/@tirthajyoti Open-source and fun…",
+  "translation": "通过写作使数据科学/ ML概念易于理解：https://medium.com/@tirthajyoti开源且有趣……"
+}, {
+  "tag": "P",
+  "text": "If you have any questions or ideas to share, please contact the author at tirthajyoti[AT]gmail.com. Also, you can check the author’s GitHub repositories for code, ideas, and resources in machine learning and data science. If you are, like me, passionate about AI/machine learning/data science, please feel free to add me on LinkedIn or follow me on Twitter.",
+  "translation": "如果您有任何问题或想法要分享，请通过tirthajyoti [AT] gmail.com与作者联系。 另外，您可以检查作者的GitHub存储库，以获取有关机器学习和数据科学的代码，思想和资源。 如果您像我一样对AI /机器学习/数据科学充满热情，请随时在LinkedIn上添加我或在Twitter上关注我。"
+}, {
+  "tag": "H2",
+  "text": "Tirthajyoti Sarkar - Sr. Principal Engineer - Semiconductor, AI, Machine Learning - ON…",
+  "translation": "Tirthajyoti Sarkar-高级首席工程师-人工智能，人工智能，机器学习-ON…"
+}, {
+  "tag": "H3",
+  "text": "Making data science/ML concepts easy to understand through writing: https://medium.com/@tirthajyoti Open-source and fun…",
+  "translation": "通过写作使数据科学/ ML概念易于理解：https://medium.com/@tirthajyoti开源且有趣……"
+}, {
+  "tag": "H2",
+  "text": "Should AI explain itself? or should we design Explainable AI so that it doesn’t have to",
+  "translation": "AI应该自我解释吗？ 还是我们应该设计可解释的AI，以便它不必"
+}, {
+  "tag": "H3",
+  "text": "In this article, I’ll go over:",
+  "translation": "在本文中，我将介绍："
+}, {
+  "tag": "H1",
+  "text": "Google’s new ‘Explainable AI” (xAI) service",
+  "translation": "Google的新“可解释AI”（xAI）服务"
+}, {
+  "tag": "H2",
+  "text": "Google has started offering a new service for “explainable AI” or XAI, as it is fashionably called. Presently offered tools are modest, but the intent is in the right direction.",
+  "translation": "谷歌已经开始为“可解释的AI”或XAI提供新服务，俗称它。 目前提供的工具尚不多，但目的是朝正确的方向发展。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*RagQFe3mEfxwcDD8WWG6Zw.png?q=20",
+  "type": "image",
+  "file": "1*RagQFe3mEfxwcDD8WWG6Zw.png"
+}, {
+  "tag": "H1",
+  "text": "AI has an explainability problem",
+  "translation": "人工智能存在可解释性问题"
+}, {
+  "tag": "P",
+  "text": "Artificial intelligence is set to transform global productivity, working patterns, and lifestyles and create enormous wealth.",
+  "translation": "人工智能将改变全球的生产力，工作模式和生活方式，并创造巨大的财富。"
+}, {
+  "tag": "P",
+  "text": "Research firm Gartner expects the global AI economy to increase from about $1.2 trillion last year to about $3.9 Trillion by 2022, while McKinsey sees it delivering global economic activity of around $13 trillion by 2030.",
+  "translation": "研究公司Gartner预计，到2022年，全球人工智能经济将从去年的约1.2万亿美元增长至约3.9万亿美元，而麦肯锡预计，到2030年，其全球经济活动将达到约13万亿美元。"
+}, {
+  "tag": "P",
+  "text": "AI techniques, especially Deep Learning (DL) models are revolutionizing the business and technology world with jaw-dropping performances in one application area after another — image classification, object detection, object tracking, pose recognition, video analytics, synthetic picture generation — just to name a few.",
+  "translation": "人工智能技术（尤其是深度学习（DL）模型）正在一个应用领域中令人jaw目结舌的性能彻底改变了商业和技术领域，图像应用，图像分类，对象检测，对象跟踪，姿势识别，视频分析，合成图片生成在另一个应用领域中 仅举几例。"
+}, {
+  "tag": "P",
+  "text": "They are being used in — healthcare, I.T. services, finance, manufacturing, autonomous driving, video game playing, scientific discovery, and even the criminal justice system.",
+  "translation": "它们正用于-医疗保健，IT 服务，金融，制造，自动驾驶，视频游戏，科学发现，甚至刑事司法系统。"
+}, {
+  "tag": "P",
+  "text": "However, they are like anything but classical Machine Learning (ML) algorithms/techniques. DL models use millions of parameters and create extremely complex and highly nonlinear internal representations of the images or datasets that are fed to them.",
+  "translation": "但是，它们就像经典机器学习（ML）算法/技术一样。 DL模型使用数百万个参数，并创建极其复杂且高度非线性的图像或数据集的内部表示形式。"
+}, {
+  "tag": "P",
+  "text": "They are, therefore, often called the perfect black-box ML techniques. We can get highly accurate predictions from them after we train them with large datasets, but we have little hope of understanding the internal features and representations of the data that a model uses to classify a particular image into a category.",
+  "translation": "因此，它们通常被称为完美的黑盒ML技术。 在使用大型数据集训练它们之后，我们可以从中获得高度准确的预测，但是我们几乎不希望了解模型用于将特定图像分类为类别的数据的内部特征和表示形式。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*bcfzg3EUoTT3GwIry3APzw.png?q=20",
+  "caption": "Source: CMU ML blog",
+  "type": "image",
+  "file": "1*bcfzg3EUoTT3GwIry3APzw.png"
+}, {
+  "tag": "H1",
+  "text": "Google has started a new service to tackle that",
+  "translation": "Google已启动一项新服务来解决该问题"
+}, {
+  "tag": "P",
+  "text": "Without a doubt, Google (or its parent company Alphabet) has a big stake in the proper development of the enormous AI-enabled economy, as projected by business analysts and economists (see the previous section).",
+  "translation": "毫无疑问，正如商业分析师和经济学家所预测的那样，谷歌（或其母公司Alphabet）在庞大的人工智能经济的适当发展中占有很大的份额（请参阅上一节）。"
+}, {
+  "tag": "P",
+  "text": "Google, had famously set its official strategic policy to be “AI-first”, back in 2017.",
+  "translation": "Google早在2017年就将官方战略政策设定为“人工智能至上”。"
+}, {
+  "tag": "P",
+  "text": "Therefore, it is perhaps feeling the pressure to be the torchbearer in the industry for making AI less mysterious and more amenable to the general user base — by offering service in explainable AI.",
+  "translation": "因此，通过提供可解释的AI服务，使AI变得不那么神秘，更适合普通用户群，这可能会成为行业中的火炬手的压力。"
+}, {
+  "tag": "H2",
+  "text": "What is explainable AI (or xAI)?",
+  "translation": "什么是可解释的AI（或xAI）？"
+}, {
+  "tag": "P",
+  "text": "The notion is, as simple as the name suggests. You want your model to spit out, not only predictions but also some bit of explanation, on why the predictions turned out to be that way.",
+  "translation": "顾名思义，这个概念很简单。 您希望您的模型不仅要进行预测，还需要进行一些解释，说明预测结果为何是如此。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*yaGQiryx4MTKRry-G4Dd2A.png?q=20",
+  "type": "image",
+  "file": "1*yaGQiryx4MTKRry-G4Dd2A.png"
+}, {
+  "tag": "P",
+  "text": "But why is it needed?",
+  "translation": "但是为什么需要它呢？"
+}, {
+  "tag": "P",
+  "text": "This article covers some essential points. Primary reasons for AI systems to offer explainability are —",
+  "translation": "本文涵盖了一些要点。 人工智能系统提供可解释性的主要原因是-"
+}, {
+  "tag": "UL",
+  "texts": ["Improve human readability", "Determine the justifiability of the decision made by the machine", "To help in deciding accountability, liability leading to good policy-making", "Avoid discrimination", "Reduce societal bias"],
+  "translations": ["提高人类可读性", "确定机器决策的合理性", "为了帮助确定问责制，导致良好决策的责任", "避免歧视", "减少社会偏见"]
+}, {
+  "tag": "P",
+  "text": "There is still much debate around it, but a consensus is emerging that post-prediction justification is not a correct approach. Explainability goals should be built into the AI model/system at the core design stage and should be an integral part of the system rather than an attachment.",
+  "translation": "围绕它的争论仍然很多，但是正在出现一种共识，即预测后的证明不是正确的方法。 可解释性目标应该在核心设计阶段内置到AI模型/系统中，并且应该是系统的组成部分而不是附件。"
+}, {
+  "tag": "P",
+  "text": "Some popular methods have been proposed.",
+  "translation": "已经提出了一些流行的方法。"
+}, {
+  "tag": "UL",
+  "texts": ["Understand the data better — intuitive visualization showing the discriminative features", "Understand the model better — visualizing the activation of neural net layers.", "Understand user psychology and behavior better — incorporating behavior models in the system alongside the statistical learning, and generate/ consolidate appropriate data/explanations along the way"],
+  "translations": ["更好地理解数据-直观的可视化显示区别特征", "更好地理解模型-可视化神经网络层的激活。", "更好地了解用户心理和行为-将行为模型与统计学习一起纳入系统，并在此过程中生成/合并适当的数据/说明"]
+}, {
+  "tag": "P",
+  "text": "Even DARPA has started a whole program to build and design these XAI principles and algorithms for future AI/ML-driven defense systems.",
+  "translation": "甚至DARPA也已经启动了一个完整的程序来为未来的AI / ML驱动的防御系统构建和设计这些XAI原理和算法。"
+}, {
+  "tag": "P",
+  "text": "Explainability goals should be built into the AI model/system at the core design stage",
+  "translation": "在核心设计阶段，应将可解释性目标构建到AI模型/系统中"
+}, {
+  "tag": "P",
+  "text": "Read this article for a thorough discussion of the concept.",
+  "translation": "阅读本文以对概念进行彻底的讨论。"
+}, {
+  "tag": "H2",
+  "text": "Should AI explain itself? or should we design Explainable AI so that it doesn’t have to",
+  "translation": "AI应该自我解释吗？ 还是我们应该设计可解释的AI，以便它不必"
+}, {
+  "tag": "H3",
+  "text": "In this article, I’ll go over:",
+  "translation": "在本文中，我将介绍："
+}, {
+  "tag": "H2",
+  "text": "Google Cloud hopes to lead in xAI",
+  "translation": "Google Cloud希望引领xAI"
+}, {
+  "tag": "P",
+  "text": "Google is a leader in attracting AI and ML talents and it is the undisputed giant in the current information-based economy of the world. However, its cloud services are a distant third in comparison to that from Amazon and Microsoft.",
+  "translation": "Google是吸引AI和ML人才的领导者，并且是当今世界基于信息经济的无可争议的巨头。 但是，与来自亚马逊和微软的云服务相比，其云服务仅占三分之一。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*1kmasJQDXx0NoclK5qEpgg.png?q=20",
+  "caption": "Source: Top cloud providers 2019",
+  "type": "image",
+  "file": "1*1kmasJQDXx0NoclK5qEpgg.png"
+}, {
+  "tag": "P",
+  "text": "However, as this article points out, although the traditional infrastructure-as-a-service wars have been largely decided, new technologies such as AI and ML have opened the field up to the players for novel themes, strategies, and approaches to try on.",
+  "translation": "但是，正如本文所指出的那样，尽管传统的基础设施即服务之战已在很大程度上决定了，但AI和ML等新技术为尝试新主题，战略和方法的参与者打开了广阔的视野 。"
+}, {
+  "tag": "P",
+  "text": "Building on those lines of thought, at an event in London this week, Google’s cloud computing division pitched a new facility that it hopes will give it the edge on Microsoft and Amazon.",
+  "translation": "基于这些思路，本周在伦敦举行的一次活动上，谷歌的云计算部门推出了一项新的设施，希望借此使其在微软和亚马逊领域处于优势地位。"
+}, {
+  "tag": "P",
+  "text": "The famous AI researcher Prof. Andrew Moore introduced and explained this service in London.",
+  "translation": "著名的AI研究人员Andrew Moore教授在伦敦介绍并解释了这项服务。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*VVWDCacmDmOJTqYzMGsI2Q.jpeg?q=20",
+  "caption": "Prof. Andrew Moore in London for Google Cloud explainable AI service launch, source",
+  "type": "image",
+  "file": "1*VVWDCacmDmOJTqYzMGsI2Q.jpeg"
+}, {
+  "tag": "P",
+  "text": "From their official blog,",
+  "translation": "在他们的官方博客中，"
+}, {
+  "tag": "P",
+  "text": "“Explainable AI is a set of tools and frameworks to help you develop interpretable and inclusive machine learning models and deploy them with confidence. With it, you can understand feature attributions in AutoML Tables and AI Platform and visually investigate model behavior using the What-If Tool.”",
+  "translation": "“可解释的AI是一套工具和框架，可帮助您开发可解释且包容的机器学习模型并充满信心地部署它们。 借助它，您可以了解AutoML表和AI平台中的功能归因，并使用假设分析工具直观地调查模型行为。”"
+}, {
+  "tag": "H2",
+  "text": "Initially — modest goals",
+  "translation": "最初-适度的目标"
+}, {
+  "tag": "P",
+  "text": "Initially, the goals and reach are rather modest. The service will provide information about the performance and potential shortcomings of the face- and object-detection models.",
+  "translation": "最初，目标和影响范围不大。 该服务将提供有关人脸和物体检测模型的性能以及潜在缺陷的信息。"
+}, {
+  "tag": "P",
+  "text": "However, with time, GCP hopes to offer a wider set of insights and visualizations to help make the inner workings of its AI systems less mysterious and more trustworthy to everybody.",
+  "translation": "但是，随着时间的流逝，GCP希望提供更多的见解和可视化效果，以帮助使其AI系统的内部工作变得不那么神秘，并使每个人都更值得信赖。"
+}, {
+  "tag": "P",
+  "text": "New technologies such as AI and ML have opened the field up to the Cloud service players for novel themes, strategies, and approaches to try on.",
+  "translation": "AI和ML等新技术为尝试新主题，战略和方法的云服务参与者打开了广阔的视野。"
+}, {
+  "tag": "P",
+  "text": "Prof. Moore was candid in his acceptance that AI systems have given even the best minds at Google a hard time in the matter of explainability,",
+  "translation": "摩尔教授坦率地接受了AI系统，即使在可解释性方面，即使是Google最好的头脑也很难解决，"
+}, {
+  "tag": "P",
+  "text": "“One of the things which drives us crazy at Google is we often build really accurate machine learning models, but we have to understand why they’re doing what they’re doing. And in many of the large systems, we built for our smartphones or for our search-ranking systems, or question-answering systems, we’ve internally worked hard to understand what’s going on.”",
+  "translation": "“令我们为之疯狂的一件事是，我们经常会建立非常准确的机器学习模型，但我们必须了解他们为什么做自己在做的事情。 在许多大型系统中，我们都是为智能手机，搜索排名系统或问题解答系统而构建的，我们内部一直在努力地了解正在发生的事情。”"
+}, {
+  "tag": "P",
+  "text": "One of the ways, Google hopes to give users a better explanation, is through the so-called model cards.",
+  "translation": "谷歌希望给用户更好的解释的一种方式是通过所谓的模型卡。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*sHUJhD7FPjabuw-wFDqVEQ.png?q=20",
+  "caption": "Google model card for face detection, Source: ZDNet article",
+  "type": "image",
+  "file": "1*sHUJhD7FPjabuw-wFDqVEQ.png"
+}, {
+  "tag": "P",
+  "text": "Google used to offer a scenario analysis What-If tool. They are encouraging users to pair up new explainability tools with this scenario analysis framework.",
+  "translation": "Google曾经提供过一种情景分析假设工具。 他们鼓励用户将新的可解释性工具与此方案分析框架配对。"
+}, {
+  "tag": "P",
+  "text": "“You can pair AI Explanations with our What-If tool to get a complete picture of your model’s behavior,” said Tracy Frey, Director of Strategy at Google Cloud.",
+  "translation": "“您可以将AI解释与我们的假设分析工具配对，以全面了解模型的行为，” Google Cloud战略总监Tracy Frey说。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*w5pw3oe-XJanDTcTw889aQ.png?q=20",
+  "caption": "Google AI’s What-If tool",
+  "type": "image",
+  "file": "1*w5pw3oe-XJanDTcTw889aQ.png"
+}, {
+  "tag": "P",
+  "text": "And, it’s a free add-on, for now. Explainable AI tools are provided at no extra charge to users of AutoML Tables or AI Platform.",
+  "translation": "而且，目前是免费的附加组件。 向AutoML表或AI平台的用户免费提供了可解释的AI工具。"
+}, {
+  "tag": "P",
+  "text": "For more details and a historical perspective, please consider reading this wonderful whitepaper.",
+  "translation": "有关更多详细信息和历史观点，请考虑阅读这份精彩的白皮书。"
+}, {
+  "tag": "P",
+  "text": "Overall, this sounds like a good start. Although, not everybody, even within Google, is enthusiastic about the whole idea of xAI.",
+  "translation": "总体而言，这听起来是一个好的开始。 尽管不是每个人，即使是在Google内部，都对xAI的整个想法充满热情。"
+}, {
+  "tag": "H2",
+  "text": "Some say bias is a bigger issue",
+  "translation": "有人说偏见是一个更大的问题"
+}, {
+  "tag": "P",
+  "text": "In the past, Peter Norvig, Google research director, had said about explainable AI,",
+  "translation": "过去，Google研究总监Peter Norvig曾谈到可解释的AI，"
+}, {
+  "tag": "P",
+  "text": "“You can ask a human, but, you know, what cognitive psychologists have discovered is that when you ask a human you’re not really getting at the decision process. They make a decision first, and then you ask, and then they generate an explanation and that may not be the true explanation.”",
+  "translation": "“您可以问一个人，但是，您知道，认知心理学家发现的是，当您问一个人时，您并没有真正进入决策过程。 他们首先做出决定，然后您问，然后产生解释，而这可能不是真正的解释。”"
+}, {
+  "tag": "P",
+  "text": "So, essentially, our decision-making process is limited by psychology and it will be no different for a machine. Do we really need to alter these mechanics for machine intelligence and what if the answer and insights that come out, are not palatable to the users?",
+  "translation": "因此，从本质上讲，我们的决策过程受心理学的限制，对于机器而言，这没有什么不同。 我们真的需要改变这些机制来提高机器智能吗？如果得出的答案和见解对用户而言并不令人满意，该怎么办？"
+}, {
+  "tag": "P",
+  "text": "Instead, he argued that tracking and identifying bias and fairness in the decision-making process of the machine should be given more thought and importance.",
+  "translation": "相反，他认为应该在机器决策过程中跟踪和识别偏见和公平性，并给予更多的思考和重视。"
+}, {
+  "tag": "P",
+  "text": "For this to happen, inner working of a model is not necessarily the best place to look at. One can look at the ensemble of output decisions made by the system over time and identify specific pattern of hidden bias mechanisms.",
+  "translation": "为此，模型的内部工作不一定是最好的观察场所。 可以查看系统随着时间推移做出的输出决策的整体，并确定隐藏偏差机制的特定模式。"
+}, {
+  "tag": "P",
+  "text": "Should bias and fairness be given more importance than a mere explanation for future AI systems?",
+  "translation": "是否应该给予偏见和公平而不是仅仅对未来的AI系统进行解释？"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*LiDOMxtzHiyD3NCgrmmJLg.png?q=20",
+  "type": "image",
+  "file": "1*LiDOMxtzHiyD3NCgrmmJLg.png"
+}, {
+  "tag": "P",
+  "text": "If you apply for a loan and get rejected, an explainable AI service may spit out a statement like — “your loan application was rejected because of lack of sufficient income proof”. However, anybody who has built ML models, know that the process is not that one dimensional and the specific structure and weights of mathematical models that give rise to such a decision (often as an ensemble) depend on the collected dataset, which can be biased against certain section of people in the society where matter of income and economic mobility is concerned.",
+  "translation": "如果您申请贷款而被拒绝，可以解释的AI服务可能会发出诸如“由于缺乏足够的收入证明而拒绝了您的贷款申请”之类的声明。 但是，任何构建过ML模型的人都知道，过程并不是一维的，而导致这种决策（通常是整体）的数学模型的特定结构和权重取决于所收集的数据集，这可能会产生偏差 反对社会中与收入和经济流动性有关的某些人。"
+}, {
+  "tag": "P",
+  "text": "So, the debate will rage on the relative importance of having merely a system showing rudimentary, watered-down explanation, and building a system with less bias and a much higher degree of fairness.",
+  "translation": "因此，争论的焦点将集中在仅仅具有显示基本的，被淡化的解释的系统，以及建立具有较少偏见和较高程度的公平性的系统的相对重要性。"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Tirthajyoti Sarkar的文章《Google’s new ‘Explainable AI” (xAI) service》，参考：https://towardsdatascience.com/googles-new-explainable-ai-xai-service-83a7bc823773)",
+  "translation": "（本文翻译自Tirthajyoti Sarkar的文章《 Google的新“可解释AI”（xAI）服务》，参考：https：//towardsdatascience.com/googles-new-explainable-ai-xai-service-83a7bc823773）"
+}]
