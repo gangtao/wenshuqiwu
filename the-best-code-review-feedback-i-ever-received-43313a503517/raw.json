@@ -1,0 +1,75 @@
+[{
+  "tag": "H1",
+  "text": "Paying It Forward",
+  "translation": "向前付款"
+}, {
+  "tag": "P",
+  "text": "The code review feedback I got from the senior engineer that day has proven to be the best engineering feedback I’ve received in my entire career so far.",
+  "translation": "那天我从高级工程师那里获得的代码审查反馈被证明是迄今为止我整个职业生涯中收到的最好的工程反馈。"
+}, {
+  "tag": "P",
+  "text": "Years later, I encountered another engineer who was making large, sweeping changes all the time. I shared this same feedback with him. He seemed annoyed with me, and I can understand why. I left that job before I witnessed any improvement in his work. I hope he eventually experiences the benefits of small changes for himself.",
+  "translation": "多年后，我遇到了另一位工程师，他一直在进行大规模的彻底更改。 我与他分享了同样的反馈。 他似乎对我很烦，我明白为什么。 在我看到他的工作有所改善之前，我离开了这份工作。 我希望他最终能体会到小改变对自己的好处。"
+}, {
+  "tag": "P",
+  "text": "He’ll be a better engineer.",
+  "translation": "他将成为一名更好的工程师。"
+}, {
+  "tag": "H1",
+  "text": "The Benefits to Making Incremental Changes",
+  "translation": "进行增量更改的好处"
+}, {
+  "tag": "P",
+  "text": "There are many benefits to making incremental changes.",
+  "translation": "进行增量更改有很多好处。"
+}, {
+  "tag": "UL",
+  "texts": ["Fewer merge conflicts. The more files you change, the higher the chances that somebody else is changing a subset of those files at the same time. Avoid merge conflicts by making small changes and getting them checked in quickly.", "Faster code reviews. It’s easier for humans to review five files than 50+. It’s easier to review changes that can be explained quickly — as opposed to changes that require a 10-minute in-person conversation before anybody even starts looking at the code. Engineers can be lazy — if they see a large code review, they’ll hope somebody else does the work instead. It can take you longer to find somebody who will review your large code changes.", "Earlier course correction. Your code reviewers might disagree with the direction you’re taking. They might ask you do redo everything. This isn’t a big deal if you’ve only spent a couple of hours on the change. It’s much more painful when you’ve wasted two days or more perfecting an end-to-end scenario.", "Faster testing. If you’ve touched everything from the UI down to the database, you may need to re-test the entire product. If you make small changes, you may only need to test the pieces you’re modifying. This benefit becomes especially pronounced if you need to address a lot of code review feedback, or if you need to merge a lot of code before checking in. Re-testing everything can take a long time — especially if some of the tests are manual.", "Fewer bugs. Small changes means that you don’t have to keep the entire world in your head at the same time. You can focus on the small corner you’re improving, and make sure you do that well. (I’ve seen an engineer who became so overwhelmed with his large changes that he adopted a habit of just hoping for the best, checking in, and fixing bugs after the fact. Don’t be that person. Even if no customer ever notices, you’ll annoy the heck out of your fellow engineers. They’ll stop trusting your code.)", "Easier troubleshooting. If you do end up breaking something, it’ll be easier to find the root cause if your change was small.", "Incremental deployments. If you’re wondering how you’ll be able to deploy something with no downtime, small, incremental changes likely are your answer (but they may not be the whole story).", "It’s easier to revert your change. Bugs happen. The smaller your change, the easier it is to revert. If you checked in a gigantic change and several people changed some of the same files afterward, you may end up in a painful situation where you have to pick between reverting a lot of changes, or checking in a quick fix (which may not actually work). If your production environment is on fire, it’s a lot less stressful for everyone if you can simply revert the original bad change.", "Easier deployment roll-backs. If a single deployment updates a web service and immediately introduces a UI feature that depends on the service update, you can’t revert the service change without removing the UI feature first. Depending on how your deployments work, reverting both changes with zero downtime may be non-trivial. It would have been better to check-in and deploy the web service change on its own.", "Lower risk. This is really a consequence of all of the above."],
+  "translations": ["合并冲突较少。 您更改的文件越多，其他人同时更改这些文件的子集的机会就越高。 通过进行小的更改并快速检查它们，避免合并冲突。", "更快的代码审查。 与50多个版本相比，人类更容易查看五个文件。 与那些需要10分钟的面对面交谈才能在任何人甚至开始查看代码之前进行的更改相比，查看可以快速解释的更改要容易得多。 工程师可能会很懒惰-如果他们看到大量的代码审查，他们希望其他人来代替。 您可能需要更长的时间才能找到可以审查您的大型代码更改的人员。", "较早的课程更正。 您的代码审核者可能不同意您的指导方向。 他们可能会要求您重做所有事情。 如果您只花了几个小时进行更改，这没什么大不了的。 如果您浪费了两天或更长时间来完善端到端方案，那将更加痛苦。", "更快的测试。 如果您触摸了从UI到数据库的所有内容，则可能需要重新测试整个产品。 如果您进行小的更改，则可能只需要测试您要修改的部分。 如果您需要解决很多代码检查反馈，或者需要在检入之前合并很多代码，则此好处尤其明显。重新测试所有内容可能需要很长时间-特别是某些测试是手动的。", "更少的错误。 微小的变化意味着您不必同时掌握整个世界。 您可以专注于要改进的小角落，并确保做得很好。 （我见过一位工程师，他对他的大改动感到不知所措，以至于他养成了只求最好，检查并修复错误的习惯。事实并非如此。即使没有客户注意到， ，您将惹恼其他工程师，他们将停止信任您的代码。）", "简化故障排除。 如果您确实要破坏某些东西，那么如果更改很小，则更容易找到根本原因。", "增量部署。 如果您想知道如何在不停机的情况下部署某些产品，则可能需要进行小幅的，增量的更改（但这可能不是全部）。", "恢复您的更改更容易。 发生错误。 更改越小，还原越容易。 如果您签入了一个巨大的更改，然后又有几个人更改了一些相同的文件，那么您可能会陷入痛苦的境地，必须在恢复大量更改或快速修复之间进行选择（这可能实际上不起作用） ）。 如果您的生产环境着火了，那么只要您可以还原原始的不良更改，对每个人的压力就减轻了很多。", "部署回滚更加容易。 如果单个部署更新了Web服务并立即引入了依赖于服务更新的UI功能，那么您必须先删除UI功能才能还原服务更改。 根据部署的工作方式，以零停机时间还原这两个更改可能并不容易。 最好自己签入和部署Web服务更改。", "降低风险。 这实际上是上述所有情况的结果。"]
+}, {
+  "tag": "H1",
+  "text": "The Best Code Review Feedback I Ever Received",
+  "translation": "我收到的最佳代码审查反馈"
+}, {
+  "tag": "H2",
+  "text": "Keep your changes small",
+  "translation": "保持小的变化"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*S-h-srGzbOBJK0Wv?q=20",
+  "caption": "Photo by Jonathan Borba on Unsplash",
+  "type": "image",
+  "file": "0*S-h-srGzbOBJK0Wv"
+}, {
+  "tag": "P",
+  "text": "As a junior engineer, I became prolific at making large, sweeping changes. I’d see a problem and then tackle it head-on.",
+  "translation": "作为一名初级工程师，我擅长进行大范围的全面更改。 我会看到一个问题，然后直接解决。"
+}, {
+  "tag": "P",
+  "text": "This usually meant that I’d send out gigantic code reviews. I’d touch everything from the UI all the way down to database — in a single change.",
+  "translation": "这通常意味着我要发送大量的代码审查。 只需一次更改，我就可以触及从UI到数据库的所有内容。"
+}, {
+  "tag": "P",
+  "text": "I was proud of my ability to keep the whole system in my head like that. I was proud of working “quickly.” I was proud of my audacity, my bravery, my ability to take on big problems.",
+  "translation": "我为能够将整个系统保持在自己的头脑中而感到自豪。 我为“快速”工作而感到自豪。我为我的胆识，勇敢和解决重大问题的能力感到自豪。"
+}, {
+  "tag": "P",
+  "text": "One day, a senior engineer pulled me aside and gave me the best code review feedback I’ve ever received in my career. He told me to break up my gigantic code reviews into smaller, incremental changes.",
+  "translation": "有一天，一位高级工程师将我拉到一边，给了我职业生涯中最好的代码审查反馈。 他告诉我将庞大的代码审查分解为较小的增量更改。"
+}, {
+  "tag": "P",
+  "text": "My immediate reaction was to be annoyed. I didn’t understand why he wanted me to break up my changes. I had a lot of pride in my ability to think big! Why was he telling me that my work was bad?! Planning out incremental steps would only slow me down!",
+  "translation": "我的立即反应是被惹恼了。 我不明白他为什么要我分开我的更改。 我为自己有远见卓识而感到自豪！ 他为什么告诉我我的工作不好？！ 计划逐步的步骤只会让我放慢脚步！"
+}, {
+  "tag": "P",
+  "text": "I didn’t yet understand the many benefits of small, incremental changes. I’m glad I listened to this senior engineer anyway. I’m glad I learned to make smaller, incremental changes.",
+  "translation": "我还不了解细微的渐进式变更的许多好处。 无论如何，我很高兴听到了这位高级工程师的讲话。 我很高兴学会了较小的渐进式更改。"
+}, {
+  "tag": "P",
+  "text": "It’s now a superpower of mine.",
+  "translation": "现在是我的超级大国。"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Ceyla Ponders的文章《The Best Code Review Feedback I Ever Received》，参考：https://medium.com/better-programming/the-best-code-review-feedback-i-ever-received-43313a503517)",
+  "translation": "（本文翻译自Ceyla Ponders的文章，《我收到的最佳代码审查反馈》，参考：https：//medium.com/better-programming/the-best-code-review-feedback-i-ever-received-43313a503517 ）"
+}]
