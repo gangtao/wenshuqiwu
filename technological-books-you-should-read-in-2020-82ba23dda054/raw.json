@@ -1,0 +1,127 @@
+[{
+  "tag": "P",
+  "text": "If you’re looking for more book recommendations, see my other book lists:",
+  "translation": "如果您在寻找更多推荐书籍，请参阅我的其他书籍清单："
+}, {
+  "tag": "UL",
+  "texts": ["Artificial Intelligence Books", "Data Science Books", "Machine Learning Books", "Startup Books"],
+  "translations": ["人工智能书籍", "数据科学书籍", "机器学习书", "入门书"]
+}, {
+  "tag": "H1",
+  "text": "Technological Books you should read in 2020",
+  "translation": "您应该在2020年阅读的技术书籍"
+}, {
+  "tag": "H2",
+  "text": "We’re living in the future. It’s time to understand it.",
+  "translation": "我们生活在未来。 是时候了解它了。"
+}, {
+  "tag": "P",
+  "text": "Our world is a global village. If you’re reading these words, you probably have a smartphone with a connection to the Internet. Last two decades were crazy when it comes to technology and how we use it. Never in our history we have seen so many breakthroughs in such a short time. This text focuses on books which discuss those changes from different perspectives.",
+  "translation": "我们的世界是一个地球村。 如果您正在阅读这些文字，则可能是您的智能手机已连接到互联网。 在技术以及我们如何使用技术方面，过去的二十年非常疯狂。 在我们的历史上，我们从未在如此短的时间内见过如此多的突破。 本文重点介绍从不同角度讨论这些变化的书籍。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*YAaAjBYEDVI7ynN588t8fg.jpeg?q=20",
+  "caption": "Technology Books you should read in 2020",
+  "type": "image",
+  "file": "1*YAaAjBYEDVI7ynN588t8fg.jpeg"
+}, {
+  "tag": "H1",
+  "text": "Innovators changing the world",
+  "translation": "创新者改变世界"
+}, {
+  "tag": "P",
+  "text": "We all love stories about heroes, who make sacrifices, lose, and failure after failure come back to change the world. The books below focus on people:",
+  "translation": "我们都喜欢关于英雄的故事，他们做出牺牲，失败和失败，失败之后又回来改变了世界。 以下书籍着重于人："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/20/0*X5bR_KalYAhgI1yb?q=20",
+  "type": "image",
+  "file": "0*X5bR_KalYAhgI1yb"
+}, {
+  "tag": "P",
+  "text": "The Innovators by Walter Isaacson is a book about creative minds, who push boundaries, go against their eras and reinvent how things are done. Now an absolute classic when it comes to innovations.",
+  "translation": "沃尔特·艾萨克森（Walter Isaacson）撰写的《创新者》（Innovators）是一本关于创新思维的书，他们突破界限，与时代背道而驰，重新发明了事物的完成方式。 现在是创新的绝对经典。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/20/0*sKK3geAcUhCrL-Xu?q=20",
+  "type": "image",
+  "file": "0*sKK3geAcUhCrL-Xu"
+}, {
+  "tag": "P",
+  "text": "Elon Musk is loved and hated by millions. His fascinating quest to bring electric cars to masses and go to Mars makes headlines. His biography presents him from his South African childhood up to now. An amazing story which still unveils.",
+  "translation": "埃隆·马斯克（Elon Musk）受千百万人的喜爱和憎恨。 他将电动汽车推向大众并前往火星的着迷之旅成为头条新闻。 他的传记介绍了他从南非童年至今的故事。 一个惊人的故事至今仍在揭晓。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/20/0*LXKD5BSBDC3pZkWc?q=20",
+  "type": "image",
+  "file": "0*LXKD5BSBDC3pZkWc"
+}, {
+  "tag": "P",
+  "text": "The Everything Store is a story of how Amazon raised from a small online book seller to a global behemoth which operates across many industries and is constantly growing. Read it to understand why it’s always ‘Day One’.",
+  "translation": "一切商店（Everything Store）讲述了亚马逊如何从一个小型的在线图书销售商成长为一家遍及许多行业并且不断发展的全球巨头。 阅读它以了解为什么总是“第一天”。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/20/0*Yj6a2oICBkx69Ltc?q=20",
+  "type": "image",
+  "file": "0*Yj6a2oICBkx69Ltc"
+}, {
+  "tag": "P",
+  "text": "Bad Blood is about how wrong you can go if your goal is to ‘build a billion dollar company at all costs’ rather than innovate. It shows how Silicon Valley operates and how far you can go without having a working prototype.",
+  "translation": "如果您的目标是“不惜一切代价建立一家十亿美元的公司”而不是进行创新，那么Bad Blood就是您要走多大错。 它显示了硅谷的运作方式，以及在没有可用原型的情况下可以走多远。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/20/0*3YrL4J8poMaF-vLS?q=20",
+  "type": "image",
+  "file": "0*3YrL4J8poMaF-vLS"
+}, {
+  "tag": "P",
+  "text": "Rocket Billionaires shows how hard is rocket industry and why ‘rocket science’ still means ‘hard, almost impossible’. It presents the history of the first Moon landing, analyses satellite businesses and explain why private sector changed the rocket industry completely. Must read for anyone interested in space.",
+  "translation": "火箭亿万富翁表明了火箭工业有多艰辛，为什么“火箭科学”仍然意味着“困难，几乎是不可能的”。 它介绍了首次登月的历史，分析了卫星业务，并解释了为什么私营部门完全改变了火箭工业。 任何对太空感兴趣的人都必须阅读。"
+}, {
+  "tag": "H1",
+  "text": "Artificial Intelligence is coming",
+  "translation": "人工智能即将到来"
+}, {
+  "tag": "P",
+  "text": "Technology can have many faces, but one of the main one recently is Artificial Intelligence. We’re all using it, whether we want it or no. The books below explain how we’ve arrived at the current era and what might await us in the future.",
+  "translation": "技术可以有很多面孔，但是最近的主要面孔之一是人工智能。 无论是否需要，我们都在使用它。 以下书籍说明了我们如何进入当前时代，以及将来可能要等待我们什么。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/20/0*wTXEfOl9UKslB-Aq?q=20",
+  "type": "image",
+  "file": "0*wTXEfOl9UKslB-Aq"
+}, {
+  "tag": "P",
+  "text": "Sapiens by Harari presents our history in compelling and coherent way. From our ancient ancestors to now, from simple tools to Internet and smartphones, this story is a great read to gain perspective on why we are who we are as a human race."
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/20/0*V4vlhcT2QsUM_qdm?q=20",
+  "type": "image",
+  "file": "0*V4vlhcT2QsUM_qdm"
+}, {
+  "tag": "P",
+  "text": "Superintelligence is the classic reference for Artificial Intelligence and Artificial General Intelligence. Nick Bostrom lays out all the theory which is often used by other authors. Great read for anyone wondering how AI will change the world.",
+  "translation": "超级智能是人工智能和人工智能的经典参考。 尼克·博斯特伦（Nick Bostrom）列出了其他作者经常使用的所有理论。 对于任何想知道人工智能将如何改变世界的人来说都是一本好书。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/19/0*VN0pOPQCf-K09CxE?q=20",
+  "type": "image",
+  "file": "0*VN0pOPQCf-K09CxE"
+}, {
+  "tag": "P",
+  "text": "Weapons of Math Destruction is a book about mathematics. Cathy O’Neil shows how our world is governed by algorithms and how we let algorithms decide for us. Fascinating and terrifying at the same time.",
+  "translation": "《数学毁灭武器》是一本有关数学的书。 凯茜·奥尼尔（Cathy O’Neil）展示了算法如何控制我们的世界，以及如何让算法为我们做出决定。 同时令人着迷和恐惧。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/20/0*M4UJg3TK9r2oMkG4?q=20",
+  "type": "image",
+  "file": "0*M4UJg3TK9r2oMkG4"
+}, {
+  "tag": "P",
+  "text": "AI Superpowers is a great reference for explaining how AI is used in business and also how China is using AI to its benefit. The author explains differences between Silicon Valley and Chinese start-up ecosystem.",
+  "translation": "人工智能超级大国对于解释如何在商业中使用人工智能以及中国如何利用人工智能以使其受益而提供了很好的参考。 作者解释了硅谷和中国初创生态系统之间的差异。"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Przemek Chojecki的文章《Technological Books you should read in 2020》，参考：https://towardsdatascience.com/technological-books-you-should-read-in-2020-82ba23dda054)",
+  "translation": "（本文翻译自Przemek Chojecki的文章，《 2020年您应该阅读的技术书籍》，参考：https：//towardsdatascience.com/technologic-books-you-should-read-in-2020-82ba23dda054）"
+}]
