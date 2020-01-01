@@ -1,0 +1,249 @@
+[{
+  "tag": "H1",
+  "text": "The math behind GANs (Generative Adversarial Networks)",
+  "translation": "GAN（生成对抗网络）背后的数学"
+}, {
+  "tag": "H2",
+  "text": "A detailed understanding of the math behind original GANs including their limitations",
+  "translation": "详细了解原始GAN背后的数学原理及其局限性"
+}, {
+  "tag": "H1",
+  "text": "1. Introduction",
+  "translation": "1.简介"
+}, {
+  "tag": "P",
+  "text": "The Generative Adversarial Network (GAN) comprises of two models: a generative model G and a discriminative model D. The generative model can be considered as a counterfeiter who is trying to generate fake currency and use it without being caught, whereas the discriminative model is similar to police, trying to catch the fake currency. This competition goes on till the counterfeiter becomes smart enough to successfully fool the police.",
+  "translation": "生成对抗网络（GAN）包含两个模型：生成模型G和区分模型D。可以将生成模型视为伪造者，该伪造者试图生成假货币并在不被捕获的情况下使用它，而区分模型是 类似于警察，试图抓住假币。 这场竞争一直持续到造假者变得足够聪明以成功欺骗警察为止。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*GVn3FkfSWT2gcEH3oYs6Uw.png?q=20",
+  "caption": "Figure 1: Representation of the generator and discriminator as a counterfeiter and police, respectively. Figure from [1].",
+  "type": "image",
+  "file": "1*GVn3FkfSWT2gcEH3oYs6Uw.png"
+}, {
+  "tag": "P",
+  "text": "In other words,",
+  "translation": "换一种说法，"
+}, {
+  "tag": "P",
+  "text": "Discriminator: The role is to distinguish between actual and generated (fake) data.",
+  "translation": "鉴别器：作用是区分实际数据和生成的（伪）数据。"
+}, {
+  "tag": "P",
+  "text": "Generator: The role is to create data in such a way that it can fool the discriminator.",
+  "translation": "生成器（Generator）：其作用是创建数据，使欺骗者无法使用。"
+}, {
+  "tag": "H1",
+  "text": "2. Some parameters and variables",
+  "translation": "2.一些参数和变量"
+}, {
+  "tag": "P",
+  "text": "Before we go into the derivation, let’s describe some parameters and variables.",
+  "translation": "在推导之前，我们先介绍一些参数和变量。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*No6f6hSCKaiXs2Mr9T9wpA.png?q=20",
+  "type": "image",
+  "file": "1*No6f6hSCKaiXs2Mr9T9wpA.png"
+}, {
+  "tag": "H1",
+  "text": "3. Derivation of the loss function",
+  "translation": "3.损失函数的推导"
+}, {
+  "tag": "P",
+  "text": "The loss function described in the original paper by Ian Goodfellow et al. can be derived from the formula of binary cross-entropy loss. The binary cross-entropy loss can be written as,",
+  "translation": "Ian Goodfellow等人在原始论文中描述了损失函数。 可以从二进制交叉熵损失的公式得出。 二进制交叉熵损失可以写成："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*kACQPgX3Dk-X7u3J51JXxw.png?q=20",
+  "type": "image",
+  "file": "1*kACQPgX3Dk-X7u3J51JXxw.png"
+}, {
+  "tag": "H2",
+  "text": "3.1 Discriminator loss",
+  "translation": "3.1鉴别器损失"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*brURhcYCI6WtbTuEw1XJ-Q.png?q=20",
+  "type": "image",
+  "file": "1*brURhcYCI6WtbTuEw1XJ-Q.png"
+}, {
+  "tag": "P",
+  "text": "Now, the objective of the discriminator is to correctly classify the fake and real dataset. For this, equations (1) and (2) should be maximized and final loss function for the discriminator can be given as,",
+  "translation": "现在，鉴别器的目的是正确分类假数据和真实数据集。 为此，应将等式（1）和（2）最大化，鉴别器的最终损失函数可以表示为："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*fWHhgZg_KNS3h8qq82QD3Q.png?q=20",
+  "type": "image",
+  "file": "1*fWHhgZg_KNS3h8qq82QD3Q.png"
+}, {
+  "tag": "H2",
+  "text": "3.2 Generator loss",
+  "translation": "3.2发电机损耗"
+}, {
+  "tag": "P",
+  "text": "Here, the generator is competing against discriminator. So, it will try to minimize the equation (3) and loss function is given as,",
+  "translation": "在这里，生成器正在与鉴别器竞争。 因此，它将尝试使方程式（3）最小化，损失函数为"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*Hdgo1Slf4fDiSrUfO3IwIQ.png?q=20",
+  "type": "image",
+  "file": "1*Hdgo1Slf4fDiSrUfO3IwIQ.png"
+}, {
+  "tag": "H2",
+  "text": "3.3 Combined loss function",
+  "translation": "3.3组合损失函数"
+}, {
+  "tag": "P",
+  "text": "We can combine equations (3) and (4) and write as,",
+  "translation": "我们可以将等式（3）和（4）组合起来，写成"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*_vFj5-pJP866w-LzdaHdoA.png?q=20",
+  "type": "image",
+  "file": "1*_vFj5-pJP866w-LzdaHdoA.png"
+}, {
+  "tag": "P",
+  "text": "Remember that the above loss function is valid only for a single data point, to consider entire dataset we need to take the expectation of the above equation as",
+  "translation": "请记住，上述损失函数仅对单个数据点有效，要考虑整个数据集，我们需要将上述等式的期望作为"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*79sBUnY8G3nlV9khUr1jkg.png?q=20",
+  "type": "image",
+  "file": "1*79sBUnY8G3nlV9khUr1jkg.png"
+}, {
+  "tag": "P",
+  "text": "which is the same equation as described in the original paper by Goodfellow et al.",
+  "translation": "该方程与Goodfellow等人在原始论文中描述的方程相同。"
+}, {
+  "tag": "H1",
+  "text": "4. Algorithm",
+  "translation": "4.算法"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*i9Zti7ooRBCDpl3XgvBGUA.png?q=20",
+  "caption": "Figure 2: Algorithm described in the original paper by Goodfellow et al. Figure from [2].",
+  "type": "image",
+  "file": "1*i9Zti7ooRBCDpl3XgvBGUA.png"
+}, {
+  "tag": "P",
+  "text": "It can be noticed from the above algorithm that the generator and discriminator are trained separately. In the first section, real data and fake data are inserted into the discriminator with correct labels and training takes place. Gradients are propagated keeping generator fixed. Also, we update the discriminator by ascending its stochastic gradient because for discriminator we want to maximize the loss function given in equation (6).",
+  "translation": "从上述算法可以看出，生成器和鉴别器是分开训练的。 在第一部分中，将真实数据和伪数据插入带有正确标签的鉴别器中，并进行训练。 传播梯度以保持生成器固定。 同样，我们通过增加随机梯度来更新鉴别器，因为对于鉴别器，我们要最大化方程（6）中给出的损失函数。"
+}, {
+  "tag": "P",
+  "text": "On the other hand, we update the generator by keeping discriminator fixed and passing fake data with fake labels in order to fool the discriminator. Here, we update the generator by descending its stochastic gradient because for the generator we want to minimize the loss function given in equation (6).",
+  "translation": "另一方面，我们通过保持鉴别器固定并使用假标签传递假数据来欺骗鉴别器来更新生成器。 在此，我们通过降低其随机梯度来更新生成器，因为对于生成器，我们要最小化公式（6）中给出的损耗函数。"
+}, {
+  "tag": "H1",
+  "text": "5. Global Optimality of Pg = Pdata",
+  "translation": "5. Pg = Pdata的全局最优性"
+}, {
+  "tag": "P",
+  "text": "The optimal discriminator D for any given generator G can be found by taking derivative of the loss function (equation (6)),",
+  "translation": "任何给定生成器G的最优判别器D都可以通过对损失函数（方程（6））求导来求出，"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*BKxEQFfvLEjcxj07X9YkTA.png?q=20",
+  "type": "image",
+  "file": "1*BKxEQFfvLEjcxj07X9YkTA.png"
+}, {
+  "tag": "P",
+  "text": "The above equation is very important mathematically but in reality, you cannot calculate optimal D as Pdata(x) is not known. Now, the loss for G when we have optimal D can be obtained by substituting equation (7) into loss function as,",
+  "translation": "上面的方程在数学上非常重要，但是实际上，由于Pdata（x）未知，您无法计算出最佳D。 现在，通过将等式（7）代入损失函数，可以得到当我们有最优D时G的损失，"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*F0dPdkOJHF7_wCyokjo0ag.png?q=20",
+  "type": "image",
+  "file": "1*F0dPdkOJHF7_wCyokjo0ag.png"
+}, {
+  "tag": "P",
+  "text": "Now, Kullback-Leibler(KL) and Jensen-Shannon(JS) divergences are given by,",
+  "translation": "现在，Kullback-Leibler（KL）和Jensen-Shannon（JS）的散度由下式给出："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*_MoH4sKuguPRMs0Mw-6J3Q.png?q=20",
+  "type": "image",
+  "file": "1*_MoH4sKuguPRMs0Mw-6J3Q.png"
+}, {
+  "tag": "P",
+  "text": "Hence,",
+  "translation": "因此，"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*cx-dkavC6yJ-nXDaLgkn7g.png?q=20",
+  "type": "image",
+  "file": "1*cx-dkavC6yJ-nXDaLgkn7g.png"
+}, {
+  "tag": "P",
+  "text": "The above equation reduces to -2log2 as the Pg approaches Pdata because divergence becomes zero.",
+  "translation": "当Pg接近Pdata时，由于发散变为零，上述方程式简化为-2log2。"
+}, {
+  "tag": "H1",
+  "text": "6. Limitations",
+  "translation": "6.局限性"
+}, {
+  "tag": "P",
+  "text": "The loss function derived (equation (9)) has some limitations which are described in this section.",
+  "translation": "导出的损失函数（方程式（9））有一些限制，这些限制在本节中进行介绍。"
+}, {
+  "tag": "H2",
+  "text": "6.1 Vanishing Gradient",
+  "translation": "6.1消失梯度"
+}, {
+  "tag": "P",
+  "text": "The aim of optimization for equation (9) is to move Pg towards Pdata or Pr for an optimal D. JS divergence remains constant if there is no overlap between Pr and Pg (figure 3). It can be observed that JS divergence is constant and its gradient is close to 0 when the distance is more than 5, which represents that the training process does not have any influence on G (figure 4). The gradient is non-zero only when Pg and Pr have a significant overlap that means when D is close to optimal, G will face vanishing gradient problem.",
+  "translation": "公式（9）的优化目标是将Pg朝Pdata或Pr移动以获得最佳D。如果Pr和Pg之间没有重叠，则JS散度保持恒定（图3）。 可以看出，当距离大于5时，JS散度是恒定的并且其斜率接近于0，这表示训练过程对G没有任何影响（图4）。 仅当Pg和Pr具有明显的重叠时，梯度才为非零，这意味着当D接近最佳值时，G将面临消失的梯度问题。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*0_nNc7_9bSR0jTTtG1wKng.png?q=20",
+  "caption": "Figure 3: Illustration of training progress for a GAN. Two normal distributions are used here for visualization. Given an optimal D, the objective of GANs is to update G in order to move the generated distribution Pg (red) towards the real distribution Pr (blue) (G is updated from left to right in this figure. Left: initial state, middle: during training, right: training converging). However, JS divergence for the left two figures are both 0.693 and the figure on the right is 0.336, indicating that JS divergence does not provide sufficient gradient at the initial state. Figure from [3].",
+  "type": "image",
+  "file": "1*0_nNc7_9bSR0jTTtG1wKng.png"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*T3ymSEy4IvFW3Uc_k_29Ag.png?q=20",
+  "caption": "Figure 4: JS divergence and gradient change with the distance between Pr and Pg. The distance is the difference between the two distribution means. Figure from [3].",
+  "type": "image",
+  "file": "1*T3ymSEy4IvFW3Uc_k_29Ag.png"
+}, {
+  "tag": "P",
+  "text": "This problem can be countered by modifying the original loss function of G as,",
+  "translation": "可以通过修改G的原始损失函数来解决此问题，"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*q7pI_wd7H8HsDY-6wkA9-Q.png?q=20",
+  "type": "image",
+  "file": "1*q7pI_wd7H8HsDY-6wkA9-Q.png"
+}, {
+  "tag": "H2",
+  "text": "6.2 Mode Collapse",
+  "translation": "6.2模式崩溃"
+}, {
+  "tag": "P",
+  "text": "During training, the generator may get stuck into a setting where it always produces the same output. This is called mode collapse. This happens because the main aim of G was to fool D not to generate diverse output. The math behind this is a bit involved and will be discussed in future articles.",
+  "translation": "在训练过程中，发电机可能会卡在总是产生相同输出的设置中。 这称为模式崩溃。 发生这种情况是因为G的主要目的是愚弄D而不产生多样化的输出。 这背后的数学运算涉及到一点，将在以后的文章中进行讨论。"
+}, {
+  "tag": "P",
+  "text": "Btw, this is my first story and I hope you enjoyed it.",
+  "translation": "顺便说一句，这是我的第一个故事，希望您喜欢它。"
+}, {
+  "tag": "H1",
+  "text": "7. References",
+  "translation": "7.参考"
+}, {
+  "tag": "P",
+  "text": "1] Atienza, Rowel. Advanced Deep Learning with Keras: Apply deep learning techniques, autoencoders, GANs, variational autoencoders, deep reinforcement learning, policy gradients, and more. Packt Publishing Ltd, 2018.",
+  "translation": "1] Atienza，罗维尔。 使用Keras进行高级深度学习：应用深度学习技术，自动编码器，GAN，变体自动编码器，深度强化学习，策略梯度等。 Packt Publishing Ltd，2018年。"
+}, {
+  "tag": "P",
+  "text": "2] Goodfellow, Ian, et al. “Generative adversarial nets.” Advances in neural information processing systems. 2014.",
+  "translation": "2] Goodfellow，Ian等人。 “生成对抗网络。”神经信息处理系统的进步。 2014。"
+}, {
+  "tag": "P",
+  "text": "3] Wang, Zhengwei, Qi She, and Tomas E. Ward. “Generative Adversarial Networks: A Survey and Taxonomy.” arXiv preprint arXiv:1906.01529 (2019).",
+  "translation": "3]王正伟，齐社和Tomas E. Ward。 “生成式对抗网络：概览和分类法”。arXiv预印本arXiv：1906.01529（2019）。"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Mayank Vadsola的文章《The math behind GANs (Generative Adversarial Networks)》，参考：https://towardsdatascience.com/the-math-behind-gans-generative-adversarial-networks-3828f3469d9c)",
+  "translation": "（本文翻译自Mayank Vadsola的文章，《 GANs（通用对抗网络）背后的数学》，参考：https：//towardsdatascience.com/the-math-behind-gans-generative-adversarial-networks-3828f3469d9c）"
+}]
