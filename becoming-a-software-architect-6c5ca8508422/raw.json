@@ -1,0 +1,163 @@
+[{
+  "tag": "H1",
+  "text": "Becoming a software architect",
+  "translation": "成为软件架构师"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/50/0*WCvV9JnfaZmospvN.jpg?q=20",
+  "type": "image",
+  "file": "0*WCvV9JnfaZmospvN.jpg"
+}, {
+  "tag": "P",
+  "text": "So, yea, I’m a “software architect” — a principal engineer. I like my job. It’s challenging, it’s fun, and it scratches an itch. I’m also a little sad, because it is really hard for me to code as much as I would like to. I have to always fight to find time to just get in the code and build stuff.",
+  "translation": "所以，是的，我是一名“软件架构师”-首席工程师。 我喜欢我的工作。 它具有挑战性，很有趣，而且很痒。 我也有点难过，因为我很难编写自己想要的代码。 我必须始终努力寻找时间来获取代码并构建东西。"
+}, {
+  "tag": "P",
+  "text": "I didn’t really plan to have this job. I just started working and over time discovered this role and discovered I liked it. So when younger engineers who are interested in advancing their career ask me what I did to get here I find myself a bit mystified. How did I get here?",
+  "translation": "我并没有打算要这份工作。 我刚刚开始工作，随着时间的推移，我发现了这个角色，发现自己喜欢它。 因此，当对发展事业有兴趣的年轻工程师问我到这里做了什么时，我发现自己有些迷惑。 我怎么到这里了？"
+}, {
+  "tag": "H1",
+  "text": "Different strokes for different folks",
+  "translation": "物以类聚，人以群分"
+}, {
+  "tag": "P",
+  "text": "Before I tell that story, I do want to emphasize that everybody’s path is different. What worked for me may not work for you. In fact what works for you could be quite different.",
+  "translation": "在讲这个故事之前，我想强调一下，每个人的道路都是不同的。 对我有用的东西可能对您不起作用。 实际上，对您有用的可能会大不相同。"
+}, {
+  "tag": "P",
+  "text": "I have worked with a lot of principal engineers, and each of them brings a very different style and skills to bear. Some are really good at communicating, driving direction, coming up with high-level designs and strategies. Others have deep deep understanding in a very specialized field and are able to achieve miracles in that specific area. And some are great leaders and mentors. So, just because I followed a certain path to this role, doesn’t mean you need to follow the same path. I would say in general, find your passion and lean into that.",
+  "translation": "我与很多主要工程师一起工作，每个人都带来了截然不同的风格和技能。 有些人确实擅长沟通，引导方向，提出高级设计和策略。 其他人在一个非常专业的领域具有深刻的理解，并能够在该特定领域取得奇迹。 有些人是伟大的领导者和导师。 因此，仅仅因为我遵循了某个角色的特定道路，并不意味着您需要遵循相同的道路。 我会说，总的来说，找到您的热情，并对此有所帮助。"
+}, {
+  "tag": "P",
+  "text": "Another important aspect of that is, I’m privileged — I’m a white male who grew up middle class in the USA with educated parents. So I had advantages growing up, and I’ve had tailwinds in my career. When I am loud and speak up people don’t think I’m being “uppity” or “intrusive” or “annoying.” People generally give me the benefit of the doubt. I haven’t had to deal with institutional discrimination. If you’re in a minority position, I suspect it’s a totally different story and you probably need a very different strategy.",
+  "translation": "另一个重要方面是，我很荣幸–我是一位白人男性，在美国受过良好教育的父母中长大。 因此，我在成长中拥有优势，并且在我的职业生涯中遇到了不利因素。 当我大声说出来时，人们不会认为我是在“生气”，“侵入”或“烦人”。人们通常会给我带来疑问的好处。 我不必处理体制歧视。 如果您处于少数地位，我怀疑这是完全不同的故事，您可能需要一个非常不同的策略。"
+}, {
+  "tag": "P",
+  "text": "With all that said, here are some things I’m noticing I have done and continue to do, and perhaps that is part of what helped me land this role.",
+  "translation": "综上所述，我注意到我已经做了并将继续做一些事情，也许这是帮助我获得这一角色的一部分。"
+}, {
+  "tag": "H1",
+  "text": "Looking for underlying themes and patterns",
+  "translation": "寻找潜在的主题和模式"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*CMOqi_N7_IeGVjkq.jpg?q=20",
+  "type": "image",
+  "file": "0*CMOqi_N7_IeGVjkq.jpg"
+}, {
+  "tag": "P",
+  "text": "When I see myself or a team struggling with poor quality code or difficult processes, or things are just taking a lot longer to do than they should, I find myself asking why is that? How can we make this better? I am passionate about trying to understand the root cause. I have no patience for accepting it as just the way things are.",
+  "translation": "当我发现自己或团队正在为劣质代码或困难的流程而苦苦挣扎，或者事情要做的时间比他们应做的要长得多时，我发现自己在问为什么？ 我们怎样才能使它更好？ 我对尝试理解根本原因充满热情。 我没有耐心接受事情的现状。"
+}, {
+  "tag": "P",
+  "text": "I have never really formally practiced the Five Whys technique, but that’s essentially what I do.",
+  "translation": "我从未真正正式练习过“为什么五个”技巧，但这实际上就是我所做的。"
+}, {
+  "tag": "P",
+  "text": "In the excellent book Thinking in Systems, Donella Meadows encourages us to move away from just noticing the series of events occurring to us to dig deeper and understand the underlying structure that is causing these events to happen. You have leverage when you understand the structure, rather than just reacting to the events. This blog post is a good summary of how to see structure in a series of events.",
+  "translation": "在出色的书《系统中的思考》中，唐纳拉·梅多斯（Donella Meadows）鼓励我们远离仅仅注意到发生在我们身上的一系列事件，以便更深入地了解和理解导致这些事件发生的潜在结构。 当您了解结构时，您就会发挥作用，而不仅仅是对事件做出反应。 这篇博客文章很好地总结了如何看待一系列事件中的结构。"
+}, {
+  "tag": "H1",
+  "text": "Reading",
+  "translation": "阅读"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*_HhsKVF_8GDp988i.jpg?q=20",
+  "type": "image",
+  "file": "0*_HhsKVF_8GDp988i.jpg"
+}, {
+  "tag": "P",
+  "text": "My reference to Ms. Meadows’ book takes me to my next point. We don’t live in isolation. There is so much wisdom out there if we can tap into it.",
+  "translation": "我对梅多斯女士的书的引用将我带到了下一点。 我们不是孤立生活。 如果我们可以利用它，那么那里就有很多智慧。"
+}, {
+  "tag": "P",
+  "text": "I have memories of particular books or articles that completely opened my eyes to a new way of thinking. I still remember reading Werner Vogels’ article on eventual consistency and how it unlocked how we can manage data at web scale. Or the realization that there is a clean, scalable, decoupled way to integrate data between system components when I read Jay Kreps’ seminal article on log-based architectures. Or when someone handed me Eric Evans’ book on Domain Driven Design and it crystalized a user-driving approach to domain modeling.",
+  "translation": "我对某些书籍或文章的记忆使我完全睁开了对新思维的视野。 我仍然记得阅读Werner Vogels关于最终一致性以及如何解锁我们如何在网络规模上管理数据的文章。 或者当我阅读Jay Kreps关于基于日志的体系结构的开创性文章时，意识到有一种干净，可扩展，分离的方式在系统组件之间集成数据。 或者，当有人将我的Eric Evans关于域驱动设计的书递给我时，它使用户驱动域建模的方法得以实现。"
+}, {
+  "tag": "P",
+  "text": "In my search for understanding the structure and patterns underneath behavior, the books and articles I have read have been key milestones on my journey. What I have learned and practiced from them have become crucial tools in my toolbox.",
+  "translation": "在寻求理解行为的结构和方式的过程中，我阅读的书籍和文章一直是我旅途中的重要里程碑。 我从他们那里学习和实践的内容已经成为我工具箱中的关键工具。"
+}, {
+  "tag": "P",
+  "text": "The school of hard knocks isn’t really a school unless you learn and change, and reading has made that possible for me.",
+  "translation": "除非您学习和改变，重击学校并不是真正的学校，阅读使我成为可能。"
+}, {
+  "tag": "P",
+  "text": "So, how do you find these books and articles? What works for me is to listen to those who I respect, and trace links from them to source material. I primarily do this through curating a Twitter feed of people in the industry who I respect and trust. There is still a lot of noise, and Twitter has started “curating” my feed for me in annoying ways, but generally this works best for me. I check Twitter a few times a day and amidst all the rants and food pictures I get gems of great new information that keeps my knowledge moving forward.",
+  "translation": "那么，您如何找到这些书籍和文章？ 对我而言，最有效的方法是倾听我所尊重的人，并追踪他们与原始资料之间的链接。 我主要是通过策划Twitter上我所尊重和信任的人们的饲料来实现的。 仍然有很多噪音，Twitter已经开始以烦人的方式为我“整理”我的提要，但是通常这对我来说效果最好。 每天我都会在Twitter上查看几次，在所有的喧闹声和食物图片中，我得到了许多很棒的新信息，这些新信息使我的知识不断发展。"
+}, {
+  "tag": "H1",
+  "text": "Writing",
+  "translation": "写作"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*rDwxOewcpDlV2l9X.jpg?q=20",
+  "type": "image",
+  "file": "0*rDwxOewcpDlV2l9X.jpg"
+}, {
+  "tag": "P",
+  "text": "Before I became a software engineer, I wanted to be a science writer. I have always loved writing. When I was growing up we travelled a lot and my parents and then my siblings and I would type up long letters to each other.",
+  "translation": "在成为软件工程师之前，我想成为一名科学作家。 我一直很喜欢写作。 当我长大时，我们旅行了很多次，还有我的父母，然后是我的兄弟姐妹，我会互相打长信。"
+}, {
+  "tag": "P",
+  "text": "This love for writing has served me well in my software career, and I think has helped me be recognized and respected by both management and my coworkers. Many software developers are not writers — they like to make things work, not write about them. But at a certain level in your career, if you can’t write down and explain your thoughts and use that to communicate with others, it’s going to make it hard for you to advance.",
+  "translation": "对写作的热爱在我的软件职业生涯中为我提供了很好的服务，并且我认为这使我得到了管理层和我的同事的认可和尊重。 许多软件开发人员不是作家，他们喜欢使事情正常运转，而不是撰写文章。 但是，在您的职业生涯的某个特定阶段，如果您无法写下并解释自己的想法，并利用这些想法与他人进行交流，将会使您难以晋升。"
+}, {
+  "tag": "P",
+  "text": "Writing is not natural for everyone, and it has always come easy to me. So perhaps I’m not the best one to give advice. But having mentored others on this, I think the best thing to do is just do it. Find a way to set aside time to do some technical writing on a regular basis. Also, by the way, reading improves your writing, so see above.",
+  "translation": "写作不是每个人都自然而然的事，这对我来说总是很容易的。 因此，也许我不是提供建议的最佳人选。 但是在指导其他人之后，我认为最好的办法就是做到这一点。 寻找一种方式来留出时间定期进行一些技术写作。 另外，顺便说一句，阅读可以提高写作水平，因此请参见上文。"
+}, {
+  "tag": "P",
+  "text": "Oh, and, when you write, use diagrams and images. People are so much better at ingesting and comprehending concepts visually that through straight writing. Lucidchart is your friend.",
+  "translation": "哦，并且，当您编写时，请使用图表和图像。 人们在视觉上吸收和理解概念方面要比直接写作要好得多。 Lucidchart是你的朋友。"
+}, {
+  "tag": "H1",
+  "text": "Teaching",
+  "translation": "教学"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*mCdTvCz2-a-NkxY67blMWQ.jpeg?q=20",
+  "type": "image",
+  "file": "1*mCdTvCz2-a-NkxY67blMWQ.jpeg"
+}, {
+  "tag": "P",
+  "text": "Whenever I really want to learn something, I announce that I am going to give a talk on it. It works every time. Also, giving presentations on interesting subjects help make you and your thoughts visible to others, which is always useful.",
+  "translation": "每当我真的想学习一些东西时，我都会宣布要发表一个演讲。 它每次都起作用。 此外，就有趣的主题进行演示有助于使您和您的想法对其他人可见，这总是有用的。"
+}, {
+  "tag": "P",
+  "text": "As with writing, you get better by doing. It takes guts the first few times you do it, but as you do it more and more, it becomes comfortable and even fun.",
+  "translation": "与写作一样，这样做会使您变得更好。 这样做的前几次需要胆量，但是随着您做的越来越多，它变得舒适甚至有趣。"
+}, {
+  "tag": "H1",
+  "text": "Do the dirty work",
+  "translation": "做脏事"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*tBK_UebnWIR4GlLt.jpg?q=20",
+  "type": "image",
+  "file": "0*tBK_UebnWIR4GlLt.jpg"
+}, {
+  "tag": "P",
+  "text": "All this thinking and reading and communicating is great, but you also have to back it up with action. Ultimately that’s what gives grounding and reality to all your ideas, and you earn respect, which is a key aspect of being a leader.",
+  "translation": "所有这些思考，阅读和交流都很棒，但是您还必须采取行动来支持它。 最终，这才是您所有想法的基础和现实，并赢得了尊重，这是成为领导者的关键方面。"
+}, {
+  "tag": "P",
+  "text": "Take on a project or refactoring that nobody else wants to do. Take on the effort to organize a new practice with the team. Upgrade that library that nobody else wants to upgrade. Build that automation script to eliminate manual work in the team. Taking initiative and doing the dirty work shows commitment and gets noticed.",
+  "translation": "进行其他人不想做的项目或重构。 努力与团队一起组织新的实践。 升级没有其他人要升级的库。 构建该自动化脚本以消除团队中的手动工作。 采取主动和肮脏的工作表明了自己的承诺并受到关注。"
+}, {
+  "tag": "H1",
+  "text": "Good luck!",
+  "translation": "祝好运！"
+}, {
+  "tag": "P",
+  "text": "I think any kind of success is a combination of luck, hard work, setbacks and sudden advances. I know at some point I realized I liked the role of an architect, but I didn’t come in with a big plan. It evolved like anything else.",
+  "translation": "我认为成功是运气，辛勤工作，挫折和突飞猛进的结合。 我知道在某个时候我意识到我喜欢建筑师的角色，但是我并没有制定一个宏伟的计划。 它像其他任何东西一样进化。"
+}, {
+  "tag": "P",
+  "text": "We all have our own journeys. May yours be full of transformation, learning, and fulfillment!",
+  "translation": "我们都有自己的旅程。 愿您充满变革，学习和成就！"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自David Van Couvering的文章《Becoming a software architect》，参考：https://medium.com/@david.vancouvering/becoming-a-software-architect-6c5ca8508422)",
+  "translation": "（本文翻译自David Van Couvering的文章《成为软件架构师》，参考：https：//medium.com/@david.vancouvering/becoming-a-software-architect-6c5ca8508422）"
+}]
