@@ -1,0 +1,242 @@
+[{
+  "tag": "P",
+  "text": "That will be it for this article. It’s a work in progress. I will keep adding more things as I come across them. If you have any suggestions that have made your life easier, drop them in the comments section below and we can all benefit from them.",
+  "translation": "本文就是这样。 这项工作正在进行中。 当我遇到它们时，我将继续添加更多东西。 如果您有任何建议可以使您的生活更轻松，请将其放在下面的评论部分，我们都可以从中受益。"
+}, {
+  "tag": "P",
+  "text": "~happy learning.",
+  "translation": "〜学习愉快。"
+}, {
+  "tag": "H1",
+  "text": "How to be fancy with Python",
+  "translation": "如何看中Python"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*ZXcyTDpPg8XOVfEZ-yngAQ.jpeg?q=20",
+  "type": "image",
+  "file": "1*ZXcyTDpPg8XOVfEZ-yngAQ.jpeg"
+}, {
+  "tag": "P",
+  "text": "Python is cool. Really cool. However, a lot of us started with a different programming language and although we picked up Python really easily, we still aren’t good at the pythonic way of doing things. This article introduces some tricks I’ve learnt over the years and practical examples for the same. Hope you enjoy it.",
+  "translation": "Python很酷。 真的很酷。 但是，我们中的很多人都是从不同的编程语言开始的，尽管我们确实很容易地掌握了Python，但是我们仍然不擅长使用pythonic做事。 本文介绍了我几年来学到的一些技巧和相同的实际示例。 希望你喜欢它。"
+}, {
+  "tag": "H2",
+  "text": "-1. Useful keyboard shortcuts",
+  "translation": "-1。 有用的键盘快捷键"
+}, {
+  "tag": "P",
+  "text": "To indent code Press Tab.",
+  "translation": "缩进代码按Tab。"
+}, {
+  "tag": "P",
+  "text": "To unindent code Press Shift + Tab.",
+  "translation": "取消缩进代码按Shift + Tab。"
+}, {
+  "tag": "P",
+  "text": "To comment or uncomment a bunch of code, select it and Press Contrl + / or Command + / for Mac.",
+  "translation": "要注释或取消注释一堆代码，请选择它，然后按Control + /或Command + /对于Mac。"
+}, {
+  "tag": "P",
+  "text": "To put quotation marks around something, select it and then Press Shift + ' or Shift + \".",
+  "translation": "要将引号括起来，请选择它，然后按Shift +'或Shift +“。"
+}, {
+  "tag": "H2",
+  "text": "0. Zip",
+  "translation": "0.邮编"
+}, {
+  "tag": "P",
+  "text": "Zip can be used to iterate over 2 lists together.",
+  "translation": "Zip可用于一起迭代2个以上的列表。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*9Uxmd33srAy_ou1Wqqaa-A.png?q=20",
+  "type": "image",
+  "file": "1*9Uxmd33srAy_ou1Wqqaa-A.png"
+}, {
+  "tag": "H2",
+  "text": "1. List comprehensions",
+  "translation": "1.清单理解"
+}, {
+  "tag": "P",
+  "text": "The best part about Python is that you can accomplish so much in so less code. Take list comprehensions for example. If you want to create a list of numbers in a certain range you can easily do it as follows:",
+  "translation": "关于Python的最好之处在于，您可以用更少的代码完成很多工作。 以列表理解为例。 如果要创建一定范围内的数字列表，则可以按如下所示轻松进行操作："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*H2LsDUkZZaNQtTBh9Hz9ow.png?q=20",
+  "type": "image",
+  "file": "1*H2LsDUkZZaNQtTBh9Hz9ow.png"
+}, {
+  "tag": "P",
+  "text": "You can also apply conditions on it very easily.",
+  "translation": "您也可以很容易地对其应用条件。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*Nzknkaok6bhZyuvFly44nA.png?q=20",
+  "type": "image",
+  "file": "1*Nzknkaok6bhZyuvFly44nA.png"
+}, {
+  "tag": "P",
+  "text": "Practical example:",
+  "translation": "实际示例："
+}, {
+  "tag": "P",
+  "text": "One really cool use case of list comprehensions is to convert a number to its individual digits. The trick is to convert the number to a string, iterate over the individual characters, convert them to int and store them in a list. We can either follow all the steps",
+  "translation": "列表推导的一个非常酷的用例是将数字转换为它的单个数字。 技巧是将数字转换为字符串，遍历各个字符，将其转换为int并将它们存储在列表中。 我们可以按照所有步骤进行操作"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*qMgOFAn0IsFj5elXEWKnWA.png?q=20",
+  "type": "image",
+  "file": "1*qMgOFAn0IsFj5elXEWKnWA.png"
+}, {
+  "tag": "P",
+  "text": "or do it all together",
+  "translation": "或一起做"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*6FMJ2z3pYXjytmH8zpzpRg.png?q=20",
+  "type": "image",
+  "file": "1*6FMJ2z3pYXjytmH8zpzpRg.png"
+}, {
+  "tag": "P",
+  "text": "This also reminds me of the map() function.",
+  "translation": "这也让我想起了map（）函数。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*OCP0TK_4_zTJ4ajaWXq8nQ.png?q=20",
+  "type": "image",
+  "file": "1*OCP0TK_4_zTJ4ajaWXq8nQ.png"
+}, {
+  "tag": "H2",
+  "text": "2. Using * operator",
+  "translation": "2.使用*运算符"
+}, {
+  "tag": "P",
+  "text": "The * operator can be used to repeat strings. For example,",
+  "translation": "*运算符可用于重复字符串。 例如，"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*EbMRpOvvCTzWeUQFtbSa3g.png?q=20",
+  "type": "image",
+  "file": "1*EbMRpOvvCTzWeUQFtbSa3g.png"
+}, {
+  "tag": "P",
+  "text": "Now you probably don’t want to print “Python is cool” a whole lot of times but you should use it for something like this",
+  "translation": "现在您可能不想多次打印“ Python很酷”，但应该将其用于类似这样的操作"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*AUamHgaKNDw9KucWDFd3ng.png?q=20",
+  "type": "image",
+  "file": "1*AUamHgaKNDw9KucWDFd3ng.png"
+}, {
+  "tag": "P",
+  "text": "The * operator can also be used to unpack iterables like lists.",
+  "translation": "*运算符还可用于解压缩列表等可迭代项。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*BEXrfSx5t2r94LVEwpZmIA.png?q=20",
+  "type": "image",
+  "file": "1*BEXrfSx5t2r94LVEwpZmIA.png"
+}, {
+  "tag": "P",
+  "text": "You can also do something like",
+  "translation": "您也可以做类似的事情"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*rWuweVQWNh68solIiTBr2w.png?q=20",
+  "type": "image",
+  "file": "1*rWuweVQWNh68solIiTBr2w.png"
+}, {
+  "tag": "P",
+  "text": "This operator is usually used when we have a function where we don’t know the number of arguments in advance. We use it with *args and **kwargs.",
+  "translation": "当我们有一个不知道参数个数的函数时，通常使用此运算符。 我们将其与* args和** kwargs一起使用。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*bpgKuYYXnU2TVzrPsxd-AA.png?q=20",
+  "type": "image",
+  "file": "1*bpgKuYYXnU2TVzrPsxd-AA.png"
+}, {
+  "tag": "P",
+  "text": "The arguments that we pass to the function are stored in *args. **kwargs will store named arguments or dictionaries.",
+  "translation": "我们传递给函数的参数存储在* args中。 ** kwargs将存储命名的参数或字典。"
+}, {
+  "tag": "H2",
+  "text": "3. Partials",
+  "translation": "3.部分"
+}, {
+  "tag": "P",
+  "text": "Something else you can do with functions is create partial functions. What are they? Suppose we have a function to calculate simple interest. We can set default values for some parameters (from right to left).",
+  "translation": "您可以使用函数执行的其他操作是创建部分函数。 这些是什么？ 假设我们有一个计算单利的函数。 我们可以为某些参数设置默认值（从右到左）。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*JYdCxKaShlJu4hODQJg60w.png?q=20",
+  "type": "image",
+  "file": "1*JYdCxKaShlJu4hODQJg60w.png"
+}, {
+  "tag": "P",
+  "text": "However, we cannot set the default value of just p in this way.",
+  "translation": "但是，我们不能以这种方式将默认值设置为p。"
+}, {
+  "tag": "P",
+  "text": "We can do so using a partial function. In a partial function, we set default values for some arguments, left to right and then use that as a function. Let’s set a default value for just p.",
+  "translation": "我们可以使用部分函数来实现。 在部分函数中，我们从左到右为某些参数设置了默认值，然后将其用作函数。 让我们为p设置一个默认值。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*q_nGmoBMZE8SaCpjg8mdcQ.png?q=20",
+  "type": "image",
+  "file": "1*q_nGmoBMZE8SaCpjg8mdcQ.png"
+}, {
+  "tag": "P",
+  "text": "Although partials work from left to right, we can also skip parameters in between by using named arguments.",
+  "translation": "尽管局部函数从左到右起作用，但是我们也可以使用命名参数跳过它们之间的参数。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*eq86rFSHaBWOl9iOfqXRNg.png?q=20",
+  "type": "image",
+  "file": "1*eq86rFSHaBWOl9iOfqXRNg.png"
+}, {
+  "tag": "H2",
+  "text": "4. Asserts",
+  "translation": "4.断言"
+}, {
+  "tag": "P",
+  "text": "Test driven development means you write tests and then you write code to pass those tests. You can write mini-tests in Python using assert. For example, you might want to make sure the shape of a certain object is what you expect it to be.",
+  "translation": "测试驱动的开发意味着您编写测试，然后编写代码以通过这些测试。 您可以使用assert在Python中编写小型测试。 例如，您可能要确保某个对象的形状符合您的期望。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*NmUMKjfUUeJzZzCv0ZdpMg.png?q=20",
+  "type": "image",
+  "file": "1*NmUMKjfUUeJzZzCv0ZdpMg.png"
+}, {
+  "tag": "P",
+  "text": "Writing these mini-tests will be super helpful in making sure parts of your code work as expected. It will also help you debug things efficiently.",
+  "translation": "编写这些小型测试对确保代码的部分按预期工作将非常有帮助。 它还将帮助您高效地调试。"
+}, {
+  "tag": "H2",
+  "text": "5. Generators",
+  "translation": "5.发电机"
+}, {
+  "tag": "P",
+  "text": "We can use the yield keyword instead of return keyword in Python to create a generator. The advantage of using a generator is that is generates things on the fly and forgets them. This saves memory.",
+  "translation": "我们可以在Python中使用yield关键字而不是return关键字来创建生成器。 使用生成器的优点是可以即时生成事物并忘记它们。 这样可以节省内存。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*yfRdVGjbwCkeyEX38PQw5A.png?q=20",
+  "type": "image",
+  "file": "1*yfRdVGjbwCkeyEX38PQw5A.png"
+}, {
+  "tag": "H1",
+  "text": "Coming up",
+  "translation": "接下来"
+}, {
+  "tag": "H2",
+  "text": "6. Dunder thingies",
+  "translation": "6.邓德·泰勒斯"
+}, {
+  "tag": "P",
+  "text": "If you want to learn object oriented Python, I really recommend Corey Schafer’s Youtube playlist. This part will be filled soon.",
+  "translation": "如果您想学习面向对象的Python，我真的推荐Corey Schafer的Youtube播放列表。 这部分将很快填充。"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Dipam Vasani的文章《How to be fancy with Python》，参考：https://towardsdatascience.com/how-to-be-fancy-with-python-8e4c53f47789)",
+  "translation": "（本文翻译自Dipam Vasani的文章，《如何与Python融为一体》，参考：https：//towardsdatascience.com/how-to-be-fancy-with-python-8e4c53f47789）"
+}]
