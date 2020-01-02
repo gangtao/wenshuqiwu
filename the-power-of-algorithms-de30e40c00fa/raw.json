@@ -1,0 +1,119 @@
+[{
+  "tag": "P",
+  "text": "It’s important to know the tools — programming languages, libraries, and frameworks. It helps to get the best score in the game. And it’s important to know the algorithms — it helps to find a game with rules where it would be easy for us to get the best score.",
+  "translation": "了解工具-编程语言，库和框架非常重要。 它有助于在游戏中获得最佳分数。 而且重要的是要知道算法-这有助于找到具有规则的游戏，使我们容易获得最佳成绩。"
+}, {
+  "tag": "H2",
+  "text": "It takes two weeks to move a button",
+  "translation": "移动按钮需要两个星期"
+}, {
+  "tag": "H3",
+  "text": "A toy story of a project going from small to big",
+  "translation": "一个从小到大的项目的玩具故事"
+}, {
+  "tag": "H1",
+  "text": "The power of algorithms",
+  "translation": "算法的力量"
+}, {
+  "tag": "P",
+  "text": "Algorithmic problems are the de-facto standard for software engineering interviews: Google, Facebook, and many other companies use it. It’s hard to say if it’s the best method to do technical interviews, but algorithmic thinking is a valuable skill for a software engineer. It’s a well-known fact, but it’s always nice to have an intuition about something, and not only factual knowledge.",
+  "translation": "算法问题是软件工程面试的实际标准：Google，Facebook和许多其他公司都在使用它。 很难说这是否是进行技术面试的最佳方法，但是算法思维对于软件工程师来说是一项宝贵的技能。 这是一个众所周知的事实，但总要对事物有直觉总是很高兴的，而不仅仅是对事实的了解。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*xMObXfqzCwzTgWYVFhXEnQ.png?q=20",
+  "type": "image",
+  "file": "1*xMObXfqzCwzTgWYVFhXEnQ.png"
+}, {
+  "tag": "P",
+  "text": "And there is one interesting moment in the story about a toy pyramid, where the main character had a task to assemble a pyramid as high as possible.",
+  "translation": "在有关玩具金字塔的故事中，有一个有趣的时刻，在这个时刻，主角要承担组装尽可能高的金字塔的任务。"
+}, {
+  "tag": "H2",
+  "text": "It takes two weeks to move a button",
+  "translation": "移动按钮需要两个星期"
+}, {
+  "tag": "H3",
+  "text": "A toy story of a project going from small to big",
+  "translation": "一个从小到大的项目的玩具故事"
+}, {
+  "tag": "P",
+  "text": "The way the main character did that was straightforward: start with one block, then place three more blocks aside from the first one and one on top, and then continue adding new levels in a similar fashion.",
+  "translation": "主角的做法很简单：从一个方块开始，然后在第一个方块之外再放置三个方块，再在上面放置一个方块，然后以类似的方式继续添加新的关卡。"
+}, {
+  "tag": "P",
+  "text": "We used a recurrent formula to count how many blocks / how much time it would it take us to reach a new level:",
+  "translation": "我们使用一个循环公式来计算达到一个新级别需要多少块/需要多少时间："
+}, {
+  "tag": "PRE",
+  "text": "N(level) = level * 2 + 1 + N(level-1)",
+  "translation": "N（等级）=等级* 2 +1 + N（等级-1）"
+}, {
+  "tag": "P",
+  "text": "This formula basically follows the building process, and a code to do that computation would look like the following:",
+  "translation": "该公式基本上遵循构建过程，执行该计算的代码如下所示："
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/yb172/298287d652a4553005f6680737ec9b35/raw/537190640c4f28ae4a571f9910d81a228d3a1d74/block-counter-recursive.go",
+  "code": "func countBlocks(level int) int {\n  if (level == 0) {\n    return 1;\n  }\n  return level * 2 + 1 + countBlocks(level-1)\n}"
+}, {
+  "tag": "P",
+  "text": "A trivial recursive function. However, this code is not optimal: each new method call requires a new entry in the call stack, which takes up some space. In our case, we have a recursion, but it’s a special case called “tail recursion,” which could be replaced with a for loop. If someone would want to compute the value for, say 1,000,000 — loop-based code would have no problem doing that (except int would probably overflow), while recursion-based version would likely run out of memory. Here is how refactored code would look like:",
+  "translation": "琐碎的递归函数。 但是，此代码不是最佳的：每个新方法调用在调用堆栈中都需要一个新条目，这会占用一些空间。 在我们的例子中，我们有一个递归，但这是一种特殊的情况，称为“尾递归”，可以用for循环代替。 如果有人想计算出1,000,000的值，那么基于循环的代码就可以做到这一点（除非int可能会溢出），而基于递归的版本可能会耗尽内存。 重构后的代码如下所示："
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/yb172/90aa3a1a02ee2f765f4ba02b3745680f/raw/bf60724b392909a57493d6006d93d1170f61c88b/block-counter.go",
+  "code": "func countBlocks(finalLevel int) int {\n  seconds := 1 // starting with MVP\n  for l := 0; l < finalLevel; l++ {\n    seconds += (finalLevel-l)*2+1\n  }\n  return seconds\n}"
+}, {
+  "tag": "P",
+  "text": "We start with level 0, count the number of blocks needed for that level, and then go to the next level until we’ve reached the final one. It makes perfect sense. However, this solution is also not optimal.",
+  "translation": "我们从级别0开始，计算该级别所需的块数，然后转到下一个级别，直到达到最后一个级别。 这是很合理的。 但是，该解决方案也不是最佳的。"
+}, {
+  "tag": "P",
+  "text": "We could get to the most optimal solution if we took another look at our problem. What are we trying to do? We need to compute how many blocks do we need to add one more level to the pyramid. What we’ve developed so far is a way to count the number of blocks to put on top of the pyramid to add one more level to it.",
+  "translation": "如果我们再看一下我们的问题，我们可能会获得最佳解决方案。 我们要做什么？ 我们需要计算需要为金字塔增加一个级别的多少个块。 到目前为止，我们已经开发出一种方法，可以计算放置在金字塔顶部的块数，从而为金字塔增加一个级别。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*r8J_q2YSP63E3mzpsGxh6A.png?q=20",
+  "type": "image",
+  "file": "1*r8J_q2YSP63E3mzpsGxh6A.png"
+}, {
+  "tag": "P",
+  "text": "But what if we’re adding blocks not on top of the pyramid, but building a new ground level instead?",
+  "translation": "但是，如果我们不是在金字塔的顶部添加块，而是在构建新的地面层，该怎么办？"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*3fcU0fv3_QIawPLfOvsHVw.png?q=20",
+  "type": "image",
+  "file": "1*3fcU0fv3_QIawPLfOvsHVw.png"
+}, {
+  "tag": "P",
+  "text": "Then it becomes trivial to compute the number of blocks that we need: the base is a square, and a square of a square is a square of the square side! So the most optimal solution is:",
+  "translation": "然后，计算所需的块数变得不那么容易了：底数是一个正方形，一个正方形的正方形是正方形边的正方形！ 因此，最佳的解决方案是："
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/yb172/e24f8a64e8ca449c13f90d6dd1849537/raw/690ceb2284bdd9f7ecf9d09351430e5092f33da7/block-counter-optimal.go",
+  "code": "func countBlocks(level int) int {\n  side := level+1 // Since we start with level 0\n  return side*side\n}"
+}, {
+  "tag": "P",
+  "text": "This solution is Pareto optimal: it’s more concise, way more efficient, and is less prone to bugs. Our first optimization was good, but to get to this most optimal solution, we had to evaluate how do we obtain the answer, not how to optimize the existing approach best.",
+  "translation": "此解决方案是帕累托最优的：它更简洁，更高效，更不易出现错误。 我们的第一个优化是好的，但是要获得最佳解决方案，我们必须评估如何获得答案，而不是如何最佳地优化现有方法。"
+}, {
+  "tag": "P",
+  "text": "To get to the most optimal solution, we first stated the problem and then somehow had what Eric Evans calls a breakthrough — a way to look at the stated problem where the solution is trivial. Yes, we can get our answer by counting all the blocks we should add to existing levels, but this solution is unnecessarily complex when we can simply count how many blocks it would take to build the next bottom level.",
+  "translation": "为了获得最佳解决方案，我们首先提出了问题，然后以某种方式获得了埃里克·埃文斯（Eric Evans）所说的突破-一种在解决方案很简单的情况下查看所述问题的方法。 是的，我们可以通过计算应添加到现有级别的所有块来获得答案，但是当我们仅计算建立下一个底层级别所需的块数时，此解决方案不必要地复杂。"
+}, {
+  "tag": "P",
+  "text": "Getting to the breakthrough moment is more art than science, but it could be very helpful to see what computer science has already discovered. Fortunately, online courses from the best universities are available with that material:",
+  "translation": "到达突破性时刻比艺术更重要的是艺术，但是了解计算机科学已经发现的内容可能会非常有帮助。 幸运的是，最好的大学提供的在线课程中包含以下材料："
+}, {
+  "tag": "UL",
+  "texts": ["Algorithms specialization by Tim Roughgarden (Stanford University) — a great in-depth course focused entirely on algorithms with challenging assignments (use any programming language to complete the assignments)", "Algorithms part 1 and part 2 by Robert Sedgewick (Princeton University) — also great in-depth course with challenging assignments, but focused on algorithms and their implementation in Java."],
+  "translations": ["Tim Roughgarden（斯坦福大学）的算法专业知识—一门很好的深入课程，完全着重于具有挑战性分配的算法（使用任何编程语言来完成分配）", "罗伯特·塞奇威克（普林斯顿大学）的算法第1部分和第2部分-也是一门深入的课程，涉及艰巨的任务，但重点在于算法及其在Java中的实现。"]
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Yan Babitski的文章《The power of algorithms》，参考：https://medium.com/@yan.babitski/the-power-of-algorithms-de30e40c00fa)",
+  "translation": "（本文翻译自：Yan Babitski的文章，《算法的力量》，参考：https：//medium.com/@yan.babitski/the-power-of-algorithms-de30e40c00fa）"
+}]
