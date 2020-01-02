@@ -1,0 +1,166 @@
+[{
+  "tag": "H1",
+  "text": "3 techniques to make your Python code faster",
+  "translation": "3种使Python代码更快的技术"
+}, {
+  "tag": "H2",
+  "text": "You won’t even break a sweat",
+  "translation": "你甚至都不会流汗"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*62EZF_HlqzT9-YIRkJXGvg.jpeg?q=20",
+  "type": "image",
+  "file": "1*62EZF_HlqzT9-YIRkJXGvg.jpeg"
+}, {
+  "tag": "P",
+  "text": "In this post I’ll be sharing 3 Python efficiency techniques that you may use in your daily scripting, and how to measure the performance improvement between 2 solutions. Let’s get started!",
+  "translation": "在这篇文章中，我将分享您在日常脚本编写中可能会使用的3种Python效率技术，以及如何衡量两种解决方案之间的性能提升。 让我们开始吧！"
+}, {
+  "tag": "H1",
+  "text": "How can we compare the performance of two candidate solutions?",
+  "translation": "我们如何比较两个候选解决方案的性能？"
+}, {
+  "tag": "P",
+  "text": "Performance may refer to many different factors in a solution (e.g. execution time, CPU usage, memory usage, etc.). In this post, though, we’ll be focusing on the execution time.",
+  "translation": "性能可能是指解决方案中的许多不同因素（例如执行时间，CPU使用率，内存使用率等）。 不过，在这篇文章中，我们将专注于执行时间。"
+}, {
+  "tag": "P",
+  "text": "The improvement in the execution time of a new solution can be computed as simply as making a division. That is, we’ll be dividing the execution time of the old (or non-optimized) solution by the new (or optimized) solution: Told / Tnew. This metric is commonly referred to as speedup. For instance, if we got a speedup factor of 2, our improved solution would be taking half as much time as the original solution.",
+  "translation": "新解决方案执行时间的缩短可以像进行除法一样简单地计算出来。 也就是说，我们将旧的（或未优化的）解决方案的执行时间除以新的（或优化的）解决方案：Told / Tnew。 此度量标准通常称为加速。 例如，如果我们将加速因子设为2，则改进后的解决方案所花的时间将是原始解决方案的一半。"
+}, {
+  "tag": "P",
+  "text": "In order to compare the performance of our functions, we’ll create a function that receives both of them, calculates their execution time and computes the obtained speedup:",
+  "translation": "为了比较我们函数的性能，我们将创建一个函数，该函数同时接收它们，计算它们的执行时间并计算获得的加速比："
+}, {
+  "tag": "PRE",
+  "text": "import timedef compute_speedup(slow_func, opt_func, func_name, tp=None):  x = range(int(1e5))  if tp: x = list(map(tp, x))  slow_start = time.time()  slow_func(x)  slow_end = time.time()  slow_time = slow_end - slow_start  opt_start = time.time()  opt_func(x)  opt_end = time.time()  opt_time = opt_end - opt_start  speedup = slow_time/opt_time  print('{} speedup: {}'.format(func_name, speedup))",
+  "translation": "导入timedefcompute_speedup（slow_func，opt_func，func_name，tp =无）：x =范围（int（1e5））如果tp：x =列表（map（tp，x））slow_start = time.time（）slow_func（x）slow_end = time.time（）slow_time = slow_end-slow_start opt_start = time.time（）opt_func（x）opt_end = time.time（）opt_time = opt_end-opt_start speedup = slow_time / opt_time print（'{} speedup：{}'。 格式（功能名称，加速）"
+}, {
+  "tag": "P",
+  "text": "In order to obtain significant results, we’ll be using a relatively large array (100.000 elements), and pass it to both functions as an argument. We’ll then compute the execution time using the time module and finally deliver the obtained speedup.",
+  "translation": "为了获得明显的结果，我们将使用相对较大的数组（100.000个元素），并将其作为参数传递给两个函数。 然后，我们将使用时间模块来计算执行时间，并最终实现所获得的加速。"
+}, {
+  "tag": "P",
+  "text": "Note that we are also passing an optional argument that would allow us to change the type of our list elements.",
+  "translation": "请注意，我们还传递了一个可选参数，该参数允许我们更改列表元素的类型。"
+}, {
+  "tag": "H1",
+  "text": "1. Avoid concatenating strings with the + operator",
+  "translation": "1.避免使用+运算符连接字符串"
+}, {
+  "tag": "P",
+  "text": "A common situation you may find is having to form a string with multiple subparts of it. Python has a convenient + operator that allows us to comfortably concatenate strings in the following way:",
+  "translation": "您可能会发现一种常见的情况是必须形成一个包含多个子部分的字符串。 Python有一个方便的+运算符，可让我们通过以下方式轻松地连接字符串："
+}, {
+  "tag": "PRE",
+  "text": "def slow_join(x):  s = ''  for n in x:    s += n",
+  "translation": "def slow_join（x）：s =''对于x中的n：s + = n"
+}, {
+  "tag": "P",
+  "text": "Even though it seems a clean approach to us, Python’s strings were created to be immutable, and therefore cannot be modified. That means that every time we use the + operator, Python is actually creating a new string based on both substrings and returning the new string. Consider that, in our case, this operation would be executed 100.000 times.",
+  "translation": "尽管对我们来说似乎是一种干净的方法，但Python的字符串被创建为不可变的，因此无法进行修改。 这意味着每次我们使用+运算符时，Python实际上都是在两个子字符串的基础上创建一个新字符串并返回新字符串。 考虑到在我们的情况下，此操作将执行100.000次。"
+}, {
+  "tag": "P",
+  "text": "This approach clearly has a cost, and we may find a cheaper solution using join(), such as in the following example:",
+  "translation": "这种方法显然是有成本的，并且我们可以使用join（）找到更便宜的解决方案，例如以下示例："
+}, {
+  "tag": "PRE",
+  "text": "def opt_join(x):  s = ''.join(x)",
+  "translation": "def opt_join（x）：s =''.join（x）"
+}, {
+  "tag": "P",
+  "text": "This solution takes the array of substrings and joins them with the empty string separator. Let’s check our performance improvement:",
+  "translation": "此解决方案采用子字符串数组，并将其与空字符串分隔符连接在一起。 让我们检查一下性能提升："
+}, {
+  "tag": "PRE",
+  "text": "compute_speedup(slow_join, opt_join, 'join', tp=str)",
+  "translation": "计算速度（慢速连接，opt_join，'join'，to = str）"
+}, {
+  "tag": "P",
+  "text": "I’m getting a speedup factor of 7,25! Not too bad I’d say, considering the small amount of work needed to implement this technique.",
+  "translation": "我得到的加速因子是7,25！ 考虑到实施此技术所需的少量工作，我认为还算不错。"
+}, {
+  "tag": "H1",
+  "text": "2. Use the map function",
+  "translation": "2.使用地图功能"
+}, {
+  "tag": "P",
+  "text": "When we need to operate on every element in a list we may normally do it in the following way: we iterate over the list using list comprehension and work on the current element:",
+  "translation": "当我们需要对列表中的每个元素进行操作时，通常可以通过以下方式进行操作：我们使用列表推导对列表进行迭代并处理当前元素："
+}, {
+  "tag": "PRE",
+  "text": "def slow_map(x):  l = [str(n) for n in x]",
+  "translation": "def slow_map（x）：l = [str（n）对于x中的n]"
+}, {
+  "tag": "P",
+  "text": "However, in many situations, you may prefer using Python’s built-in map function, which applies the same operation to every element in a list. Best of all, it may be implemented as simply as follows:",
+  "translation": "但是，在许多情况下，您可能更喜欢使用Python的内置映射功能，该功能将相同的操作应用于列表中的每个元素。 最好的是，它可以通过以下简单方式实现："
+}, {
+  "tag": "PRE",
+  "text": "def opt_map(x):  l = map(str, x)  for n in l:    pass",
+  "translation": "def opt_map（x）：l = l中的n的map（str，x）：通过"
+}, {
+  "tag": "P",
+  "text": "It’s time to check how much we’ve improved the execution time! Run our compute_speedup function as follows:",
+  "translation": "现在该检查我们在执行时间方面有多少改进！ 运行我们的compute_speedup函数，如下所示："
+}, {
+  "tag": "PRE",
+  "text": "compute_speedup(slow_map, opt_map, 'map')",
+  "translation": "compute_speedup（slow_map，opt_map，'map'）"
+}, {
+  "tag": "P",
+  "text": "I’m obtaining a speedup of 1,49. Keep in mind that, in order to make a fair comparison, we’ve had to simulate as well the traversal over the map object.",
+  "translation": "我的加速比为1.49。 请记住，为了进行公平的比较，我们还必须模拟在地图对象上的遍历。"
+}, {
+  "tag": "H1",
+  "text": "3. Avoid reevaluating functions",
+  "translation": "3.避免重新评估功能"
+}, {
+  "tag": "P",
+  "text": "Whenever you find yourself repeatedly using the same function over an element inside a loop block, such as:",
+  "translation": "每当您发现自己在循环块内的元素上重复使用相同的功能时，例如："
+}, {
+  "tag": "PRE",
+  "text": "y = []for n in x:  y.append(n)  y.append(n**2)  y.append(n**3)",
+  "translation": "y = []对于x中的n：y.append（n）y.append（n ** 2）y.append（n ** 3）"
+}, {
+  "tag": "P",
+  "text": "… or simply using such function once inside the loop block, but over a large list, such as in the following case:",
+  "translation": "…或仅在循环块内一次但在一个较大的列表中使用该函数，例如在以下情况下："
+}, {
+  "tag": "PRE",
+  "text": "def slow_loop(x):  y = []  for n in x:    y.append(n)",
+  "translation": "def slow_loop（x）：y = []对于x中的n：y.append（n）"
+}, {
+  "tag": "P",
+  "text": "… you may take advantage of another optimization technique. This scenario assumes that you cannot use map (use that instead if you can: the speedup would be much higher).",
+  "translation": "…您可以利用另一种优化技术。 此方案假定您不能使用map（如果可以，请使用map：加速会高得多）。"
+}, {
+  "tag": "P",
+  "text": "You may save the cost of reevaluating a function if you previously keep it as a variable and reuse it in the loop block. The following snippet shows this behaviour:",
+  "translation": "如果您以前将其保留为变量并在循环块中重用，则可以节省重新评估函数的成本。 以下代码段显示了此行为："
+}, {
+  "tag": "PRE",
+  "text": "def opt_loop(x):  y = []  append = y.append  for n in x:    append(n)",
+  "translation": "def opt_loop（x）：y = [] append = y。在x中附加n：append（n）"
+}, {
+  "tag": "P",
+  "text": "Note that if you need to append the current element to different lists, you’ll have to create a new variable for each list’s append function.",
+  "translation": "请注意，如果您需要将当前元素追加到其他列表中，则必须为每个列表的append函数创建一个新变量。"
+}, {
+  "tag": "P",
+  "text": "Let’s check the speedup using compute_speedup:",
+  "translation": "让我们使用compute_speedup检查加速："
+}, {
+  "tag": "PRE",
+  "text": "compute_speedup(slow_loop, opt_loop, 'loop')",
+  "translation": "compute_speedup（slow_loop，opt_loop，'loop'）"
+}, {
+  "tag": "P",
+  "text": "In this case, I’m obtaining a speedup of 2,07! Again, we didn’t need to make any major changes to obtain such improvement.",
+  "translation": "在这种情况下，我获得了2,07的加速！ 同样，我们无需进行任何重大更改即可获得这种改进。"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Dhanesh Budhrani的文章《3 techniques to make your Python code faster》，参考：https://towardsdatascience.com/3-techniques-to-make-your-python-code-faster-193ffab5eb36)",
+  "translation": "（本文翻译自Dhanesh Budhrani的文章，“三种使Python代码更快的技术”，参考：https：//towardsdatascience.com/3-techniques-to-make-your-python-code-faster-193ffab5eb36）"
+}]
