@@ -1,0 +1,135 @@
+[{
+  "tag": "H1",
+  "text": "Wrapping Up",
+  "translation": "包起来"
+}, {
+  "tag": "P",
+  "text": "This was a very quick introduction to what is machine learning without getting into the greasy details. Here is a quick summary of the main ideas in this post:",
+  "translation": "这是对什么是机器学习的非常快速的介绍，而无需深入研究油腻的细节。 这是本文的主要思想的简要概述："
+}, {
+  "tag": "UL",
+  "texts": ["Machine learning allows computers to perform tasks without you having to tell the computer how to do it.", "Machine Learning is all about computers looking at a lot of examples and trying to figure out how to make the best guess.", "The way machines learn how to make the best guess is by self-correcting its wrong guesses. This is done by looking at the correct answers in examples.", "Humans run the whole game by providing the right set of examples, the way to detect mistakes, etc."],
+  "translations": ["机器学习使计算机可以执行任务，而无需告诉计算机如何执行任务。", "机器学习是关于计算机的许多示例，它们试图找出最佳答案。", "机器学习如何做出最佳猜测的方式是通过自我纠正错误的猜测。 这是通过查看示例中的正确答案来完成的。", "人类通过提供正确的示例集，发现错误的方式等来运行整个游戏。"]
+}, {
+  "tag": "P",
+  "text": "If you understood this you know more about how machine learning works than most people. Feel free to drop in your feedback and queries in the comments section.",
+  "translation": "如果您了解这一点，那么比大多数人更了解机器学习的工作原理。 随时在评论部分中添加您的反馈和查询。"
+}, {
+  "tag": "H1",
+  "text": "“If the machine is correcting itself, What do we humans do in this?”",
+  "translation": "“如果机器正在自我校正，那么我们人类会在做什么？”"
+}, {
+  "tag": "P",
+  "text": "Machine Learning is not performed by computers on their own. Humans have a very important role in machine learning. Humans play the role of coaches or facilitators who control the whole game :",
+  "translation": "机器学习不是由计算机自己执行的。 人类在机器学习中扮演着非常重要的角色。 人类扮演着控制整个比赛的教练或协助者的角色："
+}, {
+  "tag": "UL",
+  "texts": ["Humans provide examples that computers use to learn.", "And humans tell computers how to detect their mistakes."],
+  "translations": ["人类提供了计算机用来学习的示例。", "人们告诉计算机如何检测错误。"]
+}, {
+  "tag": "P",
+  "text": "Basically the only thing a machine is doing is making guesses based on examples and correcting its guesses to the best of its ability. Everything else is guided by information and code provided by humans.",
+  "translation": "基本上，机器唯一要做的就是根据示例进行猜测，并尽其所能纠正其猜测。 其他所有内容均以人类提供的信息和代码为指导。"
+}, {
+  "tag": "H1",
+  "text": "“So how does it guess correctly?”",
+  "translation": "“那么，如何正确猜测呢？”"
+}, {
+  "tag": "P",
+  "text": "Initially, the computer makes really crappy guesses (starting with random guesses). Then it compares its own guess to the correct answer we provided in the example. We ask the computer to reduce the mistakes it’s making in its guesses. It then goes on a wild goose chase to reduce the mistakes. As it tries to reduce its mistakes, it self corrects and thus slowly gets closer to the correct guess.",
+  "translation": "最初，计算机会做出非常糟糕的猜测（从随机猜测开始）。 然后，它将自己的猜测与我们在示例中提供的正确答案进行比较。 我们要求计算机减少其猜测中的错误。 然后继续进行大鹅追捕以减少错误。 当它试图减少错误时，它会自我纠正，因此慢慢接近正确的猜测。"
+}, {
+  "tag": "P",
+  "text": "The process by which the computer is correcting its own mistakes is called gradient descent by experts. No need to remember the name now. This could be a topic for another fun post in the future. For now, just remember that the computer corrects itself slowly by looking at examples of correct answers.",
+  "translation": "专家将计算机纠正其自身错误的过程称为梯度下降。 现在无需记住名称。 这可能是将来另一个有趣的帖子的主题。 现在，请记住，计算机会通过查看正确答案的示例来缓慢地进行自我校正。"
+}, {
+  "tag": "H1",
+  "text": "“Guessing you say, that's it? “ Yes and No.",
+  "translation": "“猜到你说的是吗？ “是的，不是。"
+}, {
+  "tag": "P",
+  "text": "All that the computer is doing is making a guess based on what it knows about similar questions. (A fancy way of saying guessing is called Prediction). Well, it’s not guessing randomly. It tries to learn to make the best possible guess based on some fun math (we don’t need to get into that just yet). To reiterate, the learning in Machine Learning is all about figuring out how to make the best possible guess. The best possible guess is the one that is closest to the correct answer.",
+  "translation": "计算机所做的只是根据对类似问题的了解进行猜测。 （一种幻想的猜测方式称为预测）。 好吧，这不是随机猜测。 它会尝试根据一些有趣的数学来学习尽可能做出最好的猜测（我们现在还不需要研究）。 重申一下，机器学习中的学习全部是要弄清楚如何做出最好的猜测。 最好的猜测是最接近正确答案的猜测。"
+}, {
+  "tag": "H1",
+  "text": "What do you mean ‘Learning by itself’ 😮 ?",
+  "translation": "“自学”😮是什么意思？"
+}, {
+  "tag": "P",
+  "text": "How we teach computers is by showing it many examples of questions and answers. Experts like to call the whole set of examples as the dataset. These examples contain a sample question(x)** and its correct answer(y). An example could contain say ‘a picture of a cat’ and its answer ‘cat’.",
+  "translation": "通过显示许多问题和答案的示例，我们教计算机的方法。 专家喜欢将整个示例集称为数据集。 这些示例包含一个示例问题（x）**及其正确答案（y）。 一个示例可能包含“猫的图片”及其答案“猫”。"
+}, {
+  "tag": "P",
+  "text": "This is very like the sample quiz some nice teachers in school give before an exam. This sample quiz helps to get you prepared for what to expect in the exam. You might not get the exact same questions in the exam but it helps you prepare for similar types of questions.",
+  "translation": "这就像一些学校里好老师在考试前给出的示例测验。 此示例测验帮助您为考试做准备。 您可能不会在考试中得到完全相同的问题，但可以帮助您准备相似类型的问题。"
+}, {
+  "tag": "P",
+  "text": "We show computers examples of questions and answers without telling it how the correct answers can be found. Using the examples, the computer tries to figure out a way to guess the correct answer. It learns to make a correct guess even if it has not seen this particular question in the examples we showed it. The computer looks for similar questions it has seen before and uses the previously seen correct answer to make a guess. That’s all the computer is doing — making a guess based on previously seen examples.",
+  "translation": "我们向计算机显示问题和答案的示例，而没有告诉您如何找到正确的答案。 使用示例，计算机尝试找出一种猜测正确答案的方法。 即使在我们展示的示例中没有看到这个特定问题，它也会学会做出正确的猜测。 计算机查找以前遇到的类似问题，并使用以前看到的正确答案进行猜测。 这就是计算机的全部工作-根据先前看到的示例进行猜测。"
+}, {
+  "tag": "P",
+  "text": "(** People who know mathematics have a weird fetish of trying to call things with meaningless alphabets. The most dreaded alphabet for students is X. Every student from any corner of the world has spent countless hours trying the “Find X”. :-D This field of maths called Algebra although it looks weird is very useful. It is useful in representing very complex ideas beautifully using alphabets, numbers and even alien-like symbols.)",
+  "translation": "（**了解数学的人对尝试用无意义的字母来称呼事物感到很奇怪。对于学生而言，最可怕的字母是X。来自世界各地的每个学生都花了无数小时来尝试“查找X”。：- D尽管看起来很怪异，但这个数学领域却称为“代数”，它非常有用。它对于使用字母，数字甚至是类似外星人的符号精美地表达非常复杂的思想很有用。）"
+}, {
+  "tag": "H1",
+  "text": "What's the story today?",
+  "translation": "今天的故事是什么？"
+}, {
+  "tag": "P",
+  "text": "For a very long time, computers couldn’t do anything without someone telling them how to do something. This was true until recently. Some very smart people* found a way to teach computers to learn by themselves. (Another big word adults use for this is Machine Learning, but psst. who needs that). Imagine you are in a classroom without a teacher. There you and all your classmates learn on your own without any teacher. Weird right? Imagine how weird it must be for a computer to learn on its own. Surprisingly the computer is very good at learning on its own. It can even learn complicated things that people can’t teach it.",
+  "translation": "很长时间以来，如果没有别人告诉他们如何做某事，计算机将无法执行任何操作。 直到最近都是如此。 一些非常聪明的人*找到了一种教计算机自己学习的方法。 （成年人为此使用的另一个大词是机器学习，但需要。） 假设您在没有老师的教室里。 在这里，您和您的所有同学无需任何老师就可以自行学习。 对吗？ 想象一下，一台计算机自己学习必须多么奇怪。 令人惊讶的是，计算机非常擅长自行学习。 它甚至可以学习人们无法教的复杂事物。"
+}, {
+  "tag": "P",
+  "text": "(* The pioneers of this field didn’t give up on computers -like some good dedicated teachers. They kept trying to teach computers until slowly even the dumb computers started learning)",
+  "translation": "（*该领域的先驱们并没有像某些优秀的敬业教师那样放弃计算机。他们一直在教计算机，直到缓慢的愚蠢的计算机开始学习为止）"
+}, {
+  "tag": "H1",
+  "text": "Children’s Guide to Machine Learning",
+  "translation": "儿童机器学习指南"
+}, {
+  "tag": "H2",
+  "text": "Introducing one of the most important technologies of today to the leaders of tomorrow.",
+  "translation": "向明天的领导者介绍当今最重要的技术之一。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*6qf4BueMhFgp7-g6.png?q=20",
+  "caption": "Source: https://undraw.co",
+  "type": "image",
+  "file": "0*6qf4BueMhFgp7-g6.png"
+}, {
+  "tag": "P",
+  "text": "(This article intends to make it easy for even grade school students to understand the basics of Machine Learning. This, in turn, would make it accessible for everyone. If you feel any section fails at that intention, please let me know in the comments and I’ll try to improve that section)",
+  "translation": "（本文旨在使即使是小学一年级的学生也容易理解机器学习的基础。这反过来将使所有人都可以使用它。如果您觉得任何部分都未能达到该目的，请在评论中告知我 我将尝试改进该部分）"
+}, {
+  "tag": "P",
+  "text": "Adults like to use a lot of complicated words to say something. This could be because they want to show their impressive vocabulary. It gets worse in technical fields like Computer Science which have a lot of big technical words. These technical words are supposed to help differentiate between similar ideas. But most often it complicates simple ideas. In this article, I’ll try not to use these complicated words. This is so that you can understand the ideas clearly rather than memorize big words. So let’s get started with a bit of history.",
+  "translation": "成人喜欢用很多复杂的词说些什么。 这可能是因为他们想要显示出令人印象深刻的词汇。 在诸如计算机科学之类的技术领域中，它的技术术语变得越来越重要，情况变得更糟。 这些技术用语应有助于区分相似的想法。 但大多数情况下，它会使简单的想法复杂化。 在本文中，我将尽量不要使用这些复杂的词。 这样一来，您可以清晰地理解想法，而不必记住大词。 因此，让我们开始一些历史。"
+}, {
+  "tag": "H1",
+  "text": "Let’s take it from the top.",
+  "translation": "让我们从顶部开始。"
+}, {
+  "tag": "P",
+  "text": "You might have seen computers all around you. From the smartwatch to phones, tablets, and laptops — they are all different forms of computers. These useful gadgets of today have always been “Dumb Machines”. They are good at obeying orders like an obedient puppy (or kitten for those who are weird like that 😀). If you tell it to Swipe Right, it swipes right. If you tell it to Swipe Left, it swipes left. If you tell it to open Instagram when someone clicks on the Instagram icon it will open it. You get the drift. It can’t think of anything on its own.",
+  "translation": "您可能已经看过周围的计算机。 从智能手表到手机，平板电脑和笔记本电脑，它们都是不同形式的计算机。 如今，这些有用的小工具一直是“哑巴机器”。 他们善于服从命令，如听话的小狗（或对那些奇怪的人来说是小猫）。 如果您告诉它向右滑动，则向右滑动。 如果您告诉它向左滑动，则向左滑动。 如果当有人单击Instagram图标时告诉它打开Instagram，它将打开它。 你得到的漂移。 它无法独立思考任何事情。"
+}, {
+  "tag": "P",
+  "text": "Although these machines are dumb, over the last 50 years, we have made the computers do many things. From adding numbers and playing songs to defeating grandmasters at Chess. But for each of those things, someone had to tell the computer what to do and exactly how to do it.",
+  "translation": "尽管这些机器很笨，但在过去的50年中，我们已经使计算机做很多事情。 从增加数字和播放歌曲到在Chess中击败大师级人物。 但是对于每件事，都必须有人告诉计算机要做什么以及确切如何做。"
+}, {
+  "tag": "P",
+  "text": "So the things that a computer could do for us was limited. Computers could only do things that we could show them how to do (step by step). As you could guess, that magic lost its charm pretty soon. There are always some things where :",
+  "translation": "因此，计算机可以为我们做的事情是有限的。 计算机只能做一些我们可以向他们展示如何做的事情（逐步进行）。 您可能猜到了，那魔术很快就失去了魅力。 总有一些地方："
+}, {
+  "tag": "UL",
+  "texts": ["even humans don’t know how to do it (let alone explain to the computer)", "and some tasks where we don’t know how to tell the computer what to do. ( we can’t explain it clearly in a language that machine could understand)"],
+  "translations": ["甚至人类都不知道该怎么做（更不用说向计算机解释了）", "还有一些我们不知道如何告诉计算机该怎么做的任务。 （我们无法用机器可以理解的语言清楚地解释它）"]
+}, {
+  "tag": "P",
+  "text": "( A big word for telling computers what to do and how to do it is programming. But we wouldn’t use these big words because we don’t wanna be adults yet.)",
+  "translation": "（在编程中，告诉计算机做什么和如何做是一个大词。但是我们不会使用这些大词，因为我们还不想成为成年人。）"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Kannan Kumar的文章《Children’s Guide to Machine Learning》，参考：https://towardsdatascience.com/childrens-guide-to-machine-learning-b90171f86cef)",
+  "translation": "（本文翻译自Kannan Kumar的文章，《儿童机器学习指南》，参考：https：//towardsdatascience.com/childrens-guide-to-machine-learning-b90171f86cef）"
+}]
