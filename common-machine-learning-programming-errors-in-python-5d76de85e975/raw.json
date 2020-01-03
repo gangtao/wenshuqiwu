@@ -1,0 +1,333 @@
+[{
+  "tag": "H1",
+  "text": "Common Machine Learning Programming Errors in Python",
+  "translation": "Python中常见的机器学习编程错误"
+}, {
+  "tag": "H2",
+  "text": "Common Python Errors in Machine Learning",
+  "translation": "机器学习中常见的Python错误"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*3HQql0GVNTK5KD3H49Bybw.png?q=20",
+  "caption": "Source",
+  "type": "image",
+  "file": "1*3HQql0GVNTK5KD3H49Bybw.png"
+}, {
+  "tag": "P",
+  "text": "In this post I will go over some of the most common errors I come across in python during the model building and development process. For demonstration purposes we will use height/weight data which can be found here on Kaggle. The data contains gender, height in inches and weight in pounds.",
+  "translation": "在本文中，我将介绍在模型构建和开发过程中在python中遇到的一些最常见的错误。 出于演示目的，我们将使用在Kaggle上可以找到的身高/体重数据。 数据包含性别，身高（英寸）和体重（磅）。"
+}, {
+  "tag": "P",
+  "text": "The most common errors I have come accross in my experience are the following:",
+  "translation": "我遇到的最常见错误如下："
+}, {
+  "tag": "P",
+  "text": "IMPORTS",
+  "translation": "进口商品"
+}, {
+  "tag": "OL",
+  "texts": ["NameError", "ModuleNotFoundError", "AttributeError", "ImportError"],
+  "translations": ["NameError", "ModuleNotFoundError", "AttributeError", "ImportError"]
+}, {
+  "tag": "P",
+  "text": "READING DATA",
+  "translation": "读取数据"
+}, {
+  "tag": "P",
+  "text": "6. FileNotFoundError",
+  "translation": "6. FileNotFoundError"
+}, {
+  "tag": "P",
+  "text": "SELECTING COLUMNS",
+  "translation": "选择列"
+}, {
+  "tag": "P",
+  "text": "7. KeyError",
+  "translation": "7. KeyError"
+}, {
+  "tag": "P",
+  "text": "DATA PROCESSING",
+  "translation": "数据处理"
+}, {
+  "tag": "P",
+  "text": "8. ValueError",
+  "translation": "8. ValueError"
+}, {
+  "tag": "P",
+  "text": "We will build a simple linear regression model and modify the code to show how the above errors arise in practice.",
+  "translation": "我们将建立一个简单的线性回归模型并修改代码，以显示上述错误在实践中是如何产生的。"
+}, {
+  "tag": "P",
+  "text": "First let’s import the data using pandas and print the first five rows:",
+  "translation": "首先，我们使用熊猫导入数据并打印前五行："
+}, {
+  "tag": "PRE",
+  "text": "import pandas as pddf = pd.read_csv(\"weight-height.csv\")print(df.head())",
+  "translation": "将熊猫作为pddf = pd.read_csv（“ weight-height.csv”）print（df.head（））导入"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*MjF11UFJ-6zWOFR7_838HA.png?q=20",
+  "type": "image",
+  "file": "1*MjF11UFJ-6zWOFR7_838HA.png"
+}, {
+  "tag": "P",
+  "text": "As you can see the data set is very simple, with gender, height and weight columns. The next thing we can do is visualize the data using matplotlib and seaborn:",
+  "translation": "如您所见，数据集非常简单，包含性别，身高和体重列。 我们可以做的下一件事是使用matplotlib和seaborn可视化数据："
+}, {
+  "tag": "PRE",
+  "text": "import matplotlib.pyplot as pltplt.scatter(df['Weight'],  df['Height'])plt.xlabel(\"Weight\")plt.ylabel(\"Height\")plt.show()",
+  "translation": "导入matplotlib.pyplot作为pltplt.scatter（df ['Weight']，df ['Height']）plt.xlabel（“ Weight”）plt.ylabel（“ Height”）plt.show（）"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*CARPDQEiy7HCZl_0u9N7Gg.png?q=20",
+  "type": "image",
+  "file": "1*CARPDQEiy7HCZl_0u9N7Gg.png"
+}, {
+  "tag": "P",
+  "text": "Looking at the scatter plot of the weight vs height we see that the relationship is linear.",
+  "translation": "查看体重与身高的散点图，我们发现该关系是线性的。"
+}, {
+  "tag": "P",
+  "text": "Next let’s define our input (X) and output (y) and split the data for training and testing:",
+  "translation": "接下来，我们定义输入（X）和输出（y）并拆分数据以进行训练和测试："
+}, {
+  "tag": "PRE",
+  "text": "from sklearn.model_selection import train_test_splitimport numpy as npX = np.array(df[\"Weight\"]).reshape(-1,1)y = np.array(df[\"Height\"]).reshape(-1,1)X_train, X_test, y_train, y_test = train_test_split(X, y, random_state = 42, test_size = 0.33)"
+}, {
+  "tag": "P",
+  "text": "We can then define a linear regression model, fit to our training data, make predictions on the test set, and evaluate the performance of the model:",
+  "translation": "然后，我们可以定义一个线性回归模型，以适合我们的训练数据，对测试集进行预测，并评估模型的性能："
+}, {
+  "tag": "PRE",
+  "text": "from sklearn.linear_model import LinearRegressionreg = LinearRegression()reg.fit(X_train, y_train)y_pred = reg.predict(X_test)print(\"R^2 Accuracy: \", reg.score(X_test, y_test))",
+  "translation": "从sklearn.linear_model导入LinearRegressionreg = LinearRegression（）reg.fit（X_train，y_train）y_pred = reg.predict（X_test）print（“ R ^ 2 Accuracy：”，reg.score（X_test，y_test））"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*IA9huIo7Vr38bhM6k_TDXA.png?q=20",
+  "type": "image",
+  "file": "1*IA9huIo7Vr38bhM6k_TDXA.png"
+}, {
+  "tag": "P",
+  "text": "The first error I’ll discuss in NameError which occurs if, for example, I forget to import a package. In the following code I have removed “import numpy as np” :",
+  "translation": "我将在NameError中讨论的第一个错误，例如，如果我忘记导入包，就会发生。 在以下代码中，我删除了“将numpy导入为np”："
+}, {
+  "tag": "PRE",
+  "text": "from sklearn.model_selection import train_test_splitX = np.array(df[\"Weight\"]).reshape(-1,1)y = np.array(df[\"Height\"]).reshape(-1,1)X_train, X_test, y_train, y_test = train_test_split(X, y, random_state = 42, test_size = 0.33)",
+  "translation": "从sklearn.model_selection导入train_test_splitX = np.array（df [“ Weight”]）。reshape（-1,1）y = np.array（df [“ Height”]）。reshape（-1,1）X_train，X_test ，y_train，y_test = train_test_split（X，y，random_state = 42，test_size = 0.33）"
+}, {
+  "tag": "P",
+  "text": "If I attempt to run the script with that line of code missing I get the following error:",
+  "translation": "如果我尝试在缺少该行代码的情况下运行脚本，则会出现以下错误："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*evWCC51mdF8jdzaSakNbHA.png?q=20",
+  "type": "image",
+  "file": "1*evWCC51mdF8jdzaSakNbHA.png"
+}, {
+  "tag": "P",
+  "text": "I would receive similar messages for leaving out the import statements for seaborn, matplotlib and pandas:",
+  "translation": "如果省略seaborn，matplotlib和pandas的import语句，我会收到类似的消息："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*JJjPE_aiv5ovt5Fqd_F8CQ.png?q=20",
+  "type": "image",
+  "file": "1*JJjPE_aiv5ovt5Fqd_F8CQ.png"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*MJ47owYT6UgNwWTJ0dit8Q.png?q=20",
+  "type": "image",
+  "file": "1*MJ47owYT6UgNwWTJ0dit8Q.png"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*I5DZVx4k8qL3Nf3McAFHRQ.png?q=20",
+  "type": "image",
+  "file": "1*I5DZVx4k8qL3Nf3McAFHRQ.png"
+}, {
+  "tag": "P",
+  "text": "Another issue is accidentally trying to import a package that doesn’t exist due to misspelling, which results in a ModuleNotFoundError. For example if I misspell ‘pandas’ as ‘pandnas’:",
+  "translation": "另一个问题是由于拼写错误而试图导入一个不存在的软件包，这会导致ModuleNotFoundError。 例如，如果我将“ pandas”拼写错误为“ pandnas”："
+}, {
+  "tag": "PRE",
+  "text": "import pandnas as pd",
+  "translation": "将pandnas导入为pd"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*J85oNfmtLsNcp95AvWs0DA.png?q=20",
+  "type": "image",
+  "file": "1*J85oNfmtLsNcp95AvWs0DA.png"
+}, {
+  "tag": "P",
+  "text": "Or if I forgot ‘pyplot’ in the matplotlib scatterplot import we get an AttributeError:",
+  "translation": "或者，如果我在matplotlib scatterplot导入中忘记了“ pyplot”，则会收到AttributeError："
+}, {
+  "tag": "PRE",
+  "text": "import matplotlib as plt",
+  "translation": "导入matplotlib作为plt"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*zUYWkNH7bIfZyyk3XpTZkA.png?q=20",
+  "type": "image",
+  "file": "1*zUYWkNH7bIfZyyk3XpTZkA.png"
+}, {
+  "tag": "P",
+  "text": "Similarly if I forgot the linear_regression and model_selection attributes in the sklearn import, I’ll get an ImportError:",
+  "translation": "同样，如果我在sklearn导入中忘记了linear_regression和model_selection属性，则会收到ImportError："
+}, {
+  "tag": "PRE",
+  "text": "from sklearn import LinearRegression from sklearn import train_test_split",
+  "translation": "从sklearn导入LinearRegression从sklearn导入train_test_split"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*f1yOzRFTi1EgsBKrXRpFHg.png?q=20",
+  "type": "image",
+  "file": "1*f1yOzRFTi1EgsBKrXRpFHg.png"
+}, {
+  "tag": "P",
+  "text": "In terms of reading files, if I misspell the name of the file I get a FileNotFoundError:",
+  "translation": "在读取文件方面，如果我拼错了文件名，则会得到FileNotFoundError："
+}, {
+  "tag": "PRE",
+  "text": "df = pd.read_csv(\"weight-heigh1t.csv\")",
+  "translation": "df = pd.read_csv（“ weight-heigh1t.csv”）"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*8H6DWQmiIYxi3pVGnVZeSA.png?q=20",
+  "type": "image",
+  "file": "1*8H6DWQmiIYxi3pVGnVZeSA.png"
+}, {
+  "tag": "P",
+  "text": "Additionally, if I try to select a column from a pandas data frame that doesn’t exist I get a KeyError :",
+  "translation": "此外，如果我尝试从不存在的熊猫数据框中选择一列，则会收到KeyError："
+}, {
+  "tag": "PRE",
+  "text": "plt.scatter(df['Weight1'],  df['Height'])",
+  "translation": "plt.scatter（df ['Weight1']，df ['Height']）"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*8AwOj2xzzwTbhC4VN0Dbyg.png?q=20",
+  "type": "image",
+  "file": "1*8AwOj2xzzwTbhC4VN0Dbyg.png"
+}, {
+  "tag": "P",
+  "text": "If I forget to convert the pandas series for “Weight” and “Height” into numpy arrays I get a ValueError. This is actually very common sklearn methods only accept numpy arrays. I frequently find myself forgetting this simple step of converting from a pandas series to a numpy array:",
+  "translation": "如果我忘记将“ Weight”和“ Height”的熊猫系列转换为numpy数组，则会收到ValueError。 这实际上是非常常见的sklearn方法，仅接受numpy数组。 我经常发现自己忘记了从熊猫系列转换为numpy数组的简单步骤："
+}, {
+  "tag": "PRE",
+  "text": "X = df[\"Weight\"]y = df[\"Height\"]X_train, X_test, y_train, y_test = train_test_split(X, y, random_state = 42, test_size = 0.33)reg = LinearRegression()reg.fit(X_train, y_train)",
+  "translation": "X = df [“ Weight”] y = df [“ Height”] X_train，X_test，y_train，y_test = train_test_split（X，y，random_state = 42，test_size = 0.33）reg = LinearRegression（）reg.fit（X_train，y_train ）"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*klRuV3JLi12sY2KgKtkVqg.png?q=20",
+  "type": "image",
+  "file": "1*klRuV3JLi12sY2KgKtkVqg.png"
+}, {
+  "tag": "P",
+  "text": "or If I forget to reshape the numpy array into a 2 dimensional array I also get a ValueError:",
+  "translation": "或者，如果我忘记将numpy数组重塑为二维数组，那么我还会收到ValueError："
+}, {
+  "tag": "PRE",
+  "text": "X = np.array(df[\"Weight\"])y = np.array(df[\"Height\"])X_train, X_test, y_train, y_test = train_test_split(X, y, random_state = 42, test_size = 0.33)reg = LinearRegression()reg.fit(X_train, y_train)",
+  "translation": "X = np.array（df [“ Weight”]）y = np.array（df [“ Weight”]）X_train，X_test，y_train，y_test = train_test_split（X，y，random_state = 42，test_size = 0.33）reg = LinearRegression（）reg.fit（X_train，y_train）"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*klRuV3JLi12sY2KgKtkVqg.png?q=20",
+  "type": "image",
+  "file": "1*klRuV3JLi12sY2KgKtkVqg.png"
+}, {
+  "tag": "P",
+  "text": "Another common cause of a ValueError is when carrying out the train test split. I often forget the order of the X and y arrays:",
+  "translation": "ValueError的另一个常见原因是在进行列车测试拆分时。 我经常忘记X和y数组的顺序："
+}, {
+  "tag": "PRE",
+  "text": "X_train, X_test, y_train, y_test = train_test_split(X, y, random_state = 42, test_size = 0.33)",
+  "translation": "X_train，X_test，y_train，y_test = train_test_split（X，y，random_state = 42，test_size = 0.33）"
+}, {
+  "tag": "P",
+  "text": "Where I switch X_test and y_train:",
+  "translation": "我在哪里切换X_test和y_train："
+}, {
+  "tag": "PRE",
+  "text": "X_train, y_train, X_test, y_test = train_test_split(X, y, random_state = 42, test_size = 0.33)",
+  "translation": "X_train，y_train，X_test，y_test = train_test_split（X，y，random_state = 42，test_size = 0.33）"
+}, {
+  "tag": "P",
+  "text": "which gives the following error upon fitting:",
+  "translation": "拟合时会出现以下错误："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*RO0Aw-Dnl_qUbhZQcKrtNw.png?q=20",
+  "type": "image",
+  "file": "1*RO0Aw-Dnl_qUbhZQcKrtNw.png"
+}, {
+  "tag": "P",
+  "text": "Finally, when trying to fit a model data corresponding to a specific category or population I often come across the issue of not having enough data. Let’s filter our dataframe to replicate this issue. Let’s filter the data to only include records where the ‘Weight’ = 241.893563. This will result in exactly one row of data:",
+  "translation": "最后，当尝试拟合与特定类别或总体相对应的模型数据时，我经常遇到没有足够数据的问题。 让我们过滤数据框以复制此问题。 让我们过滤数据，使其仅包括“重量” = 241.893563的记录。 这将导致仅一行数据："
+}, {
+  "tag": "PRE",
+  "text": "df = df[df['Weight'] == 241.893563]",
+  "translation": "df = df [df ['Weight'] == 241.893563]"
+}, {
+  "tag": "P",
+  "text": "If we try to build our model we get the following error in the line where we split out data::",
+  "translation": "如果尝试构建模型，则在拆分数据的行中将出现以下错误："
+}, {
+  "tag": "PRE",
+  "text": "X_train, X_test, y_train, y_test = train_test_split(X, y, random_state = 42, test_size = 0.33)reg = LinearRegression()reg.fit(X_train, y_train)y_pred = reg.predict(X_test)print(\"R^2 Accuracy: \", reg.score(X_test, y_test))",
+  "translation": "X_train，X_test，y_train，y_test = train_test_split（X，y，random_state = 42，test_size = 0.33）reg = LinearRegression（）reg.fit（X_train，y_train）y_pred = reg.predict（X_test）print（“ R ^ 2准确性 ：“，reg.score（X_test，y_test））"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*EDc27PwakY09YYQFDov4hQ.png?q=20",
+  "type": "image",
+  "file": "1*EDc27PwakY09YYQFDov4hQ.png"
+}, {
+  "tag": "P",
+  "text": "And if we try to fit we get the following error::",
+  "translation": "如果我们尝试拟合，则会出现以下错误："
+}, {
+  "tag": "PRE",
+  "text": "#X_train, X_test, y_train, y_test = train_test_split(X, y, random_state = 42, test_size = 0.33)reg = LinearRegression()reg.fit(X, y)",
+  "translation": "#X_train，X_test，y_train，y_test = train_test_split（X，y，random_state = 42，test_size = 0.33）reg = LinearRegression（）reg.fit（X，y）"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*r6KaFynyiWPpK0SZRcvelg.png?q=20",
+  "type": "image",
+  "file": "1*r6KaFynyiWPpK0SZRcvelg.png"
+}, {
+  "tag": "P",
+  "text": "Finally, if the data has missing or infinite values the fitting while throw an error. Let’s redefine the weight column with ‘nan ‘ (Not a Number) values to generate this error:",
+  "translation": "最后，如果数据缺失或无穷大，则拟合时将引发错误。 让我们用“ nan”（非数字）值重新定义权重列，以产生此错误："
+}, {
+  "tag": "PRE",
+  "text": "df['Weight'] = np.nanX = np.array(df[\"Weight\"]).reshape(-1,1)y = np.array(df[\"Height\"]).reshape(-1,1)X_train, X_test, y_train, y_test = train_test_split(X, y, random_state = 42, test_size = 0.33)reg = LinearRegression()reg.fit(X_train, y_train)",
+  "translation": "df ['Weight'] = np.nanX = np.array（df [“ Weight”]）。reshape（-1,1）y = np.array（df [“ Height”]）。reshape（-1,1 ）X_train，X_test，y_train，y_test = train_test_split（X，y，random_state = 42，test_size = 0.33）reg = LinearRegression（）reg.fit（X_train，y_train）"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*uhndNL_KHVvyzHXuzfRc-g.png?q=20",
+  "type": "image",
+  "file": "1*uhndNL_KHVvyzHXuzfRc-g.png"
+}, {
+  "tag": "P",
+  "text": "We would get the same error message with infinite values:",
+  "translation": "我们将获得具有无限值的相同错误消息："
+}, {
+  "tag": "PRE",
+  "text": "df['Weight'] = np.infX = np.array(df[\"Weight\"]).reshape(-1,1)y = np.array(df[\"Height\"]).reshape(-1,1)X_train, X_test, y_train, y_test = train_test_split(X, y, random_state = 42, test_size = 0.33)reg = LinearRegression()reg.fit(X_train, y_train)",
+  "translation": "df ['Weight'] = np.infX = np.array（df [“ Weight”]）。reshape（-1,1）y = np.array（df [“ Height”]）。reshape（-1,1 ）X_train，X_test，y_train，y_test = train_test_split（X，y，random_state = 42，test_size = 0.33）reg = LinearRegression（）reg.fit（X_train，y_train）"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*uhndNL_KHVvyzHXuzfRc-g.png?q=20",
+  "type": "image",
+  "file": "1*uhndNL_KHVvyzHXuzfRc-g.png"
+}, {
+  "tag": "P",
+  "text": "In this post we reviewed different errors that arise when developing models in python. We reviewed errors related to importing packages, reading files, selecting columns and processing data. Having solid knowledge of the different types of errors that arise when developing machine learning models can be useful when productionizing machine learning code. Having this knowledge can prevent errors from occurring as well as inform the logic that can be used to catch these errors when they occur.",
+  "translation": "在这篇文章中，我们回顾了在python中开发模型时出现的不同错误。 我们检查了与导入包，读取文件，选择列和处理数据有关的错误。 对开发机器学习模型时出现的不同类型错误有扎实的知识，在生产机器学习代码时非常有用。 掌握这些知识可以防止错误发生，并通知可用于在错误发生时捕获这些错误的逻辑。"
+}, {
+  "tag": "P",
+  "text": "There are many more errors that I come across daily but the errors I’ve listed in this post are most common in my experience. I hope this post was useful. The code from this post is available on GitHub. Thank you for reading!",
+  "translation": "我每天都会遇到更多错误，但是根据我的经验，我在这篇文章中列出的错误最为常见。 我希望这篇文章有用。 这篇文章中的代码可在GitHub上找到。 感谢您的阅读！"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Sadrach Pierre, Ph.D.的文章《Common Machine Learning Programming Errors in Python》，参考：https://towardsdatascience.com/common-machine-learning-programming-errors-in-python-5d76de85e975)",
+  "translation": "（本文翻译自Sadrach Pierre，博士学位。《 Python中的常见机器学习编程错误》，参考：https：//towardsdatascience.com/common-machine-learning-programming-errors-in-python-5d76de85e975）"
+}]
