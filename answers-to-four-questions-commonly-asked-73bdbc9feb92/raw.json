@@ -1,0 +1,136 @@
+[{
+  "tag": "P",
+  "text": "Thanks to Anne Bonner, Haebichan Jung, and Anton Muehlemann.",
+  "translation": "感谢Anne Bonner，Haebichan Jung和Anton Muehlemann。"
+}, {
+  "tag": "P",
+  "text": "Thanks for reading. If you have any questions that you would like to ask our team, you can do so here.",
+  "translation": "谢谢阅读。 如果您有任何疑问想问我们的团队，可以在这里进行。"
+}, {
+  "tag": "H1",
+  "text": "4. What makes a great article?",
+  "translation": "4.什么是出色的文章？"
+}, {
+  "tag": "P",
+  "text": "We already tried to answer this question in our writers’ guide. To keep it short, this is what is an excellent article for our team:",
+  "translation": "我们已经尝试在作家指南中回答这个问题。 为了简短起见，这是对我们团队的出色文章："
+}, {
+  "tag": "UL",
+  "texts": ["The author has something to say. It can be an important message, a point worth hearing, or a significant idea. 💡", "We have a reason to care. The author demonstrates why we should read what they’re writing and what the impact is.", "The answer matches the question. Whether or not the arguments are convincing, they’re narrated in an orderly sequence and attempt to answer the key issues that the author has posed.", "The story is visible. As the psychologist Steven Pinker put it: “Good writers narrate a story, advanced by protagonists who make things happen.” The author doesn’t just tell us what is happening; we can see it with our own eyes through metaphors, analogies, graphs, images, and examples.", "The article is worth sharing. Once we read it, we feel compelled to share it because we can see that it will help other people."],
+  "translations": ["作者有话要说。 它可以是重要的信息，值得一听的观点或重要的想法。 💡", "我们有理由要关心。 作者演示了为什么我们应该阅读他们的文章以及所产生的影响。", "答案匹配问题。 无论论据是否令人信服，我们都会按顺序叙述它们，并尝试回答作者提出的关键问题。", "这个故事是可见的。 正如心理学家史蒂文·平克（Steven Pinker）所说：“好作家讲述了一个故事，主人公把事情变为现实。”作者不仅告诉我们正在发生的事情，还告诉我们正在发生的事情。 我们可以通过隐喻，类比，图形，图像和示例亲眼看到它。", "这篇文章值得分享。 阅读后，我们感到不得不共享它，因为我们看到它会帮助其他人。"]
+}, {
+  "tag": "H1",
+  "text": "3. What is the most important thing that you learned while working on TDS?",
+  "translation": "3.在TDS上学习时，最重要的事情是什么？"
+}, {
+  "tag": "P",
+  "text": "Keeping our publication simple is essential to fulfilling our mission of sharing concepts, ideas, and codes.",
+  "translation": "使我们的出版物保持简单对完成我们共享概念，想法和代码的使命至关重要。"
+}, {
+  "tag": "P",
+  "text": "TDS grew so much, so quickly, that it could have been very easy for us to forget our initial mission. We could have tried to do too much or to focus on superficial things. Keeping our publication simple enables us to focus on what is essential, which is what our audience and contributors want us to do.",
+  "translation": "TDS增长如此之快，以至于我们很容易忘记最初的使命。 我们本可以尝试做太多事情，或者只专注于肤浅的事情。 保持出版物的简洁性使我们能够专注于基本内容，即观众和贡献者希望我们做的事情。"
+}, {
+  "tag": "P",
+  "text": "But keeping TDS simple isn’t as easy as it seems.",
+  "translation": "但是保持TDS简单并不像看起来那样容易。"
+}, {
+  "tag": "P",
+  "text": "We continually have to remind ourselves of why we’re doing what we are doing. We don’t want to rush into anything just because it’s new and shiny. We’re learning to be patient. In building something like TDS, being patient is much more vital than I ever would have believed.",
+  "translation": "我们不断地提醒自己为什么要做我们正在做的事情。 我们不想仅仅因为它是新颖而闪亮的东西就着急。 我们正在学习耐心。 在构建像TDS这样的东西时，耐心比我以前想象的要重要得多。"
+}, {
+  "tag": "H1",
+  "text": "2. How can I convince my manager to invest in data science?",
+  "translation": "2.如何说服我的经理投资数据科学？"
+}, {
+  "tag": "P",
+  "text": "Try to demonstrate clearly what business value your data science projects would bring to the company.",
+  "translation": "尝试清楚地说明您的数据科学项目将为公司带来哪些业务价值。"
+}, {
+  "tag": "P",
+  "text": "Your manager will always challenge your ideas, and that’s why you need to be prepared.",
+  "translation": "您的经理将始终挑战您的想法，这就是为什么您需要做好准备。"
+}, {
+  "tag": "P",
+  "text": "If you can make the case that your data science projects will bring critical business value while being reasonably feasible, your manager will have fewer reasons to refuse them!",
+  "translation": "如果您可以证明您的数据科学项目将在合理可行的情况下带来关键的业务价值，那么您的经理将没有什么理由拒绝它们！"
+}, {
+  "tag": "P",
+  "text": "Start by plotting all your potential data science projects on a simple graph and discuss them with your team. Your goal is to be creative enough to find projects that are both valuable and achievable.",
+  "translation": "首先在一个简单的图形上绘制所有潜在的数据科学项目，然后与您的团队讨论。 您的目标是要有足够的创造力，以找到有价值且可实现的项目。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*z1hbd9sPiW3KWZWN9KDchA.png?q=20",
+  "type": "image",
+  "file": "1*z1hbd9sPiW3KWZWN9KDchA.png"
+}, {
+  "tag": "H1",
+  "text": "1. What is the most neglected advice that you would give to beginners?",
+  "translation": "1.您会给初学者最被忽视的建议是什么？"
+}, {
+  "tag": "P",
+  "text": "Take the time to find out if being a data scientist is really your dream job.",
+  "translation": "花点时间找出自己是否真的是梦想中的数据科学家。"
+}, {
+  "tag": "P",
+  "text": "Studies show that most people feel disengaged at work. Data scientists are no exception. According to a survey by Kaggle, most people working in the field say they spend 1–2 hours a week looking for a new job.",
+  "translation": "研究表明，大多数人在工作中感到放松。 数据科学家也不例外。 根据Kaggle的一项调查，大多数在野外工作的人表示，他们每周花费1-2个小时寻找新工作。"
+}, {
+  "tag": "P",
+  "text": "Why is that? Jonny Brooks-Bartlett mentions several reasons, including:",
+  "translation": "这是为什么？ Jonny Brooks-Bartlett提到了几个原因，包括："
+}, {
+  "tag": "UL",
+  "texts": ["“Expectation does not match reality.”", "“Politics reigns supreme.”", "“You’re the go-to person about anything data.”", "“Working in an isolated team.”"],
+  "translations": ["“期望与现实不符。”", "“政治至高无上。”", "“您是任何数据的入门者。”", "“在一个孤立的团队中工作。”"]
+}, {
+  "tag": "P",
+  "text": "His article was the most viewed post in 2018 in Towards Data Science and appeared first on the “data science” keyword on Google.",
+  "translation": "他的文章是《迈向数据科学》（Towards Data Science）中2018年浏览量最高的文章，并首次出现在Google上的“数据科学”关键字上。"
+}, {
+  "tag": "P",
+  "text": "Being disengaged at work is a long and tedious experience. You will probably spend about 80,000 hours at work during your career. So, make sure to reflect on these 80,000 hours seriously.",
+  "translation": "脱离工作是一种长期而乏味的经历。 在您的职业生涯中，您可能会花费大约80,000个小时的工作时间。 因此，请务必认真思考这80,000小时。"
+}, {
+  "tag": "P",
+  "text": "What do you genuinely want to do with this amount of time?",
+  "translation": "您真的想在这段时间里做什么？"
+}, {
+  "tag": "P",
+  "text": "Don’t merely follow a job title. Don’t just pursue an unfounded dream. Be data-driven: gather the best information from current scientific studies, think it through, and change your mind when necessary.",
+  "translation": "不要仅仅遵循职务。 不要只是追求一个没有根据的梦想。 以数据为驱动力：从当前的科学研究中收集最佳信息，仔细考虑并在必要时改变主意。"
+}, {
+  "tag": "P",
+  "text": "You should invest time in making sure you are making sensible decisions about your future career. My recommendation to help you with this path is to take a look at https://80000hours.org. They research jobs with positive social impact and provide career advice.",
+  "translation": "您应该花时间确保自己对未来的职业做出明智的决定。 我建议您使用此路径的建议是查看https://80000hours.org。 他们研究对社会有积极影响的工作，并提供职业建议。"
+}, {
+  "tag": "P",
+  "text": "‘You have about 80,000 working hours in your career. That means your choice of the career is one of the biggest decisions you’ll ever make, so it’s really worth figuring out how to use that time for good.’ — The 80000 hours team.",
+  "translation": "‘您的职业生涯大约有80,000个工作小时。 这意味着您对职业的选择是您将做出的最大的决定之一，因此，真的值得弄清楚如何善用这段时间。’— 8万小时的团队。"
+}, {
+  "tag": "H2",
+  "text": "ASK US ANYTHING",
+  "translation": "询问我们任何事情"
+}, {
+  "tag": "H1",
+  "text": "Answers to four most commonly asked questions",
+  "translation": "回答四个最常见的问题"
+}, {
+  "tag": "H2",
+  "text": "From “What is the most neglected advice for beginners?” to “What makes a great article?”",
+  "translation": "从“对于初学者来说最被忽略的建议是什么？”到“什么才是出色的文章？”"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*Qu40zE4WDmnSR197q3y_mw.jpeg?q=20",
+  "caption": "Picture by Kelly Sikkema",
+  "type": "image",
+  "file": "1*Qu40zE4WDmnSR197q3y_mw.jpeg"
+}, {
+  "tag": "P",
+  "text": "We launched Towards Data Science about three years ago, and we’re still truly astonished to see the engagement we get from so many of you. Today, we’re a team of four editors and twenty editorial associates, and since we’ve been receiving questions from you, we decided to do our best to start answering them. I hope you find these four replies useful!",
+  "translation": "大约三年前，我们推出了“迈向数据科学”（Towards Data Science），但我们仍然感到非常惊讶，看到如此多的人参与其中。 今天，我们是一个由4名编辑和20名编辑助理组成的团队，并且由于我们一直在收到您的问题，因此我们决定尽力开始回答这些问题。 我希望您发现这四个回复有用！"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Ludovic Benistant的文章《Answers to four most commonly asked questions》，参考：https://towardsdatascience.com/answers-to-four-questions-commonly-asked-73bdbc9feb92)",
+  "translation": "（本文翻译自Ludovic Benistant的文章，《四个最常见问题的答案》，参考：https：//towardsdatascience.com/answers-to-four-questions-commonly-asked-73bdbc9feb92）"
+}]
