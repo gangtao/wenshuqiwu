@@ -1,0 +1,99 @@
+[{
+  "tag": "P",
+  "text": "Originally published at amberer.gitlab.io.",
+  "translation": "最初发布于amberer.gitlab.io。"
+}, {
+  "tag": "H1",
+  "text": "Image-to-Image Translation",
+  "translation": "图像到图像翻译"
+}, {
+  "tag": "P",
+  "text": "Image-to-image translation is a class of vision and graphics problems where the goal is to learn the mapping between an input image and an output image. It can be applied to a wide range of applications, such as collection style transfer, object transfiguration,season transfer and photo enhancement.",
+  "translation": "图像到图像的翻译是一类视觉和图形问题，其目标是学习输入图像和输出图像之间的映射。 它可以应用到广泛的应用程序中，例如收集样式转移，对象变形，季节转移和照片增强。"
+}, {
+  "tag": "H1",
+  "text": "CycleGAN",
+  "translation": "循环GAN"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*Udvw6tGu40iDEkuH.jpg?q=20",
+  "type": "image",
+  "file": "0*Udvw6tGu40iDEkuH.jpg"
+}, {
+  "tag": "P",
+  "text": "Unpaired Image-to-Image Translation Using Cycle-Consistent Adversarial Networks(ICCV 2017)",
+  "translation": "使用周期一致的对抗网络进行不成对的图像到图像翻译（ICCV 2017）"
+}, {
+  "tag": "P",
+  "text": "Paper / Project / Semantic Scholar",
+  "translation": "论文/项目/语义学者"
+}, {
+  "tag": "P",
+  "text": "Authors present an approach for learning to translate an image from a source domain X to a target domain Y in the absence of paired examples. The goal is to learn a mapping G : X → Y such that the distribution of images from G(X) is indistinguishable from the distribution Y using an adversarial loss. Because this mapping is highly under-constrained, we couple it with an inverse mapping F : Y → X and introduce a cycle consistency loss to enforce F(G(X)) ≈ X (and vice versa).",
+  "translation": "作者提出了一种在没有配对示例的情况下学习将图像从源域X转换为目标域Y的方法。 目的是学习映射G：X→Y，从而利用对抗损失将来自G（X）的图像分布与分布Y区分开。 由于此映射的约束严重不足，因此我们将其与反映射F：Y→X耦合，并引入循环一致性损失以强制执行F（G（X））≈X（反之亦然）。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*P-46iNsLcF2edVfn.png?q=20",
+  "type": "image",
+  "file": "0*P-46iNsLcF2edVfn.png"
+}, {
+  "tag": "P",
+  "text": "Paired training data (left) consists of training examples have one to one correspondence. Unpaired training set has no such correspondence(Figure taken from the paper)",
+  "translation": "成对的训练数据（左）由训练示例构成，它们具有一对一的对应关系。 未配对的训练集没有这种对应关系（摘自本文）"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*KXiC6nIcowYS5GtA.png?q=20",
+  "type": "image",
+  "file": "0*KXiC6nIcowYS5GtA.png"
+}, {
+  "tag": "P",
+  "text": "Figure taken from the paper.",
+  "translation": "图取自本文。"
+}, {
+  "tag": "P",
+  "text": "The model contains two mapping functions G : X → Y and F : Y → X , and associated adversarial discriminators DY and DX . DY encourages G to translate X into outputs indistinguishable from domain Y , and vice versa for DX , F , and X . To further regularize the mappings, they introduce two “cycle consistency losses” that capture the intuition that if we translate from one domain to the other and back again we should arrive where we started.",
+  "translation": "该模型包含两个映射函数G：X→Y和F：Y→X，以及相关的对抗标识符DY和DX。 DY鼓励G将X转换为与域Y不可区分的输出，反之亦然，对于DX，F和X则相反。 为了进一步规范化映射，他们引入了两个“周期一致性损失”，这些损失捕捉了直觉，即如果我们从一个域转换到另一个域然后再次返回，我们应该到达起点。"
+}, {
+  "tag": "H1",
+  "text": "StarGAN",
+  "translation": "星际"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*bPadlkT94xTpp2Om.jpg?q=20",
+  "type": "image",
+  "file": "0*bPadlkT94xTpp2Om.jpg"
+}, {
+  "tag": "P",
+  "text": "Unified Generative Adversarial Networks for Multi-Domain Image-to-Image Translation(CVPR 2018)",
+  "translation": "用于多域图像到图像转换的统一生成对抗网络（CVPR 2018）"
+}, {
+  "tag": "P",
+  "text": "Paper / Code / Semantic Scholar",
+  "translation": "论文/代码/语义学者"
+}, {
+  "tag": "P",
+  "text": "Existing image to image translation approaches have limited scalability and robustness in handling more than two domains, since different models should be built independently for every pair of image domains. StarGAN is a novel and scalable approach that can perform image-to-image translations for multiple domains using only a single model.",
+  "translation": "现有的图像到图像转换方法在处理两个以上的域时具有有限的可扩展性和鲁棒性，因为应该为每对图像域分别构建不同的模型。 StarGAN是一种新颖且可扩展的方法，可以仅使用一个模型就可以对多个域执行图像到图像的转换。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*S7N84-uT_6zqrhxl.png?q=20",
+  "type": "image",
+  "file": "0*S7N84-uT_6zqrhxl.png"
+}, {
+  "tag": "P",
+  "text": "Comparison between cross-domain models and our proposed model, StarGAN. (a) To handle multiple domains, crossdomain models should be built for every pair of image domains. (b) StarGAN is capable of learning mappings among multiple domains using a single generator. The figure represents a star topology connecting multi-domains.(Figure taken from the paper)",
+  "translation": "跨域模型与我们提出的模型StarGAN之间的比较。 （a）要处理多个域，应为每对图像域建立跨域模型。 （b）StarGAN能够使用一个生成器来学习多个域之间的映射。 该图表示连接多个域的星形拓扑。（摘自本文）"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*9ICw3yzQ9qWnPBLK.png?q=20",
+  "type": "image",
+  "file": "0*9ICw3yzQ9qWnPBLK.png"
+}, {
+  "tag": "P",
+  "text": "Overview of StarGAN, consisting of two modules, a discriminator D and a generator G. (a) D learns to distinguish between real and fake images and classify the real images to its corresponding domain. (b) G takes in as input both the image and target domain label and generates an fake image. The target domain label is spatially replicated and concatenated with the input image. © G tries to reconstruct the original image from the fake image given the original domain label. (d) G tries to generate images indistinguishable from real images and classifiable as target domain by D.(Figure taken from the paper)",
+  "translation": "StarGAN概述，由两个模块（鉴别器D和生成器G）组成。（a）D学会区分真实图像和伪图像，并将真实图像分类到其对应的域。 （b）G接受图像和目标域标签作为输入，并生成伪图像。 目标域标签在空间上复制并与输入图像连接在一起。 给定原始域标签，©G尝试从伪造图像中重建原始图像。 （d）G试图生成与真实图像没有区别的图像，并被D分类为目标域。（摘自本文）"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Yongfu Hao的文章《Image-to-Image Translation》，参考：https://towardsdatascience.com/image-to-image-translation-69c10c18f6ff)",
+  "translation": "（本文翻译自Yongfu Hao的文章《图像到图像翻译》，参考：https：//towardsdatascience.com/image-to-image-translation-69c10c18f6ff）"
+}]
