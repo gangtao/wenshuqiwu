@@ -1,0 +1,104 @@
+[{
+  "tag": "H1",
+  "text": "How Renaissance beat the markets with Machine Learning",
+  "translation": "文艺复兴如何通过机器学习击败市场"
+}, {
+  "tag": "H2",
+  "text": "A bunch of smart mathematicians and computer scientists use machine learning to model financial markets and bet on short term…",
+  "translation": "一堆聪明的数学家和计算机科学家使用机器学习为金融市场建模并押注短期…"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*kZNChKOFeMyvrtqa.jpg?q=20",
+  "type": "image",
+  "file": "0*kZNChKOFeMyvrtqa.jpg"
+}, {
+  "tag": "P",
+  "text": "TLDR: A group of talented mathematicians and computer scientists applied machine learning to model financial markets, betting on short term strategies that has returned 66% annually since 1988.",
+  "translation": "TLDR：一群才华横溢的数学家和计算机科学家将机器学习应用于金融市场模型，押注短期策略，自1988年以来，这种策略每年回报率达66％。"
+}, {
+  "tag": "P",
+  "text": "The Man Who Solved The Market illustrates how Jim Simons and his motley crew of scientists and mathematicians built Renaissance Technology, the most profitable quant fund in history. Truth be told, I wish there were more juicy details on what their edge in markets is, but it’s wishful thinking given the secrecy of the field in general and Renaissance in particular.",
+  "translation": "解决市场的人说明了吉姆·西蒙斯（Jim Simons）和他的科学家和数学家们杂乱无章的团队如何建立了复兴技术，这是历史上最赚钱的量化基金。 说实话，我希望能有更多关于它们在市场上的优势的多汁细节，但是鉴于整个领域的秘密，尤其是在文艺复兴时期，这是一厢情愿的想法。"
+}, {
+  "tag": "P",
+  "text": "Instead of my usual articles where I implement machine learning models, I decided to pen my learning points from the book, so whoever wants to skip the Mercer-funding-Trump drama and the side effects of ultra-rich employees can still learn the precious nuggets of how the Medallion fund achieved 66.1% average annual returns since 1988.",
+  "translation": "我决定从书中写下我的学习要点，而不是通常的文章中实现机器学习模型的文章，因此，任何想跳过Mercer-funding-Trump戏剧以及超富员工的副作用的人仍然可以学习宝贵的知识点 自1988年以来，大奖章基金如何实现66.1％的平均年回报率。"
+}, {
+  "tag": "H1",
+  "text": "Insights from The Man Who Solved The Market",
+  "translation": "解决市场的人的见解"
+}, {
+  "tag": "P",
+  "text": "1. Financial knowledge is optional — A big difference between Renaissance and other quant funds is that their team consists of scientists, not Wall Street folks. With zero finance background, they treat financial data like the scientific/text data they used to experiment on. An embarrassingly funny scene happened when Bob Mercer was asked how they made so much money with their models. He replied that “sometimes it tells us to buy Chrysler, sometimes it tells us to sell.” This was when Chrysler was no longer trading after having been acquired — it shows how little Renaissance needs to know about the underlying fundamentals of the companies, even their names!",
+  "translation": "1.财务知识是可选的-文艺复兴时期和其他定量基金之间的最大区别是，他们的团队由科学家组成，而不是华尔街同僚。 在零财务背景下，他们将财务数据像以前用来试验的科学/文本数据一样对待。 当鲍勃·默瑟（Bob Mercer）被问到他们如何用模特赚到这么多钱时，发生了一个尴尬而有趣的场面。 他回答说：“有时它告诉我们购买克莱斯勒，有时它告诉我们出售。”这是克莱斯勒被收购后不再进行交易的时候，这表明文艺复兴几乎不需要了解公司的基本面，甚至 他们的名字！"
+}, {
+  "tag": "P",
+  "text": "2. Rationalising the model’s predictions is not top priority — Another possible side effect of hiring researchers and not economists was that they care more about how statistically significant the trading anomalies are than how explainable they can be. As such, they dare to trade non-intuitive anomalies that are hard to explain/understand. I like this because oftentimes with deep learning and models, it can be hard to rationalise our model’s predictions. One disadvantage is that it will be hard to know when to stop trading the idea. For example, an anomaly exists due to government restrictions, when the story no longer holds, we can stop the trade. Without the story, we have to rely on statistical tests to confirm that a signal no longer exists.",
+  "translation": "2.合理化模型的预测不是重中之重-雇用研究人员而不是经济学家的另一个可能的副作用是，他们更关心交易异常的统计意义如何，而不是其可解释性。 因此，他们敢于交易难以解释/理解的非直觉异常。 我之所以喜欢这种方式，是因为通常需要进行深度学习和建模，因此很难合理化模型的预测。 缺点之一是很难知道何时停止交易。 例如，由于政府的限制而存在异常，当故事不再成立时，我们可以停止交易。 没有这个故事，我们必须依靠统计测试来确认信号不再存在。"
+}, {
+  "tag": "P",
+  "text": "3. Research papers are likely wrong — In a bid to find ideas, Simons started a book club to read and discuss papers that claimed to have found alpha. Sadly, when they tried to backtest the papers, they never worked. If the researchers had really found alpha, they probably wouldn’t have published them in the first place, but I do find reading papers a source of inspiration/ideas.",
+  "translation": "3.研究论文可能是错误的-为了寻找想法，西蒙斯（Simons）成立了一个读书俱乐部，以阅读和讨论声称已找到阿尔法的论文。 可悲的是，当他们试图对这些文件进行回测时，他们从未工作过。 如果研究人员真的找到了alpha，那么他们可能不会一开始就发布它们，但我确实发现阅读论文是灵感/想法的来源。"
+}, {
+  "tag": "P",
+  "text": "4. Have a single trading model — Instead of creating a unique trading model for every asset class, Henry Laufer felt that one big model for all asset classes would let them leverage the huge swathes of data they had collected and model correlations between different asset classes. This allows future ideas to be added on easily as the model already has an implicit understanding of markets and prices moved. Even for asset classes with smaller history, they could be traded if they were similar to investments with richer history. This reminds me of transfer learning in neural networks, where you first train a generic model to learn a good representation of a huge image/text dataset, after which you can append any downstream task with great success. This works better than having one model for one downstream task, where you usually don’t have that much labelled data and this restricts the model’s capacity to learn.",
+  "translation": "4.拥有单一交易模型-亨利·劳弗（Henry Laufer）并未为每个资产类别都创建一个独特的交易模型，而是认为所有资产类别都拥有一个大型模型，可以让他们利用所收集的大量数据并对不同资产类别之间的相关性进行建模 。 由于该模型已经对市场和价格变动产生了隐式的了解，因此可以轻松添加将来的想法。 即使对于历史较短的资产类别，如果它们与历史较丰富的投资相似，也可以进行交易。 这让我想起了神经网络中的转移学习，您首先要训练通用模型以学习大型图像/文本数据集的良好表示，然后您可以成功地附加任何下游任务。 这比为一个下游任务建立一个模型要好得多，在下游任务中，通常没有那么多标签数据，这限制了模型的学习能力。"
+}, {
+  "tag": "P",
+  "text": "5. Industrial grade coding is crucial— The initial statistical arbitrage models done by Robert Frey worked great in theory, but they were coded in a piecemeal fashion and could not handle exceptional situations. Mercer and Peter Brown, with their years of coding big systems in IBM, built a single dynamic trading system. As we enter an era where “anyone can do machine learning in 4 lines of code”, it’s good to remember that industrial-grade coding skills is crucial to ensure everything runs smoothly in production. Especially in finance, where a wrong decision can cost millions.",
+  "translation": "5.工业级编码至关重要—罗伯特·弗雷（Robert Frey）所做的最初的统计套利模型在理论上很有效，但是它们是零散的编码，无法处理特殊情况。 默瑟（Mercer）和彼得·布朗（Peter Brown）多年来在IBM中为大型系统编码，他们构建了一个动态交易系统。 当我们进入“任何人都可以用4行代码进行机器学习”的时代时，请记住，工业级编码技能对于确保一切在生产中顺利运行至关重要。 特别是在金融领域，错误的决定可能会导致数百万美元的损失。"
+}, {
+  "tag": "P",
+  "text": "6. Trade your edges to its capacity — People have wondered why competitors have not caught up or replicated Renaissance’s success yet, and one possible reason is that once they find an edge, they trade it to its maximum capacity, such that the anomaly no longer appears. This essentially makes the markets efficient as the anomaly has been arbitraged away. Competitors are left to hunt for what anomalies are left.",
+  "translation": "6.用优势来发挥其能力-人们想知道为什么竞争对手还没有赶上或复制文艺复兴的成功，而可能的原因是，一旦找到优势，就将其以最大能力进行交易，这样异常现象就不再存在 出现。 从本质上讲，这已经使市场变得高效，因为异常情况已经被套利。 竞争者被遗弃寻找剩余的异常。"
+}, {
+  "tag": "P",
+  "text": "7. Garbage in, garbage out—The team’s initial models were not successful mostly because their hand collected data was filled with errors. After Sandor Straus cleaned, imputed and collected intraday data that they were able to improve their models and leverage intraday data during a time when most investors were using open/close prices to make trading decisions. As we work on our data science projects, it’s important to make sure the inputs are correct [1]. And as Mercer said, “There is no data like more data”.",
+  "translation": "7.乱扔垃圾，乱扔垃圾-团队的初始模型之所以失败，主要是因为他们手工收集的数据充满了错误。 在Sandor Straus清理，估算并收集了当日数据后，他们能够改善模型并利用当日数据在大多数投资者使用开盘/收盘价制定交易决策的时候进行。 在进行数据科学项目时，确保输入正确是很重要的[1]。 正如Mercer所说，“没有数据像更多数据一样”。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*pIh_YAdq7zjuIiit.png?q=20",
+  "type": "image",
+  "file": "0*pIh_YAdq7zjuIiit.png"
+}, {
+  "tag": "P",
+  "text": "8. Don’t trust your models 100% —In 1998, a much bigger quant fund at the time, Long Term Capital Management, went bust due to their unwavering confidence in their models, making them double down even when they were facing losses that were supposed to be near-impossible. In Renaissance, their system conservatively cuts positions when the signal is not working. This is crucial for a quant fund, especially when we sometimes do not know why the model spits out its predictions, proper risk management/bet sizing is ever important.",
+  "translation": "8.不要百分百地信任您的模型-1998年，当时更大的量化基金Long Term Capital Management因对模型的坚定信心而破产，即使面对亏损甚至无法承受时，它们的价值也翻了一番。 本来是不可能的。 在文艺复兴时期，当信号不起作用时，他们的系统会保守地削减头寸。 这对于定量基金至关重要，尤其是当我们有时不知道为什么模型会吐出其预测时，适当的风险管理/下注规模至为重要。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*Ldgb9RzFMp1Gkpbq?q=20",
+  "type": "image",
+  "file": "0*Ldgb9RzFMp1Gkpbq"
+}, {
+  "tag": "P",
+  "text": "9. Quants are human too — Many parts of the story describe how Jim Simons reacts emotionally to market moves and news, which is really not what we expect of him. This shows how hard it is to keep your cool even when you are the greatest quant and also suggests that we should try not to intervene or override our algorithms’ suggestions due to our emotions as it will only affect performance.",
+  "translation": "9.数量也是人。故事的许多部分描述了吉姆·西蒙斯对市场动向和新闻的情感反应，这实际上并不是我们对他的期望。 这显示了即使您是最大的量，也要保持冷静是多么困难，并且建议我们不要因为情感而干预或推翻算法建议，因为这只会影响性能。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*Ciwv2fdCMovpiIpE?q=20",
+  "type": "image",
+  "file": "0*Ciwv2fdCMovpiIpE"
+}, {
+  "tag": "P",
+  "text": "10. Longer term anomalies are harder to profit from — The Medallion Fund trades mostly short term anomalies, and leave the longer term strategies for the funds they open to outsiders. The external fund, RIEF, has struggled to match the returns of Medallion.",
+  "translation": "10.长期异常现象很难从中获利-大奖章基金主要交易短期异常现象，而将长期策略留给外部人士使用。 外部基金RIEF一直在努力追回Medallion的回报。"
+}, {
+  "tag": "P",
+  "text": "11. Beating the markets with machine learning is tough — There were many times when the team was boggled by why their models were not working, my favourite being a static S&P 500 index value in one of their many lines of code, messing up the model’s predictions. Yet, the team persisted and overcame every obstacle, becoming the most successful quant fund of all time. And the innovation doesn’t stop — as competitors learn and try to mimic their success, Renaissance has to keep finding new ways to outsmart the markets. Given that they are the best and are only right around 51% of the time, the rest of us have our work cut out for us.",
+  "translation": "11.用机器学习来打败市场是艰难的-团队经常为他们的模型为什么不起作用感到困惑，我最喜欢的是在他们的许多代码行中使用静态S＆P 500指数值，弄乱了模型的 预测。 然而，团队坚持不懈，克服了所有障碍，成为有史以来最成功的量化基金。 创新并没有停止-随着竞争对手学习并尝试模仿自己的成功，文艺复兴必须不断寻找新的方法来超越市场。 鉴于它们是最好的，而且只有大约51％的时间是正确的，因此我们其余的人都为我们完成了工作。"
+}, {
+  "tag": "P",
+  "text": "Gregory Zuckerman has weaved together a great tale of how the colourful characters that built Renaissance is a must read for any person aspiring to become a quant or anyone looking for a juicy adventure into the world of quantitative finance."
+}, {
+  "tag": "H1",
+  "text": "References",
+  "translation": "参考文献"
+}, {
+  "tag": "P",
+  "text": "[1] Nick Hynes, D Sculley, and Michael Terry. The data linter: Lightweight, automated sanity checking for ml data sets. NIPS Workshop on Machine Learning Systems, 2017.",
+  "translation": "[1] Nick Hynes，D Sculley和Michael Terry。 数据仓库：针对ml数据集的轻量级自动完整性检查。 NIPS机器学习系统研讨会，2017年。"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Neo Yi Peng的文章《How Renaissance beat the markets with Machine Learning》，参考：https://towardsdatascience.com/how-renaissance-beat-the-markets-with-machine-learning-606b17577797)",
+  "translation": "（本文翻译自Neo Yi Peng的文章，《文艺复兴如何通过机器学习击败市场》，参考：https：//towardsdatascience.com/how-renaissance-beat-the-markets-with-machine-learning-606b17577797）"
+}]
