@@ -1,0 +1,154 @@
+[{
+  "tag": "H1",
+  "text": "Reinforcement Learning 101",
+  "translation": "强化学习101"
+}, {
+  "tag": "H2",
+  "text": "Learn the essentials of Reinforcement Learning!",
+  "translation": "了解强化学习的要点！"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*vpfBGnwxjlmr9XRP3lw3XQ.jpeg?q=20",
+  "caption": "Photo by Daniel Cheung on Unsplash",
+  "type": "image",
+  "file": "1*vpfBGnwxjlmr9XRP3lw3XQ.jpeg"
+}, {
+  "tag": "P",
+  "text": "Reinforcement Learning(RL) is one of the hottest research topics in the field of modern Artificial Intelligence and its popularity is only growing. Let’s look at 5 useful things one needs to know to get started with RL.",
+  "translation": "强化学习（RL）是现代人工智能领域中最热门的研究主题之一，其普及度还在不断增长。 让我们看一下开始学习RL需要了解的5件事。"
+}, {
+  "tag": "H1",
+  "text": "1. What is Reinforcement Learning? How does it compare with other ML techniques?",
+  "translation": "1.什么是强化学习？ 与其他机器学习技术相比有何不同？"
+}, {
+  "tag": "P",
+  "text": "Reinforcement Learning(RL) is a type of machine learning technique that enables an agent to learn in an interactive environment by trial and error using feedback from its own actions and experiences.",
+  "translation": "强化学习（RL）是一种机器学习技术，使代理能够使用自身行为和经验的反馈通过反复试验在交互式环境中学习。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*8OSHpISmR1l79yX4I234wg.jpeg?q=20",
+  "type": "image",
+  "file": "1*8OSHpISmR1l79yX4I234wg.jpeg"
+}, {
+  "tag": "P",
+  "text": "Though both supervised and reinforcement learning use mapping between input and output, unlike supervised learning where the feedback provided to the agent is correct set of actions for performing a task, reinforcement learning uses rewards and punishments as signals for positive and negative behavior.",
+  "translation": "尽管监督学习和强化学习都使用输入和输出之间的映射，但不同于监督学习，后者提供给代理的反馈是执行任务的正确动作集，而强化学习则将奖惩作为正面和负面行为的信号。"
+}, {
+  "tag": "P",
+  "text": "As compared to unsupervised learning, reinforcement learning is different in terms of goals. While the goal in unsupervised learning is to find similarities and differences between data points, in the case of reinforcement learning the goal is to find a suitable action model that would maximize the total cumulative reward of the agent. The figure below illustrates the action-reward feedback loop of a generic RL model.",
+  "translation": "与无监督学习相比，强化学习在目标方面有所不同。 无监督学习的目标是发现数据点之间的相似点和差异，而在强化学习的情况下，目标是找到合适的行为模型，以最大化代理的总累积奖励。 下图说明了通用RL模型的动作奖励反馈回路。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*7cuAqjQ97x1H_sBIeAVVZg.png?q=20",
+  "type": "image",
+  "file": "1*7cuAqjQ97x1H_sBIeAVVZg.png"
+}, {
+  "tag": "H1",
+  "text": "2. How to formulate a basic Reinforcement Learning problem?",
+  "translation": "2.如何制定基本的强化学习问题？"
+}, {
+  "tag": "P",
+  "text": "Some key terms that describe the basic elements of an RL problem are:",
+  "translation": "描述RL问题基本要素的一些关键术语是："
+}, {
+  "tag": "OL",
+  "texts": ["Environment — Physical world in which the agent operates", "State — Current situation of the agent", "Reward — Feedback from the environment", "Policy — Method to map agent’s state to actions", "Value — Future reward that an agent would receive by taking an action in a particular state"],
+  "translations": ["环境-代理在其中运行的物理世界", "州—代理商的现状", "奖励-来自环境的反馈", "策略-将座席状态映射到操作的方法", "价值-代理商在特定状态下采取的行动将获得的未来奖励"]
+}, {
+  "tag": "P",
+  "text": "An RL problem can be best explained through games. Let’s take the game of PacMan where the goal of the agent(PacMan) is to eat the food in the grid while avoiding the ghosts on its way. In this case, the grid world is the interactive environment for the agent where it acts. Agent receives a reward for eating food and punishment if it gets killed by the ghost (loses the game). The states are the location of the agent in the grid world and the total cumulative reward is the agent winning the game.",
+  "translation": "RL问题可以通过游戏来最好地解释。 让我们以吃豆人的游戏为例，代理人（PacMan）的目标是在网格中吃食物，同时避免途中出现鬼魂。 在这种情况下，网格世界是代理所作用的交互式环境。 如果特工被幽灵杀死（输掉了游戏），特工会得到食物和惩罚的奖励。 状态是座席在网格世界中的位置，总累积奖励是赢得比赛的座席。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/freeze/max/30/1*D7JNcbvhP5UOR6_Ul-WJaw.gif?q=20",
+  "type": "image",
+  "file": "1*D7JNcbvhP5UOR6_Ul-WJaw.gif"
+}, {
+  "tag": "P",
+  "text": "In order to build an optimal policy, the agent faces the dilemma of exploring new states while maximizing its overall reward at the same time. This is called Exploration vs Exploitation trade-off. To balance both, the best overall strategy may involve short term sacrifices. Therefore, the agent should collect enough information to make the best overall decision in the future.",
+  "translation": "为了建立最佳政策，代理人面临探索新国家的困境，同时又要最大化其整体回报。 这称为“探索与开发”的权衡。 为了平衡两者，最佳的整体策略可能涉及短期牺牲。 因此，代理应收集足够的信息，以便将来做出最佳的总体决策。"
+}, {
+  "tag": "P",
+  "text": "Markov Decision Processes(MDPs) are mathematical frameworks to describe an environment in RL and almost all RL problems can be formulated using MDPs. An MDP consists of a set of finite environment states S, a set of possible actions A(s) in each state, a real valued reward function R(s) and a transition model P(s’, s | a). However, real world environments are more likely to lack any prior knowledge of environment dynamics. Model-free RL methods come handy in such cases.",
+  "translation": "马尔可夫决策过程（MDP）是描述RL环境的数学框架，几乎所有RL问题都可以使用MDP来表述。 一个MDP由一组有限的环境状态S，在每个状态下的一组可能的动作A，一个实值奖励函数R和一个过渡模型P（s’，s | a）组成。 但是，现实环境更可能缺少任何有关环境动力学的先验知识。 在这种情况下，无模型RL方法非常方便。"
+}, {
+  "tag": "P",
+  "text": "Q-learning is a commonly used model-free approach which can be used for building a self-playing PacMan agent. It revolves around the notion of updating Q values which denotes value of performing action a in state s. The following value update rule is the core of the Q-learning algorithm.",
+  "translation": "Q学习是一种常用的无模型方法，可用于构建自播放的PacMan代理。 它围绕更新Q值的概念展开，Q值表示在状态s中执行动作a的值。 以下值更新规则是Q学习算法的核心。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*VItpGaVoIUnh0RUEArqSGQ.png?q=20",
+  "type": "image",
+  "file": "1*VItpGaVoIUnh0RUEArqSGQ.png"
+}, {
+  "tag": "P",
+  "text": "Here’s a video demonstration of a PacMan Agent that uses Deep Reinforcement Learning.",
+  "translation": "这是使用深度强化学习的PacMan代理的视频演示。"
+}, {
+  "tag": "FIGURE",
+  "type": "code"
+}, {
+  "tag": "H1",
+  "text": "3. What are some of the most used Reinforcement Learning algorithms?",
+  "translation": "3.什么是最常用的强化学习算法？"
+}, {
+  "tag": "P",
+  "text": "Q-learning and SARSA (State-Action-Reward-State-Action) are two commonly used model-free RL algorithms. They differ in terms of their exploration strategies while their exploitation strategies are similar. While Q-learning is an off-policy method in which the agent learns the value based on action a* derived from the another policy, SARSA is an on-policy method where it learns the value based on its current action a derived from its current policy. These two methods are simple to implement but lack generality as they do not have the ability to estimates values for unseen states.",
+  "translation": "Q学习和SARSA（状态行动-奖励状态行动）是两种常用的无模型RL算法。 它们的勘探策略不同，而开采策略却相似。 Q学习是一种非策略方法，其中代理根据从另一个策略得出的操作a *学习值，而SARSA是一种策略上方法，在其中根据其当前操作a从当前策略得出的值来学习值。 政策。 这两种方法易于实现，但缺乏通用性，因为它们无法估计未见状态的值。"
+}, {
+  "tag": "P",
+  "text": "This can be overcome by more advanced algorithms such as Deep Q-Networks(DQNs) which use Neural Networks to estimate Q-values. But DQNs can only handle discrete, low-dimensional action spaces.",
+  "translation": "可以通过更高级的算法（例如使用神经网络来估计Q值的深度Q网络（DQN））来克服这一问题。 但是DQN只能处理离散的低维动作空间。"
+}, {
+  "tag": "P",
+  "text": "Deep Deterministic Policy Gradient(DDPG) is a model-free, off-policy, actor-critic algorithm that tackles this problem by learning policies in high dimensional, continuous action spaces. The figure below is a representation of actor-critic architecture.",
+  "translation": "深度确定性策略梯度（DDPG）是一种无模型，脱离策略，执行者批评的算法，它通过在高维连续动作空间中学习策略来解决此问题。 下图是演员评论体系结构的表示。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*azzV78wFkRq9ePrzGnvf5Q.png?q=20",
+  "type": "image",
+  "file": "1*azzV78wFkRq9ePrzGnvf5Q.png"
+}, {
+  "tag": "H1",
+  "text": "4. What are the practical applications of Reinforcement Learning?",
+  "translation": "4.强化学习的实际应用是什么？"
+}, {
+  "tag": "P",
+  "text": "Since, RL requires a lot of data, therefore it is most applicable in domains where simulated data is readily available like gameplay, robotics.",
+  "translation": "由于RL需要大量数据，因此最适用于容易获得模拟数据（例如游戏性，机器人技术）的领域。"
+}, {
+  "tag": "OL",
+  "texts": ["RL is quite widely used in building AI for playing computer games. AlphaGo Zero is the first computer program to defeat a world champion in the ancient Chinese game of Go. Others include ATARI games, Backgammon ,etc", "In robotics and industrial automation, RL is used to enable the robot to create an efficient adaptive control system for itself which learns from its own experience and behavior. DeepMind’s work on Deep Reinforcement Learning for Robotic Manipulation with Asynchronous Policy updates is a good example of the same. Watch this interesting demonstration video."],
+  "translations": ["RL被广泛用于构建用于玩计算机游戏的AI。 AlphaGo Zero是第一个在古代中国的Go游戏中击败世界冠军的计算机程序。 其他包括ATARI游戏，西洋双陆棋等", "在机器人技术和工业自动化中，RL用于使机器人能够为其自身创建高效的自适应控制系统，该系统可以从自身的经验和行为中学习。 DeepMind的“通过异步策略更新进行机器人操纵的深度强化学习”就是一个很好的例子。 观看这个有趣的演示视频。"]
+}, {
+  "tag": "FIGURE",
+  "type": "code"
+}, {
+  "tag": "P",
+  "text": "Other applications of RL include abstractive text summarization engines, dialog agents(text, speech) which can learn from user interactions and improve with time, learning optimal treatment policies in healthcare and RL based agents for online stock trading.",
+  "translation": "RL的其他应用包括抽象文本摘要引擎，对话代理（文本，语音），这些代理可以从用户的交互中学习并随着时间的流逝而改善，学习医疗保健中的最佳治疗策略以及用于在线股票交易的基于RL的代理。"
+}, {
+  "tag": "H1",
+  "text": "5. How can I get started with Reinforcement Learning?",
+  "translation": "5.我如何开始进行强化学习？"
+}, {
+  "tag": "P",
+  "text": "For understanding the basic concepts of RL, one can refer to the following resources.",
+  "translation": "为了理解RL的基本概念，可以参考以下资源。"
+}, {
+  "tag": "OL",
+  "texts": ["Reinforcement Learning-An Introduction, a book by the father of Reinforcement Learning- Richard Sutton and his doctoral advisor Andrew Barto. An online draft of the book is available here.", "Teaching material from David Silver including video lectures is a great introductory course on RL.", "Here’s another technical tutorial on RL by Pieter Abbeel and John Schulman (Open AI/ Berkeley AI Research Lab)."],
+  "translations": ["《强化学习-入门》，是强化学习之父的一本书-理查德·萨顿（Richard Sutton）和他的博士生导师安德鲁·巴托（Andrew Barto）。 这本书的在线草稿可以在这里找到。", "David Silver的教学材料（包括视频讲座）是有关RL的入门课程。", "这是Pieter Abbeel和John Schulman（开放式AI /伯克利AI研究实验室）的另一本有关RL的技术教程。"]
+}, {
+  "tag": "P",
+  "text": "For getting started with building and testing RL agents, the following resources can be helpful.",
+  "translation": "对于开始构建和测试RL代理，以下资源可能会有所帮助。"
+}, {
+  "tag": "OL",
+  "texts": ["This blog on how to train a Neural Network ATARI Pong agent with Policy Gradients from raw pixels by Andrej Karpathy will help you get your first Deep Reinforcement Learning agent up and running in just 130 lines of Python code.", "DeepMind Lab is an open source 3D game-like platform created for agent-based AI research with rich simulated environments.", "Project Malmo is another AI experimentation platform for supporting fundamental research in AI.", "OpenAI gym is a toolkit for building and comparing reinforcement learning algorithms."],
+  "translations": ["此博客介绍了如何使用来自原始像素的Policy Gradients训练神经网络ATARI Pong代理，Andrej Karpathy将帮助您在130行Python代码中启动并运行您的第一个Deep Reinforcement Learning代理。", "DeepMind Lab是一个类似于开放源代码的3D游戏平台，用于具有丰富模拟环境的基于代理的AI研究。", "马尔默项目是另一个支持AI基础研究的AI实验平台。", "OpenAI Gym是用于构建和比较强化学习算法的工具包。"]
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Shweta Bhatt的文章《Reinforcement Learning 101》，参考：https://towardsdatascience.com/reinforcement-learning-101-e24b50e1d292)",
+  "translation": "（本文翻译自Shweta Bhatt的文章，《强化学习101》，参考：https：//towardsdatascience.com/reinforcement-learning-101-e24b50e1d292）"
+}]
