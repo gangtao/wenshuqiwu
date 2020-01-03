@@ -1,0 +1,187 @@
+[{
+  "tag": "H2",
+  "text": "Image-to-Image Translation with Conditional Adversarial Networks",
+  "translation": "条件对抗网络的图像到图像翻译"
+}, {
+  "tag": "H3",
+  "text": "We investigate conditional adversarial networks as a general-purpose solution to image-to-image translation problems…",
+  "translation": "我们研究条件对抗网络，将其作为解决图像间转换问题的通用解决方案..."
+}, {
+  "tag": "H1",
+  "text": "Pix2Pix",
+  "translation": "Pix2Pix"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*U23BupCSR9PlaZ71xip5cQ.png?q=20",
+  "caption": "Shocking result of Edges-to-Photo Image-to-Image translation using the Pix2Pix GAN Algorithm",
+  "type": "image",
+  "file": "1*U23BupCSR9PlaZ71xip5cQ.png"
+}, {
+  "tag": "P",
+  "text": "This article will explain the fundamental mechanisms of a popular paper on Image-to-Image translation with Conditional GANs, Pix2Pix, following is a link to the paper:",
+  "translation": "本文将解释有关使用条件GAN进行图像到图像转换的流行论文的基本机制，Pix2Pix，以下是该论文的链接："
+}, {
+  "tag": "H2",
+  "text": "Image-to-Image Translation with Conditional Adversarial Networks",
+  "translation": "条件对抗网络的图像到图像翻译"
+}, {
+  "tag": "H3",
+  "text": "We investigate conditional adversarial networks as a general-purpose solution to image-to-image translation problems…",
+  "translation": "我们研究条件对抗网络，将其作为解决图像间转换问题的通用解决方案..."
+}, {
+  "tag": "H1",
+  "text": "Article Outline",
+  "translation": "文章大纲"
+}, {
+  "tag": "P",
+  "text": "I. Introduction",
+  "translation": "一，引言"
+}, {
+  "tag": "P",
+  "text": "II. Dual Objective Function with Adversarial and L1 Loss",
+  "translation": "二。 具有对抗性和L1损失的双重目标函数"
+}, {
+  "tag": "P",
+  "text": "III. U-Net Generator",
+  "translation": "三， U网发生器"
+}, {
+  "tag": "P",
+  "text": "IV. PatchGAN Discriminator",
+  "translation": "IV。 PatchGAN鉴别器"
+}, {
+  "tag": "P",
+  "text": "V. Evaluation",
+  "translation": "五，评估"
+}, {
+  "tag": "H1",
+  "text": "Introduction",
+  "translation": "介绍"
+}, {
+  "tag": "P",
+  "text": "Image-to-Image translation is another example of a task which Generative Adversarial Networks (GANs) are perfectly suited for. These are tasks in which it is nearly impossible to hard-code a loss function for. Most studies on GANs are concerned with novel image synthesis, translating from a random vector z into an image. Image-to-Image translation converts one image to another such as the edges of the bag above to the photo image. Another interesting example of this is shown below:",
+  "translation": "图像到图像的转换是生成对抗网络（GAN）非常适合的另一个任务示例。 在这些任务中，几乎不可能对损失函数进行硬编码。 关于GAN的大多数研究都涉及新颖的图像合成，即从随机向量z转换为图像。 图像到图像的转换将一个图像转换为另一图像，例如上方袋子的边缘转换为照片图像。 另一个有趣的示例如下所示："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*rdUUbngKoOzutZIeVwWbPQ.png?q=20",
+  "caption": "Interesting idea of translating from satellite imagery into a Google Maps-style street view",
+  "type": "image",
+  "file": "1*rdUUbngKoOzutZIeVwWbPQ.png"
+}, {
+  "tag": "P",
+  "text": "Image-to-Image translation is also useful in applications such as colorization and super-resolution. However, many of the implementation ideas specific to the pix2pix algorithm are also relevant for those studying novel image synthesis.",
+  "translation": "图像到图像的转换在着色和超分辨率等应用中也很有用。 但是，许多pix2pix算法特有的实现思想也与那些研究新型图像合成的思想有关。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*nEqPOTNWRrTeZh5zZJn0Gw.png?q=20",
+  "type": "image",
+  "file": "1*nEqPOTNWRrTeZh5zZJn0Gw.png"
+}, {
+  "tag": "P",
+  "text": "A very high-level view of the Image-to-Image translation architecture in this paper is depicted above. Similar to many image synthesis models, this uses a Conditional-GAN framework. The conditioning image, x is applied as the input to the generator and as input to the discriminator.",
+  "translation": "上文描述了图像到图像翻译体系结构的非常高级的视图。 与许多图像合成模型相似，它使用了Conditional-GAN框架。 条件图像x用作生成器的输入和鉴别器的输入。"
+}, {
+  "tag": "H1",
+  "text": "Dual Objective Function with Adversarial and L1 Loss",
+  "translation": "具有对抗性和L1损失的双重目标函数"
+}, {
+  "tag": "P",
+  "text": "A naive way to do Image-to-Image translation would be to discard the adversarial framework altogether. A source image would just be passed through a parametric function and the difference in the resulting image and the ground truth output would be used to update the weights of the network. However, designing this loss function with standard distance measures such as L1 and L2 will fail to capture many of the important distinctive characteristics between these images. However, the authors do find some value to the L1 loss function as a weighted sidekick to the adversarial loss function.",
+  "translation": "进行图像到图像翻译的一种幼稚方法是完全放弃对抗性框架。 源图像将仅通过参数函数传递，结果图像与地面真实输出中的差异将用于更新网络的权重。 但是，使用标准距离度量（例如L1和L2）设计此损失函数将无法捕获这些图像之间的许多重要独特特征。 但是，作者确实发现L1损失函数具有一些价值，可以作为对抗性损失函数的加权补充。"
+}, {
+  "tag": "P",
+  "text": "The Conditional-Adversarial Loss (Generator versus Discriminator) is very popularly formatted as follows:",
+  "translation": "有条件的从业亏损（生成者对鉴别者）的格式很普遍，如下所示："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*-FJGHwKoVJuNAZsIYR1K-Q.png?q=20",
+  "type": "image",
+  "file": "1*-FJGHwKoVJuNAZsIYR1K-Q.png"
+}, {
+  "tag": "P",
+  "text": "The L1 loss function previously mentioned is shown below:",
+  "translation": "前面提到的L1损失函数如下所示："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*C03-hjre-xElzw7h976QaA.png?q=20",
+  "type": "image",
+  "file": "1*C03-hjre-xElzw7h976QaA.png"
+}, {
+  "tag": "P",
+  "text": "Combining these functions results in:",
+  "translation": "组合这些功能将导致："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*ZUPMqTq62e8GCDnfM7ZUpA.png?q=20",
+  "type": "image",
+  "file": "1*ZUPMqTq62e8GCDnfM7ZUpA.png"
+}, {
+  "tag": "P",
+  "text": "In the experiments, the authors report that they found the most success with the lambda parameter equal to 100.",
+  "translation": "在实验中，作者报告说，他们发现lambda参数等于100时最成功。"
+}, {
+  "tag": "H1",
+  "text": "U-Net Generator",
+  "translation": "U网发生器"
+}, {
+  "tag": "P",
+  "text": "The U-Net architecture used in the Generator of the GAN was a very interesting component of this paper. Image Synthesis architectures typically take in a random vector of size 100x1, project it into a much higher dimensional vector with a fully connected layer, reshape it, and then apply a series of de-convolutional operations until the desired spatial resolution is achieved. In contrast, the Generator in pix2pix resembles an auto-encoder.",
+  "translation": "GAN生成器中使用的U-Net架构是本文非常有趣的组成部分。 图像合成架构通常会采用大小为100x1的随机矢量，将其投影到具有完全连接层的更高维度的矢量中，对其进行整形，然后应用一系列反卷积操作，直到获得所需的空间分辨率为止。 相反，pix2pix中的Generator类似于自动编码器。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*QvC1TPA69_Qc2Wx2O5XSJQ.png?q=20",
+  "caption": "The Skip Connections in the U-Net differentiate it from a standard Encoder-decoder architecture",
+  "type": "image",
+  "file": "1*QvC1TPA69_Qc2Wx2O5XSJQ.png"
+}, {
+  "tag": "P",
+  "text": "The Generator takes in the Image to be translated and compresses it into a low-dimensional, “Bottleneck”, vector representation. The Generator then learns how to upsample this into the output image. As illustrated in the image above, it is interesting to consider the differences between the standard Encoder-Decoder structure and the U-Net. The U-Net is similar to ResNets in the way that information from earlier layers are integrated into later layers. The U-Net skip connections are also interesting because they do not require any resizing, projections etc. since the spatial resolution of the layers being connected already match each other.",
+  "translation": "生成器接收要翻译的图像，并将其压缩为低维“ Bottleneck”矢量表示。 然后，生成器学习如何将其上采样到输出图像中。 如上图所示，考虑标准的Encoder-Decoder结构和U-Net之间的差异很有趣。 U-Net与ResNet的相似之处在于，将来自较早层的信息集成到较后层中。 U-Net跳过连接也很有趣，因为它们不需要任何大小调整，投影等操作，因为要连接的各层的空间分辨率已经相互匹配。"
+}, {
+  "tag": "H1",
+  "text": "PatchGAN Discriminator",
+  "translation": "PatchGAN鉴别器"
+}, {
+  "tag": "P",
+  "text": "The PatchGAN discriminator used in pix2pix is another unique component to this design. The PatchGAN / Markovian discriminator works by classifying individual (N x N) patches in the image as “real vs. fake”, opposed to classifying the entire image as “real vs. fake”. The authors reason that this enforces more constraints that encourage sharp high-frequency detail. Additionally, the PatchGAN has fewer parameters and runs faster than classifying the entire image. The image below depicts results experimenting with the size of N for the N x N patches to be classified:",
+  "translation": "pix2pix中使用的PatchGAN鉴别器是该设计的另一个独特组件。 PatchGAN / Markovian鉴别器的工作原理是将图像中的各个（N x N）个色块分类为“真实与假”，而不是将整个图像分类为“真实与假”。 作者认为，这会施加更多的限制，从而激发清晰的高频细节。 此外，与对整个图像进行分类相比，PatchGAN具有更少的参数并且运行速度更快。 下图显示了针对N x N个要分类的补丁使用N大小进行实验的结果："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*91sRpVPIc08-oRJ4OgobwA.png?q=20",
+  "caption": "The 70 x 70 Patch is found to produce the best results",
+  "type": "image",
+  "file": "1*91sRpVPIc08-oRJ4OgobwA.png"
+}, {
+  "tag": "H1",
+  "text": "Evaluation",
+  "translation": "评价"
+}, {
+  "tag": "P",
+  "text": "Evaluating GAN outputs are difficult and there are many different ways of doing this. The authors of pix2pix use two different strategies to evaluate their results.",
+  "translation": "评估GAN的输出很困难，并且有许多不同的方法可以做到这一点。 pix2pix的作者使用两种不同的策略来评估其结果。"
+}, {
+  "tag": "P",
+  "text": "The first strategy is to use human scoring. Real images and images created with pix2pix are randomly stacked together and human scorers label each image as real or fake after seeing it for 1 second. This is done using the Amazon Mechanical Turk platform.",
+  "translation": "第一种策略是使用人类评分。 真实图像和用pix2pix创建的图像被随机堆叠在一起，并且人类记分员在看到图像1秒钟后将其标记为真实或伪造。 这是使用Amazon Mechanical Turk平台完成的。"
+}, {
+  "tag": "P",
+  "text": "Another evaluation strategy which I found to be very interesting was the use of a semantic segmentation network on synthetically generated network. This is analogous to another very popular quantitative evaluation metric for GAN outputs known as the “Inception Score” where the quality of synthesized images are rated based on a pre-trained Inception model’s ability to classify them.",
+  "translation": "我发现另一个非常有趣的评估策略是在合成生成的网络上使用语义分割网络。 这类似于另一种非常流行的针对GAN输出的定量评估指标，称为“初始得分”，其中基于预先训练的Inception模型对图像进行分类的能力来对合成图像的质量进行评估。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*BiAUkOu5nuEDYA2xVs8Jsg.png?q=20",
+  "caption": "Far Left: Semantic Segmentation Label, Second: Ground Truth Image, Third: L1 Distance Used, Fourth: cGAN used, Far Right: L1 Distance + cGAN",
+  "type": "image",
+  "file": "1*BiAUkOu5nuEDYA2xVs8Jsg.png"
+}, {
+  "tag": "H1",
+  "text": "Conclusions",
+  "translation": "结论"
+}, {
+  "tag": "P",
+  "text": "Pix2Pix is a very interesting strategy for Image-to-Image translation using a combination of L1 Distance and Adversarial Loss with additional novelties in the design of the Generator and Discriminator. Thanks for reading, please check out the paper for more implementation details and explanations of experimental results!",
+  "translation": "Pix2Pix是一种非常有趣的图像到图像转换策略，它结合了L1距离和对抗性损失以及生成器和鉴别器设计中的其他新颖性。 感谢您的阅读，请查看本文以获取更多实施细节以及实验结果的说明！"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Connor Shorten的文章《Pix2Pix》，参考：https://towardsdatascience.com/pix2pix-869c17900998)",
+  "translation": "（本文翻译自Connor Shorten的文章《 Pix2Pix》，参考：https：//towardsdatascience.com/pix2pix-869c17900998）"
+}]
