@@ -1,0 +1,233 @@
+[{
+  "tag": "H1",
+  "text": "Our Inspiration",
+  "translation": "我们的灵感"
+}, {
+  "tag": "P",
+  "text": "I wonder where he keeps getting all these various drinks from?",
+  "translation": "我想知道他从哪里得到所有这些各种饮料？"
+}, {
+  "tag": "H1",
+  "text": "7. Operational Design Thinking",
+  "translation": "7.运营设计思维"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/40/1*BnFh_-UMca79wgy7CVkHpQ.jpeg?q=20",
+  "type": "image",
+  "file": "1*BnFh_-UMca79wgy7CVkHpQ.jpeg"
+}, {
+  "tag": "P",
+  "text": "One skill that is hard to test for in an interview and hard to replicate when you are taking courses in college is thinking through how an end-user might use your software incorrectly. We usually reference this as thinking through operational scenarios.",
+  "translation": "在大学学习时，一项很难在面试中测试且难以复制的技能正在思考最终用户可能如何错误地使用您的软件。 我们通常将其称为通过操作场景进行思考。"
+}, {
+  "tag": "P",
+  "text": "However, this is just a polite way of saying you’re attempting to dummy proof code.",
+  "translation": "不过，这只是一种礼貌的方式，表示您正在尝试伪造证明代码。"
+}, {
+  "tag": "P",
+  "text": "For instance, since much of programming is maintenance, it often means changing code that is highly tangled with other code. Even a simple alteration requires tracing every possible reference of an object, method, and/or API. Otherwise, it can be easy to accidentally break modules you don’t realize are attached. Even if you are just changing a data type in a database.",
+  "translation": "例如，由于许多编程都是维护工作，因此通常意味着更改与其他代码高度纠缠的代码。 即使是简单的更改也需要跟踪对象，方法和/或API的所有可能引用。 否则，很容易意外破坏您未意识到已连接的模块。 即使您只是在更改数据库中的数据类型。"
+}, {
+  "tag": "P",
+  "text": "It also includes thinking through edge cases and thinking through an entire high-level design before going into development.",
+  "translation": "它还包括在进行开发之前仔细考虑边缘情况并仔细考虑整个高层设计。"
+}, {
+  "tag": "P",
+  "text": "As for more complex cases where you are developing new modules or microservices, it’s important to take your time and think through the operational scenarios of what you are building. Think about how future users might need to use your new module, how they might use it incorrectly, what parameters might be needed, and if there are different ways a future programmer might need your code.",
+  "translation": "对于要开发新模块或微服务的更复杂的情况，重要的是要花一些时间并仔细考虑所构建内容的操作场景。 考虑一下未来的用户可能如何使用您的新模块，他们可能如何不正确地使用它，可能需要哪些参数以及未来的程序员是否可能以其他方式使用您的代码。"
+}, {
+  "tag": "P",
+  "text": "Simply coding and programming is only part of the problem. It’s easy to create software that works well on your computer. But there are a lot of ways deploying code can go wrong. Once in production, it’s hard to say how code will be used and what other code will be attached to your original code. Five years from now, a future programmer might get frustrated at the limitations of your code.",
+  "translation": "简单地编码和编程只是问题的一部分。 创建在您的计算机上运行良好的软件很容易。 但是，部署代码有很多方法可能会出错。 一旦投入生产，就很难说出代码的使用方式以及原始代码会附加哪些其他代码。 从现在开始的五年后，未来的程序员可能会对代码的局限感到沮丧。"
+}, {
+  "tag": "H1",
+  "text": "6. Learn to Say No and Prioritize",
+  "translation": "6.学习说不，优先"
+}, {
+  "tag": "P",
+  "text": "This goes for really any role, whether you are a financial analyst or a software engineer. But in particular, tech roles seem to have everyone needing something from them. If you are a data engineer, you will probably get asked to do more than just develop pipelines. Some teams will need data extracts, others will need dashboards, and others will need new pipelines for their data scientists.",
+  "translation": "无论您是财务分析师还是软件工程师，这实际上都适合任何角色。 但特别是，技术角色似乎让每个人都需要一些东西。 如果您是数据工程师，则可能会被要求做更多的事情，而不仅仅是开发管道。 一些团队将需要数据提取，其他团队将需要仪表板，而其他团队则需要为其数据科学家提供新的管道。"
+}, {
+  "tag": "P",
+  "text": "Now, prioritizing and saying no might really be two different skills, but they are closely intertwined. Prioritizing means that you only spend time that has high impact for the company. Whereas saying no sometimes just means avoiding work that should be handled by a different team. They do often happen in tandem for all roles."
+}, {
+  "tag": "P",
+  "text": "This can be a difficult skill to acquire as it is tempting to take on every request thrown your way. Especially if you are straight out of college. You want to avoid disappointing anyone, and you have always been provided a doable amount of work.",
+  "translation": "这很困难，因为它很容易处理您提出的每个请求。 尤其是如果您即将大学毕业。 您希望避免使任何人失望，并且始终为您提供大量的工作。"
+}, {
+  "tag": "P",
+  "text": "In large companies, there is always an endless amount of work. The key is only taking on what can be done.",
+  "translation": "在大公司中，总是有无数的工作。 关键仅在于采取什么措施。"
+}, {
+  "tag": "P",
+  "text": "There are a lot of skills that aren’t tested for in interviews or even always taught in colleges. Oftentimes, this is more a limitation of the environment rather than a lack of desire to expose students to problems that exist in real development environments."
+}, {
+  "tag": "H1",
+  "text": "5. Writing Simple Maintainable Code",
+  "translation": "5.编写简单的可维护代码"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*1ceZ3tCVJ-iRyS7B2THn7Q.png?q=20",
+  "type": "image",
+  "file": "1*1ceZ3tCVJ-iRyS7B2THn7Q.png"
+}, {
+  "tag": "P",
+  "text": "One tendency younger engineers might have is to attempt to implement everything they know into one solution. There is this desire to take your understanding of object-oriented programming, data structures, design patterns, and new technologies and use all of that in every bit of code you write. You create an unnecessary complexity because it’s so easy to be overly attached to a solution or design pattern you have used in the past.",
+  "translation": "年轻工程师可能会出现的一种趋势是，尝试将他们所知道的一切实施到一个解决方案中。 有这样一种愿望，使您对面向对象的编程，数据结构，设计模式和新技术有所了解，并在编写的每一段代码中都使用这些知识。 您会产生不必要的复杂性，因为它很容易过度附加到您过去使用的解决方案或设计模式。"
+}, {
+  "tag": "P",
+  "text": "There is a balance with complex design concepts and simple code. Design patterns and object-oriented design are supposed to simplify code in the grand scheme of things. However, the more and more a process is abstracted, encapsulated, and black-boxed, the harder it can be to debug.",
+  "translation": "在复杂的设计概念和简单的代码之间取得平衡。 设计模式和面向对象的设计应该可以简化宏伟的事物中的代码。 但是，越来越多的流程被抽象化，封装和黑盒化，调试起来就越困难。"
+}, {
+  "tag": "H1",
+  "text": "4. Github…Wait no Git?",
+  "translation": "4. Github…等不了吗？"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*mtL55js6ZZWiax7y.png?q=20",
+  "type": "image",
+  "file": "0*mtL55js6ZZWiax7y.png"
+}, {
+  "tag": "P",
+  "text": "Some CS majors started using Git the day they were born. They understand every command and parameter and can run circles around professionals.",
+  "translation": "一些CS专业的学生在出生那天就开始使用Git。 他们了解每个命令和参数，并可以在专业人员周围盘旋。"
+}, {
+  "tag": "P",
+  "text": "Others get their first taste of Git at their first job. For them, Git is a hellish landscape of confusing commands and processes. They are never 100% sure what they are doing (there’s a reason cheat sheets are popular).",
+  "translation": "其他人在第一份工作中就对Git有初见。 对于他们来说，Git是令人困惑的命令和进程的地狱景观。 他们从未百分百确定自己在做什么（这是备忘单很受欢迎的原因）。"
+}, {
+  "tag": "P",
+  "text": "No matter what repository system your company uses, the system is both helpful if you use it correctly and a hindrance if used improperly. It doesn’t take much for a simple push or commit to turn into you spending hours trying to untangle some hodgepodge of multiple branches and forks. In addition, if you constantly forget to pull the most recent version of the repository, you will also be dealing with merge conflicts that are never fun.",
+  "translation": "无论您的公司使用哪种存储库系统，如果正确使用该系统都将很有帮助，而如果使用不当则会对系统造成阻碍。 一次简单的推送或承诺并不需要花费很多时间来解开多个分支和叉子的杂物。 另外，如果您经常忘记拉出最新版本的存储库，那么您还将要处理从未有过的有趣的合并冲突。"
+}, {
+  "tag": "P",
+  "text": "If you need to keep a Git command cheat sheet, then do it. Whatever makes your life simpler.",
+  "translation": "如果您需要保留Git命令备忘单，请执行此操作。 一切都会使您的生活更简单。"
+}, {
+  "tag": "H1",
+  "text": "3. Avoiding Meetings",
+  "translation": "3.避免开会"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*FOwBIudz9pwVbbt7uR6rqg.png?q=20",
+  "type": "image",
+  "file": "1*FOwBIudz9pwVbbt7uR6rqg.png"
+}, {
+  "tag": "P",
+  "text": "Whether you are a software engineer or data scientist, meetings are a necessity because you need to be able to get on the same page with your project managers, end-users, and clients. However, there is also a tendency for meetings to suddenly take over your entire schedule. This is why it’s important to learn how to avoid meetings that are unneeded. Maybe a better word to use is manage rather than avoid. The goal here is to make sure you spend your time in meetings that drive decisions and help your team move forward."
+}, {
+  "tag": "P",
+  "text": "The most common method is to simply block out a two-hour block every day that is a constant meeting. Usually, most people will set up a recurring meeting at a time they find beneficial. They’ll use that as a time to catch up on their development work.",
+  "translation": "最常见的方法是每天简单地阻止两个小时的会议，这是一个持续不断的会议。 通常，大多数人会在发现有益时召开一次定期会议。 他们将利用这段时间来赶上他们的开发工作。"
+}, {
+  "tag": "P",
+  "text": "Another way to avoid meetings so you can get work done is to show up before anyone else does. Personally, we like showing up early because in general, the office is quieter. Most people that show up early are like you, just wanting to get work done so no one bugs you.",
+  "translation": "避免开会以便完成工作的另一种方法是先出现，然后再出现。 就个人而言，我们喜欢早点出现，因为总的来说，办公室比较安静。 多数早期出现的人都像您一样，只是想完成工作，所以没有人困扰您。"
+}, {
+  "tag": "P",
+  "text": "This is important for individual contributors because our work requires times where we focus and we don’t talk to other people. Yes, there are times you might be problem-solving where you might want to work with other people. But once you get past the blocking issues, you just need to code. It’s about getting into that zone where you are constantly holding a lot of complex ideas in your head about the work you are doing. If you are constantly stopped, it can be hard to pick up where you left off.",
+  "translation": "这对于个人贡献者来说很重要，因为我们的工作需要我们专注于时间，而且我们不与其他人交谈。 是的，有时候您可能想在与他人一起工作的地方解决问题。 但是一旦解决了阻塞问题，您只需要编写代码。 这是关于进入那个区域的事情，在这个区域中，您经常对自己正在做的工作抱有很多复杂的想法。 如果您经常停下来，可能很难从上次停下来的地方继续往前走。"
+}, {
+  "tag": "H1",
+  "text": "2. A Sense for Bad Projects",
+  "translation": "2.对不良项目的意识"
+}, {
+  "tag": "P",
+  "text": "There are many skills that take time to learn. One of the skills we believe is worth knowing is understanding what projects are not worth doing and what projects are clearly death marches.",
+  "translation": "有很多技能需要花一些时间来学习。 我们认为值得了解的技能之一就是了解哪些项目不值得做，哪些项目显然是步履蹒跚。"
+}, {
+  "tag": "P",
+  "text": "Large companies always have many more projects going than will probably ever be completed or impactful. There are some projects that might not make any business sense (at least not to you), and there are others that are just poorly managed. This is not to say that you should cut off an idea right when you disagree with the project. However, if the stakeholders can’t properly explain what they will be doing with the end result, then perhaps the project is not worth doing.",
+  "translation": "大公司的项目总是比可能完成或影响更大的项目多。 有些项目可能没有任何业务意义（至少对您而言没有意义），还有一些项目的管理不善。 这并不是说您不同意该项目时就应该切断想法。 但是，如果利益相关者无法正确解释最终结果将做什么，那么该项目可能就不值得做。"
+}, {
+  "tag": "P",
+  "text": "Also, some projects might be so focused on the technology instead of the solution that it might be clear from the beginning that there won’t be a lot of impact. This skill requires doing a lot of bad projects before you have an idea of what a bad project really is. So don’t spend too much time early on trying to discern each project.",
+  "translation": "另外，某些项目可能过于关注技术而不是解决方案，因此从一开始就很明显不会产生太大影响。 在了解到底什么是坏项目之前，此技能需要执行许多坏项目。 因此，不要花太多时间在尝试辨别每个项目上。"
+}, {
+  "tag": "P",
+  "text": "At some point in your career, you will just have a good gut sense.",
+  "translation": "在您的职业生涯的某个时候，您将拥有良好的直觉。"
+}, {
+  "tag": "H1",
+  "text": "1. Learn How to Read Other People’s Code",
+  "translation": "1.学习如何阅读他人的密码"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*aF4L0WQV77WPd1MW3r530Q.png?q=20",
+  "type": "image",
+  "file": "1*aF4L0WQV77WPd1MW3r530Q.png"
+}, {
+  "tag": "P",
+  "text": "Everyone but you writes terrible code.",
+  "translation": "除您之外的每个人都编写糟糕的代码。"
+}, {
+  "tag": "P",
+  "text": "That is why a great skill that has multiple benefits is being able to follow other people’s code.",
+  "translation": "这就是为什么一项具有多项好处的伟大技能就是能够遵循他人的代码。"
+}, {
+  "tag": "P",
+  "text": "No matter how messy or poorly thought out a previous engineer’s code is, you still need to be able to wade through it. After all, it’s your job. Even when that engineer was you one year prior.",
+  "translation": "不管以前的工程师的代码多么混乱或不怎么认真，您仍然需要能够遍历它。 毕竟，这是您的工作。 即使那位工程师是你一年前。"
+}, {
+  "tag": "P",
+  "text": "This skill benefits you in two ways. One, being able to read other people’s code is a great chance to learn what bad design is. While you are looking through other people’s code you learn what works and what doesn’t. More importantly, you learn what type of code is easy for another engineer to follow and what code is hard to follow.",
+  "translation": "此技能有两种好处。 一种是，能够阅读别人的代码，这是了解什么是不良设计的绝佳机会。 在浏览其他人的代码时，您会了解哪些有效，哪些无效。 更重要的是，您将学习哪种类型的代码容易被另一位工程师遵循以及哪些代码难以遵循。"
+}, {
+  "tag": "P",
+  "text": "You need to make sure you gripe as much as possible as you are reading over other people’s code. That way, other engineers understand how much of a superior engineer you are.",
+  "translation": "您需要确保尽可能多地阅读别人的代码。 这样，其他工程师就会了解您是一名高级工程师。"
+}, {
+  "tag": "P",
+  "text": "Make sure you bring up points about the importance of maintainable code and good commenting. This further shows your dominance in the area of programming.",
+  "translation": "确保您提出有关可维护代码和良好注释的重要性的要点。 这进一步显示了您在编程领域的主导地位。"
+}, {
+  "tag": "P",
+  "text": "Your code should be so well-designed that it requires no documentation. In fact, you shouldn’t document any of your code if you are a good programmer. This is just a waste of time and you need to spend your time coding and in meetings.",
+  "translation": "您的代码应设计得井井有条，不需要任何文档。 实际上，如果您是一名优秀的程序员，则不应编写任何代码。 这只是浪费时间，您需要花费时间进行编码和参加会议。"
+}, {
+  "tag": "P",
+  "text": "Being able to read other people’s messy code also makes it easy to make updates when needed. This occasionally means updating code you lack experience in. For instance, we once followed a script from Powershell to Python to Perl. We had limited experience in Perl, but we still had enough context to figure out what was going on and make the changes needed.",
+  "translation": "能够读取他人的凌乱代码，也可以在需要时轻松进行更新。 有时候这意味着更新您缺乏经验的代码。例如，我们曾经将脚本从Powershell转换为Python，再转换为Perl。 我们在Perl方面的经验有限，但是我们仍然有足够的背景信息来弄清楚发生了什么并进行所需的更改。"
+}, {
+  "tag": "P",
+  "text": "This comes from having a decent understanding of all the code as well as being able to read the Perl scripts.",
+  "translation": "这源于对所有代码的理解以及对Perl脚本的理解。"
+}, {
+  "tag": "P",
+  "text": "Reading other people’s code makes you valuable because you can follow even over-engineered systems that might stump others.",
+  "translation": "阅读别人的代码使您变得很有价值，因为即使您使用的都是经过精心设计的系统，也可能会使他人感到困惑。"
+}, {
+  "tag": "H1",
+  "text": "7 Skills of Highly Effective Programmers",
+  "translation": "高效程序员的7种技能"
+}, {
+  "tag": "H2",
+  "text": "Inspired by an ex-Google TechLead",
+  "translation": "受到前Google TechLead的启发"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*t9eJQXoWfcH_mkBGuLiJFw.jpeg?q=20",
+  "caption": "Photo by Chris Ried on Unsplash",
+  "type": "image",
+  "file": "1*t9eJQXoWfcH_mkBGuLiJFw.jpeg"
+}, {
+  "tag": "P",
+  "text": "Software engineers spend a lot of time gaining skills for interviews by practicing leet code problems and perfecting resumes.",
+  "translation": "软件工程师花费大量时间通过练习leet代码问题和完善简历来获得面试技巧。"
+}, {
+  "tag": "P",
+  "text": "Once they finally get that job at a startup, Google, Amazon, or another corporation, they might find the skills they used to get the job don’t match the ones they need in their everyday work.",
+  "translation": "一旦他们最终在初创公司，谷歌，亚马逊或另一家公司获得这份工作，他们可能会发现他们用来获得这份工作的技能与他们日常工作所需要的技能不匹配。"
+}, {
+  "tag": "P",
+  "text": "Our team was inspired by the seven skills of highly effective programmers created by the TechLead. We wanted to provide our own take on the topic.",
+  "translation": "我们的团队受到TechLead创建的高效程序员的七项技能的启发。 我们想对这个话题发表自己的看法。"
+}, {
+  "tag": "P",
+  "text": "Here are our seven skills of effective programmers.",
+  "translation": "这是我们有效的程序员的七项技能。"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自SeattleDataGuy的文章《7 Skills of Highly Effective Programmers》，参考：https://medium.com/better-programming/7-habits-of-highly-effective-programmers-563ee3b63f33)",
+  "translation": "（本文翻译自SeattleDataGuy的文章《高效程序员的7个技巧》，参考：https：//medium.com/better-programming/7-habits-of-highly-effective-programmers-563ee3b63f33）"
+}]
