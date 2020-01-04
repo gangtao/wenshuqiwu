@@ -1,0 +1,262 @@
+[{
+  "tag": "H1",
+  "text": "Getting started with giotto-learn",
+  "translation": "giotto-learn入门"
+}, {
+  "tag": "H2",
+  "text": "A Python library for topological machine learning",
+  "translation": "用于拓扑机器学习的Python库"
+}, {
+  "tag": "P",
+  "text": "Written by Lewis Tunstall, Colin Kälin, Francesco Palma, and Thomas Boys",
+  "translation": "由Lewis Tunstall，ColinKälin，Francesco Palma和Thomas Boys撰写"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/21/1*IG3Nco1LI9Mljkg_y2l5-Q.jpeg?q=20",
+  "type": "image",
+  "file": "1*IG3Nco1LI9Mljkg_y2l5-Q.jpeg"
+}, {
+  "tag": "H1",
+  "text": "Introduction",
+  "translation": "介绍"
+}, {
+  "tag": "P",
+  "text": "At L2F, one of the most common questions we get around giotto-learn and topological machine learning is “Where do I start?”.",
+  "translation": "在L2F，我们围绕giotto学习和拓扑机器学习遇到的最常见问题之一是“我从哪里开始？”。"
+}, {
+  "tag": "P",
+  "text": "In this guide we present an overview of the basic concepts and workflow so that you can start using giotto-learn in your machine learning pipelines. The code to reproduce the analysis is available on GitHub.",
+  "translation": "在本指南中，我们概述了基本概念和工作流程，以便您可以在机器学习管道中开始使用giotto-learn。 可以在GitHub上获得用于重现分析的代码。"
+}, {
+  "tag": "H1",
+  "text": "What is topological machine learning?",
+  "translation": "什么是拓扑机器学习？"
+}, {
+  "tag": "P",
+  "text": "Topological machine learning refers to a set of techniques that combine elements from algebraic topology with statistical learning. By focusing on global properties of data such as shape and connectivity, these topological methods can capture patterns that may be missed by conventional machine learning approaches.",
+  "translation": "拓扑机器学习是指将代数拓扑中的元素与统计学习结合在一起的一组技术。 通过关注数据的整体属性（例如形状和连接性），这些拓扑方法可以捕获传统机器学习方法可能会遗漏的模式。"
+}, {
+  "tag": "P",
+  "text": "For example, topological machine learning has produced state-of-the-art results in drug design and graph classification, and led to novel insights in protein binding.",
+  "translation": "例如，拓扑机器学习已在药物设计和图形分类中产生了最先进的结果，并导致了对蛋白质结合的新颖见解。"
+}, {
+  "tag": "P",
+  "text": "The main ingredient underlying these techniques is known as persistent homology. Persistent homology measures the presence of topological invariants like connected components, holes, and voids across varying length scales. The “birth” and “death” of these invariants is summarised via a persistence diagram, which is the most common and intuitive way to generate new types of features to feed to downstream machine learning tasks. For an excellent overview of these concepts, see Gary Koplik’s article or Matthew Wright’s video.",
+  "translation": "这些技术的主要成分被称为持久同源性。 持久同源性度量了各种长度范围内拓扑不变性（如连接的组件，孔和空隙）的存在。 这些不变量的“出生”和“死亡”通过持久性图表进行了总结，这是生成新型特征以馈送到下游机器学习任务的最常见，最直观的方式。 有关这些概念的出色概述，请参见Gary Koplik的文章或Matthew Wright的视频。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/freeze/max/30/1*ZU69oqr_MqZF_ChQOd0Aew.gif?q=20",
+  "caption": "Birth and death of a hole by connecting neighbouring points with circles of increasing radius (left). The corresponding persistence diagram is also shown (right). Credit: https://bit.ly/2raKb11",
+  "type": "image",
+  "file": "1*ZU69oqr_MqZF_ChQOd0Aew.gif"
+}, {
+  "tag": "P",
+  "text": "To summarise, the key steps in topological machine learning are:",
+  "translation": "概括地说，拓扑机器学习的关键步骤是："
+}, {
+  "tag": "UL",
+  "texts": ["Extract topological features from the input data using persistent homology.", "Combine these features with machine learning methods, using either supervised or unsupervised approaches."],
+  "translations": ["使用持久性同源性从输入数据中提取拓扑特征。", "使用监督或非监督方法将这些功能与机器学习方法结合起来。"]
+}, {
+  "tag": "P",
+  "text": "The giotto-learn library is designed to simplify these steps and make topological machine learning accessible to the wider data science community. It is based on the fit-transform paradigm of scikit-learn and provides tight integration with the popular framework. Getting started with giotto-learn is as simple as running:",
+  "translation": "giotto学习库旨在简化这些步骤，并使更广泛的数据科学界可以访问拓扑机器学习。 它基于scikit-learn的fit-transform范例，并与流行的框架紧密集成。 giotto-learn入门就像运行一样简单："
+}, {
+  "tag": "PRE",
+  "text": "pip install giotto-learn",
+  "translation": "pip install giotto-learn"
+}, {
+  "tag": "H1",
+  "text": "Predicting molecular properties",
+  "translation": "预测分子性质"
+}, {
+  "tag": "P",
+  "text": "To show giotto-learn in action, we will use the CHAMPS dataset from the Predicting Molecular Properties competition on Kaggle. Here the task is to predict the magnetic interaction or “scalar coupling constant” between two atoms in a molecule. Since these couplings take continuous values, the learning task is a regression one.",
+  "translation": "为了展示giotto-learn的作用，我们将使用Kaggle上Predicting Molecular Properties竞赛中的CHAMPS数据集。 此处的任务是预测分子中两个原子之间的磁性相互作用或“标量耦合常数”。 由于这些耦合取连续值，因此学习任务是一种回归。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*QTbvmTQoeUAfIHSgmzBruA.jpeg?q=20",
+  "caption": "For a given molecule, the learning task is to predict the strength of the couplings between each atom pair.",
+  "type": "image",
+  "file": "1*QTbvmTQoeUAfIHSgmzBruA.jpeg"
+}, {
+  "tag": "H2",
+  "text": "Explore the data",
+  "translation": "探索数据"
+}, {
+  "tag": "P",
+  "text": "The training data consists of atom-pairs in molecules, with each pair characterised by the type of scalar coupling and the (x,y,z) coordinates of each atom. To simplify the analysis, we’ll focus on the 100 largest molecules, i.e. those with the largest number of atoms. As shown in the figure below, these molecules have five different couplings, whose strength varies depending on the type of coupling.",
+  "translation": "训练数据由分子中的原子对组成，每对原子均以标量耦合的类型和每个原子的（x，y，z）坐标为特征。 为了简化分析，我们将重点介绍100个最大的分子，即原子数最大的分子。 如下图所示，这些分子具有五种不同的偶联，其强度取决于偶联的类型。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*zHeJg8enTonHeQTfGYNaBQ.png?q=20",
+  "caption": "Coupling strength per coupling type for the 100 largest molecules in the data.",
+  "type": "image",
+  "file": "1*zHeJg8enTonHeQTfGYNaBQ.png"
+}, {
+  "tag": "H2",
+  "text": "From data to persistence diagrams",
+  "translation": "从数据到持久图"
+}, {
+  "tag": "P",
+  "text": "The first step in our topological machine learning pipeline is to construct persistence diagrams from the training data.",
+  "translation": "我们的拓扑机器学习管道的第一步是从训练数据构建持久性图。"
+}, {
+  "tag": "P",
+  "text": "In giotto-learn, there are two main ways to achieve this:",
+  "translation": "在giotto-learn中，有两种主要方法可以实现此目的："
+}, {
+  "tag": "UL",
+  "texts": ["Represent the data as a point cloud: treat each observation as a point in space, along with a metric to calculate distances between pairs of observations. In our context, the point cloud for a single molecule could simply be the (x, y, z) coordinates of each atom relative to the mean value (x̅, y̅, z̅) of all the atoms. In the code snippet below, homology_dimensions specifies the type of topological invariants to track (“0” for connected components, “1” for holes, and “2” for voids), while euclidean defines the metric we wish to apply in the persistent homology calculation."],
+  "translations": ["将数据表示为点云：将每个观测值视为空间中的一个点，并使用度量标准来计算成对的观测值之间的距离。 在我们的上下文中，单个分子的点云可以简单地是每个原子相对于所有原子的平均值（x̅，y̅，z̅）的（x，y，z）坐标。 在下面的代码片段中，homology_dimensions指定要跟踪的拓扑不变量的类型（“ 0”表示连接的组件，“ 1”表示孔，“ 2”表示空隙），而欧几里得定义了我们希望在持久性同源性中应用的度量 计算。"]
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/lewtun/224057083a600b10a7f3985d89a07b6d/raw/865e55179ab170775fb6d265104b4fbb6ff222c3/persistence_point_cloud.py",
+  "code": "import giotto.homology as hl\n\n# represent data as a point cloud\npoint_cloud = ...\n\n# define topological features to track\nhomology_dimensions = [0, 1, 2]\n\n# define simplicial complex to construct\npersistence = hl.VietorisRipsPersistence(\n    metric=\"euclidean\", homology_dimensions=homology_dimensions\n)\n\n# calculate persistence diagram\npersistence_diagram = persistence.fit_transform(point_cloud)"
+}, {
+  "tag": "UL",
+  "texts": ["Represent the data as a distance matrix: calculate the pairwise distances between each observation, where “distance” does not necessarily have to be a metric. If we treat a single molecule as a graph, the distance between two atoms could be the number of edges along a shortest path connecting them. In the code snippet below, we simply need to specify that our metric is precomputed and ensure the input is a distance matrix."],
+  "translations": ["将数据表示为距离矩阵：计算每个观测值之间的成对距离，其中“距离”不必一定是度量。 如果我们将单个分子视为图，则两个原子之间的距离可能是沿着连接它们的最短路径的边数。 在下面的代码片段中，我们只需要指定度量是预先计算的，并确保输入是距离矩阵即可。"]
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/lewtun/6cb6a44bcc7deea3815e9455f38ca71a/raw/996bb5ca48222646957f661206d8b0264d27d63c/persistence_distance_matrix.py",
+  "code": "import giotto.homology as hl\n\n# represent data as a matrix of pairwise distances\ndistance_matrix = ...\n\n# define topological features to track\nhomology_dimensions = [0, 1, 2]\n\n# define simplicial complex to construct\npersistence = hl.VietorisRipsPersistence(\n    metric=\"precomputed\", homology_dimensions=homology_dimensions\n)\n\n# calculate persistence diagram\npersistence_diagram = persistence.fit_transform(distance_matrix)"
+}, {
+  "tag": "P",
+  "text": "For each input point cloud or distance matrix, we get a single persistence diagram. In the training data, each observation is an atom-pair, so when these pairs are grouped to form the 100 molecules, we obtain 100 point clouds and thus 100 persistence diagrams.",
+  "translation": "对于每个输入点云或距离矩阵，我们得到一个持久性图。 在训练数据中，每个观察都是一个原子对，因此将这些对分组以形成100个分子时，我们获得100个点云，从而获得100个余辉图。"
+}, {
+  "tag": "P",
+  "text": "Points in the persistence diagram which are furthest away from the diagonal death = birth line correspond to the most persistent topological features.",
+  "translation": "持久性图中距离对角线死亡=出生线最远的点对应于最持久的拓扑特征。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*Q4PDOzc7Wt26ed9IiDRVKA.png?q=20",
+  "type": "image",
+  "file": "1*Q4PDOzc7Wt26ed9IiDRVKA.png"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*YSIsPrKOW_SIPjcbgA56CQ.png?q=20",
+  "caption": "A point cloud for a single molecule (left) and its corresponding persistence diagram (right). Connected components (H0) are shown in red, holes (H1) in cyan, and voids (H2) in purple.",
+  "type": "image",
+  "file": "1*YSIsPrKOW_SIPjcbgA56CQ.png"
+}, {
+  "tag": "H2",
+  "text": "From persistence diagrams to machine learning features",
+  "translation": "从持久性图到机器学习功能"
+}, {
+  "tag": "P",
+  "text": "Although persistence diagrams are useful descriptors of the data, they cannot be used directly for machine learning applications. This is because different persistence diagrams may have different numbers of points, and basic operations like the addition and multiplication of diagrams are not well-defined.",
+  "translation": "尽管持久性图是数据的有用描述符，但是它们不能直接用于机器学习应用程序。 这是因为不同的持久性图可能具有不同的点数，并且没有很好地定义基本操作（例如，图的加法和乘法）。"
+}, {
+  "tag": "P",
+  "text": "To overcome these limitations, a variety of proposals have been made to “vectorise” persistence diagrams via embeddings or kernels which are well-suited for machine learning. In giotto-learn, we provide access to the most common vectorisations via the giotto.diagrams module.",
+  "translation": "为了克服这些限制，已经提出了各种建议，以通过嵌入或内核将持久化图“向量化”，这些嵌入或内核非常适合机器学习。 在giotto-learn中，我们通过giotto.diagrams模块提供对最常见矢量化的访问。"
+}, {
+  "tag": "P",
+  "text": "For example, calculating the “amplitude” of a persistence diagram can be achieved by selecting a metric as shown in the following code snippet.",
+  "translation": "例如，可以通过选择度量来实现计算持久性图的“振幅”，如下面的代码片段所示。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/lewtun/c9832f3bc98c7965c0ac76902307ffac/raw/29f6cb2fca8015a7469fe1393d755b600b11d613/persistence_amplitude.py",
+  "code": "import giotto.diagrams as diagrams\n\n# calculate persistence diagram\npersistence_diagram = ...\n\n# define type of amplitude to calculate\namplitude = diagrams.Amplitude(metric=\"wasserstein\")\n\n# calculate amplitude of diagram\npersistence_diagram_amplitude = amplitude.fit_transform(persistence_diagram)"
+}, {
+  "tag": "P",
+  "text": "Alternatively, you can create custom topological features of your own! Since persistence diagrams in giotto-learn are arrays of birth-death-dimension triples, it is straightforward to manipulate them with NumPy or Pandas. For example, the code snippet below shows how we can calculate the average lifetime of the points per homology_dimension.",
+  "translation": "另外，您可以创建自己的自定义拓扑功能！ 由于giotto-learn中的持久性图是出生-死亡-维三元组的数组，因此使用NumPy或Pandas操作它们很简单。 例如，下面的代码片段显示了如何计算每个homology_dimension点的平均寿命。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/lewtun/0ca68dbc05635a3975b51108caa63e6b/raw/fb68e62c78501a6cd7eb476be69b338e66338c30/average_lifetime.py",
+  "code": "import pandas as pd\n\n# define topological features to track\nhomology_dimensions = [0, 1, 2]\n\n# calculate persistence diagram\npersistence_diagram = ...\n\n# convert NumPy array of triples to DataFrame\npersistence_table = pd.DataFrame(\n    persistence_diagram, columns=[\"birth\", \"death\", \"homology_dim\"]\n)\n\n# calculate the lifetime per point\npersistence_table[\"lifetime\"] = persistence_table[\"death\"] - persistence_table[\"birth\"]\n\n# calculate average lifetimes per homology dimension\naverage_lifetimes = [\n    persistence_table.query(f\"homology == {homology_dim}\")[\"lifetime\"].mean()\n    for homology_dim in homology_dimensions\n]"
+}, {
+  "tag": "P",
+  "text": "In our full analysis of the CHAMPS dataset we extracted a wide variety of topological features — see the accompanying code for details.",
+  "translation": "在对CHAMPS数据集的全面分析中，我们提取了各种各样的拓扑特征-有关详细信息，请参见随附的代码。"
+}, {
+  "tag": "H2",
+  "text": "Train a model",
+  "translation": "训练模型"
+}, {
+  "tag": "P",
+  "text": "With topological features at hand, the next step is to train a regressor. In the scikit-learn conventions, this amounts to combining all relevant features and the target variable into arrays X and y. For this guide, we adopt the approach taken in this Kaggle submission and use an XGBoostRegressor to make predictions. In order to evaluate the influence of the features on performance, we compare the results of a model trained with 5-fold cross-validation, both with and without topological features. The code snippet for this step is standard and reproduced below.",
+  "translation": "有了拓扑特征，下一步就是训练回归器。 在scikit-learn约定中，这等于将所有相关功能和目标变量组合到数组X和y中。 对于本指南，我们采用本Kaggle提交中采用的方法，并使用XGBoostRegressor进行预测。 为了评估功能部件对性能的影响，我们比较了具有和不具有拓扑功能部件的经过5倍交叉验证训练的模型的结果。 此步骤的代码段是标准的，并在下面复制。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/lewtun/dcd49e5eebb3390f41c1a745d2f65699/raw/556bc92c0e8dce27ba5e766c705af30af706eb3b/cv_model.py",
+  "code": "def cv_model(X, y, features, n_fold=5, random_state=45245, params=None):\n    \"\"\"Evaluate a score by cross validation.\n    \n    Parameters\n    ----------\n    \n    X : pandas.DataFrame\n        The data to fit.\n        \n    y : pandas.DataFrame or pandas.Series\n        The scalar coupling constants as target variables.\n        \n    features : list\n        The list of features to use during training.\n        \n    n_fold : int, default `5`\n        The number of fold to use in cross validation.\n    \n    random_state : int, default `45245`\n        The seed for the KFold split\n        \n    params : dict, default `None`\n        The parameter dictionary for XGBRegressor\n        \n    Returns\n    -------\n    \n    results_mean : list\n        List of the scores for each coupling type, averaged over all folds.\n        \n    results_details : list\n        List of all the scores as a list of lists.\n    \"\"\"\n\n    X = X[features]\n\n    folds = KFold(n_splits=n_fold, shuffle=True, random_state=random_state)\n    model = XGBRegressor(**params)\n    results_mean = []\n    results_details = []\n\n    for fold_n, (train_index, valid_index) in enumerate(folds.split(X)):\n        X_train, X_valid = X.iloc[train_index], X.iloc[valid_index]\n        y_train, y_valid = y.iloc[train_index], y.iloc[valid_index]\n        model.fit(X_train, y_train)\n        y_pred = model.predict(X_valid)\n        scores = group_mean_log_mae(y_pred, y_valid, X_valid[\"type\"])\n        results_mean.append(scores[0])\n        results_details.append(list(scores[1]))\n\n    print(\n        \"After {}-fold CV: Mean: \".format(n_fold),\n        np.mean(results_mean),\n        \"Std.:\",\n        np.std(results_mean),\n    )\n    return results_mean, results_details"
+}, {
+  "tag": "H2",
+  "text": "Score the predictions",
+  "translation": "得分预测"
+}, {
+  "tag": "P",
+  "text": "The final step is to score the predictions from our models. The metric for the competition is the mean of the logarithm of the mean absolute error (yes, it’s a bit complicated — just think of it as multiple scores, one for each bond type. For each type calculate the mean absolute error, take the log of these results and in the end calculate the mean over all bond types):",
+  "translation": "最后一步是对我们模型的预测进行评分。 竞赛的指标是平均绝对误差的对数的平均值（是的，这有点复杂-可以将其视为多个分数，每种债券类型均得分。对于每种类型，计算平均绝对误差，取对数 这些结果，最后计算所有债券类型的均值）："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*oroRjiTf6KEwg7QOeVgcfg.png?q=20",
+  "type": "image",
+  "file": "1*oroRjiTf6KEwg7QOeVgcfg.png"
+}, {
+  "tag": "P",
+  "text": "Here:",
+  "translation": "这里："
+}, {
+  "tag": "UL",
+  "texts": ["T is the number of scalar coupling types (in our case five)", "nₜ is the number of observations of type t", "yᵢ is the scalar coupling constant for the observation", "ŷᵢ is the predicted scalar coupling constant"],
+  "translations": ["T是标量耦合类型的数量（在我们的示例中为5）", "nₜ是类型t的观测数", "yᵢ是观测的标量耦合常数", "ŷᵢ是预测的标量耦合常数"]
+}, {
+  "tag": "P",
+  "text": "Due to the logarithm we can get negative values, and thus a score of say -0.5 is better than a score of -0.3.",
+  "translation": "由于对数，我们可以获得负值，因此说-0.5的得分比-0.3的得分更好。"
+}, {
+  "tag": "P",
+  "text": "The figure below shows the scores per coupling type and compares the model that includes topological features against those without.",
+  "translation": "下图显示了每种耦合类型的分数，并将包含拓扑特征的模型与没有拓扑特征的模型进行了比较。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*08H-KS1iHIeYIy2FA4YTJw.png?q=20",
+  "type": "image",
+  "file": "1*08H-KS1iHIeYIy2FA4YTJw.png"
+}, {
+  "tag": "P",
+  "text": "We can clearly see that the topological features help improve the score by up to 5.5%, and by 3.6% on average. In a Kaggle competition, these small improvements can make a big difference in the final leaderboard and provide a nice demonstration of how topology can provide complementary information to conventional feature extraction methods.",
+  "translation": "我们可以清楚地看到，拓扑功能有助于将分数提高多达5.5％，平均提高3.6％。 在Kaggle竞赛中，这些小的改进可以在最终排行榜中产生很大的不同，并很好地演示了拓扑如何为常规特征提取方法提供补充信息。"
+}, {
+  "tag": "H1",
+  "text": "Outlook and next steps",
+  "translation": "展望及下一步"
+}, {
+  "tag": "P",
+  "text": "This guide only scratches the surface of what is possible with giotto-learn. In addition to core machine learning tasks like our regression example, the library currently supports the application of persistent homology to graph and time series data.",
+  "translation": "本指南仅刮擦了giotto学习可能的内容。 除了我们的回归示例之类的核心机器学习任务外，该库当前还支持将持久同源性应用于图形和时间序列数据。"
+}, {
+  "tag": "P",
+  "text": "For example, giotto-learn has been used to detect stock market crashes, study the population dynamics of beetle populations, or predict whether a molecule inhibits the spreading of HIV.",
+  "translation": "例如，giotto-learn已用于检测股市崩溃，研究甲虫种群的种群动态或预测分子是否抑制HIV的传播。"
+}, {
+  "tag": "P",
+  "text": "If you have questions on how to use giotto-learn, feel free to reach out to us on Slack.",
+  "translation": "如果您对如何使用giotto学习有疑问，请随时通过Slack与我们联系。"
+}, {
+  "tag": "P",
+  "text": "If you would like to learn more about topological machine learning, please consult the links below.",
+  "translation": "如果您想了解有关拓扑机器学习的更多信息，请查阅以下链接。"
+}, {
+  "tag": "H1",
+  "text": "Links",
+  "translation": "链接"
+}, {
+  "tag": "UL",
+  "texts": ["An introduction to topological data analysis: fundamental and practical aspects for data scientists", "Persistent-homology-based machine learning and its applications — a survey"],
+  "translations": ["拓扑数据分析简介：数据科学家的基本和实践方面", "基于持久同源性的机器学习及其应用—一项调查"]
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Lewis Tunstall的文章《Getting started with giotto-learn》，参考：https://towardsdatascience.com/getting-started-with-giotto-learn-a-python-library-for-topological-machine-learning-451d88d2c4bc)",
+  "translation": "（本文翻译自Lewis Tunstall的文章，《 giotto-learn入门》，参考：https：//towardsdatascience.com/getting-started-with-giotto-learn-a-python-library-for-topological-machine-learning -451d88d2c4bc）"
+}]
