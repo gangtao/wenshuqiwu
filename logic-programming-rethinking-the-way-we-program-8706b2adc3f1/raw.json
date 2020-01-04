@@ -1,0 +1,259 @@
+[{
+  "tag": "H1",
+  "text": "Conclusion",
+  "translation": "结论"
+}, {
+  "tag": "P",
+  "text": "In this tutorial, we have only touched the surface of what can be done with logic programming. There are more advanced applications in group theory and artificial intelligence (especially natural language processing), to name a few. Hopefully, you now have a better idea as to what the general idea of logic programming is and how it can be applied to a variety of problems.",
+  "translation": "在本教程中，我们仅涉及逻辑编程可以完成的工作。 团体理论和人工智能（尤其是自然语言处理）中有更先进的应用，仅举几例。 希望您现在对逻辑编程的一般概念是什么以及如何将其应用于各种问题有了更好的了解。"
+}, {
+  "tag": "H1",
+  "text": "Constraint Logic Programming",
+  "translation": "约束逻辑编程"
+}, {
+  "tag": "P",
+  "text": "Up to now, we’ve been working on the Herbrand domain, but where prolog (and logic programming, in general) really shines is when working over finite domains, CLP(FD), or the reals, CLP(ℝ).",
+  "translation": "到目前为止，我们一直在研究Herbrand域，但是序言（通常是逻辑编程）真正的亮点是在有限域CLP（FD）或实数CLP（ℝ）上工作。"
+}, {
+  "tag": "H2",
+  "text": "CLP(R)",
+  "translation": "CLP（R）"
+}, {
+  "tag": "P",
+  "text": "Constraint logic programming over ℝ allows you to reduce and solve systems of equations over the real numbers. In prolog, we first need to import it as follows:",
+  "translation": "ℝ上的约束逻辑编程使您可以根据实数来简化和求解方程组。 在序言中，我们首先需要将其导入，如下所示："
+}, {
+  "tag": "PRE",
+  "text": ":- use_module(library(clpr)).",
+  "translation": "：-use_module（library（clpr））。"
+}, {
+  "tag": "P",
+  "text": "To give a simple, straightforward, example, let’s look at the following system of equations:",
+  "translation": "为了给出一个简单明了的示例，让我们看一下以下方程组："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*P-YIYPnCD2eiApMgvMx8VA.png?q=20",
+  "type": "image",
+  "file": "1*P-YIYPnCD2eiApMgvMx8VA.png"
+}, {
+  "tag": "P",
+  "text": "Representing this in prolog is very easy:",
+  "translation": "在序言中表示这一点非常容易："
+}, {
+  "tag": "PRE",
+  "text": "?- {X + Y = 0, X < 3, X >= 2}.",
+  "translation": "？-{X + Y ＝ 0，X ＜3，X＞ ＝ 2}。"
+}, {
+  "tag": "P",
+  "text": "The result of this query will be the most simplified version of the above system, in this case:",
+  "translation": "在这种情况下，此查询的结果将是上述系统的最简化版本："
+}, {
+  "tag": "PRE",
+  "text": "{X>=2.0, X<3.0, Y= -X}.",
+  "translation": "{X> = 2.0，X <3.0，Y = -X}。"
+}, {
+  "tag": "P",
+  "text": "This can be used to reduce (and solve) equations with many different constraints.",
+  "translation": "这可用于简化（求解）具有许多不同约束的方程。"
+}, {
+  "tag": "H2",
+  "text": "CLP(FD)",
+  "translation": "中电（FD）"
+}, {
+  "tag": "P",
+  "text": "Constraint programming over finite domains is much more applicable to everyday problems, such as task scheduling, optimization, or solving puzzles (such as the n-queens problem).",
+  "translation": "有限域上的约束编程更适用于日常问题，例如任务计划，优化或解决难题（例如n皇后问题）。"
+}, {
+  "tag": "P",
+  "text": "Let’s introduce CLP(FD) through a simple example. We will consider the following puzzle: we need to assign integers to each letter such that",
+  "translation": "让我们通过一个简单的示例介绍CLP（FD）。 我们将考虑以下难题：我们需要为每个字母分配整数，以便"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*l7gYG9T9wejaSekCNVpK6g.png?q=20",
+  "type": "image",
+  "file": "1*l7gYG9T9wejaSekCNVpK6g.png"
+}, {
+  "tag": "P",
+  "text": "In prolog, we can write this simple program to solve the above puzzle:",
+  "translation": "在序言中，我们可以编写这个简单的程序来解决上述难题："
+}, {
+  "tag": "PRE",
+  "text": ":- use_module(library(clpfd)).puzzle([V,E,R,Y] + [N,I,C,E] = [M,E,M,E,S]) :-     Variables = [V,E,R,Y,N,I,C,M,S],     Variables ins 0..9,     all_different(Variables),     (1000*V + 100*E + 10*R + Y) +      (1000*N + 100*I + 10*C + E) #=     (10000*M  + 1000*E + 100*M + 10*E + S),     V #\\= 0, N #\\=0, M#\\=0,     label(Variables).",
+  "translation": "：-use_module（library（clpfd））。puzzle（[V，E，R，Y] + [N，I，C，E] = [M，E，M，E，S]）：-变量= [V ，E，R，Y，N，I，C，M，S]，变量ins 0..9，all_different（变量），（1000 * V + 100 * E + 10 * R + Y）+（1000 * N + 100 * I + 10 * C + E）＃=（10000 * M + 1000 * E + 100 * M + 10 * E + S），V＃\\ = 0，N＃\\ = 0，M＃\\ = 0 ，标签（变量）。"
+}, {
+  "tag": "P",
+  "text": "We first group all of the Variables for which we need to assign numerical values. The next thing we do is specify their domain (in between 0 and 9). Then, we force them all to be different. The main part consists of placing the main constraint given by the puzzle (in CLP(FD), the syntax for the constraint “=” is “#=”). Furthermore, we make sure that V, N, and M are different than 0. The last thing that we do is label, which forces prolog to spit out individual solutions, rather than printing out the final propagated constraint.",
+  "translation": "我们首先将需要为其分配数值的所有变量归为一组。 接下来要做的是指定它们的域（介于0到9之间）。 然后，我们迫使它们全部不同。 主要部分包括放置拼图给出的主要约束（在CLP（FD）中，约束“ =”的语法为“＃=”）。 此外，我们确保V，N和M不同于0。我们要做的最后一件事是标记，这迫使prolog吐出单个解，而不是打印出最终的传播约束。"
+}, {
+  "tag": "P",
+  "text": "Now, we can make the following query to obtain a solution:",
+  "translation": "现在，我们可以进行以下查询以获得解决方案："
+}, {
+  "tag": "PRE",
+  "text": "?- puzzle(X).X = ([7, 6, 2, 3]+[8, 5, 4, 6]=[1, 6, 1, 6, 9])",
+  "translation": "？-puzzle（X）.X =（[7，6，2，3] + [8，5，4，6] = [1，6，1，6，9]）"
+}, {
+  "tag": "H1",
+  "text": "Working with Relations — is Socrates mortal?",
+  "translation": "处理关系-苏格拉底是凡人吗？"
+}, {
+  "tag": "P",
+  "text": "One of the most fundamental concepts in logic programming is a relation. But what exactly is a relation?",
+  "translation": "逻辑编程中最基本的概念之一是关系。 但是究竟是什么关系？"
+}, {
+  "tag": "P",
+  "text": "To see this more clearly, let’s look at a very simple piece of code in prolog (you can download prolog here)",
+  "translation": "为了更清楚地了解这一点，让我们看一下序言中非常简单的一段代码（您可以在此处下载序言）"
+}, {
+  "tag": "PRE",
+  "text": "mortal(X) :- man(X).",
+  "translation": "凡人（X）：-人（X）。"
+}, {
+  "tag": "P",
+  "text": "In general, relations given by “A :- B” are read as “if B then A”. The above example can be read as,“if you are man, then you are a mortal”, AKA “men are mortal”. Note that the period is just there to end the relation. Now, let’s suppose we add the following:",
+  "translation": "通常，将“ A：-B”给出的关系理解为“如果B则A”。 上面的例子可以理解为“如果你是男人，那么你就是凡人”，也就是“男人是凡人”。 请注意，句点正好结束关系。 现在，假设我们添加以下内容："
+}, {
+  "tag": "PRE",
+  "text": "man(socrates).",
+  "translation": "男人（socates）。"
+}, {
+  "tag": "P",
+  "text": "This just states, “socrates is a man”. Now, you might think, “this is great, but what’s the point?” The reason that we define relations is that we’re then able to perform queries. In prolog, we could perform the simple query:",
+  "translation": "这只是说：“自食其果是一个男人”。 现在，您可能会想，“这很棒，但是有什么意义呢？”之所以定义关系，是因为我们能够执行查询。 在序言中，我们可以执行简单的查询："
+}, {
+  "tag": "PRE",
+  "text": "?- mortal(socrates).true.",
+  "translation": "凡人（socrates）.true。"
+}, {
+  "tag": "P",
+  "text": "The result of the above query is that “socrates is mortal”. It used the relational database that we constructed to see that socrates is a man and, since men are mortal, then socrates must also be mortal. If we, instead, wanted to iterate through all mortal, we could have done:",
+  "translation": "上面查询的结果是“ socrates mortal”。 它使用我们构建的关系数据库来查看苏格拉底是一个人，并且由于人是凡人，所以苏格拉底也必须是凡人。 相反，如果我们想遍历所有凡人，我们可以做到："
+}, {
+  "tag": "PRE",
+  "text": "?- mortal(X).X = socrates.",
+  "translation": "？-mortal（X）.X =苏格拉底。"
+}, {
+  "tag": "P",
+  "text": "In prolog, capital letters are used to represent variables.",
+  "translation": "在序言中，大写字母用于表示变量。"
+}, {
+  "tag": "H2",
+  "text": "Simple Example with Directed Graphs",
+  "translation": "有向图的简单示例"
+}, {
+  "tag": "P",
+  "text": "To illustrate this with a more thorough example, let’s suppose we are given the following directed graph and are interested in modeling and making inferences from it.",
+  "translation": "为了用更详尽的示例说明这一点，假设我们得到了以下有向图，并且对建模和从中进行推论感兴趣。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*inHO5G4DOy6VJ9D0O79vfw.png?q=20",
+  "caption": "Image Source: wikipedia",
+  "type": "image",
+  "file": "1*inHO5G4DOy6VJ9D0O79vfw.png"
+}, {
+  "tag": "P",
+  "text": "The first, natural thing that we want to do is to somehow find a representation of the graph. The most obvious way is to represent it in terms of its connections.",
+  "translation": "我们要做的第一件事是，以某种方式找到图形的表示形式。 最明显的方法是根据其连接来表示它。"
+}, {
+  "tag": "PRE",
+  "text": "arrow(1,2).arrow(1,3).arrow(3,2).arrow(3,4).arrow(4,3).",
+  "translation": "arrow（1,2）.arrow（1,3）.arrow（3,2）.arrow（3,4）.arrow（4,3）。"
+}, {
+  "tag": "P",
+  "text": "This should be quite intuitive. For example, arrow(1,2) just means that there is an arrow from vertex 1 to vertex 2.",
+  "translation": "这应该很直观。 例如，arrow（1,2）仅表示从顶点1到顶点2的箭头。"
+}, {
+  "tag": "P",
+  "text": "Suppose, now, that we wish to determine whether there is a path from a given node A to node B. How could we model this using logic programming? Let’s think intuitively about the problem. There are two possible cases: either A and B are neighbors, in which case we need to check if there is an arrow from A to B. Otherwise, there is a path from A to B if there is an arrow from A to some other vertex C and a path from C to B.",
+  "translation": "现在，假设我们希望确定是否存在从给定节点A到节点B的路径。我们如何使用逻辑编程对此进行建模？ 让我们直观地思考问题。 有两种可能的情况：A和B是邻居，在这种情况下，我们需要检查是否存在从A到B的箭头。否则，如果存在从A到其他箭头的箭头，则存在从A到B的路径。 顶点C和从C到B的路径。"
+}, {
+  "tag": "P",
+  "text": "The first relation can easily be written as:",
+  "translation": "第一个关系可以很容易地写成："
+}, {
+  "tag": "PRE",
+  "text": "is_path(A,B) :- arrow(A, B). ",
+  "translation": "is_path（A，B）：-箭头（A，B）。"
+}, {
+  "tag": "P",
+  "text": "The second one is also fairly straightforward:",
+  "translation": "第二个也很简单："
+}, {
+  "tag": "PRE",
+  "text": "is_path(A,B) :-     arrow(A, C),     is_path(C, B). ",
+  "translation": "is_path（A，B）：-箭头（A，C），is_path（C，B）。"
+}, {
+  "tag": "P",
+  "text": "In the second case, the comma is used to represent the logical “and”. For example, there is a path from 1 to 4 because there is an arrow from 1 to 3 and a path from 3 to 4.",
+  "translation": "在第二种情况下，逗号用于表示逻辑“和”。 例如，存在从1到4的路径，因为存在从1到3的箭头和从3到4的路径。"
+}, {
+  "tag": "P",
+  "text": "We can go even further and figure out the path itself. We can define is_path/3 as follows (here, the /3 just indicates that there are 3 arguments):",
+  "translation": "我们可以走得更远，找出路径本身。 我们可以如下定义is_path / 3（在这里，/ 3仅表示有3个参数）："
+}, {
+  "tag": "PRE",
+  "text": "is_path(A, B, P). ",
+  "translation": "is_path（A，B，P）。"
+}, {
+  "tag": "P",
+  "text": "We now want to give conditions to determine when P is a path from A to B. To be clear, we want to define is_path/3 in such a way that we obtain the following result to the query:",
+  "translation": "现在，我们要提供条件以确定P是从A到B的路径。要清楚一点，我们想以这样的方式定义is_path / 3，以便为查询获得以下结果："
+}, {
+  "tag": "PRE",
+  "text": "?- is_path(1,4,[1,3,4]).true",
+  "translation": "？-is_path（1,4，[1,3,4]）。true"
+}, {
+  "tag": "P",
+  "text": "Let’s write is_path/3, one step at a time. The base case is quite simple: we just check whether P is [A, B] and if there is an arrow from A to B.",
+  "translation": "让我们一次写is_path / 3。 基本情况非常简单：我们只需检查P是否为[A，B]，以及是否存在从A到B的箭头。"
+}, {
+  "tag": "PRE",
+  "text": "is_path(A, B, P) :-     P  = [A, B],     arrow(A,B). ",
+  "translation": "is_path（A，B，P）：-P = [A，B]，箭头（A，B）。"
+}, {
+  "tag": "P",
+  "text": "The other case can be done as follows:",
+  "translation": "另一种情况可以如下进行："
+}, {
+  "tag": "PRE",
+  "text": "is_path(A, B, P) :-     P = [A|Tail],     arrow(A, C),      is_path(C, B, Tail).",
+  "translation": "is_path（A，B，P）：-P = [A | Tail]，箭头（A，C），is_path（C，B，Tail）。"
+}, {
+  "tag": "P",
+  "text": "Now let’s carefully look at the above code. The first thing that we do is check that P is of the form: A plus a list containing the elements after A. Then, all we do is check if there is an arrow from A to some other vertex C and recursively try to see if there the tail of P is a path from C to B.",
+  "translation": "现在，让我们仔细看一下上面的代码。 我们要做的第一件事是检查P的形式为：A加上一个包含A之后的元素的列表。然后，我们要做的就是检查是否存在从A到其他顶点C的箭头，然后递归尝试查看是否 P的尾巴是从C到B的路径。"
+}, {
+  "tag": "P",
+  "text": "If we apply this to the previous example, is_path(1,4,[1,3,4]), we need to check whether [1,3,4] is a path from 1 to 4. We see that P can be written [1| Tail] with Tail being [3,4]. Hence, [1,3,4] is a path from 1 to 4.",
+  "translation": "如果将其应用于上一个示例is_path（1,4，[1,3,4]），我们需要检查[1,3,4]是否是从1到4的路径。我们看到P可以是 书面[1 | 尾]，尾为[3,4]。 因此，[1,3,4]是从1到4的路径。"
+}, {
+  "tag": "H1",
+  "text": "Logic Programming — Rethinking The Way We Program",
+  "translation": "逻辑编程-重新思考我们的编程方式"
+}, {
+  "tag": "H2",
+  "text": "An introduction to some of the most fundamental concepts in logic programming (and constraint logic programming) with Prolog.",
+  "translation": "介绍Prolog逻辑编程（和约束逻辑编程）中一些最基本的概念。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*a9Mg8qd1IhJXZDElxYjwMQ.jpeg?q=20",
+  "caption": "Image Source: Janeb13",
+  "type": "image",
+  "file": "1*a9Mg8qd1IhJXZDElxYjwMQ.jpeg"
+}, {
+  "tag": "H1",
+  "text": "Introduction",
+  "translation": "介绍"
+}, {
+  "tag": "P",
+  "text": "If you’ve coded before, chances are you’re familiar with an imperative language, such as Python, Java, or C++. In this paradigm, a program is a list of instructions that modify its state when executed. Although this is the most common way of programming, it isn’t the focus of this article.",
+  "translation": "如果您之前进行过编码，那么您很可能熟悉命令式语言，例如Python，Java或C ++。 在这种范例中，程序是一列指令的列表，这些指令在执行时会修改其状态。 尽管这是最常见的编程方式，但这并不是本文的重点。"
+}, {
+  "tag": "P",
+  "text": "Instead, we’re going to introduce a different programming paradigm, logic programming, wherein a program is a database of relations. We will lay out the main concepts as we try to solve some simple questions in one of the most popular logic languages, prolog.",
+  "translation": "相反，我们将介绍一种不同的编程范例，即逻辑编程，其中程序是关系数据库。 我们将尝试使用一种最流行的逻辑语言，即序言来解决一些简单的问题时，将列出主要概念。"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Louis de Benoist的文章《Logic Programming — Rethinking The Way We Program》，参考：https://towardsdatascience.com/logic-programming-rethinking-the-way-we-program-8706b2adc3f1)",
+  "translation": "（本文翻译自Louis de Benoist的文章，《逻辑编程—重新思考我们编程的方式》，参考：https：//towardsdatascience.com/logic-programming-rethinking-the-way-we-program-8706b2adc3f1）"
+}]
