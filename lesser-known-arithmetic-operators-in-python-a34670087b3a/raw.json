@@ -1,0 +1,86 @@
+[{
+  "tag": "H1",
+  "text": "Modulus Operator",
+  "translation": "模运算符"
+}, {
+  "tag": "P",
+  "text": "If the integer division operator gives us the whole, then we also need a way to find the part.",
+  "translation": "如果整数除法运算符为我们提供了整体，那么我们还需要一种方法来找到该部分。"
+}, {
+  "tag": "P",
+  "text": "Modulus is an operation that is overlooked in math class, but can be very helpful in programming and data science. When using the modulus operator %, the remainder of the division is returned.",
+  "translation": "模数运算是数学课程中忽略的运算，但在编程和数据科学中可能会非常有用。 使用模数运算符％时，将返回除法的其余部分。"
+}, {
+  "tag": "PRE",
+  "text": "x = 10y = 4z = x % yprint(z) # 2",
+  "translation": "x = 10y = 4z = x％yprint（z）＃2"
+}, {
+  "tag": "P",
+  "text": "If you’re having trouble thinking of ways of using the modulus operator, I most commonly use it to check for an odd or even integer.",
+  "translation": "如果您在思考使用模数运算符的方式时遇到麻烦，我通常会使用它来检查奇数或偶数整数。"
+}, {
+  "tag": "PRE",
+  "text": "x = 11if x % 2:   print(\"odd number\")else:   print(\"even number\")",
+  "translation": "x = 11如果x％2：print（“奇数”）else：print（“偶数”）"
+}, {
+  "tag": "P",
+  "text": "By returning the remainder from a division of 2, the remainder will either be 0 (even number) or 1 (odd number).",
+  "translation": "通过从2的除法返回余数，余数将为0（偶数）或1（奇数）。"
+}, {
+  "tag": "H1",
+  "text": "Integer Division Operator",
+  "translation": "整数除法运算符"
+}, {
+  "tag": "P",
+  "text": "Have you ever needed to truncate a value by removing its decimal places? JavaScript has the Math.floor() method to round down; however, this is unnecessary in Python.",
+  "translation": "您是否曾经需要通过删除其小数位来截断该值？ JavaScript具有Math.floor（）方法进行四舍五入； 但是，这在Python中是不必要的。"
+}, {
+  "tag": "P",
+  "text": "The double forward slash in Python is known as the integer division operator. Essentially, it will divide the left by the right, and only keep the whole number component.",
+  "translation": "Python中的双正斜杠称为整数除法运算符。 本质上，它将左除以右，并且仅保留整数部分。"
+}, {
+  "tag": "PRE",
+  "text": "x = 8y = 3z = x // yprint(z) # 2",
+  "translation": "x = 8y = 3z = x // yprint（z）＃2"
+}, {
+  "tag": "H1",
+  "text": "Exponentiation Operator",
+  "translation": "求幂运算符"
+}, {
+  "tag": "P",
+  "text": "The exponentiation operator ** replaces the traditional caret ^ from scientific calculators of old.",
+  "translation": "求幂运算符**替代了旧式科学计算器中的传统插入符号^。"
+}, {
+  "tag": "P",
+  "text": "Instead of multiplying a variable together three times to cube it, or use an external library like Math.pow() in JavaScript, simply use the double asterisk to raise the left operand to the power of the right.",
+  "translation": "与其将变量相乘三次以求多维数据集，也不是使用JavaScript中的Math.pow（）这样的外部库，只需使用双星号将左操作数提高为右方的幂。"
+}, {
+  "tag": "PRE",
+  "text": "x = 5x_cubed = x ** 3x_to_the_eighth = x ** 8",
+  "translation": "x = 5x立方= x ** 3x_to_the_eighth = x ** 8"
+}, {
+  "tag": "H1",
+  "text": "Lesser-Known Arithmetic Operators in Python",
+  "translation": "Python中较少见的算术运算符"
+}, {
+  "tag": "H2",
+  "text": "Go beyond addition, subtraction, multiplication, and division",
+  "translation": "超越加，减，乘和除"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*5IwI3UFT8BmTwyY9k_vcbg.jpeg?q=20",
+  "caption": "Photo by Helloquence on Unsplash",
+  "type": "image",
+  "file": "1*5IwI3UFT8BmTwyY9k_vcbg.jpeg"
+}, {
+  "tag": "P",
+  "text": "As a non-math person who got into programming on my own, I’ve found gaps in my general knowledge that have little to do with aptitude and more to do with exposure."
+}, {
+  "tag": "P",
+  "text": "Here are three handy arithmetic (math) operators that you may be unaware of, but will be helpful in your programming journey.",
+  "translation": "这是您可能不知道的三个方便的算术（算术）运算符，但它们对您的编程过程有所帮助。"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Jonathan Hsu的文章《Lesser-Known Arithmetic Operators in Python》，参考：https://medium.com/better-programming/lesser-known-arithmetic-operators-in-python-a34670087b3a)",
+  "translation": "（本文翻译自Jonathan Hsu的文章，《 Python中不为人知的算术运算符》，参考：https：//medium.com/better-programming/lesser-known-arithmetic-operators-in-python-a34670087b3a）"
+}]
