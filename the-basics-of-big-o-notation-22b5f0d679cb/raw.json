@@ -1,0 +1,197 @@
+[{
+  "tag": "P",
+  "text": "Originally published at https://somedudesays.com.",
+  "translation": "最初发布在https://somedudesays.com。"
+}, {
+  "tag": "H1",
+  "text": "The Basics of Big O Notation",
+  "translation": "大O表示法的基础"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*6XfkAPmqGRKBW27x.jpg?q=20",
+  "caption": "Featured image by Arek Socha from Pixabay",
+  "type": "image",
+  "file": "0*6XfkAPmqGRKBW27x.jpg"
+}, {
+  "tag": "P",
+  "text": "Big O notation expresses how an algorithm grows relative to the input and extrapolates the input out to something arbitrarily large or even infinity. This gives us how long an algorithm takes to run in best case and worst case scenarios.",
+  "translation": "大O表示法表示算法如何相对于输入增长，并将输入外推到任意大甚至无限的东西。 这为我们提供了算法在最佳情况和最坏情况下要花费的时间。"
+}, {
+  "tag": "P",
+  "text": "This isn’t going to tell us exactly how long it takes to run an algorithm (for reasons we’ll get into in a bit), but gives a way to rank and compare algorithms as a whole, and gives you a scale of how big it will be. Big O notation doesn’t really matter for a small data set on most systems, but comes into play with large data sets, which is our input. Let’s get into some of the basics of the notation.",
+  "translation": "这并不能告诉我们运行算法需要多长时间（出于某种原因，我们稍后会介绍），但是可以提供一种对算法进行整体排名和比较的方法，并且可以为您提供一个评估方法。 会很大。 在大多数系统上，大O表示法对一个小的数据集并不重要，但是对于大数据集（这是我们的输入）起作用。 让我们了解一下该符号的一些基础知识。"
+}, {
+  "tag": "H1",
+  "text": "Actual Big O Notation",
+  "translation": "实际的大O符号"
+}, {
+  "tag": "P",
+  "text": "If you’ve seen things like O( n² ) or O( n log₂ n ), then you’ve seen the basic language of Big O notation. n defines the size of our input. If you pass an arbitrary n, you can see how big it gets and how quickly.",
+  "translation": "如果您已经看过O（n²）或O（nlog²n）之类的东西，那么您已经了解了Big O表示法的基本语言。 n定义了输入的大小。 如果传递任意n，则可以看到它的大小和速度。"
+}, {
+  "tag": "P",
+  "text": "We are going to cover 3 different Big O classifications which are common. We have constant time with O( 1 ), this means it always takes a constant amount to run. We have linear time with O( n ) which means the time to run is directly linear with n. Finally, we have quadratic time which grows exponentially with n. This is just the tip of the iceberg as pretty much anything which can be represented mathematically can be used.",
+  "translation": "我们将介绍3种常见的Big O分类。 O（1）具有恒定的时间，这意味着始终需要恒定的时间来运行。 我们的线性时间为O（n），这意味着运行时间与n直接成线性关系。 最后，我们有二次时间，它随着n呈指数增长。 这只是冰山一角，因为几乎所有可以用数学表示的东西都可以使用。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*T1bwor5H912OVguyewcmsw.png?q=20",
+  "caption": "A table detailing out the various common Big O notation options and a numerical representation.",
+  "type": "image",
+  "file": "1*T1bwor5H912OVguyewcmsw.png"
+}, {
+  "tag": "P",
+  "text": "I did change O( n log₂ n ) to 1 when n is 1 because it effectively works out to that in practice, but mathematically it should be 0. Big O notation doesn’t really apply to small values and we’re doing this just to see what is happening with our numeric trends.",
+  "translation": "我确实在n为1时将O（nlog²n）更改为1，因为实际上它实际上可以解决这个问题，但是从数学上来说应该为0。 看看我们的数字趋势正在发生什么。"
+}, {
+  "tag": "P",
+  "text": "Constant time is only going to apply to a single operation on a single value or similar. It doesn’t take the data size into account at all (and so it’s not actually doing anything with our data unless it’s a best case scenario). Linear time scales exactly with our data. Linear time compounded with logarithmic time grows faster than linear time but nowhere near quadratic time. Quadratic time scales the worst of all four (but there can be worse!).",
+  "translation": "恒定时间仅适用于对单个值或类似值的单个操作。 它根本没有考虑数据大小（因此，除非是最佳情况，否则实际上不会对我们的数据做任何事情）。 线性时间与我们的数据成正比。 与对数时间复合的线性时间的增长速度快于线性时间，但远不及二次时间。 二次时间标度这四个指标中最差的一个（但可能会更糟！）。"
+}, {
+  "tag": "H1",
+  "text": "Calculating the Size in Big O",
+  "translation": "计算大O的大小"
+}, {
+  "tag": "P",
+  "text": "Let’s go over roughly how we calculate the size of Big O notation. Also, note that for these examples, we aren’t going to include any real error handling. Pretend that all data has been checked previously and that it all makes sense unless otherwise noted.",
+  "translation": "让我们大致介绍一下如何计算Big O符号的大小。 另外，请注意，对于这些示例，我们将不包括任何实际的错误处理。 假设所有数据之前都已检查过，除非另有说明，否则一切都有意义。"
+}, {
+  "tag": "P",
+  "text": "Constant time just means there is a fixed amount of work per data set. A function like follows would have a Big O notation of O( 1 ) in Lua:",
+  "translation": "恒定时间仅表示每个数据集有固定数量的工作。 如下所示的函数在Lua中具有O（1）的Big O表示法："
+}, {
+  "tag": "PRE",
+  "text": "function algorithm( array )\tprint( array[ 1 ] )end",
+  "translation": "函数算法（数组）打印（数组[1]）结束"
+}, {
+  "tag": "P",
+  "text": "No matter how big array is, we only do a fixed number of operations on the data set which is independent of the size of the data set. We can also do:",
+  "translation": "无论数组有多大，我们都只对数据集执行固定数量的操作，而与数据集的大小无关。 我们还可以："
+}, {
+  "tag": "PRE",
+  "text": "function algorithm1( array )\tprint( array[ 1 ] .. \" + \" .. array[ 2 ] .. \" + \" .. array[ 3 ] )end",
+  "translation": "函数算法1（array）print（array [1] ..“ +” .. array [2] ..“ +” .. array [3]）end"
+}, {
+  "tag": "P",
+  "text": "This is still going to be O( 1 ) because the cost is effectively fixed. This comes into play more in our next section though.",
+  "translation": "因为成本实际上是固定的，所以它仍将是O（1）。 不过，这将在我们的下一部分中发挥更大作用。"
+}, {
+  "tag": "P",
+  "text": "Linear time means that our complexity scales linearly with our data. Every additional item is an additional operation. An example of a function which uses linear time of O( n ) would be:",
+  "translation": "线性时间意味着我们的复杂度与数据呈线性比例关系。 每个其他项目都是一个附加操作。 使用O（n）线性时间的函数的示例为："
+}, {
+  "tag": "PRE",
+  "text": "function algorithm( array )\tfor i in pairs( array ) do\t\tprint( array[ i ] )\tendend",
+  "translation": "成对的i的函数算法（array）成对（array）做print（array [i]）端点"
+}, {
+  "tag": "P",
+  "text": "This example just iterates over every item in our array and prints each item. As the array grows, so does the complexity, but each extra item is a single extra action.",
+  "translation": "此示例仅迭代数组中的每个项目并打印每个项目。 随着数组的增加，复杂性也随之增加，但是每个额外的项目都是一个额外的动作。"
+}, {
+  "tag": "P",
+  "text": "Linear time compounded with logarithmic time is a bit harder. See my article on quicksort to see an algorithm which uses O( n log₂ n ) for its average case.",
+  "translation": "线性时间加上对数时间会比较困难。 请参阅我在quicksort上的文章，以了解一种算法，其平均情况使用O（nlog²n）。"
+}, {
+  "tag": "P",
+  "text": "Quadratic time (or polynomial time) is basically the worst of the common algorithm types (represented as O( n² )). For every extra point, you have n extra steps, which adds up fast as you can see from the chart above. An example of this is:",
+  "translation": "二次时间（或多项式时间）基本上是常见算法类型中最差的时间（表示为O（n²））。 对于每个额外的点，您都有n个额外的步骤，如上表所示，这些步骤的累加速度很快。 例如："
+}, {
+  "tag": "PRE",
+  "text": "function algorithm( array )\tfor i in pairs( array ) do\t\tfor j in pairs( array ) do\t\t\tprint( array[ i ] .. \" \" .. array[ j ] )\t\tend\tendend",
+  "translation": "i函数对的算法（array）对（array）对j对（array）做print（array [i] ..“” .. array [j]）"
+}, {
+  "tag": "P",
+  "text": "Another example of quadratic time is the bubble sort method. Bubble sort does have its use cases as it can theoretically complete in O( n ) time for the right kind of data.",
+  "translation": "二次时间的另一个示例是气泡排序方法。 冒泡排序确实有其用例，因为它理论上可以在O（n）时间内完成正确类型的数据。"
+}, {
+  "tag": "H1",
+  "text": "The Best of Times",
+  "translation": "最好的时光"
+}, {
+  "tag": "P",
+  "text": "Big O notation is also typically calculated out as the average runtime for an algorithm. How does this algorithm apply to an arbitrary data set? Some algorithms can be very efficient if the data is shaped a certain way, but you typically want to know what the average use case or worst case is. Big O implies the worst case unless specified otherwise. An algorithm can take up to as long as the Big O notation says, but will typically take less time (due to rounding). You also have algorithms like quicksort which have a few possibilities for the worst case, but will typically run better than expected as their worst case is rare and conditional.",
+  "translation": "大O表示法通常也被计算为算法的平均运行时间。 该算法如何应用于任意数据集？ 如果以某种方式对数据进行整形，则某些算法可能会非常有效，但是您通常想知道平均用例或最坏情况是什么。 除非另有说明，否则大O表示最坏的情况。 一个算法最多可以占用Big O表示法所说的时间，但是通常会花费较少的时间（由于四舍五入）。 您还可以使用像quicksort这样的算法，在最坏的情况下有几种可能性，但由于最坏的情况很少且有条件，因此通常运行得比预期的要好。"
+}, {
+  "tag": "P",
+  "text": "The following algorithm is technically O( n ):",
+  "translation": "以下算法从技术上讲是O（n）："
+}, {
+  "tag": "PRE",
+  "text": "function algorithm( array )\tfor i in pairs( array ) do\t\tif array[ i ] == 3 then return i end\tendend",
+  "translation": "成对i的函数算法（array）成对（array）是否要执行array [i] == 3然后返回i end endend"
+}, {
+  "tag": "P",
+  "text": "What if the first item is 3, do we go all the way through or do we just exit? The exit condition can be O( 1 ) in the best case, but is going to tend towards O( n / 2 ) on average (which we simplify to O( n )) and exactly O( n ) in the worst case. Calculate out your Big O notation based on it taking the maximum possible iterations to run through an arbitrary data set.",
+  "translation": "如果第一个项目是3，我们会一直进行下去还是只是退出？ 最佳情况下的退出条件可以为O（1），但平均而言趋向于O（n / 2）（我们将其简化为O（n）），而在最坏的情况下恰好为O（n）。 根据最大的O表示法计算出最大的O表示法，以遍历任意数据集。"
+}, {
+  "tag": "H1",
+  "text": "Throwing Out the Rest",
+  "translation": "扔掉剩下的"
+}, {
+  "tag": "P",
+  "text": "Big O notation focuses on the trend rather than calculating everything out exactly. For arbitrarily large sets, anything small being added or any kind of constant is going to be negligible. Remove the constants and trailing terms leaving only the largest term. That’s why our function from before which did 3 individual fixed operations was still O( 1 ) rather than O( 3 ). Some people will (mistakenly) write this as O( k ), but this is not considered standard for Big O notation.",
+  "translation": "大O符号专注于趋势，而不是精确地计算出所有内容。 对于任意大的集合，可以忽略任何添加的小数字或任何常量。 删除常数和尾随项，仅保留最大项。 因此，我们之前执行3次固定操作的函数仍然是O（1）而不是O（3）。 有些人会（错误地）将其写为O（k），但这不是Big O表示法的标准。"
+}, {
+  "tag": "P",
+  "text": "Let’s take this function as an example:",
+  "translation": "让我们以这个功能为例："
+}, {
+  "tag": "PRE",
+  "text": "function algorithm( array )\tfor h in pairs( array ) do\t\tprint( array[ h ] .. \" \" .. array[ j ] )\tend\tfor i in pairs( array ) do\t\tfor j in pairs( array ) do\t\t\tprint( array[ i ] .. \" \" .. array[ j ] )\t\tend\tendend",
+  "translation": "h对的函数算法（数组）在结对（数组）中执行print（array [h] ..“” .. array [j]）在i对结成对（数组）中对j成对（数组）做在print（array [i] ..“” .. array [j]）end endend"
+}, {
+  "tag": "P",
+  "text": "You could say it works out to O( n ² + n ), but Big O does not concern itself with the small term. With 1,000 elements, this would be 1,001,000 operations instead of 1,000,000 based on our earlier chart, which is a rounding error in the grand scheme of things. Small sub-optimizations could easily outdo this minor rounding error in real code, so Big O notation keeps the largest growth rate and throws out the rest. If we repeat our loop twice in the same section, we end up with O( 2n² ), but again, the constant is not significant and is thrown out.",
+  "translation": "您可以说它对O（n²+ n）有效，但是Big O本身与小项无关。 如果使用1,000个元素，那么根据我们之前的图表，这将是1,001,000个运算，而不是1,000,000个运算，这在事物的总体方案中是舍入误差。 较小的子优化可能会轻易超过实际代码中的较小舍入误差，因此Big O表示法可保持最大的增长率，而将其余的排除在外。 如果我们在同一节中重复两次循环，则结果为O（2n²），但是常数再次不重要，因此被丢弃。"
+}, {
+  "tag": "H1",
+  "text": "Applying Big O Notation",
+  "translation": "应用大O表示法"
+}, {
+  "tag": "P",
+  "text": "Big O notation is one of the best tools for seeing how scalable an algorithm is. Even if you throw hardware at a problem, how much can you throw at it before you can’t keep up? It really doesn’t matter for small things, but even small operations can add up to a lot of overhead. Use Big O notation to analyze algorithms to see whether they’re efficient or not.",
+  "translation": "大O表示法是了解算法可扩展性的最佳工具之一。 即使您将硬件扔到问题上，也可以在无法跟上之前投入多少？ 小事情确实无关紧要，但是即使是很小的操作也会增加很多开销。 使用Big O表示法分析算法，看看它们是否有效。"
+}, {
+  "tag": "P",
+  "text": "For instance, using bubble sort with a lot of data is a fool’s errand unless it’s largely sorted (which tends towards its best case scenario). Quicksort with mostly sorted data can be as bad as bubble sort with random data. Know what an algorithm is good at and how that applies to its Big O representation, but don’t forget what you’re doing with the algorithm. Also, keep in mind that neither make a big difference on a modern machine when done with 15 items.",
+  "translation": "例如，对大量数据使用冒泡排序是愚蠢的事，除非对其进行大量排序（这往往是最理想的情况）。 包含大多数已排序数据的快速排序可能与使用随机数据进行冒泡排序一样糟糕。 知道算法的特长，以及如何将其应用于Big O表示法，但不要忘记您正在使用该算法做什么。 此外，请记住，用15件物品完成的现代机器都不会产生太大的变化。"
+}, {
+  "tag": "P",
+  "text": "Big O notation doesn’t just apply to runtime either. It can apply to memory, IO, etc. Quicksort for instance is going to be O( n ) for its memory footprint since the whole array is loaded into memory to sort. This can make it a deal-breaker if you’re trying to sort an 8GB block of data on a desktop unless you have a beefy machine.",
+  "translation": "Big O表示法也不仅适用于运行时。 它可以应用于内存，IO等。例如，由于将整个数组加载到内存中进行排序，因此Quicksort的内存占用量将为O（n）。 如果您尝试在台式机上对8GB的数据块进行排序，除非您拥有一台功能强大的机器，否则这可能会成为一笔麻烦事。"
+}, {
+  "tag": "H1",
+  "text": "Optimizing",
+  "translation": "最佳化"
+}, {
+  "tag": "P",
+  "text": "There’s a reason Big O notation throws out the constants and smaller terms. Trying to prematurely optimize can end up with worse results than focusing on making the principle algorithm more efficient at scale. For arbitrarily large data, O( n ² + 100n ) is going to be the same as O( n ² ) (which is what Big O reduces it to). For smaller data sets though, this begins to matter.",
+  "translation": "Big O表示法会排除常数和较小的项，这是有原因的。 与过分专注于使原理算法在规模上更有效相比，尝试过早优化可能会导致更糟糕的结果。 对于任意大的数据，O（n²+ 100n）将与O（n²）相同（这是Big O将其简化为）。 但是对于较小的数据集，这开始变得重要。"
+}, {
+  "tag": "P",
+  "text": "Even though its not actually proper for Big O notation, using a constant of k or similar can be desirable for benchmarking algorithms after the initial optimization phase. An algorithm of O( kn ) is going to take longer than O( n ). This is going not matter for the math side and for the trend, but a user is going to notice if O( n ² ) takes 5 seconds and O( 2n ² ) takes 10. If you can get it down to some algorithm which uses O( n log₂ n ), even better, but sometimes you just can’t. That’s when you start splitting hairs.",
+  "translation": "即使它实际上不适用于Big O表示法，也可能希望在初始优化阶段之后使用k或类似常数作为基准测试算法。 O（kn）的算法将比O（n）花费更长的时间。 这对于数学方面和趋势而言都无关紧要，但是用户将注意到O（n²）是否花费5秒，O（2n²）是否花费10。如果您可以将其简化为某种使用 O（n log 2 n），甚至更好，但是有时候你做不到。 那就是您开始劈头发的时候。"
+}, {
+  "tag": "P",
+  "text": "Optimize at scale first, and then go for the smaller bits and pieces. Make the pieces tied to the data more efficient and you make the algorithm more efficient as scale. If you know a data set is never going to be large, or the constants get to be large enough, it can be worth going deeper or if the set is small enough, focusing on what works easily. If you’ve already implemented quicksort, why reinvent the wheel to add in a bubble sort for data which is always going to be near sorted if there’s a whopping 20 entries max and the sort doesn’t impact anything with the user experience?",
+  "translation": "首先进行大规模优化，然后再进行较小的细分。 使与数据相关的各个部分更有效，并且使算法的规模更有效。 如果您知道数据集永远不会很大，或者常量变得足够大，那么值得深入研究，或者如果数据集足够小，则着眼于容易工作的数据。 如果您已经实施了快速排序，那么为什么要重新创建轮子以添加气泡排序，以便对数据进行排序（如果最多有20个条目，而且排序不会对用户体验产生任何影响），该数据总是会接近排序的？"
+}, {
+  "tag": "H1",
+  "text": "Conclusion",
+  "translation": "结论"
+}, {
+  "tag": "P",
+  "text": "Big O notation is extremely powerful, but it’s important not to jump the gun and try to prematurely optimize. Use Big O notation to track down scale level efficiencies and refine from there. Big O notation is not just limited to run time; it can be used to benchmark memory, IO, etc. depending on what you’re doing. Sometimes it’s worth taking the worse optimization for memory concerns in an embedded environment.",
+  "translation": "Big O表示法功能非常强大，但重要的是不要急于尝试，过早地进行优化。 使用Big O表示法可跟踪缩放级别的效率并从中进行优化。 大O表示法不仅限于运行时间。 根据您的操作，它可用于基准测试内存，IO等。 有时，值得针对嵌入式环境中的内存问题进行更糟糕的优化。"
+}, {
+  "tag": "P",
+  "text": "There are a lot more types of performance levels which we didn’t touch on, but the ones listed are the most common for standard algorithms. There are some other types like factorial time ( O( n! )) and exponential time (O( kⁿ )) which are uncommon (but not rare).",
+  "translation": "我们没有涉及更多类型的性能级别，但是列出的是标准算法中最常见的性能级别。 还有一些其他类型，例如阶乘时间（O（n！））和指数时间（O（kⁿ））很少见（但并不罕见）。"
+}, {
+  "tag": "P",
+  "text": "Look at the best and worst case scenarios, the average scenario, and what kind of data you’re dealing with. An average scenario which doesn’t exist for your use case is usually useless for you. A best case which is exceedingly rare isn’t worth anything either. Aim for the use case which fits your data and which works with the purpose of what you’re doing. Applying Big O notation analysis to your coding will make you more efficient. Throw out that slow algorithm for one which is mathematically more efficient and understand why you’re doing it.",
+  "translation": "查看最佳和最差情况，平均情况以及要处理的数据类型。 对于您的用例不存在的一般情况通常对您没有用。 极为罕见的最佳案例也不值钱。 针对适合您的数据并适合您的工作目的的用例。 将Big O标记分析应用于您的编码将提高您的效率。 将该慢速算法抛弃掉，使它在数学上更加高效，并理解为什么要这样做。"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Some Dude Says的文章《The Basics of Big O Notation》，参考：https://medium.com/swlh/the-basics-of-big-o-notation-22b5f0d679cb)",
+  "translation": "（本文翻译自Some Dude说的文章《 Big O符号的基础》，参考：https：//medium.com/swlh/the-basics-of-big-o-notation-22b5f0d679cb）"
+}]
