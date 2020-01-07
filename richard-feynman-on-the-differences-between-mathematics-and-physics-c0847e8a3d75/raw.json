@@ -1,0 +1,181 @@
+[{
+  "tag": "H2",
+  "text": "Richard Feynman",
+  "translation": "理查德·费曼"
+}, {
+  "tag": "H1",
+  "text": "Richard Feynman on the Differences between Mathematics and Physics",
+  "translation": "理查德·费曼（Richard Feynman）关于数学与物理的区别"
+}, {
+  "tag": "P",
+  "text": "“I would like to make a number of remarks on the relation of mathematics and physics”",
+  "translation": "“我想对数学和物理学之间的关系发表一些看法”"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*gC2lvqBybKBUI19f138ucw.jpeg?q=20",
+  "type": "image",
+  "file": "1*gC2lvqBybKBUI19f138ucw.jpeg"
+}, {
+  "tag": "P",
+  "text": "During Richard Feynman’s Messenger Lecture Series on “The Relation of Mathematics & Physics” held at Cornell University in 1965, “The Great Explainer” addressed what he found to be the key differences between mathematics and physics. His thoughts are summarized below.",
+  "translation": "1965年，理查德·费曼（Richard Feynman）在康奈尔大学（Cornell University）举行的“数学与物理学的关系”信使系列讲座中，“伟大的解释者”谈到了他发现的数学与物理学之间的主要区别。 他的思想总结如下。"
+}, {
+  "tag": "H2",
+  "text": "Differences in Epistemology",
+  "translation": "认识论的差异"
+}, {
+  "tag": "P",
+  "text": "“Mathematicians prepare abstract reasoning that’s ready ‘to be used’ even though they don’t know what it’s being used for”",
+  "translation": "“数学家准备了可以被“使用”的抽象推理，即使他们不知道它被用于什么。”"
+}, {
+  "tag": "P",
+  "text": "First, Feynman addresses the differences in the epistemological level of analysis between those studying mathematics, in particular singling out metamathematicians:",
+  "translation": "首先，费曼解决了研究数学的人在认识论分析水平上的差异，特别是选出了数学家："
+}, {
+  "tag": "PRE",
+  "text": "Mathematicians are only dealing with the structure of the reasoning and they do not really care about what they're talking about. They don't even need to know what they're talking about, as they themselves say, or whether what they say is true.",
+  "translation": "数学家仅处理推理的结构，他们并不真正在乎他们在说什么。 他们甚至不需要知道自己在说什么，也不必知道自己说的是真的。"
+}, {
+  "tag": "P",
+  "text": "He next proceeds to describe the property of the computability of formal systems and the theoretical possibility of human-made machines deducing theorems which the humans themselves are unable to understand:",
+  "translation": "接下来，他将描述形式系统的可计算性的性质，以及人造机器推论人类自己无法理解的定理的理论可能性："
+}, {
+  "tag": "PRE",
+  "text": "Now, I explained that if you state the axioms to say \"such and such is so\" and \"such and such is so\", what then? Then the logic can be carried out without knowing what the \"such and such\" words mean.That is, if the statements about the axioms are true, i.e. carefully formulated and complete enough, it is not necessary for the man doing the reasoning to have any knowledge of the meaning of these words. He will be able to deduce, in the same language, new conclusions. If I use the word triangle in one of the axioms there might be some statement about triangles in the conclusion. Whereas, the man who is doing the reasoning, he might not even know what the triangle is! But, then he can read his thing back and say \"oh, a triangle, that's just a three sided what-have-you and so and so\", and so I know this new fact.In other words, mathematicians prepare abstract reasoning that's ready \"to be used\".",
+  "translation": "现在，我解释说，如果您说公理说“某某事物如此”和“某某事物如此”，那该怎么办？ 这样就可以在不知道“某某某物”一词含义的情况下进行逻辑运算。也就是说，如果有关公理的陈述是正确的，即经过精心制定和完善，那么进行推理的人就不必具有 对这些词的含义的任何了解。 他将能够用相同的语言得出新的结论。 如果我在其中一个公理中使用三角形一词，结论中可能会有一些关于三角形的陈述。 而做推理的人甚至可能不知道三角形是什么！ 但是，然后他可以读回自己的东西，然后说：“哦，一个三角形，那只是一个三边形的东西，等等”，所以我知道了这个新事实。换句话说，数学家准备的抽象推理就是 准备“被使用”。"
+}, {
+  "tag": "P",
+  "text": "This in contrast with the epistemological level of analysis in physics:",
+  "translation": "这与物理学分析的认识论水平相反："
+}, {
+  "tag": "PRE",
+  "text": "The physicist has meaning to all the phrases and there's a very important thing that a lot of people who study physics, but don't come from mathematics don't appreciate: That physics is not mathematics and mathematics is not physics. One helps the other.But, you have to have some understanding of the connection of the words with the real world. If necessary, to at the end translate what you figured out into English, into the world of blocks of copper and glass that you're going to do the experiment with, to find out whether the consequences are true. This is a problem which is not a problem of mathematics at all.I've already mentioned the only other relationship that.. of course it obvious how the mathematical reasoning which have been developed are of great power and are in use for physics. On the other hand, sometimes the physicists' reasoning is useful for mathematicians.",
+  "translation": "物理学家对所有短语都有意义，而且有一个非常重要的事情是，许多学习物理学但不来自数学的人都不懂：物理学不是数学，数学不是物理学。 一个可以帮助另一个。但是，您必须对单词与现实世界之间的联系有所了解。 如有必要，最后将您想出的内容翻译成英文，再放入要进行实验的铜块和玻璃块的世界中，以找出后果是否正确。 这是一个根本不是数学问题的问题。我已经提到了唯一的其他关系..当然，很明显，已开发的数学推理是如何发挥巨大作用并在物理学中得到使用的。 另一方面，有时物理学家的推理对数学家很有用。"
+}, {
+  "tag": "P",
+  "text": "Feynman stops there without further explanation, but a relevant example to include here is the work of Edward Witten on the positive energy theorem for which he was awarded the Fields Medal. In the paper On the Work of Edward Witten, mathematician Michael Atiyah later described its significance to mathematics:",
+  "translation": "费曼停在那里没有做进一步的解释，但其中包括的一个相关示例是爱德华·维滕在正能量定理方面的工作，他因此被授予菲尔兹奖。 在关于爱德华·维滕作品的论文中，数学家迈克尔·阿提亚（Michael Atiyah）随后描述了其对数学的重要性："
+}, {
+  "tag": "P",
+  "text": "“His ability to interpret physical ideas in mathematical form is quite unique. Time and again he has surprised the mathematical community by a brilliant application of physical insight leading to new and deep mathematical theorems… [H]e has made a profound impact on contemporary mathematics. In his hands physics is once again providing a rich source of inspiration and insight in mathematics.” — Michael Atiyah",
+  "translation": "他以数学形式解释物理思想的能力非常独特。 他一次又一次地通过对物理洞察力的出色应用而产生了新的深刻的数学定理，使数学界感到惊讶。[H] e对当代数学产生了深远的影响。 在他的手中，物理学再次为数学提供了丰富的灵感和见解。” —迈克尔·阿迪耶（Michael Atiyah）"
+}, {
+  "tag": "H2",
+  "text": "Differences in Applicability",
+  "translation": "适用范围的差异"
+}, {
+  "tag": "P",
+  "text": "“Mathematicians like to make their reasoning as general as possible”",
+  "translation": "“数学家喜欢使他们的推理尽可能地笼统”"
+}, {
+  "tag": "P",
+  "text": "Feynman moves on to humorously discuss the applicability of mathematics, contrasted by the interests of most physicists:",
+  "translation": "Feynman继续幽默地讨论数学的适用性，与大多数物理学家的兴趣形成鲜明对比的是："
+}, {
+  "tag": "PRE",
+  "text": "If you say \"I have a three-dimensional space\" [...] and you ask mathematicians about theorems then they say \"now look, if you had a space of n dimensions\" then here are the theorems\". \"Yeah, well I only want the case of three dimensions...\" \"Well, then substitute n = 3!\". It turns out that very many of the complicated theorems they have are much simpler because they happen to be special cases.The physicist is always interested in the special case. He's never interested in the general case. He's talking about SOMETHING. He's  not talking abstractly about anything. He knows what he's talking about, he wants to discuss the new gravity law, he doesn't want the arbitrary force case, he wants the gravity law!And so, there's a certain amount of reducing because the mathematicians have prepared these things for a wide range of problems which is very useful and later on it always turns out that the poor physicists has to come back and say \"excuse me, you wanted to tell me about these four dimensions..\"",
+  "translation": "如果您说“我有一个三维空间”，并且问数学家有关定理，那么他们说“现在看，如果您有n个维的空间”，那么这里就是这些定理。”我只想要3维的情况...“”好吧，然后代入n = 3！“。事实证明，它们具有的许多复杂定理要简单得多，因为它们恰好是特殊情况。物理学家总是他对特殊情况感兴趣，对一般情况不感兴趣，他在谈论某些事情，他不是在抽象地谈论任何事情，他知道他在说什么，他想讨论新的引力定律，他不想要任意的力因此，要进行一定程度的简化，因为数学家已经为各种各样的问题准备了这些东西，这是非常有用的，后来总会发现，可怜的物理学家必须回来，说“对不起，你想告诉我这四个方面sions ..”"
+}, {
+  "tag": "H2",
+  "text": "On Intuition vs Rigor",
+  "translation": "直觉与严谨"
+}, {
+  "tag": "P",
+  "text": "“The poor mathematician has no guide but precise mathematical rigor and care in the argument”",
+  "translation": "“可怜的数学家没有指导，但论点上精确的数学严谨和谨慎”"
+}, {
+  "tag": "P",
+  "text": "Feynman next addresses the process of discovery in both subjects, emphasizing the advantage physicists have that their subject is, in some essential sense, applied rather than purely abstract:",
+  "translation": "Feynman接下来谈到了这两个主题的发现过程，强调物理学家从某种本质上说，应用了他们的主题而不是纯粹抽象的优势："
+}, {
+  "tag": "PRE",
+  "text": "When you know what it is you're talking about, that these things are forces, these are masses, this is inertia and so on, then you can use an awful lot of common-sense, seat-of-the-pants feeling about the world. You've seen various things, you know more or less how the phenomenon is going to behave.Well, the poor mathematician he translates it into equations and the symbols don't mean anything to him and he has no guide but precise mathematical rigor and care in the argument. Whereas, the physicist who knows more or less how the answer can go, is going to come out and sort of guess partway and go right along rather rapidly.The mathematical rigor of great precision is not very useful in physics, nor is the modern attitude in mathematics to look at axioms. Now, mathematicians can do what they want to do, one should not criticize them because they are not slaves to physics. It is not necessary that just because this would be useful to you, they have to do it that way. They can do what they will, it's their own job and if you want something else then you work it out yourself.",
+  "translation": "当您知道您在说什么，这些东西是力量，这些东西是质量，这是惯性等等时，您就可以使用很多常识性的，关于裤子的感觉世界。您已经看过各种各样的东西，或多或少地知道了现象的表现方式。可怜的数学家他将其转换为方程式，符号对他没有任何意义，他没有指导性，但精确的数学严谨性和关心论点。鉴于物理学家或多或少地知道答案的去向，他们会走出来并进行一些猜测，然后很快就进行下去。精确度很高的数学上的严格性在物理学中不是很有用，现代态度也不是。在数学中看公理。现在，数学家可以做他们想做的事，不应批评他们，因为他们不是物理学的奴隶。不必要仅仅因为这对您有用，他们就必须这样做。他们可以做自己想做的事，这是他们自己的工作，如果您想要其他东西，那么您可以自己解决。"
+}, {
+  "tag": "P",
+  "text": "Feynman here argues that because physics regards natural phenomena, humans have a better propensity for intuition in this domain. This somewhat in opposition to how the process of discovery of certain mathematical theorems have been described, including John Forbes Nash Jr.’ discoveries about nonlinear partial differential equations:",
+  "translation": "费曼在这里认为，由于物理学关注自然现象，因此人类在这一领域具有更好的直觉倾向。 这与描述某些数学定理的过程有些相反，包括John Forbes Nash Jr.关于非线性偏微分方程的发现："
+}, {
+  "tag": "P",
+  "text": "Mathematicians in the 1950s had known about relatively trivial routines for solving ordinary differential equations (ODEs) using computers. There were however, no established methods for solving nonlinear partial differential equations, such as those that occur during the turbulent motions of a jet engine.",
+  "translation": "1950年代的数学家们知道使用计算机来求解常微分方程（ODE）的相对琐碎的例程。 然而，还没有建立解决非线性偏微分方程的方法，例如在喷气发动机的湍流运动中出现的方法。"
+}, {
+  "tag": "P",
+  "text": "[…]",
+  "translation": "[…]"
+}, {
+  "tag": "P",
+  "text": "By the spring of 1958 however, Nash was able to obtain basic existence, uniqueness and continuity theorems using methods of his own invention. Astoundingly, the methods involved “transforming nonlinear equations into linear equations, and then attacking these by nonlinear means” — something nobody had thought of before, “a stroke of genius” according to Peter Lax, who followed his progress closely. About the technique, Lars Gårding, a Professor of Mathematics at the University of Lund and specialist in partial differential equations similarly later declared “You have to be a genius to do that”.",
+  "translation": "然而，到1958年春季，纳什能够使用自己的发明方法获得基本的存在性，唯一性和连续性定理。 令人惊讶的是，这些方法涉及“将非线性方程式转化为线性方程式，然后通过非线性手段进行攻击” –彼得·拉克斯（Peter Lax）密切关注他的进步，这是以前从未有人想到的“天才之笔”。 关于这项技术，隆德大学数学教授，偏微分方程专家拉尔斯·高丁（LarsGårding）随后类似地宣布：“要做这一点，你必须是个天才”。"
+}, {
+  "tag": "H2",
+  "text": "On the Usefulness of Models",
+  "translation": "论模型的实用性"
+}, {
+  "tag": "P",
+  "text": "Feynman next discusses the usefulness of models in physics, and their seeming lack of usefulness in the process of making new discoveries:",
+  "translation": "Feynman接下来讨论了物理中模型的有用性，以及它们在进行新发现的过程中似乎缺乏有用性："
+}, {
+  "tag": "PRE",
+  "text": "The next point is the question of, whether we should guess when we try to get a new law, whether we should use the seat-of-the-pants feeling and philosophical principles, i.e. \"I don't like minimum principle, I do like minimum control\" or \"I don't like action at a distance or I do like action at a distance\". The question is to what extent models help. It is very a interesting thing. Very often models help, and very often physics teachers try to teach how to use these models and get a good physical feel for how things are going to work out. But, the greatest discoveries, it always turns out, abstract away from the model. It never did any good. Maxwell's discovery of electrodynamics was first made with a lot of imaginary wheels on idlers and everything else in space. If you got rid of all the idlers and everything else in space, the thing was okay. Dirac discovered the correct laws of quantum mechanics for relativity simply by guessing the equations. The method of guessing the equations seems to be a pretty effective way of guessing new laws. This shows again that mathematics is a deep way of expressing nature, and attempts to express nature in philosophical principles or in seat-of-the-pants mechanical feelings is not an efficient way. ",
+  "translation": "接下来的问题是，我们是否应该在尝试制定新法律时进行猜测，是否应该使用裤子的感觉和哲学原理，即“我不喜欢最低限度的原则，我愿意例如最低限度的控制”或“我不喜欢远距离的动作，或者我喜欢远距离的动作”。问题是模型在多大程度上有所帮助。这是一件非常有趣的事情。模型经常会提供帮助，物理老师经常会尝试讲授如何使用这些模型，并对事情的发展有很好的物理感觉。但是，最伟大的发现总会从模型中抽象出来。它从来没有做过任何事情。麦克斯韦的电动力学发现首先是在惰轮和太空中的其他所有物体上使用了许多假想的轮子完成的。如果您摆脱了所有的闲人和太空中的所有其他东西，那事就好了。狄拉克仅通过猜测方程即可发现相对论的量子力学正确定律。猜测方程式的方法似乎是猜测新定律的一种非常有效的方法。这再次表明，数学是表达自然的一种深层方式，而试图以哲学原理或在裤子的机械感觉中表达自然并不是一种有效的方式。"
+}, {
+  "tag": "H2",
+  "text": "On the Applicability of Mathematical Physics",
+  "translation": "论数学物理的适用性"
+}, {
+  "tag": "P",
+  "text": "Curiously, Feynman goes on to predict that at some point in the future, the nature of the world will not be expressed in the language of mathematics. Rather, there will be some other method of expressing how nature operates, which requires less computation:",
+  "translation": "奇怪的是，费曼继续预测，在将来的某个时候，世界的本质将不会以数学语言表达。 相反，将有其他表达自然如何运作的方法，这需要较少的计算："
+}, {
+  "tag": "PRE",
+  "text": "I must say, I've often made a hypothesis that physics ultimately will not require a mathematical statement. That the machinery will ultimately will be revealed. It always bothers me that in spite of all this local business, what goes on in, no matter how tiny a region of space and no matter how tiny a region of time, according to the laws and how we understand them today, takes a computing machine an infinite number of logical operations to figure out.Now how can all that be going on in that tiny space? Why should it take an infinite amount of logic to figure out what one stinky tiny bit of space-time is going to do? And so, I made a hypothesis often that the laws are going to turn out to be, in the end, simple like the checkerboard and that all the complexity is from sizeBut, that is of the same nature as the other speculations that other people make. It says \"I like it\", \"you don''t like it\". It's not good to be too prejudiced about these things.",
+  "translation": "我必须说，我经常做出一个假设，即物理学最终将不需要数学陈述。 机械最终将被揭示。 总是令我感到困扰的是，尽管有这些本地业务，但根据法律以及我们今天对它们的理解，无论一个空间区域多么微小，时间区域多么微小，发生的一切都需要计算。 进行无数次逻辑运算以找出答案。现在，在这么小的空间中如何进行所有操作？ 为什么要花无穷的逻辑来弄清楚一小段时空将要做什么？ 因此，我经常做一个假设，即法律最终将变得像棋盘一样简单，并且所有复杂性都来自规模，但是，这与其他人做出的其他猜测具有相同的性质。 。 上面写着“我喜欢”，“你不喜欢”。 对这些事情过于偏见是不好的。"
+}, {
+  "tag": "H2",
+  "text": "On the Need for Mathematics",
+  "translation": "关于数学的需要"
+}, {
+  "tag": "P",
+  "text": "Feynman next both quotes Sir James Jean and refers to novelist and physical chemist C. P. Show’s famous work “The Two Cultures” in his discussion of mathematics in physics:",
+  "translation": "接下来，Feynman引用了James Jean爵士的话，并提到了小说家和物理化学家C. P. Show在讨论物理数学时的著名著作“两种文化”："
+}, {
+  "tag": "PRE",
+  "text": "To summarize, I would like to use the words of Sir James Jeans which says that said that \"The great architect seems to be a mathematician and for you who don't know mathematics, it's really quite difficult to get a real feeling across and up to the deepest beauty of nature.\"C. P. Snow talked about two cultures. I really think that those two cultures are people who have had and who have not had this experience of understanding mathematics well enough to appreciate nature once.It's too bad that it has to be mathematics and that mathematics for some people is hard. When one of the kings were trying to learn geometry from Euclid he complained that it was difficult and Euclid said that \"There's no royal road to geometry\". ",
+  "translation": "总而言之，我想用詹姆士·简斯爵士的话说：“这位伟大的建筑师似乎是一位数学家，而对于那些不懂数学的人来说，要想真正地感受到一种真实的感觉是非常困难的。 感受大自然的最美。” P. Snow谈到了两种文化。 我真的认为这两种文化是有过和没有过足够了解数学的经验来一次欣赏自然的人，这很糟糕，必须要数学并且对某些人来说数学很难。 当其中一位国王试图向欧几里得学习几何学时，他抱怨说这很困难，欧几里德说：“没有通往几何学的皇家之路”。"
+}, {
+  "tag": "H2",
+  "text": "On Communication",
+  "translation": "传播论"
+}, {
+  "tag": "P",
+  "text": "«It’s perhaps that the horizons are limited that permits such people to imagine that the center of the universe of interest is man.»",
+  "translation": "“也许视域有限，使这些人可以想象感兴趣的宇宙的中心是人。”"
+}, {
+  "tag": "P",
+  "text": "Finally, Feynman addresses the need for physicists to master mathematics in order to be able to make new discoveries about nature, stating that mathematics is essential to our current understanding of how the world works:",
+  "translation": "最后，费曼谈到了物理学家掌握数学的需求，以便能够发现有关自然的新发现，并指出数学对于我们当前对世界运转方式的理解至关重要："
+}, {
+  "tag": "PRE",
+  "text": "We cannot, as people who have looked at these things, a physicist cannot convert this thing to any other language we have. If you want to discuss nature, to learn about nature, to appreciate nature, it's necessary to find out the language that she speaks in. She offers her information only in one form.We are not so un-humble as to \"demand that she change\" before we pay any attention. It seems to me that all the intellectual arguments that you can make would communicate very little to deaf ears. All the intellectual arguments of the world will not convince those of the \"other culture\".The philosophers who tried to teach you by telling you qualitatively about this thing. Me, who is trying to describe it but who is not getting it across because it's impossible. We're talking to deaf ears.It's perhaps that the horizons are limited that permits such people to imagine that the center of the universe of interest is man.",
+  "translation": "作为观察这些事物的人们，我们不能像物理学家那样将其转换为我们拥有的任何其他语言。 如果您想讨论自然，了解自然，欣赏自然，则有必要找出她所使用的语言。她仅以一种形式提供信息。我们并没有那么谦虚，以至于“要求她 更改”，然后再进行任何关注。 在我看来，您可以提出的所有理智论点很少会充耳不闻。 世界上所有的知识论据都不会说服“其他文化”的论点。那些试图通过定性地告诉你这件事来教你的哲学家。 我，正在尝试描述它，但是因为不可能，所以无法传播。 我们正在充耳不闻地交谈，也许是因为视野有限，使这些人可以想象感兴趣的宇宙的中心是人。"
+}, {
+  "tag": "H1",
+  "text": "Video",
+  "translation": "视频"
+}, {
+  "tag": "P",
+  "text": "Video of Feynman’s lecture is available at the link below:",
+  "translation": "费曼演讲的视频可通过以下链接获得："
+}, {
+  "tag": "FIGURE",
+  "type": "code"
+}, {
+  "tag": "P",
+  "text": "This essay is part of a series of stories on math-related topics, published in Cantor’s Paradise, a weekly Medium publication. Thank you for reading!",
+  "translation": "本文是每周在中等刊物Cantor’s Paradise上发表的一系列与数学相关的故事的一部分。 感谢您的阅读！"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Jørgen Veisdal的文章《Richard Feynman on the Differences between Mathematics and Physics》，参考：https://medium.com/cantors-paradise/richard-feynman-on-the-differences-between-mathematics-and-physics-c0847e8a3d75)",
+  "translation": "（本文翻译自Jorgen Veisdal的文章，《理查德·费曼关于数学与物理的区别》，参考：https：//medium.com/cantors-paradise/richard-feynman-on-the-differences-between-mathematics-and- 物理学-c0847e8a3d75）"
+}]
