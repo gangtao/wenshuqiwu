@@ -1,0 +1,504 @@
+[{
+  "tag": "H2",
+  "text": "Visualizing Bike Mobility in London using Interactive Maps and Animations",
+  "translation": "使用交互式地图和动画可视化伦敦的自行车出行"
+}, {
+  "tag": "H3",
+  "text": "Exploring data visualization tools in Python",
+  "translation": "探索Python中的数据可视化工具"
+}, {
+  "tag": "H2",
+  "text": "Why Sample Variance is Divided by n-1",
+  "translation": "为什么样本方差被n-1除"
+}, {
+  "tag": "H3",
+  "text": "Explaining high school statistics that your teachers didn’t teach",
+  "translation": "解释您的老师没有教过的高中统计资料"
+}, {
+  "tag": "H2",
+  "text": "5 Python features I wish I had known earlier",
+  "translation": "我希望我早先知道的5个Python功能"
+}, {
+  "tag": "H3",
+  "text": "Python tricks beyond lambda, map, and filter",
+  "translation": "Python技巧超越了lambda，map和filter"
+}, {
+  "tag": "H1",
+  "text": "4. The Takeaways",
+  "translation": "4.外卖"
+}, {
+  "tag": "P",
+  "text": "To conclude, we approximated the landing probability using Monte Carlo simulation, so as to compute the break-even point and the expected profit of each colour set with a certain number of houses in an N-player game. Based on the above-mentioned observations and strategies, we summarize the following 7 strategies that you should follow.",
+  "translation": "总而言之，我们使用蒙特卡洛模拟法估算了着陆概率，以便计算在N玩家游戏中具有一定数量房屋的每种颜色集的收支平衡点和预期利润。 基于上述观察和策略，我们总结了您应遵循的以下7种策略。"
+}, {
+  "tag": "OL",
+  "texts": ["Avoid utilities and the Brown set,", "watch your cash reserves when getting a Railroad collection for a short-term gain, or the Blue set in a 4+-player game for a long-term gain,", "go for the Orange, Red, Yellow, and/or Green depending on the number of players in the game,", "build 3 houses fast for every colour set you possess,", "watch your cash flow, then build the fourth house to maximize your profit if it is financially viable,", "avoid purchasing hotels, or you would free up houses for opponents as there are only 32 houses available in a game, and", "stay at Jail by not paying to avoid paying rents at the later stage."],
+  "translations": ["避免使用公用事业和布朗集，", "在获得铁路收益以获得短期收益时观看现金储备，或者在4人以上游戏中获得蓝收益以获得长期收益，", "根据游戏中的玩家数量选择橙色，红色，黄色和/或绿色，", "为您拥有的每种颜色快速建造3栋房屋，", "注意现金流，然后在财务上可行的时候建造第四所房子，以最大化您的利润，", "避免购买酒店，否则您会为对手腾出房子，因为游戏中只有32个房子，并且", "通过不付款避免在稍后阶段支付租金来留在监狱。"]
+}, {
+  "tag": "P",
+  "text": "You should take our analyses with a pinch of salt as we made plenty of assumptions which may not hold in some scenarios. Every game is different and it is difficult to generalize. It is also extremely difficult to take into account the unpredictable human behaviours as players are allowed and encouraged to trade freely with one another.",
+  "translation": "由于我们做出了许多假设，在某些情况下可能不成立，因此您应该花点时间进行分析。 每个游戏都是不同的，很难一概而论。 考虑到人类行为的不可预测性也是极其困难的，因为允许并鼓励玩家自由交易。"
+}, {
+  "tag": "H2",
+  "text": "Fun Fact",
+  "translation": "有趣的事实"
+}, {
+  "tag": "P",
+  "text": "There is a 1.94% chance that you are in Jail just after one turn. You can hit ‘Go to Jail’ with the aid of doubles or draw the ‘Go to Jail immediately’ card from either deck.",
+  "translation": "一回合后，您有1.94％的机会进入监狱。 您可以借助双打击中“进入监狱”或从任一副牌中抽出“立即进入监狱”卡。"
+}, {
+  "tag": "P",
+  "text": "A once-in-a-lifetime chance.",
+  "translation": "千载难逢的机会。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/edenau/b23e2b336053fb48edc3c316f6539ab8/raw/778f292bdcb06547a09ce8bb07172b70b586b1a2/monopoly-fun-fact.py",
+  "code": "# probability of getting imprisoned (not just visiting) in your first turn of a game\nn_game = 1e6\nn_round = 1\nplayer = Player()\nimprisoned_cnt = 0\nboard = Board()\n\nfor i in range(n_game): # simulate 10,000 games\n    player.new_game()    \n    board.turn(player=player) # simulate a turn for each player\n    if player.imprisoned:\n        imprisoned_cnt += 1\n        \nprint(f'There is a {imprisoned_cnt/n_game*100:.2f}% chance that you are in Jail after one turn.')"
+}, {
+  "tag": "P",
+  "text": "Thanks for reading! Again, codes are available on GitHub. If you are interested in Python, statistics, or visualization, the following articles might be helpful:",
+  "translation": "谢谢阅读！ 同样，代码在GitHub上可用。 如果您对Python，统计数据或可视化感兴趣，则以下文章可能会有所帮助："
+}, {
+  "tag": "H2",
+  "text": "5 Python features I wish I had known earlier",
+  "translation": "我希望我早先知道的5个Python功能"
+}, {
+  "tag": "H3",
+  "text": "Python tricks beyond lambda, map, and filter",
+  "translation": "Python技巧超越了lambda，map和filter"
+}, {
+  "tag": "H2",
+  "text": "Why Sample Variance is Divided by n-1",
+  "translation": "为什么样本方差被n-1除"
+}, {
+  "tag": "H3",
+  "text": "Explaining high school statistics that your teachers didn’t teach",
+  "translation": "解释您的老师没有教过的高中统计资料"
+}, {
+  "tag": "H2",
+  "text": "Visualizing Bike Mobility in London using Interactive Maps and Animations",
+  "translation": "使用交互式地图和动画可视化伦敦的自行车出行"
+}, {
+  "tag": "H3",
+  "text": "Exploring data visualization tools in Python",
+  "translation": "探索Python中的数据可视化工具"
+}, {
+  "tag": "P",
+  "text": "Originally published at edenau.github.io.",
+  "translation": "最初发布于edenau.github.io。"
+}, {
+  "tag": "H2",
+  "text": "b. Expected Profit",
+  "translation": "b。 预期利润"
+}, {
+  "tag": "P",
+  "text": "We all know that the goal of the game is more than breaking even.",
+  "translation": "我们都知道，游戏的目标不仅仅是达到收支平衡。"
+}, {
+  "tag": "P",
+  "text": "You want to earn money and bankrupt your opponents. The profit of a colour set is the difference between total revenue and the total cost of the set. Revenue is proportional to the total number of opponent turns, whereas cost is constant. They can be calculated by the following formula.",
+  "translation": "您想赚钱并使您的对手破产。 彩色组的利润是该组总收入与总成本之间的差。 收入与对手回合总数成正比，而成本则是恒定的。 它们可以通过以下公式计算。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*bef0HR4vLPe97snqCVNqkw.png?q=20",
+  "type": "image",
+  "file": "1*bef0HR4vLPe97snqCVNqkw.png"
+}, {
+  "tag": "P",
+  "text": "We previously assumed that the number of rounds R in a game is more or less constant. The number of opponent turns T=(N-1)R increases linearly, and thus revenue (and profit P) increases linearly as the number of player increases.",
+  "translation": "我们先前假设游戏中的回合数R或多或少是恒定的。 对手回合数T =（N-1）R线性增加，因此收入（和利润P）随着玩家数的增加而线性增加。"
+}, {
+  "tag": "P",
+  "text": "Let’s see how your profit varies with a different number of players in a game if you possess different colour sets with a different number of houses built on top. The profits of holding all 4 stations and holding all 2 utilities are also plotted for reference.",
+  "translation": "让我们看看如果您拥有不同的颜色设置以及在顶部建造不同数量的房屋，那么在游戏中玩家数量不同时利润会如何变化。 持有全部四个站点和持有全部两个公用事业的利润也作了参考。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*54TO_AXdBlkHtkY9xX2GeQ.png?q=20",
+  "caption": "Expected profit of each colour set in an N-player game, for N between 2 and 7",
+  "type": "image",
+  "file": "1*54TO_AXdBlkHtkY9xX2GeQ.png"
+}, {
+  "tag": "P",
+  "text": "We found that",
+  "translation": "我们发现"
+}, {
+  "tag": "UL",
+  "texts": ["the Brown set is worthless,", "getting 4 railroads can bring you quick cash at the beginning of the game before players start building houses,", "profit increases substantially when building the third house,", "the Orange dominates in a 2-player game,", "the Red, Yellow, and Green are also promising, and", "the Blue is average."],
+  "translations": ["布朗套装毫无价值，", "在玩家开始建造房屋之前，获得4条铁路可以在游戏开始时为您带来快速收益，", "建造第三所房子时，利润会大大增加，", "橙色在2人游戏中占主导地位，", "红色，黄色和绿色也很有希望，并且", "蓝色是平均水平。"]
+}, {
+  "tag": "P",
+  "text": "Therefore, you should",
+  "translation": "因此，您应该"
+}, {
+  "tag": "OL",
+  "texts": ["avoid utilities, Brown, or Pink,", "take all 4 railroads if you could afford it at the beginning, and do not insist on trading other properties for the railroad collection, as it does not do well in the long-term,", "go for the Sky and Orange for a 2-player game,", "go for the Orange, Red, and Yellow for a 3+-player game,", "go for the Green as well for a 4+-player game,", "only go for the Blue in a 4+-player game if you have enough cash reserves, and", "build 3 houses quickly. That is the key."],
+  "translations": ["避免使用棕色或粉红色的公用设施，", "如果您一开始买得起，就选择全部4条铁路，并且不要坚持交易其他物业来换取铁路收藏品，因为从长远来看效果不佳，", "前往天空和橙色进行2人游戏，", "参加橙色，红色和黄色的3人游戏，", "参加绿色比赛，参加4人以上的比赛，", "仅当您有足够的现金储备时，才可以在4人以上的游戏中加入蓝军，并且", "迅速盖三间房子。 那是关键。"]
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*bfNhNuU1af3RYYVd?q=20",
+  "caption": "Photo by Alexander Mils on Unsplash",
+  "type": "image",
+  "file": "0*bfNhNuU1af3RYYVd"
+}, {
+  "tag": "H1",
+  "text": "3. Evaluation",
+  "translation": "3.评估"
+}, {
+  "tag": "H2",
+  "text": "a. Break-even Points",
+  "translation": "一种。 收支平衡点"
+}, {
+  "tag": "P",
+  "text": "We define the break-even point of a property as the expected number of opponents turns it takes to recoup the investment. This is calculated by the total property cost divided by the expected rental income per opponent turn. The expected income per opponent turn of a property is proportional to its landing probability and rental income. We can use the same logic to find out the break-even point for a colour set with the following formulae.",
+  "translation": "我们将资产的收支平衡点定义为收回投资所需的预期对手数。 这是通过财产总成本除以对手每回合的预期租金收入得出的。 对手每转一圈的预期收入与其着陆概率和租金收入成正比。 我们可以使用相同的逻辑通过以下公式找出颜色集的收支平衡点。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*nQ79BxWLFmSgGTaQ6ooCrQ.png?q=20",
+  "type": "image",
+  "file": "1*nQ79BxWLFmSgGTaQ6ooCrQ.png"
+}, {
+  "tag": "P",
+  "text": "We also define the incremental break-even point as the expected number of opponent turns it takes to recoup the incremental investment. This means how long it would take for a player to get their money back if they decided to build an extra house.",
+  "translation": "我们还将增量盈亏平衡点定义为收回增量投资所需的预期对手轮数。 这意味着如果球员决定盖一栋额外的房子，他要花多长时间才能拿回钱。"
+}, {
+  "tag": "P",
+  "text": "Let’s see how the break-even points vary for each colour set with a different number of houses. 5 houses correspond to a hotel for visualization purpose.",
+  "translation": "让我们看看房屋数量不同的每种颜色的收支平衡点如何变化。 5间房屋对应于一家酒店，以实现可视化目的。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*hYpqgYhLoQVs67nYP2ybOw.png?q=20",
+  "caption": "Break-even points of each colour set as a function of the number of houses",
+  "type": "image",
+  "file": "1*hYpqgYhLoQVs67nYP2ybOw.png"
+}, {
+  "tag": "P",
+  "text": "We found that",
+  "translation": "我们发现"
+}, {
+  "tag": "UL",
+  "texts": ["it takes the longest time to recoup your investment in the Brown set,", "it is easier to break-even if you invest in the Sky or Orange set,", "it is much easier to break-even for a set with 3 houses than 1 or 2, and", "you might not be able to get your money back if you invest in the fourth house in the Green or Blue set."],
+  "translations": ["花费最长时间才能收回您在Brown系列中的投资，", "即使您投资Sky或Orange套装，收支平衡也更容易，", "对于拥有3个房屋的集合，要达到收支平衡比1或2容易得多，并且", "如果您投资绿色或蓝色套装中的第四套房子，则可能无法收回您的钱。"]
+}, {
+  "tag": "P",
+  "text": "We came up with the following strategies solely based on the comparison of break-even points. You should",
+  "translation": "我们仅基于盈亏平衡点的比较提出了以下策略。 你应该"
+}, {
+  "tag": "OL",
+  "texts": ["avoid the Brown set,", "build 3 houses quickly in all other colour sets you own, and", "build the 4th house in the Sky and/or Orange set if you own them."],
+  "translations": ["避免布朗集，", "使用您拥有的所有其他颜色快速建造3栋房屋，并且", "如果您拥有它们，则可以在天空和/或橙色区域中建造第四间房屋。"]
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*nTn273MlpVonOShh?q=20",
+  "caption": "Photo by Tierra Mallorca on Unsplash",
+  "type": "image",
+  "file": "0*nTn273MlpVonOShh"
+}, {
+  "tag": "H2",
+  "text": "b. Investment Cost",
+  "translation": "b。 投资成本"
+}, {
+  "tag": "P",
+  "text": "The investment cost c(s,h) of a property includes land price and house price. It differs for different properties and the number of houses built on top. They are hardcoded into the program.",
+  "translation": "物业的投资成本c（s，h）包括土地价格和房屋价格。 对于不同的属性和在顶部建造的房屋数量，它有所不同。 它们被硬编码到程序中。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*NvS4TTJZ3PnmBcZOWDYQxg.png?q=20",
+  "caption": "Cost matrix for each colour set, railroads, and utilities",
+  "type": "image",
+  "file": "1*NvS4TTJZ3PnmBcZOWDYQxg.png"
+}, {
+  "tag": "P",
+  "text": "Note that we consider the investment cost for a whole colour set, but not individual properties. This is because houses can only be bought when a player owns the whole colour set.",
+  "translation": "请注意，我们会考虑整个颜色集的投资成本，而不是单个属性的投资成本。 这是因为只有当玩家拥有整个颜色集时才能购买房屋。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*eUT21lSissx8sYbBnIf_ow.png?q=20",
+  "type": "image",
+  "file": "1*eUT21lSissx8sYbBnIf_ow.png"
+}, {
+  "tag": "P",
+  "text": "We also hardcoded the rental income matrix r(s,h) in a similar fashion.",
+  "translation": "我们还以类似的方式对租金收入矩阵r（s，h）进行了硬编码。"
+}, {
+  "tag": "H1",
+  "text": "2. Variables",
+  "translation": "2.变量"
+}, {
+  "tag": "H2",
+  "text": "a. Landing Probability",
+  "translation": "一种。 着陆概率"
+}, {
+  "tag": "P",
+  "text": "Let’s simulate a four-player Monopoly game a million times. To keep the simulation simple, we did not simulate the exchange of money or trades among players, as this would complicate things.",
+  "translation": "让我们模拟四人大富翁游戏一百万次。 为了简化模拟，我们没有模拟参与者之间的货币交换或交易，因为这会使事情复杂化。"
+}, {
+  "tag": "P",
+  "text": "Let’s define some variables.",
+  "translation": "让我们定义一些变量。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*lS1jBob3UbY0dRArfg1bWQ@2x.png?q=20",
+  "type": "image",
+  "file": "1*lS1jBob3UbY0dRArfg1bWQ@2x.png"
+}, {
+  "tag": "P",
+  "text": "For an N-player Monopoly game, we assumed there are R rounds, where each player takes a turn to play in each round. The total number of opponent turns is (N-1)R. We assumed each player plays the same number of turns in a game, i.e. no players exit early.",
+  "translation": "对于N玩家的大富翁游戏，我们假设有R轮，每个玩家在每个回合中都有一个回合。 对手回合总数为（N-1）R。 我们假设每个玩家在游戏中玩的回合次数相同，即没有玩家提前退出。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*rivp1sF6k70ebRbKTHldWQ.png?q=20",
+  "type": "image",
+  "file": "1*rivp1sF6k70ebRbKTHldWQ.png"
+}, {
+  "tag": "P",
+  "text": "Side note 1: Consecutive doubles are counted as one single turn, according to the official Monopoly rules. The landing of each double is still recorded in our simulation. Therefore, the expected number of landings in all tiles is around 119 for every 100 turns.",
+  "translation": "旁注1：根据官方“大富翁”规则，连续双打被视为一回合。 每个双打的降落仍记录在我们的模拟中。 因此，每100圈，所有磁贴的预期着陆数量约为119。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*_9l9gupBik5MGh7s?q=20",
+  "caption": "Photo by Brett Jordan on Unsplash",
+  "type": "image",
+  "file": "0*_9l9gupBik5MGh7s"
+}, {
+  "tag": "P",
+  "text": "In order to obtain a more realistic approximation, we add stochasticity to the simulation where the number of rounds R in a game follows a Gaussian distribution with mean 30 and standard deviation 3. The mean is taken from an article online, and the variance is just arbitrary.",
+  "translation": "为了获得更逼真的近似值，我们在模拟中增加了随机性，其中游戏中的回合数R遵循具有均值30和标准差3的高斯分布。均值取自在线文章，方差为 任意的。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/edenau/1c676713d68c51eb53991814e395528c/raw/cfd432ac2ae2a4501dcf6b7ece68324ef33eeab1/monopoly-sim.py",
+  "code": "opponents = []\nn_oppo = 4-1 # a 4-player game has 3 opponents\n\nn_game = 1e6\nn_round_mean, n_round_std = get_n_round_stat(n_oppo)\n\n# 1. Create opponents in a list\nfor _ in range(n_oppo):\n    opponents.append(Player())\n\n# 2. Simulate 1,000,000 games\nfor i in range(round(n_game)): \n    # by creating a new board and cleaning each player's states\n    board = Board()\n    for player in opponents:\n        player.new_game()\n        \n    # 3. Simulate a random number of rounds per game\n    n_round = np.random.normal(n_round_mean, n_round_std)\n    for j in range(round(n_round)): \n        # 4. Simulate each turn for each player\n        for player in opponents:\n            board.turn(player=player)"
+}, {
+  "tag": "P",
+  "text": "Let’s visualize the landing probability p(s) for each tile s by a bar chart.",
+  "translation": "让我们通过条形图可视化每个图块s的着陆概率p（s）。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*3wqdJ8_LG9I4HJUNOMNtNA.png?q=20",
+  "caption": "Landing probabilities of tiles on the Monopoly board",
+  "type": "image",
+  "file": "1*3wqdJ8_LG9I4HJUNOMNtNA.png"
+}, {
+  "tag": "P",
+  "text": "Wow.",
+  "translation": "哇。"
+}, {
+  "tag": "P",
+  "text": "I certainly did not expect that. Landing probabilities are not equal. We can observe that",
+  "translation": "我当然没想到这一点。 着陆概率不相等。 我们可以观察到"
+}, {
+  "tag": "UL",
+  "texts": ["there is a 0% chance you end up on ‘Go to Jail’ as expected,", "you are more likely to end up on a CC tile than a Chance tile, probably because of the difference in card combination in the decks,", "you have a 6.31% chance ending up in Jail, including both ‘Just Visiting’ and ‘In Jail’,", "Jail is the most visited tile even if we exclude ‘Just Visiting’,", "Brown 1 (Old Kent Road/Mediterranean Avenue) is the least visited property with a 1.98% chance,", "Red 3 (Trafalgar Square/Illinois Avenue) is the most visited property with a 3.16% probability, and this could be because of the Chance card that sends players to this property, and", "Orange 3 (Vine Street/New York Avenue) and Orange 2 (Marlborough Street/Tennessee Avenue) are the runner-ups in the most visited property race, which makes the Orange set the most visited colour set on average. This is because they are often visited by players who just left the Jail, the most visited place on the board."],
+  "translations": ["您最终有0％的机会最终会进入“入狱”，", "您可能会选择使用CC磁贴而不是使用Chance磁贴，这可能是由于牌组中的纸牌组合有所不同，", "您有6.31％的机会进入监狱，包括“仅拜访”和“进入监狱”，", "即使我们不包括“ Just Visiting”，监狱也是访问量最高的区域，", "布朗1号（Old Kent Road / Mediterranean Avenue）是造访次数最少的房产，机会为1.98％，", "红色3号（特拉法加广场/伊利诺伊州大街）是访问量最大的酒店，概率为3.16％，这可能是因为将玩家发送到该酒店的机会卡，以及", "Orange 3（Vine Street /纽约大街）和Orange 2（Marlborough Street / Tennessee Avenue）是参观人数最多的房地产竞赛的亚军，这使得Orange设置平均是参观人数最多的颜色组。 这是因为刚离开监狱（棋盘上访问最多的地方）的玩家经常会拜访他们。"]
+}, {
+  "tag": "P",
+  "text": "Maybe the Brown set is not worth investing. Maybe the Orange one is a must-buy. We are not sure at this stage as we have not taken into account their rents and costs. Let’s do that as well.",
+  "translation": "也许布朗套装不值得投资。 也许橙色是必须购买的。 我们目前尚不确定，因为我们没有考虑他们的租金和成本。 我们也这样做。"
+}, {
+  "tag": "P",
+  "text": "Side note 2: The landing probability of Jail is possibly underestimated. We assumed a player gets out of jail by either using a jail free card, or paying 50 pounds/dollars. They do not try rolling a double to get out of jail without paying. This assumption holds at the beginning but not at the end of the game, as staying at the jail is the best strategy to avoid paying rents.",
+  "translation": "旁注2：监狱的着陆可能性可能被低估了。 我们假设玩家通过使用免费监狱卡或支付50英镑/美元来摆脱监狱。 他们不会尝试不支付任何费用而翻倍越狱。 这种假设在游戏开始时就成立了，但在游戏结束时却没有，因为留在监狱里是避免支付租金的最佳策略。"
+}, {
+  "tag": "H2",
+  "text": "c. Implementation — Object-oriented Programming",
+  "translation": "C。 实现—面向对象的编程"
+}, {
+  "tag": "P",
+  "text": "We simulate the board. We simulate players rolling dice, moving around the board, and everything else using object-oriented programming. We are implementing it in Python, and the codes are available on GitHub.",
+  "translation": "我们模拟板。 我们使用面向对象编程来模拟玩家掷骰子，在棋盘上移动以及其他所有内容。 我们正在Python中实现它，代码可在GitHub上获得。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*uSNR8NVIvZ9MSa9V?q=20",
+  "caption": "Photo by Miroslav Jonas on Unsplash",
+  "type": "image",
+  "file": "0*uSNR8NVIvZ9MSa9V"
+}, {
+  "tag": "P",
+  "text": "There are two kinds of objects in a Monopoly game — the board and some players. Simulations are conducted with players running around the boards by rolling dice and sometimes drawing cards from the Chance or Community Chest desks when needed. The probability of a player ending up on each tile can then be approximated by the Monte Carlo simulation.",
+  "translation": "大富翁游戏中有两种对象-棋盘和一些玩家。 通过在掷骰子的过程中在棋盘上奔跑的玩家进行模拟，并在需要时有时从Chance或Community Chest的桌子中抽牌。 然后，可以通过蒙特卡洛模拟来估算玩家出现在每个图块上的概率。"
+}, {
+  "tag": "P",
+  "text": "A player has 1. status:",
+  "translation": "玩家具有1.状态："
+}, {
+  "tag": "UL",
+  "texts": ["a current position on the board ∈ [0..39],", "a double counter that counts the number of consecutive doubles rolled ∈ [0..3] as a player rolling three consecutive doubles is immediately sent to jail, and the counter resets, and", "imprisonment boolean variable ∈ [0,1] that distinguishes ‘just visiting’ and ‘in jail’;"],
+  "translations": ["板上的当前位置∈[0..39]，", "当玩家连续掷出三个连续的双打时，一个计数连续掷出的双打∈[0..3]的双倍计数器立即被送入监狱，并且计数器重置，并且", "监禁布尔变量∈[0,1]，用于区分“只是来访”和“入狱”；"]
+}, {
+  "tag": "P",
+  "text": "2. possessions:",
+  "translation": "2.财产："
+}, {
+  "tag": "UL",
+  "texts": ["a jail free card from Chance deck ∈ [0,1], and", "a jail free card from Community Chest deck ∈ [0,1];"],
+  "translations": ["来自Chance卡座∈[0,1]的无监狱卡，并且", "来自社区公益金∈[0,1]的无监狱卡；"]
+}, {
+  "tag": "P",
+  "text": "and 3. records,",
+  "translation": "和3.记录，"
+}, {
+  "tag": "UL",
+  "texts": ["the total number of occurrences landed on each tile of the board, and", "the total number of occurrences of ‘just visiting’ and ‘in jail’ when landed on Jail."],
+  "translations": ["落在电路板上每个区块上的事件总数，以及", "降落在监狱上时，“仅拜访”和“入狱”的总次数。"]
+}, {
+  "tag": "P",
+  "text": "A player can",
+  "translation": "玩家可以"
+}, {
+  "tag": "OL",
+  "texts": ["roll a pair of fair dice,", "update and record their new position,", "update their other status and possessions, and", "clean their status and possessions when starting a new game."],
+  "translations": ["掷一双公平的骰子，", "更新并记录他们的新职位，", "更新他们的其他身份和财产，以及", "开始新游戏时清理他们的身份和财产。"]
+}, {
+  "tag": "P",
+  "text": "On the other hand, the board has",
+  "translation": "另一方面，董事会拥有"
+}, {
+  "tag": "OL",
+  "texts": ["names, property types, property prices, house prices, rent for different number of houses of all tiles, and", "decks of Chance and CC that get shuffled once at the beginning of a game, where jail free cards can be taken out and put back."],
+  "translations": ["名称，物业类型，物业价格，房价，所有瓷砖的不同数量房屋的租金，以及", "在游戏开始时就被洗牌的机会和CC的牌组洗了一次，可以在其中取出免押金卡并放回原处。"]
+}, {
+  "tag": "P",
+  "text": "A board can",
+  "translation": "板可以"
+}, {
+  "tag": "OL",
+  "texts": ["simulate a turn of a player that rolls a dice and everything that is going to happen afterwards, and", "simulate a card draw from each deck."],
+  "translations": ["模拟玩家掷骰子的回合以及随后发生的所有事情，以及", "模拟每个卡组的抽奖。"]
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*f0-HgmlVk1KUsxdf?q=20",
+  "caption": "Photo by dylan nolte on Unsplash",
+  "type": "image",
+  "file": "0*f0-HgmlVk1KUsxdf"
+}, {
+  "tag": "H2",
+  "text": "b. Methodology — Monte Carlo",
+  "translation": "b。 方法论—蒙特卡洛"
+}, {
+  "tag": "P",
+  "text": "We define landing probability as the probability of a player ended up on a tile at the end of their turn or right before their next roll if they get a double.",
+  "translation": "我们将着陆概率定义为玩家在回合结束时或在下一局掷骰之前（如果获得双倍奖励）在瓷砖上结束的概率。"
+}, {
+  "tag": "P",
+  "text": "There are many factors in the game that affects the landing probability. All players start at Go (tile 0) at the beginning. They roll a pair of fair dice in their own turn, and move on the board accordingly. Since rolling a 7 is much more likely than getting a 2 or 12, some tiles might be visited more often than others.",
+  "translation": "游戏中有许多因素会影响着陆概率。 所有玩家都从开始（开始为0）开始。 他们按自己的顺序掷出一对骰子，并相应地在棋盘上移动。 由于滚动7的可能性比获得2或12的可能性大得多，因此某些磁贴可能比其他磁贴更常被访问。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*K6msu36WpJc7g8r1?q=20",
+  "caption": "Photo by Geoff Brooks on Unsplash",
+  "type": "image",
+  "file": "0*K6msu36WpJc7g8r1"
+}, {
+  "tag": "P",
+  "text": "When players land on an ‘interim’ tile that is not a property, they follow the rules of that tile and might end up in another tile eventually.",
+  "translation": "当玩家落在不是属性的“临时”图块上时，他们会遵循该图块的规则，并最终可能会在另一个图块中结束。"
+}, {
+  "tag": "OL",
+  "texts": ["Players arriving at Go to Jail (tile 30) are sent to Jail (tile 10) obviously.", "Players arriving at Community Chest (CC) (tile 2, 17, and 33) draw cards from the CC deck and move accordingly. They are likely to stay at their current tile, but could be sent to Go or Jail.", "Players arriving at Chance (tile 7, 22, and 36) draw cards from the Chance deck and move accordingly. They might stay at their current tile, but could also be sent to Go, Jail, tile 5, 11, 24, or 39. They could move back 3 steps.", "Players rolling three consecutive doubles are sent to Jail."],
+  "translations": ["到达“进入监狱”（第30层）的玩家显然被送往监狱（第10层）。", "到达公益金（CC）（2、17和33组）的玩家从CC牌组中抽牌并据此移动。 他们可能会停留在当前位置，但可能会被发送到Go或Jail。", "到达机会（第7、22和36号瓷砖）的玩家从“机会”牌中抽牌并据此移动。 他们可能会停留在当前的位置，但也可能会被发送到Go，Jail，位置5、11、24或39。他们可以向后移动3步。", "连续滚动三双的玩家将被送进监狱。"]
+}, {
+  "tag": "P",
+  "text": "You can immediately find out that the probability of landing on ‘Go to Jail’ is zero. Players cannot end up staying on this tile without being sent to Jail.* Note that ‘Get Out of Jail Free’ card gets a player out of jail without paying the bank, they cannot be used to avoid going to Jail in the first place.",
+  "translation": "您可以立即发现降落到“去监狱”的可能性为零。 玩家不能在没有被送进监狱的情况下最终停留在此砖块上。*请注意，“摆脱监狱免费”卡无需支付银行费用即可使玩家退出监狱，他们不能被用来避免首先进入监狱。"
+}, {
+  "tag": "P",
+  "text": "Very complicated.",
+  "translation": "非常复杂。"
+}, {
+  "tag": "P",
+  "text": "We could find the landing probability analytically using Markov Chain with some gigantic matrices. You can analytically obtain the conditional probability of landing on each tile from every starting tile. And we are not going to do that.",
+  "translation": "我们可以使用马尔可夫链和一些巨大矩阵来分析找到着陆概率。 您可以从每个起始图块分析得出到达每个图块的条件概率。 而且我们不会那样做。"
+}, {
+  "tag": "P",
+  "text": "Alternatively, we can approximate the landing probability by a Monte Carlo simulation. Monte Carlo method approximates distributions by repeated random sampling. In this case, we can simulate the Monopoly game a million times. We record the frequency of players ending up on each tile. The frequency recorded is an approximation of the landing probability. The more games we simulate, the more confident we are in the approximation.",
+  "translation": "另外，我们可以通过蒙特卡洛模拟来估算着陆概率。 蒙特卡洛方法通过重复随机抽样来近似分布。 在这种情况下，我们可以模拟百万富翁游戏一百万次。 我们记录玩家在每个图块上出现的频率。 记录的频率是着陆概率的近似值。 我们模拟的游戏越多，我们就越有信心。"
+}, {
+  "tag": "P",
+  "text": "But how?",
+  "translation": "但是如何？"
+}, {
+  "tag": "H1",
+  "text": "1. Objectives",
+  "translation": "1.目标"
+}, {
+  "tag": "H2",
+  "text": "a. Metrics",
+  "translation": "一种。 指标"
+}, {
+  "tag": "P",
+  "text": "What do you want to achieve in the game? You want to win. Be the only survivor. Earn money. You want to invest wisely in properties that can bring you profits. We are getting there.",
+  "translation": "您想在游戏中实现什么？ 你想赢。 成为唯一的幸存者。 赚钱。 您想明智地投资可以为您带来利润的房地产。 我们到了那里。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*XTB2xZxMQIiSsaq1?q=20",
+  "caption": "Photo by Annie Spratt on Unsplash",
+  "type": "image",
+  "file": "0*XTB2xZxMQIiSsaq1"
+}, {
+  "tag": "P",
+  "text": "For investing in some set of properties, how long would it take to break-even? How much could I earn in the game? We need to establish some metrics to measure your performance.",
+  "translation": "为了投资某些物业，收支平衡需要多长时间？ 我可以在游戏中赚多少钱？ 我们需要建立一些指标来衡量您的效果。"
+}, {
+  "tag": "OL",
+  "texts": ["Break-even point: how many opponent turns it is going to take for you to get back the money you invested? The Brown set is very cheap, but will it take ages to get your money back? The Blue ones are costly, but maybe I will get the money back pretty quickly?", "Expected profit: what is the expected profit of each set of properties in a game? If there are infinitely many rounds in a game, we are pretty confident that the Blue set brings you the most profit. However, a game ends when everyone else runs out of money. The Blue ones might turn out not worth investing in a short game."],
+  "translations": ["收支平衡点：要收回您投资的资金需要多少对手转弯？ 棕色的套装非常便宜，但是要花很多时间才能收回您的钱吗？ 蓝色的很贵，但也许我会很快就把钱还回来？", "预期利润：游戏中每组资产的预期利润是多少？ 如果一场比赛中有无限多回合，我们非常有信心Blue套组可以为您带来最大的利润。 但是，当其他所有人的钱都用尽时，游戏结束。 蓝军可能不值得在短游戏中进行投资。"]
+}, {
+  "tag": "P",
+  "text": "The performance of a set of properties depends on a) the revenue, b) the cost, and c) the likelihood of an opponent landing on them. If somehow your opponent is 2 times likely to land on property A than B, it could be more worth investing even if the rent of B is higher. Small profits but quick turnover.",
+  "translation": "一组属性的性能取决于a）收入，b）成本以及c）对手降落在其上的可能性。 如果您的对手以某种方式有可能是房地产A的2倍，那么即使B的租金更高，也可能值得投资。 薄利多销。"
+}, {
+  "tag": "P",
+  "text": "We know the cost and the rent of properties. They are written on their title deeds. But we do not know their landing probabilities. Let’s find out.",
+  "translation": "我们知道物业的成本和租金。 他们写在他们的地契上。 但是我们不知道它们的着陆概率。 让我们找出答案。"
+}, {
+  "tag": "H1",
+  "text": "Conventions",
+  "translation": "约定"
+}, {
+  "tag": "UL",
+  "texts": ["Naming: We are going to name properties by their colours on the board since they have different names in different versions around the globe. It turns out there are also various colour schemes, but we are going to use the following version in ascending order of price — Brown, Sky, Pink, Orange, Red, Yellow, Green, and Blue. There are also Railroads and Utilities.", "Labelling: We label each tile from Go to Blue 2 (i.e. Mayfair/Boardwalk) by integers from 0 to 39.", "Cost: A player investing in a property pays a) a one-off land price, and b)a house price if they decide to build some.", "Revenue: A player receives rental income when an opponent lands on properties they possess.", "Doubles: Two dice have the same number. A player throwing doubles can roll the dice again."],
+  "translations": ["命名：我们将通过面板上的颜色来命名属性，因为它们在全球范围内的不同版本中具有不同的名称。 事实证明，还有多种配色方案，但是我们将按价格升序使用以下版本-棕色，天空，粉红色，橙色，红色，黄色，绿色和蓝色。 也有铁路和公用事业。", "标记：我们使用0到39之间的整数标记“转到蓝色2”（即Mayfair / Boardwalk）中的每个图块。", "成本：投资房地产的玩家支付a）一次性土地价格，b）如果他们决定建造一些房屋价格。", "收入：当一名对手登陆其拥有的物业时，其获得租金收入。", "双打：两个骰子的号码相同。 掷双打的玩家可以再次掷骰子。"]
+}, {
+  "tag": "H1",
+  "text": "7 Strategies to Win Monopoly",
+  "translation": "赢得垄断的7种策略"
+}, {
+  "tag": "H2",
+  "text": "A story about Python, statistics, visualization, and childhood memories",
+  "translation": "有关Python，统计信息，可视化和童年记忆的故事"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*qBokOezaGN3RM2c4?q=20",
+  "caption": "Photo by Raivis Razgals on Unsplash",
+  "type": "image",
+  "file": "0*qBokOezaGN3RM2c4"
+}, {
+  "tag": "P",
+  "text": "Monopoly is one of the most popular board games in the world. It has many different licensed and localized versions. Hasbro has just released a longer version of Monopoly with triple properties that takes forever to play.",
+  "translation": "垄断是世界上最受欢迎的棋盘游戏之一。 它具有许多不同的许可和本地化版本。 孩之宝（Hasbro）刚刚发布了具有三重属性的更长版本的《大富翁》（Monopoly），这将永远发挥作用。"
+}, {
+  "tag": "P",
+  "text": "This is a board game that gives people (good?) childhood memories. I used to play it during the holidays with my relatives’ kids, and I usually lost.",
+  "translation": "这是一个棋盘游戏，可以给人们（美好的？）童年记忆。 我曾经在假期与亲戚的孩子一起玩，但我通常会迷路。"
+}, {
+  "tag": "P",
+  "text": "I have played Monopoly for years now. But I really want to know if I could have played better to increase my chance of winning. Maybe I could beat the odds. Today, I am going to analyze how we can maximize our chance of winning a Monopoly game.",
+  "translation": "我玩《大富翁》已有多年了。 但是我真的很想知道我是否可以打得更好以增加获胜的机会。 也许我可以胜任。 今天，我将分析如何最大程度地赢得大富翁游戏。"
+}, {
+  "tag": "P",
+  "text": "Our analyses involve Python, statistics, and visualization.",
+  "translation": "我们的分析涉及Python，统计数据和可视化。"
+}, {
+  "tag": "P",
+  "text": "Just like in the real world, properties in the game are not equal. They carry different values and rewards. Many people believe the most expensive property just before the ‘Go’ tile (Mayfair/Boardwalk or Blue 2) can bring them a fortune, while others prefer collecting a whole set of railroads or utilities.",
+  "translation": "就像现实世界一样，游戏中的属性是不相等的。 它们带有不同的价值和奖励。 许多人认为，“ Go”磁贴（梅菲尔/木板路或Blue 2）之前最昂贵的房产可以为他们带来一笔财富，而其他人则更喜欢收集整套铁路或公用事业。"
+}, {
+  "tag": "P",
+  "text": "Codes are available on GitHub.",
+  "translation": "代码在GitHub上可用。"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Eden Au的文章《7 Strategies to Win Monopoly》，参考：https://towardsdatascience.com/7-strategies-to-win-monopoly-a89ead18b062)",
+  "translation": "（本文翻译自《 Eden Au的文章《赢得垄断的7种策略》，参考：https：//towardsdatascience.com/7-strategies-to-win-monopoly-a89ead18b062）"
+}]
