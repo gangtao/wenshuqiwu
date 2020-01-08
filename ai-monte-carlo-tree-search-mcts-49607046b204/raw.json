@@ -1,0 +1,104 @@
+[{
+  "tag": "H1",
+  "text": "AI: Monte Carlo Tree Search (MCTS)",
+  "translation": "AI：蒙特卡洛树搜索（MCTS）"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*2WEDTcMRm5TVpBHs.jpg?q=20",
+  "type": "image",
+  "file": "0*2WEDTcMRm5TVpBHs.jpg"
+}, {
+  "tag": "P",
+  "text": "Monte Carlo Tree search is a fancy name for one Artificial Intelligence algorithm used specially in games. Alpha Go reportedly used this algorithm with a combination of Neural Network. MCTS has been used in many other applications before that.",
+  "translation": "蒙特卡洛树搜索（Monte Carlo Tree search）是一种专门用于游戏的人工智能算法的名字。 据报道，Alpha Go将这种算法与神经网络结合使用。 在此之前，MCTS已在许多其他应用程序中使用。"
+}, {
+  "tag": "P",
+  "text": "Here I explain what algorithm is, and how it works.",
+  "translation": "在这里，我解释什么是算法，以及它是如何工作的。"
+}, {
+  "tag": "H2",
+  "text": "What is Monte Carlo Tree Search",
+  "translation": "什么是蒙特卡洛树搜索"
+}, {
+  "tag": "P",
+  "text": "MCTS, like the name says, is a way of searching a tree. Within this tree, its nodes represent the states and the arc between nodes represents the choice that would take from one state to the other.",
+  "translation": "顾名思义，MCTS是一种搜索树的方法。 在此树中，其节点表示状态，节点之间的弧线表示从一个状态到另一个状态的选择。"
+}, {
+  "tag": "P",
+  "text": "The image below shows the game of Tic-Tac-toe and how we can represent its possible states as a tree.",
+  "translation": "下图显示了井字游戏，以及如何将其可能的状态表示为一棵树。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*GAmoT7b38V3c4B0g.png?q=20",
+  "caption": "Example of a state tree for tic-tac-toe. Source",
+  "type": "image",
+  "file": "0*GAmoT7b38V3c4B0g.png"
+}, {
+  "tag": "P",
+  "text": "The Monte Carlo part of the name is what differs from other kinds of tree searches. Monte Carlo algorithms are a broder class of probabilistic algorithms. That means that the algorithm normally returns only an approximation of the actual result. But in several cases it is proven to converge to the real result when ran up to infinity.",
+  "translation": "该名称的蒙特卡洛部分与其他种类的树搜索有所不同。 蒙特卡洛算法是概率算法的一类broder。 这意味着该算法通常仅返回实际结果的近似值。 但是在几种情况下，当运行到无穷远时，已证明可以收敛到实际结果。"
+}, {
+  "tag": "P",
+  "text": "The classical example of a Monte Carlo algorithm is the one used to approximate the number Pi. For that, draw a square with each side of size 1 and inscribe a circle in the square. The area of the square should be equal 1 while the area of the inscribed circle should be equal to pi*(1/2)². Then the ratio between the area of the square and the area of the circle should be 4/pi. Therefore, to estimate PI, we can place points at random within the region following a uniform distribution. The ratio of the points that fall inside the circle over the total points will give the approximation of the ratio of areas of the two figures. That in turn will give the approximation of the number PI.",
+  "translation": "蒙特卡罗算法的经典示例是用于近似数字Pi的示例。 为此，绘制一个大小为1的正方形，并在正方形上刻一个圆圈。 正方形的面积应等于1，而内切圆的面积应等于pi *（1/2）²。 然后，正方形的面积与圆形的面积之比应为4 / pi。 因此，为了估计PI，我们可以在均匀分布后的区域内随机放置点。 落在圆内的点与总点的比例将得出两个图形的面积比的近似值。 这反过来将给出PI的近似值。"
+}, {
+  "tag": "P",
+  "text": "The figure bellow is a representation of the algorithm to estimate Pi, but using only a quarter of circle.",
+  "translation": "下图显示了估算Pi的算法，但仅使用了四分之一圆。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/freeze/max/60/0*7XC3dtcV3DbTuC4V.gif?q=20",
+  "caption": "Estimation of PI by using the ratio of areas of the square and circle using a Monte Carlo method. Source",
+  "type": "image",
+  "file": "0*7XC3dtcV3DbTuC4V.gif"
+}, {
+  "tag": "H2",
+  "text": "How MCTS works",
+  "translation": "MCTS如何运作"
+}, {
+  "tag": "P",
+  "text": "The algorithm can be described in 3 steps:",
+  "translation": "该算法可分为3个步骤："
+}, {
+  "tag": "OL",
+  "texts": ["Selection: From the current state of your game, go down your tree of states of already explored states. There are some ways of choosing which of the already explored states to be chosen, such as the Upper Confidence Bount (UCT), but it will not be discussed here. When we reach a state that we have not been to before, we go into the expansion phase", "Rollout: From this state we have not seen before, simulate the successive states until a Win/Draw/Loss has been reached. In a pure Monte Carlo method, the state chosen to be explored next can be picked at random. Therefore we can continue choosing random moves until the game reaches an end. After reaching the end we have to do the backpropagation of the result.", "Backpropagation: This is performed after we finished one rollout, so after we reach a state of Win/Draw/Loss. We update the value of Win/Loss/Draw of any state that we have been through until we have reached this terminal state."],
+  "translations": ["选择：从游戏的当前状态开始，进入已探索状态的状态树。 有一些方法可以选择要选择的已探索状态中的哪一个，例如“最高置信度”（UCT），但这里不再讨论。 当我们达到从未有过的状态时，我们进入了扩张阶段", "推出：从我们之前从未见过的这种状态开始，模拟连续的状态，直到达到赢/平/亏损。 在纯蒙特卡洛方法中，可以随机选择接下来要探索的状态。 因此，我们可以继续选择随机动作，直到游戏结束。 到达终点后，我们必须对结果进行反向传播。", "反向传播：这是在完成一次发布后执行的，因此在达到赢/平/亏损状态之后执行。 在达到此终端状态之前，我们将更新所经历的任何状态的Win / Loss / Draw的值。"]
+}, {
+  "tag": "P",
+  "text": "We can execute the above steps for as long as we have time. Then when it is time to choose a move, we can choose the one with the highest Win ratio.",
+  "translation": "只要有时间，我们就可以执行上述步骤。 然后，当需要选择移动时，我们可以选择赢率最高的移动。"
+}, {
+  "tag": "P",
+  "text": "The picture below shows an example of one iteration of the steps above",
+  "translation": "下图显示了上述步骤的一个迭代示例"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/0*xJe9U3ApBsAPyanR.png?q=20",
+  "caption": "One iteration of MCTS. Source",
+  "type": "image",
+  "file": "0*xJe9U3ApBsAPyanR.png"
+}, {
+  "tag": "P",
+  "text": "In the picture, white nodes represent that it is a state that it is player 1’s turn. Black nodes represent the converse, where it would be player 2’s turn. The number in each node represent the number of wins over the total number of rollouts that have been through that node.",
+  "translation": "在图中，白色节点表示玩家1轮到的状态。 黑色节点代表相反，这是玩家2的回合。 每个节点中的数字表示在通过该节点进行的部署总数中获胜的次数。"
+}, {
+  "tag": "H2",
+  "text": "Implementations",
+  "translation": "实作"
+}, {
+  "tag": "P",
+  "text": "If you would like to try, I recommend checking one of these libraries",
+  "translation": "如果您想尝试，我建议检查以下库之一"
+}, {
+  "tag": "P",
+  "text": "Python: https://github.com/int8/monte-carlo-tree-search",
+  "translation": "Python：https：//github.com/int8/monte-carlo-tree-search"
+}, {
+  "tag": "P",
+  "text": "Javascript: https://github.com/dbravender/mcts",
+  "translation": "Javascript：https：//github.com/dbravender/mcts"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Pedro Torres Perez的文章《AI: Monte Carlo Tree Search (MCTS)》，参考：https://medium.com/@pedrohbtp/ai-monte-carlo-tree-search-mcts-49607046b204)",
+  "translation": "（本文翻译自Pedro Torres Perez的文章，《 AI：蒙特卡罗树搜索（MCTS）》，参考：https：//medium.com/@pedrohbtp/ai-monte-carlo-tree-search-mcts-49607046b204）"
+}]
