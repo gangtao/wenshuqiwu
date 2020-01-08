@@ -1,0 +1,390 @@
+[{
+  "tag": "H1",
+  "text": "GANs from Zero to Hero: Best Resources for Newcomers",
+  "translation": "GAN从零到英雄：面向新手的最佳资源"
+}, {
+  "tag": "H2",
+  "text": "Everything’s coming up GANs!",
+  "translation": "一切即将发生GAN！"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*ItcSiqalrt-YWUgR.jpg?q=20",
+  "type": "image",
+  "file": "0*ItcSiqalrt-YWUgR.jpg"
+}, {
+  "tag": "P",
+  "text": "Generative Adversarial Networks is the most interesting idea in the last 10 years in Machine Learning.",
+  "translation": "生成对抗网络是机器学习中最近十年来最有趣的想法。"
+}, {
+  "tag": "P",
+  "text": "— Yann LeCun, Director of AI Research at Facebook AI",
+  "translation": "— Facebook AI研究总监Yann LeCun"
+}, {
+  "tag": "P",
+  "text": "There’s no doubt, GANs are very exciting now, they are the first generative algorithms to give convincingly good results, and probably, these results will become only better with time. So, it is quite interesting to try yourself in this field full of opportunities and constant advancements, but… nothing is so simple.",
+  "translation": "毫无疑问，GAN现在非常令人兴奋，它们是第一个产生令人信服的好结果的生成算法，并且可能随着时间的推移这些结果只会变得更好。 因此，在这个充满机遇和不断进步的领域尝试自己是很有趣的，但是……没有什么事情如此简单。"
+}, {
+  "tag": "P",
+  "text": "Since the field is very young, starting with the first paper in 2014, and because of the vast number of papers and applications, it can be very challenging to get started with GANs. So, what is the best path for learning it? Today, I’m going to shed some light on it!",
+  "translation": "由于该领域非常年轻，因此从2014年的第一篇论文开始，并且由于论文和应用程序的数量众多，因此开始使用GAN可能会非常具有挑战性。 那么，学习它的最佳途径是什么？ 今天，我要阐明一下！"
+}, {
+  "tag": "P",
+  "text": "In this post, I will cover the following points:",
+  "translation": "在这篇文章中，我将介绍以下几点："
+}, {
+  "tag": "UL",
+  "texts": ["What are Neural Networks?", "What are GANs?", "How do GANs work?", "Applications of GANs", "The best stuff to study GANs"],
+  "translations": ["什么是神经网络？", "什么是GAN？", "GAN如何工作？", "GAN的应用", "学习GAN的最好的东西"]
+}, {
+  "tag": "P",
+  "text": "Without further ado, let’s jump right in!",
+  "translation": "事不宜迟，让我们直接进入吧！"
+}, {
+  "tag": "H1",
+  "text": "What are Neural Networks?",
+  "translation": "什么是神经网络？"
+}, {
+  "tag": "FIGURE",
+  "type": "code"
+}, {
+  "tag": "P",
+  "text": "When it comes to talking about GANs, the first association is deepfakes — photos and videos in which people’s faces (most often celebrities) are placed on other people’s bodies. Just like ‘The Shining’ deepfake has gone viral with Jim Carrey Starring as Jack Torrance. How does it work? The answer is simple — the strength of neural networks, that’s why we are starting our learning journey with this topic.",
+  "translation": "在谈到GAN时，第一个关联是假冒产品-将人们的面孔（通常是名人）放在别人的身上的照片和视频。 就像“光辉”深渊假装在吉姆·凯里（Jim Carrey）饰演的杰克·托伦斯（Jack Torrance）的眼中一样。 它是如何工作的？ 答案很简单-神经网络的力量，这就是为什么我们以此主题开始学习之旅。"
+}, {
+  "tag": "P",
+  "text": "So what is a neural network? Simply put, this is a program that performs a certain kind of tasks. Why such a sonorous name? That’s because it resembles the work of neurons in the human brain. But while regular programs have all the settings set by a person, neural networks are able to act autonomously. You just need to train them to specify tens of millions of parameters.",
+  "translation": "那么什么是神经网络？ 简而言之，这是一个执行某种任务的程序。 为什么这样一个name谐的名字？ 那是因为它类似于人脑中神经元的工作。 但是，尽管常规程序具有一个人设置的所有设置，但神经网络仍能够自主行动。 您只需要训练它们以指定数千万个参数即可。"
+}, {
+  "tag": "P",
+  "text": "By the way, if you ever had a chance to choose all the images that have road signs, congratulations: you had a hand in the training neural networks and artificial intelligence. Google’s “CAPTCHA” is designed not only to calculate robots (and make us doubt our own humanity). Each time a user marks objects in a photo, Google’s neural networks become a little smarter, image search becomes more precise, Google Photos becomes better in recognizing faces, places, and objects in your photo library, and Waymo drones start to kill people and cats less than usual.",
+  "translation": "顺便说一句，如果您有机会选择所有带有路标的图像，那么恭喜您：您已经参与了神经网络和人工智能的培训。 Google的“ CAPTCHA”不仅用于计算机器人（而且使我们怀疑自己的人性）。 每次用户在照片中标记对象时，Google的神经网络都会变得更加智能，图像搜索将变得更加精确，Google Photos在识别照片库中的面部，位置和对象方面会变得更好，Waymo无人机开始杀死人和猫。 比平常少。"
+}, {
+  "tag": "P",
+  "text": "So, converting one image to another is a standard operation for any neural network. When networks perform the tasks of recognizing faces, objects, or sounds, at the output they give a vector or a numerical value, which can belong to one or another class of objects. But nothing prevents setting up the neural network so that as a result we get not a number, but a set of pixels. Another question: how to make this set look like a real photo or picture, and not like a meaningless abstraction?",
+  "translation": "因此，将一个图像转换为另一个图像是任何神经网络的标准操作。 当网络执行识别人脸，物体或声音的任务时，它们会在输出端给出矢量或数值，这些矢量或数值可以属于一个或另一类物体。 但是没有什么能阻止神经网络的建立，因此我们得到的不是数字，而是一组像素。 另一个问题：如何使该场景看起来像真实的照片或图片，而不是毫无意义的抽象？"
+}, {
+  "tag": "P",
+  "text": "And for this, it is the right time when generative adversarial networks (GANs) enter the game.",
+  "translation": "为此，现在是对抗性生成网络（GAN）进入游戏的正确时机。"
+}, {
+  "tag": "H1",
+  "text": "What Are Generative Adversarial Networks?",
+  "translation": "什么是生成对抗网络？"
+}, {
+  "tag": "P",
+  "text": "Generative adversarial networks are a class of neural networks that are used in unsupervised machine learning. It was invented by Ian Goodfellow and his colleagues in 2014.",
+  "translation": "生成对抗网络是一类用于无监督机器学习的神经网络。 它是由Ian Goodfellow及其同事于2014年发明的。"
+}, {
+  "tag": "P",
+  "text": "At its core is a combination of two neural networks. Simply put, one of them is trained to create images with some object, another one — to distinguish what image is real and what is artificially created. The first network tries to trick the second one, and with each failed attempt, receiving feedback from it, it starts to cope with this task better. One of them generates, and the other criticizes. Together in perfect collaboration, they give excellent results in the synthesis of plausible images and image enhancement.",
+  "translation": "其核心是两个神经网络的组合。 简而言之，其中一个受过训练以创建带有某个对象的图像，另一个受过训练-区分什么图像是真实的图像和人为创建的图像。 第一个网络试图欺骗第二个网络，并且每次失败尝试都会收到它的反馈，从而开始更好地应对这一任务。 其中一个产生，另一个批评。 通过完美的协作，它们在合理的图像合成和图像增强方面均能提供出色的效果。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*jFZnsdclkOS2vO_M?q=20",
+  "type": "image",
+  "file": "0*jFZnsdclkOS2vO_M"
+}, {
+  "tag": "P",
+  "text": "https://thispersondoesnotexist.com/ presents a random, computer-generated photo of a fictional person. Refresh the page each time for a new face.",
+  "translation": "https://thispersondoesnotexist.com/展示由计算机生成的虚构人物的随机照片。 每次刷新页面以换一张新面孔。"
+}, {
+  "tag": "P",
+  "text": "The name of the first algorithm or network is “generator” and the second one is “discriminator”. So, they work simultaneously. The generator’s task is to generate images of a given category. The task of the discriminator is to try to recognize the created image.",
+  "translation": "第一个算法或网络的名称是“生成器”，第二个是“鉴别器”。 因此，它们同时工作。 生成器的任务是生成给定类别的图像。 鉴别器的任务是尝试识别创建的图像。"
+}, {
+  "tag": "P",
+  "text": "For example, we have pictures that are similar to faces. The discriminator, in that case, is trying to determine whether it is a face or not. And over time, this network learns to generate realistic faces.",
+  "translation": "例如，我们有与面孔相似的图片。 在这种情况下，区分器试图确定它是否是一张脸。 随着时间的流逝，该网络将学会生成逼真的面孔。"
+}, {
+  "tag": "H1",
+  "text": "How Do GANs Work?",
+  "translation": "GAN如何工作？"
+}, {
+  "tag": "P",
+  "text": "To understand more how does GANs wor, let’s delve more into understanding what does discriminator and generator do.",
+  "translation": "要了解GAN的工作原理，请深入了解鉴别器和发生器的作用。"
+}, {
+  "tag": "P",
+  "text": "“Discriminator” or “discriminative network”. For recognition, we use Convolutional neural networks (CNNs). What it is? Let me clear it up: CNN can recognize images in pictures, for example, extract faces, numbers, etc. from the entire image. To make neural network recognize something, you need to train it to process a large number of images that contain the desired images.",
+  "translation": "“歧视者”或“歧视性网络”。 为了识别，我们使用卷积神经网络（CNN）。 这是什么？ 让我澄清一下：CNN可以识别图片中的图像，例如，从整个图像中提取人脸，数字等。 为了使神经网络识别某些东西，您需要对其进行训练以处理包含所需图像的大量图像。"
+}, {
+  "tag": "P",
+  "text": "You give the neural network a large number of pictures of cats and mark those parts of the image where the cats are. After this, neural network is able to recognize two types of pictures: with cats, and without.",
+  "translation": "您给神经网络提供了大量猫的图片，并在图像中标记出猫所在的部分。 在此之后，神经网络能够识别两种类型的图片：有猫和无猫。"
+}, {
+  "tag": "P",
+  "text": "“Generator” or “generative network” model. Image formation begins with the generation of arbitrary noise, on which fragments of the desired image begin to appear. Imagine that you are shaking a plate of sand until you manage to “shake” something that is vaguely reminiscent of a number. And then continue to shake until the contours of the numbers become more pronounced. The neural network remembers exactly how you shook the plate to achieve such a result, and next time it reproduces your actions.",
+  "translation": "“发电机”或“发电网络”模型。 图像形成始于产生任意噪声，在该噪声上开始出现所需图像的片段。 想象一下，您正在晃动一盘沙，直到您设法“晃动”一些隐约让人联想到数字的东西。 然后继续摇晃，直到数字的轮廓变得更明显为止。 神经网络会精确地记住您如何摇动盘子以达到这样的效果，并且下次它会重现您的动作。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*q__8iwUMGd4n1nUx?q=20",
+  "type": "image",
+  "file": "0*q__8iwUMGd4n1nUx"
+}, {
+  "tag": "P",
+  "text": "Naturally, this is an illustrative example, and more reasonable approaches are used in real models. As generating neural networks can be used (and are often used) FFNN networks — feed forward neural networks.",
+  "translation": "自然，这是一个说明性示例，在实际模型中使用了更合理的方法。 由于可以使用（并且经常使用）生成神经网络FFNN网络-前馈神经网络。"
+}, {
+  "tag": "P",
+  "text": "So, how to make a neural network generate Jim Carrey’s face?",
+  "translation": "那么，如何使神经网络生成吉姆·卡里的脸呢？"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*75iP3raOR3c5KXT2?q=20",
+  "type": "image",
+  "file": "0*75iP3raOR3c5KXT2"
+}, {
+  "tag": "P",
+  "text": "For this, we need not ordinary generative-adversarial networks, but the so-called conditional GANs. In order to get believable photographs of Jim Carrey (or any other person), a neural network is first fed by the photographs of a certain person, then it is fed by images by the actor’s face, which is almost impossible to distinguish from real ones.",
+  "translation": "为此，我们不需要普通的生成对抗网络，而是所谓的条件GAN。 为了获得Jim Carrey（或任何其他人）的真实照片，首先要由某个人的照片提供神经网络，然后由演员脸部的图像提供神经网络，这几乎不可能与真实的人区分开。 。"
+}, {
+  "tag": "P",
+  "text": "In order for the face to speak, twist and blink, as in the well-known viral video, the neural network is equipped with photographs of people with different facial expressions — thank God, we all grimace in a rather similar way.",
+  "translation": "为了使面部说话，扭曲和眨眼，就像在著名的病毒视频中一样，神经网络配备了具有不同面部表情的人的照片-感谢上帝，我们所有人都以类似的方式做鬼脸。"
+}, {
+  "tag": "H1",
+  "text": "What are some practical applications of generative adversarial networks?",
+  "translation": "生成对抗网络有哪些实际应用？"
+}, {
+  "tag": "P",
+  "text": "Well, there are lots of them. We make impressive progress in the first few years of GAN developments. No more stamp-size facial pictures like those in horror movies. In 2017, GAN produced 1024 × 1024 images that can fool a talent scout. GANs have been used for image generation, inpainting, photosynthesis from the text, image editing and many other applications, often leading to state of the art results.",
+  "translation": "好吧，有很多。 在GAN开发的最初几年中，我们取得了令人瞩目的进展。 不再有像恐怖电影中那样邮票大小的面部图片。 在2017年，GAN制作了1024×1024张图像，这些图像可能会欺骗人才侦探。 GAN已用于图像生成，修复，文本的光合作用，图像编辑和许多其他应用程序，通常会导致获得最先进的结果。"
+}, {
+  "tag": "P",
+  "text": "Here is a brief overview of some practical applications of generative adversarial networks.",
+  "translation": "这里是生成对抗网络的一些实际应用的简要概述。"
+}, {
+  "tag": "P",
+  "text": "Content and data creation: creating pictures for an online store, avatars for games, videos generated automatically based on the music snippets, or even virtual hosts for TV programs. Thanks to the work of GAN, data synthesis occurs, and other systems can be trained on it.",
+  "translation": "内容和数据创建：为在线商店创建图片，为游戏创建头像，基于音乐片段自动生成的视频，甚至是电视节目的虚拟主机。 由于GAN的工作，可以进行数据综合，并且可以在其上训练其他系统。"
+}, {
+  "tag": "P",
+  "text": "Automatic editing: this approach is already in use on modern smartphones and some apps. It allows you to change facial expressions, the number of wrinkles and change the color of your hair, change day to night light and more.",
+  "translation": "自动编辑：这种方法已在现代智能手机和某些应用程序中使用。 它使您可以更改面部表情，皱纹数量并更改头发的颜色，将日光更改为夜灯等等。"
+}, {
+  "tag": "P",
+  "text": "GAN Neural Network Applications — Real Inspirational Examples",
+  "translation": "GAN神经网络应用程序-真实的启发性例子"
+}, {
+  "tag": "P",
+  "text": "Generate stunningly realistic images of “celebrities” (and actually non-existent people) using Nvidia’s PG GAN. Using this network, you can also generate images of any other categories.",
+  "translation": "使用Nvidia的PG GAN生成“名人”（实际上是不存在的人）的逼真的图像。 使用该网络，您还可以生成任何其他类别的图像。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*cXUskYFTsuPI_F_8?q=20",
+  "type": "image",
+  "file": "0*cXUskYFTsuPI_F_8"
+}, {
+  "tag": "P",
+  "text": "All these images are generated by a system based on generative adversarial neural networks, some of them do not look too realistic, but others are very believable.",
+  "translation": "所有这些图像都是由基于生成的对抗神经网络的系统生成的，其中一些看上去不太逼真，但其他的非常可信。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*2MId9Li07anfONT4?q=20",
+  "type": "image",
+  "file": "0*2MId9Li07anfONT4"
+}, {
+  "tag": "P",
+  "text": "The Everybody Dance Now model, created by a team of scientists from the University of Berkeley, presents a simple method based on generative neural networks of motion transmission “do as I do.” Given: The original video of a dancing man. Result: We make the image of another person dance. This is called “motion transfer.”",
+  "translation": "由伯克利大学的一组科学家创建的“每个人立即跳舞”模型提出了一种基于生成的运动传递神经网络的简单方法，“做我就做。”给出：一个跳舞的人的原始视频。 结果：我们使另一个人的形象跳舞。 这称为“运动传递”。"
+}, {
+  "tag": "FIGURE",
+  "type": "code"
+}, {
+  "tag": "P",
+  "text": "The transfer of style from one image to another allows using neural networks to do such impressive things as “turn a horse into a zebra”",
+  "translation": "将样式从一幅图像转换为另一幅图像可以使用神经网络完成令人印象深刻的事情，例如“将马变成斑马”"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*HEjyzwrocshO5Mg8?q=20",
+  "type": "image",
+  "file": "0*HEjyzwrocshO5Mg8"
+}, {
+  "tag": "P",
+  "text": "Or generate “anime portraits” from a photograph. In this picture you can see how different types of GANs cope with this task.",
+  "translation": "或从照片中生成“动漫肖像”。 在这张照片中，您可以看到不同类型的GAN如何完成此任务。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/27/0*FO0vwBWnT03enPYz?q=20",
+  "type": "image",
+  "file": "0*FO0vwBWnT03enPYz"
+}, {
+  "tag": "P",
+  "text": "Changing the emotions, age, facial expressions of a person — all this can be achieved by properly training and programming the GAN neural networks. In practice, it looks like this: at the model’s input, the original photo is submitted and the emotion that needs to be shown at the output is indicated.",
+  "translation": "改变一个人的情绪，年龄，面部表情-所有这些都可以通过适当地训练和编程GAN神经网络来实现。 实际上，它看起来像这样：在模型的输入处，提交原始照片，并指出需要在输出处显示的情感。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*fbp8Is3uCgidGaPL?q=20",
+  "type": "image",
+  "file": "0*fbp8Is3uCgidGaPL"
+}, {
+  "tag": "P",
+  "text": "GAN neural networks are also used to generate realistic video of the urban environment. For example, when creating films, games, virtual reality.",
+  "translation": "GAN神经网络还用于生成城市环境的逼真的视频。 例如，在制作电影，游戏，虚拟现实时。"
+}, {
+  "tag": "FIGURE",
+  "type": "code"
+}, {
+  "tag": "P",
+  "text": "Converting sketches and contour drawings into a photorealistic image using the GAN is as follows: you draw a face, a bag, or, for example, a cat, by hand and get a photorealistic image at the output. You can try it here.",
+  "translation": "使用GAN将草图和轮廓图转换为逼真的图像的方法如下：用手绘制一个脸，一个包或（例如）一只猫，并在输出处获得逼真的图像。 您可以在这里尝试。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*ffDKCTRP-l49qTgV?q=20",
+  "type": "image",
+  "file": "0*ffDKCTRP-l49qTgV"
+}, {
+  "tag": "H1",
+  "text": "Best Resources for Generative Networks",
+  "translation": "生成网络的最佳资源"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*W6TPtthIHCP3TNBV?q=20",
+  "type": "image",
+  "file": "0*W6TPtthIHCP3TNBV"
+}, {
+  "tag": "P",
+  "text": "Delving deeper is worth it, but for acquiring valid knowledge, you need to choose the right sources for this. Here is my selection of best videos, books, articles that are definitely suitable for this purpose.",
+  "translation": "深入研究是值得的，但是要获得有效的知识，您需要为此选择正确的资源。 这是我精选的绝对适合此目的的最佳视频，书籍，文章。"
+}, {
+  "tag": "P",
+  "text": "Video lectures and presentations",
+  "translation": "视频讲座和演示"
+}, {
+  "tag": "P",
+  "text": "#1 Ian Goodfellow: Generative Adversarial Networks (NIPS 2016 tutorial)",
+  "translation": "＃1 Ian Goodfellow：生成对抗网络（NIPS 2016教程）"
+}, {
+  "tag": "P",
+  "text": "Accessible to an audience who has no experience with GANs, it will prepare you to make original research contributions applying GANs or improving the core GAN algorithms. Topics include a review of work applying GANs to large image generation; improved model architectures that yield better learning in GANs; semi-supervised learning with GANs and more.",
+  "translation": "接触到没有GAN经验的读者，它将为您准备使用GAN或改进核心GAN算法做出原始研究贡献。 主题包括对将GAN应用于大图像生成的工作的回顾； 改进的模型架构，可以在GAN中更好地学习； 使用GAN和其他工具进行半监督学习。"
+}, {
+  "tag": "FIGURE",
+  "type": "code"
+}, {
+  "tag": "P",
+  "text": "Here are accompanying slides and paper version of the tutorial:",
+  "translation": "这是该教程的随附幻灯片和纸质版本："
+}, {
+  "tag": "P",
+  "text": "Slides",
+  "translation": "滑梯"
+}, {
+  "tag": "P",
+  "text": "Paper",
+  "translation": "纸"
+}, {
+  "tag": "P",
+  "text": "#2 AAAI-19 Invited Talk — Ian Goodfellow (Google AI) — Adversarial Machine Learning",
+  "translation": "＃2 AAAI-19邀请演讲-Ian Goodfellow（Google AI）-对抗机器学习"
+}, {
+  "tag": "P",
+  "text": "A more recent presentation on the broader topic of Adversarial Machine Learning, that also covers GANs",
+  "translation": "关于对抗性机器学习的更广泛主题的最新演讲，也涵盖了GAN"
+}, {
+  "tag": "FIGURE",
+  "type": "code"
+}, {
+  "tag": "P",
+  "text": "#3 Lecture on Generative Models from the Stanford course on Convolutional Neural Networks",
+  "translation": "＃3斯坦福大学卷积神经网络课程的生成模型讲座"
+}, {
+  "tag": "P",
+  "text": "This lecture provides a useful context for GANs as well as coverage of the related techniques of Variational Autoencoders and PixelRNN.",
+  "translation": "本讲座为GAN提供了有用的背景知识，并涵盖了变分自动编码器和PixelRNN的相关技术。"
+}, {
+  "tag": "FIGURE",
+  "type": "code"
+}, {
+  "tag": "P",
+  "text": "Books",
+  "translation": "图书"
+}, {
+  "tag": "P",
+  "text": "#1 Chapter 20. Deep Generative Models, Deep Learning, 2016",
+  "translation": "＃1 Chapter 20.深度生成模型，深度学习，2016年"
+}, {
+  "tag": "P",
+  "text": "Possibly the most powerful starting point is the Deep Learning textbook written by Goodfellow. Chapter 20 is titled “Deep Generative Models” and gives a useful summary of a range of techniques, including GANs.",
+  "translation": "可能最强大的起点是Goodfellow编写的深度学习教科书。 第20章的标题为“深度生成模型”，并总结了包括GAN在内的一系列技术。"
+}, {
+  "tag": "P",
+  "text": "#2 Generative Adversarial Networks Cookbook by Josh Kalin, 2019",
+  "translation": "乔什·卡林（Josh Kalin）的＃2生成对抗网络食谱，2019年"
+}, {
+  "tag": "P",
+  "text": "This book leads you through eight different examples of modern GAN implementation, including CycleGAN, simGAN, DCGAN, and Imitation Learning with GANs. Each chapter builds on a common architecture in Python and Keras to explore increasingly difficult GAN architectures in an easy-to-read format.",
+  "translation": "本书将向您介绍八个现代GAN实施示例，包括CycleGAN，simGAN，DCGAN和GAN的模仿学习。 每章都以Python和Keras的通用体系结构为基础，以易于阅读的格式探索日益困难的GAN体系结构。"
+}, {
+  "tag": "P",
+  "text": "#3 Generative Deep Learning by David Foster, 2019",
+  "translation": "大卫·福斯特（David Foster）的＃3 Generative Deep Learning，2019"
+}, {
+  "tag": "P",
+  "text": "You will learn how to recreate some of the most famous examples of generative deep learning models, such as variational autoencoders and generative adversarial networks (GANs). You’ll also learn how to apply the techniques to your own datasets.",
+  "translation": "您将学习如何重新生成生成深度学习模型的一些最著名示例，例如变体自动编码器和生成对抗网络（GAN）。 您还将学习如何将这些技术应用于自己的数据集。"
+}, {
+  "tag": "P",
+  "text": "#4 GANs in Action by Jakub Langr, Vladimir Bok, 2019",
+  "translation": "＃4 GAN在行动中，Jakub Langr，弗拉基米尔·博克，2019年"
+}, {
+  "tag": "P",
+  "text": "First, you’ll get an introduction to generative modeling and how GANs work, along with an overview of their potential uses. Then, you’ll start building your own simple adversarial system, as you explore the foundation of GAN architecture: the generator and discriminator networks.",
+  "translation": "首先，您将了解生成建模以及GAN的工作原理，并概述其潜在用途。 然后，当您探索GAN架构的基础：生成器和鉴别器网络时，您将开始构建自己的简单对抗系统。"
+}, {
+  "tag": "P",
+  "text": "#5 Generative Adversarial Networks Projects by Kailash Ahirwar, 2019",
+  "translation": "Kailash Ahirwar的＃5生成对抗网络项目，2019年"
+}, {
+  "tag": "P",
+  "text": "This book summarizes a range of GANs with code examples in Keras.",
+  "translation": "本书用Keras中的代码示例总结了一系列GAN。"
+}, {
+  "tag": "P",
+  "text": "Papers",
+  "translation": "文件"
+}, {
+  "tag": "UL",
+  "texts": ["Generative Adversarial Networks", "Are GANs Created Equal? A Large-Scale Study", "The GAN Landscape: Losses, Architectures, Regularization, and Normalization", "Generative Adversarial Networks: An Overview"],
+  "translations": ["生成对抗网络", "GAN是否平等？ 大规模研究", "GAN景观：损失，架构，正则化和规范化", "生成对抗网络：概述"]
+}, {
+  "tag": "P",
+  "text": "Slides and tutorials",
+  "translation": "幻灯片和教程"
+}, {
+  "tag": "UL",
+  "texts": ["Ian Goodfellow’s GAN Slides (NIPS Goodfellow Slides) — nice and brief explanation for beginners", "ICCV 2017 Tutorial About GANS — other great slides for beginners from ICCV tutorial held in Italy in 2017. It is starting with introductory topics and continuing with an exploration of state of the art GAN models, models using adversarial loss and more."],
+  "translations": ["伊恩·古德费洛（Ian Goodfellow）的GAN幻灯片（NIPS Goodfellow Slides）—为初学者提供了很好的简短说明", "关于GANS的ICCV 2017教程— 2017年在意大利举行的ICCV教程的初学者的其他很棒的幻灯片。它从入门主题开始，并继续探索最新的GAN模型，使用对抗损失的模型等等。"]
+}, {
+  "tag": "P",
+  "text": "More relevant links",
+  "translation": "更多相关链接"
+}, {
+  "tag": "UL",
+  "texts": ["Generative Learning algorithms — Andrew Ng’s Stanford notes", "On Discriminative vs. Generative classifiers: A comparison of logistic regression and naive Bayes, by Andrew Ng and Michael I. Jordan", "The Math Behind Generative Adversarial Networks", "Automatic feature engineering using Generative Adversarial Networks with Deeplearning4j & Spark", "Generating Diverse High-Fidelity Images with VQ-VAE-2"],
+  "translations": ["生成学习算法-吴安德的斯坦福笔记", "关于判别式与生成式分类器：逻辑回归与朴素贝叶斯的比较，Andrew Ng和Michael I. Jordan", "生成对抗网络背后的数学", "使用带有Deeplearning4j和Spark的生成对抗网络进行自动特征工程", "使用VQ-VAE-2生成各种高保真图像"]
+}, {
+  "tag": "P",
+  "text": "Books and Guides to master Deep Learning",
+  "translation": "精通深度学习的书籍和指南"
+}, {
+  "tag": "UL",
+  "texts": ["Grokking Deep Learning by Andrew W. Trask", "Machine Learning Yearning by Andrew Ng", "A practical guide to Deep Learning in 6 months", "Efficient BackProp by Yann LeCun and others"],
+  "translations": ["安德鲁·W·特拉斯克（Andrew W.", "机器学习的渴望", "6个月的深度学习实用指南", "Yann LeCun等人的高效BackProp"]
+}, {
+  "tag": "P",
+  "text": "Happy learning!",
+  "translation": "学习愉快！"
+}, {
+  "tag": "P",
+  "text": "As always, if you do anything cool with this information, leave a response in the comments below or reach out at any time on my Instagram and Medium blog.",
+  "translation": "与往常一样，如果您对这些信息感兴趣，请在下面的评论中留下回复，或者随时在我的Instagram和Medium博客上与我们联系。"
+}, {
+  "tag": "P",
+  "text": "Thanks for reading!",
+  "translation": "谢谢阅读！"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Oleksii Kharkovyna的文章《GANs from Zero to Hero: Best Resources for Newcomers》，参考：https://towardsdatascience.com/gans-from-zero-to-hero-best-resources-for-newcomers-a7c7cf1024b5)",
+  "translation": "（本文翻译自Oleksii Kharkovyna的文章，《从零到英雄的GAN：新手的最佳资源》，参考：https：//towardsdatascience.com/gans-from-zero-to-hero-best-resources-for-newcomers-a7c7cf1024b5 ）"
+}]
