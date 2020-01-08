@@ -1,0 +1,619 @@
+[{
+  "tag": "H1",
+  "text": "REST to GraphQL in minutes",
+  "translation": "数分钟内即可将REST转换为GraphQL"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*6x5qCaI2GljsZSXr_fj6Cg.jpeg?q=20",
+  "type": "image",
+  "file": "1*6x5qCaI2GljsZSXr_fj6Cg.jpeg"
+}, {
+  "tag": "P",
+  "text": "With all the madness currently going in the API world with GraphQL, you might be wondering how to migrate your existing REST APIs to GraphQL without breaking anything. This guide will help you accomplish your REST to GraphQL mission without changing your codebase so that you can REST with GraphQL! (pun intended 🤭)",
+  "translation": "由于GraphQL目前在API世界中引起了极大的疯狂，您可能想知道如何在不破坏任何内容的情况下将现有的REST API迁移到GraphQL。 本指南将帮助您完成REST to GraphQL的任务，而无需更改代码库，以便可以使用GraphQL进行REST！ （双关语意🤭）"
+}, {
+  "tag": "H1",
+  "text": "REST to GraphQL",
+  "translation": "REST到GraphQL"
+}, {
+  "tag": "P",
+  "text": "Well, GraphQL advocates have done a great job in marketing GraphQL already. Respecting their efforts, I won’t be going into details, but provide a summary:",
+  "translation": "好吧，GraphQL的倡导者已经在营销GraphQL方面做得很好。 尊重他们的努力，我将不做详细介绍，而是提供一个摘要："
+}, {
+  "tag": "UL",
+  "texts": ["GraphQL allows you to fetch multiple resources in a single request.", "GraphQL solves the over fetching problem of REST by letting you describe your exact data needs.", "GraphQL helps you solve the N+1 query problem on frontend by fetching related data in a single query."],
+  "translations": ["GraphQL允许您在单个请求中获取多个资源。", "GraphQL通过让您描述您的确切数据需求来解决REST的获取问题。", "GraphQL通过在单个查询中获取相关数据来帮助您解决前端的N + 1查询问题。"]
+}, {
+  "tag": "P",
+  "text": "What I will be touching upon in this guide instead is the aspect that most people miss while advocating GraphQL, which is, “We have already invested heavily in REST”. This means:",
+  "translation": "我将在本指南中涉及的是大多数人在提倡GraphQL时会错过的方面，即“我们已经在REST上投入了大量资金”。 这表示："
+}, {
+  "tag": "UL",
+  "texts": ["Most of our existing services are in REST.", "We are more comfortable writing REST services.", "We want to support existing clients using REST APIs."],
+  "translations": ["我们大多数现有的服务都在REST中。", "我们更愿意编写REST服务。", "我们希望使用REST API支持现有的客户端。"]
+}, {
+  "tag": "P",
+  "text": "While many articles help you migrate from REST to GraphQL, they all force you to change your existing codebase or write a new one in front of your REST services.",
+  "translation": "尽管许多文章可帮助您从REST迁移到GraphQL，但它们都迫使您更改现有代码库或在REST服务之前编写新代码库。"
+}, {
+  "tag": "H1",
+  "text": "But wait…",
+  "translation": "可是等等…"
+}, {
+  "tag": "P",
+  "text": "If it works, then don’t touch it.",
+  "translation": "如果可以，请不要触摸它。"
+}, {
+  "tag": "P",
+  "text": "Wasn’t this the first rule of programming?",
+  "translation": "这不是编程的第一条规则吗？"
+}, {
+  "tag": "P",
+  "text": "Migrations can be painful, especially the magnitude of a huge codebase can be daunting. There is always a chance of breaking something.",
+  "translation": "迁移可能会很痛苦，尤其是庞大的代码库的规模可能令人生畏。 总是有可能破坏某些东西。"
+}, {
+  "tag": "H1",
+  "text": "Why can’t we just REST?",
+  "translation": "我们为什么不能只休息？"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*Zu0gEzZsgO-sKFwhGCbPNg.jpeg?q=20",
+  "type": "image",
+  "file": "1*Zu0gEzZsgO-sKFwhGCbPNg.jpeg"
+}, {
+  "tag": "P",
+  "text": "Let’s face the fact — We all are lazy by nature. We love simple hacks and easy solutions.",
+  "translation": "面对现实-我们所有人天生都是懒惰的。 我们喜欢简单的技巧和简单的解决方案。"
+}, {
+  "tag": "P",
+  "text": "What if there was a way wherein you could keep your REST services as is and still get a GraphQL layer on top of it without writing any code whatsoever? Sounds like a magic right? Well, Space Cloud helps make this possible.",
+  "translation": "如果有一种方法可以使您的REST服务保持原样，并且仍然在其上面获得GraphQL层而无需编写任何代码，该怎么办？ 听起来像魔术吗？ 好吧，太空云有助于实现这一目标。"
+}, {
+  "tag": "H1",
+  "text": "What is Space Cloud?",
+  "translation": "什么是空间云？"
+}, {
+  "tag": "P",
+  "text": "To keep things simple,",
+  "translation": "为了简单起见，"
+}, {
+  "tag": "P",
+  "text": "Space Cloud is an open-source web server which provides instant GraphQL and REST APIs on your database and microservices.",
+  "translation": "Space Cloud是一个开源Web服务器，可在您的数据库和微服务上提供即时的GraphQL和REST API。"
+}, {
+  "tag": "P",
+  "text": "The coolest part about Space Cloud is that all the APIs are realtime. You can optionally subscribe to changes in the database. This functionality comes in handy while making real-time apps.",
+  "translation": "关于Space Cloud的最酷的部分是所有API都是实时的。 您可以选择订阅数据库中的更改。 在制作实时应用程序时，此功能非常方便。"
+}, {
+  "tag": "P",
+  "text": "However, in this guide, we will stick to Space Cloud’s remote service module to migrate your REST services to GraphQL.",
+  "translation": "但是，在本指南中，我们将坚持使用Space Cloud的远程服务模块将REST服务迁移到GraphQL。"
+}, {
+  "tag": "P",
+  "text": "Like it already? Show your support ❤️ by giving us a star on Github.",
+  "translation": "已经喜欢了吗？ 通过在Github上给我们一颗星来表示支持❤️。"
+}, {
+  "tag": "H1",
+  "text": "The architecture",
+  "translation": "架构"
+}, {
+  "tag": "P",
+  "text": "This is what the final architecture of GraphQL over REST looks like:",
+  "translation": "这是基于REST的GraphQL的最终体系结构："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*zwsKPnb5_N64qI5JUIYvjA.png?q=20",
+  "type": "image",
+  "file": "1*zwsKPnb5_N64qI5JUIYvjA.png"
+}, {
+  "tag": "P",
+  "text": "Your apps make a GraphQL query to Space Cloud, which in turn hits a REST endpoint on your server. Space Cloud acts as a GraphQL proxy or API gateway in this case.",
+  "translation": "您的应用程序向Space Cloud进行GraphQL查询，这反过来又命中了服务器上的REST端点。 在这种情况下，Space Cloud充当GraphQL代理或API网关。"
+}, {
+  "tag": "P",
+  "text": "As you would have noticed, Space Cloud is a separate GraphQL layer that sits on top of your REST services. The beauty of this fact is that your REST services are still intact, and you can use them directly in your existing clients. This fact lets you ship your REST service to GraphQL without breaking your older clients.",
+  "translation": "如您所知，Space Cloud是位于REST服务之上的单独的GraphQL层。 这个事实的好处在于您的REST服务仍然完整无缺，您可以直接在现有客户端中使用它们。 这一事实使您可以将REST服务发送到GraphQL，而不会破坏较旧的客户端。"
+}, {
+  "tag": "P",
+  "text": "Great! We have understood what Space Cloud is and how it sits with our application. Let’s get straight to some action!",
+  "translation": "大！ 我们已经了解了什么是空间云以及它在应用程序中的位置。 让我们直接采取行动！"
+}, {
+  "tag": "H1",
+  "text": "What we will be building",
+  "translation": "我们将要建设的"
+}, {
+  "tag": "P",
+  "text": "In this guide, we will be building a simple arithmetic service which has the following endpoints:",
+  "translation": "在本指南中，我们将构建一个简单的算术服务，该服务具有以下端点："
+}, {
+  "tag": "UL",
+  "texts": ["Adder endpoint: POST /adder", "Doubler endpoint: GET /doubler/:num"],
+  "translations": ["加法器端点：POST / adder", "倍增端点：GET / doubler /：number"]
+}, {
+  "tag": "P",
+  "text": "The adder endpoint will return the sum of two numbers that it gets from the request body. The doubler endpoint, on the other hand, will return double of the number that it receives as the URL path parameter.",
+  "translation": "加法器端点将返回从请求正文获得的两个数字的和。 另一方面，doubler端点将返回其接收的数字的两倍，作为URL路径参数。"
+}, {
+  "tag": "P",
+  "text": "Great! Let’s start building things now!",
+  "translation": "大！ 现在开始构建东西！"
+}, {
+  "tag": "P",
+  "text": "Note: Don’t worry if you get stuck somewhere. You can always ping me on this Discord server, and I will help you out personally.",
+  "translation": "注意：如果卡在某个地方，请不要担心。 您可以随时在此Discord服务器上ping我，我将亲自为您提供帮助。"
+}, {
+  "tag": "H1",
+  "text": "Step 1: Writing a service",
+  "translation": "步骤1：编写服务"
+}, {
+  "tag": "P",
+  "text": "Note: Even if you are reading this from your mobile right now, you can still follow this guide along just by reading.",
+  "translation": "注意：即使您现在正在从手机中阅读此内容，仍然可以仅通过阅读来遵循本指南。"
+}, {
+  "tag": "P",
+  "text": "Let’s start by writing our REST service. We are going to write our REST service in NodeJS using Express.",
+  "translation": "让我们从编写REST服务开始。 我们将使用Express在NodeJS中编写REST服务。"
+}, {
+  "tag": "P",
+  "text": "Note: You can write your service in any language or framework as long as it can speak HTTP since that’s the protocol Space Cloud is going to use to communicate with your REST service.",
+  "translation": "注意：您可以使用任何语言或框架编写服务，只要它能说HTTP，因为Space Cloud将使用该协议与REST服务进行通信。"
+}, {
+  "tag": "P",
+  "text": "First, create a folder that serves as our working directory.",
+  "translation": "首先，创建一个文件夹作为我们的工作目录。"
+}, {
+  "tag": "P",
+  "text": "Create NPM project:",
+  "translation": "创建NPM项目："
+}, {
+  "tag": "PRE",
+  "text": "npm init -y",
+  "translation": "npm初始化-y"
+}, {
+  "tag": "P",
+  "text": "Install Express:",
+  "translation": "安装Express："
+}, {
+  "tag": "PRE",
+  "text": "npm install - save express",
+  "translation": "npm install-保存快递"
+}, {
+  "tag": "P",
+  "text": "Write express server",
+  "translation": "写快递服务器"
+}, {
+  "tag": "P",
+  "text": "Create a file index.js and copy-paste the following code:",
+  "translation": "创建一个文件index.js并复制粘贴以下代码："
+}, {
+  "tag": "PRE",
+  "text": "var express = require(\"express\");var app = express();app.use(express.json());app.post(\"/adder\", function(req, res) {  const num1 = req.body.num1;  const num2 = req.body.num2;  const response = { result: num1 + num2 };  res.status(200).send(JSON.stringify(response));});app.get(\"/doubler/:num\", function(req, res) {  const num = req.params.num;  const response = { result: num * 2 };  res.status(200).send(JSON.stringify(response));});var server = app.listen(5000, function () {    console.log(\"app running on port:\", server.address().port);});",
+  "translation": "var express = require（“ express”）; var app = express（）; app.use（express.json（））; app.post（“ / adder”，function（req，res）{const num1 = req.body .num1; const num2 = req.body.num2; const response = {结果：num1 + num2}; res.status（200）.send（JSON.stringify（response））;}）; app.get（“ / doubler /：num“，function（req，res）{const num = req.params.num; const response = {结果：num * 2}; res.status（200）.send（JSON.stringify（response））;} ）; var server = app.listen（5000，function（）{console.log（“在端口上运行的应用程序：”，server.address（）。port）;}）;"
+}, {
+  "tag": "P",
+  "text": "As you can see, the code is pretty straight forward. We have just created an HTTP server using ExpressJS that is listening on port 5000.",
+  "translation": "如您所见，该代码非常简单。 我们刚刚使用ExpressJS创建了一个HTTP服务器，该服务器正在侦听端口5000。"
+}, {
+  "tag": "P",
+  "text": "The server has two endpoints, as we discussed earlier:",
+  "translation": "如前所述，服务器具有两个端点："
+}, {
+  "tag": "UL",
+  "texts": ["Adder endpoint: We are expecting to receive two numbers — num1 and num2 from the POST body. All we are doing is returning the sum of these two numbers.", "Doubler endpoint: We are simply returning the number that we are getting from the URL path parameter."],
+  "translations": ["加法器端点：我们期望从POST正文收到两个数字num1和num2。 我们要做的就是返回这两个数字的和。", "Doubler端点：我们只是返回从URL路径参数获得的数字。"]
+}, {
+  "tag": "P",
+  "text": "That’s all we need to write for this service.",
+  "translation": "这就是我们需要为该服务编写的所有内容。"
+}, {
+  "tag": "P",
+  "text": "Note: For migrating your existing REST services, you don’t need to write/modify any code. And if your services are already running, you can skip the next step.",
+  "translation": "注意：要迁移现有的REST服务，您无需编写/修改任何代码。 如果您的服务已经在运行，则可以跳过下一步。"
+}, {
+  "tag": "H1",
+  "text": "Step 2: Start the service",
+  "translation": "步骤2：启动服务"
+}, {
+  "tag": "P",
+  "text": "Simply run the following command to run the service:",
+  "translation": "只需运行以下命令即可运行该服务："
+}, {
+  "tag": "PRE",
+  "text": "node index.js",
+  "translation": "节点index.js"
+}, {
+  "tag": "P",
+  "text": "Great! We have our REST service up and running. Let’s start Space Cloud and use this REST service via GraphQL.",
+  "translation": "大！ 我们已启动并运行REST服务。 让我们启动Space Cloud并通过GraphQL使用此REST服务。"
+}, {
+  "tag": "H1",
+  "text": "Step 3: Download Space Cloud",
+  "translation": "步骤3：下载太空云"
+}, {
+  "tag": "P",
+  "text": "You need to download the Space Cloud binary for your operating system, or you could build it directly from its source code. You need to have go version 1.13.0 or later to build it from source.",
+  "translation": "您需要为您的操作系统下载Space Cloud二进制文件，也可以直接从其源代码构建它。 您需要安装1.13.0或更高版本才能从源代码构建它。"
+}, {
+  "tag": "P",
+  "text": "Download the binary for your OS from here:",
+  "translation": "从此处下载适用于您的操作系统的二进制文件："
+}, {
+  "tag": "UL",
+  "texts": ["Mac", "Linux", "Windows"],
+  "translations": ["苹果电脑", "的Linux", "视窗"]
+}, {
+  "tag": "P",
+  "text": "You can unzip the compressed archive.",
+  "translation": "您可以解压缩压缩的存档。"
+}, {
+  "tag": "P",
+  "text": "For Linux / Mac: unzip space-cloud.zip && chmod +x space-cloud",
+  "translation": "对于Linux / Mac：解压缩space-cloud.zip && chmod + x space-cloud"
+}, {
+  "tag": "P",
+  "text": "For Windows: Right-click on the archive and select extract here.",
+  "translation": "对于Windows：右键单击存档，然后在此处选择解压缩。"
+}, {
+  "tag": "P",
+  "text": "To make sure if the binary is correct, type the following command from the directory where the binary is downloaded:",
+  "translation": "要确定二进制文件是否正确，请从下载二进制文件的目录中键入以下命令："
+}, {
+  "tag": "P",
+  "text": "For Linux / Mac: ./space-cloud -v",
+  "translation": "对于Linux / Mac：./space-cloud -v"
+}, {
+  "tag": "P",
+  "text": "For Windows: space-cloud.exe -v",
+  "translation": "对于Windows：space-cloud.exe -v"
+}, {
+  "tag": "P",
+  "text": "It should show something like this:",
+  "translation": "它应该显示如下内容："
+}, {
+  "tag": "PRE",
+  "text": "space-cloud-ee version 0.13.0",
+  "translation": "space-cloud-ee版本0.13.0"
+}, {
+  "tag": "H1",
+  "text": "Step 4: Start Space Cloud",
+  "translation": "步骤4：启动太空云"
+}, {
+  "tag": "P",
+  "text": "To start Space Cloud in dev mode, copy-paste the following command and hit enter:",
+  "translation": "要以开发人员模式启动Space Cloud，请复制粘贴以下命令，然后按Enter键："
+}, {
+  "tag": "P",
+  "text": "For Linux / Mac: ./space-cloud run — dev",
+  "translation": "对于Linux / Mac：./space-cloud运行-开发"
+}, {
+  "tag": "P",
+  "text": "For Windows: space-cloud.exe run — dev",
+  "translation": "对于Windows：运行space-cloud.exe-开发"
+}, {
+  "tag": "P",
+  "text": "You should see something like this when Space Cloud starts:",
+  "translation": "太空云启动时，您应该会看到类似以下内容："
+}, {
+  "tag": "PRE",
+  "text": "Creating a new server with id auto-1T5fA9E1B2jeNUbV8R0fOPubRngStarting http server on port: 4122Hosting mission control on http://localhost:4122/mission-control/Space cloud is running on the specified ports :D",
+  "translation": "创建一个ID为auto-1T5fA9E1B2jeNUbV8R0fOPubRng的新服务器在端口4122上启动http服务器在http：// localhost：4122 / mission-control / Space云上托管任务控制在指定端口上运行：D"
+}, {
+  "tag": "P",
+  "text": "Note: The — dev flag tells Space Cloud to run in dev mode (so that the admin UI does not ask for a username and password)",
+  "translation": "注意：-dev标志告诉Space Cloud在dev模式下运行（以便管理UI不需要输入用户名和密码）"
+}, {
+  "tag": "H1",
+  "text": "Step 5: Configure Space Cloud",
+  "translation": "步骤5：配置空间云"
+}, {
+  "tag": "P",
+  "text": "As you would have noticed, Space Cloud generates a config.yaml file in the working directory.",
+  "translation": "您会注意到，Space Cloud在工作目录中生成一个config.yaml文件。"
+}, {
+  "tag": "P",
+  "text": "Space Cloud needs this config file to function. The config file is used to load information like the REST servers to connect to and their endpoints.",
+  "translation": "Space Cloud需要此配置文件才能起作用。 配置文件用于加载信息，例如要连接的REST服务器及其端点。"
+}, {
+  "tag": "P",
+  "text": "Space Cloud has its own Mission Control (admin UI) to configure all of this quickly.",
+  "translation": "Space Cloud具有自己的任务控制（admin UI），可以快速配置所有这些功能。"
+}, {
+  "tag": "H2",
+  "text": "Open Mission Control",
+  "translation": "开放式任务控制"
+}, {
+  "tag": "P",
+  "text": "Head over to http://localhost:4122/mission-control to open Mission Control.",
+  "translation": "转到http：// localhost：4122 / mission-control打开任务控制。"
+}, {
+  "tag": "P",
+  "text": "Note: Replace localhost with the address of your Space Cloud if you are not running it locally.",
+  "translation": "注意：如果您不在本地运行本地主机，请用您的空间云的地址替换本地主机。"
+}, {
+  "tag": "H2",
+  "text": "Create project",
+  "translation": "建立专案"
+}, {
+  "tag": "P",
+  "text": "Click on Create a Project button to open the following screen:",
+  "translation": "单击创建项目按钮以打开以下屏幕："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*nCDGPEr63Q-sgA8s6BZK7g.png?q=20",
+  "type": "image",
+  "file": "1*nCDGPEr63Q-sgA8s6BZK7g.png"
+}, {
+  "tag": "P",
+  "text": "Give a name to your project.",
+  "translation": "为您的项目命名。"
+}, {
+  "tag": "P",
+  "text": "It doesn’t matter which database you choose here since we won’t be using it anyways.",
+  "translation": "您在这里选择哪个数据库都没有关系，因为我们还是不会使用它。"
+}, {
+  "tag": "P",
+  "text": "Hit Next to create the project.",
+  "translation": "单击下一步创建项目。"
+}, {
+  "tag": "H1",
+  "text": "Step 6: Add remote service to Space Cloud",
+  "translation": "步骤6：将远程服务添加到Space Cloud"
+}, {
+  "tag": "P",
+  "text": "Head to the Remote Services section in Mission Control.",
+  "translation": "转到任务控制中的“远程服务”部分。"
+}, {
+  "tag": "P",
+  "text": "Click on the Add first remote service button to open the following form:",
+  "translation": "单击“添加第一个远程服务”按钮以打开以下表单："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*Zqe9xFbcmzt9BPXrcEzp9A.png?q=20",
+  "type": "image",
+  "file": "1*Zqe9xFbcmzt9BPXrcEzp9A.png"
+}, {
+  "tag": "P",
+  "text": "Put the service name as arithmetic and service URL as:",
+  "translation": "将服务名称输入为算术，将服务URL输入为："
+}, {
+  "tag": "PRE",
+  "text": "http://localhost:5000",
+  "translation": "http://localhost:5000"
+}, {
+  "tag": "P",
+  "text": "Once you have added the remote service, you should be able to see it in the remote services table:",
+  "translation": "添加远程服务后，您应该能够在远程服务表中看到它："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*3L-qTTdhl97MNYjnqaQbEQ.png?q=20",
+  "type": "image",
+  "file": "1*3L-qTTdhl97MNYjnqaQbEQ.png"
+}, {
+  "tag": "P",
+  "text": "Click on the View button in the Actions column to open the service page.",
+  "translation": "单击“操作”列中的“查看”按钮以打开服务页面。"
+}, {
+  "tag": "P",
+  "text": "Click on the Add first remote endpoint button to open the following form:",
+  "translation": "单击“添加第一个远程端点”按钮以打开以下表单："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*d8eklLsVrInJJ1N4j0d1WA.png?q=20",
+  "type": "image",
+  "file": "1*d8eklLsVrInJJ1N4j0d1WA.png"
+}, {
+  "tag": "P",
+  "text": "Put the following adder endpoint:",
+  "translation": "放入以下加法器端点："
+}, {
+  "tag": "UL",
+  "texts": ["Name: adder", "Method: POST", "Path: /adder"],
+  "translations": ["名称：加法器", "方法：开机自检", "路径：/ adder"]
+}, {
+  "tag": "P",
+  "text": "Once again click on the Add button to add the doubler endpoint as well:",
+  "translation": "再次单击“添加”按钮以添加倍增器端点："
+}, {
+  "tag": "UL",
+  "texts": ["Name: doubler", "Method: GET", "Path: /doubler/{args.num}"],
+  "translations": ["名称：倍增器", "方法：GET", "路径：/ doubler / {args.num}"]
+}, {
+  "tag": "P",
+  "text": "Note: Don’t worry about the {args.num} part now. Just make sure you have put the Method as GET.",
+  "translation": "注意：现在不必担心{args.num}部分。 只要确保已将“方法”作为GET即可。"
+}, {
+  "tag": "H1",
+  "text": "Step 7: Query your REST service via GraphQL",
+  "translation": "步骤7：通过GraphQL查询您的REST服务"
+}, {
+  "tag": "P",
+  "text": "We have added our REST service and the two endpoints as well to Space Cloud. Time to query it using our unified GraphQL API.",
+  "translation": "我们已经将REST服务和两个端点也添加到了Space Cloud。 是时候使用我们统一的GraphQL API对其进行查询了。"
+}, {
+  "tag": "P",
+  "text": "Head to the Explorer section:",
+  "translation": "转到“资源管理器”部分："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*AWlA_3ZyQvtApo544k63Jw.png?q=20",
+  "type": "image",
+  "file": "1*AWlA_3ZyQvtApo544k63Jw.png"
+}, {
+  "tag": "P",
+  "text": "Try running the following GraphQL query in the GraphiQL explorer:",
+  "translation": "尝试在GraphiQL资源管理器中运行以下GraphQL查询："
+}, {
+  "tag": "PRE",
+  "text": "{  adder(num1: 10, num2: 20) @arithmetic {    result  }}",
+  "translation": "{adder（num1：10，num2：20）@arithmetic {结果}}"
+}, {
+  "tag": "P",
+  "text": "You should be able to see a response like this:",
+  "translation": "您应该能够看到如下响应："
+}, {
+  "tag": "PRE",
+  "text": "{  \"adder\": {    \"result\": 30  }}",
+  "translation": "{“ adder”：{“ result”：30}}"
+}, {
+  "tag": "P",
+  "text": "On getting the above GraphQL query, Space Cloud had made the following request to your REST service:",
+  "translation": "在获得上述GraphQL查询后，Space Cloud向您的REST服务发出了以下请求："
+}, {
+  "tag": "UL",
+  "texts": ["Method: POST", "Path: /adder", "Request Body:"],
+  "translations": ["方法：开机自检", "路径：/ adder", "请求正文："]
+}, {
+  "tag": "PRE",
+  "text": "{  \"num1\": 10,  \"num2\": 20}",
+  "translation": "{“ num1”：10，“ num2”：20}"
+}, {
+  "tag": "P",
+  "text": "This means the arguments that you pass in the GraphQL query are send as request body to your REST service.",
+  "translation": "这意味着您在GraphQL查询中传递的参数将作为请求正文发送到REST服务。"
+}, {
+  "tag": "P",
+  "text": "Let’s try querying the doubler endpoint with the following GraphQL query:",
+  "translation": "让我们尝试使用以下GraphQL查询来查询doubler端点："
+}, {
+  "tag": "PRE",
+  "text": "{  doubler(num: 50) @arithmetic {    result  }}",
+  "translation": "{doubler（num：50）@算术{结果}}"
+}, {
+  "tag": "P",
+  "text": "This GraphQL query is translated by SC to a REST call as follow:",
+  "translation": "SC将此GraphQL查询转换为REST调用，如下所示："
+}, {
+  "tag": "PRE",
+  "text": "GET /doubler/50",
+  "translation": "GET /双倍/ 50"
+}, {
+  "tag": "P",
+  "text": "If you remember the endpoint which we added to Space Cloud for doubler was:",
+  "translation": "如果您还记得我们添加到Space Cloud的倍增器的端点是："
+}, {
+  "tag": "PRE",
+  "text": "/doubler/{args.num}",
+  "translation": "/doubler/{args.num}"
+}, {
+  "tag": "P",
+  "text": "Based on this endpoint, Space Cloud understands that it has to pick an argument num from the GraphQL query and use it as a variable to form the path /doubler/50.",
+  "translation": "基于此端点，Space Cloud理解它必须从GraphQL查询中选择参数num并将其用作变量以形成路径/ doubler / 50。"
+}, {
+  "tag": "P",
+  "text": "On successful invocation, you should be able to see a response like this:",
+  "translation": "成功调用后，您应该能够看到如下响应："
+}, {
+  "tag": "PRE",
+  "text": "{  \"doubler\": {    \"result\": 100  }}",
+  "translation": "{“ doubler”：{“ result”：100}}"
+}, {
+  "tag": "H1",
+  "text": "Bonus — Service Chaining",
+  "translation": "奖励—服务链接"
+}, {
+  "tag": "P",
+  "text": "Having followed this guide till here successfully, we all deserve a well-earned bonus! Let’s see how this REST to GraphQL transition unlocks a super awesome power, Service Chaining, for us.",
+  "translation": "成功地遵循了本指南，到这里为止，我们都应获得丰厚的奖金！ 让我们看看从REST到GraphQL的过渡如何为我们释放超强大的功能Service Chaining。"
+}, {
+  "tag": "P",
+  "text": "Let’s take a scenario where:",
+  "translation": "让我们假设一个场景："
+}, {
+  "tag": "UL",
+  "texts": ["We want to sum two numbers using the adder service.", "Double the result we got from the adder service."],
+  "translations": ["我们想使用加法器服务对两个数字求和。", "将我们从加法器服务获得的结果加倍。"]
+}, {
+  "tag": "H2",
+  "text": "The REST way",
+  "translation": "REST方式"
+}, {
+  "tag": "P",
+  "text": "If we were using REST in our client-side code, the above task would have looked like this:",
+  "translation": "如果我们在客户端代码中使用REST，则上述任务将看起来像这样："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*WXnD7Fd26m-iNVV2czzdxg.png?q=20",
+  "type": "image",
+  "file": "1*WXnD7Fd26m-iNVV2czzdxg.png"
+}, {
+  "tag": "P",
+  "text": "Notice, how we are making two requests from the frontend which means twice the roundtrip time. It leads to a slow response time and poor user experience.",
+  "translation": "注意，我们如何从前端发出两个请求，这意味着往返时间是两倍。 这会导致响应时间慢和用户体验差。"
+}, {
+  "tag": "H2",
+  "text": "The GraphQL way",
+  "translation": "GraphQL方式"
+}, {
+  "tag": "P",
+  "text": "Now if we switched the client from REST to GraphQL using Space Cloud, our requests will look like this:",
+  "translation": "现在，如果使用太空云将客户端从REST切换到GraphQL，我们的请求将如下所示："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*K2qvEld2st4RmMwbN5XXwA.png?q=20",
+  "type": "image",
+  "file": "1*K2qvEld2st4RmMwbN5XXwA.png"
+}, {
+  "tag": "P",
+  "text": "Notice, here we are making only one GraphQL query from the frontend to the backend (Space Cloud). Space Cloud, in turn, is making two requests to your REST server to fulfil this request. However, the round trips of these requests (from Space Cloud to your server) are negligible as they are in the same network.",
+  "translation": "注意，这里我们只进行从前端到后端（太空云）的一个GraphQL查询。 反过来，Space Cloud正在向您的REST服务器发出两个请求以实现此请求。 但是，这些请求（从Space Cloud到服务器）的往返行程可以忽略不计，因为它们在同一网络中。"
+}, {
+  "tag": "P",
+  "text": "The GraphQL query to Space Cloud to achieve the above task will be:",
+  "translation": "向Space Cloud查询以完成上述任务的GraphQL将是："
+}, {
+  "tag": "PRE",
+  "text": "{  adder(num1: 10, num2: 20) @arithmetic {    doubler(num: \"adder.result\") @arithmetic {      result    }  }}",
+  "translation": "{adder（num1：10，num2：20）@arithmetic {doubler（num：“ adder.result”）@arithmetic {result}}}"
+}, {
+  "tag": "P",
+  "text": "Notice, how we are calling the doubler service after the response of adder service and passing the result of adder service to the doubler as an argument.",
+  "translation": "注意，我们如何在加法器服务响应后调用doubler服务，并将加法器服务的结果作为参数传递给doubler。"
+}, {
+  "tag": "P",
+  "text": "The response for this query will look like this:",
+  "translation": "该查询的响应如下所示："
+}, {
+  "tag": "PRE",
+  "text": "{  \"adder\": {    \"doubler\": {      \"result\": 60    }  }}",
+  "translation": "{“ adder”：{“ doubler”：{“ result”：60}}}"
+}, {
+  "tag": "P",
+  "text": "As you would have guessed we got 60 as a result ((10 + 20) * 2).",
+  "translation": "如您所料，结果是60（（10 + 20）* 2）。"
+}, {
+  "tag": "P",
+  "text": "Additional tip: If you wanted to query two unrelated REST services parallelly, you could have done that too in a single request like this:",
+  "translation": "附加提示：如果要并行查询两个不相关的REST服务，则也可以在单个请求中完成此操作，如下所示："
+}, {
+  "tag": "PRE",
+  "text": "{  adder(num1: 10, num2: 20) @arithmetic {    result  }  doubler(num: 50) @arithmetic {    result  }}",
+  "translation": "{adder（num1：10，num2：20）@arithmetic {结果} doubler（num：50）@arithmetic {结果}}"
+}, {
+  "tag": "P",
+  "text": "I will leave the response part of this query to you as an assignment😛.",
+  "translation": "我将把该查询的响应部分留给您作为作业😛。"
+}, {
+  "tag": "H1",
+  "text": "Conclusion",
+  "translation": "结论"
+}, {
+  "tag": "P",
+  "text": "First of all, give yourself a pat on the back for having followed this guide to the end.",
+  "translation": "首先，请遵循下面的指南，以帮助自己。"
+}, {
+  "tag": "P",
+  "text": "We learned that:",
+  "translation": "我们了解到："
+}, {
+  "tag": "UL",
+  "texts": ["Migrating from REST to GraphQL doesn’t require code changes.", "We don’t need to choose between REST and GraphQL. We can support both REST and GraphQL together in the same application.", "Using GraphQL with Space Cloud provides us with some neat networking benefits and helps you reduce your round trips."],
+  "translations": ["从REST迁移到GraphQL不需要更改代码。", "我们不需要在REST和GraphQL之间进行选择。 我们可以在同一应用程序中同时支持REST和GraphQL。", "将GraphQL与Space Cloud一起使用可为我们提供一些巧妙的联网好处，并帮助您减少往返行程。"]
+}, {
+  "tag": "P",
+  "text": "Well, there’s a lot more you can do with Space Cloud other than migrating from REST to GraphQL (eg: cross-database joins). Give Space Cloud a star on Github if you like it ❤️. Join our Discord server if you wanna bounce off some ideas or have any questions.",
+  "translation": "嗯，除了从REST迁移到GraphQL（例如，跨数据库联接）之外，您还可以使用Space Cloud做更多的事情。 如果您喜欢，请在Github上给Space Cloud一颗星星❤️。 如果您想跳出一些想法或有任何疑问，请加入我们的Discord服务器。"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Noorain - YourTechBud的文章《REST to GraphQL in minutes》，参考：https://medium.com/spaceuptech/rest-to-graphql-in-minutes-44f3b86cf79f)",
+  "translation": "（本文翻译自Noorain-YourTechBud的文章《 REST to GraphQL在几分钟内》，参考：https：//medium.com/spaceuptech/rest-to-graphql-in-minutes-44f3b86cf79f）"
+}]
