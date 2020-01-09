@@ -1,0 +1,192 @@
+[{
+  "tag": "H1",
+  "text": "Takeaways",
+  "translation": "外卖"
+}, {
+  "tag": "P",
+  "text": "The way you tackle a problem is extremely important. Never, ever, EVER, start a problem off by instantly coding what you think is the solution.",
+  "translation": "解决问题的方式非常重要。 永远，永远，永远，通过立即编码您认为的解决方案来解决问题。"
+}, {
+  "tag": "P",
+  "text": "Interview problems can look deceptively easy. It should also be noted that we need to know what data structures we have access to, and how we can leverage them to solve the problem at hand. For example, if we did not know what a hashtable was, we would have had a really difficult time finding a more optimal solution than the naive O(n²) approach.",
+  "translation": "面试问题看起来很容易。 还应注意，我们需要知道我们可以访问哪些数据结构，以及如何利用它们来解决当前的问题。 例如，如果我们不知道哈希表是什么，那么与天真的O（n²）方法相比，我们将很难找到最佳解决方案。"
+}, {
+  "tag": "H1",
+  "text": "Evaluating Your Solution",
+  "translation": "评估您的解决方案"
+}, {
+  "tag": "P",
+  "text": "While we already evaluated our initial solution’s complexities to recognize that it was inefficient, it does not hurt to reiterate the space and runtime complexity of your solution after implementing your optimal solution. Let’s define N to be the length of our input array. Since we are populating our hashtable with N elements in all cases, we can say that our space complexity is O(N). We are also walking through the array at a minimum one time, so for runtime, we can denote that it is O(N), on the average case. Checking if an element exists within a hashtable, on average, is O(1). In reality, our runtime would be similar to O(N+(N*1)), but this reduces to simply be O(N).",
+  "translation": "尽管我们已经评估了初始解决方案的复杂性以认识到效率低下，但是在实施最佳解决方案后重申解决方案的空间和运行时复杂性并没有什么坏处。 让我们定义N为输入数组的长度。 由于我们在所有情况下都用N个元素填充哈希表，因此可以说我们的空间复杂度为O（N）。 我们还至少要遍历数组一次，因此对于运行时，平均情况下，我们可以表示它是O（N）。 平均而言，检查哈希表中是否存在元素为O（1）。 实际上，我们的运行时类似于O（N +（N * 1）），但这减少为O（N）。"
+}, {
+  "tag": "H1",
+  "text": "Reviewing Your Solution",
+  "translation": "查看您的解决方案"
+}, {
+  "tag": "P",
+  "text": "At this point in the interview, you want to use the example you created in the previous step and trace through your code, line by line. This will exhibit to your interviewer that you possess strong tracing and logic skills. As an exercise, I suggest you trace through my/your own solution to this problem before running it on your computer. Some companies, such as Google and Facebook, don’t run your code on a computer, so this skill is 100% vital to develop, while other companies such as Uber & Airbnb will also expect your code to compile and run correctly against test cases.",
+  "translation": "在访谈的这一点上，您想使用在上一步中创建的示例，并逐行跟踪代码。 这将向您的面试官表明您拥有强大的追踪和逻辑技能。 作为练习，我建议您在自己的计算机上运行它之前，先找到自己的解决方案来解决此问题。 有些公司（例如Google和Facebook）不会在计算机上运行您的代码，因此此技能对于100％的开发至关重要，而其他公司（例如Uber和Airbnb）也希望您的代码能够在测试用例中正确编译并运行 。"
+}, {
+  "tag": "H1",
+  "text": "Implementing Your Solution",
+  "translation": "实施您的解决方案"
+}, {
+  "tag": "P",
+  "text": "Given the previous steps, this should be the most trivial step, as we already have a blueprint of what exactly we want.",
+  "translation": "鉴于前面的步骤，这应该是最简单的步骤，因为我们已经有了我们想要的东西的蓝图。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/joey-colon/c54e6c513a790c679dc1c709c7f4d48d/raw/ef0e665038212b4a52b81f56f6d94b86b635cfcb/twoSum.js",
+  "code": "const twoSum = (arr, target) => {\n  const hashTable = {};\n  populateTable(hashTable, arr);\n\n  for (let i = 0; i < arr.length; i++) {\n    const desiredValue = target - arr[i];\n    if (validValueExists(desiredValue, hashTable, i)) {\n      return [i, hashTable[desiredValue]];\n    }\n  }\n\n  return [-1, -1];\n};\n\nconst validValueExists = (desiredValue, hashTable, currentIndex) => {\n  return (\n    // Make sure there exists a key with `desiredValue`.\n    hashTable.hasOwnProperty(desiredValue)\n    // Make sure we aren't re-using the same index.\n    && hashTable[desiredValue] !== currentIndex\n  );\n}\n\nconst populateTable = (hashTable, arr) => {\n  for (let i = 0; i < arr.length; i++) {\n    hashTable[arr[i]] = i;\n  }\n}\n\n\nconsole.log(twoSum([2, 1, 4, 3], 6)); // [0, 2]\nconsole.log(twoSum([2, 7, 11, 15], 9)); // [0, 1]"
+}, {
+  "tag": "H1",
+  "text": "Planning the Solution",
+  "translation": "规划解决方案"
+}, {
+  "tag": "P",
+  "text": "This is the time where we want to write out, in plain English, what we want our algorithm to do. This will include necessary helper functions we would want to leverage — make sure you utilize this modular approach of coding to save yourself time on the real task at hand.",
+  "translation": "这是我们想要用简单的英文写出我们希望算法执行的操作的时间。 这将包括我们想利用的必要辅助功能-确保您使用这种模块化的编码方法来节省您在实际任务上的时间。"
+}, {
+  "tag": "P",
+  "text": "The first thing we want to do is populate our hashtable with keys that are the values in the array, and their respective values to be the index in which we saw them.",
+  "translation": "我们要做的第一件事是用数组中的键（即它们各自的值作为我们在其中看到它们的索引）填充哈希表。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*-5t1e2o7D0gQfPbkxXIO-A.png?q=20",
+  "type": "image",
+  "file": "1*-5t1e2o7D0gQfPbkxXIO-A.png"
+}, {
+  "tag": "P",
+  "text": "So in the example we created above, we would expect hashTable to contain:",
+  "translation": "因此，在上面创建的示例中，我们希望hashTable包含："
+}, {
+  "tag": "PRE",
+  "text": "{   ‘1’: 1,  ‘2’: 0,  ‘3’: 3,  ‘4’: 2}",
+  "translation": "{‘1’：1，‘2’：0，‘3’：3，‘4’：2}"
+}, {
+  "tag": "P",
+  "text": "After we have this initialized, what else do we want to do? All we actually need to do is simply walk through the array once more and check if the complement of our target exists in our hashtable. In other words, does target — arr[i] exist in our hashtable? If it does, great, we found the solution; otherwise, we need to keep walking through the array and keep doing this check.",
+  "translation": "初始化之后，我们还要做什么？ 我们实际上需要做的只是简单地再次遍历数组，并检查哈希表中是否存在目标的补码。 换句话说，哈希表中是否存在target — arr [i]？ 如果可以，那么我们找到了解决方案。 否则，我们需要继续遍历数组并继续执行此检查。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*1dX2ZtkTIYna7gr37mFY3A.png?q=20",
+  "type": "image",
+  "file": "1*1dX2ZtkTIYna7gr37mFY3A.png"
+}, {
+  "tag": "P",
+  "text": "With this step in UMPIRE, you should try to focus on your approach as much as possible, and make what you write as easy to read as possible, so that you can reference it when you start writing your compilable code. We may not want the validValueExists() or getIndex() method, but for the sake of readability, we just want it to be as readable as possible at this point. In my own interviews, I would modularize my code as much as possible. Since we are under a time constraint in our interview, we can always note what each method will do and in the event of running out of time (it happens), the interviewer knew what our intentions were.",
+  "translation": "通过UMPIRE的这一步骤，您应该尝试尽可能地专注于您的方法，并使编写的内容尽可能易于阅读，以便在开始编写可编译代码时可以引用它。 我们可能不希望使用validValueExists（）或getIndex（）方法，但是出于可读性考虑，我们只希望此时使其尽可能可读。 在我自己的采访中，我将尽可能地模块化我的代码。 由于我们在面试中受时间限制，因此我们总是可以注意到每种方法的作用，并且在时间用完（发生）的情况下，面试官知道我们的意图是什么。"
+}, {
+  "tag": "P",
+  "text": "Let’s convert this into a compilable code.",
+  "translation": "让我们将其转换为可编译的代码。"
+}, {
+  "tag": "H1",
+  "text": "Matching the Problem",
+  "translation": "匹配问题"
+}, {
+  "tag": "P",
+  "text": "In our previous approach, we utilized no data structures and our algorithm was running slower than we like — why is that? We were revisiting indexes we already have seen at previous iterations, which means we were doing unneeded computations.",
+  "translation": "在我们以前的方法中，我们没有使用任何数据结构，并且我们的算法运行得比我们想要的慢—为什么呢？ 我们正在重新访问先前迭代中已经看到的索引，这意味着我们正在进行不必要的计算。"
+}, {
+  "tag": "P",
+  "text": "Since the array is unsorted, we have to visit every index of the array at least once in order to know what the contents of our array actually holds. We need to utilize a different data structure that can represent the contents in our array. Ideally, we would like to have a data structure that can tell us quickly whether or not an element exists. To check if an array contains a specific element, we must look through the entire array (since it is sorted) and this slows us down a lot for each iteration. To make the algorithm run faster, my thoughts instantly jump to using a hashtable.",
+  "translation": "由于数组是未排序的，因此我们必须至少访问数组的每个索引一次，以便知道数组的内容实际包含什么。 我们需要利用不同的数据结构来表示数组中的内容。 理想情况下，我们希望有一个可以快速告诉我们元素是否存在的数据结构。 要检查数组是否包含特定元素，我们必须浏览整个数组（因为它已排序），这会使我们每次迭代的速度大大降低。 为了使算法运行更快，我的想法立即跳到使用哈希表。"
+}, {
+  "tag": "P",
+  "text": "Hashtables are a key-value paired data structure. On the average case, we are able to check if a key exists in constant time. In the problem statement, we want to return the indexes that make up our target, so we can map the value to be the index in which we say the key.",
+  "translation": "哈希表是键-值配对的数据结构。 在一般情况下，我们可以检查密钥是否在恒定时间内存在。 在问题语句中，我们想返回组成目标的索引，因此我们可以将值映射为我们说出键的索引。"
+}, {
+  "tag": "H1",
+  "text": "Understanding the Problem",
+  "translation": "了解问题"
+}, {
+  "tag": "P",
+  "text": "The problem statement seems to be pretty clear. In layman’s terms, we want to find two elements within our array that add up to the given target; however, we cannot re-use the same element (both indexes need to be unique from each other). In this step of UMPIRE, I would create my own example and think about how I can approach the answer:",
+  "translation": "问题陈述似乎很清楚。 用外行的话来说，我们想在数组中找到两个元素，它们共同构成给定目标。 但是，我们不能重复使用同一元素（两个索引必须彼此唯一）。 在UMPIRE的这一步中，我将创建自己的示例并考虑如何找到答案："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*Y_XyTMDZ3x6bMRIpYOk-jQ.png?q=20",
+  "type": "image",
+  "file": "1*Y_XyTMDZ3x6bMRIpYOk-jQ.png"
+}, {
+  "tag": "P",
+  "text": "With the example we were given, this example seems to be okay; however, we are making some bold assumptions. We should note that both arrays are in sorted (ascending) order, but assumes the array will always be sorted. We cannot make the assumption that this will always be true. This is a question I would instantly clarify with my interviewer, as it can dramatically change the complexity of our algorithm. In this problem, the interviewer lets us know that we are not guaranteed that the array is in sorted order. Let’s modify our existing example.",
+  "translation": "对于我们给出的示例，此示例似乎还可以。 但是，我们正在做出一些大胆的假设。 我们应该注意，两个数组都按排序（升序）顺序，但是假定该数组将始终被排序。 我们不能假设这将永远是正确的。 我会立即与面试官澄清这个问题，因为它会极大地改变我们算法的复杂性。 在这个问题上，面试官让我们知道，我们不能保证数组按排序顺序。 让我们修改现有示例。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*a9Rj4cQrjdmUFw3_6xEyxA.png?q=20",
+  "type": "image",
+  "file": "1*a9Rj4cQrjdmUFw3_6xEyxA.png"
+}, {
+  "tag": "P",
+  "text": "Another property I am taking note of with the given example is that every element in the array is unique. Will this always be true in the arrays I’m given? In other words, is the array [1,1,3,3] a valid input array? We know that we cannot re-use the same index in our return type, but the question does not specify whether or not elements can be repeated. In this case, our interviewer will let us know that all elements will be unique. Cool. Let’s go to the drawing board and figure out some approaches.",
+  "translation": "我在给定示例中注意到的另一个属性是数组中的每个元素都是唯一的。 在我得到的数组中，这是否总是正确的？ 换句话说，数组[1,1,3,3]是有效的输入数组吗？ 我们知道我们不能在返回类型中重复使用相同的索引，但是问题并没有指定是否可以重复元素。 在这种情况下，我们的面试官将让我们知道所有要素都是唯一的。 凉。 让我们转到绘图板上，找出一些方法。"
+}, {
+  "tag": "P",
+  "text": "The most intuitive approach to me is to take the ith index and check against every other index in my array to check if there exists an element such that, arr[i] + arr[other_index]= target",
+  "translation": "对我而言，最直观的方法是采用ith索引，并对照数组中的所有其他索引检查是否存在一个元素，使得arr [i] + arr [other_index] = target"
+}, {
+  "tag": "P",
+  "text": "With this approach, for index 0, it would look something like the following:",
+  "translation": "使用这种方法，对于索引0，它看起来类似于以下内容："
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*WDPYLQlDmT8PlziTVAFGVQ.png?q=20",
+  "type": "image",
+  "file": "1*WDPYLQlDmT8PlziTVAFGVQ.png"
+}, {
+  "tag": "P",
+  "text": "This solution does work. For each index, we are simply checking whether or not there exists that other complement to hit our target. The issue with this, is we have to assume that the array in our algorithm is arbitrarily large. At every index, if we are checking the entire array, we are doing O(N) work at each index.",
+  "translation": "此解决方案确实有效。 对于每个索引，我们只是在检查是否存在其他补充来达到我们的目标。 问题在于，我们必须假设算法中的数组任意大。 在每个索引处，如果我们要检查整个数组，则在每个索引处都进行O（N）工作。"
+}, {
+  "tag": "P",
+  "text": "This will devolve into an algorithm that is running at O(N*N) or O(N²). Let’s think about how we can do better.",
+  "translation": "这将演变为以O（N * N）或O（N²）运行的算法。 让我们考虑一下如何做得更好。"
+}, {
+  "tag": "H1",
+  "text": "Solving Google’s 2020 Most Frequently Asked Whiteboarding Question",
+  "translation": "解决Google 2020年最常见的白板问题"
+}, {
+  "tag": "H2",
+  "text": "Taking a deeper look at the most frequently asked Google coding question",
+  "translation": "深入了解最常见的Google编码问题"
+}, {
+  "tag": "P",
+  "text": "If one of your New Years' goals is to obtain a job at a big tech company and have no experience with answering algorithm questions, you’re in luck. If you aren’t aware of how technical interviews are conducted, you will typically be asked 1–2 algorithm-focused problems in a one-hour window, specifically 45 minutes for Google. Today, we’ll be taking a look at the most frequently asked Google Whiteboarding Question of 2020 utilizing the UMPIRE method, which I explained in a previous post. Let’s get started.",
+  "translation": "如果您新年的目标之一是在一家大型科技公司找到一份工作，并且没有回答算法问题的经验，那么您很幸运。 如果您不了解进行技术面试的方式，通常会在一个小时的窗口中向您询问1–2个针对算法的问题，对于Google来说则是45分钟。 今天，我们将探讨使用UMPIRE方法的2020年最常见的Google白板问题，我在上一篇文章中对此进行了解释。 让我们开始吧。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*LgCpEADCgkzx881opx3j2A.jpeg?q=20",
+  "type": "image",
+  "file": "1*LgCpEADCgkzx881opx3j2A.jpeg"
+}, {
+  "tag": "H1",
+  "text": "Problem Statement",
+  "translation": "问题陈述"
+}, {
+  "tag": "P",
+  "text": "Given an array of integers, return indices of the two numbers such that they add up to a specific target.",
+  "translation": "给定一个整数数组，返回两个数字的索引，以便它们加起来成为一个特定的目标。"
+}, {
+  "tag": "P",
+  "text": "You may assume that each input would have exactly one solution, and you may not use the same element twice.",
+  "translation": "您可以假定每个输入都只有一个解决方案，并且您可能不会两次使用同一元素。"
+}, {
+  "tag": "P",
+  "text": "Example:",
+  "translation": "例："
+}, {
+  "tag": "PRE",
+  "text": "Given nums = [2, 7, 11, 15], target = 9,Because nums[0] + nums[1] = 2 + 7 = 9,return [0, 1].",
+  "translation": "给定nums = [2，7，11，15]，目标= 9，因为nums [0] + nums [1] = 2 + 7 = 9，则返回[0，1]。"
+}, {
+  "tag": "P",
+  "text": "Credits: https://leetcode.com/problems/two-sum/",
+  "translation": "学分：https：//leetcode.com/problems/two-sum/"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Joey Colon的文章《Solving Google’s 2020 Most Frequently Asked Whiteboarding Question》，参考：https://medium.com/better-programming/solving-googles-most-frequently-asked-whiteboarding-question-1c2eacaf1523)",
+  "translation": "（本文翻译自Joey Colon的文章《解决Google 2020年最常见的白板问题》，参考：https：//medium.com/better-programming/solving-googles-most-frequently-asked-whiteboarding-question-1c2eacaf1523）"
+}]
