@@ -1,0 +1,166 @@
+[{
+  "tag": "H1",
+  "text": "6. Hard-Coding",
+  "translation": "6.硬编码"
+}, {
+  "tag": "P",
+  "text": "Hard-coding is the software development practice of embedding data directly into the source code of a program or other executable objects, as opposed to obtaining the data from external sources or generating it at run-time.",
+  "translation": "硬编码是一种将数据直接嵌入程序或其他可执行对象的源代码中的软件开发实践，而不是从外部源获取数据或在运行时生成数据。"
+}, {
+  "tag": "P",
+  "text": "Values that are hard-coded don’t allow for configuration; they are set in stone. Hard-coding is considered an anti-pattern or at least a very bad code smell.",
+  "translation": "硬编码的值不允许进行配置； 它们被固定在石头上。 硬编码被认为是反模式，或者至少是非常难闻的代码味道。"
+}, {
+  "tag": "P",
+  "text": "Things that are being hard-coded the most, for whatever (sometimes maybe even valid) reason, are passwords and file locations.",
+  "translation": "无论出于何种原因（有时甚至是有效的），最常被硬编码的是密码和文件位置。"
+}, {
+  "tag": "P",
+  "text": "A scenario where you see a lot of hard-coded passwords is for the authentication of an external service or API. Those credentials often get hard-coded, which isn’t considered best practice.",
+  "translation": "您看到许多硬编码密码的情况是用于外部服务或API的身份验证。 这些凭证通常经过硬编码，这不是最佳做法。"
+}, {
+  "tag": "P",
+  "text": "If you find yourself hard-coding a lot of things, you should really take a critical look at your code, because most of the time it isn’t the best way to solve a problem.",
+  "translation": "如果您发现自己对很多事情进行了硬编码，则应该认真看一下代码，因为在大多数情况下，这并不是解决问题的最佳方法。"
+}, {
+  "tag": "H1",
+  "text": "5. Messy Formatting of Code",
+  "translation": "5.凌乱的代码格式"
+}, {
+  "tag": "P",
+  "text": "Messing up the formatting of code is something that is often done by people who don’t have a lot of programming experience. Most developers, with some years of experience, will probably nod their head if you ask them if they know a tester or data scientist who messed up the formatting of code. This comes from a lack of experience—unless they’re working with a programming language like Python, which saves you from a lot of this.",
+  "translation": "弄乱代码的格式通常是由没有太多编程经验的人完成的。 如果您问他们是否认识弄乱了代码格式的测试人员或数据科学家，那么拥有多年经验的大多数开发人员可能会点头。 这是由于缺乏经验而引起的，除非他们使用的是Python之类的编程语言，否则您将无法获得很多帮助。"
+}, {
+  "tag": "P",
+  "text": "One of the most common ways to solve messy formatting is by using a linter. All modern IDEs also have the possibility to fix this for you. Sometimes you have to install a plugin, and sometimes it can be done out of the box.",
+  "translation": "解决杂乱格式的最常见方法之一是使用短绒。 所有现代IDE也都可以为您修复此问题。 有时您必须安装插件，有时可以直接使用。"
+}, {
+  "tag": "H1",
+  "text": "4. Magic Numbers and String",
+  "translation": "4.魔术数字和字符串"
+}, {
+  "tag": "P",
+  "text": "Coming from non-descriptive naming of variables, we go to the next item on this list, which is about not assigning values to a variable. This is also known as magic numbers or strings.",
+  "translation": "来自变量的非描述性命名，我们转到此列表的下一项，即不为变量赋值。 这也称为魔术数字或字符串。"
+}, {
+  "tag": "P",
+  "text": "A definition by Wikipedia:",
+  "translation": "维基百科的定义："
+}, {
+  "tag": "P",
+  "text": "Magic numbers are unique values with unexplained meaning or multiple occurrences that can and should be replaced with named constants.",
+  "translation": "幻数是具有无法解释的含义的唯一值，或者是多次出现，可以并且应该用命名常量代替。"
+}, {
+  "tag": "P",
+  "text": "Let’s take a look at the following code snippet:",
+  "translation": "让我们看一下以下代码片段："
+}, {
+  "tag": "PRE",
+  "text": "for ($i = 1; $i <= 52; $i++) {    ...}",
+  "translation": "for（$ i = 1; $ i <= 52; $ i ++）{...}"
+}, {
+  "tag": "P",
+  "text": "The number 52 in this example is a magic number. No one understands why that number 52 is there and what it represents. And why is it 52? Why can’t it be 64? Are those the number of weeks in a year?",
+  "translation": "在此示例中，数字52是一个幻数。 没有人知道为什么会有数字52及其代表什么。 为什么是52？ 为什么不能是64？ 那是一年中的几周？"
+}, {
+  "tag": "P",
+  "text": "What’s way more clarifying is:",
+  "translation": "更明确的是："
+}, {
+  "tag": "PRE",
+  "text": "$cardDeckSize = 52;for ($i = 1; $i <= $cardDeckSize; $i++) {    ...}",
+  "translation": "$ cardDeckSize = 52; for（$ i = 1; $ i <= $ cardDeckSize; $ i ++）{...}"
+}, {
+  "tag": "P",
+  "text": "Now everybody understands that we’re looping over all the cards in a deck. It gives context to other developers. On top of that, it’s much easier to change the value because it is not duplicated. It is stored in a variable only once.",
+  "translation": "现在，每个人都知道我们正在遍历纸牌中的所有纸牌。 它为其他开发人员提供了上下文。 最重要的是，更改值很容易，因为它不会重复。 它仅在变量中存储一次。"
+}, {
+  "tag": "P",
+  "text": "Magic numbers are often used multiple times in different places within a program, which makes it error-prone.",
+  "translation": "幻数通常在程序中的不同位置多次使用，这使其容易出错。"
+}, {
+  "tag": "P",
+  "text": "The same can be said and done for strings:",
+  "translation": "字符串也可以这样说和做："
+}, {
+  "tag": "PRE",
+  "text": "if (userPasswordIsValid($user, \"6yP4cZ\".$password)) {    ...}",
+  "translation": "如果（userPasswordIsValid（$ user，“ 6yP4cZ”。$ password））{...}"
+}, {
+  "tag": "P",
+  "text": "What is 6yP4cZ? It seems pretty random.",
+  "translation": "什么是6yP4cZ？ 似乎很随意。"
+}, {
+  "tag": "PRE",
+  "text": "$salt = \"6yP4cZ\";if (userPasswordIsValid($user, $salt.$password)) {    ...}",
+  "translation": "$ salt =“ 6yP4cZ”; if（userPasswordIsValid（$ user，$ salt。$ password））{...}"
+}, {
+  "tag": "P",
+  "text": "Aha, now it makes sense!",
+  "translation": "啊哈，这很有道理！"
+}, {
+  "tag": "H1",
+  "text": "3. Non-Descriptive Naming of Variables",
+  "translation": "3.变量的非描述性命名"
+}, {
+  "tag": "P",
+  "text": "I wrote a post a while ago about some simple rules that you can follow to create good names for your variables. And I can’t emphasize enough how important good variable names are. Most of the time, you are not the only developer working on a project. Other developers need to understand your code as well.",
+  "translation": "不久前，我写了一篇关于一些简单规则的文章，您可以遵循这些规则为变量创建好名字。 而且我不能足够强调好变量名称的重要性。 大多数时候，您不是唯一从事项目工作的开发人员。 其他开发人员也需要了解您的代码。"
+}, {
+  "tag": "P",
+  "text": "As I stated in that post, choosing good names takes time, but it saves more time than it takes.",
+  "translation": "就像我在那篇文章中所说的那样，选择好名字需要花费时间，但是节省的时间比花费的时间更多。"
+}, {
+  "tag": "H1",
+  "text": "2. Commented-Out Code",
+  "translation": "2.注释掉的代码"
+}, {
+  "tag": "P",
+  "text": "We’ve all seen entire blocks of code containing multiple functions being commented out. No one knows why it’s still there. And no one knows if that block of commented-out code is still relevant. Yet, no one deletes that block of code, which is what you should really do with it. The reason no one deletes this block of code is that everyone assumes that someone else might need it.",
+  "translation": "我们都已经看到注释掉包含多个功能的整个代码块。 没有人知道为什么它仍然存在。 而且没有人知道那段注释掉的代码是否仍然有用。 但是，没有人会删除那段代码，这是您真正应该做的。 没有人删除此代码块的原因是，每个人都认为其他人可能需要它。"
+}, {
+  "tag": "P",
+  "text": "Just delete that piece of commented-out code. Even though the code is not in the latest revision, if someone has plans with it the code is still available in version control. But that’s just my two cents.",
+  "translation": "只需删除该注释掉的代码即可。 即使该代码不是最新版本，如果有人对其进行了计划，则该代码仍可在版本控制中使用。 但这只是我的两分钱。"
+}, {
+  "tag": "H1",
+  "text": "1. Too Many Things Going On in One Function",
+  "translation": "1.一项功能中发生的事情太多"
+}, {
+  "tag": "P",
+  "text": "According to the single responsibility pattern, a function should only be responsible for doing one thing. And one thing only. I’ve seen way too many functions that fetch, process, and present data all in one function. It’s considered better programming to split this up. One function that fetches the data, one that processes it, and another one that presents the data.",
+  "translation": "根据单一责任模式，一个功能只能负责一件事情。 而且只有一件事。 我已经看到太多的功能可以在一个功能中提取，处理和呈现数据。 人们认为最好的编程方法是将其分开。 一个函数获取数据，一个处理数据，另一个呈现数据。"
+}, {
+  "tag": "P",
+  "text": "The reason it is important to keep a function focused on a single concern is that it makes it more robust. Let’s say that in the foregoing example the data got fetched from an API. If there is a change to the API—for example, there is a new version—there is a greater danger that the processing code will break if it is part of the same function. This will most likely cause the presentation of the data to break as well.",
+  "translation": "使功能专注于单个关注点很重要的原因是它使功能更强大。 假设在上述示例中，数据是从API提取的。 如果对API进行了更改（例如，有新版本），则如果处理代码属于同一功能，则存在更大的危险，即处理代码将被破坏。 这很可能会导致数据显示也中断。"
+}, {
+  "tag": "H1",
+  "text": "Common Coding Mistakes You Should Avoid",
+  "translation": "您应避免的常见编码错误"
+}, {
+  "tag": "H2",
+  "text": "These are the mistakes that many developers make",
+  "translation": "这些是许多开发人员犯的错误"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*QoPGTbdAHcK-xR4pU4yu5w.jpeg?q=20",
+  "type": "image",
+  "file": "1*QoPGTbdAHcK-xR4pU4yu5w.jpeg"
+}, {
+  "tag": "P",
+  "text": "Making mistakes is human. However, a lot of the mistakes that developers make can be avoided. If you’re able to avoid the common mistakes in this article, you will be able to write better and cleaner code.",
+  "translation": "犯错误是人的。 但是，可以避免开发人员犯的许多错误。 如果您能够避免本文中的常见错误，则可以编写更好，更简洁的代码。"
+}, {
+  "tag": "P",
+  "text": "This will not only be beneficial to you but also to the other developers that have to take a look at your code. So you’re not just doing this for yourself—you’re also doing your team a huge favor.",
+  "translation": "这不仅对您有益，而且对其他必须查看您的代码的开发人员也有利。 因此，您不仅要自己为自己做这件事，而且还要为您的团队提供巨大的帮助。"
+}, {
+  "tag": "P",
+  "text": "Here are some of those common mistakes that you should avoid.",
+  "translation": "这是您应该避免的一些常见错误。"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Daan的文章《Common Coding Mistakes You Should Avoid》，参考：https://medium.com/better-programming/common-coding-mistakes-you-should-avoid-441f9e51faea)",
+  "translation": "（本文翻译自Daan的文章《您应该避免的常见编码错误》，参考：https：//medium.com/better-programming/common-coding-mistakes-you-should-avoid-441f9e51faea）"
+}]
