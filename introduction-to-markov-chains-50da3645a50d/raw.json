@@ -1,0 +1,95 @@
+[{
+  "tag": "H1",
+  "text": "Introduction to Markov Chains",
+  "translation": "马尔可夫链导论"
+}, {
+  "tag": "H2",
+  "text": "What are Markov chains, when to use them, and how they work",
+  "translation": "什么是马尔可夫链，何时使用它们，以及它们如何工作"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/freeze/max/30/1*jcbUF7dAhAIRS8nfUlNtow.gif?q=20",
+  "caption": "(Generated from http://setosa.io/ev/markov-chains/)",
+  "type": "image",
+  "file": "1*jcbUF7dAhAIRS8nfUlNtow.gif"
+}, {
+  "tag": "P",
+  "text": "Markov chains are a fairly common, and relatively simple, way to statistically model random processes. They have been used in many different domains, ranging from text generation to financial modeling. A popular example is r/SubredditSimulator, which uses Markov chains to automate the creation of content for an entire subreddit. Overall, Markov Chains are conceptually quite intuitive, and are very accessible in that they can be implemented without the use of any advanced statistical or mathematical concepts. They are a great way to start learning about probabilistic modeling and data science techniques.",
+  "translation": "马尔可夫链是统计随机过程的一种相当普遍且相对简单的方法。 它们已用于许多不同的领域，从文本生成到财务建模。 一个流行的示例是r / SubredditSimulator，它使用Markov链自动为整个subreddit创建内容。 总体而言，马尔可夫链在概念上非常直观，并且易于访问，因为无需使用任何高级统计或数学概念即可实现它们。 它们是开始学习概率建模和数据科学技术的好方法。"
+}, {
+  "tag": "H2",
+  "text": "Scenario",
+  "translation": "情境"
+}, {
+  "tag": "P",
+  "text": "To begin, I will describe them with a very common example:",
+  "translation": "首先，我将以一个非常常见的示例来描述它们："
+}, {
+  "tag": "PRE",
+  "text": "Imagine that there were two possible states for weather: sunny or cloudy. You can always directly observe the current weather state, and it is guaranteed to always be one of the two aforementioned states.Now, you decide you want to be able to predict what the weather will be like tomorrow. Intuitively, you assume that there is an inherent transition in this process, in that the current weather has some bearing on what the next day’s weather will be. So, being the dedicated person that you are, you collect weather data over several years, and calculate that the chance of a sunny day occurring after a cloudy day is 0.25. You also note that, by extension, the chance of a cloudy day occurring after a cloudy day must be 0.75, since there are only two possible states.You can now use this distribution to predict weather for days to come, based on what the current weather state is at the time.",
+  "translation": "想象一下，天气可能有两种状态：晴天或多云。 您始终可以直接观察当前的天气状态，并保证始终是上述两种状态之一。现在，您决定要能够预测明天的天气情况。 凭直觉，您认为此过程存在固有的过渡，因为当前的天气会影响第二天的天气。 因此，作为您的专职人员，您收集了几年的天气数据，并计算出阴天后发生晴天的机会为0.25。 您还需要注意的是，由于只有两种可能的状态，因此阴天之后发生阴天的可能性必须为0.75。现在，您可以根据当前情况使用此分布来预测未来几天的天气 当时的天气状态。"
+}, {
+  "tag": "P",
+  "text": "This example illustrates many of the key concepts of a Markov chain. A Markov chain essentially consists of a set of transitions, which are determined by some probability distribution, that satisfy the Markov property.",
+  "translation": "此示例说明了马尔可夫链的许多关键概念。 马尔可夫链本质上由一组过渡组成，这些过渡由某种概率分布确定，满足马尔可夫性质。"
+}, {
+  "tag": "P",
+  "text": "Observe how in the example, the probability distribution is obtained solely by observing transitions from the current day to the next. This illustrates the Markov property, the unique characteristic of Markov processes that renders them memoryless. This typically leaves them unable to successfully produce sequences in which some underlying trend would be expected to occur. For example, while a Markov chain may be able to mimic the writing style of an author based on word frequencies, it would be unable to produce text that contains deep meaning or thematic significance since these are developed over much longer sequences of text. They therefore lack the ability to produce context-dependent content since they cannot take into account the full chain of prior states.",
+  "translation": "观察在该示例中如何仅通过观察从当天到下一天的转换来获得概率分布。 这说明了马尔可夫特性，它是马尔可夫过程的独特特征，使它们无记忆。 这通常会使他们无法成功产生预期会出现某些潜在趋势的序列。 例如，尽管马尔可夫链可能能够根据词频来模仿作者的写作风格，但由于它们是在更长的文本序列上形成的，因此它无法生成包含深层含义或主题意义的文本。 因此，由于它们无法考虑先前状态的完整链，因此它们缺乏产生上下文相关内容的能力。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*frksGjINf5oTjx7WL81U3w.png?q=20",
+  "caption": "A visualization of the weather example",
+  "type": "image",
+  "file": "1*frksGjINf5oTjx7WL81U3w.png"
+}, {
+  "tag": "H2",
+  "text": "The Model",
+  "translation": "该模型"
+}, {
+  "tag": "P",
+  "text": "Formally, a Markov chain is a probabilistic automaton. The probability distribution of state transitions is typically represented as the Markov chain’s transition matrix. If the Markov chain has N possible states, the matrix will be an N x N matrix, such that entry (I, J) is the probability of transitioning from state I to state J. Additionally, the transition matrix must be a stochastic matrix, a matrix whose entries in each row must add up to exactly 1. This makes complete sense, since each row represents its own probability distribution.",
+  "translation": "形式上，马尔可夫链是一个概率自动机。 状态转移的概率分布通常表示为马尔可夫链的转移矩阵。 如果马尔可夫链具有N个可能的状态，则矩阵将是N x N矩阵，因此条目（I，J）是从状态I转换为状态J的概率。此外，转换矩阵必须是随机矩阵， 一个矩阵，其每一行中的项之和必须恰好为1。这很有意义，因为每一行代表其自己的概率分布。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*oqBd8eLkXyU-h0AhV-m73w.png?q=20",
+  "caption": "General view of a sample Markov chain, with states as circles, and edges as transitions",
+  "type": "image",
+  "file": "1*oqBd8eLkXyU-h0AhV-m73w.png"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*laZ0aaq84xGcWZ9d9Ux0Wg.png?q=20",
+  "caption": "Sample transition matrix with 3 possible states",
+  "type": "image",
+  "file": "1*laZ0aaq84xGcWZ9d9Ux0Wg.png"
+}, {
+  "tag": "P",
+  "text": "Additionally, a Markov chain also has an initial state vector, represented as an N x 1 matrix (a vector), that describes the probability distribution of starting at each of the N possible states. Entry I of the vector describes the probability of the chain beginning at state I.",
+  "translation": "另外，马尔可夫链还具有一个初始状态向量，表示为N x 1矩阵（向量），它描述了从N个可能状态中的每个状态开始的概率分布。 向量的条目I描述了链从状态I开始的概率。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/freeze/max/30/1*y8ZkBHQm4D9rF3Bl-ok9_w.gif?q=20",
+  "caption": "Initial State Vector with 4 possible states",
+  "type": "image",
+  "file": "1*y8ZkBHQm4D9rF3Bl-ok9_w.gif"
+}, {
+  "tag": "P",
+  "text": "These two entities are typically all that is needed to represent a Markov chain.",
+  "translation": "这两个实体通常是表示马尔可夫链所需的全部。"
+}, {
+  "tag": "P",
+  "text": "We now know how to obtain the chance of transitioning from one state to another, but how about finding the chance of that transition occurring over multiple steps? To formalize this, we now want to determine the probability of moving from state I to state J over M steps. As it turns out, this is actually very simple to find out. Given a transition matrix P, this can be determined by calculating the value of entry (I, J) of the matrix obtained by raising P to the power of M. For small values of M, this can easily be done by hand with repeated multiplication. However, for large values of M, if you are familiar with simple Linear Algebra, a more efficient way to raise a matrix to a power is to first diagonalize the matrix.",
+  "translation": "现在，我们知道如何获得从一种状态过渡到另一种状态的机会，但是如何找到在多个步骤中发生这种过渡的机会呢？ 为了对此进行形式化，我们现在要确定经过M步从状态I转移到状态J的概率。 事实证明，这实际上非常简单。 给定一个转换矩阵P，可以通过计算将P提高到M的幂获得的矩阵的项（I，J）的值来确定。对于M的较小值，可以轻松地通过手动乘法来完成 。 但是，对于较大的M值，如果您熟悉简单的线性代数，将矩阵求幂的更有效方法是首先对角矩阵。"
+}, {
+  "tag": "H2",
+  "text": "Conclusion",
+  "translation": "结论"
+}, {
+  "tag": "P",
+  "text": "Now that you know the basics of Markov chains, you should now be able to easily implement them in a language of your choice. If coding is not your forte, there are also many more advanced properties of Markov chains and Markov processes to dive into. In my opinion, the natural progression along the theory route would be toward Hidden Markov Processes or MCMC. Simple Markov chains are the building blocks of other, more sophisticated, modeling techniques, so with this knowledge, you can now move onto various techniques within topics such as belief modeling and sampling.",
+  "translation": "既然您已经了解了马尔可夫链的基础知识，那么您现在应该能够轻松地以您选择的语言来实现它们。 如果编码不是您的专长，那么还可以使用马尔可夫链和马尔可夫过程的许多更高级的属性。 我认为，沿着理论路线的自然发展将是向隐马尔可夫过程或MCMC迈进。 简单的马尔可夫链是其他更复杂的建模技术的基石，因此，借助此知识，您现在可以进入主题内的各种技术，例如信念建模和抽样。"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Devin Soni的文章《Introduction to Markov Chains》，参考：https://towardsdatascience.com/introduction-to-markov-chains-50da3645a50d)",
+  "translation": "（本文翻译自Devin Soni的文章《马尔可夫链导论》，参考：https：//towardsdatascience.com/introduction-to-markov-chains-50da3645a50d）"
+}]
