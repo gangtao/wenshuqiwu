@@ -1,0 +1,463 @@
+[{
+  "tag": "P",
+  "text": "Originally published at https://mlwhiz.com on April 19, 2019.",
+  "translation": "最初于2019年4月19日发布在https://mlwhiz.com。"
+}, {
+  "tag": "H1",
+  "text": "References",
+  "translation": "参考文献"
+}, {
+  "tag": "OL",
+  "texts": ["The Search for Categorical Correlation", "Seaborn Swarmplot Documentation", "Seaborn Pairplot Documentation"],
+  "translations": ["寻找分类相关性", "Seaborn Swarmplot文档", "Seaborn Pairplot文档"]
+}, {
+  "tag": "P",
+  "text": "Code for this post in this kaggle kernel.",
+  "translation": "此kaggle内核中此帖子的代码。"
+}, {
+  "tag": "H1",
+  "text": "Conclusion",
+  "translation": "结论"
+}, {
+  "tag": "P",
+  "text": "So to recap, in this post, we talked about calculating and reading correlations between different variable types, plotting correlations between numerical data and Plotting categorical data with Numerical data using Swarmplots. I love how we can overlay chart elements on top of each other in Seaborn.",
+  "translation": "因此，回顾一下，在本文中，我们讨论了如何计算和读取不同变量类型之间的相关性，绘制数值数据之间的相关性以及使用Swarmplots使用数值数据绘制类别数据。 我喜欢我们如何在Seaborn中将图表元素彼此叠加。"
+}, {
+  "tag": "P",
+  "text": "Also if you want to learn more about Visualizations, I would like to call out an excellent course about Data Visualization and applied plotting from the University of Michigan which is a part of a pretty good Data Science Specialization with Python in itself. Do check it out",
+  "translation": "另外，如果您想了解有关可视化的更多信息，我想在密歇根大学讲一门关于数据可视化和应用绘图的出色课程，这是Python本身相当不错的数据科学专业化的一部分。 检查一下"
+}, {
+  "tag": "P",
+  "text": "If you liked this post do clap. It will help increase coverage for this post. I am going to be writing more beginner friendly posts in the future too. Follow me up at Medium or Subscribe to my blog to be informed about them. As always, I welcome feedback and constructive criticism and can be reached on Twitter @mlwhiz",
+  "translation": "如果您喜欢这篇文章，请鼓掌。 这将有助于增加该职位的报道范围。 我将来也会写更多对初学者友好的文章。 在Medium上关注我，或订阅我的博客以了解有关它们的信息。 一如既往，我欢迎反馈和建设性的批评，可以在Twitter @mlwhiz上与他们联系。"
+}, {
+  "tag": "P",
+  "text": "You can also look at my other post on Seaborn too where I have created some more straightforward reusable graphs.",
+  "translation": "您也可以在Seaborn上查看我的其他文章，其中我创建了一些更简单的可重用图形。"
+}, {
+  "tag": "H1",
+  "text": "SwarmPlots",
+  "translation": "群图"
+}, {
+  "tag": "P",
+  "text": "How to see the relationship between categorical and numerical data?",
+  "translation": "如何看待分类数据与数值数据之间的关系？"
+}, {
+  "tag": "P",
+  "text": "Enter into picture Swarmplots, just like their name. A swarm of points plotted for each category with a little dispersion on the y-axis to make them easier to see.",
+  "translation": "输入图片Swarmplot，就像它们的名字一样。 为每个类别绘制了大量的点，并在y轴上分散了一些点，使它们更易于查看。"
+}, {
+  "tag": "P",
+  "text": "They are my current favorite for plotting such relationships.",
+  "translation": "它们是我目前绘制这种关系的最爱。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/MLWhiz/4bd38266bb90e51b1503f66a344fd41a/raw/c34bb6b8c1e95269c11ead641f861b0b276150a3/swarmplot_simple.py",
+  "code": "g = sns.swarmplot(y = \"Club\",\n              x = 'Wage', \n              data = filtered_player_df,\n              # Decrease the size of the points to avoid crowding \n              size = 7)\n# remove the top and right line in graph\nsns.despine()\ng.figure.set_size_inches(14,10)\nplt.show()"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*AmTrwaxdekgqD_wqQv0JyA.png?q=20",
+  "caption": "Swarmplot…",
+  "type": "image",
+  "file": "1*AmTrwaxdekgqD_wqQv0JyA.png"
+}, {
+  "tag": "P",
+  "text": "Why don’t I use Boxplots? Where are the median values? Can I plot that? Obviously. Overlay a bar plot on top, and we have a great looking graph.",
+  "translation": "为什么不使用Boxplots？ 中位数在哪里？ 我可以画吗？ 明显。 将条形图叠加在顶部，我们有一个漂亮的图形。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/MLWhiz/e0a17bee5218be7e58eaff4df763b4ba/raw/2aa2fb8ab9c0a2f426ec02972cea76bc9c4d4ae5/swarm_box.py",
+  "code": "g = sns.boxplot(y = \"Club\",\n              x = 'Wage', \n              data = filtered_player_df, whis=np.inf)\ng = sns.swarmplot(y = \"Club\",\n              x = 'Wage', \n              data = filtered_player_df,\n              # Decrease the size of the points to avoid crowding \n              size = 7,color = 'black')\n# remove the top and right line in graph\nsns.despine()\ng.figure.set_size_inches(12,8)\nplt.show()"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*OCijxaB_yfC_jxwJ7HaSSA.png?q=20",
+  "caption": "Swarmplot+Boxplot, Interesting",
+  "type": "image",
+  "file": "1*OCijxaB_yfC_jxwJ7HaSSA.png"
+}, {
+  "tag": "P",
+  "text": "Pretty good. We can see the individual points on the graph, see some statistics and understand the wage difference categorically.",
+  "translation": "非常好。 我们可以在图表上看到各个点，可以看到一些统计数据，并可以明确地了解工资差异。"
+}, {
+  "tag": "P",
+  "text": "The far right point is Messi. However, I should not have to tell you that in a text below the chart. Right?",
+  "translation": "最右边的点是梅西。 但是，我不必在图表下方的文本中告诉您。 对？"
+}, {
+  "tag": "P",
+  "text": "This graph is going to go in a presentation. Your boss says. I want to write Messi on this graph. Comes into picture annotations.",
+  "translation": "此图将在演示文稿中显示。 你老板说。 我想在这张图上写梅西。 进入图片注释。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/MLWhiz/0238113d369caa559063b9d9ed1ec45f/raw/8b4030a6d870ce85071c3291212b9f6b7b9370bc/annotate_swarm_box.py",
+  "code": "max_wage = filtered_player_df.Wage.max()\nmax_wage_player = filtered_player_df[(player_df['Wage'] == max_wage)]['Name'].values[0]\ng = sns.boxplot(y = \"Club\",\n              x = 'Wage', \n              data = filtered_player_df, whis=np.inf)\ng = sns.swarmplot(y = \"Club\",\n              x = 'Wage', \n              data = filtered_player_df,\n              # Decrease the size of the points to avoid crowding \n              size = 7,color='black')\n# remove the top and right line in graph\nsns.despine()\n# Annotate. xy for coordinate. max_wage is x and 0 is y. In this plot y ranges from 0 to 7 for each level\n# xytext for coordinates of where I want to put my text\nplt.annotate(s = max_wage_player,\n             xy = (max_wage,0),\n             xytext = (500,1), \n             # Shrink the arrow to avoid occlusion\n             arrowprops = {'facecolor':'gray', 'width': 3, 'shrink': 0.03},\n             backgroundcolor = 'white')\ng.figure.set_size_inches(12,8)\nplt.show()"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*GY5oaHeJIrfN039kNPctsw.png?q=20",
+  "caption": "Annotated, Statistical Info and point swarm. To the presentation, I go.",
+  "type": "image",
+  "file": "1*GY5oaHeJIrfN039kNPctsw.png"
+}, {
+  "tag": "UL",
+  "texts": ["See Porto Down there. Competing with the giants with such a small wage budget.", "So many Highly paid players in Real and Barcelona.", "Manchester City has the highest median Wage.", "Manchester United and Chelsea believes in equality. Many players clustered in around the same wage scale.", "I am happy that while Neymar is more valued than Messi, Messi and Neymar have a huge Wage difference."],
+  "translations": ["见那里的波尔图。 用这么小的工资预算与巨人竞争。", "皇家和巴塞罗那有那么多高薪球员。", "曼城的工资中位数最高。", "曼联和切尔西相信平等。 许多参与者聚集在相同的工资水平上。", "我很高兴，虽然内马尔比梅西更受重视，但梅西和内马尔之间的工资差异很大。"]
+}, {
+  "tag": "P",
+  "text": "A semblance of normalcy in this crazy world.",
+  "translation": "在这个疯狂的世界中有种常态。"
+}, {
+  "tag": "H1",
+  "text": "Pairplots",
+  "translation": "配对图"
+}, {
+  "tag": "P",
+  "text": "While I talked a lot about correlation, it is a fickle metric.",
+  "translation": "虽然我谈论了很多相关性，但这是一个善变的指标。"
+}, {
+  "tag": "P",
+  "text": "To understand what I mean let us see one example.",
+  "translation": "为了理解我的意思，让我们看一个例子。"
+}, {
+  "tag": "P",
+  "text": "Anscombe’s quartet comprises four datasets that have nearly identical Correlation of 1, yet have very different distributions and appear very different when graphed.",
+  "translation": "Anscombe的四重奏包含四个数据集，它们具有几乎相同的1的相关性，但是分布却非常不同，并且在绘制图形时看起来也非常不同。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/proxy/1*lZAlx4qLO4cHc5MERinBiw.png",
+  "caption": "Anscombe Quartet — Correlations can be fickle.",
+  "type": "image"
+}, {
+  "tag": "P",
+  "text": "Thus sometimes it becomes crucial to plot correlated data. And see the distributions individually.",
+  "translation": "因此，有时绘制相关数据变得至关重要。 并分别查看分布。"
+}, {
+  "tag": "P",
+  "text": "Now we have many columns in our dataset. Graphing them all would be so much effort.",
+  "translation": "现在，我们的数据集中有许多列。 将它们全部绘制成图表会非常费力。"
+}, {
+  "tag": "P",
+  "text": "No, it is a single line of code.",
+  "translation": "不，这是一行代码。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/MLWhiz/7c66ca913b863f3d5d82dcdb3d9840b0/raw/5d6d1e9358ae61a0363edea98b9f0a87e8d02b8f/pairplot.py",
+  "code": "filtered_player_df = player_df[(player_df['Club'].isin(['FC Barcelona', 'Paris Saint-Germain',\n       'Manchester United', 'Manchester City', 'Chelsea', 'Real Madrid','FC Porto','FC Bayern München'])) & \n                      (player_df['Nationality'].isin(['England', 'Brazil', 'Argentina',\n       'Brazil', 'Italy','Spain','Germany'])) \n                     ]\n# Single line to create pairplot\ng = sns.pairplot(filtered_player_df[['Value','SprintSpeed','Potential','Wage']])"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*tEbi_yyQkNumv-YqUBayeA.png?q=20",
+  "type": "image",
+  "file": "1*tEbi_yyQkNumv-YqUBayeA.png"
+}, {
+  "tag": "P",
+  "text": "Pretty Good. We can see so much in this graph.",
+  "translation": "非常好。 我们可以在这张图中看到很多东西。"
+}, {
+  "tag": "UL",
+  "texts": ["Wage and Value are highly correlated.", "Most of the other values are correlated too. However, the trend of potential vs. value is unusual. We can see how the value increases exponentially as we reach a particular potential threshold. This information can be helpful in modeling. Can use some transformation on Potential to make it more correlated?"],
+  "translations": ["工资和价值高度相关。", "其他大多数值也都相关。 但是，潜力与价值的趋势并不寻常。 我们可以看到随着达到特定的潜在阈值，该值如何呈指数增长。 此信息可能有助于建模。 可以对电位进行一些转换以使其更相关吗？"]
+}, {
+  "tag": "P",
+  "text": "Caveat: No categorical columns.",
+  "translation": "注意：没有分类列。"
+}, {
+  "tag": "P",
+  "text": "Can we do better? We always can.",
+  "translation": "我们可以做得更好吗？ 我们永远可以。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/MLWhiz/1770d1064cebde2f49fa4fa0a5a34cc8/raw/fbe8ae31f73ecc379fabd989075dd8928f9915ec/pairplot_hue.py",
+  "code": "g = sns.pairplot(filtered_player_df[['Value','SprintSpeed','Potential','Wage','Club']],hue = 'Club')"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*90-jO_U9rBf1V4VMh8EdLA.png?q=20",
+  "type": "image",
+  "file": "1*90-jO_U9rBf1V4VMh8EdLA.png"
+}, {
+  "tag": "P",
+  "text": "So much more info. Just by adding the hue parameter as a categorical variable Club.",
+  "translation": "如此多的信息。 只需将hue参数添加为分类变量Club。"
+}, {
+  "tag": "UL",
+  "texts": ["Porto’s Wage distribution is too much towards the lower side.", "I don’t see that steep distribution in value of Porto players. Porto’s players would always be looking out for an opportunity.", "See how a lot of pink points(Chelsea) form sort of a cluster on Potential vs. wage graph. Chelsea has a lot of high potential players with lower wages. Needs more attention."],
+  "translations": ["波尔图的工资分配偏向下方。", "我看不到波尔图球员的价值分布如此陡峭。 波尔图的球员总是会寻找机会。", "在潜力与工资图表上查看许多粉红色点（切尔西）如何构成聚类。 切尔西有很多低薪的高潜力球员。 需要更多关注。"]
+}, {
+  "tag": "P",
+  "text": "I already know some of the points on the Wage/Value Subplot.",
+  "translation": "我已经知道工资/价值子图中的一些要点。"
+}, {
+  "tag": "P",
+  "text": "The blue point for wage 500k is Messi. Also, the orange point having more value than Messi is Neymar.",
+  "translation": "工资500k的蓝点是梅西。 而且，比梅西更具价值的橘色点是内马尔。"
+}, {
+  "tag": "P",
+  "text": "Although this hack still doesn’t solve the Categorical problem, I have something cool to look into categorical variables distribution. Though individually.",
+  "translation": "尽管此hack仍然无法解决分类问题，但我对分类变量的分布很感兴趣。 虽然个别。"
+}, {
+  "tag": "P",
+  "text": "The code to do this is taken from the dython package. I won’t write too much into code which you can anyway find in my Kaggle Kernel. The final result looks something like:",
+  "translation": "执行此操作的代码来自dython软件包。 我不会在您可以在我的Kaggle内核中找到的代码中写太多。 最终结果如下所示："
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/MLWhiz/3fc3a9ff7270de47815eaf14bb055a9c/raw/be1247bf049d0d2cb53a027a735309ae96e16bc4/associations.py",
+  "code": "player_df = player_df.fillna(0)\nresults = associations(player_df,nominal_columns=catcols,return_results=True)"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/28/1*LCJBMjTURDQ2SdmeomK-6A.png?q=20",
+  "caption": "Categorical vs. Categorical, Categorical vs. Numeric, Numeric vs. Numeric. Much more interesting.",
+  "type": "image",
+  "file": "1*LCJBMjTURDQ2SdmeomK-6A.png"
+}, {
+  "tag": "P",
+  "text": "Isn’t it Beautiful?",
+  "translation": "它不漂亮吗？"
+}, {
+  "tag": "P",
+  "text": "We can understand so much about Football just by looking at this data. For Example:",
+  "translation": "仅通过查看这些数据，我们就可以对足球有很多了解。 例如："
+}, {
+  "tag": "UL",
+  "texts": ["The position of a player is highly correlated with dribbling ability. You won’t play Messi at the back. Right?", "Value is more highly correlated with passing and ball control than dribbling. The rule is to pass the ball always. Neymar I am looking at you.", "Club and Wage have high Correlation. To be expected.", "Body Type and Preferred Foot is correlated highly. Does that mean if you are Lean, you are most likely left-footed? Doesn’t make much sense. One can investigate further."],
+  "translations": ["运动员的位置与运球能力高度相关。 您不会在后面玩梅西。 对？", "与传球和控球相比，运球的价值更重要。 规则是总是传球。 内马尔，我在看着你。", "俱乐部和工资具有较高的相关性。 可以预料的。", "身体类型和首选脚部高度相关。 这是否意味着如果您是精益，那么您很可能是左撇子？ 没什么意义。 人们可以进一步调查。"]
+}, {
+  "tag": "P",
+  "text": "Moreover, so much info we could find with this simple graph which was not visible in the typical correlation plot without Categorical Variables.",
+  "translation": "此外，我们可以通过这个简单的图表找到大量信息，而在没有分类变量的典型相关图中看不到该信息。"
+}, {
+  "tag": "P",
+  "text": "I leave it here. One can look more into the chart and find more meaningful results, but the point is that this makes life so much easier to find patterns.",
+  "translation": "我把它留在这里。 人们可以更多地查看图表并找到更有意义的结果，但重点是，这使生活变得更容易找到模式。"
+}, {
+  "tag": "H1",
+  "text": "Categorical Correlation with Graphs:",
+  "translation": "与图的类别相关性："
+}, {
+  "tag": "P",
+  "text": "In Simple terms, Correlation is a measure of how two variables move together.",
+  "translation": "用简单的术语来说，“相关性”是两个变量如何一起移动的度量。"
+}, {
+  "tag": "P",
+  "text": "For example, In the real world, Income and Spend are positively correlated. If one increases the other also increases.",
+  "translation": "例如，在现实世界中，收入和支出呈正相关。 如果一个增加，另一个也会增加。"
+}, {
+  "tag": "P",
+  "text": "Academic Performance and Video Games Usage is negatively correlated. Increase in one predicts a decrease in another.",
+  "translation": "学习成绩和视频游戏使用率呈负相关。 一个增加表示另一个减少。"
+}, {
+  "tag": "P",
+  "text": "So if our predictor variable is positively or negatively correlated with our target variable, it is valuable.",
+  "translation": "因此，如果我们的预测变量与目标变量正相关或负相关，那么它就很有价值。"
+}, {
+  "tag": "P",
+  "text": "Correlations among different variables are a pretty good thing to do when we try to understand our data.",
+  "translation": "当我们尝试理解数据时，不同变量之间的相关性是一件很不错的事情。"
+}, {
+  "tag": "P",
+  "text": "We can create a pretty good correlation plot using Seaborn easily.",
+  "translation": "我们可以轻松地使用Seaborn创建一个很好的相关图。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/MLWhiz/6285cde647072c3e2015ea7f636d3481/raw/0f3ac325860f3c4b2407c6edaefdf2b50d5ab3fe/simple_heatmap.py",
+  "code": "corr = player_df.corr()\ng = sns.heatmap(corr,  vmax=.3, center=0,\n            square=True, linewidths=.5, cbar_kws={\"shrink\": .5}, annot=True, fmt='.2f', cmap='coolwarm')\nsns.despine()\ng.figure.set_size_inches(14,10)\n    \nplt.show()"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*hos9f1VbD3OywozhcD6klA.png?q=20",
+  "caption": "Where did all the categorical variables go?",
+  "type": "image",
+  "file": "1*hos9f1VbD3OywozhcD6klA.png"
+}, {
+  "tag": "P",
+  "text": "But do you notice any problem?",
+  "translation": "但是，您注意到任何问题吗？"
+}, {
+  "tag": "P",
+  "text": "Yes, this graph only calculates Correlation between Numerical columns.",
+  "translation": "是的，此图仅计算“数值”列之间的相关性。"
+}, {
+  "tag": "P",
+  "text": "What if my target variable is Club or Position?",
+  "translation": "如果我的目标变量是俱乐部或职位怎么办？"
+}, {
+  "tag": "P",
+  "text": "I want to be able to get a correlation among three different cases, and we use the following metrics of correlation to calculate these:",
+  "translation": "我希望能够获得三种不同情况之间的相关性，并且我们使用以下相关性度量来计算这些相关性："
+}, {
+  "tag": "H2",
+  "text": "1. Numerical Variables",
+  "translation": "1.数值变量"
+}, {
+  "tag": "P",
+  "text": "We already have this in the form of Pearson’s Correlation which is a measure of how two variables move together. This Ranges from [-1,1]",
+  "translation": "我们已经采用了Pearson的相关性形式，可以衡量两个变量如何一起移动。 范围是[-1,1]"
+}, {
+  "tag": "H2",
+  "text": "2. Categorical Variables",
+  "translation": "2.分类变量"
+}, {
+  "tag": "P",
+  "text": "We will use Cramer’s V for categorical-categorical cases. It is the intercorrelation of two discrete variables and used with variables having two or more levels. It is a symmetrical measure as in the order of variable does not matter. Cramer(A,B) == Cramer(B,A).",
+  "translation": "对于分类-分类案例，我们将使用Cramer的V。 它是两个离散变量的互相关，并与具有两个或多个级别的变量一起使用。 这是一个对称的度量，因为按变量顺序无所谓。 Cramer（A，B）== Cramer（B，A）。"
+}, {
+  "tag": "P",
+  "text": "For Example: In our dataset, Club and Nationality must be somehow correlated.",
+  "translation": "例如：在我们的数据集中，俱乐部和国籍必须以某种方式关联。"
+}, {
+  "tag": "P",
+  "text": "Let us check this using a stacked graph which is an excellent way to understand distribution between categorical vs. categorical variables. We use a subset of data since there are a lot of nationalities and club in this data.",
+  "translation": "让我们使用堆叠图进行检查，这是了解分类变量与分类变量之间分布的一种极好的方法。 我们使用数据的子集，因为此数据中有很多国籍和俱乐部。"
+}, {
+  "tag": "P",
+  "text": "We keep only the best teams(Kept FC Porto just for more diversity in the sample)and the most common nationalities.",
+  "translation": "我们只保留最好的团队（保留波尔图足球俱乐部只是为了获得更多样本多样性）和最常见的国籍。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*y0BvSKpn0vHPClBaHKWz8A.png?q=20",
+  "type": "image",
+  "file": "1*y0BvSKpn0vHPClBaHKWz8A.png"
+}, {
+  "tag": "P",
+  "text": "Club preference says quite a bit about Nationality: knowing the former helps a lot in predicting the latter.",
+  "translation": "俱乐部的偏好在很大程度上说明了国籍：了解前者有助于预测后者。"
+}, {
+  "tag": "P",
+  "text": "We can see if a player belongs to England, it is more probable he plays in Chelsea or Manchester United and not in FC Barcelona or Bayern Munchen or Porto.",
+  "translation": "我们可以看到一个球员是否属于英格兰，那么他更有可能在切尔西或曼联踢球，而不是在巴塞罗那足球俱乐部，拜仁慕尼黑或波尔图踢球。"
+}, {
+  "tag": "P",
+  "text": "So there is some information present here. Cramer’s V captures the same information.",
+  "translation": "所以这里有一些信息。 Cramer的V捕获相同的信息。"
+}, {
+  "tag": "P",
+  "text": "If all clubs have the same proportion of players from every nationality, Cramer’s V is 0.",
+  "translation": "如果所有俱乐部的每个国籍的球员比例相同，那么Cramer的V为0。"
+}, {
+  "tag": "P",
+  "text": "If Every club prefers a single nationality Cramer’s V ==1, for example, all England player play in Manchester United, All Germans in Bayern Munchen and so on.",
+  "translation": "例如，如果每个俱乐部都喜欢单一国籍的Cramer的V == 1，则所有英格兰球员都在曼联踢球，所有德国人都在拜仁慕尼黑打球，等等。"
+}, {
+  "tag": "P",
+  "text": "In all other cases, it ranges from [0,1]",
+  "translation": "在所有其他情况下，范围为[0,1]"
+}, {
+  "tag": "H2",
+  "text": "3. Numerical and Categorical variables",
+  "translation": "3.数值和分类变量"
+}, {
+  "tag": "P",
+  "text": "We will use the Correlation Ratio for categorical-continuous cases.",
+  "translation": "对于分类连续的情况，我们将使用“相关比率”。"
+}, {
+  "tag": "P",
+  "text": "Without getting into too much Maths, it is a measure of Dispersion.",
+  "translation": "在不进行过多数学的情况下，它可以衡量色散。"
+}, {
+  "tag": "P",
+  "text": "Given a number can we find out which category it belongs to?",
+  "translation": "给定一个数字，我们可以找出它属于哪个类别？"
+}, {
+  "tag": "P",
+  "text": "For Example:",
+  "translation": "例如："
+}, {
+  "tag": "P",
+  "text": "Suppose we have two columns from our dataset: SprintSpeed and Position:",
+  "translation": "假设我们的数据集中有两列：SprintSpeed和Position："
+}, {
+  "tag": "UL",
+  "texts": ["GK: 58(De Gea),52(T. Courtois), 58(M. Neuer), 43(G. Buffon)", "CB: 68(D. Godin), 59(V. Kompany), 73(S. Umtiti), 75(M. Benatia)", "ST: 91(C.Ronaldo), 94(G. Bale), 80(S.Aguero), 76(R. Lewandowski)"],
+  "translations": ["GK：58（德吉亚），52（T。库图瓦），58（诺伊尔先生），43（布冯）", "CB：68（D。Godin），59（V。Kompany），73（S。Umtiti），75（M。Benatia）", "ST：91（C.Ronaldo），94（G。Bale），80（S.Aguero），76（R.Lewandowski）"]
+}, {
+  "tag": "P",
+  "text": "As you can see these numbers are pretty predictive of the bucket they fall into and thus high Correlation Ratio.",
+  "translation": "如您所见，这些数字可以很好地预测它们所属的类别，因此具有很高的相关比率。"
+}, {
+  "tag": "P",
+  "text": "If I know the sprint speed is more than 85, I can definitely say this player plays at ST.",
+  "translation": "如果我知道冲刺速度超过85，则可以肯定地说该球员在ST比赛。"
+}, {
+  "tag": "P",
+  "text": "This ratio also ranges from [0,1]",
+  "translation": "该比率也为[0,1]"
+}, {
+  "tag": "P",
+  "text": "I will be using data from FIFA 19 complete player dataset on kaggle — Detailed attributes for every player registered in the latest edition of FIFA 19 database.",
+  "translation": "我将在kaggle上使用FIFA 19完整球员数据集中的数据-最新FIFA 19数据库中注册的每个球员的详细属性。"
+}, {
+  "tag": "P",
+  "text": "Since the Dataset has many columns, we will only focus on a subset of categorical and continuous columns.",
+  "translation": "由于数据集有很多列，因此我们将只关注分类和连续列的子集。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/MLWhiz/9bbc95d2bfde5d6fed5bce837eca6ae5/raw/fb09abf42cc6f05246fefba2eefbf15f5101970a/data_load.py",
+  "code": "import numpy as np\nimport pandas as pd\nimport seaborn as sns\nimport matplotlib.pyplot as plt\n%matplotlib inline\n# We dont Probably need the Gridlines. Do we? If yes comment this line\nsns.set(style=\"ticks\")\nplayer_df = pd.read_csv(\"../input/data.csv\")\nnumcols = [\n 'Overall',\n 'Potential',\n'Crossing','Finishing',  'ShortPassing',  'Dribbling','LongPassing', 'BallControl', 'Acceleration',\n       'SprintSpeed', 'Agility',  'Stamina',\n 'Value','Wage']\ncatcols = ['Name','Club','Nationality','Preferred Foot','Position','Body Type']\n# Subset the columns\nplayer_df = player_df[numcols+ catcols]\n# Few rows of data\nplayer_df.head(5)"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/1*RtzYJF2JjxAwOSzrWzqRug.png?q=20",
+  "caption": "Player Data",
+  "type": "image",
+  "file": "1*RtzYJF2JjxAwOSzrWzqRug.png"
+}, {
+  "tag": "P",
+  "text": "This is a nicely formatted data, yet we need to do some preprocessing to the Wage and Value columns(as they are in Euro and contain strings) to make them numeric for our subsequent analysis.",
+  "translation": "这是一个格式良好的数据，但是我们需要对Wage和Value列（因为它们在欧元中并且包含字符串）进行一些预处理，以使其成为数字，以便我们进行后续分析。"
+}, {
+  "tag": "FIGURE",
+  "type": "code",
+  "raw": "https://gist.github.com/MLWhiz/2389fd65718b5e050726380b8edf4b73/raw/16c52f9126b6c08fd4e1fb9e3c673d90565b6639/data_preprocess.py",
+  "code": "def wage_split(x):\n    try:\n        return int(x.split(\"K\")[0][1:])\n    except:\n        return 0\nplayer_df['Wage'] = player_df['Wage'].apply(lambda x : wage_split(x))\ndef value_split(x):\n    try:\n        if 'M' in x:\n            return float(x.split(\"M\")[0][1:])\n        elif 'K' in x:\n            return float(x.split(\"K\")[0][1:])/1000\n    except:\n        return 0\nplayer_df['Value'] = player_df['Value'].apply(lambda x : value_split(x))"
+}, {
+  "tag": "H1",
+  "text": "3 Awesome Visualization Techniques for every dataset",
+  "translation": "每个数据集都有3种出色的可视化技术"
+}, {
+  "tag": "H2",
+  "text": "And Learn a little about Football while at it",
+  "translation": "并在此学习一些关于足球的知识"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/30/0*R_Jl-FopO-xUMAm6.jpg?q=20",
+  "type": "image",
+  "file": "0*R_Jl-FopO-xUMAm6.jpg"
+}, {
+  "tag": "P",
+  "text": "Visualizations are awesome. However, a good visualization is annoyingly hard to make.",
+  "translation": "可视化效果很棒。 但是，很难制作出良好的可视化效果。"
+}, {
+  "tag": "P",
+  "text": "Moreover, it takes time and effort when it comes to present these visualizations to a bigger audience.",
+  "translation": "此外，要将这些可视化呈现给更多的受众，需要花费时间和精力。"
+}, {
+  "tag": "P",
+  "text": "We all know how to make Bar-Plots, Scatter Plots, and Histograms, yet we don’t pay much attention to beautify them.",
+  "translation": "我们都知道如何制作条形图，散点图和直方图，但是我们并没有花太多精力来美化它们。"
+}, {
+  "tag": "P",
+  "text": "This hurts us — our credibility with peers and managers. You won’t feel it now, but it happens.",
+  "translation": "这伤害了我们-我们在同行和管理人员中的信誉。 您现在不会感觉到，但是它确实发生了。"
+}, {
+  "tag": "P",
+  "text": "Also, I find it essential to reuse my code. Every time I visit a new dataset do I need to start again? Some reusable ideas of graphs that can help us to find information about the data FAST.",
+  "translation": "另外，我发现重用代码非常重要。 每次访问新数据集时，我都需要重新开始吗？ 图的一些可重用概念可以帮助我们找到有关数据FAST的信息。"
+}, {
+  "tag": "P",
+  "text": "In this post, I am also going to talk about 3 cool visual tools:",
+  "translation": "在这篇文章中，我还将讨论3种很酷的视觉工具："
+}, {
+  "tag": "UL",
+  "texts": ["Categorical Correlation with Graphs,", "Pairplots,", "Swarmplots and Graph Annotations using Seaborn."],
+  "translations": ["与图的分类相关性", "配对图", "使用Seaborn的Swarmplots和图注解。"]
+}, {
+  "tag": "P",
+  "text": "In short, this post is about useful and presentable graphs.",
+  "translation": "简而言之，这篇文章是关于有用和可表达的图形的。"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Rahul Agarwal的文章《3 Awesome Visualization Techniques for every dataset》，参考：https://towardsdatascience.com/3-awesome-visualization-techniques-for-every-dataset-9737eecacbe8)",
+  "translation": "（本文翻译自Rahul Agarwal的文章，《每个数据集的3种出色的可视化技术》，参考：https：//towardsdatascience.com/3-awesome-visualization-techniques-for-every-dataset-9737eecacbe8）"
+}]
