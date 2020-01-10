@@ -1,0 +1,171 @@
+[{
+  "tag": "H1",
+  "text": "Private fields, public worries",
+  "translation": "私人领域，公共忧虑"
+}, {
+  "tag": "P",
+  "text": "JavaScript — as a language — grows larger every year. It shouldn’t be surprising that the process of introducing new features to JS can cause a lot of turmoil. Programmers usually held strong opinions about their tools so it’s rather expected that any change to JS spec will be discussed relentlessly by developers. However, some of the changes proposed by TC39 Committee (body responsible for EcmaScript standard) arouse more resistance than others. A proposal that recently caused a lot of negative reactions was class fields proposal that — among others — tries to add to the language private class fields.",
+  "translation": "JavaScript（作为一种语言）每年都在增长。 向JS引入新功能的过程可能会引起很多动荡也就不足为奇了。 程序员通常会对自己的工具持有强烈的意见，因此可以期望开发人员会不懈地讨论JS规范的任何更改。 但是，TC39委员会（负责EcmaScript标准的机构）提出的一些变更比其他变更引起了更大的阻力。 最近引起了很多负面反应的一个提议是班级领域提案，该提案除其他外试图增加语言私有班级领域。"
+}, {
+  "tag": "FIGURE",
+  "image": "https://miro.medium.com/max/60/1*8cCm7uFoE17rmqQpgXwnhA.jpeg?q=20",
+  "caption": "Giovanni Battista Bracelli from “Bizzarie di varie Figure” 1624",
+  "type": "image",
+  "file": "1*8cCm7uFoE17rmqQpgXwnhA.jpeg"
+}, {
+  "tag": "H1",
+  "text": "PROPOSAL",
+  "translation": "提案"
+}, {
+  "tag": "P",
+  "text": "The current form of the candidate is a result of combining two earlier proposals — viz. one introducing public fields and another proposing private class fields. Consequently, the proposal allows us to declare class fields inside the class body but outside constructor function and — besides — it introduces two kinds of class fields — public (properties) and private. Let’s see some code.",
+  "translation": "当前候选人的形式是结合了两个先前的提议的结果。 一个介绍公共领域，另一个提出私有类领域。 因此，该建议使我们可以在类主体内部但在构造函数之外声明类字段，并且-引入了两种类字段-公共（属性）和私有。 让我们看一些代码。"
+}, {
+  "tag": "PRE",
+  "text": "class BankAccount {  balance = 0;  #clientId = ‘xyz’;  deposit = (amount) => {    this.balance += amount;  };  getId = () => this.#clientId;}",
+  "translation": "类别BankAccount {余额= 0; #clientId =‘xyz’； 存款=（金额）=> {this.balance + =金额； }; getId =（）=> this。＃clientId;}"
+}, {
+  "tag": "P",
+  "text": "balance is public property. It can be accessed and modified outside of a class body. As you can see, we don’t need a constructor function. We can just declare public properties directly. This part of the proposal is rather uncontroversial. It saves us a few keystrokes to omit constructor function. I guess most developers using React are familiar with this syntax. Quite often you can see a class component defined like this:",
+  "translation": "余额是公共财产。 可以在类主体外部进行访问和修改。 如您所见，我们不需要构造函数。 我们可以直接声明公共财产。 提案的这一部分是没有争议的。 它为我们节省了一些省略构造函数的按键操作。 我想大多数使用React的开发人员都熟悉这种语法。 通常，您会看到这样定义的类组件："
+}, {
+  "tag": "PRE",
+  "text": "class Widget extends React.Component {  state = {    open: false  };  toggle = () => {    this.setState(prevState => ({    open: !prevState.open    })  };  render...}",
+  "translation": "Widget类扩展了React.Component {state = {open：false}; toggle =（）=> {this.setState（prevState =>（{open：！prevState.open}）};呈现...}"
+}, {
+  "tag": "P",
+  "text": "Here the initial state is defined as a public class field. However, it can be easy to overlook that also toggle is using the new class fields syntax. In other words, toggle isn’t a class method, it is an instance property (so, yes, every instance of the Widget has its own copy of toggle).",
+  "translation": "在此，初始状态定义为公共类字段。 但是，很容易忽略，并且切换也在使用新的类字段语法。 换句话说，toggle不是类方法，而是实例属性（因此，是的，每个Widget实例都有其自己的toggle副本）。"
+}, {
+  "tag": "P",
+  "text": "This is all well and good but there is a white elephant in the room. Yes, I am thinking about # character. This is not a comment, this is not a CSS id selector. This is how you declare private fields according to the proposal. You can access such a field only inside the class body. To do so you can write either this.#myPrivateField or use shorthand and omit this altogether by writing #myPrivateField.",
+  "translation": "一切都很好，但是房间里有只白象。 是的，我正在考虑＃个字符。 这不是评论，也不是CSS ID选择器。 这是您根据提案声明私有字段的方式。 您只能在类主体内部访问此类字段。 为此，您可以编写this。＃myPrivateField或使用简写形式，并通过编写#myPrivateField完全省略此内容。"
+}, {
+  "tag": "H1",
+  "text": "PRIVACY",
+  "translation": "隐私"
+}, {
+  "tag": "P",
+  "text": "But what exactly does it mean that a field is private? Let’s give voice to the authors of the proposal:",
+  "translation": "但是，一个字段私有是什么意思呢？ 让我们对提案的作者说："
+}, {
+  "tag": "P",
+  "text": "It means that private fields are purely internal: no JS code outside of a class, can detect or affect the existence, name, or value of any private field of instances of said class without directly inspecting the class’s source unless the class chooses to reveal them. [PRIVATE SYNTAX FAQ]",
+  "translation": "这意味着私有字段是纯粹内部的：类之外的任何JS代码都无法检测或影响所述类实例的任何私有字段的存在，名称或值，而无需直接检查类的来源，除非该类选择显示它们 。 [私人语法常见问题]"
+}, {
+  "tag": "P",
+  "text": "So not only we cannot access private fields outside of a class, we also shouldn’t be able to know that certain class has any private fields whatsoever. Trying to access such a private field shouldn’t result in an error or an exception. If that was the case we would know that a class has private fields with such and such a name. The proposal ensures that no part of the program outside of a class can refer in any way to private fields declared inside the class. The language makes it impossible. If you are outside a class you can only interact with public fields (a.k.a. properties).",
+  "translation": "因此，我们不仅无法访问课程之外的私有字段，而且我们也不应该知道某个班级有任何私有字段。 尝试访问这样的私有字段不会导致错误或异常。 如果是这样的话，我们将知道一个类具有这样的名称的私有字段。 该建议确保在类之外的程序的任何部分都不能以任何方式引用在类内部声明的私有字段。 语言使不可能。 如果您不在课堂上，则只能与公共字段（也就是属性）互动。"
+}, {
+  "tag": "H1",
+  "text": "CRITICISM",
+  "translation": "批评"
+}, {
+  "tag": "P",
+  "text": "Ok, now we know what is being proposed. Let’s see what arguments are used to criticize the proposal.",
+  "translation": "好的，现在我们知道了建议的内容。 让我们看看用什么论点来批评该提案。"
+}, {
+  "tag": "H2",
+  "text": "UGLINESS",
+  "translation": "丑陋"
+}, {
+  "tag": "P",
+  "text": "I guess the most frequent reaction to private fields syntax boils down to three words (usually with exclamation mark): ‘it’s ugly’. TC39 committee, of course, know it:",
+  "translation": "我猜对私有字段语法的最常见反应可以归结为三个词（通常带有感叹号）：“这很丑”。 TC39委员会当然知道："
+}, {
+  "tag": "P",
+  "text": "Most people said please stop the proposal, we can’t stand the sigil",
+  "translation": "大多数人说请停止提议，我们无法忍受"
+}, {
+  "tag": "P",
+  "text": "[TC 39 January 26, 2017 Meeting Notes]",
+  "translation": "[TC 39 2017年1月26日会议记录]"
+}, {
+  "tag": "P",
+  "text": "Indeed, it is ugly. Some people claim that aesthetics it’s rather a matter of taste than a matter of facts. But here I’d say that we have a simple aesthetic fact: # sigil syntax is ugly.",
+  "translation": "确实，这很丑。 有人声称美学不是问题而是事实，而是品味问题。 但是在这里我要说的是，我们有一个简单的美学事实：＃锡吉尔语法很丑陋。"
+}, {
+  "tag": "P",
+  "text": "But is it valid counter-argument at all? In my opinion, it is. Even if there are reasons for using such a syntax (and there are, and we will discuss them) ugliness/beauty of new syntax should be taken into account. An ugly language is harder to use than a beautiful language. The proposed syntax is unintuitive. It looks like a comment or CSS id selector. The authors of the proposal are aware that their choice isn’t an obvious one.",
+  "translation": "但这是完全有效的反论点吗？ 我认为是。 即使有使用这种语法的理由（有，并且我们将讨论它们），也应考虑新语法的丑陋/美观。 丑陋的语言比美丽的语言难于使用。 所提出的语法是不直观的。 它看起来像一个注释或CSS id选择器。 该提案的作者意识到，他们的选择不是显而易见的选择。"
+}, {
+  "tag": "P",
+  "text": "No one came out and said, # is the most beautiful, intuitive thing to indicate private state. Instead, it was more of a process of elimination",
+  "translation": "没有人出来说：＃是表示私人状态的最美丽，最直观的东西。 相反，它更多是一个消除过程"
+}, {
+  "tag": "P",
+  "text": "[PRIVATE SYNTAX FAQ]",
+  "translation": "[私人语法常见问题]"
+}, {
+  "tag": "P",
+  "text": "So why # sigil was chosen? The most natural candidate for marking private field would be — of course — keyword private. Why it wasn’t chosen by the committee? It wouldn’t be a problem to declare a private field in this way. But how would you access it?",
+  "translation": "那么为什么选择＃印记呢？ 标记私有字段的最自然的候选人当然是关键字private。 为什么委员会没有选择它？ 以此方式声明私有字段将不是问题。 但是您将如何访问它？"
+}, {
+  "tag": "PRE",
+  "text": "class Widget {  private mySecret = '1234';}const obj = new Widget();obj.mySecret = '5689';",
+  "translation": "类Widget {private mySecret ='1234';} const obj = new Widget（）; obj.mySecret ='5689';"
+}, {
+  "tag": "P",
+  "text": "In Java, it would result in a compile error. But JavaScript isn’t compiled language. Runtime error? Really terrible idea to break your program because someone wants to add a property to an object. Moreover, it would mean — at least according to proposal authors — that such a field isn’t really private because its effects are visible from outside the class.",
+  "translation": "在Java中，这将导致编译错误。 但是JavaScript不是编译语言。 运行时错误？ 破坏程序的想法真糟糕，因为有人想向对象添加属性。 而且，至少根据提案作者的说法，这意味着该字段并不是真正的私有字段，因为它的作用可以从班级外部看到。"
+}, {
+  "tag": "H2",
+  "text": "HARD PRIVACY",
+  "translation": "硬隐私"
+}, {
+  "tag": "P",
+  "text": "Many JS devs are uncomfortable with another aspect of the proposal, namely: obstinance of proposal champions on hard privacy. Hard privacy means that there is no way to access or even detect the existence of a field outside the class. The term is opposed to soft privacy which gives users the possibility to access such fields. Of course such escape hatches should be annoying and difficult but nonetheless, access would be possible. However, one of the goals of the proposal is to guarantee that private fields in JS will be hard private.",
+  "translation": "许多JS开发人员对提案的另一个方面感到不满意，即：提案拥护者对坚决的隐私保持坚守。 严格的隐私意味着无法访问甚至无法检测类之外字段的存在。 该术语与软隐私相对，后者使用户可以访问此类字段。 当然，这样的逃生舱口应该很烦人且困难，但是尽管如此，还是可以进入的。 但是，该提案的目标之一是确保JS中的私有字段是硬私有的。"
+}, {
+  "tag": "P",
+  "text": "Either it’s fully “hard private” — inaccessible and unobservable — or else it’s fully public.",
+  "translation": "它要么是完全“硬私有”（无法访问且不可观察），要么完全是公开的。"
+}, {
+  "tag": "P",
+  "text": "[Github discussion]",
+  "translation": "[Github讨论]"
+}, {
+  "tag": "P",
+  "text": "Such a statement is obviously false. If that was a common understanding of the concept of privacy, authors of the proposal wouldn’t need to make a distinction between soft and hard privacy. Soft privacy shouldn’t be call privacy at all…",
+  "translation": "这样的说法显然是错误的。 如果这是对隐私概念的普遍理解，那么该提案的作者就无需在软性和硬性隐私之间进行区分。 软性隐私根本不应该称为隐私性..."
+}, {
+  "tag": "P",
+  "text": "There are at least two counter-arguments that can be used against hard privacy. Firstly, in many popular languages, private fields are soft private (in Java for example you can access private fields using reflection). So not only the committee is forcing unexpected syntax to achieve private fields, it uses quite an unusual notion of privacy as well. Of course, such an argument doesn’t explain what is wrong with hard privacy. It just tells us that this construct is not very common.",
+  "translation": "至少有两个反论点可以用来反对严格的隐私权。 首先，在许多流行语言中，私有字段是软私有的（例如，在Java中，您可以使用反射来访问私有字段）。 因此，委员会不仅迫使非预期的语法来实现私有领域，而且还使用了非常不寻常的隐私概念。 当然，这样的论点并不能解释硬性隐私有什么问题。 它只是告诉我们这种构造不是很常见。"
+}, {
+  "tag": "P",
+  "text": "Secondly, one can argue that hard privacy is rather impossible to achieve anyway. You can always use toString method to directly see which fields were declared as private. And if toString would fail — don’t worry — there would be a dozen different ways of checking the source code of any library, that you are using at the moment. So yes, you can detect the existence of a private field — one way or another…",
+  "translation": "其次，有人可以说，无论如何都很难实现严格的隐私保护。 您始终可以使用toString方法直接查看哪些字段被声明为私有。 而且，如果toString失败了-不用担心-您现在将使用多种方法来检查任何库的源代码。 所以是的，您可以检测到一个私有字段的存在-一种或另一种方式..."
+}, {
+  "tag": "P",
+  "text": "But why the committee insists so strongly on hard privacy in the first place? To answer that question we need to realize that the main beneficiaries of the proposal are authors of libraries. As an author of a library you don’t want users of your lib to have access to anything but public api. Even detectability of soft private fields could be a problem — argue members of the committee — because it makes possible for users of a library to write conditionals where detecting certain private fields has some important consequences.",
+  "translation": "但是，为什么委员会首先坚决要求坚决保护隐私呢？ 要回答这个问题，我们需要意识到该提案的主要受益者是图书馆的作者。 作为图书馆的作者，您不希望您图书馆的用户访问公共api之外的任何东西。 委员会成员认为，甚至软专用域的可检测性也可能是一个问题，因为图书馆用户可以编写条件，在这些条件下检测某些专用域会产生重要后果。"
+}, {
+  "tag": "P",
+  "text": "So here hard privacy seems to be really useful because it should give the possibility to completely hide implementation details. But it does not. If they want — users always find ways to access such fields. One can say that users who will try those ways are breaking the rules, therefore libraries authors should not care about such users. But the same can be said about users that access soft private fields or even properties prefixed with _. Such developers also break a contract with the author of a library.",
+  "translation": "因此，这里的硬性隐私似乎真的很有用，因为它应该可以完全隐藏实施细节。 但事实并非如此。 如果需要，用户总是会找到访问此类字段的方法。 可以说，尝试这些方法的用户正在违反规则，因此，库作者不应该在意此类用户。 但是对于访问软私有字段甚至带有_前缀的属性的用户也可以这样说。 这样的开发人员还违反了与图书馆作者的合同。"
+}, {
+  "tag": "P",
+  "text": "But there is another argument for hard privacy — in my opinion much more compelling. Soft privacy is already accessible in the language via symbols. There is no need for syntactic sugar for such a construct because there is really nothing complicated in using symbols for soft private fields. Hence if somebody doesn’t need hard privacy they can just use symbols for soft privacy.",
+  "translation": "但是，还有另一种说法认为硬性隐私–我认为更具说服力。 通过语言可以通过语言访问软隐私。 对于这种构造，不需要语法糖，因为在软专用字段中使用符号确实没有什么复杂的事情。 因此，如果某人不需要严格的隐私保护，他们就可以使用符号来实现柔和的隐私保护。"
+}, {
+  "tag": "P",
+  "text": "There are many other doubts about the proposal. One can certainly mention that debugging can be harder with hard-private fields, also monkey patching will be much more challenging. However I’d like to discuss only one more objection raised against the proposal. This objection has more general nature so let me sum up the previous discussion. I would say that rationales behind decisions that were taken to formulate the proposal (hash sigil, hard privacy) are sound. They are not ultimately conclusive but at least they are logical and coherent with proposal goals. Probably other ways of introducing hard private fields to the language (and you can check them in github issues discussions) would result in a much more convoluted solution. Sigil # gives us nice symmetry between declaring a private field and accessing it. Hard privacy offers a coherent and reliable mechanism of hiding implementation details.",
+  "translation": "对该提案还有许多其他疑问。 可以肯定地说，使用硬私有字段进行调试可能会更加困难，并且猴子补丁也将更具挑战性。 但是，我只想讨论对该提案提出的另一项异议。 该异议具有更一般的性质，因此让我总结一下前面的讨论。 我要说的是，制定提案的决定所依据的理由（哈希符号，严格的隐私权）是合理的。 它们并不是最终结论，但至少它们是合乎逻辑的，并且与提案目标保持一致。 可能会有其他方式将硬私有字段引入该语言（您可以在github问题讨论中查看它们）会导致更复杂的解决方案。 标记＃使我们在声明私有字段和访问私有字段之间具有很好的对称性。 严格的隐私提供了隐藏实施细节的连贯可靠的机制。"
+}, {
+  "tag": "P",
+  "text": "But maybe we just don’t need private fields in the language? Maybe introducing private fields to a language in which class keyword is nothing more than syntactic sugar isn’t such a good idea. Because after all JS classes are just syntactic sugar over prototype inheritance.",
+  "translation": "但是也许我们只是不需要该语言的私有字段？ 在类关键字仅是语法糖的语言中引入私有字段可能不是一个好主意。 因为毕竟JS类只是原型继承上的语法糖。"
+}, {
+  "tag": "P",
+  "text": "In my opinion, such an addition to a language could produce a language that is unnecessary complicated. By this, I don’t want to say that new syntax is so unintuitive that developers will struggle with it. Proposed syntax, albeit ugly, is quite simple. What may become not so simple is language as a whole. After all, learning a language is not the same as learning its syntax.",
+  "translation": "我认为，对语言的这种添加可能会产生不必要的复杂语言。 因此，我不想说新语法太不直观了，以至于开发人员都会为之苦恼。 提议的语法虽然很丑陋，但却非常简单。 整体的语言可能会变得不那么简单。 毕竟，学习一种语言与学习其语法是不同的。"
+}, {
+  "tag": "P",
+  "text": "Thanks to Michał Stawski, Wojciech Karaś and Krzysztof Borowski.",
+  "translation": "感谢MichałStawski，WojciechKaraś和Krzysztof Borowski。"
+}, {
+  "tag": "PRE",
+  "text": "(本文翻译自Filip Białek的文章《Private fields, public worries》，参考：https://medium.com/virtuslab/private-fields-public-worries-b8c34d16c372)",
+  "translation": "（本文翻译自FilipBiałek的文章，《私人领域，公共忧虑》，参考：https：//medium.com/virtuslab/private-fields-public-worries-b8c34d16c372）"
+}]
